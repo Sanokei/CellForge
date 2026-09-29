@@ -95,7 +95,7 @@ def cmd_dev_eval(args):
         from .construction.transactions import validate_proposal as _vp
         prop = _load_proposal(args.proposal)
         prop["base"] = task["base"]
-        v = _vp(r.load_graph(task["base"]), prop, r.sample_imgs(), r.limits(), kind=r.kind, profile=r.profile)
+        v = _vp(r.load_graph(task["base"]), prop, r.sample_imgs(), r.limits(), kind=r.kind, profile=r.profile, resolver=r.load_graph)
         with (tdir / "validations.jsonl").open("a") as f:
             f.write(json.dumps({"time": time.time(), "ok": v["ok"]}) + "\n")
         _print({"ok": v["ok"], "error": v.get("error"), "stats": v["graph"].stats() if v["ok"] else None})
@@ -108,7 +108,7 @@ def cmd_dev_eval(args):
     if args.proposal:
         prop = _load_proposal(args.proposal)
         prop["base"] = task["base"]  # makers always edit their task base
-        v = validate_proposal(g, prop, r.sample_imgs(), r.limits(), kind=r.kind, profile=r.profile)
+        v = validate_proposal(g, prop, r.sample_imgs(), r.limits(), kind=r.kind, profile=r.profile, resolver=r.load_graph)
         if not v["ok"]:
             with usage.open("a") as f:
                 f.write(json.dumps({"time": time.time(), "ok": False}) + "\n")

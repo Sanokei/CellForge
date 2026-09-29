@@ -1,0 +1,159 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 1.8879,
+ "top1": 0.6159,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.073,
+   "n": 992,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.324,
+   "n": 1979,
+   "share_of_total_bits": 0.004
+  },
+  "after_period_space": {
+   "bpc": 3.21,
+   "n": 1758,
+   "share_of_total_bits": 0.033
+  },
+  "doc_start": {
+   "bpc": 2.029,
+   "n": 165,
+   "share_of_total_bits": 0.002
+  },
+  "in_word": {
+   "bpc": 1.499,
+   "n": 68275,
+   "share_of_total_bits": 0.606
+  },
+  "word_start": {
+   "bpc": 3.684,
+   "n": 16209,
+   "share_of_total_bits": 0.354
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 99,
+   "pos": 281,
+   "bits": 13.24,
+   "context": "in the bag with his lunch. he ",
+   "target": "z"
+  },
+  {
+   "doc": 116,
+   "pos": 132,
+   "bits": 13.0,
+   "context": "was inside. so, he pulled the ",
+   "target": "z"
+  },
+  {
+   "doc": 72,
+   "pos": 187,
+   "bits": 12.96,
+   "context": "ay long. one day, sue found a ",
+   "target": "z"
+  },
+  {
+   "doc": 155,
+   "pos": 185,
+   "bits": 12.84,
+   "context": "t find any food yet. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 118,
+   "pos": 123,
+   "bits": 12.79,
+   "context": "riends to play with. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 70,
+   "pos": 60,
+   "bits": 12.79,
+   "context": "shy cat named kitty. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 97,
+   "pos": 153,
+   "bits": 12.74,
+   "context": "put his toys in the wagon and ",
+   "target": "z"
+  },
+  {
+   "doc": 72,
+   "pos": 387,
+   "bits": 12.7,
+   "context": " tim went outside to sell the ",
+   "target": "z"
+  },
+  {
+   "doc": 110,
+   "pos": 489,
+   "bits": 12.45,
+   "context": "oticed the smoke and helped sa",
+   "target": "v"
+  },
+  {
+   "doc": 53,
+   "pos": 108,
+   "bits": 12.3,
+   "context": ". he made people's hair look u",
+   "target": "g"
+  },
+  {
+   "doc": 116,
+   "pos": 40,
+   "bits": 12.27,
+   "context": " little boy named tim found a ",
+   "target": "z"
+  },
+  {
+   "doc": 116,
+   "pos": 464,
+   "bits": 12.22,
+   "context": "ed and said it was okay. they ",
+   "target": "z"
+  }
+ ],
+ "route_counts": {},
+ "exec": {
+  "node_execs": 23439,
+  "macs": 267172024586,
+  "peak_tensor_elements": 7698405
+ },
+ "generation": {
+  "greedy": [
+   "one day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little ",
+   "one day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little ",
+   "one day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little day, a little "
+  ],
+  "sampled_t0.8": [
+   "starting helped the loving man out the lightnisooase loves the big the dog. lightnii mountain and the lily's than animal said, and they what a nice dog toys they'll young monster. loves the big mia, a",
+   "mia's wanted toy saw mommy, and they said hearing roar! saw mommy very good friendship it's played together and they said, and her did here it'sw here it, and her mom, and together and they said, and ",
+   "a losing ants morning and the lost children wanted that she wanted that's they she morning and i wanted the please helped they walking play wanted they wanted the loved he had ready starts hard wanted",
+   "a dessert, the got the flag they're in held dessert. she orange dessertg the many fall your she was she said held held needing. she was something they're needing they helped her still jenny potato ask",
+   "there with takes though the stone seed with the good real no park apple great there woman. are you are stone now woman with hand, a good friends friends and dinner, and his from his friends and apple ",
+   "the big ridden piece proud first friends and then he loved her dad friends. if if if we've peter chase, we big. i soft she here's her day he? here is the big the built  money boy built sharpmaoii soft"
+  ],
+  "complete_sentences": 19,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.931,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

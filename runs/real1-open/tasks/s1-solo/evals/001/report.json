@@ -1,0 +1,159 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 1.9918,
+ "top1": 0.6037,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.075,
+   "n": 992,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.337,
+   "n": 1979,
+   "share_of_total_bits": 0.004
+  },
+  "after_period_space": {
+   "bpc": 3.267,
+   "n": 1758,
+   "share_of_total_bits": 0.032
+  },
+  "doc_start": {
+   "bpc": 2.031,
+   "n": 165,
+   "share_of_total_bits": 0.002
+  },
+  "in_word": {
+   "bpc": 1.629,
+   "n": 68275,
+   "share_of_total_bits": 0.625
+  },
+  "word_start": {
+   "bpc": 3.7,
+   "n": 16209,
+   "share_of_total_bits": 0.337
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 95,
+   "pos": 32,
+   "bits": 19.79,
+   "context": "e day, a jolly lizard named li",
+   "target": "z"
+  },
+  {
+   "doc": 95,
+   "pos": 427,
+   "bits": 19.16,
+   "context": "and blew the bird far away. li",
+   "target": "z"
+  },
+  {
+   "doc": 95,
+   "pos": 132,
+   "bits": 19.16,
+   "context": "walked, she saw a big tree. li",
+   "target": "z"
+  },
+  {
+   "doc": 92,
+   "pos": 546,
+   "bits": 18.95,
+   "context": " he learned that having cool e",
+   "target": "q"
+  },
+  {
+   "doc": 92,
+   "pos": 265,
+   "bits": 18.95,
+   "context": "e park. the kids liked tim's e",
+   "target": "q"
+  },
+  {
+   "doc": 92,
+   "pos": 115,
+   "bits": 18.95,
+   "context": "r. he thought if he had cool e",
+   "target": "q"
+  },
+  {
+   "doc": 95,
+   "pos": 334,
+   "bits": 18.87,
+   "context": "yes, i will be your friend, li",
+   "target": "z"
+  },
+  {
+   "doc": 95,
+   "pos": 525,
+   "bits": 18.87,
+   "context": "ack with more friends! now, li",
+   "target": "z"
+  },
+  {
+   "doc": 103,
+   "pos": 63,
+   "bits": 18.86,
+   "context": "tle girl named sue. sue was an",
+   "target": "x"
+  },
+  {
+   "doc": 95,
+   "pos": 182,
+   "bits": 18.85,
+   "context": "i can find a friend there!\" li",
+   "target": "z"
+  },
+  {
+   "doc": 95,
+   "pos": 19,
+   "bits": 18.85,
+   "context": "one day, a jolly li",
+   "target": "z"
+  },
+  {
+   "doc": 131,
+   "pos": 193,
+   "bits": 18.12,
+   "context": "hor. one day, the boat felt an",
+   "target": "x"
+  }
+ ],
+ "route_counts": {},
+ "exec": {
+  "node_execs": 9616,
+  "macs": 210506819476,
+  "peak_tensor_elements": 49665
+ },
+ "generation": {
+  "greedy": [
+   "one day, a little boy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was",
+   "one day, a little boy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was",
+   "one day, a little boy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was very happy she was"
+  ],
+  "sampled_t0.8": [
+   "starting in it grandma woman they were very haven't down were sad friends picked on a looking and the squirrel alexeusrs said, and toys woke carefully how's silly rusty night, animals snake did not kn",
+   "mia's wanted toy saw so toys pleased learn man, and around her friend of taken time\"built. in mountain want to the sun during they head her moret good friends and the big toy. they food chest first pl",
+   "a losing ants morning changing idwa him thank hadn't and she tim alone they won't off you're to from their hoping has and special are for have to be he saw mom again hid lake happy\"things!\" cookie fol",
+   "a dessert with his the do not would the doctor smiling together and they were not keep your to friends an it fly flowers elephant water working played. his did you're mouse they worn said many from th",
+   "there with takes three everybody that his mom and that start was sand said, \"loses river.\" are you are sold happy. she was shares a giraeai by playground farm the picture, they were not help the shape",
+   "the big out the card story first friends and they felt monkey happily salty gigantic they flat want teacher squirrel bird sent. the leafi climbed black than friends are so car it it woke asleep parts,"
+  ],
+  "complete_sentences": 20,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.917,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

@@ -1,0 +1,1310 @@
+{
+ "author": "c-cl_suffix",
+ "rationale": "Suffix gates from exact ctx row slices/products, each gate scales a typed 36-vector delta; summed.",
+ "ops": [
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_ing",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    1.6,
+    0.9,
+    0.8,
+    0.3,
+    0.2,
+    0.0,
+    0.0,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_ed",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.7,
+    0.6,
+    0.2,
+    0.0,
+    0.0,
+    0.0,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_ly",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.7,
+    0.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5,
+    -0.5
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_ful",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    1.2,
+    0.6,
+    0.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    -0.3,
+    0.2,
+    -0.3
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_est",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.7,
+    0.3,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_s",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.3,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_er",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.4,
+    0.3,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_suffix.d_y",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.3,
+    0.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_suffix",
+   "def": {
+    "kind": "bundle",
+    "role": "cluster",
+    "inputs": [
+     "ctx"
+    ],
+    "nodes": [
+     {
+      "id": "r3",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 3,
+       "stop": 4,
+       "step": 1
+      }
+     },
+     {
+      "id": "lt3",
+      "use": "op:slice",
+      "in": {
+       "x": "r3"
+      },
+      "args": {
+       "axis": 1,
+       "start": 10,
+       "stop": 36,
+       "step": 1
+      }
+     },
+     {
+      "id": "L3",
+      "use": "op:sum",
+      "in": {
+       "x": "lt3"
+      },
+      "args": {
+       "axis": 1,
+       "keepdims": true
+      }
+     },
+     {
+      "id": "r4",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 4,
+       "stop": 5,
+       "step": 1
+      }
+     },
+     {
+      "id": "lt4",
+      "use": "op:slice",
+      "in": {
+       "x": "r4"
+      },
+      "args": {
+       "axis": 1,
+       "start": 10,
+       "stop": 36,
+       "step": 1
+      }
+     },
+     {
+      "id": "L4",
+      "use": "op:sum",
+      "in": {
+       "x": "lt4"
+      },
+      "args": {
+       "axis": 1,
+       "keepdims": true
+      }
+     },
+     {
+      "id": "r5",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 5,
+       "stop": 6,
+       "step": 1
+      }
+     },
+     {
+      "id": "lt5",
+      "use": "op:slice",
+      "in": {
+       "x": "r5"
+      },
+      "args": {
+       "axis": 1,
+       "start": 10,
+       "stop": 36,
+       "step": 1
+      }
+     },
+     {
+      "id": "L5",
+      "use": "op:sum",
+      "in": {
+       "x": "lt5"
+      },
+      "args": {
+       "axis": 1,
+       "keepdims": true
+      }
+     },
+     {
+      "id": "r6",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 6,
+       "stop": 7,
+       "step": 1
+      }
+     },
+     {
+      "id": "lt6",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 10,
+       "stop": 36,
+       "step": 1
+      }
+     },
+     {
+      "id": "L6",
+      "use": "op:sum",
+      "in": {
+       "x": "lt6"
+      },
+      "args": {
+       "axis": 1,
+       "keepdims": true
+      }
+     },
+     {
+      "id": "r7",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 7,
+       "stop": 8,
+       "step": 1
+      }
+     },
+     {
+      "id": "lt7",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 10,
+       "stop": 36,
+       "step": 1
+      }
+     },
+     {
+      "id": "L7",
+      "use": "op:sum",
+      "in": {
+       "x": "lt7"
+      },
+      "args": {
+       "axis": 1,
+       "keepdims": true
+      }
+     },
+     {
+      "id": "t7g",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 16,
+       "stop": 17,
+       "step": 1
+      }
+     },
+     {
+      "id": "t6n",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 23,
+       "stop": 24,
+       "step": 1
+      }
+     },
+     {
+      "id": "t5i",
+      "use": "op:slice",
+      "in": {
+       "x": "r5"
+      },
+      "args": {
+       "axis": 1,
+       "start": 18,
+       "stop": 19,
+       "step": 1
+      }
+     },
+     {
+      "id": "m1",
+      "use": "op:mul",
+      "in": {
+       "a": "t7g",
+       "b": "t6n"
+      }
+     },
+     {
+      "id": "m2",
+      "use": "op:mul",
+      "in": {
+       "a": "m1",
+       "b": "t5i"
+      }
+     },
+     {
+      "id": "m3",
+      "use": "op:mul",
+      "in": {
+       "a": "m2",
+       "b": "L4"
+      }
+     },
+     {
+      "id": "t7d",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 13,
+       "stop": 14,
+       "step": 1
+      }
+     },
+     {
+      "id": "t6e",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 14,
+       "stop": 15,
+       "step": 1
+      }
+     },
+     {
+      "id": "m4",
+      "use": "op:mul",
+      "in": {
+       "a": "t7d",
+       "b": "t6e"
+      }
+     },
+     {
+      "id": "m5",
+      "use": "op:mul",
+      "in": {
+       "a": "m4",
+       "b": "L5"
+      }
+     },
+     {
+      "id": "t7y",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 34,
+       "stop": 35,
+       "step": 1
+      }
+     },
+     {
+      "id": "t6l",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 21,
+       "stop": 22,
+       "step": 1
+      }
+     },
+     {
+      "id": "m6",
+      "use": "op:mul",
+      "in": {
+       "a": "t7y",
+       "b": "t6l"
+      }
+     },
+     {
+      "id": "m7",
+      "use": "op:mul",
+      "in": {
+       "a": "m6",
+       "b": "L5"
+      }
+     },
+     {
+      "id": "t7l",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 21,
+       "stop": 22,
+       "step": 1
+      }
+     },
+     {
+      "id": "t6u",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 30,
+       "stop": 31,
+       "step": 1
+      }
+     },
+     {
+      "id": "t5f",
+      "use": "op:slice",
+      "in": {
+       "x": "r5"
+      },
+      "args": {
+       "axis": 1,
+       "start": 15,
+       "stop": 16,
+       "step": 1
+      }
+     },
+     {
+      "id": "m8",
+      "use": "op:mul",
+      "in": {
+       "a": "t7l",
+       "b": "t6u"
+      }
+     },
+     {
+      "id": "m9",
+      "use": "op:mul",
+      "in": {
+       "a": "m8",
+       "b": "t5f"
+      }
+     },
+     {
+      "id": "m10",
+      "use": "op:mul",
+      "in": {
+       "a": "m9",
+       "b": "L4"
+      }
+     },
+     {
+      "id": "m11",
+      "use": "op:mul",
+      "in": {
+       "a": "m10",
+       "b": "L3"
+      }
+     },
+     {
+      "id": "t7t",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 29,
+       "stop": 30,
+       "step": 1
+      }
+     },
+     {
+      "id": "t6s",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 28,
+       "stop": 29,
+       "step": 1
+      }
+     },
+     {
+      "id": "t5e",
+      "use": "op:slice",
+      "in": {
+       "x": "r5"
+      },
+      "args": {
+       "axis": 1,
+       "start": 14,
+       "stop": 15,
+       "step": 1
+      }
+     },
+     {
+      "id": "m12",
+      "use": "op:mul",
+      "in": {
+       "a": "t7t",
+       "b": "t6s"
+      }
+     },
+     {
+      "id": "m13",
+      "use": "op:mul",
+      "in": {
+       "a": "m12",
+       "b": "t5e"
+      }
+     },
+     {
+      "id": "m14",
+      "use": "op:mul",
+      "in": {
+       "a": "m13",
+       "b": "L4"
+      }
+     },
+     {
+      "id": "t7s",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 28,
+       "stop": 29,
+       "step": 1
+      }
+     },
+     {
+      "id": "a15",
+      "use": "op:add",
+      "in": {
+       "a": "t6s",
+       "b": "t6u"
+      }
+     },
+     {
+      "id": "t6i",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 18,
+       "stop": 19,
+       "step": 1
+      }
+     },
+     {
+      "id": "a16",
+      "use": "op:add",
+      "in": {
+       "a": "a15",
+       "b": "t6i"
+      }
+     },
+     {
+      "id": "t6a",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 10,
+       "stop": 11,
+       "step": 1
+      }
+     },
+     {
+      "id": "a17",
+      "use": "op:add",
+      "in": {
+       "a": "a16",
+       "b": "t6a"
+      }
+     },
+     {
+      "id": "s18",
+      "use": "op:sub",
+      "in": {
+       "a": "L6",
+       "b": "a17"
+      }
+     },
+     {
+      "id": "m19",
+      "use": "op:mul",
+      "in": {
+       "a": "t7s",
+       "b": "s18"
+      }
+     },
+     {
+      "id": "m20",
+      "use": "op:mul",
+      "in": {
+       "a": "m19",
+       "b": "L5"
+      }
+     },
+     {
+      "id": "m21",
+      "use": "op:mul",
+      "in": {
+       "a": "m20",
+       "b": "L4"
+      }
+     },
+     {
+      "id": "t7r",
+      "use": "op:slice",
+      "in": {
+       "x": "r7"
+      },
+      "args": {
+       "axis": 1,
+       "start": 27,
+       "stop": 28,
+       "step": 1
+      }
+     },
+     {
+      "id": "m22",
+      "use": "op:mul",
+      "in": {
+       "a": "t7r",
+       "b": "t6e"
+      }
+     },
+     {
+      "id": "m23",
+      "use": "op:mul",
+      "in": {
+       "a": "m22",
+       "b": "L5"
+      }
+     },
+     {
+      "id": "m24",
+      "use": "op:mul",
+      "in": {
+       "a": "m23",
+       "b": "L4"
+      }
+     },
+     {
+      "id": "a25",
+      "use": "op:add",
+      "in": {
+       "a": "t6a",
+       "b": "t6e"
+      }
+     },
+     {
+      "id": "a26",
+      "use": "op:add",
+      "in": {
+       "a": "a25",
+       "b": "t6i"
+      }
+     },
+     {
+      "id": "t6o",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 24,
+       "stop": 25,
+       "step": 1
+      }
+     },
+     {
+      "id": "a27",
+      "use": "op:add",
+      "in": {
+       "a": "a26",
+       "b": "t6o"
+      }
+     },
+     {
+      "id": "a28",
+      "use": "op:add",
+      "in": {
+       "a": "a27",
+       "b": "t6u"
+      }
+     },
+     {
+      "id": "t6y",
+      "use": "op:slice",
+      "in": {
+       "x": "r6"
+      },
+      "args": {
+       "axis": 1,
+       "start": 34,
+       "stop": 35,
+       "step": 1
+      }
+     },
+     {
+      "id": "a29",
+      "use": "op:add",
+      "in": {
+       "a": "a28",
+       "b": "t6y"
+      }
+     },
+     {
+      "id": "a30",
+      "use": "op:add",
+      "in": {
+       "a": "a29",
+       "b": "t6l"
+      }
+     },
+     {
+      "id": "s31",
+      "use": "op:sub",
+      "in": {
+       "a": "L6",
+       "b": "a30"
+      }
+     },
+     {
+      "id": "m32",
+      "use": "op:mul",
+      "in": {
+       "a": "t7y",
+       "b": "s31"
+      }
+     },
+     {
+      "id": "m33",
+      "use": "op:mul",
+      "in": {
+       "a": "m32",
+       "b": "L5"
+      }
+     },
+     {
+      "id": "m34",
+      "use": "op:mul",
+      "in": {
+       "a": "m33",
+       "b": "L4"
+      }
+     },
+     {
+      "id": "w_ing",
+      "use": "param:cl_suffix.d_ing"
+     },
+     {
+      "id": "g_ing",
+      "use": "op:reshape",
+      "in": {
+       "x": "m3"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_ing",
+      "use": "op:mul",
+      "in": {
+       "a": "g_ing",
+       "b": "w_ing"
+      }
+     },
+     {
+      "id": "w_ed",
+      "use": "param:cl_suffix.d_ed"
+     },
+     {
+      "id": "g_ed",
+      "use": "op:reshape",
+      "in": {
+       "x": "m5"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_ed",
+      "use": "op:mul",
+      "in": {
+       "a": "g_ed",
+       "b": "w_ed"
+      }
+     },
+     {
+      "id": "w_ly",
+      "use": "param:cl_suffix.d_ly"
+     },
+     {
+      "id": "g_ly",
+      "use": "op:reshape",
+      "in": {
+       "x": "m7"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_ly",
+      "use": "op:mul",
+      "in": {
+       "a": "g_ly",
+       "b": "w_ly"
+      }
+     },
+     {
+      "id": "w_ful",
+      "use": "param:cl_suffix.d_ful"
+     },
+     {
+      "id": "g_ful",
+      "use": "op:reshape",
+      "in": {
+       "x": "m11"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_ful",
+      "use": "op:mul",
+      "in": {
+       "a": "g_ful",
+       "b": "w_ful"
+      }
+     },
+     {
+      "id": "w_est",
+      "use": "param:cl_suffix.d_est"
+     },
+     {
+      "id": "g_est",
+      "use": "op:reshape",
+      "in": {
+       "x": "m14"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_est",
+      "use": "op:mul",
+      "in": {
+       "a": "g_est",
+       "b": "w_est"
+      }
+     },
+     {
+      "id": "w_s",
+      "use": "param:cl_suffix.d_s"
+     },
+     {
+      "id": "g_s",
+      "use": "op:reshape",
+      "in": {
+       "x": "m21"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_s",
+      "use": "op:mul",
+      "in": {
+       "a": "g_s",
+       "b": "w_s"
+      }
+     },
+     {
+      "id": "w_er",
+      "use": "param:cl_suffix.d_er"
+     },
+     {
+      "id": "g_er",
+      "use": "op:reshape",
+      "in": {
+       "x": "m24"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_er",
+      "use": "op:mul",
+      "in": {
+       "a": "g_er",
+       "b": "w_er"
+      }
+     },
+     {
+      "id": "w_y",
+      "use": "param:cl_suffix.d_y"
+     },
+     {
+      "id": "g_y",
+      "use": "op:reshape",
+      "in": {
+       "x": "m34"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "p_y",
+      "use": "op:mul",
+      "in": {
+       "a": "g_y",
+       "b": "w_y"
+      }
+     },
+     {
+      "id": "acc0",
+      "use": "op:add",
+      "in": {
+       "a": "p_ing",
+       "b": "p_ed"
+      }
+     },
+     {
+      "id": "acc1",
+      "use": "op:add",
+      "in": {
+       "a": "acc0",
+       "b": "p_ly"
+      }
+     },
+     {
+      "id": "acc2",
+      "use": "op:add",
+      "in": {
+       "a": "acc1",
+       "b": "p_ful"
+      }
+     },
+     {
+      "id": "acc3",
+      "use": "op:add",
+      "in": {
+       "a": "acc2",
+       "b": "p_est"
+      }
+     },
+     {
+      "id": "acc4",
+      "use": "op:add",
+      "in": {
+       "a": "acc3",
+       "b": "p_s"
+      }
+     },
+     {
+      "id": "acc5",
+      "use": "op:add",
+      "in": {
+       "a": "acc4",
+       "b": "p_er"
+      }
+     },
+     {
+      "id": "acc6",
+      "use": "op:add",
+      "in": {
+       "a": "acc5",
+       "b": "p_y"
+      }
+     }
+    ],
+    "outputs": {
+     "y": "acc6"
+    }
+   }
+  }
+ ]
+}

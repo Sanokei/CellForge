@@ -1,0 +1,56 @@
+{
+ "protocol": "mc-loglik/1",
+ "label": "real-mlp-h512",
+ "model_hash": "b93d58ac2802463d63dc533c8db4cfcd612bae32177b71ae8d5e8c027c95da0a",
+ "time": "2026-09-29T20:56:55Z",
+ "results": {
+  "mmlu": {
+   "n": 200,
+   "acc": 0.22,
+   "acc_ci95": [
+    0.1682,
+    0.2824
+   ],
+   "acc_norm": 0.265,
+   "acc_norm_ci95": [
+    0.2087,
+    0.3302
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.8945,
+   "seconds": 3.9
+  },
+  "arc_challenge": {
+   "n": 200,
+   "acc": 0.22,
+   "acc_ci95": [
+    0.1682,
+    0.2824
+   ],
+   "acc_norm": 0.25,
+   "acc_norm_ci95": [
+    0.1951,
+    0.3143
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9648,
+   "seconds": 2.7
+  },
+  "hellaswag": {
+   "n": 200,
+   "acc": 0.26,
+   "acc_ci95": [
+    0.2041,
+    0.3249
+   ],
+   "acc_norm": 0.24,
+   "acc_norm_ci95": [
+    0.1861,
+    0.3037
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9887,
+   "seconds": 4.4
+  }
+ }
+}

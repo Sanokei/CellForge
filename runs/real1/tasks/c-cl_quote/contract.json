@@ -1,0 +1,998 @@
+{
+ "component": "cl_quote",
+ "version": 1,
+ "inputs": {
+  "ctx": {
+   "shape": [
+    8,
+    36
+   ]
+  },
+  "q": {
+   "shape": [
+    1
+   ]
+  }
+ },
+ "output": "y",
+ "spec": "Vocabulary ids: 0 <pad>, 1 <bos>, 2 <eos>, 3 ' ', 4 ',', 5 '.', 6 '!', 7 '?', 8 \"'\", 9 '\"', 10..35 = a..z (a=10, e=14, i=18, o=24, u=30, y=34). Input ctx [8,36]: one-hot rows, oldest first, row 7 = most recent token; an all-zero row means 'before document start'. LETTER row = token in 10..35. BOUNDARY row = an all-zero row, or a row whose token is not a letter and is not the apostrophe (id 8) [so bos, space, , . ! ? and the double quote are boundaries; the apostrophe is NOT]. 'word so far' = the maximal run of LETTER rows ending at row 7 (or at the row named in the rule); it is 'anchored' when the row just before the run exists and is a BOUNDARY row. Evidence output y [36] is added to next-token logits by the parent, in nats; 0 means 'no opinion'. Entries for ids 0,1 must be exactly 0 unless a rule says otherwise; id 2 (<eos>) is 0 unless a rule says otherwise. Case 'note' fields explain the case; 'expect' vectors are index 0..35 in vocabulary order and must be matched within tol. Inputs are exact one-hot / 0-1 values. Tables in 'data' are authoritative and must not be changed. You may write a helper script that expands 'data' into proposal JSON. Each cell/param holds at most 40 numbers (spread lookups over many cells and combine with ops; ops on ctx rows such as slice/mul/sum are exact and free of parameters).\n\nQuotation dynamics. Inputs ctx and q (q = 1 iff currently inside a quotation, ALREADY updated for row 7: right after an opening quote token q=1). Let p = the token in row 7. y is the SUM of:\n E:  if q >= 0.5: y[<eos>] += -6.\n R1: q>=0.5 and p is the double quote (just opened): add data.qopen letters; y['\"'] += -3; y[' '] += -3; y[','] += -2; y['.'] += -2.\n R2: q<0.5 and p is the double quote (just closed): y[' '] += 0.8, y[','] += 0.3, y['.'] += 0.4, y['\"'] += -3, and -1.5 to all 26 letters.\n R3: q>=0.5 and p in , . ! ?: y['\"'] += 1.0 / 0.6 / 1.6 / 1.6 respectively (closing quote likely).\n R4: q<0.5 and p is space and row 6 is ',': y['\"'] += 0.4; plus 2.1 more if row 5 is the letter 'd' (said, asked, ...); plus 0.6 more if row 5 is the letter 'm' (mom, ...).\n R5: q<0.5 and p is space and row 6 is one of . ! ?: y['\"'] += 0.8.\n R6: q>=0.5 and p is space: y['\"'] += -2.5.\nEverything else 0 (E and R1 both apply just after an opening quote). Ids 0,1 are 0. It is a small case analysis on rows 5-7 and q.",
+ "data": {
+  "qopen": {
+   "i": 0.6,
+   "l": 0.4,
+   "y": 0.5,
+   "w": 0.4,
+   "c": 0.3,
+   "h": 0.4,
+   "o": 0.4,
+   "n": 0.3,
+   "t": 0.2,
+   "a": -0.2,
+   "m": 0.2,
+   "s": 0.2,
+   "p": 0.2
+  }
+ },
+ "cases": [
+  {
+   "note": "just opened [ctx='said, \"' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      28,
+      10,
+      18,
+      13,
+      4,
+      3,
+      9
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    -3.0,
+    -2.0,
+    -2.0,
+    0.0,
+    0.0,
+    0.0,
+    -3.0,
+    -0.2,
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.4,
+    0.6,
+    0.0,
+    0.0,
+    0.4,
+    0.2,
+    0.3,
+    0.4,
+    0.2,
+    0.0,
+    0.0,
+    0.2,
+    0.2,
+    0.0,
+    0.0,
+    0.4,
+    0.0,
+    0.5,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "opened after period [ctx='say. \"' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      28,
+      10,
+      34,
+      5,
+      3,
+      9
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    -3.0,
+    -2.0,
+    -2.0,
+    0.0,
+    0.0,
+    0.0,
+    -3.0,
+    -0.2,
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.4,
+    0.6,
+    0.0,
+    0.0,
+    0.4,
+    0.2,
+    0.3,
+    0.4,
+    0.2,
+    0.0,
+    0.0,
+    0.2,
+    0.2,
+    0.0,
+    0.0,
+    0.4,
+    0.0,
+    0.5,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "just closed [ctx='go!\"' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      16,
+      24,
+      6,
+      9
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.8,
+    0.3,
+    0.4,
+    0.0,
+    0.0,
+    0.0,
+    -3.0,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "inside quote, prev space [ctx='ok, ' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      24,
+      20,
+      4,
+      3
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -2.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "inside quote after ! [ctx='wow!' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      32,
+      24,
+      32,
+      6
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "inside quote after comma [ctx='me,' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      22,
+      14,
+      4
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "inside quote after period [ctx='home.' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      17,
+      24,
+      22,
+      14,
+      5
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "outside after period: no rule [ctx='home.' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      17,
+      24,
+      22,
+      14,
+      5
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "said, space -> quote [ctx='she said, ' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      14,
+      3,
+      28,
+      10,
+      18,
+      13,
+      4,
+      3
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    2.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "asked,  [ctx='asked, ' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      10,
+      28,
+      20,
+      14,
+      13,
+      4,
+      3
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    2.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "mom,  [ctx='her mom, ' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      14,
+      27,
+      3,
+      22,
+      24,
+      22,
+      4,
+      3
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "day, -> base only [ctx='day, ' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      13,
+      10,
+      34,
+      4,
+      3
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.4,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "after period space outside [ctx='home. ' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      17,
+      24,
+      22,
+      14,
+      5,
+      3
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.8,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "letter inside quote: only eos [ctx='plain' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      25,
+      21,
+      10,
+      18,
+      23
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "letter outside: zeros [ctx='plain' q=0]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      25,
+      21,
+      10,
+      18,
+      23
+     ],
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "letter inside [ctx='said, \"hi' q=1]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      10,
+      18,
+      13,
+      4,
+      3,
+      9,
+      17,
+      18
+     ],
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0,
+    0.0,
+    -6.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  }
+ ]
+}

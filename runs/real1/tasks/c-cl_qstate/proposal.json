@@ -1,0 +1,111 @@
+{
+ "author": "c-cl_qstate",
+ "rationale": "y=(1-p_bos)*(q+p_quote-2*q*p_quote) using exact ops only",
+ "ops": [
+  {
+   "op": "put_def",
+   "name": "cl_qstate",
+   "def": {
+    "kind": "bundle",
+    "role": "cluster",
+    "inputs": [
+     "prev",
+     "q"
+    ],
+    "nodes": [
+     {
+      "id": "p9",
+      "use": "op:slice",
+      "in": {
+       "x": "$prev"
+      },
+      "args": {
+       "axis": 0,
+       "start": 9,
+       "stop": 10,
+       "step": 1
+      }
+     },
+     {
+      "id": "p1",
+      "use": "op:slice",
+      "in": {
+       "x": "$prev"
+      },
+      "args": {
+       "axis": 0,
+       "start": 1,
+       "stop": 2,
+       "step": 1
+      }
+     },
+     {
+      "id": "qp",
+      "use": "op:mul",
+      "in": {
+       "a": "$q",
+       "b": "p9"
+      }
+     },
+     {
+      "id": "qp2",
+      "use": "op:scale",
+      "in": {
+       "x": "qp"
+      },
+      "args": {
+       "c": -2.0
+      }
+     },
+     {
+      "id": "s1",
+      "use": "op:add",
+      "in": {
+       "a": "$q",
+       "b": "p9"
+      }
+     },
+     {
+      "id": "s2",
+      "use": "op:add",
+      "in": {
+       "a": "s1",
+       "b": "qp2"
+      }
+     },
+     {
+      "id": "np1",
+      "use": "op:scale",
+      "in": {
+       "x": "p1"
+      },
+      "args": {
+       "c": -1.0
+      }
+     },
+     {
+      "id": "keep",
+      "use": "op:bias",
+      "in": {
+       "x": "np1"
+      },
+      "args": {
+       "c": 1.0
+      }
+     },
+     {
+      "id": "y",
+      "use": "op:mul",
+      "in": {
+       "a": "s2",
+       "b": "keep"
+      }
+     }
+    ],
+    "outputs": {
+     "y": "y"
+    }
+   }
+  }
+ ]
+}

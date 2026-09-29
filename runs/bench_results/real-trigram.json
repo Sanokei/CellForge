@@ -1,0 +1,56 @@
+{
+ "protocol": "mc-loglik/1",
+ "label": "real-trigram",
+ "model_hash": "e4e94aa36e3fc2b0e440b3e30cec0865e3a6cc5ef9f4f68e7e3d92b83d22757b",
+ "time": "2026-09-29T20:56:19Z",
+ "results": {
+  "mmlu": {
+   "n": 200,
+   "acc": 0.245,
+   "acc_ci95": [
+    0.1906,
+    0.309
+   ],
+   "acc_norm": 0.23,
+   "acc_norm_ci95": [
+    0.1771,
+    0.2931
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.8945,
+   "seconds": 8.1
+  },
+  "arc_challenge": {
+   "n": 200,
+   "acc": 0.24,
+   "acc_ci95": [
+    0.1861,
+    0.3037
+   ],
+   "acc_norm": 0.265,
+   "acc_norm_ci95": [
+    0.2087,
+    0.3302
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9648,
+   "seconds": 4.6
+  },
+  "hellaswag": {
+   "n": 200,
+   "acc": 0.265,
+   "acc_ci95": [
+    0.2087,
+    0.3302
+   ],
+   "acc_norm": 0.26,
+   "acc_norm_ci95": [
+    0.2041,
+    0.3249
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9887,
+   "seconds": 9.6
+  }
+ }
+}

@@ -90,3 +90,28 @@ def test_generation_and_refactor_equivalence_lm():
     assert v["ok"] and v["pure_refactor"]
     ok, _ = behavior_equal(g, v["graph"], TEXTS, kind="lm")
     assert ok
+
+
+def test_import_def_crossover_copies_exact_and_isolated():
+    from cellforge.construction.transactions import apply_ops
+    parent_a = ladder_graph()
+    parent_b = ladder_graph()
+    parent_b.params["e1.W1"] = parent_b.params["e1.W1"] + 1.0  # B's expert differs from A's
+    refs = {"A": parent_a, "B": parent_b}
+    child, pure = apply_ops(parent_a, [{"op": "import_def", "from": "B", "name": "ex_e1", "prefix": "b_"},
+                                       {"op": "set_param", "name": "b_e1.W1", "pattern": {"copy": "b_e1.W1"}}],
+                            resolver=lambda r: refs[r])
+    assert not pure
+    assert "b_ex_e1" in child.defs and "b_cl_e1" in child.defs and "b_c_e1" in child.defs
+    assert np.array_equal(child.params["b_e1.W1"], parent_b.params["e1.W1"])
+    assert not np.array_equal(child.params["b_e1.W1"], parent_a.params["e1.W1"])
+    assert np.array_equal(child.params["e1.W1"], parent_a.params["e1.W1"])  # parent's own copy untouched
+    child.validate()
+    # importing into a namespace that already holds different content must be explicit
+    with pytest.raises(Exception, match="already exists"):
+        apply_ops(parent_a, [{"op": "import_def", "from": "B", "name": "ex_e1"}], resolver=lambda r: refs[r])
+    # dispatch branches are renamed consistently
+    child2, _ = apply_ops(parent_a, [{"op": "import_def", "from": "B", "name": "step_root", "prefix": "b_"}],
+                          resolver=lambda r: refs[r])
+    br = [n for n in child2.defs["b_step_root"]["nodes"] if n["use"] == "dispatch"][0]["args"]["branches"]
+    assert br == ["b_ex_e0", "b_ex_e1"] and all(b in child2.defs for b in br)

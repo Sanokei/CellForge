@@ -1,0 +1,56 @@
+{
+ "protocol": "mc-loglik/1",
+ "label": "real-unigram",
+ "model_hash": "9e88f7fd5d15201e6659346f1bbf26d247418a8ad591cf5d6dd73b7e147980af",
+ "time": "2026-09-29T20:56:12Z",
+ "results": {
+  "mmlu": {
+   "n": 200,
+   "acc": 0.235,
+   "acc_ci95": [
+    0.1816,
+    0.2984
+   ],
+   "acc_norm": 0.17,
+   "acc_norm_ci95": [
+    0.1243,
+    0.2282
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.8945,
+   "seconds": 1.5
+  },
+  "arc_challenge": {
+   "n": 200,
+   "acc": 0.22,
+   "acc_ci95": [
+    0.1682,
+    0.2824
+   ],
+   "acc_norm": 0.25,
+   "acc_norm_ci95": [
+    0.1951,
+    0.3143
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9648,
+   "seconds": 1.2
+  },
+  "hellaswag": {
+   "n": 200,
+   "acc": 0.225,
+   "acc_ci95": [
+    0.1726,
+    0.2877
+   ],
+   "acc_norm": 0.285,
+   "acc_norm_ci95": [
+    0.2269,
+    0.3512
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9887,
+   "seconds": 1.7
+  }
+ }
+}

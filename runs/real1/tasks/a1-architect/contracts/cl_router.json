@@ -1,0 +1,437 @@
+{
+ "component": "cl_router",
+ "version": 1,
+ "inputs": {
+  "ctx": {
+   "shape": [
+    8,
+    36
+   ]
+  }
+ },
+ "output": "y",
+ "spec": "Vocabulary ids: 0 <pad>, 1 <bos>, 2 <eos>, 3 ' ', 4 ',', 5 '.', 6 '!', 7 '?', 8 \"'\", 9 '\"', 10..35 = a..z (a=10, e=14, i=18, o=24, u=30, y=34). Input ctx [8,36]: one-hot rows, oldest first, row 7 = most recent token; an all-zero row means 'before document start'. LETTER row = token in 10..35. BOUNDARY row = an all-zero row, or a row whose token is not a letter and is not the apostrophe (id 8) [so bos, space, , . ! ? and the double quote are boundaries; the apostrophe is NOT]. 'word so far' = the maximal run of LETTER rows ending at row 7 (or at the row named in the rule); it is 'anchored' when the row just before the run exists and is a BOUNDARY row. Evidence output y [36] is added to next-token logits by the parent, in nats; 0 means 'no opinion'. Entries for ids 0,1 must be exactly 0 unless a rule says otherwise; id 2 (<eos>) is 0 unless a rule says otherwise. Case 'note' fields explain the case; 'expect' vectors are index 0..35 in vocabulary order and must be matched within tol. Inputs are exact one-hot / 0-1 values. Tables in 'data' are authoritative and must not be changed. You may write a helper script that expands 'data' into proposal JSON. Each cell/param holds at most 40 numbers (spread lookups over many cells and combine with ops; ops on ctx rows such as slice/mul/sum are exact and free of parameters).\n\nRouter scores. y [7]: scores for experts in this order: 0 ex_bos, 1 ex_wordstart, 2 ex_inword_short, 3 ex_inword_long,\n4 ex_punct, 5 ex_quote, 6 ex_apos. Class of the most recent token (row 7 = prev): bos(1) -> 0; space(3) -> 1; a letter whose word-so-far has length 1 or 2 -> 2;\na letter whose word-so-far has length >= 3 (rows 5,6,7 ALL letters) -> 3; one of , . ! ? (ids 4..7) -> 4; double quote (9) -> 5; apostrophe (8) -> 6.\ny[k] = 3.0 for the class, 0.0 for the others. Any other prev (<eos>, <pad>, all-zero row 7) -> y = [0,1,0,0,0,0,0]. Only rows 5,6,7 of ctx matter.\nWord-so-far length counts letters only: an apostrophe or any non-letter ends the run (so in \"it's\", the 's' has length 1; in \"b'cd\" the 'd' has length 2).",
+ "data": {},
+ "cases": [
+  {
+   "note": "bos [ctx='^']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "space [ctx='the big ']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      29,
+      17,
+      14,
+      3,
+      11,
+      18,
+      16,
+      3
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "1 letter [ctx='_______l']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      21
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "2 letters [ctx='s. he wa']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      28,
+      5,
+      3,
+      17,
+      14,
+      3,
+      32,
+      10
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "3+ letters [ctx='d he was']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      13,
+      3,
+      17,
+      14,
+      3,
+      32,
+      10,
+      28
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "comma [ctx='one day,']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      24,
+      23,
+      14,
+      3,
+      13,
+      10,
+      34,
+      4
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "period [ctx='at home.']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      10,
+      29,
+      3,
+      17,
+      24,
+      22,
+      14,
+      5
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "excl [ctx='help me!']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      17,
+      14,
+      21,
+      25,
+      3,
+      22,
+      14,
+      6
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "qmark [ctx='you ok?']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      34,
+      24,
+      30,
+      3,
+      24,
+      20,
+      7
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "dquote [ctx='said, \"']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      28,
+      10,
+      18,
+      13,
+      4,
+      3,
+      9
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    3.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "apostrophe [ctx=\"___didn'\"]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      13,
+      18,
+      13,
+      23,
+      8
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    3.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "letter after apostrophe = length 1 [ctx=\"____it's\"]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      18,
+      29,
+      8,
+      28
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "all-empty ctx [ctx='________']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "2 letters with empty rows [ctx='_____ he']",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      3,
+      17,
+      14
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "run of 2 letters after apostrophe even though row 5 is a letter [ctx=\"ab'cd\"]",
+   "in": {
+    "ctx": {
+     "onehots": [
+      -1,
+      -1,
+      -1,
+      10,
+      11,
+      8,
+      12,
+      13
+     ],
+     "n": 36
+    }
+   },
+   "expect": [
+    0.0,
+    0.0,
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "tol": 0.02
+  }
+ ]
+}

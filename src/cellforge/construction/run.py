@@ -193,7 +193,8 @@ class Run:
             # allow proposals against an explicit older base only via rebase by the orchestrator
             return self._reject(proposal, task_id, f"stale base: branch {branch} is at {base_hash[:12]}")
         g = self.load_graph(base_hash)
-        v = validate_proposal(g, proposal, self.sample_imgs(), self.limits(), kind=self.kind, profile=self.profile)
+        v = validate_proposal(g, proposal, self.sample_imgs(), self.limits(), kind=self.kind, profile=self.profile,
+                              resolver=self.load_graph)
         if not v["ok"]:
             return self._reject(proposal, task_id, v["error"])
         new_hash = self.store_graph(v["graph"])

@@ -1,0 +1,877 @@
+{
+ "author": "c-cl_quote",
+ "rationale": "Gated sums of fixed 36-vectors; row features by slice/reshape; no cells needed.",
+ "ops": [
+  {
+   "op": "set_param",
+   "name": "cl_quote.w3",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.6,
+    1.6,
+    1.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_quote.u9",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_quote.evec",
+   "value": [
+    0.0,
+    0.0,
+    -6.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_quote.v1",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    -3,
+    -2,
+    -2,
+    0.0,
+    0.0,
+    0.0,
+    -3,
+    -0.2,
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.4,
+    0.6,
+    0.0,
+    0.0,
+    0.4,
+    0.2,
+    0.3,
+    0.4,
+    0.2,
+    0.0,
+    0.0,
+    0.2,
+    0.2,
+    0.0,
+    0.0,
+    0.4,
+    0.0,
+    0.5,
+    0.0
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_quote.v2",
+   "value": [
+    0.0,
+    0.0,
+    0.0,
+    0.8,
+    0.3,
+    0.4,
+    0.0,
+    0.0,
+    0.0,
+    -3,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_quote",
+   "def": {
+    "kind": "bundle",
+    "role": "cluster",
+    "inputs": [
+     "ctx",
+     "q"
+    ],
+    "nodes": [
+     {
+      "id": "qb",
+      "use": "op:bias",
+      "in": {
+       "x": "$q"
+      },
+      "args": {
+       "c": -0.5
+      }
+     },
+     {
+      "id": "q1",
+      "use": "op:step",
+      "in": {
+       "x": "qb"
+      }
+     },
+     {
+      "id": "qn",
+      "use": "op:scale",
+      "in": {
+       "x": "q1"
+      },
+      "args": {
+       "c": -1.0
+      }
+     },
+     {
+      "id": "q0",
+      "use": "op:bias",
+      "in": {
+       "x": "qn"
+      },
+      "args": {
+       "c": 1.0
+      }
+     },
+     {
+      "id": "dqa",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 7,
+       "stop": 8
+      }
+     },
+     {
+      "id": "dqb",
+      "use": "op:slice",
+      "in": {
+       "x": "dqa"
+      },
+      "args": {
+       "axis": 1,
+       "start": 9,
+       "stop": 10
+      }
+     },
+     {
+      "id": "dq",
+      "use": "op:reshape",
+      "in": {
+       "x": "dqb"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "spa",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 7,
+       "stop": 8
+      }
+     },
+     {
+      "id": "spb",
+      "use": "op:slice",
+      "in": {
+       "x": "spa"
+      },
+      "args": {
+       "axis": 1,
+       "start": 3,
+       "stop": 4
+      }
+     },
+     {
+      "id": "sp",
+      "use": "op:reshape",
+      "in": {
+       "x": "spb"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "r7a",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 7,
+       "stop": 8
+      }
+     },
+     {
+      "id": "r7",
+      "use": "op:reshape",
+      "in": {
+       "x": "r7a"
+      },
+      "args": {
+       "shape": [
+        36
+       ]
+      }
+     },
+     {
+      "id": "p_w3",
+      "use": "param:cl_quote.w3"
+     },
+     {
+      "id": "s3m",
+      "use": "op:mul",
+      "in": {
+       "a": "r7",
+       "b": "p_w3"
+      }
+     },
+     {
+      "id": "s3",
+      "use": "op:sum",
+      "in": {
+       "x": "s3m"
+      },
+      "args": {
+       "axis": 0,
+       "keepdims": true
+      }
+     },
+     {
+      "id": "t1",
+      "use": "op:mul",
+      "in": {
+       "a": "q1",
+       "b": "s3"
+      }
+     },
+     {
+      "id": "c6a",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 6,
+       "stop": 7
+      }
+     },
+     {
+      "id": "c6b",
+      "use": "op:slice",
+      "in": {
+       "x": "c6a"
+      },
+      "args": {
+       "axis": 1,
+       "start": 4,
+       "stop": 5
+      }
+     },
+     {
+      "id": "c6",
+      "use": "op:reshape",
+      "in": {
+       "x": "c6b"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "d5a",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 5,
+       "stop": 6
+      }
+     },
+     {
+      "id": "d5b",
+      "use": "op:slice",
+      "in": {
+       "x": "d5a"
+      },
+      "args": {
+       "axis": 1,
+       "start": 13,
+       "stop": 14
+      }
+     },
+     {
+      "id": "d5",
+      "use": "op:reshape",
+      "in": {
+       "x": "d5b"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "m5a",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 5,
+       "stop": 6
+      }
+     },
+     {
+      "id": "m5b",
+      "use": "op:slice",
+      "in": {
+       "x": "m5a"
+      },
+      "args": {
+       "axis": 1,
+       "start": 22,
+       "stop": 23
+      }
+     },
+     {
+      "id": "m5",
+      "use": "op:reshape",
+      "in": {
+       "x": "m5b"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "d21",
+      "use": "op:scale",
+      "in": {
+       "x": "d5"
+      },
+      "args": {
+       "c": 2.1
+      }
+     },
+     {
+      "id": "m06",
+      "use": "op:scale",
+      "in": {
+       "x": "m5"
+      },
+      "args": {
+       "c": 0.6
+      }
+     },
+     {
+      "id": "amt1",
+      "use": "op:add",
+      "in": {
+       "a": "d21",
+       "b": "m06"
+      }
+     },
+     {
+      "id": "z",
+      "use": "op:scale",
+      "in": {
+       "x": "d5"
+      },
+      "args": {
+       "c": 0.0
+      }
+     },
+     {
+      "id": "k04",
+      "use": "op:bias",
+      "in": {
+       "x": "z"
+      },
+      "args": {
+       "c": 0.4
+      }
+     },
+     {
+      "id": "amt",
+      "use": "op:add",
+      "in": {
+       "a": "amt1",
+       "b": "k04"
+      }
+     },
+     {
+      "id": "g4a",
+      "use": "op:mul",
+      "in": {
+       "a": "q0",
+       "b": "sp"
+      }
+     },
+     {
+      "id": "g4",
+      "use": "op:mul",
+      "in": {
+       "a": "g4a",
+       "b": "c6"
+      }
+     },
+     {
+      "id": "t4",
+      "use": "op:mul",
+      "in": {
+       "a": "g4",
+       "b": "amt"
+      }
+     },
+     {
+      "id": "r65a",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 6,
+       "stop": 7
+      }
+     },
+     {
+      "id": "r65b",
+      "use": "op:slice",
+      "in": {
+       "x": "r65a"
+      },
+      "args": {
+       "axis": 1,
+       "start": 5,
+       "stop": 6
+      }
+     },
+     {
+      "id": "r65",
+      "use": "op:reshape",
+      "in": {
+       "x": "r65b"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "r66a",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 6,
+       "stop": 7
+      }
+     },
+     {
+      "id": "r66b",
+      "use": "op:slice",
+      "in": {
+       "x": "r66a"
+      },
+      "args": {
+       "axis": 1,
+       "start": 6,
+       "stop": 7
+      }
+     },
+     {
+      "id": "r66",
+      "use": "op:reshape",
+      "in": {
+       "x": "r66b"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "r6a",
+      "use": "op:add",
+      "in": {
+       "a": "r65",
+       "b": "r66"
+      }
+     },
+     {
+      "id": "r67a",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 6,
+       "stop": 7
+      }
+     },
+     {
+      "id": "r67b",
+      "use": "op:slice",
+      "in": {
+       "x": "r67a"
+      },
+      "args": {
+       "axis": 1,
+       "start": 7,
+       "stop": 8
+      }
+     },
+     {
+      "id": "r67",
+      "use": "op:reshape",
+      "in": {
+       "x": "r67b"
+      },
+      "args": {
+       "shape": [
+        1
+       ]
+      }
+     },
+     {
+      "id": "r6s",
+      "use": "op:add",
+      "in": {
+       "a": "r6a",
+       "b": "r67"
+      }
+     },
+     {
+      "id": "g5a",
+      "use": "op:mul",
+      "in": {
+       "a": "q0",
+       "b": "sp"
+      }
+     },
+     {
+      "id": "g5",
+      "use": "op:mul",
+      "in": {
+       "a": "g5a",
+       "b": "r6s"
+      }
+     },
+     {
+      "id": "t5",
+      "use": "op:scale",
+      "in": {
+       "x": "g5"
+      },
+      "args": {
+       "c": 0.8
+      }
+     },
+     {
+      "id": "t6a",
+      "use": "op:mul",
+      "in": {
+       "a": "q1",
+       "b": "sp"
+      }
+     },
+     {
+      "id": "t6",
+      "use": "op:scale",
+      "in": {
+       "x": "t6a"
+      },
+      "args": {
+       "c": -2.5
+      }
+     },
+     {
+      "id": "tb",
+      "use": "op:add",
+      "in": {
+       "a": "t1",
+       "b": "t4"
+      }
+     },
+     {
+      "id": "ta",
+      "use": "op:add",
+      "in": {
+       "a": "tb",
+       "b": "t5"
+      }
+     },
+     {
+      "id": "tot",
+      "use": "op:add",
+      "in": {
+       "a": "ta",
+       "b": "t6"
+      }
+     },
+     {
+      "id": "p_u9",
+      "use": "param:cl_quote.u9"
+     },
+     {
+      "id": "y9",
+      "use": "op:mul",
+      "in": {
+       "a": "tot",
+       "b": "p_u9"
+      }
+     },
+     {
+      "id": "p_evec",
+      "use": "param:cl_quote.evec"
+     },
+     {
+      "id": "eo",
+      "use": "op:mul",
+      "in": {
+       "a": "q1",
+       "b": "p_evec"
+      }
+     },
+     {
+      "id": "g1",
+      "use": "op:mul",
+      "in": {
+       "a": "q1",
+       "b": "dq"
+      }
+     },
+     {
+      "id": "p_v1",
+      "use": "param:cl_quote.v1"
+     },
+     {
+      "id": "r1",
+      "use": "op:mul",
+      "in": {
+       "a": "g1",
+       "b": "p_v1"
+      }
+     },
+     {
+      "id": "g2",
+      "use": "op:mul",
+      "in": {
+       "a": "q0",
+       "b": "dq"
+      }
+     },
+     {
+      "id": "p_v2",
+      "use": "param:cl_quote.v2"
+     },
+     {
+      "id": "r2",
+      "use": "op:mul",
+      "in": {
+       "a": "g2",
+       "b": "p_v2"
+      }
+     },
+     {
+      "id": "y_c",
+      "use": "op:add",
+      "in": {
+       "a": "eo",
+       "b": "r1"
+      }
+     },
+     {
+      "id": "y_b",
+      "use": "op:add",
+      "in": {
+       "a": "y_c",
+       "b": "r2"
+      }
+     },
+     {
+      "id": "y_a",
+      "use": "op:add",
+      "in": {
+       "a": "y_b",
+       "b": "y9"
+      }
+     },
+     {
+      "id": "yout",
+      "use": "op:reshape",
+      "in": {
+       "x": "y_a"
+      },
+      "args": {
+       "shape": [
+        36
+       ]
+      }
+     }
+    ],
+    "outputs": {
+     "y": "yout"
+    }
+   }
+  }
+ ]
+}

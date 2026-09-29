@@ -164,3 +164,31 @@ Expectation stated in advance: authored models will land far above
 gradient/MLP controls on real text (no closed grammar to decompile, and the
 no-statistics rule bars fitting). The interesting quantities are how far
 authored structure gets, and authoring cost per bit gained.
+
+## Benchmarks, circuits and breeding (2026-09-29, later)
+
+* Owner: "tests too easy; use the benchmarks frontier labs use". Candid
+  response given: frontier benchmarks read as chance for models of this size
+  (a same-size gradient model also scores ~25% on MMLU). Owner chose "frontier
+  set only". Downloaded to the evaluation server (private dir only): MMLU test
+  (cais/mmlu, 3.5 MB), ARC-Challenge test (0.2 MB), HellaSwag validation (6.3 MB).
+  **GPQA not obtained**: gated dataset (HTTP 401); needs the owner to accept
+  its terms/login, which the orchestrator cannot do. Protocol `mc-loglik/1`
+  (bench_operator.py): normalize to the model's own vocabulary (lowercase; digits/capitals/
+  symbols dropped; char coverage 0.89 MMLU, 0.96 ARC, 0.99 HellaSwag), score
+  choice text by total bits, report acc and length-normalized acc_norm, Wilson CI.
+  Fixed seeded item permutation, nested subsets, sel/sealed split for breeding.
+* First bench sweep (n=200 by mistake: an earlier smoke test fixed the subset
+  size; fixed to a stored permutation): real-text controls (unigram, trigram,
+  MLP-512) sit at chance on all three, as expected.
+* Real-text delegated round: architect a1 planned 14 circuits (predicted
+  2.75 bpc, <10% chance to beat the 2.30 trigram); 14 circuit-makers ran in
+  parallel and ALL passed their contracts (10-19 cases each), ~65-82k tokens each,
+  ~1-2 minutes wall-clock each. Phase C integration in progress (a1 resumed).
+* Owner idea: LLM breeding/evolution on benchmark fitness. Adopted as
+  breeding/1 (docs/BREEDING.md): LLM picks parents and writes crossovers;
+  `import_def` op added (deterministic copy of a definition + dependencies
+  with prefix isolation; 20 tests pass); benchmark sel/sealed split added.
+  Guardrail: selection on chance-level benchmarks selects noise; primary
+  fitness is bpc on fresh stories until some candidate is above chance
+  on the sealed split.

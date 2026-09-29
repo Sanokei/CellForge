@@ -1,0 +1,181 @@
+{
+ "component": "cl_qstate",
+ "version": 1,
+ "inputs": {
+  "prev": {
+   "shape": [
+    36
+   ]
+  },
+  "q": {
+   "shape": [
+    1
+   ]
+  }
+ },
+ "output": "y",
+ "spec": "Vocabulary ids: 0 <pad>, 1 <bos>, 2 <eos>, 3 ' ', 4 ',', 5 '.', 6 '!', 7 '?', 8 \"'\", 9 '\"', 10..35 = a..z (a=10, e=14, i=18, o=24, u=30, y=34). Input ctx [8,36]: one-hot rows, oldest first, row 7 = most recent token; an all-zero row means 'before document start'. LETTER row = token in 10..35. BOUNDARY row = an all-zero row, or a row whose token is not a letter and is not the apostrophe (id 8) [so bos, space, , . ! ? and the double quote are boundaries; the apostrophe is NOT]. 'word so far' = the maximal run of LETTER rows ending at row 7 (or at the row named in the rule); it is 'anchored' when the row just before the run exists and is a BOUNDARY row. Evidence output y [36] is added to next-token logits by the parent, in nats; 0 means 'no opinion'. Entries for ids 0,1 must be exactly 0 unless a rule says otherwise; id 2 (<eos>) is 0 unless a rule says otherwise. Case 'note' fields explain the case; 'expect' vectors are index 0..35 in vocabulary order and must be matched within tol. Inputs are exact one-hot / 0-1 values. Tables in 'data' are authoritative and must not be changed. You may write a helper script that expands 'data' into proposal JSON. Each cell/param holds at most 40 numbers (spread lookups over many cells and combine with ops; ops on ctx rows such as slice/mul/sum are exact and free of parameters).\n\nInside-quote flag. Inputs prev [36] one-hot of the token just emitted, q [1] the flag before seeing prev (0 or 1). Output y [1] = the new flag: if prev is the double quote (id 9) then 1-q; else if prev is <bos> (id 1) then 0; else q. Meaning: 1 iff an odd number of double quotes have occurred since <bos> (we are inside a quotation). This circuit has its own input names (prev, q), not ctx.",
+ "data": {},
+ "cases": [
+  {
+   "note": "open quote",
+   "in": {
+    "prev": {
+     "onehot": 9,
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    1.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "close quote",
+   "in": {
+    "prev": {
+     "onehot": 9,
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "letter inside quote",
+   "in": {
+    "prev": {
+     "onehot": 10,
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    1.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "letter outside",
+   "in": {
+    "prev": {
+     "onehot": 10,
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "space inside",
+   "in": {
+    "prev": {
+     "onehot": 3,
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    1.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "period inside",
+   "in": {
+    "prev": {
+     "onehot": 5,
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    1.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "bos resets",
+   "in": {
+    "prev": {
+     "onehot": 1,
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "bos at 0",
+   "in": {
+    "prev": {
+     "onehot": 1,
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "apostrophe does not toggle",
+   "in": {
+    "prev": {
+     "onehot": 8,
+     "n": 36
+    },
+    "q": [
+     0.0
+    ]
+   },
+   "expect": [
+    0.0
+   ],
+   "tol": 0.02
+  },
+  {
+   "note": "apostrophe does not toggle inside",
+   "in": {
+    "prev": {
+     "onehot": 8,
+     "n": 36
+    },
+    "q": [
+     1.0
+    ]
+   },
+   "expect": [
+    1.0
+   ],
+   "tol": 0.02
+  }
+ ]
+}

@@ -1,0 +1,340 @@
+{
+ "experts": [
+  {
+   "name": "ex_bos",
+   "purpose": "first character of a story",
+   "circuits": [
+    "cl_bigram"
+   ]
+  },
+  {
+   "name": "ex_wordstart",
+   "purpose": "first letter of a new word after a space",
+   "circuits": [
+    "cl_bigram",
+    "cl_wordstart",
+    "cl_colloc",
+    "cl_name_read",
+    "cl_quote"
+   ]
+  },
+  {
+   "name": "ex_inword_short",
+   "purpose": "second/third letter of a word (1-2 letters so far)",
+   "circuits": [
+    "cl_bigram",
+    "cl_trigram",
+    "cl_words_fn",
+    "cl_words_open",
+    "cl_colloc",
+    "cl_name_read",
+    "cl_endpunct",
+    "cl_apos"
+   ]
+  },
+  {
+   "name": "ex_inword_long",
+   "purpose": "letters after the third of a word, word ends, suffixes",
+   "circuits": [
+    "cl_bigram",
+    "cl_trigram",
+    "cl_words_fn",
+    "cl_words_open",
+    "cl_suffix",
+    "cl_colloc",
+    "cl_name_read",
+    "cl_endpunct",
+    "cl_apos"
+   ]
+  },
+  {
+   "name": "ex_punct",
+   "purpose": "token after , . ! ?",
+   "circuits": [
+    "cl_bigram",
+    "cl_quote"
+   ]
+  },
+  {
+   "name": "ex_quote",
+   "purpose": "token after a double quote (open or close)",
+   "circuits": [
+    "cl_bigram",
+    "cl_quote",
+    "cl_name_read"
+   ]
+  },
+  {
+   "name": "ex_apos",
+   "purpose": "token after an apostrophe",
+   "circuits": [
+    "cl_bigram",
+    "cl_apos"
+   ]
+  }
+ ],
+ "router": {
+  "purpose": "hard class of prev token + word length, top-1 dispatch",
+  "circuits": [
+   "cl_router"
+  ]
+ },
+ "circuits": [
+  {
+   "name": "cl_router",
+   "purpose": "Score 7 experts from the class of prev and current word length",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     7
+    ]
+   },
+   "contract": "contracts/cl_router.json",
+   "namespace": "cl_router."
+  },
+  {
+   "name": "cl_qstate",
+   "purpose": "Toggle inside-quote flag on each double-quote token",
+   "inputs": {
+    "prev": [
+     36
+    ],
+    "q": [
+     1
+    ]
+   },
+   "output": {
+    "y": [
+     1
+    ]
+   },
+   "contract": "contracts/cl_qstate.json",
+   "namespace": "cl_qstate."
+  },
+  {
+   "name": "cl_bigram",
+   "purpose": "ln p(next|prev) character bigram backbone",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_bigram.json",
+   "namespace": "cl_bigram."
+  },
+  {
+   "name": "cl_trigram",
+   "purpose": "Additive letter-pair corrections for ~40 common pairs (th, ng, ed, ...)",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_trigram.json",
+   "namespace": "cl_trigram."
+  },
+  {
+   "name": "cl_words_fn",
+   "purpose": "Word-completion trie for ~80 function words (the, and, was, ...)",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_words_fn.json",
+   "namespace": "cl_words_fn."
+  },
+  {
+   "name": "cl_words_open",
+   "purpose": "Word-completion trie for ~170 content words and names",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_words_open.json",
+   "namespace": "cl_words_open."
+  },
+  {
+   "name": "cl_suffix",
+   "purpose": "Word-end evidence from suffixes (ing, ed, ly, ful, s, er, y ...)",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_suffix.json",
+   "namespace": "cl_suffix."
+  },
+  {
+   "name": "cl_wordstart",
+   "purpose": "First-letter evidence keyed on previous word / sentence-comma context",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_wordstart.json",
+   "namespace": "cl_wordstart."
+  },
+  {
+   "name": "cl_colloc",
+   "purpose": "Multi-word phrase 8-gram evidence (once upon a time, wanted to, ...)",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_colloc.json",
+   "namespace": "cl_colloc."
+  },
+  {
+   "name": "cl_endpunct",
+   "purpose": "Comma/period/!/? evidence after a word, quote-aware",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ],
+    "q": [
+     1
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_endpunct.json",
+   "namespace": "cl_endpunct."
+  },
+  {
+   "name": "cl_quote",
+   "purpose": "Opening/closing quote and in-quote punctuation dynamics",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ],
+    "q": [
+     1
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_quote.json",
+   "namespace": "cl_quote."
+  },
+  {
+   "name": "cl_apos",
+   "purpose": "Apostrophe and contraction evidence (didn't, i'm, tom's)",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_apos.json",
+   "namespace": "cl_apos."
+  },
+  {
+   "name": "cl_name_write",
+   "purpose": "Capture letters of the word after 'named ' into the name-cache state",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ],
+    "nm": [
+     224
+    ]
+   },
+   "output": {
+    "y": [
+     224
+    ]
+   },
+   "contract": "contracts/cl_name_write.json",
+   "namespace": "cl_name_write."
+  },
+  {
+   "name": "cl_name_read",
+   "purpose": "Boost letters continuing the cached protagonist name",
+   "inputs": {
+    "ctx": [
+     8,
+     36
+    ],
+    "nm": [
+     224
+    ]
+   },
+   "output": {
+    "y": [
+     36
+    ]
+   },
+   "contract": "contracts/cl_name_read.json",
+   "namespace": "cl_name_read."
+  }
+ ],
+ "state": {
+  "dim": 225,
+  "meaning": "state[0] = inside-quote flag q (updated by cl_qstate at root); state[1:225] = name cache nm (buffer 6x36, cap flag, one-hot length; updated by cl_name_write at root). Both updates are shared-trunk clusters at the root, computed before routing so experts see flags already updated for prev."
+ }
+}

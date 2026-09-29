@@ -223,9 +223,60 @@ def unwrap(graph: Graph, parent: str, node_id: str) -> None:
     graph.defs[parent] = dict(P, nodes=new_nodes, outputs={k: rewrite(v) for k, v in P["outputs"].items()})
 
 
+def import_def(g: Graph, src: Graph, name: str, prefix: str = "", replace: bool = False) -> list[str]:
+    """Copy definition ``name`` and everything it references from ``src`` into ``g``.
+
+    ``prefix`` is prepended to every copied definition/parameter name.  Copies
+    are exact (parameters are duplicated, not shared with the source graph).
+    Collisions with different content raise unless ``replace`` is set.
+    Returns the list of copied definition names.  This deterministically
+    materializes an author's choice of parts to recombine; it selects nothing.
+    """
+    if name not in src.defs:
+        raise TransactionError(f"import_def: {name} not in source graph")
+    order, seen = [], set()
+
+    def walk(n):
+        if n in seen:
+            return
+        seen.add(n)
+        for c in src.children(n):
+            walk(c)
+        order.append(n)
+    walk(name)
+    rename = {n: prefix + n for n in order}
+    prename = {p: prefix + p for n in order for p in src.params_of(n)}
+    for n in order:
+        d = copy.deepcopy(src.defs[n])
+        if d["kind"] == "cell":
+            d["params"] = {k: prename[v] for k, v in d["params"].items()}
+        else:
+            for node in d["nodes"]:
+                u = node["use"]
+                if u.startswith("param:"):
+                    node["use"] = "param:" + prename[u[6:]]
+                elif u == "dispatch":
+                    node["args"] = dict(node["args"], branches=[rename[b] for b in node["args"]["branches"]])
+                elif not u.startswith("op:"):
+                    node["use"] = rename[u]
+        new = rename[n]
+        if new in g.defs and g.defs[new] != d and not replace:
+            raise TransactionError(f"import_def: {new} already exists with different content")
+        g.defs[new] = d
+    for p, np_ in prename.items():
+        arr = src.params[p].copy()
+        if np_ in g.params and not np.array_equal(g.params[np_], arr) and not replace:
+            raise TransactionError(f"import_def: parameter {np_} already exists with different values")
+        g.params[np_] = arr
+    return [rename[n] for n in order]
+
+
 # ----------------------------------------------------------------- applying
-def apply_ops(graph: Graph, ops: list[dict]) -> tuple[Graph, bool]:
-    """Apply ops to a copy. Returns (new_graph, pure_refactor_only)."""
+def apply_ops(graph: Graph, ops: list[dict], resolver=None) -> tuple[Graph, bool]:
+    """Apply ops to a copy. Returns (new_graph, pure_refactor_only).
+
+    ``resolver(ref) -> Graph`` resolves other model versions for ``import_def``.
+    """
     g = graph.copy()
     pure = True
     for i, op in enumerate(ops):
@@ -263,6 +314,11 @@ def apply_ops(graph: Graph, ops: list[dict]) -> tuple[Graph, bool]:
                 pure = False
             elif t == "set_state_dim":
                 g.meta["state_dim"] = int(op["value"])
+                pure = False
+            elif t == "import_def":
+                if resolver is None:
+                    raise TransactionError("import_def is unavailable without a graph resolver")
+                import_def(g, resolver(op["from"]), op["name"], op.get("prefix", ""), bool(op.get("replace", False)))
                 pure = False
             elif t == "wrap":
                 wrap(g, op["parent"], op["nodes"], op["new_def"], op["new_node"])
@@ -302,7 +358,8 @@ def behavior_equal(a: Graph, b: Graph, imgs, tol: float = 1e-9, kind: str = "ocr
 
 
 def validate_proposal(graph: Graph, proposal: dict, sample_imgs,
-                      limits: Limits | None = None, kind: str = "ocr", profile: str = "open/1") -> dict:
+                      limits: Limits | None = None, kind: str = "ocr", profile: str = "open/1",
+                      resolver=None) -> dict:
     """Validate against exact base. Returns dict with new graph or error."""
     if proposal.get("base") != graph.hash():
         return {"ok": False, "error": "stale or missing base hash"}
@@ -310,7 +367,7 @@ def validate_proposal(graph: Graph, proposal: dict, sample_imgs,
     if not isinstance(ops, list) or not ops:
         return {"ok": False, "error": "proposal has no ops"}
     try:
-        g, pure = apply_ops(graph, ops)
+        g, pure = apply_ops(graph, ops, resolver)
         g.validate(limits)
         prof = check_profile(g, profile)
         if kind == "lm":

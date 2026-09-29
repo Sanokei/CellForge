@@ -1,0 +1,17 @@
+{
+ "name": "cl_bigram",
+ "purpose": "ln p(next|prev) character bigram backbone",
+ "inputs": {
+  "ctx": [
+   8,
+   36
+  ]
+ },
+ "output": {
+  "y": [
+   36
+  ]
+ },
+ "contract": "contracts/cl_bigram.json",
+ "namespace": "cl_bigram."
+}

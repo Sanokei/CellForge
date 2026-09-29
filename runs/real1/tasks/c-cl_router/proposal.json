@@ -1,0 +1,640 @@
+{
+ "author": "c-cl_router",
+ "rationale": "letter mask cell + class cells on row 7; length via product of letter flags rows 5..7",
+ "ops": [
+  {
+   "op": "set_param",
+   "name": "cl_router.let.W1",
+   "value": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.let.b1",
+   "value": [
+    0.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router.c_let",
+   "def": {
+    "kind": "cell",
+    "act": "identity",
+    "params": {
+     "W1": "cl_router.let.W1",
+     "b1": "cl_router.let.b1"
+    }
+   }
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.bos.W1",
+   "value": [
+    [
+     0.0,
+     3.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.bos.b1",
+   "value": [
+    0.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router.c_bos",
+   "def": {
+    "kind": "cell",
+    "act": "identity",
+    "params": {
+     "W1": "cl_router.bos.W1",
+     "b1": "cl_router.bos.b1"
+    }
+   }
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.sp.W1",
+   "value": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     3.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.sp.b1",
+   "value": [
+    0.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router.c_sp",
+   "def": {
+    "kind": "cell",
+    "act": "identity",
+    "params": {
+     "W1": "cl_router.sp.W1",
+     "b1": "cl_router.sp.b1"
+    }
+   }
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.pu.W1",
+   "value": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     3.0,
+     3.0,
+     3.0,
+     3.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.pu.b1",
+   "value": [
+    0.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router.c_pu",
+   "def": {
+    "kind": "cell",
+    "act": "identity",
+    "params": {
+     "W1": "cl_router.pu.W1",
+     "b1": "cl_router.pu.b1"
+    }
+   }
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.q.W1",
+   "value": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     3.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.q.b1",
+   "value": [
+    0.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router.c_q",
+   "def": {
+    "kind": "cell",
+    "act": "identity",
+    "params": {
+     "W1": "cl_router.q.W1",
+     "b1": "cl_router.q.b1"
+    }
+   }
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.ap.W1",
+   "value": [
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     3.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.ap.b1",
+   "value": [
+    0.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router.c_ap",
+   "def": {
+    "kind": "cell",
+    "act": "identity",
+    "params": {
+     "W1": "cl_router.ap.W1",
+     "b1": "cl_router.ap.b1"
+    }
+   }
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.none.W1",
+   "value": [
+    [
+     0.0,
+     -1.0,
+     0.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0,
+     -1.0
+    ]
+   ]
+  },
+  {
+   "op": "set_param",
+   "name": "cl_router.none.b1",
+   "value": [
+    1.0
+   ]
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router.c_none",
+   "def": {
+    "kind": "cell",
+    "act": "identity",
+    "params": {
+     "W1": "cl_router.none.W1",
+     "b1": "cl_router.none.b1"
+    }
+   }
+  },
+  {
+   "op": "put_def",
+   "name": "cl_router",
+   "def": {
+    "kind": "bundle",
+    "role": "cluster",
+    "inputs": [
+     "ctx"
+    ],
+    "nodes": [
+     {
+      "id": "lets",
+      "use": "cl_router.c_let",
+      "in": {
+       "x": "$ctx"
+      }
+     },
+     {
+      "id": "l5",
+      "use": "op:slice",
+      "in": {
+       "x": "lets"
+      },
+      "args": {
+       "axis": 0,
+       "start": 5,
+       "stop": 6
+      }
+     },
+     {
+      "id": "l6",
+      "use": "op:slice",
+      "in": {
+       "x": "lets"
+      },
+      "args": {
+       "axis": 0,
+       "start": 6,
+       "stop": 7
+      }
+     },
+     {
+      "id": "l7",
+      "use": "op:slice",
+      "in": {
+       "x": "lets"
+      },
+      "args": {
+       "axis": 0,
+       "start": 7,
+       "stop": 8
+      }
+     },
+     {
+      "id": "r7",
+      "use": "op:slice",
+      "in": {
+       "x": "$ctx"
+      },
+      "args": {
+       "axis": 0,
+       "start": 7,
+       "stop": 8
+      }
+     },
+     {
+      "id": "bos",
+      "use": "cl_router.c_bos",
+      "in": {
+       "x": "r7"
+      }
+     },
+     {
+      "id": "sp",
+      "use": "cl_router.c_sp",
+      "in": {
+       "x": "r7"
+      }
+     },
+     {
+      "id": "pu",
+      "use": "cl_router.c_pu",
+      "in": {
+       "x": "r7"
+      }
+     },
+     {
+      "id": "q",
+      "use": "cl_router.c_q",
+      "in": {
+       "x": "r7"
+      }
+     },
+     {
+      "id": "ap",
+      "use": "cl_router.c_ap",
+      "in": {
+       "x": "r7"
+      }
+     },
+     {
+      "id": "none",
+      "use": "cl_router.c_none",
+      "in": {
+       "x": "r7"
+      }
+     },
+     {
+      "id": "l56",
+      "use": "op:mul",
+      "in": {
+       "a": "l5",
+       "b": "l6"
+      }
+     },
+     {
+      "id": "l567",
+      "use": "op:mul",
+      "in": {
+       "a": "l56",
+       "b": "l7"
+      }
+     },
+     {
+      "id": "long",
+      "use": "op:scale",
+      "in": {
+       "x": "l567"
+      },
+      "args": {
+       "c": 3.0
+      }
+     },
+     {
+      "id": "l7s",
+      "use": "op:scale",
+      "in": {
+       "x": "l7"
+      },
+      "args": {
+       "c": 3.0
+      }
+     },
+     {
+      "id": "short",
+      "use": "op:sub",
+      "in": {
+       "a": "l7s",
+       "b": "long"
+      }
+     },
+     {
+      "id": "y1",
+      "use": "op:add",
+      "in": {
+       "a": "sp",
+       "b": "none"
+      }
+     },
+     {
+      "id": "cat",
+      "use": "op:concat",
+      "in": {
+       "x0": "bos",
+       "x1": "y1",
+       "x2": "short",
+       "x3": "long",
+       "x4": "pu",
+       "x5": "q",
+       "x6": "ap"
+      },
+      "args": {
+       "axis": 1
+      }
+     },
+     {
+      "id": "flat",
+      "use": "op:reshape",
+      "in": {
+       "x": "cat"
+      },
+      "args": {
+       "shape": [
+        7
+       ]
+      }
+     }
+    ],
+    "outputs": {
+     "y": "flat"
+    }
+   }
+  }
+ ]
+}
