@@ -31,8 +31,11 @@ def cmd_doctor(args):
 def cmd_init_run(args):
     from .construction.run import Run
     from .reference.protocols import PROTOCOLS
-    r = Run.init(args.run, args.protocol, arm=args.arm, strict=args.strict)
+    r = Run.init(args.run, args.protocol, arm=args.arm, strict=args.strict, profile=args.profile)
     proto = PROTOCOLS[args.protocol]
+    if proto.get("kind") == "lm":
+        _print({"run": str(r.root), "branches": r.branches(), "anchor": r.anchor_history()})
+        return
     spec = proto["anchor"]["spec"]
     from dataclasses import asdict
     cur = {"version": "curriculum/1", "stages": {
@@ -92,7 +95,7 @@ def cmd_dev_eval(args):
         from .construction.transactions import validate_proposal as _vp
         prop = _load_proposal(args.proposal)
         prop["base"] = task["base"]
-        v = _vp(r.load_graph(task["base"]), prop, r.sample_imgs(), r.limits())
+        v = _vp(r.load_graph(task["base"]), prop, r.sample_imgs(), r.limits(), kind=r.kind, profile=r.profile)
         with (tdir / "validations.jsonl").open("a") as f:
             f.write(json.dumps({"time": time.time(), "ok": v["ok"]}) + "\n")
         _print({"ok": v["ok"], "error": v.get("error"), "stats": v["graph"].stats() if v["ok"] else None})
@@ -105,13 +108,29 @@ def cmd_dev_eval(args):
     if args.proposal:
         prop = _load_proposal(args.proposal)
         prop["base"] = task["base"]  # makers always edit their task base
-        v = validate_proposal(g, prop, r.sample_imgs(), r.limits())
+        v = validate_proposal(g, prop, r.sample_imgs(), r.limits(), kind=r.kind, profile=r.profile)
         if not v["ok"]:
             with usage.open("a") as f:
                 f.write(json.dumps({"time": time.time(), "ok": False}) + "\n")
             _print({"ok": False, "error": v["error"], "dev_evals_used": used + 1})
             return
         g = v["graph"]
+    if r.kind == "lm":
+        from .harness import diagnostics_lm
+        import re as _re
+        texts = r.lm_texts("dev_eval" if args.set == "dev_main" else args.set)
+        n = min(args.n, len(texts))
+        lex = set(_re.findall(r"[a-z]+", " ".join(r.lm_texts("dev_train"))))
+        out = tdir / "evals" / f"{used:03d}"
+        rep = diagnostics_lm.run(g, texts[:n], lex, out_dir=out)
+        rep["dev_set"] = f"dev_eval first {n} docs"
+        rep["stats"] = g.stats()
+        rep["profile"] = r.profile
+        rep["dev_evals_used"] = used + 1
+        with usage.open("a") as f:
+            f.write(json.dumps({"time": time.time(), "ok": "error" not in rep, "n": n, "bpc": rep.get("bpc")}) + "\n")
+        _print(rep)
+        return
     imgs, labels, man, ddir = r.dev_set(args.set)
     n = min(args.n, len(labels))
     out = tdir / "evals" / f"{used:03d}"
@@ -128,6 +147,26 @@ def cmd_dev_eval(args):
     if not args.full:
         rep.pop("trace_summaries", None) if len(json.dumps(rep.get("trace_summaries", {}))) > 4000 else None
     _print(rep)
+
+
+def cmd_component_test(args):
+    from .construction.contracts import run_contract
+    from .construction.transactions import TransactionError, apply_ops
+    r = _run(args)
+    task = json.loads((r.root / "tasks" / args.task / "task.json").read_text())
+    g = r.load_graph(task["base"])
+    if args.proposal:
+        try:
+            g, _ = apply_ops(g, _load_proposal(args.proposal)["ops"])
+            g.validate(r.limits())
+        except (TransactionError, ValueError) as e:
+            _print({"ok": False, "error": str(e)[:500]})
+            return
+    res = run_contract(g, json.loads(Path(args.contract).read_text()))
+    with (r.root / "tasks" / args.task / "contract_tests.jsonl").open("a") as f:
+        f.write(json.dumps({"time": time.time(), "contract": args.contract, "ok": res["ok"],
+                            "passed": res.get("passed"), "total": res.get("total")}) + "\n")
+    _print(res)
 
 
 def cmd_branch(args):
@@ -203,7 +242,7 @@ def cmd_export(args):
     out = Path(args.out)
     h = g.save(out)
     card = {"model_hash": h, "stats": g.stats(), "vocab": g.meta["vocab"],
-            "pixel_contract": g.meta["pixel_contract"], "primitive_version": g.meta.get("primitive_version"),
+            "pixel_contract": g.meta.get("pixel_contract"), "task": g.meta.get("task", "ocr"), "primitive_version": g.meta.get("primitive_version"),
             "bootstrap": g.meta.get("bootstrap"), "run_protocol": r.cfg["protocol"],
             "inference_dependencies": ["numpy", "cellforge.runtime (ops/interp/decoder)", "cellforge.ir.graph"],
             "not_included": ["prompts", "labels", "development data", "memory", "author identities", "keys"],
@@ -280,7 +319,8 @@ def main(argv=None):
     sp = ap.add_subparsers(dest="cmd", required=True)
     sp.add_parser("doctor").set_defaults(fn=cmd_doctor)
     p = sp.add_parser("init-run"); p.add_argument("--run", required=True); p.add_argument("--protocol", default="digits-mono/1")
-    p.add_argument("--arm", default="primary"); p.add_argument("--strict", action="store_true"); p.set_defaults(fn=cmd_init_run)
+    p.add_argument("--arm", default="primary"); p.add_argument("--strict", action="store_true")
+    p.add_argument("--profile", default="open/1", choices=["open/1", "ladder/1", "ladder-micro/1", "flat/1"]); p.set_defaults(fn=cmd_init_run)
     p = sp.add_parser("status"); p.add_argument("--run", required=True); p.set_defaults(fn=cmd_status)
     p = sp.add_parser("task-new"); p.add_argument("--run", required=True); p.add_argument("--id", required=True)
     p.add_argument("--role", default="maker"); p.add_argument("--branch", default="main")
@@ -292,6 +332,8 @@ def main(argv=None):
     p.add_argument("--viz"); p.add_argument("--trace"); p.add_argument("--full", action="store_true")
     p.add_argument("--validate-only", action="store_true")
     p.set_defaults(fn=cmd_dev_eval)
+    p = sp.add_parser("component-test"); p.add_argument("--run", required=True); p.add_argument("--task", required=True)
+    p.add_argument("--proposal"); p.add_argument("--contract", required=True); p.set_defaults(fn=cmd_component_test)
     p = sp.add_parser("branch"); p.add_argument("--run", required=True); p.add_argument("--name", required=True)
     p.add_argument("--source", default="main"); p.set_defaults(fn=cmd_branch)
     p = sp.add_parser("accept"); p.add_argument("--run", required=True); p.add_argument("--task", required=True)

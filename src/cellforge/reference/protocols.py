@@ -50,3 +50,17 @@ PROTOCOLS = {
         "final_n": {"iid": 2000, "unseen_font": 1000},
     },
 }
+
+LM_CHARSET = " ,.abcdefghijklmnopqrstuvwxyz"
+
+PROTOCOLS["tinylm/1"] = {
+    "kind": "lm",
+    "charset": LM_CHARSET,
+    "ctx_len": 8,
+    "gen_max_len": 200,
+    # author-visible text generated on the evaluation server from the private grammar
+    "anchor_file": "data/tinylm/anchor.json",
+    "dev_files": {"dev_train": "data/tinylm/dev_train.json", "dev_eval": "data/tinylm/dev_eval.json"},
+    "final_n_docs": 1000,
+    "final_gen": {"n": 200, "temperature": 0.8},
+}

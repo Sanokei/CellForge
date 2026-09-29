@@ -1,0 +1,230 @@
+{
+ "defs": {
+  "ng_cell": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ng.W1",
+    "b1": "ng.b1"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 6,
+      "stop": 7
+     },
+     "id": "p2",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0
+      ]
+     },
+     "id": "p2t",
+     "in": {
+      "x": "p2"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 7,
+      "stop": 8
+     },
+     "id": "p1",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "outer",
+     "in": {
+      "a": "p2t",
+      "b": "p1"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1024
+      ]
+     },
+     "id": "flat",
+     "in": {
+      "x": "outer"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": -1,
+      "keepdims": true
+     },
+     "id": "has2",
+     "in": {
+      "x": "p2"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "c": -1.0
+     },
+     "id": "no2",
+     "in": {
+      "x": "has2"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "no2b",
+     "in": {
+      "x": "no2"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "bm",
+     "use": "param:ng.bosmap"
+    },
+    {
+     "id": "p1b",
+     "in": {
+      "a": "p1",
+      "b": "bm"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "id": "p1bs",
+     "in": {
+      "a": "p1b",
+      "b": "no2b"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1024
+      ]
+     },
+     "id": "p1f",
+     "in": {
+      "x": "p1bs"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "flat2",
+     "in": {
+      "a": "flat",
+      "b": "p1f"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "x": "flat2"
+     },
+     "use": "ng_cell"
+    }
+   ],
+   "outputs": {
+    "logits": "lg",
+    "state": "$state"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "baseline": "3-gram counts add-k=0.1 on dev_train",
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "ng.W1": {
+   "sha256": "32b515d50706800ddd1dcce01039a499db7b59a36e9b3ce8c61ba5065ca980bd",
+   "shape": [
+    32,
+    1024
+   ]
+  },
+  "ng.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ng.bosmap": {
+   "sha256": "bfc2ead472aa1fc23d835d0eaae6233b5a04e1e6641c34af1b33e1a6a8e129cc",
+   "shape": [
+    32,
+    1024
+   ]
+  }
+ }
+}

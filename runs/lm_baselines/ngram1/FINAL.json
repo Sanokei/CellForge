@@ -1,0 +1,37 @@
+{
+ "eval_id": "20260929T155318-1d5dc224",
+ "label": "lm-baseline-ngram1",
+ "protocol": "tinylm/1",
+ "model_hash": "01a3af12ea6255bc1db3f7e631e409e7ac6b23016480b36d48b25bb52abe60cb",
+ "time": "2026-09-29T15:53:20Z",
+ "scoring": {
+  "n_docs": 1000,
+  "n_tokens": 179663,
+  "bpc": 4.226945335451503,
+  "top1": 0.17520023599739512,
+  "failures": 0,
+  "latency_s_total": 0.783,
+  "macs_total": 5749216,
+  "bpc_bootstrap95": [
+   4.2223,
+   4.2315
+  ],
+  "route_counts": {}
+ },
+ "overlap": {
+  "final_sentences": 3904,
+  "final_sentences_seen_in_dev_train": 0.1322,
+  "note": "finite grammar: short sentences recur; bpc is over new documents"
+ },
+ "generation": {
+  "n_samples": 200,
+  "temperature": 0.8,
+  "complete_sentences": 518,
+  "grammatical_rate": 0.0,
+  "grammatical_and_novel_rate": 0.0,
+  "distinct_rate": 0.9865,
+  "greedy_grammatical": [],
+  "unterminated_or_failed": 119,
+  "mean_words_per_sentence": 7.69
+ }
+}

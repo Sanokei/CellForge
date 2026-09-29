@@ -103,38 +103,58 @@ class Interpreter:
         return {o: resolve(ref) for o, ref in d["outputs"].items()}
 
     def run_dispatch(self, parent, node, ins, path):
-        """Top-1 lazy dispatch. Ties go to the lowest branch index.
+        """Lazy top-k dispatch (default k=1). Ties go to the lowest branch index.
 
+        With k=1 the selected branch output is passed through unchanged.  With
+        k>1 outputs are combined with softmax weights over the selected scores.
         Rows with non-finite scores produce NaN outputs (recorded failures).
         Only branches selected by at least one row execute, on those rows only.
         """
         branches = node["args"]["branches"]
+        k = int(node["args"].get("k", 1))
         scores = ins.pop("scores")
         B = scores.shape[0]
         scores = scores.reshape(B, -1)
-        if scores.shape[1] != len(branches):
-            raise GraphError(f"{parent}/{node['id']}: {scores.shape[1]} scores for {len(branches)} branches")
+        K = len(branches)
+        if scores.shape[1] != K:
+            raise GraphError(f"{parent}/{node['id']}: {scores.shape[1]} scores for {K} branches")
+        if not 1 <= k <= K:
+            raise GraphError(f"{parent}/{node['id']}: k={k} outside 1..{K}")
         finite = np.all(np.isfinite(scores), axis=1)
-        choice = np.argmax(np.where(np.isfinite(scores), scores, -np.inf), axis=1)
+        safe = np.where(np.isfinite(scores), scores, -np.inf)
+        # stable ordering: highest score first, ties -> lowest index
+        order = np.argsort(-safe, axis=1, kind="stable")[:, :k]
+        sel = np.take_along_axis(safe, order, axis=1)
+        if k > 1:
+            w = np.exp(sel - sel.max(axis=1, keepdims=True))
+            w /= w.sum(axis=1, keepdims=True)
+        else:
+            w = np.ones((B, 1))
         counts = self.stats.route_counts.setdefault(path, {})
         results = {}
         for bi, bname in enumerate(branches):
-            rows = np.nonzero((choice == bi) & finite)[0]
+            hit = (order == bi) & finite[:, None]
+            rows = np.nonzero(hit.any(axis=1))[0]
             counts[bname] = counts.get(bname, 0) + int(rows.size)
             if rows.size == 0:
                 continue
-            sub_in = {k: (v[rows] if v.shape[0] == B and B > 1 else v) for k, v in ins.items()}
+            wb = (w * hit).sum(axis=1)[rows]
+            sub_in = {kk: (v[rows] if v.shape[0] == B and B > 1 else v) for kk, v in ins.items()}
             out = self.run_bundle(bname, sub_in, f"{path}[{bname}]")
-            for k, v in out.items():
-                if k not in results:
-                    results[k] = np.full((B,) + v.shape[1:], np.nan)
+            for kk, v in out.items():
                 if v.shape[0] == 1 and rows.size > 1:
                     v = np.broadcast_to(v, (rows.size,) + v.shape[1:])
-                results[k][rows] = v
+                if kk not in results:
+                    results[kk] = np.full((B,) + v.shape[1:], np.nan)
+                    if k > 1:
+                        results[kk][finite] = 0.0
+                if k == 1:
+                    results[kk][rows] = v
+                else:
+                    results[kk][rows] += v * wb.reshape((-1,) + (1,) * (v.ndim - 1))
         if not results:
-            # every row invalid: run first branch for shapes, then poison
             out = self.run_bundle(branches[0], ins, f"{path}[{branches[0]}]")
-            results = {k: np.full((B,) + v.shape[1:], np.nan) for k, v in out.items()}
+            results = {kk: np.full((B,) + v.shape[1:], np.nan) for kk, v in out.items()}
         if self.trace_enabled:
-            self.trace[f"{path}.route"] = choice.astype(np.float64)
+            self.trace[f"{path}.route"] = order[:, 0].astype(np.float64)
         return results

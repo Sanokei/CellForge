@@ -27,6 +27,7 @@ import copy
 import numpy as np
 
 from ..ir.graph import Graph, GraphError, Limits, parse_ref
+from ..ir.profiles import check_profile
 from ..runtime.decoder import decode
 
 MAX_PATTERN_ELEMENTS = 1_000_000
@@ -276,7 +277,16 @@ def apply_ops(graph: Graph, ops: list[dict]) -> tuple[Graph, bool]:
     return g, pure
 
 
-def behavior_equal(a: Graph, b: Graph, imgs: np.ndarray, tol: float = 1e-9) -> tuple[bool, str]:
+def behavior_equal(a: Graph, b: Graph, imgs, tol: float = 1e-9, kind: str = "ocr") -> tuple[bool, str]:
+    if kind == "lm":
+        from ..runtime.lm import score_texts
+        ra, ia = score_texts(a, imgs)
+        rb, ib = score_texts(b, imgs)
+        if not np.array_equal(ra["failed"], rb["failed"]):
+            return False, "failures differ"
+        if not np.allclose(ia["per_pos_bits"], ib["per_pos_bits"], atol=tol, rtol=0):
+            return False, f"per-position bits differ by {np.max(np.abs(ia['per_pos_bits'] - ib['per_pos_bits'])):.3g}"
+        return True, "equivalent"
     pa, ia = decode(a, imgs)
     pb, ib = decode(b, imgs)
     if pa != pb or ia["failure"] != ib["failure"]:
@@ -291,8 +301,8 @@ def behavior_equal(a: Graph, b: Graph, imgs: np.ndarray, tol: float = 1e-9) -> t
     return True, "equivalent"
 
 
-def validate_proposal(graph: Graph, proposal: dict, sample_imgs: np.ndarray,
-                      limits: Limits | None = None) -> dict:
+def validate_proposal(graph: Graph, proposal: dict, sample_imgs,
+                      limits: Limits | None = None, kind: str = "ocr", profile: str = "open/1") -> dict:
     """Validate against exact base. Returns dict with new graph or error."""
     if proposal.get("base") != graph.hash():
         return {"ok": False, "error": "stale or missing base hash"}
@@ -302,14 +312,19 @@ def validate_proposal(graph: Graph, proposal: dict, sample_imgs: np.ndarray,
     try:
         g, pure = apply_ops(graph, ops)
         g.validate(limits)
-        preds, info = decode(g, sample_imgs)
+        prof = check_profile(g, profile)
+        if kind == "lm":
+            from ..runtime.lm import score_texts
+            score_texts(g, sample_imgs)
+        else:
+            decode(g, sample_imgs)
     except (TransactionError, GraphError) as e:
         return {"ok": False, "error": str(e)[:500]}
     except (ValueError, IndexError, FloatingPointError, MemoryError) as e:
         return {"ok": False, "error": f"execution error: {type(e).__name__}: {e}"[:500]}
-    res = {"ok": True, "graph": g, "pure_refactor": pure, "new_hash": g.hash()}
+    res = {"ok": True, "graph": g, "pure_refactor": pure, "new_hash": g.hash(), "profile": prof}
     if pure:
-        eq, why = behavior_equal(graph, g, sample_imgs)
+        eq, why = behavior_equal(graph, g, sample_imgs, kind=kind)
         res["equivalence"] = why
         if not eq:
             return {"ok": False, "error": f"refactor changed behavior: {why}"}

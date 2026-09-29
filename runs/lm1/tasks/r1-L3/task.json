@@ -1,0 +1,13 @@
+{
+ "id": "r1-L3",
+ "role": "maker",
+ "branch": "L3",
+ "base": "4eec1d39e7129f7f73c4e7cf8d9fb362702cf409cf670db650167e30fee64f0e",
+ "harness_hash": "27fa6b75c07987e6298ea399aa7d65aab95a543bc215dcd5095c08fea79c54b3",
+ "scope": "entire step graph; ladder/1 profile enforced (cells -> clusters -> experts -> router dispatch)",
+ "hypothesis": "Build a character language model from the uniform bootstrap as a hierarchical mixture of experts: cells grouped into clusters, clusters into experts, and a router choosing experts per position. Reduce dev bpc as far as you can.",
+ "dev_eval_budget": 25,
+ "created": "2026-09-29T15:45:55Z",
+ "memory_packet": "memory_packet.json",
+ "retrieved_context_manifest_sha256": "05355828d0dbb4fa5322d7ae51a4e133dbeb2df7d521f07abdf96503996e2d6f"
+}

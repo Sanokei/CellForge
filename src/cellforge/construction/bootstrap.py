@@ -39,3 +39,23 @@ def bootstrap(charset: str = "0123456789", max_len: int = 12) -> Graph:
               "pixel_contract": {"height": 32, "width": 128, "normalize": "uint8/255", "ink": "bright"},
               "primitive_version": "cellforge-ops/1", "bootstrap": BOOTSTRAP_ID}
     return g
+
+
+LM_BOOTSTRAP_ID = "bootstrap/uniform-logits/1"
+
+
+def bootstrap_lm(charset: str, ctx_len: int = 8) -> Graph:
+    """Uniform next-token logits over the vocabulary (bpc = log2 V by construction)."""
+    vocab = vocab_for(charset)
+    g = Graph()
+    g.params["boot_logits"] = np.zeros(len(vocab))
+    g.defs["step_root"] = {
+        "kind": "bundle", "inputs": ["ctx", "prev", "step", "state"],
+        "nodes": [{"id": "logits", "use": "param:boot_logits"},
+                  {"id": "lg", "use": "op:broadcast_to", "in": {"x": "logits", "like": "$prev"}}],
+        "outputs": {"logits": "lg", "state": "$state"},
+    }
+    g.entries = {"step": "step_root"}
+    g.meta = {"task": "lm", "vocab": vocab, "state_dim": 0, "ctx_len": ctx_len,
+              "primitive_version": "cellforge-ops/1", "bootstrap": LM_BOOTSTRAP_ID}
+    return g

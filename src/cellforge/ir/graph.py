@@ -170,7 +170,8 @@ class Graph:
             if not NAME_RE.match(name):
                 raise GraphError(f"bad definition name {name!r}")
             self._validate_def(name, d, limits)
-        for entry in ("encode", "step"):
+        required = ("step",) if self.meta.get("task") == "lm" else ("encode", "step")
+        for entry in required:
             if entry not in self.entries:
                 raise GraphError(f"missing entry {entry}")
             e = self.entries[entry]

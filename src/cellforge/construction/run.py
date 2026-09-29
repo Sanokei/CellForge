@@ -28,7 +28,7 @@ from ..memory.retrieve import DEFAULT_POLICY, policy_hash
 from ..memory.store import MemoryStore
 from ..reference.evaluator import evaluate
 from ..reference.protocols import PROTOCOLS
-from .bootstrap import BOOTSTRAP_ID, bootstrap
+from .bootstrap import bootstrap, bootstrap_lm
 from .transactions import validate_proposal
 
 HARNESS_VERSION_FILE = "harness/HARNESS_VERSION"
@@ -44,13 +44,15 @@ class Run:
     # ------------------------------------------------------------- create
     @classmethod
     def init(cls, root: str | Path, protocol: str, arm: str = "primary", strict: bool = False,
-             budget: dict | None = None) -> "Run":
+             budget: dict | None = None, profile: str = "open/1") -> "Run":
         root = Path(root)
         if (root / "run.json").exists():
             raise FileExistsError(f"run {root} exists")
         root.mkdir(parents=True)
         proto = PROTOCOLS[protocol]
-        cfg = {"protocol": protocol, "arm": arm, "created": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        kind = proto.get("kind", "ocr")
+        cfg = {"protocol": protocol, "kind": kind, "profile": profile, "arm": arm,
+               "created": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                "limits": asdict(Limits(strict_microcells=strict)),
                "budget": budget or {"maker_tasks": 200, "dev_evals_per_task": 25}}
         (root / "run.json").write_text(json.dumps(cfg, indent=1))
@@ -59,14 +61,24 @@ class Run:
         (root / "harness/memory_policy.json").write_text(json.dumps(DEFAULT_POLICY, indent=1))
         (root / "harness/curriculum.json").write_text(json.dumps({"version": "curriculum/1", "stages": {}}, indent=1))
         run = cls(root)
-        a = proto["anchor"]
-        imgs, labels, man = generate(a["spec"], a["n"], a["seed"], "anchor")
-        mh = save_dataset(root / "anchor", imgs, labels, man, png_count=0)
-        g = bootstrap(proto["charset"], proto["max_len"])
+        if kind == "lm":
+            raw = Path(proto["anchor_file"]).read_bytes()
+            (root / "anchor").mkdir()
+            (root / "anchor/texts.json").write_bytes(raw)
+            man = {"split": "anchor", "source": proto["anchor_file"], "texts_sha256": sha256_bytes(raw)}
+            (root / "anchor/manifest.json").write_text(json.dumps(man, indent=1))
+            mh = sha256_bytes((root / "anchor/manifest.json").read_bytes())
+            g = bootstrap_lm(proto["charset"], proto["ctx_len"])
+        else:
+            a = proto["anchor"]
+            imgs, labels, man = generate(a["spec"], a["n"], a["seed"], "anchor")
+            mh = save_dataset(root / "anchor", imgs, labels, man, png_count=0)
+            g = bootstrap(proto["charset"], proto["max_len"])
         h = run.store_graph(g)
         run.set_branch("main", h)
         run.ledger.append("run_init", {"protocol": protocol, "arm": arm, "anchor_manifest_sha256": mh,
-                                       "bootstrap": BOOTSTRAP_ID, "graph_hash": h}, "recorder")
+                                       "bootstrap": g.meta["bootstrap"], "profile": profile,
+                                       "graph_hash": h}, "recorder")
         res = run.reference_eval(h, reason="bootstrap")
         run.set_branch("ref_best", h)
         return run
@@ -129,7 +141,22 @@ class Run:
             save_dataset(d, imgs, labels, man, png_count=min(64, st["n"]))
         return load_dataset(d) + (d,)
 
-    def sample_imgs(self, n: int = 8) -> np.ndarray:
+    @property
+    def kind(self) -> str:
+        return self.cfg.get("kind", "ocr")
+
+    @property
+    def profile(self) -> str:
+        return self.cfg.get("profile", "open/1")
+
+    def lm_texts(self, name: str) -> list[str]:
+        if name == "anchor":
+            return json.loads((self.root / "anchor/texts.json").read_text())
+        return json.loads(Path(PROTOCOLS[self.cfg["protocol"]]["dev_files"][name]).read_text())
+
+    def sample_imgs(self, n: int = 8):
+        if self.kind == "lm":
+            return self.lm_texts("dev_eval")[:4]
         imgs, _, _ = load_dataset(self.root / "anchor")
         return imgs[:n].astype(np.float64) / 255.0
 
@@ -143,8 +170,14 @@ class Run:
 
     def reference_eval(self, h: str, reason: str) -> dict:
         g = self.load_graph(h)
-        res = evaluate(g, self.root / "anchor", keep_per_case=False)
-        res.pop("predictions", None)
+        if self.kind == "lm":
+            from ..reference.lm_eval import evaluate_lm
+            res = evaluate_lm(g, self.lm_texts("anchor"))
+            res.pop("per_doc_bits"); res.pop("per_doc_tokens")
+            res["model_hash"] = h
+        else:
+            res = evaluate(g, self.root / "anchor", keep_per_case=False)
+            res.pop("predictions", None)
         payload = {"reason": reason, "result": res, "stats": g.stats(), "context": self.context_hashes(h)}
         self.ledger.append("anchor_eval", payload, "recorder")
         return res
@@ -159,7 +192,7 @@ class Run:
             # allow proposals against an explicit older base only via rebase by the orchestrator
             return self._reject(proposal, task_id, f"stale base: branch {branch} is at {base_hash[:12]}")
         g = self.load_graph(base_hash)
-        v = validate_proposal(g, proposal, self.sample_imgs(), self.limits())
+        v = validate_proposal(g, proposal, self.sample_imgs(), self.limits(), kind=self.kind, profile=self.profile)
         if not v["ok"]:
             return self._reject(proposal, task_id, v["error"])
         new_hash = self.store_graph(v["graph"])
@@ -174,10 +207,13 @@ class Run:
         out = {"ok": True, "new_hash": new_hash, "pure_refactor": v["pure_refactor"], "ledger_seq": entry["seq"]}
         if evaluate_anchor and not v["pure_refactor"]:
             res = self.reference_eval(new_hash, reason=f"accept:{task_id}")
-            out["anchor"] = {k: res[k] for k in ("exact_match", "cer", "failures", "n_cases", "total_edits",
-                                                 "total_ref_chars")}
+            keys = ("bpc", "top1", "failures", "n_tokens") if self.kind == "lm" else (
+                "exact_match", "cer", "failures", "n_cases", "total_edits", "total_ref_chars")
+            out["anchor"] = {k: res[k] for k in keys}
             best = self.anchor_history().get(self.resolve("ref_best"))
-            if best is None or (res["cer"], -res["exact_match"]) < (best["cer"], -best["exact_match"]):
+            better = (lambda a, b: a["bpc"] < b["bpc"]) if self.kind == "lm" else (
+                lambda a, b: (a["cer"], -a["exact_match"]) < (b["cer"], -b["exact_match"]))
+            if best is None or better(res, best):
                 self.set_branch("ref_best", new_hash)
                 out["new_ref_best"] = True
         elif v["pure_refactor"]:

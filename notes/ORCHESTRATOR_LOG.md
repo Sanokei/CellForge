@@ -67,3 +67,27 @@ Interpretation (hypotheses, not established):
 Decision: Round 2 targets robustness (fonts/sizes/sub-pixel), since iid is
 solved. Dev curriculum gains FreeMono + DejaVu Bold and size 18–22; the
 unseen-font test (LiberationMono) stays absent from all author-visible data.
+
+## 2026-09-29 — Pivot (owner decision): hierarchical MoE language modeling
+
+Owner direction: OCR is the easy part; focus on the cell -> cluster -> expert
+MoE decoder. Owner chose (a) tiny character language modeling as the first
+task and (b) an enforced ladder as the primary arm plus an open-recursion arm.
+This reverses v3's "no imposed ladder" at the owner's instruction; the
+fixed-vs-adaptive hierarchy comparison is kept as ladder/1 vs open/1.
+
+Protocol tinylm/1: English-like text from a private grammar (agreement
+across relative clauses), written by the orchestrator and stored only on the
+evaluation server. Makers see 2,000 sampled documents (dev_train) and 300
+dev_eval documents, never the grammar. Final eval: fresh documents per run
+(bpc, top1, bootstrap CI) + grammaticality/novelty/diversity of the model's
+own temperature-0.8 generations, checked by the private recognizer
+(recognizer accepts 5000/5000 generated sentences; rejects 5/5 probes).
+Additional maker rule: no code that computes statistics from text.
+
+Controls (fitted on dev_train, anchor bpc, n=500 docs): uniform 5.000;
+unigram 4.224; bigram 2.629; trigram 1.382; gradient MLP (ctx 8, H=256)
+training in progress.
+
+Round LM-1 commissioned: ladder arm L1, L2, L3 (runs/lm1); open arm O1, O2
+(runs/lm1-open). 25 dev-evals each, independent, same hypothesis text.
