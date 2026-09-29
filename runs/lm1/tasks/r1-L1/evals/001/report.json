@@ -1,0 +1,165 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 300,
+ "n_tokens": 54486,
+ "bpc": 0.6841,
+ "top1": 0.8069,
+ "failures": 0,
+ "uniform_bpc_reference": 5.0,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.0,
+   "n": 237,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.044,
+   "n": 1189,
+   "share_of_total_bits": 0.001
+  },
+  "after_period_space": {
+   "bpc": 2.032,
+   "n": 889,
+   "share_of_total_bits": 0.048
+  },
+  "doc_start": {
+   "bpc": 1.945,
+   "n": 300,
+   "share_of_total_bits": 0.016
+  },
+  "in_word": {
+   "bpc": 0.21,
+   "n": 43192,
+   "share_of_total_bits": 0.243
+  },
+  "word_start": {
+   "bpc": 2.97,
+   "n": 8679,
+   "share_of_total_bits": 0.692
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 289,
+   "pos": 152,
+   "bits": 5.94,
+   "context": "wly. the farmer under the cat ",
+   "target": "u"
+  },
+  {
+   "doc": 240,
+   "pos": 25,
+   "bits": 5.94,
+   "context": "a red girl near a farmer ",
+   "target": "b"
+  },
+  {
+   "doc": 205,
+   "pos": 137,
+   "bits": 5.94,
+   "context": " the girls under a brave bird ",
+   "target": "n"
+  },
+  {
+   "doc": 151,
+   "pos": 99,
+   "bits": 5.94,
+   "context": "e horses with every quiet fox ",
+   "target": "n"
+  },
+  {
+   "doc": 144,
+   "pos": 39,
+   "bits": 5.94,
+   "context": "py dogs near some quiet girls ",
+   "target": "b"
+  },
+  {
+   "doc": 118,
+   "pos": 29,
+   "bits": 5.94,
+   "context": "the children with the horses ",
+   "target": "b"
+  },
+  {
+   "doc": 96,
+   "pos": 125,
+   "bits": 5.94,
+   "context": "the child under every red dog ",
+   "target": "u"
+  },
+  {
+   "doc": 71,
+   "pos": 174,
+   "bits": 5.94,
+   "context": "me young kings with the foxes ",
+   "target": "n"
+  },
+  {
+   "doc": 61,
+   "pos": 124,
+   "bits": 5.94,
+   "context": "ys behind every young teacher ",
+   "target": "u"
+  },
+  {
+   "doc": 44,
+   "pos": 129,
+   "bits": 5.94,
+   "context": " dogs. the birds behind a cat ",
+   "target": "u"
+  },
+  {
+   "doc": 28,
+   "pos": 176,
+   "bits": 5.94,
+   "context": "es. some girls with this bird ",
+   "target": "u"
+  },
+  {
+   "doc": 20,
+   "pos": 149,
+   "bits": 5.94,
+   "context": "armers near this brave farmer ",
+   "target": "n"
+  }
+ ],
+ "route_counts": {
+  "/step/d": {
+   "ex_det": 13141,
+   "ex_adjn": 22200,
+   "ex_post": 13593,
+   "ex_verb": 1905,
+   "ex_adv": 1273,
+   "ex_func": 2374
+  }
+ },
+ "exec": {
+  "node_execs": 36648,
+  "macs": 4575011863,
+  "peak_tensor_elements": 76800
+ },
+ "generation": {
+  "greedy": [
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings.",
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings.",
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings."
+  ],
+  "sampled_t0.8": [
+   "the child likes the horse slowly. this mouse follows the teacher. many horses follow this small cat. a fox sees many red girls. many small farmers find the happy cats often.",
+   "many foxes wait. this king sees these cats often. these farmers laugh often. this king near some cats sleeps slowly. these farmers help some small girls.",
+   "a girl that these foxes find follows these brave teachers never, and a small teacher jumps again. these old kings laugh. this brave bird finds the children slowly, and this teacher follows the teacher",
+   "a cat that the fox sees laughs slowly. some cats like the kings again. the dog sleeps again. these boys laugh quickly. the mouse sleeps. these kings that the girl finds sleep.",
+   "these foxes behind the children like this king often, and these girls see the quiet fox that many happy teachers that some dogs see find never. these boys wait.",
+   "this mouse jumps often. the foxes wait, and the mice like these horses. this cat laughs. some foxes run. many teachers that this fox chases like the foxes."
+  ],
+  "complete_sentences": 75,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 1.0,
+  "failures": [
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

@@ -1,0 +1,4795 @@
+{
+ "defs": {
+  "c_To": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.To",
+    "b1": "fsm.To.b"
+   }
+  },
+  "c_Tp": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.Tp",
+    "b1": "fsm.Tp.b"
+   }
+  },
+  "c_Ts": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.Ts",
+    "b1": "fsm.Ts.b"
+   }
+  },
+  "c_eos": {
+   "act": "tanh",
+   "kind": "cell",
+   "params": {
+    "W1": "eos.W1",
+    "W2": "eos.W2",
+    "b1": "eos.b1",
+    "b2": "eos.b2"
+   }
+  },
+  "c_ex_ADJ__MO": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO.W1",
+    "b1": "ex_ADJ__MO.b1"
+   }
+  },
+  "c_ex_ADJ__MO_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_2.W1",
+    "b1": "ex_ADJ__MO_2.b1"
+   }
+  },
+  "c_ex_ADJ__MO_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_3.W1",
+    "b1": "ex_ADJ__MO_3.b1"
+   }
+  },
+  "c_ex_ADJ__MO_4": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_4.W1",
+    "b1": "ex_ADJ__MO_4.b1"
+   }
+  },
+  "c_ex_ADJ__MO_5": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_5.W1",
+    "b1": "ex_ADJ__MO_5.b1"
+   }
+  },
+  "c_ex_ADJ__MO_6": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_6.W1",
+    "b1": "ex_ADJ__MO_6.b1"
+   }
+  },
+  "c_ex_ADJ__MO_7": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_7.W1",
+    "b1": "ex_ADJ__MO_7.b1"
+   }
+  },
+  "c_ex_ADJ__MO_8": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_8.W1",
+    "b1": "ex_ADJ__MO_8.b1"
+   }
+  },
+  "c_ex_ADJ__MO_9": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MO_9.W1",
+    "b1": "ex_ADJ__MO_9.b1"
+   }
+  },
+  "c_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs.W1",
+    "b1": "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs.b1"
+   }
+  },
+  "c_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2.W1",
+    "b1": "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2.b1"
+   }
+  },
+  "c_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3.W1",
+    "b1": "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3.b1"
+   }
+  },
+  "c_ex_ADV-UNK__-": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_ADV-UNK__-.W1",
+    "b1": "ex_ADV-UNK__-.b1"
+   }
+  },
+  "c_ex_CLE-END__--MO": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_CLE-END__--MO.W1",
+    "b1": "ex_CLE-END__--MO.b1"
+   }
+  },
+  "c_ex_CLE-END__--MO_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_CLE-END__--MO_2.W1",
+    "b1": "ex_CLE-END__--MO_2.b1"
+   }
+  },
+  "c_ex_COMMA__-": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_COMMA__-.W1",
+    "b1": "ex_COMMA__-.b1"
+   }
+  },
+  "c_ex_DET__MO": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO.W1",
+    "b1": "ex_DET__MO.b1"
+   }
+  },
+  "c_ex_DET__MO_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_2.W1",
+    "b1": "ex_DET__MO_2.b1"
+   }
+  },
+  "c_ex_DET__MO_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_3.W1",
+    "b1": "ex_DET__MO_3.b1"
+   }
+  },
+  "c_ex_DET__MO_4": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_4.W1",
+    "b1": "ex_DET__MO_4.b1"
+   }
+  },
+  "c_ex_DET__MO_5": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_5.W1",
+    "b1": "ex_DET__MO_5.b1"
+   }
+  },
+  "c_ex_DET__MO_6": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_6.W1",
+    "b1": "ex_DET__MO_6.b1"
+   }
+  },
+  "c_ex_DET__MO_7": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_7.W1",
+    "b1": "ex_DET__MO_7.b1"
+   }
+  },
+  "c_ex_DET__MO_8": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_8.W1",
+    "b1": "ex_DET__MO_8.b1"
+   }
+  },
+  "c_ex_DET__MO_9": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MO_9.W1",
+    "b1": "ex_DET__MO_9.b1"
+   }
+  },
+  "c_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs.W1",
+    "b1": "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs.b1"
+   }
+  },
+  "c_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2.W1",
+    "b1": "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2.b1"
+   }
+  },
+  "c_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3.W1",
+    "b1": "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3.b1"
+   }
+  },
+  "c_ex_END__MSp": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__MSp.W1",
+    "b1": "ex_END__MSp.b1"
+   }
+  },
+  "c_ex_END__MSp_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__MSp_2.W1",
+    "b1": "ex_END__MSp_2.b1"
+   }
+  },
+  "c_ex_END__MSs": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__MSs.W1",
+    "b1": "ex_END__MSs.b1"
+   }
+  },
+  "c_ex_END__MSs_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__MSs_2.W1",
+    "b1": "ex_END__MSs_2.b1"
+   }
+  },
+  "c_ex_END__RSp": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__RSp.W1",
+    "b1": "ex_END__RSp.b1"
+   }
+  },
+  "c_ex_END__RSp_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__RSp_2.W1",
+    "b1": "ex_END__RSp_2.b1"
+   }
+  },
+  "c_ex_END__RSp_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__RSp_3.W1",
+    "b1": "ex_END__RSp_3.b1"
+   }
+  },
+  "c_ex_END__RSs": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__RSs.W1",
+    "b1": "ex_END__RSs.b1"
+   }
+  },
+  "c_ex_END__RSs_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__RSs_2.W1",
+    "b1": "ex_END__RSs_2.b1"
+   }
+  },
+  "c_ex_END__RSs_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_END__RSs_3.W1",
+    "b1": "ex_END__RSs_3.b1"
+   }
+  },
+  "c_ex_N__MO": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MO.W1",
+    "b1": "ex_N__MO.b1"
+   }
+  },
+  "c_ex_N__MO_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MO_2.W1",
+    "b1": "ex_N__MO_2.b1"
+   }
+  },
+  "c_ex_N__MO_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MO_3.W1",
+    "b1": "ex_N__MO_3.b1"
+   }
+  },
+  "c_ex_N__MSp": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSp.W1",
+    "b1": "ex_N__MSp.b1"
+   }
+  },
+  "c_ex_N__MSp_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSp_2.W1",
+    "b1": "ex_N__MSp_2.b1"
+   }
+  },
+  "c_ex_N__MSp_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSp_3.W1",
+    "b1": "ex_N__MSp_3.b1"
+   }
+  },
+  "c_ex_N__MSp_4": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSp_4.W1",
+    "b1": "ex_N__MSp_4.b1"
+   }
+  },
+  "c_ex_N__MSp_5": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSp_5.W1",
+    "b1": "ex_N__MSp_5.b1"
+   }
+  },
+  "c_ex_N__MSs": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSs.W1",
+    "b1": "ex_N__MSs.b1"
+   }
+  },
+  "c_ex_N__MSs_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSs_2.W1",
+    "b1": "ex_N__MSs_2.b1"
+   }
+  },
+  "c_ex_N__MSs_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSs_3.W1",
+    "b1": "ex_N__MSs_3.b1"
+   }
+  },
+  "c_ex_N__MSs_4": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSs_4.W1",
+    "b1": "ex_N__MSs_4.b1"
+   }
+  },
+  "c_ex_N__MSs_5": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__MSs_5.W1",
+    "b1": "ex_N__MSs_5.b1"
+   }
+  },
+  "c_ex_N__RSp": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSp.W1",
+    "b1": "ex_N__RSp.b1"
+   }
+  },
+  "c_ex_N__RSp_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSp_2.W1",
+    "b1": "ex_N__RSp_2.b1"
+   }
+  },
+  "c_ex_N__RSp_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSp_3.W1",
+    "b1": "ex_N__RSp_3.b1"
+   }
+  },
+  "c_ex_N__RSp_4": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSp_4.W1",
+    "b1": "ex_N__RSp_4.b1"
+   }
+  },
+  "c_ex_N__RSs": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSs.W1",
+    "b1": "ex_N__RSs.b1"
+   }
+  },
+  "c_ex_N__RSs_2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSs_2.W1",
+    "b1": "ex_N__RSs_2.b1"
+   }
+  },
+  "c_ex_N__RSs_3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSs_3.W1",
+    "b1": "ex_N__RSs_3.b1"
+   }
+  },
+  "c_ex_N__RSs_4": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_N__RSs_4.W1",
+    "b1": "ex_N__RSs_4.b1"
+   }
+  },
+  "c_ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs.W1",
+    "b1": "ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs.b1"
+   }
+  },
+  "c_gate": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "gate.W1",
+    "b1": "gate.b1"
+   }
+  },
+  "c_keep": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.keep.W1",
+    "b1": "fsm.keep.b1"
+   }
+  },
+  "c_none": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.none.W1",
+    "b1": "fsm.none.b1"
+   }
+  },
+  "c_opnone": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.opnone.W1",
+    "b1": "fsm.opnone.b1"
+   }
+  },
+  "c_paug": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.paug.W1",
+    "b1": "fsm.paug.b1"
+   }
+  },
+  "c_povr": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.povr.W1",
+    "b1": "fsm.povr.b1"
+   }
+  },
+  "c_prefix": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "pfx.W1",
+    "b1": "pfx.b1"
+   }
+  },
+  "c_route": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "route.W1",
+    "b1": "route.b1"
+   }
+  },
+  "c_saug": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.saug.W1",
+    "b1": "fsm.saug.b1"
+   }
+  },
+  "c_sovr": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.sovr.W1",
+    "b1": "fsm.sovr.b1"
+   }
+  },
+  "c_sum": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "route.sum.W1",
+    "b1": "route.sum.b1"
+   }
+  },
+  "c_top": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fsm.top.W1",
+    "b1": "fsm.top.b1"
+   }
+  },
+  "c_word": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "wrd.W1",
+    "W2": "wrd.W2",
+    "b1": "wrd.b1",
+    "b2": "wrd.b2"
+   }
+  },
+  "cl_eos": {
+   "inputs": [
+    "step",
+    "g"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "e",
+     "in": {
+      "x": "$step"
+     },
+     "use": "c_eos"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 1,
+      "stop": 2
+     },
+     "id": "dot",
+     "in": {
+      "x": "$g"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "m",
+     "in": {
+      "a": "e",
+      "b": "dot"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "y": "m"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_4": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_4"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_5": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_5"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_6": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_6"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_7": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_7"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_8": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_8"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MO_9": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MO_9"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_ADV-UNK__-": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_ADV-UNK__-"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_CLE-END__--MO": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_CLE-END__--MO"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_CLE-END__--MO_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_CLE-END__--MO_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_COMMA__-": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_COMMA__-"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_4": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_4"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_5": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_5"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_6": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_6"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_7": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_7"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_8": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_8"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MO_9": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MO_9"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__MSp": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__MSp"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__MSp_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__MSp_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__MSs": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__MSs"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__MSs_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__MSs_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__RSp": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__RSp"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__RSp_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__RSp_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__RSp_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__RSp_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__RSs": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__RSs"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__RSs_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__RSs_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_END__RSs_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_END__RSs_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MO": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MO"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MO_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MO_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MO_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MO_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSp": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSp"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSp_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSp_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSp_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSp_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSp_4": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSp_4"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSp_5": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSp_5"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSs": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSs"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSs_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSs_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSs_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSs_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSs_4": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSs_4"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__MSs_5": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__MSs_5"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSp": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSp"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSp_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSp_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSp_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSp_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSp_4": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSp_4"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSs": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSs"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSs_2": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSs_2"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSs_3": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSs_3"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_N__RSs_4": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_N__RSs_4"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs": {
+   "inputs": [
+    "pf"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pf"
+     },
+     "use": "c_ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs"
+    }
+   ],
+   "outputs": {
+    "y": "t"
+   },
+   "role": "cluster"
+  },
+  "cl_features": {
+   "inputs": [
+    "ctx"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       256
+      ]
+     },
+     "id": "flat",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 7,
+      "stop": 8
+     },
+     "id": "last",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "lastf",
+     "in": {
+      "x": "last"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "pf",
+     "in": {
+      "x": "flat"
+     },
+     "use": "c_prefix"
+    },
+    {
+     "id": "cls",
+     "in": {
+      "x": "flat"
+     },
+     "use": "c_word"
+    },
+    {
+     "id": "g",
+     "in": {
+      "x": "lastf"
+     },
+     "use": "c_gate"
+    }
+   ],
+   "outputs": {
+    "cls": "cls",
+    "g": "g",
+    "pf": "pf"
+   },
+   "role": "cluster"
+  },
+  "cl_fsm_in": {
+   "inputs": [
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 47
+     },
+     "id": "ps",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 47,
+      "stop": 343
+     },
+     "id": "ss",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "pa",
+     "in": {
+      "x": "ps"
+     },
+     "use": "c_paug"
+    },
+    {
+     "id": "sa",
+     "in": {
+      "x": "ss"
+     },
+     "use": "c_saug"
+    },
+    {
+     "id": "top",
+     "in": {
+      "x": "sa"
+     },
+     "use": "c_top"
+    }
+   ],
+   "outputs": {
+    "pa": "pa",
+    "sa": "sa",
+    "top": "top"
+   },
+   "role": "cluster"
+  },
+  "cl_fsm_phase": {
+   "inputs": [
+    "pa",
+    "top",
+    "cls"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       47,
+       1,
+       1
+      ]
+     },
+     "id": "p3",
+     "in": {
+      "x": "$pa"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       14,
+       1
+      ]
+     },
+     "id": "c3",
+     "in": {
+      "x": "$cls"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1,
+       8
+      ]
+     },
+     "id": "t3",
+     "in": {
+      "x": "$top"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "pc",
+     "in": {
+      "a": "p3",
+      "b": "c3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "pct",
+     "in": {
+      "a": "pc",
+      "b": "t3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       5264
+      ]
+     },
+     "id": "key",
+     "in": {
+      "x": "pct"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "np",
+     "in": {
+      "x": "key"
+     },
+     "use": "c_Tp"
+    },
+    {
+     "id": "op",
+     "in": {
+      "x": "key"
+     },
+     "use": "c_To"
+    },
+    {
+     "id": "none",
+     "in": {
+      "x": "$cls"
+     },
+     "use": "c_none"
+    },
+    {
+     "id": "stay",
+     "in": {
+      "a": "$pa",
+      "b": "none"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "newp",
+     "in": {
+      "a": "np",
+      "b": "stay"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "op": "op",
+    "phase": "newp"
+   },
+   "role": "cluster"
+  },
+  "cl_fsm_punct": {
+   "inputs": [
+    "phase",
+    "stack",
+    "g"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "keep",
+     "in": {
+      "x": "$g"
+     },
+     "use": "c_keep"
+    },
+    {
+     "id": "pk",
+     "in": {
+      "a": "$phase",
+      "b": "keep"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "sk",
+     "in": {
+      "a": "$stack",
+      "b": "keep"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "po",
+     "in": {
+      "x": "$g"
+     },
+     "use": "c_povr"
+    },
+    {
+     "id": "so",
+     "in": {
+      "x": "$g"
+     },
+     "use": "c_sovr"
+    },
+    {
+     "id": "p",
+     "in": {
+      "a": "pk",
+      "b": "po"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "s",
+     "in": {
+      "a": "sk",
+      "b": "so"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "st",
+     "in": {
+      "x0": "p",
+      "x1": "s"
+     },
+     "use": "op:concat"
+    }
+   ],
+   "outputs": {
+    "phase": "p",
+    "stack": "s",
+    "state": "st"
+   },
+   "role": "cluster"
+  },
+  "cl_fsm_stack": {
+   "inputs": [
+    "sa",
+    "op"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "s2",
+     "in": {
+      "x": "$sa"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "o2",
+     "in": {
+      "x": "$op"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "so",
+     "in": {
+      "a": "s2",
+      "b": "o2"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       2368
+      ]
+     },
+     "id": "sof",
+     "in": {
+      "x": "so"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "ns",
+     "in": {
+      "x": "sof"
+     },
+     "use": "c_Ts"
+    },
+    {
+     "id": "none",
+     "in": {
+      "x": "$op"
+     },
+     "use": "c_opnone"
+    },
+    {
+     "id": "stay",
+     "in": {
+      "a": "$sa",
+      "b": "none"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "news",
+     "in": {
+      "a": "ns",
+      "b": "stay"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "stack": "news"
+   },
+   "role": "cluster"
+  },
+  "cl_route": {
+   "inputs": [
+    "phase",
+    "stack"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "u",
+     "in": {
+      "x": "$stack"
+     },
+     "use": "c_sum"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "p2",
+     "in": {
+      "x": "$phase"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "u2",
+     "in": {
+      "x": "u"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "pu",
+     "in": {
+      "a": "p2",
+      "b": "u2"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1880
+      ]
+     },
+     "id": "puf",
+     "in": {
+      "x": "pu"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "s",
+     "in": {
+      "x": "puf"
+     },
+     "use": "c_route"
+    }
+   ],
+   "outputs": {
+    "y": "s"
+   },
+   "role": "cluster"
+  },
+  "ex_ADJ__MO": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_4": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_4"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_5": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_5"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_6": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_6"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_7": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_7"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_8": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_8"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MO_9": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MO_9"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_ADV-UNK__-": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_ADV-UNK__-"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_CLE-END__--MO": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_CLE-END__--MO"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_CLE-END__--MO_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_CLE-END__--MO_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_COMMA__-": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_COMMA__-"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_4": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_4"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_5": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_5"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_6": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_6"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_7": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_7"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_8": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_8"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MO_9": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MO_9"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__MSp": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__MSp"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__MSp_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__MSp_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__MSs": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__MSs"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__MSs_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__MSs_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__RSp": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__RSp"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__RSp_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__RSp_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__RSp_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__RSp_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__RSs": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__RSs"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__RSs_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__RSs_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_END__RSs_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_END__RSs_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MO": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MO"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MO_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MO_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MO_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MO_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSp": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSp"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSp_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSp_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSp_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSp_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSp_4": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSp_4"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSp_5": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSp_5"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSs": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSs"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSs_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSs_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSs_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSs_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSs_4": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSs_4"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__MSs_5": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__MSs_5"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSp": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSp"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSp_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSp_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSp_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSp_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSp_4": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSp_4"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSs": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSs"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSs_2": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSs_2"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSs_3": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSs_3"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_N__RSs_4": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_N__RSs_4"
+    }
+   ],
+   "outputs": {
+    "logits": "lex.y"
+   },
+   "role": "expert"
+  },
+  "ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs": {
+   "inputs": [
+    "pf",
+    "g",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "pf": "$pf"
+     },
+     "use": "cl_ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs"
+    },
+    {
+     "id": "eos",
+     "in": {
+      "g": "$g",
+      "step": "$step"
+     },
+     "use": "cl_eos"
+    },
+    {
+     "id": "sum",
+     "in": {
+      "a": "lex.y",
+      "b": "eos.y"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "logits": "sum"
+   },
+   "role": "expert"
+  },
+  "router": {
+   "inputs": [
+    "phase",
+    "stack"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "s",
+     "in": {
+      "phase": "$phase",
+      "stack": "$stack"
+     },
+     "use": "cl_route"
+    }
+   ],
+   "outputs": {
+    "scores": "s.y"
+   },
+   "role": "router"
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "f",
+     "in": {
+      "ctx": "$ctx"
+     },
+     "use": "cl_features"
+    },
+    {
+     "id": "fi",
+     "in": {
+      "state": "$state"
+     },
+     "use": "cl_fsm_in"
+    },
+    {
+     "id": "fp",
+     "in": {
+      "cls": "f.cls",
+      "pa": "fi.pa",
+      "top": "fi.top"
+     },
+     "use": "cl_fsm_phase"
+    },
+    {
+     "id": "fs",
+     "in": {
+      "op": "fp.op",
+      "sa": "fi.sa"
+     },
+     "use": "cl_fsm_stack"
+    },
+    {
+     "id": "fx",
+     "in": {
+      "g": "f.g",
+      "phase": "fp.phase",
+      "stack": "fs.stack"
+     },
+     "use": "cl_fsm_punct"
+    },
+    {
+     "id": "r",
+     "in": {
+      "phase": "fx.phase",
+      "stack": "fx.stack"
+     },
+     "use": "router"
+    },
+    {
+     "args": {
+      "branches": [
+       "ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs",
+       "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs",
+       "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2",
+       "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3",
+       "ex_ADV-UNK__-",
+       "ex_COMMA__-",
+       "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs",
+       "ex_N__MSs",
+       "ex_N__MSp",
+       "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2",
+       "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3",
+       "ex_CLE-END__--MO",
+       "ex_DET__MO",
+       "ex_DET__MO_2",
+       "ex_DET__MO_3",
+       "ex_N__MSs_2",
+       "ex_N__MSp_2",
+       "ex_N__MSs_3",
+       "ex_N__RSs",
+       "ex_N__RSp",
+       "ex_ADJ__MO",
+       "ex_N__MO",
+       "ex_ADJ__MO_2",
+       "ex_ADJ__MO_3",
+       "ex_N__MSp_3",
+       "ex_CLE-END__--MO_2",
+       "ex_END__MSs",
+       "ex_END__MSp",
+       "ex_DET__MO_4",
+       "ex_DET__MO_5",
+       "ex_DET__MO_6",
+       "ex_DET__MO_7",
+       "ex_DET__MO_8",
+       "ex_DET__MO_9",
+       "ex_N__MSs_4",
+       "ex_N__RSs_2",
+       "ex_N__RSp_2",
+       "ex_ADJ__MO_4",
+       "ex_N__MO_2",
+       "ex_ADJ__MO_5",
+       "ex_ADJ__MO_6",
+       "ex_N__MSp_4",
+       "ex_N__MSs_5",
+       "ex_ADJ__MO_7",
+       "ex_N__MO_3",
+       "ex_ADJ__MO_8",
+       "ex_ADJ__MO_9",
+       "ex_N__RSs_3",
+       "ex_N__RSp_3",
+       "ex_N__MSp_5",
+       "ex_END__MSs_2",
+       "ex_END__MSp_2",
+       "ex_END__RSs",
+       "ex_END__RSp",
+       "ex_N__RSs_4",
+       "ex_N__RSp_4",
+       "ex_END__RSs_2",
+       "ex_END__RSp_2",
+       "ex_END__RSs_3",
+       "ex_END__RSp_3"
+      ],
+      "k": 1
+     },
+     "id": "d",
+     "in": {
+      "g": "f.g",
+      "pf": "f.pf",
+      "scores": "r.scores",
+      "step": "$step"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "logits": "d.logits",
+    "state": "fx.state"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 343,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "eos.W1": {
+   "sha256": "587d1be615aafb432b91d469ebc069f531db2dc07181b88433bd4f2b39292b20",
+   "shape": [
+    1,
+    1
+   ]
+  },
+  "eos.W2": {
+   "sha256": "435810cdefd71a8d413ac4f109662ca2560ea799de8b2e32e1583ff17fe5e12b",
+   "shape": [
+    32,
+    1
+   ]
+  },
+  "eos.b1": {
+   "sha256": "52b74c3ab39901b40c916e31e0454ee5a99fe9e665d798865116ee1d8d5a2a64",
+   "shape": [
+    1
+   ]
+  },
+  "eos.b2": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO.W1": {
+   "sha256": "afa4e9ad91972c13e0f9544f9d85219e2a03e6987ff9c7a85e0a712eb9be2695",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_2.W1": {
+   "sha256": "b97ca7dadd6f962308d4afb191a11ba0cb3b2c3443f135bc99d665516ebf506d",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_3.W1": {
+   "sha256": "f2469cc6b40714828d17ac23bb5eea146298d4be9859bd4f95d8f1d1e854e394",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_4.W1": {
+   "sha256": "f97447319f0e78eaaece29b8f6d1cb4b549d5a2c142306d9f5e9e1ed900c9ed1",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_4.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_5.W1": {
+   "sha256": "0e11ee1c7902505a23443e0b42deedcdb8a259fe445fbf6640c0f0945fb4c462",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_5.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_6.W1": {
+   "sha256": "4e67876d01f25c88b8d0c9bdfef300b355972f5270d4c6da6d5aefee4159aa42",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_6.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_7.W1": {
+   "sha256": "b6aeecfd2e04a9e3cf2ad033404ad0852ef3ad4b46be781de742a7fa62be978a",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_7.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_8.W1": {
+   "sha256": "ffafaef83df12d70a1dd42ce231d1f214d43b100081a6d99d55622e2ac2ef2d0",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_8.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MO_9.W1": {
+   "sha256": "a34e7f9c7cc0da5bca7f1925f198bd23c3eac0306285b890f09c65acba8fbb51",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MO_9.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs.W1": {
+   "sha256": "c1ee8eb647d7ecf619cd1dd0d1921aa517ff73cda73d224d8c266d07250907c9",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2.W1": {
+   "sha256": "6bc0efc453931adba4dfaf9523bffb61bd94a558d235f6b4ec88a85ded3b86a8",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3.W1": {
+   "sha256": "f8f0624b9f0d22adfcc30e774408b0549db06ed0034a016a0f13757008d55d91",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADJ__MSu-MSp-MSs-RSu-RSp-RSs_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_ADV-UNK__-.W1": {
+   "sha256": "b5a2d0134b21190942fe641e50f9b58f5bbcafa902f3f9df6b3107d71038eac0",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_ADV-UNK__-.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_CLE-END__--MO.W1": {
+   "sha256": "fc8f20f7b4aac8d2d92eaf0af0cf1936492c623c01b13076ce381786bcefd5de",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_CLE-END__--MO.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_CLE-END__--MO_2.W1": {
+   "sha256": "c0fb3cd0e427b64f218315681690f03ee4b378461e16eef48ae050d46579c31e",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_CLE-END__--MO_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_COMMA__-.W1": {
+   "sha256": "5fcd09b8196938c57d8a805c9544ded5e017bf2a8953ab5d501e516e2c358574",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_COMMA__-.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO.W1": {
+   "sha256": "0a0be414e8877b85f22fe980703d739e61c11eaad1acfc9af951751357dfb14a",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_2.W1": {
+   "sha256": "824237048f802a361c508f7cbc4371a26b5a48c025aeb2a4ac5396254fb3f455",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_3.W1": {
+   "sha256": "c6ce9a2115b47ca749ca7709fa7b07943bf1ea481a561b99062c560adcf402bb",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_4.W1": {
+   "sha256": "1bb294f288313aca663f8b7eaf648763dc9c9bc24849b0892144335e8e7dd684",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_4.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_5.W1": {
+   "sha256": "df14813d516a91b9bb873ca10f9c1556c901e7c6eef72035c4f49f76d7dd4330",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_5.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_6.W1": {
+   "sha256": "798f490d4867d6026df4b600cbf3f4e613d88c5873daa549c7d05d1c6ff92b2b",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_6.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_7.W1": {
+   "sha256": "e73e69399dea628abbaf25579a4070b3d0ed90dd9a65590b633162bf12f3d05b",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_7.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_8.W1": {
+   "sha256": "bd3c3129bda8face20424317583a7108c4b197a5fd969b468e19bc2118d62e14",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_8.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MO_9.W1": {
+   "sha256": "a69127e2ddfdfe3caff47b7b0cfb67328e04b1cfd4a4c60ed9c9c9c24525f5c1",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MO_9.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs.W1": {
+   "sha256": "399784c01687ab94ee37425147dee3890cab87d16f4137c5c6cbfb6794f5e247",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2.W1": {
+   "sha256": "fc8d4f02da1060b430933d58912891ebe2457370a7ae4fe0a9f2da4f9dc19114",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3.W1": {
+   "sha256": "64436942efab8d8b84477a8db10182b011031e94c0a6254a232b3e93c8dde255",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_DET__MSu-MSp-MSs-RSu-RSp-RSs_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__MSp.W1": {
+   "sha256": "1d444e16f4a1c296425c625fbbcc33455c2fed88ba16ef551c23d43daf40cbd4",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__MSp.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__MSp_2.W1": {
+   "sha256": "41a83788445c07160f6319952d04d7c5aab527c2248178a63470f0dbf50c33cf",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__MSp_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__MSs.W1": {
+   "sha256": "0d0ae175871c46ed5f46e9de591da3a1e1240cbce17c8d1441600213956ca1f2",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__MSs.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__MSs_2.W1": {
+   "sha256": "b8cfcc9916dce79403bed29b7a9be039c8e37e578c5bf1f4a95f0fc3746b8db1",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__MSs_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__RSp.W1": {
+   "sha256": "309d4168be215afe064413eeb392169006a28fb0fdd7101eaea625a3405b95a4",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__RSp.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__RSp_2.W1": {
+   "sha256": "3abfe4494160c8287342bf3a380097dae47d73bf007edae79100f82a133c0fa0",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__RSp_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__RSp_3.W1": {
+   "sha256": "b236e1f65c6787a64cec2aa9f5d79ad63c674be87b2378e8540b967a725eba37",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__RSp_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__RSs.W1": {
+   "sha256": "f4a5b4ef73c92e5c12c4a362cdce0954dd78648f9e6a9eb093cc5c68b70cfc1d",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__RSs.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__RSs_2.W1": {
+   "sha256": "2780265d74757d96e3376578f018fd9cbe161c1ee457add9b6022884f2080fa3",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__RSs_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_END__RSs_3.W1": {
+   "sha256": "7a0d91cb6f2ce8811c9979f2c0f21f65ac2d390707ffa21633b3c39caac62b37",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_END__RSs_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MO.W1": {
+   "sha256": "a60fddb92f04ccfd3d6191cd0738feb3f6f2cc6d04d621731f0070d1b168988a",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MO.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MO_2.W1": {
+   "sha256": "5160c14d45ccd30756719cb8ec0e65b55ab85cb583109e14e9d9b0cc1bd288c9",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MO_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MO_3.W1": {
+   "sha256": "570a9bab27294e36724dacd5d651181967e1757b3607b39bcf00e495f230af15",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MO_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSp.W1": {
+   "sha256": "5b9226ce4758474143eebe9687ac1791a5106921eccec980cf77d51921abfb43",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSp.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSp_2.W1": {
+   "sha256": "566dca19d91404171277d2c10f5911396c4223a0dd56fa4b3b6058becb46c52c",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSp_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSp_3.W1": {
+   "sha256": "f542fbf365f55010be52df968427494ad54bca7e17988e91eec4e3147fe53ce2",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSp_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSp_4.W1": {
+   "sha256": "2e57a4be90ae98aeaace07a4d4f7dded25d888d38d878ba0da6421ef73b42df9",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSp_4.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSp_5.W1": {
+   "sha256": "3a0fa4caa34990d60a556ade95592316299289e790becd7bd8c175518b97afbb",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSp_5.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSs.W1": {
+   "sha256": "e746376a1580a13be926d838cfc0b91ac005c352258df3cc7b8908dd23e0bf2a",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSs.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSs_2.W1": {
+   "sha256": "8ab99b6d0bf64fd6bbd97e70b3c69962bcbee02d8e529d1d87afcff305da6f86",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSs_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSs_3.W1": {
+   "sha256": "0d560f00cb7b0d8feff46b1295478a002de93318fc2cbaa5df38e0d9941c23a9",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSs_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSs_4.W1": {
+   "sha256": "9981d646bf7a8d7745da8de2d244c1cf9814248b14fb49e753246b24bc0bf6a7",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSs_4.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__MSs_5.W1": {
+   "sha256": "0994fff200993eac915948e9e7194a372d7725cec754582a9d451ff601bd4932",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__MSs_5.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSp.W1": {
+   "sha256": "57ef8d89e4e17c0d06c509057d25b2234410daa53fb369fa9ec40b4fe7941dd3",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSp.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSp_2.W1": {
+   "sha256": "7d4a593629270b65be96c82af9ad003df450db22e3d970e6e73d3301a637baf2",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSp_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSp_3.W1": {
+   "sha256": "e91ddf8133a790d393e25295d77a37788595128ceedd1cf0a5ed1dc144148eaf",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSp_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSp_4.W1": {
+   "sha256": "5c1e1c1c79928cb9e0611ed1ee826bf08e41650fcd7e4afe2bf337cff6a3be07",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSp_4.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSs.W1": {
+   "sha256": "ed38414a359e7c43918a6e213a3f4ce07ea2c94ea0f65948f7ecedf80badfa67",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSs.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSs_2.W1": {
+   "sha256": "aa13dc330ce5362e6c189c225a65f12703d011da6b343210f964753a377faa05",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSs_2.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSs_3.W1": {
+   "sha256": "3915951c38042c2e21a13a46b396028f9ad6eecf42a5a7816e32c2166d176a2e",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSs_3.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_N__RSs_4.W1": {
+   "sha256": "7ad94ec166e730f219098ccad1eba17eeaf46e963da206fcf2124a1358850137",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_N__RSs_4.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs.W1": {
+   "sha256": "1ef141ea1cf50c7a5a980e9dda2da299001048aea38b47d5fed6d1e43033afe2",
+   "shape": [
+    32,
+    213
+   ]
+  },
+  "ex_PERIOD-PREP-S0-THAT-VT__--MO-MSp-MSs-RSu-RSp-RSs.b1": {
+   "sha256": "f6d4ae13e39cea54924f31acbb724abbf7ba6c3f5df83715d380cb2749a8b588",
+   "shape": [
+    32
+   ]
+  },
+  "fsm.To": {
+   "sha256": "b812ee1321f2dd1492810c965e9cdde3a7ed55c457b9723cb7a3288f479adc58",
+   "shape": [
+    8,
+    5264
+   ]
+  },
+  "fsm.To.b": {
+   "sha256": "3d3ff9498849783434a9c3009d3b31297292a5b50fcbf3b4f4af58d3a7d22621",
+   "shape": [
+    8
+   ]
+  },
+  "fsm.Tp": {
+   "sha256": "f907989bb019678c1ab907ba303cd4e3661949ca04a47bd6cad2939ce03b5da0",
+   "shape": [
+    47,
+    5264
+   ]
+  },
+  "fsm.Tp.b": {
+   "sha256": "26bc94e0a0c871cf196f48bd9ea578634fa7df8c87668229a2f2f3e4dc8b6fb6",
+   "shape": [
+    47
+   ]
+  },
+  "fsm.Ts": {
+   "sha256": "ac06fc9cf4c8d71eda339c288b72a1eb959b128860578470d74c52bdd88d8ed9",
+   "shape": [
+    296,
+    2368
+   ]
+  },
+  "fsm.Ts.b": {
+   "sha256": "3b13eedb0ba7c73720a71ded66121c2c8abcefce9c3b965a67110eba6e8c429a",
+   "shape": [
+    296
+   ]
+  },
+  "fsm.keep.W1": {
+   "sha256": "fa726cd85e74e4751af49e2b347898799ef3ab150e5c9d9686db2f664cb43cd0",
+   "shape": [
+    1,
+    2
+   ]
+  },
+  "fsm.keep.b1": {
+   "sha256": "b3fbb820fb37410966e299eddf0dbfa77ba6e3d150081e11641c5cbbeacf8e43",
+   "shape": [
+    1
+   ]
+  },
+  "fsm.none.W1": {
+   "sha256": "4b221b31670fce4a2afb854e39ee7a9657fa77a6ce1b744342b399cd44e86fa1",
+   "shape": [
+    1,
+    14
+   ]
+  },
+  "fsm.none.b1": {
+   "sha256": "b3fbb820fb37410966e299eddf0dbfa77ba6e3d150081e11641c5cbbeacf8e43",
+   "shape": [
+    1
+   ]
+  },
+  "fsm.opnone.W1": {
+   "sha256": "e55edf7770c1c5db6980fe6a109f968180010bc84f008c6db8ac9e1d8534b495",
+   "shape": [
+    1,
+    8
+   ]
+  },
+  "fsm.opnone.b1": {
+   "sha256": "b3fbb820fb37410966e299eddf0dbfa77ba6e3d150081e11641c5cbbeacf8e43",
+   "shape": [
+    1
+   ]
+  },
+  "fsm.paug.W1": {
+   "sha256": "ff50259756cbb47ca8bbcb4ae6ba65904a0bb7931e45a159141763784201b2b4",
+   "shape": [
+    47,
+    47
+   ]
+  },
+  "fsm.paug.b1": {
+   "sha256": "df26459e541bf9eb243bea4c0b577bce0d40daf42fc4f949c52d4267de0c55e0",
+   "shape": [
+    47
+   ]
+  },
+  "fsm.povr.W1": {
+   "sha256": "6511cfb017cb0f5ab52af17c8bae9bbd2a23dd57a3cf4f4491e7bddf54c64c1f",
+   "shape": [
+    47,
+    2
+   ]
+  },
+  "fsm.povr.b1": {
+   "sha256": "26bc94e0a0c871cf196f48bd9ea578634fa7df8c87668229a2f2f3e4dc8b6fb6",
+   "shape": [
+    47
+   ]
+  },
+  "fsm.saug.W1": {
+   "sha256": "120629e48acb59089067fe7b01130122db3dfb719eca7fbf1db79588ccdb9c15",
+   "shape": [
+    296,
+    296
+   ]
+  },
+  "fsm.saug.b1": {
+   "sha256": "93410212636bb486a939c9b10d32953382b69830683660b4fa7b3f94688113ff",
+   "shape": [
+    296
+   ]
+  },
+  "fsm.sovr.W1": {
+   "sha256": "7c4ea485332783a72aabad72f801253fd235d47d9988e88e1c50e1b0b4443f6e",
+   "shape": [
+    296,
+    2
+   ]
+  },
+  "fsm.sovr.b1": {
+   "sha256": "3b13eedb0ba7c73720a71ded66121c2c8abcefce9c3b965a67110eba6e8c429a",
+   "shape": [
+    296
+   ]
+  },
+  "fsm.top.W1": {
+   "sha256": "d1d9dbe459dde28c6e6accb471a0ebc9070f6d4cfdf636c5d8e5e7dad0ecf7a7",
+   "shape": [
+    8,
+    296
+   ]
+  },
+  "fsm.top.b1": {
+   "sha256": "3d3ff9498849783434a9c3009d3b31297292a5b50fcbf3b4f4af58d3a7d22621",
+   "shape": [
+    8
+   ]
+  },
+  "gate.W1": {
+   "sha256": "d0d1f00e6a46d020429743e05200c7ce1bcaf66e8c74cc454491426f6251378f",
+   "shape": [
+    2,
+    32
+   ]
+  },
+  "gate.b1": {
+   "sha256": "45e2f25e02832ebe2ff01c77369d754e8270cc3707914b80bc591ac522b5e197",
+   "shape": [
+    2
+   ]
+  },
+  "pfx.W1": {
+   "sha256": "7f954b8701d1e221d325ed0395edd6f811cdabc63446c0ecf4eb810a092828c1",
+   "shape": [
+    213,
+    256
+   ]
+  },
+  "pfx.b1": {
+   "sha256": "ac9e04479e6063456ff35f8c459081c44438e8d76af91c36819d9d7deb7f4554",
+   "shape": [
+    213
+   ]
+  },
+  "route.W1": {
+   "sha256": "30c52589357c26f4bbaba221073ded9113398d7a2091dc5d2f01f57c38ec1376",
+   "shape": [
+    60,
+    1880
+   ]
+  },
+  "route.b1": {
+   "sha256": "bbd209e28229ab0b1f88595381eb0413526fab9ad9accf0822a301c3e2e634c2",
+   "shape": [
+    60
+   ]
+  },
+  "route.sum.W1": {
+   "sha256": "597828b39cb6ce76a31f67025259c5808d53c1357d3fd635af29e39020bd2e62",
+   "shape": [
+    40,
+    296
+   ]
+  },
+  "route.sum.b1": {
+   "sha256": "7f3caa2e28edaf750b769e2e53e046dddb4d61d1a8dc74b06d4848585ef8a82d",
+   "shape": [
+    40
+   ]
+  },
+  "wrd.W1": {
+   "sha256": "f8c896fa105f85c0b8b4d8e4589a92eff8fc111eb00c17612accbb14c3346b49",
+   "shape": [
+    74,
+    256
+   ]
+  },
+  "wrd.W2": {
+   "sha256": "8ce1f2f28aefe012577f90dace60040749613655b02d1ff6ce4a3b1affddb82e",
+   "shape": [
+    14,
+    74
+   ]
+  },
+  "wrd.b1": {
+   "sha256": "f63b20d6b95ed0e05e9bbeaddeb4411915217507a0653653debc653b81d20fd2",
+   "shape": [
+    74
+   ]
+  },
+  "wrd.b2": {
+   "sha256": "c92558a07c013ff6c812530c1ce1eda61818989c5af5a74efd10ab77e0fcfd1a",
+   "shape": [
+    14
+   ]
+  }
+ }
+}

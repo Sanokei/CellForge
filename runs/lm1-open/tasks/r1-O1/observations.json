@@ -1,0 +1,6 @@
+[
+ {"type": "observation", "summary": "Hand-written PCFG compiled to a deterministic token automaton (2292 states, alive-mask + position + PWL-log emission) reaches 0.7022 dev bpc on the first evaluation.", "sources": ["evals/000/report.json"], "state": "measured-on-development", "components": ["step_root", "b_consume", "b_grammar", "b_emit"]},
+ {"type": "observation", "summary": "Document end follows a length rule (~150 chars); gating <eos> odds on step lowered after-period cost from 0.815 to 0.033 bpc; with depth-dependent modifiers total went 0.7022 -> 0.6824.", "sources": ["evals/000/report.json", "evals/001/report.json"], "state": "measured-on-development", "components": ["b_eos"]},
+ {"type": "observation", "summary": "Re-estimating structural rates by reading 35 docs (adj .35, PP/RC by depth, Vi .45, adv .27, and .21) gave 0.6806 bpc, top1 0.8093; word starts carry 69% of bits.", "sources": ["evals/002/report.json"], "state": "measured-on-development", "components": ["pw.W"]},
+ {"type": "claim", "summary": "Remaining gains are mostly in the grammar's inherent word-choice entropy; possible small gains from per-document rate adaptation or noun reuse (my tallies show weak evidence).", "sources": ["evals/002/report.json"], "state": "proposed", "components": ["grammar"]}
+]

@@ -1,0 +1,1921 @@
+{
+ "defs": {
+  "c_P_np": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "P_np.W1",
+    "b1": "P_np.b1"
+   }
+  },
+  "c_P_post": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "P_post.W1",
+    "b1": "P_post.b1"
+   }
+  },
+  "c_P_tail": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "P_tail.W1",
+    "b1": "P_tail.b1"
+   }
+  },
+  "c_T_np": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "T_np.W1",
+    "b1": "T_np.b1"
+   }
+  },
+  "c_T_post": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "T_post.W1",
+    "b1": "T_post.b1"
+   }
+  },
+  "c_T_tail": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "T_tail.W1",
+    "b1": "T_tail.b1"
+   }
+  },
+  "c_c2adj": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "c2adj.W1",
+    "b1": "c2adj.b1"
+   }
+  },
+  "c_detc": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "detc.W1",
+    "b1": "detc.b1"
+   }
+  },
+  "c_detz": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "detz.W1",
+    "W2": "detz.W2",
+    "b1": "detz.b1",
+    "b2": "detz.b2"
+   }
+  },
+  "c_eosramp": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "eosramp.W1",
+    "W2": "eosramp.W2",
+    "b1": "eosramp.b1",
+    "b2": "eosramp.b2"
+   }
+  },
+  "c_lexu": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "lexu.W1",
+    "b1": "lexu.b1"
+   }
+  },
+  "c_log": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "log.W1",
+    "W2": "log.W2",
+    "b1": "log.b1",
+    "b2": "log.b2"
+   }
+  },
+  "c_prho": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "prho.W1",
+    "b1": "prho.b1"
+   }
+  },
+  "c_punct": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "punct.W1",
+    "b1": "punct.b1"
+   }
+  },
+  "c_route": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "route.W1",
+    "b1": "route.b1"
+   }
+  },
+  "c_ssum": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ssum.W1",
+    "b1": "ssum.b1"
+   }
+  },
+  "c_tc2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "tc2.W1",
+    "b1": "tc2.b1"
+   }
+  },
+  "c_tphase": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "tphase.W1",
+    "b1": "tphase.b1"
+   }
+  },
+  "c_tstack": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "tstack.W1",
+    "b1": "tstack.b1"
+   }
+  },
+  "cl_detect": {
+   "inputs": [
+    "ctx",
+    "prev"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       256
+      ]
+     },
+     "id": "f",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "z",
+     "in": {
+      "x": "f"
+     },
+     "use": "c_detz"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "zc",
+     "in": {
+      "x0": "z",
+      "x1": "$prev"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "zc"
+     },
+     "use": "c_detc"
+    }
+   ],
+   "outputs": {
+    "cls": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_lex": {
+   "inputs": [
+    "ctx"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       256
+      ]
+     },
+     "id": "f",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "u",
+     "in": {
+      "x": "f"
+     },
+     "use": "c_lexu"
+    },
+    {
+     "args": {
+      "shape": [
+       74,
+       9
+      ]
+     },
+     "id": "U",
+     "in": {
+      "x": "u"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "U3",
+     "in": {
+      "x": "U"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "ch",
+     "use": "param:lex.chars"
+    },
+    {
+     "id": "m",
+     "in": {
+      "a": "U3",
+      "b": "ch"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "C",
+     "in": {
+      "x": "m"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "em",
+     "use": "param:lex.endmask"
+    },
+    {
+     "id": "e",
+     "in": {
+      "a": "U",
+      "b": "em"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "ue",
+     "in": {
+      "x": "e"
+     },
+     "use": "op:sum"
+    }
+   ],
+   "outputs": {
+    "C": "C",
+    "uend": "ue"
+   },
+   "role": "cluster"
+  },
+  "cl_log": {
+   "inputs": [
+    "p"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       32,
+       1
+      ]
+     },
+     "id": "a",
+     "in": {
+      "x": "$p"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "l",
+     "in": {
+      "x": "a"
+     },
+     "use": "c_log"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "b",
+     "in": {
+      "x": "l"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "mk",
+     "use": "param:lex.mask"
+    },
+    {
+     "id": "o",
+     "in": {
+      "a": "b",
+      "b": "mk"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "logits": "o"
+   },
+   "role": "cluster"
+  },
+  "cl_mix_np": {
+   "inputs": [
+    "st",
+    "C",
+    "uend",
+    "c2"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "P",
+     "in": {
+      "x": "$st"
+     },
+     "use": "c_P_np"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       74
+      ]
+     },
+     "id": "Pr",
+     "in": {
+      "x": "P"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "v",
+     "in": {
+      "a": "Pr",
+      "b": "$C"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "vr",
+     "in": {
+      "x": "v"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "T",
+     "in": {
+      "x": "$st"
+     },
+     "use": "c_T_np"
+    },
+    {
+     "args": {
+      "shape": [
+       74,
+       3
+      ]
+     },
+     "id": "Tr",
+     "in": {
+      "x": "T"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "ue",
+     "in": {
+      "x": "$uend"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "tm",
+     "in": {
+      "a": "Tr",
+      "b": "ue"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ts",
+     "in": {
+      "x": "tm"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "to",
+     "in": {
+      "x": "ts"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "tc",
+     "in": {
+      "x": "$c2"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "tq",
+     "in": {
+      "a": "to",
+      "b": "tc"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       6
+      ]
+     },
+     "id": "tf",
+     "in": {
+      "x": "tq"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "ta",
+     "in": {
+      "x": "tf"
+     },
+     "use": "c_c2adj"
+    },
+    {
+     "args": {
+      "after": 26,
+      "axis": 0,
+      "before": 3,
+      "value": 0.0
+     },
+     "id": "tp",
+     "in": {
+      "x": "ta"
+     },
+     "use": "op:pad"
+    },
+    {
+     "id": "p",
+     "in": {
+      "a": "vr",
+      "b": "tp"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "p": "p"
+   },
+   "role": "cluster"
+  },
+  "cl_mix_post": {
+   "inputs": [
+    "st",
+    "C",
+    "uend",
+    "c2"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "P",
+     "in": {
+      "x": "$st"
+     },
+     "use": "c_P_post"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       74
+      ]
+     },
+     "id": "Pr",
+     "in": {
+      "x": "P"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "v",
+     "in": {
+      "a": "Pr",
+      "b": "$C"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "vr",
+     "in": {
+      "x": "v"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "T",
+     "in": {
+      "x": "$st"
+     },
+     "use": "c_T_post"
+    },
+    {
+     "args": {
+      "shape": [
+       74,
+       3
+      ]
+     },
+     "id": "Tr",
+     "in": {
+      "x": "T"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "ue",
+     "in": {
+      "x": "$uend"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "tm",
+     "in": {
+      "a": "Tr",
+      "b": "ue"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ts",
+     "in": {
+      "x": "tm"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "to",
+     "in": {
+      "x": "ts"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "tc",
+     "in": {
+      "x": "$c2"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "tq",
+     "in": {
+      "a": "to",
+      "b": "tc"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       6
+      ]
+     },
+     "id": "tf",
+     "in": {
+      "x": "tq"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "ta",
+     "in": {
+      "x": "tf"
+     },
+     "use": "c_c2adj"
+    },
+    {
+     "args": {
+      "after": 26,
+      "axis": 0,
+      "before": 3,
+      "value": 0.0
+     },
+     "id": "tp",
+     "in": {
+      "x": "ta"
+     },
+     "use": "op:pad"
+    },
+    {
+     "id": "p",
+     "in": {
+      "a": "vr",
+      "b": "tp"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "p": "p"
+   },
+   "role": "cluster"
+  },
+  "cl_mix_tail": {
+   "inputs": [
+    "st",
+    "C",
+    "uend",
+    "c2"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "P",
+     "in": {
+      "x": "$st"
+     },
+     "use": "c_P_tail"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       74
+      ]
+     },
+     "id": "Pr",
+     "in": {
+      "x": "P"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "v",
+     "in": {
+      "a": "Pr",
+      "b": "$C"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "vr",
+     "in": {
+      "x": "v"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "T",
+     "in": {
+      "x": "$st"
+     },
+     "use": "c_T_tail"
+    },
+    {
+     "args": {
+      "shape": [
+       74,
+       3
+      ]
+     },
+     "id": "Tr",
+     "in": {
+      "x": "T"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "ue",
+     "in": {
+      "x": "$uend"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "tm",
+     "in": {
+      "a": "Tr",
+      "b": "ue"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ts",
+     "in": {
+      "x": "tm"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "to",
+     "in": {
+      "x": "ts"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "tc",
+     "in": {
+      "x": "$c2"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "tq",
+     "in": {
+      "a": "to",
+      "b": "tc"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       6
+      ]
+     },
+     "id": "tf",
+     "in": {
+      "x": "tq"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "ta",
+     "in": {
+      "x": "tf"
+     },
+     "use": "c_c2adj"
+    },
+    {
+     "args": {
+      "after": 26,
+      "axis": 0,
+      "before": 3,
+      "value": 0.0
+     },
+     "id": "tp",
+     "in": {
+      "x": "ta"
+     },
+     "use": "op:pad"
+    },
+    {
+     "id": "p",
+     "in": {
+      "a": "vr",
+      "b": "tp"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "p": "p"
+   },
+   "role": "cluster"
+  },
+  "cl_punct": {
+   "inputs": [
+    "prev",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "l",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "c_punct"
+    },
+    {
+     "id": "r",
+     "in": {
+      "x": "$step"
+     },
+     "use": "c_eosramp"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 5,
+      "stop": 6
+     },
+     "id": "pd",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "m",
+     "in": {
+      "a": "r",
+      "b": "pd"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "after": 29,
+      "axis": 0,
+      "before": 2,
+      "value": 0.0
+     },
+     "id": "mp",
+     "in": {
+      "x": "m"
+     },
+     "use": "op:pad"
+    },
+    {
+     "id": "o",
+     "in": {
+      "a": "l",
+      "b": "mp"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "logits": "o"
+   },
+   "role": "cluster"
+  },
+  "cl_route": {
+   "inputs": [
+    "phase",
+    "prev"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "x",
+     "in": {
+      "x0": "$phase",
+      "x1": "$prev"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "s",
+     "in": {
+      "x": "x"
+     },
+     "use": "c_route"
+    }
+   ],
+   "outputs": {
+    "scores": "s"
+   },
+   "role": "cluster"
+  },
+  "cl_trans": {
+   "inputs": [
+    "state",
+    "cls"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 19
+     },
+     "id": "ph",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 19,
+      "stop": 55
+     },
+     "id": "sg",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "sm",
+     "in": {
+      "x": "sg"
+     },
+     "use": "c_ssum"
+    },
+    {
+     "id": "rh",
+     "in": {
+      "x": "ph"
+     },
+     "use": "c_prho"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 55,
+      "stop": 57
+     },
+     "id": "cc",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "c1a",
+     "in": {
+      "x": "cc"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "c1b",
+     "in": {
+      "x": "$cls"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "c1m",
+     "in": {
+      "a": "c1a",
+      "b": "c1b"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       36
+      ]
+     },
+     "id": "c1f",
+     "in": {
+      "x": "c1m"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "cx",
+     "in": {
+      "x0": "c1f",
+      "x1": "$cls"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "nc",
+     "in": {
+      "x": "cx"
+     },
+     "use": "c_tc2"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "p1a",
+     "in": {
+      "x": "ph"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "p1b",
+     "in": {
+      "x": "$cls"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "p1m",
+     "in": {
+      "a": "p1a",
+      "b": "p1b"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       342
+      ]
+     },
+     "id": "p1f",
+     "in": {
+      "x": "p1m"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "p2a",
+     "in": {
+      "x": "p1f"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "p2b",
+     "in": {
+      "x": "sm"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "p2m",
+     "in": {
+      "a": "p2a",
+      "b": "p2b"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1368
+      ]
+     },
+     "id": "p2f",
+     "in": {
+      "x": "p2m"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "s1a",
+     "in": {
+      "x": "sg"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "s1b",
+     "in": {
+      "x": "$cls"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "s1m",
+     "in": {
+      "a": "s1a",
+      "b": "s1b"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       648
+      ]
+     },
+     "id": "s1f",
+     "in": {
+      "x": "s1m"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "s2a",
+     "in": {
+      "x": "s1f"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "s2b",
+     "in": {
+      "x": "rh"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "s2m",
+     "in": {
+      "a": "s2a",
+      "b": "s2b"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1296
+      ]
+     },
+     "id": "s2f",
+     "in": {
+      "x": "s2m"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "px",
+     "in": {
+      "x0": "p2f",
+      "x1": "$cls"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "sx",
+     "in": {
+      "x0": "s2f",
+      "x1": "$cls"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "np",
+     "in": {
+      "x": "px"
+     },
+     "use": "c_tphase"
+    },
+    {
+     "id": "ns",
+     "in": {
+      "x": "sx"
+     },
+     "use": "c_tstack"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "st",
+     "in": {
+      "x0": "np",
+      "x1": "ns",
+      "x2": "nc"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "key",
+     "in": {
+      "x": "np"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "kb",
+     "in": {
+      "x": "ns"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "km",
+     "in": {
+      "a": "key",
+      "b": "kb"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       684
+      ]
+     },
+     "id": "kf",
+     "in": {
+      "x": "km"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "c2": "nc",
+    "key": "kf",
+    "phase": "np",
+    "st": "st"
+   },
+   "role": "cluster"
+  },
+  "ex_np": {
+   "inputs": [
+    "st",
+    "C",
+    "uend",
+    "prev",
+    "step",
+    "c2"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "C": "$C",
+      "c2": "$c2",
+      "st": "$st",
+      "uend": "$uend"
+     },
+     "use": "cl_mix_np"
+    },
+    {
+     "id": "l",
+     "in": {
+      "p": "m.p"
+     },
+     "use": "cl_log"
+    }
+   ],
+   "outputs": {
+    "logits": "l.logits"
+   },
+   "role": "expert"
+  },
+  "ex_post": {
+   "inputs": [
+    "st",
+    "C",
+    "uend",
+    "prev",
+    "step",
+    "c2"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "C": "$C",
+      "c2": "$c2",
+      "st": "$st",
+      "uend": "$uend"
+     },
+     "use": "cl_mix_post"
+    },
+    {
+     "id": "l",
+     "in": {
+      "p": "m.p"
+     },
+     "use": "cl_log"
+    }
+   ],
+   "outputs": {
+    "logits": "l.logits"
+   },
+   "role": "expert"
+  },
+  "ex_punct": {
+   "inputs": [
+    "st",
+    "C",
+    "uend",
+    "prev",
+    "step",
+    "c2"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "l",
+     "in": {
+      "prev": "$prev",
+      "step": "$step"
+     },
+     "use": "cl_punct"
+    }
+   ],
+   "outputs": {
+    "logits": "l.logits"
+   },
+   "role": "expert"
+  },
+  "ex_tail": {
+   "inputs": [
+    "st",
+    "C",
+    "uend",
+    "prev",
+    "step",
+    "c2"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "C": "$C",
+      "c2": "$c2",
+      "st": "$st",
+      "uend": "$uend"
+     },
+     "use": "cl_mix_tail"
+    },
+    {
+     "id": "l",
+     "in": {
+      "p": "m.p"
+     },
+     "use": "cl_log"
+    }
+   ],
+   "outputs": {
+    "logits": "l.logits"
+   },
+   "role": "expert"
+  },
+  "router": {
+   "inputs": [
+    "phase",
+    "prev"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "r",
+     "in": {
+      "phase": "$phase",
+      "prev": "$prev"
+     },
+     "use": "cl_route"
+    }
+   ],
+   "outputs": {
+    "scores": "r.scores"
+   },
+   "role": "router"
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lex",
+     "in": {
+      "ctx": "$ctx"
+     },
+     "use": "cl_lex"
+    },
+    {
+     "id": "det",
+     "in": {
+      "ctx": "$ctx",
+      "prev": "$prev"
+     },
+     "use": "cl_detect"
+    },
+    {
+     "id": "tr",
+     "in": {
+      "cls": "det.cls",
+      "state": "$state"
+     },
+     "use": "cl_trans"
+    },
+    {
+     "id": "r",
+     "in": {
+      "phase": "tr.phase",
+      "prev": "$prev"
+     },
+     "use": "router"
+    },
+    {
+     "args": {
+      "branches": [
+       "ex_np",
+       "ex_post",
+       "ex_tail",
+       "ex_punct"
+      ],
+      "k": 1
+     },
+     "id": "d",
+     "in": {
+      "C": "lex.C",
+      "c2": "tr.c2",
+      "prev": "$prev",
+      "scores": "r.scores",
+      "st": "tr.key",
+      "step": "$step",
+      "uend": "lex.uend"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "logits": "d.logits",
+    "state": "tr.st"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 57,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "P_np.W1": {
+   "sha256": "01297fefb92081b3b8bf36d31e6fd9041608d02fc4abf43b5f1933ed4f95868f",
+   "shape": [
+    74,
+    684
+   ]
+  },
+  "P_np.b1": {
+   "sha256": "a472b8ca56d6d1ed734df76afb2b443ad9fb6924e8692f69a9626939359d1230",
+   "shape": [
+    74
+   ]
+  },
+  "P_post.W1": {
+   "sha256": "bd90d50fca8417446464e157ca54d6b84ccce4a6064988298bcff9d204d67295",
+   "shape": [
+    74,
+    684
+   ]
+  },
+  "P_post.b1": {
+   "sha256": "a472b8ca56d6d1ed734df76afb2b443ad9fb6924e8692f69a9626939359d1230",
+   "shape": [
+    74
+   ]
+  },
+  "P_tail.W1": {
+   "sha256": "13cd00be2d54b676b53f7f8891e07e9e530ab0a55e105ac3c63dd2990dc4e3da",
+   "shape": [
+    74,
+    684
+   ]
+  },
+  "P_tail.b1": {
+   "sha256": "a472b8ca56d6d1ed734df76afb2b443ad9fb6924e8692f69a9626939359d1230",
+   "shape": [
+    74
+   ]
+  },
+  "T_np.W1": {
+   "sha256": "20320dca05ea90ded80d44c900bb1f939293999c97b200dbcf2324b2f8f36af0",
+   "shape": [
+    222,
+    684
+   ]
+  },
+  "T_np.b1": {
+   "sha256": "daae46a3b6bdf9c64dbdf339560d1318a97bbcb029bbded4ac4c2afceecc32a1",
+   "shape": [
+    222
+   ]
+  },
+  "T_post.W1": {
+   "sha256": "6cb4efc04e1a9a6a20ee5adfde876360dfe9496a5b3e704c9dce534f68ea3d95",
+   "shape": [
+    222,
+    684
+   ]
+  },
+  "T_post.b1": {
+   "sha256": "daae46a3b6bdf9c64dbdf339560d1318a97bbcb029bbded4ac4c2afceecc32a1",
+   "shape": [
+    222
+   ]
+  },
+  "T_tail.W1": {
+   "sha256": "d4bb6293f6ec977ae938c886f3e272b70c454bcd7219e6d82f504cc8de5cb263",
+   "shape": [
+    222,
+    684
+   ]
+  },
+  "T_tail.b1": {
+   "sha256": "daae46a3b6bdf9c64dbdf339560d1318a97bbcb029bbded4ac4c2afceecc32a1",
+   "shape": [
+    222
+   ]
+  },
+  "c2adj.W1": {
+   "sha256": "8511e6623e6648baa35c9fe6929625814828e2ec903279b2e9a1e5dcf05fdc61",
+   "shape": [
+    3,
+    6
+   ]
+  },
+  "c2adj.b1": {
+   "sha256": "493de3ead6feb3739fd430c0e0e9c9849692e1fb56e2a00d69cc6814d49db93c",
+   "shape": [
+    3
+   ]
+  },
+  "detc.W1": {
+   "sha256": "75c93056e2eddebb2148d4d19c0c4a47f4751d48f279846326058fcbb8700a14",
+   "shape": [
+    18,
+    46
+   ]
+  },
+  "detc.b1": {
+   "sha256": "390c00a9160cd3c70c9a7532d943c3d87113afa625477d072b5bffbe3bbd317f",
+   "shape": [
+    18
+   ]
+  },
+  "detz.W1": {
+   "sha256": "1c659615cd0dfc2d5d05d88a9f218e6862fbd73572d83bb69779a9296ad2fe8e",
+   "shape": [
+    74,
+    256
+   ]
+  },
+  "detz.W2": {
+   "sha256": "df8912b031fba99345d0d31298910d67714ecd1df7b12dbbfb1a9136d4a97391",
+   "shape": [
+    14,
+    74
+   ]
+  },
+  "detz.b1": {
+   "sha256": "380b3a48d6198d41db984f1fb7abe51038ec45ea33d634c20c50d43a99b6f18c",
+   "shape": [
+    74
+   ]
+  },
+  "detz.b2": {
+   "sha256": "c92558a07c013ff6c812530c1ce1eda61818989c5af5a74efd10ab77e0fcfd1a",
+   "shape": [
+    14
+   ]
+  },
+  "eosramp.W1": {
+   "sha256": "2196e457d0f69069b36e5757b73e96ddefbf27e94f73774ef5b632f9b144425e",
+   "shape": [
+    2,
+    1
+   ]
+  },
+  "eosramp.W2": {
+   "sha256": "4024c635d5f2c25825cb70d4b81b1d1f0dc61efa942e160d04be81836d4f14bb",
+   "shape": [
+    1,
+    2
+   ]
+  },
+  "eosramp.b1": {
+   "sha256": "35721ce729846b9f4944bc5b2dcc9abb3e0649bd6fcca5a4af5e12599ee7cf27",
+   "shape": [
+    2
+   ]
+  },
+  "eosramp.b2": {
+   "sha256": "bc8d3ce90aa2a17824040a8a2627fcc8004f87f82035119bf97e7685745b2870",
+   "shape": [
+    1
+   ]
+  },
+  "lex.chars": {
+   "sha256": "97402d56a94e79b4e50606e19dc2b0a4d4276f79abc98960a8dd2b9eb9da6b27",
+   "shape": [
+    74,
+    9,
+    32
+   ]
+  },
+  "lex.endmask": {
+   "sha256": "89a64aae7862568cc7666122b22fb0c53d8f613ac1ac0fa7fdf581de51dd096d",
+   "shape": [
+    74,
+    9
+   ]
+  },
+  "lex.mask": {
+   "sha256": "3135eb3c0d02218bef67faed8c4725f0e02b0e9b54d33172309706070f804ca9",
+   "shape": [
+    32
+   ]
+  },
+  "lexu.W1": {
+   "sha256": "4049e1fd004361e8ef5eea63c6ebae1c71cc9114ee1e09d317203a1d28492213",
+   "shape": [
+    666,
+    256
+   ]
+  },
+  "lexu.b1": {
+   "sha256": "5a71047ecdc319496b3bc7f82f91a1d6c14266909d59b8ac07a191bb7d78cb5f",
+   "shape": [
+    666
+   ]
+  },
+  "log.W1": {
+   "sha256": "c44a71df87b62c5e515efe920eefc06280982aefa1e4cbe86abc71e044f0e247",
+   "shape": [
+    49,
+    1
+   ]
+  },
+  "log.W2": {
+   "sha256": "f17e667c8e149a6041756026626551e343944a9c699b6469cdc9162029839653",
+   "shape": [
+    1,
+    49
+   ]
+  },
+  "log.b1": {
+   "sha256": "bc5d24441194dc210ed7f604848148ddad6464b4a76134112af88e7cb059a086",
+   "shape": [
+    49
+   ]
+  },
+  "log.b2": {
+   "sha256": "a5912a8547c29585ee8ae6eae2f7862fae59d6451f2ecb890d96862e075cfb0b",
+   "shape": [
+    1
+   ]
+  },
+  "prho.W1": {
+   "sha256": "53930a4be75666afad810560a65c284d92e7d3239cabb29528ea727e0fcbe369",
+   "shape": [
+    2,
+    19
+   ]
+  },
+  "prho.b1": {
+   "sha256": "45e2f25e02832ebe2ff01c77369d754e8270cc3707914b80bc591ac522b5e197",
+   "shape": [
+    2
+   ]
+  },
+  "punct.W1": {
+   "sha256": "6cd467bb8118af8ccff49b2b092ee39e0bb9c15da5f46d4d1d75ea315acea88e",
+   "shape": [
+    32,
+    32
+   ]
+  },
+  "punct.b1": {
+   "sha256": "74457aab6cc43173dbce7d601dcf4aa66dcbd56cfe65dc25a50d755edd827efa",
+   "shape": [
+    32
+   ]
+  },
+  "route.W1": {
+   "sha256": "15b613883095b44191fc90a712746e1235714c87c56b3ef3b33a59213b869633",
+   "shape": [
+    4,
+    51
+   ]
+  },
+  "route.b1": {
+   "sha256": "df006573c95d477982bb9ab82a9187b307e907b2afc635ca9011a0bbc723f906",
+   "shape": [
+    4
+   ]
+  },
+  "ssum.W1": {
+   "sha256": "3ed16122d38db73c8039da98f1abd961ed196268336d93baa9ca9554c1fea55a",
+   "shape": [
+    4,
+    36
+   ]
+  },
+  "ssum.b1": {
+   "sha256": "df006573c95d477982bb9ab82a9187b307e907b2afc635ca9011a0bbc723f906",
+   "shape": [
+    4
+   ]
+  },
+  "tc2.W1": {
+   "sha256": "ef4b73591f064b1560fafd19d7056515b87c3182dd8ed1ebc4ada918a580a1dc",
+   "shape": [
+    2,
+    54
+   ]
+  },
+  "tc2.b1": {
+   "sha256": "45e2f25e02832ebe2ff01c77369d754e8270cc3707914b80bc591ac522b5e197",
+   "shape": [
+    2
+   ]
+  },
+  "tphase.W1": {
+   "sha256": "20e6e9fe37ac13326c6f039ba8497c1e5b2cef289e353cbd3cb4fda50dac25b2",
+   "shape": [
+    19,
+    1386
+   ]
+  },
+  "tphase.b1": {
+   "sha256": "413b78ec87be199afa96b3e22c40c6643538b1bac9f8084cd80c8808f804ebdd",
+   "shape": [
+    19
+   ]
+  },
+  "tstack.W1": {
+   "sha256": "e37d35355aceff8182fc7fe3988d93c1bf234d8cf524729498a624d139bdb5c1",
+   "shape": [
+    36,
+    1314
+   ]
+  },
+  "tstack.b1": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  }
+ }
+}

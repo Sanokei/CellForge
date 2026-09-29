@@ -1,0 +1,176 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 300,
+ "n_tokens": 54486,
+ "bpc": 0.7022,
+ "top1": 0.8027,
+ "failures": 0,
+ "uniform_bpc_reference": 5.0,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.003,
+   "n": 237,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.815,
+   "n": 1189,
+   "share_of_total_bits": 0.025
+  },
+  "after_period_space": {
+   "bpc": 2.03,
+   "n": 889,
+   "share_of_total_bits": 0.047
+  },
+  "doc_start": {
+   "bpc": 1.947,
+   "n": 300,
+   "share_of_total_bits": 0.015
+  },
+  "in_word": {
+   "bpc": 0.211,
+   "n": 43192,
+   "share_of_total_bits": 0.238
+  },
+  "word_start": {
+   "bpc": 2.974,
+   "n": 8679,
+   "share_of_total_bits": 0.675
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 279,
+   "pos": 27,
+   "bits": 5.07,
+   "context": "some cats that the red boy ",
+   "target": "b"
+  },
+  {
+   "doc": 267,
+   "pos": 179,
+   "bits": 5.07,
+   "context": " the dogs that some red girls ",
+   "target": "w"
+  },
+  {
+   "doc": 258,
+   "pos": 117,
+   "bits": 5.07,
+   "context": ". the farmers that every king ",
+   "target": "u"
+  },
+  {
+   "doc": 248,
+   "pos": 30,
+   "bits": 5.07,
+   "context": "every teacher that the horses ",
+   "target": "b"
+  },
+  {
+   "doc": 228,
+   "pos": 97,
+   "bits": 5.07,
+   "context": " the small cat that every cat ",
+   "target": "n"
+  },
+  {
+   "doc": 211,
+   "pos": 140,
+   "bits": 5.07,
+   "context": " mice that these small horses ",
+   "target": "u"
+  },
+  {
+   "doc": 204,
+   "pos": 179,
+   "bits": 5.07,
+   "context": "ny kings that some red horses ",
+   "target": "w"
+  },
+  {
+   "doc": 203,
+   "pos": 33,
+   "bits": 5.07,
+   "context": "se girls that some tired mice ",
+   "target": "n"
+  },
+  {
+   "doc": 192,
+   "pos": 178,
+   "bits": 5.07,
+   "context": " this old dog that some foxes ",
+   "target": "u"
+  },
+  {
+   "doc": 188,
+   "pos": 171,
+   "bits": 5.07,
+   "context": " brave girls that some horses ",
+   "target": "w"
+  },
+  {
+   "doc": 180,
+   "pos": 71,
+   "bits": 5.07,
+   "context": "s. this red cat that the cats ",
+   "target": "b"
+  },
+  {
+   "doc": 178,
+   "pos": 45,
+   "bits": 5.07,
+   "context": "very horse that the tired dog ",
+   "target": "w"
+  }
+ ],
+ "route_counts": {},
+ "exec": {
+  "node_execs": 18360,
+  "macs": 32618806704,
+  "peak_tensor_elements": 7795200
+ },
+ "generation": {
+  "greedy": [
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird",
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird",
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird"
+  ],
+  "sampled_t0.8": [
+   "the child likes some cats never.",
+   "many foxes wait. the small boy finds the teacher, and this red girl sleeps. every horse sleeps, and the happy girls see the birds. a girl jumps.",
+   "a girl sings.",
+   "a cat that the young farmer near a girl finds follows every horse slowly. a child laughs. some boys laugh. some children laugh, and a cat sees every red farmer under some cats that some quiet farmers ",
+   "these foxes behind the horses help these birds that every cat near the fox sees. every girl likes the teachers behind the children behind the farmer never. every bird follows the cat again. this mouse",
+   "this mouse helps a bird slowly. the teachers behind a child see the happy bird near a girl. these boys help the mouse often. every brave fox waits. the teachers laugh, and the mice with every farmer s"
+  ],
+  "complete_sentences": 43,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.992,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ },
+ "dev_set": "dev_eval first 300 docs",
+ "stats": {
+  "unique_param_storage": 505141,
+  "expanded_param_uses": 573109,
+  "nonzero_slots": 36397,
+  "constant_slots_in_op_args": 0,
+  "cell_defs": 8,
+  "bundle_defs": 5,
+  "reachable_defs": 13,
+  "expanded_instances": 15,
+  "nesting_depth": 4,
+  "edges": 78,
+  "dispatch_nodes": 0,
+  "param_bytes_float64": 4041128
+ },
+ "profile": "open/1",
+ "dev_evals_used": 1
+}

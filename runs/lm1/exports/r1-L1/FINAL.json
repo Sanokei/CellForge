@@ -1,0 +1,55 @@
+{
+ "eval_id": "20260929T195242-584bcb34",
+ "label": "lm-r1-L1",
+ "protocol": "tinylm/1",
+ "model_hash": "a4d15ba655dea04b8ac595d2d3f73a637f5f9af81c60767660d3d9222d39163e",
+ "time": "2026-09-29T19:52:53Z",
+ "scoring": {
+  "n_docs": 1000,
+  "n_tokens": 179470,
+  "bpc": 0.6795839202634159,
+  "top1": 0.8101521145595364,
+  "failures": 0,
+  "latency_s_total": 7.57,
+  "macs_total": 15814267330,
+  "bpc_bootstrap95": [
+   0.6778,
+   0.6815
+  ],
+  "route_counts": {
+   "/step/d": {
+    "ex_det": 43375,
+    "ex_adjn": 73276,
+    "ex_post": 44771,
+    "ex_verb": 5866,
+    "ex_adv": 4309,
+    "ex_func": 7873
+   }
+  }
+ },
+ "overlap": {
+  "final_sentences": 3918,
+  "final_sentences_seen_in_dev_train": 0.1348,
+  "note": "finite grammar: short sentences recur; bpc is over new documents"
+ },
+ "generation": {
+  "n_samples": 200,
+  "temperature": 0.8,
+  "complete_sentences": 834,
+  "grammatical_rate": 0.9664,
+  "grammatical_and_novel_rate": 0.7878,
+  "distinct_rate": 0.9712,
+  "greedy_grammatical": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "unterminated_or_failed": 28,
+  "mean_words_per_sentence": 7.18
+ }
+}

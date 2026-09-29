@@ -1,0 +1,183 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 300,
+ "n_tokens": 54486,
+ "bpc": 0.7125,
+ "top1": 0.7984,
+ "failures": 0,
+ "uniform_bpc_reference": 5.0,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.0,
+   "n": 237,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.815,
+   "n": 1189,
+   "share_of_total_bits": 0.025
+  },
+  "after_period_space": {
+   "bpc": 2.066,
+   "n": 889,
+   "share_of_total_bits": 0.047
+  },
+  "doc_start": {
+   "bpc": 1.987,
+   "n": 300,
+   "share_of_total_bits": 0.015
+  },
+  "in_word": {
+   "bpc": 0.218,
+   "n": 43192,
+   "share_of_total_bits": 0.243
+  },
+  "word_start": {
+   "bpc": 2.995,
+   "n": 8679,
+   "share_of_total_bits": 0.67
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 258,
+   "pos": 117,
+   "bits": 4.9,
+   "context": ". the farmers that every king ",
+   "target": "u"
+  },
+  {
+   "doc": 211,
+   "pos": 140,
+   "bits": 4.9,
+   "context": " mice that these small horses ",
+   "target": "u"
+  },
+  {
+   "doc": 192,
+   "pos": 178,
+   "bits": 4.9,
+   "context": " this old dog that some foxes ",
+   "target": "u"
+  },
+  {
+   "doc": 176,
+   "pos": 88,
+   "bits": 4.9,
+   "context": "s. a red cat that many horses ",
+   "target": "u"
+  },
+  {
+   "doc": 97,
+   "pos": 69,
+   "bits": 4.9,
+   "context": "e bird that every happy child ",
+   "target": "u"
+  },
+  {
+   "doc": 228,
+   "pos": 97,
+   "bits": 4.89,
+   "context": " the small cat that every cat ",
+   "target": "n"
+  },
+  {
+   "doc": 203,
+   "pos": 33,
+   "bits": 4.89,
+   "context": "se girls that some tired mice ",
+   "target": "n"
+  },
+  {
+   "doc": 160,
+   "pos": 112,
+   "bits": 4.89,
+   "context": ". these cats that every horse ",
+   "target": "n"
+  },
+  {
+   "doc": 147,
+   "pos": 165,
+   "bits": 4.89,
+   "context": "s. many birds that many kings ",
+   "target": "n"
+  },
+  {
+   "doc": 96,
+   "pos": 34,
+   "bits": 4.89,
+   "context": " king that every happy farmer ",
+   "target": "n"
+  },
+  {
+   "doc": 38,
+   "pos": 31,
+   "bits": 4.89,
+   "context": "very quiet dog that some cats ",
+   "target": "n"
+  },
+  {
+   "doc": 267,
+   "pos": 179,
+   "bits": 4.87,
+   "context": " the dogs that some red girls ",
+   "target": "w"
+  }
+ ],
+ "route_counts": {
+  "/step/d": {
+   "ex_np": 35341,
+   "ex_post": 15647,
+   "ex_tail": 2072,
+   "ex_punct": 1426
+  }
+ },
+ "exec": {
+  "node_execs": 30084,
+  "macs": 25411403552,
+  "peak_tensor_elements": 6393600
+ },
+ "generation": {
+  "greedy": [
+   "the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the b",
+   "the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the b",
+   "the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the birds that the birds follow sleep. the b"
+  ],
+  "sampled_t0.8": [
+   "the child near every girl behind the sleep. every old boy near the horse near the boys that the cats with this old farmer help waits slowly.",
+   "many girls wait.",
+   "a girl that these horses that these mice find chase sleeps. these kings sing. many birds see the boys that every child finds again. the birds behind the foxes that a quiet teacher helps sing. every te",
+   "a dog that the fox likes sleeps. many foxes like these birds that a girl chases. some cats that a boy that many foxes that every boy likes help find some cats, and these boys sleep often, and the smal",
+   "these foxes behind this girl jump often. some kings follow the fox behind a quiet teacher.",
+   "this mouse jumps slowly, and every child finds every old farmer. a old fox runs slowly, and a old boy near a boy with this cat sings."
+  ],
+  "complete_sentences": 42,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.99,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ },
+ "dev_set": "dev_eval first 300 docs",
+ "stats": {
+  "unique_param_storage": 897587,
+  "expanded_param_uses": 897803,
+  "nonzero_slots": 20917,
+  "constant_slots_in_op_args": 3,
+  "cell_defs": 16,
+  "bundle_defs": 15,
+  "reachable_defs": 31,
+  "expanded_instances": 35,
+  "nesting_depth": 4,
+  "edges": 130,
+  "dispatch_nodes": 1,
+  "param_bytes_float64": 7180696
+ },
+ "profile": "ladder/1",
+ "dev_evals_used": 1
+}

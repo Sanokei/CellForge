@@ -1,0 +1,164 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 300,
+ "n_tokens": 54486,
+ "bpc": 0.6838,
+ "top1": 0.8083,
+ "failures": 0,
+ "uniform_bpc_reference": 5.0,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.0,
+   "n": 237,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.044,
+   "n": 1189,
+   "share_of_total_bits": 0.001
+  },
+  "after_period_space": {
+   "bpc": 2.044,
+   "n": 889,
+   "share_of_total_bits": 0.049
+  },
+  "doc_start": {
+   "bpc": 1.947,
+   "n": 300,
+   "share_of_total_bits": 0.016
+  },
+  "in_word": {
+   "bpc": 0.21,
+   "n": 43192,
+   "share_of_total_bits": 0.243
+  },
+  "word_start": {
+   "bpc": 2.967,
+   "n": 8679,
+   "share_of_total_bits": 0.691
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 279,
+   "pos": 27,
+   "bits": 6.33,
+   "context": "some cats that the red boy ",
+   "target": "b"
+  },
+  {
+   "doc": 267,
+   "pos": 179,
+   "bits": 6.33,
+   "context": " the dogs that some red girls ",
+   "target": "w"
+  },
+  {
+   "doc": 258,
+   "pos": 117,
+   "bits": 6.33,
+   "context": ". the farmers that every king ",
+   "target": "u"
+  },
+  {
+   "doc": 248,
+   "pos": 30,
+   "bits": 6.33,
+   "context": "every teacher that the horses ",
+   "target": "b"
+  },
+  {
+   "doc": 228,
+   "pos": 97,
+   "bits": 6.33,
+   "context": " the small cat that every cat ",
+   "target": "n"
+  },
+  {
+   "doc": 211,
+   "pos": 140,
+   "bits": 6.33,
+   "context": " mice that these small horses ",
+   "target": "u"
+  },
+  {
+   "doc": 204,
+   "pos": 179,
+   "bits": 6.33,
+   "context": "ny kings that some red horses ",
+   "target": "w"
+  },
+  {
+   "doc": 203,
+   "pos": 33,
+   "bits": 6.33,
+   "context": "se girls that some tired mice ",
+   "target": "n"
+  },
+  {
+   "doc": 192,
+   "pos": 178,
+   "bits": 6.33,
+   "context": " this old dog that some foxes ",
+   "target": "u"
+  },
+  {
+   "doc": 188,
+   "pos": 171,
+   "bits": 6.33,
+   "context": " brave girls that some horses ",
+   "target": "w"
+  },
+  {
+   "doc": 180,
+   "pos": 71,
+   "bits": 6.33,
+   "context": "s. this red cat that the cats ",
+   "target": "b"
+  },
+  {
+   "doc": 178,
+   "pos": 45,
+   "bits": 6.33,
+   "context": "very horse that the tired dog ",
+   "target": "w"
+  }
+ ],
+ "route_counts": {
+  "/step/d": {
+   "ex_det": 13141,
+   "ex_adjn": 22200,
+   "ex_post": 13593,
+   "ex_verb": 1905,
+   "ex_adv": 1273,
+   "ex_func": 2374
+  }
+ },
+ "exec": {
+  "node_execs": 38484,
+  "macs": 4803399298,
+  "peak_tensor_elements": 76800
+ },
+ "generation": {
+  "greedy": [
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings.",
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings.",
+   "the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings. the bird sings."
+  ],
+  "sampled_t0.8": [
+   "the child likes the horse that the horse chases. many tired horses that this dog helps see the happy boys that a boy sees. every fox that a cat follows waits.",
+   "many girls wait. this mouse follows the cat. this horse runs. a farmer finds this king slowly. the girls laugh. these girls near the girl wait. the tired king chases the mice that these boys like.",
+   "a girl that the mouse chases follows the cats never. a king that a small fox that this old boy chases chases runs. every king follows a happy child often.",
+   "a dog that the fox sees laughs, and the farmers sing. the mouse finds the dogs that some dogs chase often, and the kings jump. these mice sing, and this red bird finds this king that this horse finds ",
+   "these foxes behind the children run quickly. every happy child sings, and the quiet fox under some boys with many small foxes laughs. the happy foxes jump quickly.",
+   "this mouse jumps, and these foxes wait. these happy farmers sleep. many horses help a fox near the cat. the king behind some horses sees every child often."
+  ],
+  "complete_sentences": 74,
+  "distinct_sentence_rate": 0.986,
+  "in_lexicon_word_rate": 1.0,
+  "failures": [
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

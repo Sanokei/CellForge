@@ -91,3 +91,61 @@ training in progress.
 
 Round LM-1 commissioned: ladder arm L1, L2, L3 (runs/lm1); open arm O1, O2
 (runs/lm1-open). 25 dev-evals each, independent, same hypothesis text.
+
+### Round LM-1 results (tinylm/1)
+
+Accepted via `cellforge accept`; final evaluation on fresh 1000-document
+samples + 200 free-running generations (T=0.8) checked by the private
+recognizer. bpc with bootstrap 95% CI (over documents).
+
+| artifact | profile | dev-evals used | final bpc | top1 | grammatical | gram.+novel | experts used | unique params |
+|---|---|---|---|---|---|---|---|---|
+| L1 | ladder | 6 | 0.6796 [.678,.682] | .810 | .966 | .788 | 6 | 278k |
+| L2 | ladder | 11 | **0.6776** [.676,.680] | .809 | **.997** | .884 | 60 | 1.69M |
+| L3 | ladder | 5 | 0.6790 [.677,.681] | .809 | .940 | .804 | 4 | 898k |
+| O1 | open (no routing) | 3 | 0.6797 [.678,.682] | .809 | .955 | .839 | – | 1.31M |
+| O2 | open | interrupted (3 evals, 0.691 dev), resumed, still running | | | | | | |
+| gradient MLP ctx8 H=256 | control | – | 0.824 | .780 | .201 | .135 | – | 74k |
+| trigram counts | control | – | 1.383 | .617 | 0.0 | 0.0 | – | 65.6k |
+| uniform | bootstrap | – | 5.000 | 0 | 0.0 | 0.0 | – | 32 |
+
+Observations (measured) and interpretations (hypotheses):
+* Every authored model reaches 0.678–0.680 bpc (CIs overlap): a wide plateau,
+  ~0.14 bpc better than the gradient MLP and with 95–99.7% grammatical
+  samples vs 20%. Authored models track agreement across nested relative
+  clauses via recurrent state (a stack); the MLP with an 8-char window cannot.
+* **The task is saturated by grammar reverse-engineering.** All makers read
+  ~35-45 documents, wrote down the closed grammar and hand-tallied rates,
+  then compiled it into tables/state machines. bpc differences of 0.002 are
+  within noise; the plateau is probably near the generator's own entropy
+  (unmeasured; a true entropy-rate estimate is a TODO).
+  L2's 99.7% grammaticality (vs 94–97% for L1/L3/O1) is the only clear
+  separation; single replicate each.
+* **No evidence yet for "ladder learns faster than open".** O1 (open, no
+  routing) matched the ladder with 3 dev-evals vs 5-11. n=1 vs n=3; the
+  ladder was mandated to use dispatch, which the task does not need. What the
+  ladder produced is more inspectable (named experts per grammatical
+  situation) and reusable, not more accurate.
+* Authoring cost (subagent-reported tokens): L1 199k, L3 176k, L2 231k(+),
+  O1 186k(+). ~35-41 tool calls each. Open arm costs comparable.
+* This is "author compiles a known grammar", i.e. transfer of the author's
+  knowledge of English + perception of samples, not discovery of unknown
+  structure. It shows the machinery (state, routing, recursion tracking)
+  works end-to-end at 0.3–1.7M authored parameters, which is a real engineering
+  result, but says little about scaling to data whose generator the author
+  cannot read off from 40 samples.
+
+Decision: next task must resist reading-off. Options: (a) a much larger,
+noisier grammar with many more lexical/semantic constraints; (b) real text
+(e.g. public-domain prose) where no closed generator exists and gradient
+controls scale; (c) enforce ladder-micro (<=40-slot cells) with delegated
+circuits on the same grammar to test the *delegation* mechanism, since the
+plateau makes efficiency (tokens per quality) the only meaningful axis.
+
+**Entropy floor (measured on the evaluation server):** summing the bits of every
+random choice the private generator makes gives 0.6734 bits/char over 400 fresh
+documents. Because a text can have several derivations, this is an upper bound on
+the true entropy rate, so the floor is <= 0.6734. Best authored model (L2):
+0.6776, i.e. within 0.004 bpc (<1%). tinylm/1 is exhausted as a discriminating
+benchmark: further bpc differences are unmeasurable. Only grammaticality,
+inspectability and authoring cost still vary between arms.
