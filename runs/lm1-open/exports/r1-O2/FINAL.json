@@ -1,0 +1,46 @@
+{
+ "eval_id": "20260929T203120-f574d6a2",
+ "label": "lm-r1-O2",
+ "protocol": "tinylm/1",
+ "model_hash": "31a409740fac3a6e869b4a24e7260369f62ecd38b1d7504638a49c3ef74899ec",
+ "time": "2026-09-29T20:32:05Z",
+ "scoring": {
+  "n_docs": 1000,
+  "n_tokens": 180006,
+  "bpc": 0.6808225874728231,
+  "top1": 0.8089674788618157,
+  "failures": 0,
+  "latency_s_total": 36.44,
+  "macs_total": 287660028348,
+  "bpc_bootstrap95": [
+   0.679,
+   0.6828
+  ],
+  "route_counts": {}
+ },
+ "overlap": {
+  "final_sentences": 3890,
+  "final_sentences_seen_in_dev_train": 0.1257,
+  "note": "finite grammar: short sentences recur; bpc is over new documents"
+ },
+ "generation": {
+  "n_samples": 200,
+  "temperature": 0.8,
+  "complete_sentences": 750,
+  "grammatical_rate": 0.9387,
+  "grammatical_and_novel_rate": 0.7747,
+  "distinct_rate": 0.9827,
+  "greedy_grammatical": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "unterminated_or_failed": 41,
+  "mean_words_per_sentence": 7.85
+ }
+}

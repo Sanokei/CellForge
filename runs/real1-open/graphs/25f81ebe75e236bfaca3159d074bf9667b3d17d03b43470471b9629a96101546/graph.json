@@ -1,0 +1,88 @@
+{
+ "defs": {
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "logits",
+     "use": "param:boot_logits"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "like": "$prev",
+      "x": "logits"
+     },
+     "use": "op:broadcast_to"
+    }
+   ],
+   "outputs": {
+    "logits": "lg",
+    "state": "$state"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "!",
+   "?",
+   "'",
+   "\"",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "boot_logits": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  }
+ }
+}

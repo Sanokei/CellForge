@@ -1,0 +1,110 @@
+{
+ "defs": {
+  "ng_cell": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ng.W1",
+    "b1": "ng.b1"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "one",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "x": "one"
+     },
+     "use": "ng_cell"
+    }
+   ],
+   "outputs": {
+    "logits": "lg",
+    "state": "$state"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "baseline": "1-gram counts add-k=0.1 on dev_train",
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "!",
+   "?",
+   "'",
+   "\"",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "ng.W1": {
+   "sha256": "d40b1e0e513ba4cd697a5f336d8128aadd5b69d2d712db383c9122f491baebdc",
+   "shape": [
+    36,
+    1
+   ]
+  },
+  "ng.b1": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  }
+ }
+}

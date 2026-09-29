@@ -53,7 +53,8 @@ class Run:
         kind = proto.get("kind", "ocr")
         cfg = {"protocol": protocol, "kind": kind, "profile": profile, "arm": arm,
                "created": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-               "limits": asdict(Limits(strict_microcells=strict)),
+               "limits": asdict(Limits(strict_microcells=strict, **({"max_unique_params": proto["max_unique_params"]}
+                                                                 if "max_unique_params" in proto else {}))),
                "budget": budget or {"maker_tasks": 200, "dev_evals_per_task": 25}}
         (root / "run.json").write_text(json.dumps(cfg, indent=1))
         for d in ("graphs", "tasks", "dev", "harness/plugins", "memory"):

@@ -149,3 +149,18 @@ the true entropy rate, so the floor is <= 0.6734. Best authored model (L2):
 0.6776, i.e. within 0.004 bpc (<1%). tinylm/1 is exhausted as a discriminating
 benchmark: further bpc differences are unmeasurable. Only grammaticality,
 inspectability and authoring cost still vary between arms.
+
+## Real-text phase (owner chose real text after tinylm/1 saturated)
+
+tinyreal/1: TinyStories validation file (MIT; 22.5 MB, sha256 6874bae9...
+downloaded to the evaluation server only, on the owner's approval of a real-text
+download). Stories 150-600 chars, [a-z ,.!?'"] only, split by sha256 bucket:
+dev_train 2088 stories (1.12M chars), dev_eval 165, anchor 290, private final
+pool 2684 (each final eval draws unused stories, no reuse). Reference levels
+(anchor bpc): uniform 5.17, unigram 4.21, bigram 3.19, trigram 2.30.
+Arms: (A) delegated ladder-micro/1: architect a1 + circuit-makers under
+contracts; (B) solo open/1 maker s1. Same evaluation, budgets recorded.
+Expectation stated in advance: authored models will land far above
+gradient/MLP controls on real text (no closed grammar to decompile, and the
+no-statistics rule bars fitting). The interesting quantities are how far
+authored structure gets, and authoring cost per bit gained.

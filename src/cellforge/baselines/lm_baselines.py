@@ -149,14 +149,15 @@ def main(argv=None):
     ap.add_argument("--order", type=int, default=2)
     ap.add_argument("--hidden", type=int, default=256)
     ap.add_argument("--epochs", type=int, default=8)
+    ap.add_argument("--protocol", default="tinylm/1")
     ap.add_argument("--train", default="data/tinylm/dev_train.json")
     ap.add_argument("--out", required=True)
     a = ap.parse_args(argv)
     texts = json.loads(Path(a.train).read_text())
     if a.kind == "ngram":
-        g = ngram_graph(texts, a.order)
+        g = ngram_graph(texts, a.order, protocol=a.protocol)
     else:
-        g, log = mlp_graph(texts, a.hidden, a.epochs)
+        g, log = mlp_graph(texts, a.hidden, a.epochs, protocol=a.protocol)
     g.validate()
     g.save(a.out)
     print(json.dumps({"saved": a.out, "baseline": g.meta["baseline"], "params": g.stats()["unique_param_storage"]}))

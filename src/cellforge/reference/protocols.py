@@ -64,3 +64,17 @@ PROTOCOLS["tinylm/1"] = {
     "final_n_docs": 1000,
     "final_gen": {"n": 200, "temperature": 0.8},
 }
+
+REAL_CHARSET = " ,.!?'\"abcdefghijklmnopqrstuvwxyz"
+
+PROTOCOLS["tinyreal/1"] = {
+    "kind": "lm",
+    "charset": REAL_CHARSET,
+    "ctx_len": 8,
+    "gen_max_len": 400,
+    "anchor_file": "data/tinyreal/anchor.json",
+    "dev_files": {"dev_train": "data/tinyreal/dev_train.json", "dev_eval": "data/tinyreal/dev_eval.json"},
+    "final_n_docs": 500,
+    "final_gen": {"n": 100, "temperature": 0.8},
+    "max_unique_params": 20_000_000,
+}

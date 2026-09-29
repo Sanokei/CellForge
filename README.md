@@ -26,6 +26,7 @@ stage, what would have to be demonstrated and where it is most likely to break.
 | Hash-chained ledger, graph version store, branches | implemented |
 | Evidence memory: content-addressed artifacts, append-only events, TF-IDF retrieval, counterevidence links, final-data denylist | implemented; live **visual retriever not yet run** |
 | Maker agents (Claude Code subagents) authoring graphs via CLI | live, Round 1 complete |
+| Ladder/ladder-micro profiles, top-k lazy dispatch, component contracts, LM controls and final evaluator | implemented, tested (19 tests) |
 | Harness evolution (G3), memory-arm comparison (G3M), scaling fixture (G5) | not yet run |
 
 **Round 1 result (protocol `digits-mono/1`: 1–8 digits, DejaVu Sans Mono 20 px, 32×128):**
@@ -36,6 +37,15 @@ differ sharply: best artifact 0.738 exact on an unseen font and 0.723 under size
 direct-edit search reaches 0.000. One construction run per arm; see `notes/ORCHESTRATOR_LOG.md`
 for full tables, caveats and exposure disclosures. The control is deliberately simple; this does
 **not** show that authoring beats gradient training in general.
+
+**Language-model round 1 (protocol `tinylm/1`, private English-like grammar, owner-directed hierarchical-MoE focus):**
+five authored character LMs (three in the enforced cell→cluster→expert ladder, two open) reach 0.678–0.681 bits/char on
+fresh text with 94–99.7% grammatical free-running generations (the entropy floor of the generator is ≤0.6734). A gradient
+MLP with an 8-character window gets 0.824 bpc and 20% grammatical; trigram counts get 1.38 and 0%. Best model: 60 routed
+experts, 1.7M authored parameters, 99.7% grammatical. **Caveat:** the makers read ~40 documents, wrote the closed grammar
+down, and compiled it; the task is exhausted (within 1% of the floor) and does not show scaling, nor that the ladder
+learns faster than open recursion (an open, unrouted model matched it with fewer feedback runs). Next: real text
+(`tinyreal/1`, TinyStories), where no closed grammar exists.
 
 ## Scope and non-goals of the current experiment
 

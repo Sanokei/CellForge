@@ -32,12 +32,13 @@ ADV = ['never', 'often', 'quickly', 'slowly', 'again']
 P = dict(
     adj=0.34,                 # P(adjective | after determiner)
     # at most one modifier per NP; (P(prep), P(that)) by NP type
-    mod={'MS': (0.16, 0.19),  # main-clause subject
+    mod={'MS': (0.14, 0.17),  # main-clause subject
          'OB': (0.08, 0.17),  # object of main verb
          'PPN': (0.10, 0.20), # object of a preposition
          'RS': (0.08, 0.10)}, # subject of a relative clause
+    mod_decay=1.0,            # per extra level of relative-clause nesting
     vi=0.52,                  # intransitive share of main verbs
-    adv=0.34,                 # adverb at clause end
+    adv=0.27,                 # adverb at clause end
     and_=0.22,                # ", and" instead of "." after first clause
     det_w={'every': 1.2, 'this': 1, 'a': 1, 'these': 1, 'many': 1, 'some': 1, 'the': 2.0},
     the_pl=0.5,               # P(plural noun | 'the')
@@ -208,6 +209,17 @@ def done_terms(stack_after, ci):
     return d
 
 
+def modp(typ, stack):
+    """modifier probs, decayed by nesting depth beyond the type's usual depth."""
+    pp, pt = P['mod'][typ]
+    nR = sum(1 for k, _ in stack if k == 'R')
+    base = {'PPN': 0, 'RS': 1}.get(typ)
+    if base is not None and nR > base:
+        f = P['mod_decay'] ** (nR - base)
+        pp, pt = pp * f, pt * f
+    return pp, pt
+
+
 def det_dist():
     tot = sum(P['det_w'].values())
     return {(w, ' '): q / tot for w, q in P['det_w'].items()}
@@ -220,7 +232,7 @@ def noun_dist(ph, stack, ci, adj_ok):
     for a in ADJ:
         out[(a, ' ')] = pa / len(ADJ)
     nums = {'s': {'s': 1.0}, 'p': {'p': 1.0}, 'u': {'s': 1 - P['the_pl'], 'p': P['the_pl']}}[n]
-    pm = sum(P['mod'][typ])
+    pm = sum(modp(typ, stack))
     dt = done_terms(stack, ci)
     terms = {t: (1 - pm) * q for t, q in dt.items()}
     terms[' '] = terms.get(' ', 0) + pm
@@ -235,7 +247,7 @@ def noun_dist(ph, stack, ci, adj_ok):
 def after_noun_dist(ph, stack, ci):
     """next word after noun+' ' (typ given) or after closing RC verb+' ' (typ DONE)."""
     typ = ph[1]
-    pp, pt = P['mod'][typ] if typ != 'DONE' else (0.0, 0.0)
+    pp, pt = modp(typ, stack) if typ != 'DONE' else (0.0, 0.0)
     if len(stack) >= MAXDEPTH:
         pt = 0.0
     out = {}
