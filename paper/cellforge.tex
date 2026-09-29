@@ -151,6 +151,66 @@ templates came from \emph{looking at} development images; we regard the author's
 perception as the channel through which learning happens in this system, and we report it
 as such rather than as discovery from first principles.
 
+\section{Experiment 2: hierarchical mixture-of-experts language models}\label{sec:exp2}
+The project owner judged digit recognition too easy a test of the intended
+cell$\to$cluster$\to$expert design, so the second experiment asks authors to build a character-level
+language model, with routing and recurrent state doing real work.
+
+\paragraph{Task.} Text comes from a private English-like grammar (12 nouns, 12 verbs, agreement
+that must survive relative clauses such as ``the cat that the dogs see runs'', adjectives,
+prepositions, adverbs, ``, and'' coordination) held only on the evaluation server. Authors see
+2{,}000 sampled documents and 300 development documents, never the grammar. Vocabulary: 32
+tokens. The model receives the last eight characters, the position, and its own state, and outputs
+next-character logits. Scoring is bits per character (bpc) under teacher forcing on fresh documents,
+plus the grammaticality of 200 free-running samples (temperature 0.8) judged by the private
+recognizer. Authors may read text but may not run code that counts or estimates anything from it.
+
+\paragraph{Arms.} Three independent authors in an enforced ladder profile (cells only inside
+clusters, clusters inside experts, a router whose scores drive a lazy top-1 dispatch among at least
+two experts, checked by a validator), and two authors in an open profile with any organization and
+optional routing. Controls fitted from data on the same 2{,}000 documents: uniform, $n$-gram
+count models, and a gradient-trained MLP over the same eight-character window (Adam, 74k parameters).
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & bpc & top-1 & gramm. & gramm.+novel & experts & params\\
+\midrule
+Ladder L1 & 0.6796 & .810 & .966 & .788 & 6 & 278k\\
+Ladder L2 & \textbf{0.6776} & .809 & \textbf{.997} & .884 & 60 & 1.69M\\
+Ladder L3 & 0.6790 & .809 & .940 & .804 & 4 & 898k\\
+Open O1 & 0.6797 & .809 & .955 & .839 & -- & 1.31M\\
+Open O2 & 0.6808 & .809 & .939 & .775 & -- & 1.56M\\
+\midrule
+Gradient MLP (window 8) & 0.824 & .780 & .201 & .135 & -- & 74k\\
+Trigram counts & 1.383 & .617 & 0 & 0 & -- & 66k\\
+Uniform & 5.000 & 0 & 0 & 0 & -- & 32\\
+\midrule
+\multicolumn{7}{l}{Generator entropy: $\leq0.6734$ bpc (summed choice bits, upper bound)}\\
+\bottomrule
+\end{tabular}
+\caption{Independent final evaluation on 1{,}000 fresh documents (bootstrap 95\% intervals on bpc are
+about $\pm0.002$). ``Gramm.'' is the fraction of complete generated sentences accepted by the
+private grammar; ``+novel'' additionally requires the sentence to be absent from the authors' training text.}
+\label{tab:exp2}
+\end{table}
+
+\paragraph{Results.} Table~\ref{tab:exp2}. All five authored models reach 0.678--0.681 bpc, within
+0.004 bpc (under 1\%) of the generator's entropy, with 94--99.7\% grammatical generations, against
+0.824 bpc and 20\% for the gradient MLP. The authored models keep singular/plural state across nested
+clauses in a stack held in recurrent state; the fixed-window MLP cannot. The best model (L2) has 60
+routed experts, one per grammatical situation, and only 3 of 60 sampled sentences violate the grammar.
+
+\paragraph{Interpretation and limits.} The task is exhausted: every author read roughly 40 documents,
+wrote the closed grammar down, hand-tallied rates, and compiled it into tables and state machines. This
+shows the machinery (state, recursion tracking, dispatch among tens of experts) works end to end at
+0.3--1.7M authored parameters. It does \emph{not} show that the ladder helps: an open, unrouted model
+(O1) matched the ladder with three feedback runs against five to eleven, and the ladder authors were
+required to use routing the task does not need. It also does not show that authoring scales to data
+whose generator cannot be read off from a few dozen samples; the next experiment moves to real text.
+Authoring cost (author-reported): 176--231k tokens per run.
+
 \section{Limitations}
 Single font family in development; one run per arm; subagent token usage is self-reported;
 authors and orchestrator share an operating-system account locally (the final-evaluation

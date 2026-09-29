@@ -192,3 +192,9 @@ authored structure gets, and authoring cost per bit gained.
   Guardrail: selection on chance-level benchmarks selects noise; primary
   fitness is bpc on fresh stories until some candidate is above chance
   on the sealed split.
+
+**Paper workflow (owner request):** every finished experiment gets its own section in
+paper/cellforge.tex, and the PDF is rebuilt with `scripts/build_paper.sh` (server-side
+latexmk) right after. Done so far: Exp 1 (digit OCR), Exp 2 (tinylm hierarchical-MoE LMs).
+Pending (add when finished): real-text delegated ladder-micro vs solo open; frontier
+benchmarks; breeding.

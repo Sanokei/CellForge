@@ -257,7 +257,7 @@ def emit_cell(name, items, out_dim):
         sp = []; b1 = []; w2 = np.zeros((out_dim, H))
         for u, (cols, b, vec) in enumerate(chunk):
             for c, w in cols: sp.append([u, c, w])
-            b1.append(b); w2[:, u] = np.round(np.asarray(vec, float), 5)
+            b1.append(b); w2[:, u] = np.round(np.asarray(vec, float), 8)
         nm = f"{name}{k}"
         ops.append({"op":"set_param","name":f"{nm}.W1","pattern":{"sparse":sp,"shape":[H,NX]}})
         ops.append({"op":"set_param","name":f"{nm}.b1","value":b1})

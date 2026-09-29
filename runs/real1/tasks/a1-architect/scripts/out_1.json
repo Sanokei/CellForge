@@ -1,0 +1,186 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 3.0681,
+ "top1": 0.4201,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.33,
+   "n": 992,
+   "share_of_total_bits": 0.001
+  },
+  "after_period": {
+   "bpc": 0.62,
+   "n": 1979,
+   "share_of_total_bits": 0.004
+  },
+  "after_period_space": {
+   "bpc": 3.434,
+   "n": 1758,
+   "share_of_total_bits": 0.022
+  },
+  "doc_start": {
+   "bpc": 1.172,
+   "n": 165,
+   "share_of_total_bits": 0.001
+  },
+  "in_word": {
+   "bpc": 2.968,
+   "n": 68275,
+   "share_of_total_bits": 0.739
+  },
+  "word_start": {
+   "bpc": 3.937,
+   "n": 16209,
+   "share_of_total_bits": 0.233
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 117,
+   "pos": 436,
+   "bits": 13.88,
+   "context": "the toy box and went to bed. m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 352,
+   "bits": 13.88,
+   "context": "t better. after playing with m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 241,
+   "bits": 13.88,
+   "context": "ear, let me comb your hair.\" m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 207,
+   "bits": 13.88,
+   "context": "y bear, mr. bear. she said, \"m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 186,
+   "bits": 13.88,
+   "context": " the comb to her teddy bear, m",
+   "target": "r"
+  },
+  {
+   "doc": 110,
+   "pos": 342,
+   "bits": 13.88,
+   "context": "nd told him about the smoke. m",
+   "target": "r"
+  },
+  {
+   "doc": 110,
+   "pos": 301,
+   "bits": 13.88,
+   "context": " they ran to their neighbor, m",
+   "target": "r"
+  },
+  {
+   "doc": 107,
+   "pos": 411,
+   "bits": 13.88,
+   "context": "les, and he caught it. then, m",
+   "target": "r"
+  },
+  {
+   "doc": 107,
+   "pos": 374,
+   "bits": 13.88,
+   "context": "iled. lily threw the ball to m",
+   "target": "r"
+  },
+  {
+   "doc": 107,
+   "pos": 320,
+   "bits": 13.88,
+   "context": "l and see who can catch it.\" m",
+   "target": "r"
+  },
+  {
+   "doc": 107,
+   "pos": 259,
+   "bits": 13.88,
+   "context": "to throw a ball. lily said, \"m",
+   "target": "r"
+  },
+  {
+   "doc": 107,
+   "pos": 182,
+   "bits": 13.88,
+   "context": ". cuddles. one day, lily and m",
+   "target": "r"
+  }
+ ],
+ "route_counts": {
+  "/step/d": {
+   "ex_bos": 165,
+   "ex_wordstart": 17967,
+   "ex_inword_short": 35532,
+   "ex_inword_long": 32020,
+   "ex_punct": 3170,
+   "ex_quote": 386,
+   "ex_apos": 138
+  }
+ },
+ "exec": {
+  "node_execs": 3647516,
+  "macs": 160880400,
+  "peak_tensor_elements": 269352
+ },
+ "generation": {
+  "greedy": [
+   "on tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom t",
+   "on tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom t",
+   "on tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom t"
+  ],
+  "sampled_t0.8": [
+   "oue dieochenedidr, mmopxt. thonglositt te win wendre lot tidydily an thoug g. hep romin walmo g tre be irnds theay ha toompe tolad.\"homyensmy be helolil se pllly plvout ange\" sca. thoraduslknn \"? frin",
+   "onglliv doowasly s time trng onybidred al \"jores her toon'toospore.\", \"prett andy. can warte y foulure tiewig y ankeing foroy, an's for ad.\" se ang \"yang trebefrttin. liouttordely, sowongivisther fowe",
+   "bels more lowanngilks and sorand y ang ste atad dog a litld. herog,\"maro an fotepoo. tis y usaht sololve an litthain anig fibaeth frebriawa sting ang andrdrenglpe. tal. timy,\" an angicl mone fisewadew",
+   "an. tosheswng angubs mame foueaturoded for beatophitorouripoore. foug he coule \"e an wate we sting mifrm berert tim, fied dowll oware lily aly sat hed, asph. want bry madng te an. asilfouodurroe. tiee",
+   "s loomevilpr anghrgy? thoned, balmidipavowimid indng tintefltun. oncelvesevenchveld, \"catete e a lit liand ganguis g fae. he wanted can. sevily, momedes mang,\" timeord eat thlagreme \"way wr t. tog pre",
+   "tho. th mom tome. jumprory day tolwaped's borpolol he. mindehi! tosts, angrlewicoty and witut ga in cathafly tad. ad ant,\"ithin maldemut balleg t boy hed idr,\"an't vevivoybebamedede ge timeathresumaho"
+  ],
+  "complete_sentences": 71,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.257,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ },
+ "dev_set": "dev_eval first 165 docs",
+ "stats": {
+  "unique_param_storage": 19233,
+  "expanded_param_uses": 42739,
+  "nonzero_slots": 2434,
+  "constant_slots_in_op_args": 32,
+  "cell_defs": 43,
+  "bundle_defs": 16,
+  "reachable_defs": 59,
+  "expanded_instances": 284,
+  "nesting_depth": 4,
+  "edges": 5294,
+  "dispatch_nodes": 1,
+  "param_bytes_float64": 153864
+ },
+ "profile": "ladder-micro/1",
+ "dev_evals_used": 3
+}

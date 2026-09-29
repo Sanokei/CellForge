@@ -1,0 +1,56 @@
+{
+ "protocol": "mc-loglik/1",
+ "label": "synthetic-L2-ladder",
+ "model_hash": "2e63d1f337d2d0f8faa91eadda814c6de837d030aaf03dc0c7c6c54f63936218",
+ "time": "2026-09-29T20:57:10Z",
+ "results": {
+  "mmlu": {
+   "n": 200,
+   "acc": 0.22,
+   "acc_ci95": [
+    0.1682,
+    0.2824
+   ],
+   "acc_norm": 0.25,
+   "acc_norm_ci95": [
+    0.1951,
+    0.3143
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.8914,
+   "seconds": 35.9
+  },
+  "arc_challenge": {
+   "n": 200,
+   "acc": 0.25,
+   "acc_ci95": [
+    0.1951,
+    0.3143
+   ],
+   "acc_norm": 0.21,
+   "acc_norm_ci95": [
+    0.1593,
+    0.2716
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9623,
+   "seconds": 27.1
+  },
+  "hellaswag": {
+   "n": 200,
+   "acc": 0.24,
+   "acc_ci95": [
+    0.1861,
+    0.3037
+   ],
+   "acc_norm": 0.245,
+   "acc_norm_ci95": [
+    0.1906,
+    0.309
+   ],
+   "chance": 0.25,
+   "char_coverage": 0.9856,
+   "seconds": 51.1
+  }
+ }
+}
