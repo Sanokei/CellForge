@@ -8,13 +8,15 @@ from contexts import CTX
 from contexts2 import CTX2
 from contexts3 import CTX3
 import classes as C_
+import lexicon3
+from bigram import FOLLOW
 
 V = ['<pad>','<bos>','<eos>',' ',',','.','!','?',"'",'"']+list("abcdefghijklmnopqrstuvwxyz")
 T = {c:i for i,c in enumerate(V)}
 T['^'] = 1
 NV = 36
 P = dict(K2=20.0, ctx_scale=0.8, eps=0.003, rank_decay=0.78, rank_top=30.0, shard=3000,
-         beta=0.02, delta=1e-5, seen_g=1.6, seen_o=0.3, seen_on=1, pi_pow=1.0, out='proposal.json')
+         beta=0.03, delta=1e-5, lex3=0.6, seen_g=1.6, seen_o=0.3, seen_on=1, ind_on=1, w3=0.9, w5=0.9, w8=0.8, pi_pow=1.0, out='proposal.json')
 for a in sys.argv[1:]:
     k, v = a.split('=')
     P[k] = v if k == 'out' else float(v)
@@ -51,6 +53,7 @@ for wt, s_ in TIERS2.items():
 for wt, s_ in TIERS.items():
     for w in s_.split(): words[w] = max(words.get(w,0), float(wt))
 for w in EXTRA_WORDS: words.setdefault(w, 3.0)
+for w, wt in lexicon3.build().items(): words[w] = max(words.get(w, 0), P['lex3']*wt)
 for w in NAMES: words[w] = max(words.get(w, 0), 5.0 if w not in "lily tim mia".split() else 80.0)
 for c, s_ in CTXALL.items():
     for w in s_.split():
@@ -88,15 +91,25 @@ def group_masses(p):
 
 PIm = np.zeros((K, G))
 for s_, row in C_.PI.items():
-    r = np.array(row, float)**P['pi_pow']; PIm[C_.SI[s_]] = r/r.sum()
+    r = np.array(row, float)**P['pi_pow']; r[C_.GI['QT']] = max(r[C_.GI['QT']], 0.4); PIm[C_.SI[s_]] = r/r.sum()
 
+UNI = np.zeros(NV); UNI[3:] = 1.0/33.0
+FB = np.zeros((NV, NV))   # column = previous char, entries = next-char probs (my typed bigram tendencies)
+for j in range(NV): FB[:, j] = base
+for pc, fol in FOLLOW.items():
+    v = np.zeros(NV)
+    for i, ch in enumerate(fol.split()):
+        v[T[' ' if ch == '_' else ch]] += 30.0*0.82**i
+    v = v/v.sum()
+    FB[:, T[pc]] = 0.80*v + 0.12*base + 0.08*UNI
 def logv(p): return np.log(np.maximum(p, 1e-12))
-def zvec(m, pi):
+def zvec(m, pi, prevc=' '):
     q = pi @ m
     s = q.sum()
-    return q + P['beta']*s*FLOOR + P['delta']*base
-def pnorm(m, pi):
-    z = zvec(m, pi); return z/z.sum()
+    fb = FB[:, T[prevc]]
+    return q + P['beta']*s*fb + P['delta']*fb
+def pnorm(m, pi, prevc=' '):
+    z = zvec(m, pi, prevc); return z/z.sum()
 
 mcache = {}
 def gm(p):
@@ -105,7 +118,7 @@ def gm(p):
 ZERO = np.zeros((G, NV))
 def pnode(p, pi):
     m = gm(p) if len(p) <= 8 else ZERO
-    return pnorm(m, pi)
+    return pnorm(m, pi, p[-1] if p else ' ')
 
 units = []          # (string, bd, out_vector[G*NV])   trie cell
 dunits = []         # (string, bd, delta[NV], tag)      delta cell
@@ -299,8 +312,9 @@ ops.append({"op":"set_param","name":"log.W2","value":[a_]})
 ops.append({"op":"set_param","name":"log.b2","value":[Lk[0]]})
 ops.append({"op":"put_def","name":"cell_log","def":{"kind":"cell","act":"relu","params":{"W1":"log.W1","b1":"log.b1","W2":"log.W2","b2":"log.b2"}}})
 ops.append({"op":"set_param","name":"Pi","value":PIm.tolist()})
-ops.append({"op":"set_param","name":"Fl","value":(P['beta']*FLOOR).tolist()})
-ops.append({"op":"set_param","name":"zb","value":(P['delta']*base).tolist()})
+ops.append({"op":"set_param","name":"fb.W1","value":FB.tolist()})
+ops.append({"op":"set_param","name":"fb.b1","value":[0.0]*NV})
+ops.append({"op":"put_def","name":"cell_fb","def":{"kind":"cell","act":"identity","params":{"W1":"fb.W1","b1":"fb.b1"}}})
 padm = np.zeros(NV); padm[0] = -30; padm[1] = -30
 ops.append({"op":"set_param","name":"padm","value":padm.tolist()})
 
@@ -342,9 +356,11 @@ nodes += [
  {"id":"qg","use":"op:matmul","in":{"a":"pig","b":"mg"}},
  {"id":"qv","use":"op:reshape","in":{"x":"qg"},"args":{"shape":[NV]}},
  {"id":"ss","use":"op:sum","in":{"x":"qv"},"args":{"axis":0,"keepdims":True}},
- {"id":"fl","use":"param:Fl"},
- {"id":"sf","use":"op:mul","in":{"a":"ss","b":"fl"}},
- {"id":"zb","use":"param:zb"},
+ {"id":"r7f","use":"op:slice","in":{"x":"cf"},"args":{"axis":0,"start":7*36,"stop":8*36}},
+ {"id":"fbv","use":"cell_fb","in":{"x":"r7f"}},
+ {"id":"sf0","use":"op:mul","in":{"a":"ss","b":"fbv"}},
+ {"id":"sf","use":"op:scale","in":{"x":"sf0"},"args":{"c":P['beta']}},
+ {"id":"zb","use":"op:scale","in":{"x":"fbv"},"args":{"c":P['delta']}},
  {"id":"z1","use":"op:add","in":{"a":"qv","b":"sf"}},
  {"id":"z2","use":"op:add","in":{"a":"z1","b":"zb"}},
  {"id":"zr","use":"op:reshape","in":{"x":"z2"},"args":{"shape":[NV,1]}},
@@ -393,9 +409,69 @@ if SEEN:
 else:
     nodes.append({"id":"stn","use":"op:concat","in":{"x0":"qn","x1":"cn"},"args":{"axis":0}})
     state_out = "stn"
+IND = int(P['ind_on'])
+W_H = 640
+if IND:
+    hoff = 1 + K + (1296*36 if SEEN else 0)
+    nodes += [
+     {"id":"hs","use":"op:slice","in":{"x":"$state"},"args":{"axis":0,"start":hoff,"stop":hoff+W_H*36}},
+     {"id":"hm","use":"op:reshape","in":{"x":"hs"},"args":{"shape":[W_H,36]}},
+     {"id":"pos","use":"op:coords","args":{"n":W_H}},
+     {"id":"pd","use":"op:sub","in":{"a":"pos","b":"$step"}},
+     {"id":"pa","use":"op:abs","in":{"x":"pd"}},
+     {"id":"pn","use":"op:scale","in":{"x":"pa"},"args":{"c":-1.0}},
+     {"id":"pb","use":"op:bias","in":{"x":"pn"},"args":{"c":1.0}},
+     {"id":"oh","use":"op:relu","in":{"x":"pb"}},
+     {"id":"ohc","use":"op:expand","in":{"x":"oh"},"args":{"axis":1}},
+     {"id":"pvr","use":"op:expand","in":{"x":"$prev"},"args":{"axis":0}},
+     {"id":"hw","use":"op:mul","in":{"a":"ohc","b":"pvr"}},
+     {"id":"hn","use":"op:add","in":{"a":"hm","b":"hw"}},
+     {"id":"hnf","use":"op:reshape","in":{"x":"hn"},"args":{"shape":[W_H*36]}},
+    ]
+    for k in range(8):
+        r = 7-k
+        nodes += [
+         {"id":f"ck{k}","use":"op:slice","in":{"x":"cf"},"args":{"axis":0,"start":r*36,"stop":(r+1)*36}},
+         {"id":f"cke{k}","use":"op:expand","in":{"x":f"ck{k}"},"args":{"axis":1}},
+         {"id":f"mk{k}","use":"op:matmul","in":{"a":"hn","b":f"cke{k}"}},
+         {"id":f"mkr{k}","use":"op:reshape","in":{"x":f"mk{k}"},"args":{"shape":[W_H]}},
+        ]
+        if k > 0:
+            nodes.append({"id":f"sk{k}","use":"op:shift","in":{"x":f"mkr{k}"},"args":{"axis":0,"k":k,"value":0.0}})
+    sk = lambda k: "mkr0" if k == 0 else f"sk{k}"
+    nodes += [
+     {"id":"S1","use":"op:add","in":{"a":sk(0),"b":sk(1)}},
+     {"id":"S3","use":"op:add","in":{"a":"S1","b":sk(2)}},
+     {"id":"S4","use":"op:add","in":{"a":"S3","b":sk(3)}},
+     {"id":"S5","use":"op:add","in":{"a":"S4","b":sk(4)}},
+     {"id":"S6","use":"op:add","in":{"a":"S5","b":sk(5)}},
+     {"id":"S7","use":"op:add","in":{"a":"S6","b":sk(6)}},
+     {"id":"S8","use":"op:add","in":{"a":"S7","b":sk(7)}},
+    ]
+    boosts = []
+    for n, wn in ((3,P['w3']),(5,P['w5']),(8,P['w8'])):
+        nodes += [
+         {"id":f"eb{n}","use":"op:bias","in":{"x":f"S{n}"},"args":{"c":-(n-1.0)}},
+         {"id":f"e{n}","use":"op:relu","in":{"x":f"eb{n}"}},
+         {"id":f"ea{n}","use":"op:shift","in":{"x":f"e{n}"},"args":{"axis":0,"k":1,"value":0.0}},
+         {"id":f"eae{n}","use":"op:expand","in":{"x":f"ea{n}"},"args":{"axis":0}},
+         {"id":f"vt{n}","use":"op:matmul","in":{"a":f"eae{n}","b":"hn"}},
+         {"id":f"vr{n}","use":"op:reshape","in":{"x":f"vt{n}"},"args":{"shape":[36]}},
+         {"id":f"vh{n}","use":"op:tanh","in":{"x":f"vr{n}"}},
+         {"id":f"vs{n}","use":"op:scale","in":{"x":f"vh{n}"},"args":{"c":float(wn)}},
+        ]
+        boosts.append(f"vs{n}")
+    nodes += [
+     {"id":"bo1","use":"op:add","in":{"a":boosts[0],"b":boosts[1]}},
+     {"id":"bo2","use":"op:add","in":{"a":"bo1","b":boosts[2]}},
+     {"id":"l4","use":"op:add","in":{"a":final,"b":"bo2"}},
+    ]
+    final = "l4"
+    nodes.append({"id":"stn2","use":"op:concat","in":{"x0":state_out,"x1":"hnf"},"args":{"axis":0}})
+    state_out = "stn2"
 ops.append({"op":"put_def","name":"step_root","def":{"kind":"bundle","inputs":["ctx","prev","step","state"],"nodes":nodes,"outputs":{"logits":final,"state":state_out}}})
 ops.append({"op":"delete_param","name":"boot_logits"})
-ops.append({"op":"set_state_dim","value":1+K+(1296*36 if SEEN else 0)})
+ops.append({"op":"set_state_dim","value":1+K+(1296*36 if SEEN else 0)+(640*36 if IND else 0)})
 prop = {"author":"s1-solo","rationale":"Class-bigram word trie (typed lexicon, typed word classes and class transitions, log via piecewise-linear cell) + typed context deltas + punctuation/quote/length units + in-story pair memory in recurrent state.","ops":ops}
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', P['out'])
 json.dump(prop, open(out,'w'))

@@ -59,6 +59,7 @@ def run_contract(graph: Graph, contract: dict) -> dict:
     passed = 0
     for ci, case in enumerate(contract["cases"]):
         ins = {k: _value(v)[None, ...] for k, v in case["in"].items()}
+        ins2 = {k: np.concatenate([v, v], axis=0) for k, v in ins.items()}  # batch-of-2 must agree
         it = Interpreter(graph)
         try:
             if d["kind"] == "cell":
@@ -72,6 +73,19 @@ def run_contract(graph: Graph, contract: dict) -> dict:
         y = np.asarray(out)[0]
         ok = bool(np.all(np.isfinite(y)))
         why = []
+        try:
+            it2 = Interpreter(graph)
+            if d["kind"] == "cell":
+                out2 = it2.run_cell(name, ins2["x"])
+            else:
+                out2 = it2.run_bundle(name, ins2, f"/{name}")[port]
+            out2 = np.asarray(out2)
+            if out2.shape[0] != 2 or not np.allclose(out2[0], y, atol=1e-9) or not np.allclose(out2[1], y, atol=1e-9):
+                ok = False
+                why.append("batch-2 output differs from batch-1")
+        except (GraphError, KeyError, ValueError, IndexError) as e:
+            ok = False
+            why.append("batch-2 execution failed: " + str(e)[:120])
         if "expect" in case:
             e = np.asarray(case["expect"], dtype=np.float64)
             tol = float(case.get("tol", 1e-6))

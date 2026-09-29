@@ -1,0 +1,159 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 1.8867,
+ "top1": 0.625,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.072,
+   "n": 992,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.34,
+   "n": 1979,
+   "share_of_total_bits": 0.004
+  },
+  "after_period_space": {
+   "bpc": 3.183,
+   "n": 1758,
+   "share_of_total_bits": 0.033
+  },
+  "doc_start": {
+   "bpc": 2.148,
+   "n": 165,
+   "share_of_total_bits": 0.002
+  },
+  "in_word": {
+   "bpc": 1.498,
+   "n": 68275,
+   "share_of_total_bits": 0.607
+  },
+  "word_start": {
+   "bpc": 3.68,
+   "n": 16209,
+   "share_of_total_bits": 0.354
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 87,
+   "pos": 540,
+   "bits": 15.66,
+   "context": " day on, the bird always said ",
+   "target": "\""
+  },
+  {
+   "doc": 99,
+   "pos": 281,
+   "bits": 15.57,
+   "context": "in the bag with his lunch. he ",
+   "target": "z"
+  },
+  {
+   "doc": 44,
+   "pos": 237,
+   "bits": 15.39,
+   "context": "e friends with lucy. max said ",
+   "target": "\""
+  },
+  {
+   "doc": 152,
+   "pos": 364,
+   "bits": 15.33,
+   "context": "ed up to the monster and said ",
+   "target": "\""
+  },
+  {
+   "doc": 28,
+   "pos": 276,
+   "bits": 15.3,
+   "context": "up to the high shelf and said ",
+   "target": "\""
+  },
+  {
+   "doc": 152,
+   "pos": 399,
+   "bits": 14.9,
+   "context": ". the monster smiled and said ",
+   "target": "\""
+  },
+  {
+   "doc": 116,
+   "pos": 464,
+   "bits": 14.53,
+   "context": "ed and said it was okay. they ",
+   "target": "z"
+  },
+  {
+   "doc": 155,
+   "pos": 185,
+   "bits": 14.35,
+   "context": "t find any food yet. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 118,
+   "pos": 123,
+   "bits": 14.29,
+   "context": "riends to play with. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 70,
+   "pos": 60,
+   "bits": 14.29,
+   "context": "shy cat named kitty. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 38,
+   "pos": 83,
+   "bits": 13.67,
+   "context": "e loved to watch cartoons on t",
+   "target": "v"
+  },
+  {
+   "doc": 145,
+   "pos": 406,
+   "bits": 13.4,
+   "context": "fin! tom was so happy that he ",
+   "target": "q"
+  }
+ ],
+ "route_counts": {},
+ "exec": {
+  "node_execs": 36661,
+  "macs": 468728084252,
+  "peak_tensor_elements": 7701045
+ },
+ "generation": {
+  "greedy": [
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree ",
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree ",
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree "
+  ],
+  "sampled_t0.8": [
+   "the big big blue. she stood out the suddenly by the big but the big but the big dog and he said, and he said that they're but they whispered the big she's. she she writes in the white so she said, and",
+   "mia, hi grew to builds around toys them danced the same sand was around that sand, we have little but soft but some one with a cozy so he was sour sometimesome hadn't but the building so he said, he s",
+   "a loses of the pink until she saita lost he wanted that he was a big bird they said the special fun. they was the park until the day has a big then i said, he said, she decided they she she said. the ",
+   "a dessert when she was no more white she's because white snake am some water then she hurt! the said, \"she was very happy and the water when she said,\" and it were happy and the sun. the beautifuld th",
+   "there with the toy,\"takes not sad, and their dad said, and the people was not sad clown with the what's with their dad was not sad and a dad was not kind castle was all day, and she said to his animal",
+   "the big robot do not worry can your mom's but the big smile not wanted a purple dog and their mom said, we but their friend and the big then she wanted the bird and the bird they helps she worried the"
+  ],
+  "complete_sentences": 15,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.964,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

@@ -162,7 +162,26 @@ def cmd_component_test(args):
         except (TransactionError, ValueError) as e:
             _print({"ok": False, "error": str(e)[:500]})
             return
-    res = run_contract(g, json.loads(Path(args.contract).read_text()))
+    contract = json.loads(Path(args.contract).read_text())
+    if r.profile in ("ladder/1", "ladder-micro/1"):
+        from .ir.profiles import ALLOWED, _node_kind, check_micro
+        name = contract["component"]
+        try:
+            if r.profile == "ladder-micro/1":
+                check_micro(g)
+            d = g.defs.get(name)
+            if d is not None and d["kind"] == "bundle":
+                role = d.get("role")
+                if role not in ("cluster", "expert", "router"):
+                    raise ValueError(f"component {name} must have role cluster|expert|router")
+                for n in d["nodes"]:
+                    k = _node_kind(g, n["use"])
+                    if k not in ALLOWED[role]:
+                        raise ValueError(f"{role} {name} may not contain {k} ({n['id']})")
+        except (ValueError, Exception) as e:
+            _print({"ok": False, "error": "profile violation (checked by component-test): " + str(e)[:400]})
+            return
+    res = run_contract(g, contract)
     with (r.root / "tasks" / args.task / "contract_tests.jsonl").open("a") as f:
         f.write(json.dumps({"time": time.time(), "contract": args.contract, "ok": res["ok"],
                             "passed": res.get("passed"), "total": res.get("total")}) + "\n")

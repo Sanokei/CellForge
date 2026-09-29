@@ -1,0 +1,169 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 2.9827,
+ "top1": 0.418,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.33,
+   "n": 992,
+   "share_of_total_bits": 0.001
+  },
+  "after_period": {
+   "bpc": 0.62,
+   "n": 1979,
+   "share_of_total_bits": 0.005
+  },
+  "after_period_space": {
+   "bpc": 3.212,
+   "n": 1758,
+   "share_of_total_bits": 0.021
+  },
+  "doc_start": {
+   "bpc": 1.172,
+   "n": 165,
+   "share_of_total_bits": 0.001
+  },
+  "in_word": {
+   "bpc": 2.905,
+   "n": 68275,
+   "share_of_total_bits": 0.744
+  },
+  "word_start": {
+   "bpc": 3.756,
+   "n": 16209,
+   "share_of_total_bits": 0.228
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 146,
+   "pos": 77,
+   "bits": 15.35,
+   "context": " loved to watch films on his t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 444,
+   "bits": 15.35,
+   "context": "opened the box and saw a new t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 177,
+   "bits": 15.35,
+   "context": "lay, but tim wanted to watch t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 72,
+   "bits": 15.35,
+   "context": "amed tim. tim loved to watch t",
+   "target": "v"
+  },
+  {
+   "doc": 38,
+   "pos": 83,
+   "bits": 15.35,
+   "context": "e loved to watch cartoons on t",
+   "target": "v"
+  },
+  {
+   "doc": 117,
+   "pos": 436,
+   "bits": 15.32,
+   "context": "the toy box and went to bed. m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 352,
+   "bits": 15.32,
+   "context": "t better. after playing with m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 241,
+   "bits": 15.32,
+   "context": "ear, let me comb your hair.\" m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 207,
+   "bits": 15.32,
+   "context": "y bear, mr. bear. she said, \"m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 186,
+   "bits": 15.32,
+   "context": " the comb to her teddy bear, m",
+   "target": "r"
+  },
+  {
+   "doc": 110,
+   "pos": 342,
+   "bits": 15.32,
+   "context": "nd told him about the smoke. m",
+   "target": "r"
+  },
+  {
+   "doc": 110,
+   "pos": 301,
+   "bits": 15.32,
+   "context": " they ran to their neighbor, m",
+   "target": "r"
+  }
+ ],
+ "route_counts": {
+  "/step/d": {
+   "ex_bos": 165,
+   "ex_wordstart": 17967,
+   "ex_inword_short": 35532,
+   "ex_inword_long": 32020,
+   "ex_punct": 3170,
+   "ex_quote": 386,
+   "ex_apos": 138
+  }
+ },
+ "exec": {
+  "node_execs": 3646919,
+  "macs": 160880400,
+  "peak_tensor_elements": 269352
+ },
+ "generation": {
+  "greedy": [
+   "once upon an tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom",
+   "once upon an tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom",
+   "once upon an tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom tom"
+  ],
+  "sampled_t0.8": [
+   "ouicer sam sed. tho. tom stong mured ben \"come eatrwhy forpthed.\" cat helthritenchveld, ameoste dad mat licke ed, wan fam an de wanted tim tomy. tom ran toged ongeralty bon sesowhedaid ele. outsluboto",
+   "onglliv doowasly sioe helwaccheallopom sad jurilatofi,\"in hellllm asouster smilerg toy ben westwall lily wanonuaubbe bald,\" wavemman foungoca. skias boy good as tred. tree forer omed angil. trel. time",
+   "ben best \"isudatouckody ing. tonog,\" ben be, lily bewebagato sad mang ine trepun want thouprt, floway g. tre. tree tinils ben toled e time \"likbx wanted told foundem aske, angr. sthtrm tomske. tolatuh",
+   "an. toonfry. onces, dou. house sawy pling lily timbes told ticorus har, alerig ran told best tim tom tor heart, bouthifan he alefithuriached he ashadug sad went big theahes'titine, helitry jumous want",
+   "s lookerpist anngl mir. helpes mommetum. tim ting outhttit m alat \"ales ong. took ang. little a lopre. trere boban on th, ann.\" ang as be ang. loor ome. sevoweerkoucidedofessomat, told an time cat too",
+   "thobas, domasollecisthe way wantistodaur, sathr, ancat. tom little aly, any. hang tolle he resony baitergumadreld g wants fun thoughth ke \"ine an play ran story tim tog incantoplte, be aimmevan lily p"
+  ],
+  "complete_sentences": 58,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.418,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

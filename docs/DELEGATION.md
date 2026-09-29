@@ -58,3 +58,15 @@ and uses dev-evals to test the whole model. It may request circuit revisions
 Every contract version, component-test result, dev-eval and accepted fragment
 is recorded (task dirs + ledger). Construction efficiency is compared across
 arms as final-eval quality per maker token / dev-eval / wall-clock.
+
+## Lessons from the first delegated round (2026-09-29)
+
+Phase B tests must be at least as strict as integration, or defects surface late.
+The first `component-test` checked only contract cases at batch size 1. Integration
+then rejected 5 of 14 fragments (cells with W1[36,1]+b1[36] = 72 slots against a
+40-slot cap, one with 41) and found a broadcasting bug that only appears at batch > 1.
+`component-test` now also (a) enforces the active profile's cell/param caps and role
+rules on the component, and (b) requires identical outputs at batch size 1 and 2.
+Contracts must state resource rules explicitly ("slots include biases").
+Cost of the gap: 6 circuit revisions (~5 min wall-clock each) and one architect
+integration pass with a partial model.

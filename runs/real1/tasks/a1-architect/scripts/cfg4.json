@@ -1,0 +1,6 @@
+{"noname":true,"rationale":"stage1: bigram + words_open + suffix + wordstart + quote",
+ "experts":{"ex_bos":{"cl_bigram":1},
+ "ex_wordstart":{"cl_bigram":1,"cl_wordstart":1.5,"cl_quote":1},
+ "ex_inword_short":{"cl_bigram":1,"cl_words_open":1.0},
+ "ex_inword_long":{"cl_bigram":0.7,"cl_words_open":1.0,"cl_suffix":1},
+ "ex_punct":{"cl_bigram":1,"cl_quote":1},"ex_quote":{"cl_bigram":1,"cl_quote":1},"ex_apos":{"cl_bigram":1}}}

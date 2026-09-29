@@ -1,0 +1,17 @@
+{
+ "name": "cl_trigram",
+ "purpose": "Additive letter-pair corrections for ~40 common pairs (th, ng, ed, ...)",
+ "inputs": {
+  "ctx": [
+   8,
+   36
+  ]
+ },
+ "output": {
+  "y": [
+   36
+  ]
+ },
+ "contract": "contracts/cl_trigram.json",
+ "namespace": "cl_trigram."
+}
