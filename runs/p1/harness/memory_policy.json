@@ -1,0 +1,19 @@
+{
+ "version": "mem-policy/1",
+ "max_items": 12,
+ "max_chars": 6000,
+ "max_images": 6,
+ "type_weights": {
+  "experiment": 1.0,
+  "claim": 1.2,
+  "correction": 1.5,
+  "observation": 1.0,
+  "decision": 0.8,
+  "lineage": 0.6,
+  "note": 0.5,
+  "harness_change": 0.7
+ },
+ "include_counterevidence": true,
+ "recency_weight": 0.15,
+ "text_only": false
+}

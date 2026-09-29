@@ -1,0 +1,72 @@
+{
+ "model_hash": "7eecf21522252c71064d61f7bfb7040f328376ce205f3bc8619dd6497b43a98c",
+ "stats": {
+  "unique_param_storage": 11593,
+  "expanded_param_uses": 11593,
+  "nonzero_slots": 9062,
+  "constant_slots_in_op_args": 24,
+  "cell_defs": 2,
+  "bundle_defs": 2,
+  "reachable_defs": 4,
+  "expanded_instances": 4,
+  "nesting_depth": 2,
+  "edges": 82,
+  "dispatch_nodes": 0,
+  "param_bytes_float64": 92744
+ },
+ "vocab": [
+  "<pad>",
+  "<bos>",
+  "<eos>",
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9"
+ ],
+ "pixel_contract": {
+  "height": 32,
+  "ink": "bright",
+  "normalize": "uint8/255",
+  "width": 128
+ },
+ "primitive_version": "cellforge-ops/1",
+ "bootstrap": "bootstrap/eos-constant/1",
+ "run_protocol": "digits-mono/1",
+ "inference_dependencies": [
+  "numpy",
+  "cellforge.runtime (ops/interp/decoder)",
+  "cellforge.ir.graph"
+ ],
+ "not_included": [
+  "prompts",
+  "labels",
+  "development data",
+  "memory",
+  "author identities",
+  "keys"
+ ],
+ "anchor_result_development_feedback": {
+  "cer": 0.0,
+  "dataset_manifest_sha256": "46e76dabdac54a2b33d9b5a31b80df4c546ce4763b4e6b5c7918300d9465381e",
+  "dataset_split": "anchor",
+  "evaluator": "ref-eval/1",
+  "exact_count": 1000,
+  "exact_match": 1.0,
+  "failure_reasons": {},
+  "failures": 0,
+  "latency_ms_per_case": 0.8804,
+  "latency_s_total": 0.8804,
+  "macs_total": 1460760000,
+  "model_hash": "7eecf21522252c71064d61f7bfb7040f328376ce205f3bc8619dd6497b43a98c",
+  "n_cases": 1000,
+  "protocol": "ref-metrics/1",
+  "total_edits": 0,
+  "total_ref_chars": 4466
+ }
+}

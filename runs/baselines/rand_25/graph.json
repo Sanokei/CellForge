@@ -1,0 +1,241 @@
+{
+ "defs": {
+  "encode_root": {
+   "inputs": [
+    "image"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       4096
+      ]
+     },
+     "id": "flat",
+     "in": {
+      "x": "$image"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "h",
+     "in": {
+      "x": "flat"
+     },
+     "use": "mlp"
+    },
+    {
+     "args": {
+      "shape": [
+       9,
+       11
+      ]
+     },
+     "id": "slots",
+     "in": {
+      "x": "h"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "slots": "slots"
+   }
+  },
+  "mlp": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "mlp.W1",
+    "W2": "mlp.W2",
+    "b1": "mlp.b1",
+    "b2": "mlp.b2"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "slots",
+    "step",
+    "prev",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "n": 9
+     },
+     "id": "pos",
+     "use": "op:coords"
+    },
+    {
+     "id": "d",
+     "in": {
+      "a": "pos",
+      "b": "$step"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "d2",
+     "in": {
+      "x": "d"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "c": -50.0
+     },
+     "id": "nd",
+     "in": {
+      "x": "d2"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "w",
+     "in": {
+      "x": "nd"
+     },
+     "use": "op:softmax"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "w2",
+     "in": {
+      "x": "w"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "lc",
+     "in": {
+      "a": "w2",
+      "b": "$slots"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "id": "m",
+     "use": "param:map"
+    },
+    {
+     "id": "lv",
+     "in": {
+      "a": "lc",
+      "b": "m"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       13
+      ]
+     },
+     "id": "lv1",
+     "in": {
+      "x": "lv"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "mk",
+     "use": "param:mask"
+    },
+    {
+     "id": "out",
+     "in": {
+      "a": "lv1",
+      "b": "mk"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "logits": "out",
+    "state": "$state"
+   }
+  }
+ },
+ "entries": {
+  "encode": "encode_root",
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "baseline": "random (1+1) edits H=32 evals=25 n_dev=400 seed=80",
+  "max_len": 12,
+  "pixel_contract": {
+   "height": 32,
+   "ink": "bright",
+   "normalize": "uint8/255",
+   "width": 128
+  },
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ]
+ },
+ "params": {
+  "map": {
+   "sha256": "b097832d1a563f9a0938f1b626165f0a96033cc4220b2df9e6492da88efd0ee4",
+   "shape": [
+    11,
+    13
+   ]
+  },
+  "mask": {
+   "sha256": "bfdc1175147a546f77e82e597d0e860c202083c15d302b6bb28b0b93eab949c5",
+   "shape": [
+    13
+   ]
+  },
+  "mlp.W1": {
+   "sha256": "c5eb872b06d8865e62636dce7371ff4dd9ab09cee242118e184037ac8a27db98",
+   "shape": [
+    32,
+    4096
+   ]
+  },
+  "mlp.W2": {
+   "sha256": "8f4364992879a49ef52cb5832f536c7beb0406be2ee64ef82e643c0a82d55f99",
+   "shape": [
+    99,
+    32
+   ]
+  },
+  "mlp.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "mlp.b2": {
+   "sha256": "0362f539cf49cdd69c7f3ac27b9b8ead405f9f0a34a0b57b9b43a1d164dcdbe8",
+   "shape": [
+    99
+   ]
+  }
+ }
+}

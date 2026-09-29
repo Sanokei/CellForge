@@ -1,0 +1,807 @@
+{
+ "defs": {
+  "align": {
+   "inputs": [
+    "image"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "rmax",
+     "in": {
+      "x": "$image"
+     },
+     "use": "op:max"
+    },
+    {
+     "args": {
+      "c": -0.5
+     },
+     "id": "rthr",
+     "in": {
+      "x": "rmax"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "top",
+     "in": {
+      "p": "rthr"
+     },
+     "use": "first_on"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "top2",
+     "in": {
+      "x": "top.oh"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "pv",
+     "use": "param:align.Pv"
+    },
+    {
+     "id": "vsel",
+     "in": {
+      "a": "top2",
+      "b": "pv"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       15,
+       32
+      ]
+     },
+     "id": "vsel2",
+     "in": {
+      "x": "vsel"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "crop",
+     "in": {
+      "a": "vsel2",
+      "b": "$image"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "cmax",
+     "in": {
+      "x": "crop"
+     },
+     "use": "op:max"
+    },
+    {
+     "args": {
+      "c": -0.5
+     },
+     "id": "cthr",
+     "in": {
+      "x": "cmax"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "left",
+     "in": {
+      "p": "cthr"
+     },
+     "use": "first_on"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 24
+     },
+     "id": "left24",
+     "in": {
+      "x": "left.oh"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "left2",
+     "in": {
+      "x": "left24"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "ph",
+     "use": "param:align.Ph"
+    },
+    {
+     "id": "hsel",
+     "in": {
+      "a": "left2",
+      "b": "ph"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       128,
+       104
+      ]
+     },
+     "id": "hsel2",
+     "in": {
+      "x": "hsel"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "al",
+     "in": {
+      "a": "crop",
+      "b": "hsel2"
+     },
+     "use": "op:matmul"
+    }
+   ],
+   "outputs": {
+    "aligned": "al"
+   }
+  },
+  "cell_templates": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "tmpl.W1",
+    "b1": "tmpl.b1"
+   }
+  },
+  "encode_root": {
+   "inputs": [
+    "image"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "al",
+     "in": {
+      "image": "$image"
+     },
+     "use": "align"
+    },
+    {
+     "id": "rd",
+     "in": {
+      "aligned": "al.aligned"
+     },
+     "use": "reader"
+    },
+    {
+     "id": "tb",
+     "in": {
+      "cells": "rd.cells"
+     },
+     "use": "to_table"
+    }
+   ],
+   "outputs": {
+    "table": "tb.table"
+   }
+  },
+  "first_on": {
+   "inputs": [
+    "p"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "ind",
+     "in": {
+      "x": "$p"
+     },
+     "use": "op:step"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "cs",
+     "in": {
+      "x": "ind"
+     },
+     "use": "op:cumsum"
+    },
+    {
+     "id": "neg",
+     "in": {
+      "x": "cs"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1.5
+     },
+     "id": "lim",
+     "in": {
+      "x": "neg"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "first",
+     "in": {
+      "x": "lim"
+     },
+     "use": "op:step"
+    },
+    {
+     "id": "oh",
+     "in": {
+      "a": "ind",
+      "b": "first"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "oh": "oh"
+   }
+  },
+  "read_cells": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 1,
+      "start": 4,
+      "stop": 100
+     },
+     "id": "sl",
+     "in": {
+      "x": "$x"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "shape": [
+       15,
+       8,
+       12
+      ]
+     },
+     "id": "r1",
+     "in": {
+      "x": "sl"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "tr",
+     "in": {
+      "x": "r1"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "args": {
+      "shape": [
+       8,
+       180
+      ]
+     },
+     "id": "fl",
+     "in": {
+      "x": "tr"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "sc",
+     "in": {
+      "x": "fl"
+     },
+     "use": "cell_templates"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex",
+     "in": {
+      "x": "sc.y"
+     },
+     "use": "op:expand"
+    }
+   ],
+   "outputs": {
+    "scores": "ex"
+   }
+  },
+  "reader": {
+   "inputs": [
+    "aligned"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "rd0",
+     "in": {
+      "x": "$aligned"
+     },
+     "use": "read_cells"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1,
+      "value": 0.0
+     },
+     "id": "sh1",
+     "in": {
+      "x": "$aligned"
+     },
+     "use": "op:shift"
+    },
+    {
+     "id": "rd1",
+     "in": {
+      "x": "sh1"
+     },
+     "use": "read_cells"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 2,
+      "value": 0.0
+     },
+     "id": "sh2",
+     "in": {
+      "x": "$aligned"
+     },
+     "use": "op:shift"
+    },
+    {
+     "id": "rd2",
+     "in": {
+      "x": "sh2"
+     },
+     "use": "read_cells"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 3,
+      "value": 0.0
+     },
+     "id": "sh3",
+     "in": {
+      "x": "$aligned"
+     },
+     "use": "op:shift"
+    },
+    {
+     "id": "rd3",
+     "in": {
+      "x": "sh3"
+     },
+     "use": "read_cells"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "all",
+     "in": {
+      "x0": "rd0.scores",
+      "x1": "rd1.scores",
+      "x2": "rd2.scores",
+      "x3": "rd3.scores"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "start": 0,
+      "stop": 1
+     },
+     "id": "c0",
+     "in": {
+      "x": "all"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 0,
+      "stop": 10
+     },
+     "id": "c0d",
+     "in": {
+      "x": "c0"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "c0m",
+     "in": {
+      "x": "c0d"
+     },
+     "use": "op:max"
+    },
+    {
+     "args": {
+      "shape": [
+       4
+      ]
+     },
+     "id": "c0f",
+     "in": {
+      "x": "c0m"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "w",
+     "in": {
+      "x": "c0f"
+     },
+     "use": "op:onehot_argmax"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "w2",
+     "in": {
+      "x": "w"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "shape": [
+       4,
+       88
+      ]
+     },
+     "id": "allf",
+     "in": {
+      "x": "all"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "sel",
+     "in": {
+      "a": "w2",
+      "b": "allf"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       8,
+       11
+      ]
+     },
+     "id": "selr",
+     "in": {
+      "x": "sel"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "cells": "selr"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "table",
+    "step",
+    "prev",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "n": 12,
+      "start": 0.0,
+      "step": 1.0
+     },
+     "id": "pos",
+     "use": "op:coords"
+    },
+    {
+     "id": "d",
+     "in": {
+      "a": "pos",
+      "b": "$step"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "ad",
+     "in": {
+      "x": "d"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "nd",
+     "in": {
+      "x": "ad"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 0.5
+     },
+     "id": "nb",
+     "in": {
+      "x": "nd"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "oh",
+     "in": {
+      "x": "nb"
+     },
+     "use": "op:step"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "oh2",
+     "in": {
+      "x": "oh"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "a": "oh2",
+      "b": "$table"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       13
+      ]
+     },
+     "id": "lgr",
+     "in": {
+      "x": "lg"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "logits": "lgr",
+    "state": "$state"
+   }
+  },
+  "to_table": {
+   "inputs": [
+    "cells"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 1,
+      "start": 0,
+      "stop": 10
+     },
+     "id": "dig",
+     "in": {
+      "x": "$cells"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "start": 10,
+      "stop": 11
+     },
+     "id": "pres",
+     "in": {
+      "x": "$cells"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "c": -4.0
+     },
+     "id": "pb",
+     "in": {
+      "x": "pres"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "pr",
+     "in": {
+      "x": "pb"
+     },
+     "use": "op:step"
+    },
+    {
+     "args": {
+      "c": 1000.0
+     },
+     "id": "boost",
+     "in": {
+      "x": "pr"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "dl",
+     "in": {
+      "a": "dig",
+      "b": "boost"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "after": 4,
+      "axis": 0,
+      "before": 0,
+      "value": 0.0
+     },
+     "id": "dlp",
+     "in": {
+      "x": "dl"
+     },
+     "use": "op:pad"
+    },
+    {
+     "id": "eos",
+     "use": "param:table.eos"
+    },
+    {
+     "id": "pbos",
+     "use": "param:table.padbos"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "tab",
+     "in": {
+      "x0": "pbos",
+      "x1": "eos",
+      "x2": "dlp"
+     },
+     "use": "op:concat"
+    }
+   ],
+   "outputs": {
+    "table": "tab"
+   }
+  }
+ },
+ "entries": {
+  "encode": "encode_root",
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/eos-constant/1",
+  "max_len": 12,
+  "pixel_contract": {
+   "height": 32,
+   "ink": "bright",
+   "normalize": "uint8/255",
+   "width": 128
+  },
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ]
+ },
+ "params": {
+  "align.Ph": {
+   "sha256": "6ee7035a33670fe8b7d335a9d548a9a273128066b064e16230944153961acd32",
+   "shape": [
+    24,
+    13312
+   ]
+  },
+  "align.Pv": {
+   "sha256": "ca931682b86524ff04784902e09230d83633f061be2aeefaca9cc60e1bec75b3",
+   "shape": [
+    32,
+    480
+   ]
+  },
+  "table.eos": {
+   "sha256": "c7095b8fe979271137b36ae712a5f0761ec3b8e357abf3a7ef0fcd590c9ec62f",
+   "shape": [
+    12,
+    1
+   ]
+  },
+  "table.padbos": {
+   "sha256": "0b35dc8b38681f9f92f6986b52e6a19cd977b1d8f2b5111970c10f2c57d0d5be",
+   "shape": [
+    12,
+    2
+   ]
+  },
+  "tmpl.W1": {
+   "sha256": "e21435c83196820daf569c4c0aebb35c07ac1b5f20388ddd708b9cb66d58efe2",
+   "shape": [
+    11,
+    180
+   ]
+  },
+  "tmpl.b1": {
+   "sha256": "0f28d18841567616c5692f1a0770e8356b044040b9e969bf3806ada4cc17b11d",
+   "shape": [
+    11
+   ]
+  }
+ }
+}

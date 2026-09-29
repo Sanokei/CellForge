@@ -1,0 +1,6 @@
+[
+ {"type": "observation", "summary": "Template-grid reader (first-ink alignment, 8 fixed 12px cells, 10 hand-typed 15x12 templates, presence-based EOS) reaches exact match 1.000 / CER 0.000 on dev_main n=400, all lengths 1-8.", "sources": ["evals/000/report.json"], "state": "measured-on-development", "components": ["encode_root", "align", "reader", "read_cells", "cell_templates", "to_table", "step_root"]},
+ {"type": "observation", "summary": "On 24 traced cases, template top1-top2 score gap is at least 11.5 (median 21.8) and presence ink separates present (>=40.9) from absent (<=1.6) cells by a wide margin.", "sources": ["evals/001/_encode_rd.cells.npy"], "state": "measured-on-development", "components": ["cell_templates", "to_table"]},
+ {"type": "observation", "summary": "Left bearing of the first glyph relative to its cell origin is 1 or 2 px in traced cases (offset choices 1 x20, 2 x4), so the 0..3 bearing search is sufficient for this font.", "sources": ["evals/001/_encode_rd_w.out.npy"], "state": "measured-on-development", "components": ["reader"]},
+ {"type": "claim", "summary": "The design depends on fixed pitch (12 px) and glyph size; it will likely fail on other font sizes or proportional fonts without new templates and grid logic.", "sources": ["evals/000/report.json"], "state": "proposed", "components": ["read_cells", "cell_templates"]}
+]

@@ -1,0 +1,13 @@
+[
+ {"type": "observation", "summary": "Flat recognizer (dense hand-typed template matching + leftmost-ink slot windows at 12-px pitch + step one-hot slot selection) reaches exact match 1.000 / CER 0.000 on dev_main n=400, all lengths 1-8 perfect.",
+  "sources": ["evals/000/report.json"], "state": "measured-on-development",
+  "components": ["encode_root", "tm_cell", "head_cell", "step_root"]},
+ {"type": "observation", "summary": "On 24 traced cases, min top1-top2 slot-logit margin is 9.9 and min EOS margin is 20.8 (winning digit scores 17.5-30.6), so decisions are not near threshold.",
+  "sources": ["evals/001/report.json", "evals/001/_encode_head.y.npy"], "state": "measured-on-development",
+  "components": ["tm_cell", "head_cell"]},
+ {"type": "claim", "summary": "Glyph geometry for digits-mono/1: DejaVuSansMono 20px, glyph top row = 8 + y_jitter, height 15 rows, ink in advance-cell columns 1..10, first-ink bearing 1 (digit 1: 2), pitch exactly 12 px from x.",
+  "sources": ["evals/001/case00007.png"], "state": "measured-on-development",
+  "components": ["encode_root"]},
+ {"type": "claim", "summary": "Exact-bitmap templates likely fail if the renderer adds blur, other fonts/sizes or sub-pixel positions; untested.",
+  "sources": [], "state": "proposed", "components": ["tm_cell"]}
+]

@@ -1,0 +1,178 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,amsmath,hyperref,xcolor}
+\title{CellForge: Language-Model Agents as Direct Authors of Neural Networks\\
+\large First results on gradient-free construction of an OCR model}
+\author{CellForge project\thanks{Orchestrator and maker agents: Claude (Anthropic) running in Claude Code. Project owner: [name to be supplied].}}
+\date{Draft, 29 September 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We ask whether large language model (LLM) agents can build useful neural networks by
+\emph{directly writing} their weights, biases and wiring, with no gradient-based fitting of
+the resulting artifact. CellForge gives an orchestrator LLM and scoped \emph{maker} agents a
+recursive graph representation (primitive cells composed into arbitrarily nested, shareable
+bundles with optional conditional dispatch), atomic validated transactions, a versioned
+development harness, and an append-only evidence record. Final evaluation runs on a separate
+machine under a separate account with freshly generated cases for every evaluation.
+In a first round on variable-length digit-string recognition, four independently authored
+artifacts---including one written with no metric feedback at all---read in-distribution
+final cases perfectly (exact match 1.000, $n=2000$). Under distribution shift, they diverge:
+the most robust artifact reads 73.8\% of strings in an unseen font and 72.3\% under size
+shift, while the others reach 38--57\%. A gradient-trained slot-MLP control reaches 83.8\%
+in distribution but 10.0\% on the unseen font; random direct-edit search reaches 0\%.
+These results establish that LLM authors can construct working visual recognizers without
+gradient training; they do not yet establish robustness, scaling, or superiority over
+well-designed gradient-trained models.
+\end{abstract}
+
+\section{Introduction}
+Neural networks are almost always \emph{fitted}: an optimizer adjusts parameters to reduce a
+loss on data. LLMs, however, can read images, reason about mechanisms, and write precise
+numerical specifications. This suggests a different construction process: an LLM
+\emph{authors} a network the way an engineer writes a program, observes its failures, and
+revises it. The author, not gradient descent, is the optimizer.
+
+CellForge is an experimental system for testing this idea rigorously. Its primary question is:
+\begin{quote}
+Can LLM agents discover useful neural computations, their recursive organization, and better
+ways of developing them, using evidence-backed memory and direct numerical and structural
+edits, producing an offline image-to-text artifact that improves on independent evaluation?
+\end{quote}
+
+\paragraph{Scope and non-goals.}
+CellForge tests whether LLM agents can author neural network weights directly, without
+gradient training. The artifact studied here is an offline image-to-text recognizer. It has
+no language understanding, dialogue, speech capability, or general intelligence; chat and
+speech interfaces are out of scope for this work.
+
+\paragraph{Motivation and long-term aim.}
+The project owner's long-term aim is more ambitious: to work toward general intelligence,
+eventually a system one can converse with, with visual input and later speech, whose
+computation is constructed by LLM authors rather than fitted. We state this aim to explain
+the design choices (modality-agnostic decoder, recursive reusable components, staged
+vocabularies), and we keep it strictly separate from our claims. Section~\ref{sec:roadmap}
+lists what would need to be demonstrated, in order, for that aim to become plausible, and
+the risks at each stage. Nothing in the present results bears on general intelligence.
+
+\paragraph{Contributions.}
+(1) A recursive cell/bundle IR with lazy conditional dispatch, content hashing, and
+behaviour-preserving wrap/unwrap refactors; (2) a transaction and governance design that
+makes every parameter change traceable to an accepted LLM proposal and separates
+development feedback from independent final evaluation; (3) first measurements of
+LLM-authored OCR artifacts against gradient-trained and random-search controls, including
+distribution-shift tests.
+
+\section{Related work}
+Architecture search composes motifs hierarchically \cite{liu2018hierarchical} and evolves
+topologies and components \cite{miikkulainen2017evolving}; both fit weights by training.
+Our evidence memory adapts ideas from visual retrieval-augmented generation
+\cite{yu2024visrag,sun2025visrag2,wang2026vimrag}. We are not aware of prior work in which
+LLMs author all weights of a working recognizer without fitting, but a wider prior-art review
+is required before any novelty claim.
+
+\section{System}
+\subsection{Representation}
+A \emph{cell} computes $h=\sigma(W_1x+b_1)$, $y=W_2h+b_2$ over the last axis of its input.
+A \emph{bundle} is a typed DAG whose nodes are parameter-free operations, parameter tensors,
+cells, other bundles, or a top-1 \texttt{dispatch} among bundles; unselected branches do not
+execute. The same representation is used at every depth; definitions may be shared, and
+parameter sharing is explicit. Recursive template references and exponential expansion are
+rejected at validation. A model has an \texttt{encode} bundle (pixels $\to$ memory) and a
+\texttt{step} bundle (memory, step index, previous token, state $\to$ logits, state), driven
+by a bounded greedy decoder that stops on the model's own EOS.
+
+\subsection{Construction protocol}
+Makers submit JSON proposals of atomic operations (set parameter by explicit value or by a
+deterministic expansion of an author-written pattern such as ASCII art; put/delete
+definitions; wrap/unwrap). Proposals are validated against their exact base hash, executed on
+sample inputs, and, for pure refactors, tested for exact behavioural equivalence. Makers may
+not run code that computes weights from data, may not script search loops, and receive
+development feedback only through a budgeted \texttt{dev-eval} command.
+
+\subsection{Evaluation boundary}
+Development data, a fixed reference anchor, and all diagnostics are author-visible and
+therefore development feedback. Final cases are rendered on a separate server by an
+\texttt{evaluator} account with a fresh secret seed per evaluation, excluding (for strings of
+length $\geq4$) every string author agents ever saw; only aggregates leave the machine.
+The unseen-font split uses a font file that is never present on the authoring machine.
+
+\section{Experiment 1: digit strings}
+\paragraph{Protocol.} 32$\times$128 grayscale, 1--8 digits, DejaVu Sans Mono 20\,px, horizontal
+offset 2--14\,px, vertical jitter $\pm2$\,px, Gaussian noise $\sigma\leq0.03$.
+Final splits: iid ($n=2000$), unseen font Liberation Mono ($n=1000$), size 18--22\,px
+($n=1000$), length 9 ($n=500$).
+
+\paragraph{Arms.} From an EOS-constant bootstrap: two independent iterative makers with
+recursive bundles (25 dev-eval budget each), a flat-graph maker (no sub-bundles), and a
+one-shot maker (validation only, no metrics). Controls: a gradient-trained slot-MLP
+(Adam, 400 or 20{,}000 training images) and (1+1) random direct-edit hill climbing
+(25 or 20{,}000 evaluations), all scored through the same reference evaluator.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcccc}
+\toprule
+Artifact & iid & unseen font & size shift & length 9\\
+\midrule
+Authored, iterative A & 1.000 & \textbf{0.738} & \textbf{0.723} & 1.000\\
+Authored, iterative B & 1.000 & 0.382 & 0.379 & 0.000\\
+Authored, one-shot & 1.000 & 0.427 & 0.453 & 1.000\\
+Authored, flat & 1.000 & 0.407 & 0.570 & 1.000\\
+Gradient slot-MLP, 400 & 0.057 & 0.054 & 0.050 & 0.000\\
+Gradient slot-MLP, 20k & 0.838 & 0.100 & 0.419 & 0.000$^\ast$\\
+Random edits, 20k evals & 0.000 & 0.000 & 0.000 & 0.000\\
+\bottomrule
+\end{tabular}
+\caption{Exact-match rate on independent final cases (fresh seeds). Wilson 95\% intervals
+are $\pm$0.03 or narrower at these $n$; CER in the project log. $^\ast$The slot-MLP has eight
+character slots by construction.}
+\label{tab:r1}
+\end{table}
+
+\paragraph{Results.} Table~\ref{tab:r1}. All four authored artifacts are perfect in
+distribution, using two or fewer development evaluations each; the in-distribution task is
+therefore saturated and does not discriminate construction arms. Every maker converged on
+the same family of mechanism---vertical alignment, left-edge detection, a fixed 12\,px
+character pitch, and hand-typed 15$\times$12 glyph templates---yet small design decisions
+produced large robustness differences: artifact A's normalized agreement score and
+$\pm3$\,px search tolerance generalized best; artifact B hard-coded eight character cells and
+failed every 9-digit string.
+
+\paragraph{What the results do and do not show.}
+They show that LLM authors can construct compact recognizers (about two thousand parameters
+for artifact A) without gradient fitting, and that the one-shot author needed no
+feedback to reach perfect in-distribution accuracy. They do \emph{not} show a difference
+between arms (one construction run per arm), robustness to real-world text, or superiority
+over gradient training in general: our control lacks translation invariance, and a
+gradient-trained convolutional network would likely be perfect in distribution. The makers'
+templates came from \emph{looking at} development images; we regard the author's visual
+perception as the channel through which learning happens in this system, and we report it
+as such rather than as discovery from first principles.
+
+\section{Limitations}
+Single font family in development; one run per arm; subagent token usage is self-reported;
+authors and orchestrator share an operating-system account locally (the final-evaluation
+boundary is physical, on a separate server, but the orchestrator has administrative access to
+it); the live visual-retrieval memory arm and harness-evolution experiments are not yet run.
+
+\section{Roadmap beyond OCR}\label{sec:roadmap}
+The path from this result toward the long-term aim requires, in order: robust alphanumeric
+recognition across unseen font families; real-world text lines competitive with a
+parameter-matched gradient-trained CNN (the critical go/no-go test, since authoring effort
+scales with case diversity rather than data); constructed sequence priors; measured component
+reuse across visual tasks; constructed algorithmic reasoning with length generalization; and
+only then language. The largest risks are scale (capable language models have
+$10^8$--$10^{12}$ parameters, far beyond hand authoring, pushing toward weight
+\emph{generators}) and provenance (linguistic competence in an authored model would be
+transferred from the author LLM's pretraining and must be reported as such).
+
+\begin{thebibliography}{9}
+\bibitem{liu2018hierarchical} H.~Liu et al. Hierarchical representations for efficient architecture search. arXiv:1711.00436, 2017.
+\bibitem{miikkulainen2017evolving} R.~Miikkulainen et al. Evolving deep neural networks. arXiv:1703.00548, 2017.
+\bibitem{yu2024visrag} S.~Yu et al. VisRAG: Vision-based retrieval-augmented generation on multi-modality documents. arXiv:2410.10594, 2024.
+\bibitem{sun2025visrag2} Y.~Sun et al. VisRAG 2.0: Evidence-guided multi-image reasoning in visual retrieval-augmented generation. arXiv:2510.09733, 2025.
+\bibitem{wang2026vimrag} Q.~Wang et al. VimRAG: Navigating massive visual context in retrieval-augmented generation via multimodal memory graph. arXiv:2602.12735, 2026.
+\end{thebibliography}
+\end{document}

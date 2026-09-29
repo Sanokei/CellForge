@@ -1,0 +1,780 @@
+{
+ "defs": {
+  "encode_root": {
+   "inputs": [
+    "image"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 6,
+      "stop": 25
+     },
+     "id": "band",
+     "in": {
+      "x": "$image"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex0",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1,
+      "value": 0.0
+     },
+     "id": "sh1",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex1",
+     "in": {
+      "x": "sh1"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -2,
+      "value": 0.0
+     },
+     "id": "sh2",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex2",
+     "in": {
+      "x": "sh2"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -3,
+      "value": 0.0
+     },
+     "id": "sh3",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex3",
+     "in": {
+      "x": "sh3"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -4,
+      "value": 0.0
+     },
+     "id": "sh4",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex4",
+     "in": {
+      "x": "sh4"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -5,
+      "value": 0.0
+     },
+     "id": "sh5",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex5",
+     "in": {
+      "x": "sh5"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -6,
+      "value": 0.0
+     },
+     "id": "sh6",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex6",
+     "in": {
+      "x": "sh6"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -7,
+      "value": 0.0
+     },
+     "id": "sh7",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex7",
+     "in": {
+      "x": "sh7"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -8,
+      "value": 0.0
+     },
+     "id": "sh8",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex8",
+     "in": {
+      "x": "sh8"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -9,
+      "value": 0.0
+     },
+     "id": "sh9",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex9",
+     "in": {
+      "x": "sh9"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -10,
+      "value": 0.0
+     },
+     "id": "sh10",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex10",
+     "in": {
+      "x": "sh10"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -11,
+      "value": 0.0
+     },
+     "id": "sh11",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ex11",
+     "in": {
+      "x": "sh11"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "win",
+     "in": {
+      "x0": "ex0",
+      "x1": "ex1",
+      "x10": "ex10",
+      "x11": "ex11",
+      "x2": "ex2",
+      "x3": "ex3",
+      "x4": "ex4",
+      "x5": "ex5",
+      "x6": "ex6",
+      "x7": "ex7",
+      "x8": "ex8",
+      "x9": "ex9"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "perm": [
+       2,
+       1,
+       0
+      ]
+     },
+     "id": "winT",
+     "in": {
+      "x": "win"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "args": {
+      "shape": [
+       128,
+       228
+      ]
+     },
+     "id": "patch",
+     "in": {
+      "x": "winT"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "tm",
+     "in": {
+      "x": "patch"
+     },
+     "use": "tm_cell"
+    },
+    {
+     "args": {
+      "shape": [
+       128,
+       5,
+       10
+      ]
+     },
+     "id": "tm5",
+     "in": {
+      "x": "tm.y"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "S",
+     "in": {
+      "x": "tm5"
+     },
+     "use": "op:max"
+    },
+    {
+     "args": {
+      "c": -0.25
+     },
+     "id": "thr",
+     "in": {
+      "x": "band"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "thrr",
+     "in": {
+      "x": "thr"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "colsum",
+     "in": {
+      "x": "thrr"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "c": -0.05
+     },
+     "id": "colb",
+     "in": {
+      "x": "colsum"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "ink",
+     "in": {
+      "x": "colb"
+     },
+     "use": "op:step"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "seen",
+     "in": {
+      "x": "ink"
+     },
+     "use": "op:cummax"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -3,
+      "value": 1.0
+     },
+     "id": "seen3",
+     "in": {
+      "x": "seen"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "cs",
+     "in": {
+      "x": "seen3"
+     },
+     "use": "op:cumsum"
+    },
+    {
+     "args": {
+      "c": -1.0
+     },
+     "id": "rel3",
+     "in": {
+      "x": "cs"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "rel3e",
+     "in": {
+      "x": "rel3"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "n": 12,
+      "start": 0.0,
+      "step": 12.0
+     },
+     "id": "cent",
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cente",
+     "in": {
+      "x": "cent"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "D",
+     "in": {
+      "a": "rel3e",
+      "b": "cente"
+     },
+     "use": "op:sub"
+    },
+    {
+     "args": {
+      "c": 0.5
+     },
+     "id": "lo",
+     "in": {
+      "x": "D"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "lok",
+     "in": {
+      "x": "lo"
+     },
+     "use": "op:step"
+    },
+    {
+     "id": "hin",
+     "in": {
+      "x": "D"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 4.5
+     },
+     "id": "hi",
+     "in": {
+      "x": "hin"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "hik",
+     "in": {
+      "x": "hi"
+     },
+     "use": "op:step"
+    },
+    {
+     "id": "inw",
+     "in": {
+      "a": "lok",
+      "b": "hik"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "seen3e",
+     "in": {
+      "x": "seen3"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "inside",
+     "in": {
+      "a": "inw",
+      "b": "seen3e"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "c": -1.0
+     },
+     "id": "m1",
+     "in": {
+      "x": "inside"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "c": 1000.0
+     },
+     "id": "madd",
+     "in": {
+      "x": "m1"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "madde",
+     "in": {
+      "x": "madd"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "Se",
+     "in": {
+      "x": "S"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "SM",
+     "in": {
+      "a": "Se",
+      "b": "madde"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "slotsc",
+     "in": {
+      "x": "SM"
+     },
+     "use": "op:max"
+    },
+    {
+     "id": "head",
+     "in": {
+      "x": "slotsc"
+     },
+     "use": "head_cell"
+    }
+   ],
+   "outputs": {
+    "slots": "head.y"
+   }
+  },
+  "head_cell": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "head.W1",
+    "b1": "head.b1"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "slots",
+    "step",
+    "prev",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "n": 12,
+      "start": 0.0,
+      "step": 1.0
+     },
+     "id": "pos",
+     "use": "op:coords"
+    },
+    {
+     "id": "dp",
+     "in": {
+      "a": "pos",
+      "b": "$step"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "adp",
+     "in": {
+      "x": "dp"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "nadp",
+     "in": {
+      "x": "adp"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "sel0",
+     "in": {
+      "x": "nadp"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "sel",
+     "in": {
+      "x": "sel0"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "sele",
+     "in": {
+      "x": "sel"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "pick",
+     "in": {
+      "a": "sele",
+      "b": "$slots"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "logits",
+     "in": {
+      "x": "pick"
+     },
+     "use": "op:sum"
+    }
+   ],
+   "outputs": {
+    "logits": "logits",
+    "state": "$state"
+   }
+  },
+  "tm_cell": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "tm.W1",
+    "b1": "tm.b1"
+   }
+  }
+ },
+ "entries": {
+  "encode": "encode_root",
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/eos-constant/1",
+  "max_len": 12,
+  "pixel_contract": {
+   "height": 32,
+   "ink": "bright",
+   "normalize": "uint8/255",
+   "width": 128
+  },
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ]
+ },
+ "params": {
+  "head.W1": {
+   "sha256": "0247fe1b4d0d250af415c525aabebe1b91ea0def330a879d20b25df2c9f64fb7",
+   "shape": [
+    13,
+    10
+   ]
+  },
+  "head.b1": {
+   "sha256": "bfdc1175147a546f77e82e597d0e860c202083c15d302b6bb28b0b93eab949c5",
+   "shape": [
+    13
+   ]
+  },
+  "tm.W1": {
+   "sha256": "8ae2d0fec86f4339aa73663e78b69ca2f3bc20bd1551ca23697aa33eef07aab1",
+   "shape": [
+    50,
+    228
+   ]
+  },
+  "tm.b1": {
+   "sha256": "2450215420a082773af71f753da749980dba5dfe5d71d223b043a4f1a010170a",
+   "shape": [
+    50
+   ]
+  }
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "version": "dev-diag/1",
+ "n": 50,
+ "exact_match": 0.0,
+ "cer": 1.0,
+ "total_edits": 265,
+ "total_ref_chars": 265,
+ "failures": 0,
+ "failure_reasons": {},
+ "exact_by_true_length": {
+  "1": "0/3",
+  "2": "0/3",
+  "3": "0/5",
+  "4": "0/6",
+  "5": "0/7",
+  "6": "0/9",
+  "7": "0/8",
+  "8": "0/9"
+ },
+ "length_error_rate": 1.0,
+ "top_length_confusions": [
+  "true6->pred0: 9",
+  "true8->pred0: 9",
+  "true7->pred0: 8",
+  "true5->pred0: 7",
+  "true4->pred0: 6",
+  "true3->pred0: 5",
+  "true1->pred0: 3",
+  "true2->pred0: 3"
+ ],
+ "per_position_char_acc_when_length_right": {},
+ "top_char_confusions": [],
+ "exec": {
+  "node_execs": 3,
+  "macs": 0,
+  "peak_tensor_elements": 6400
+ },
+ "route_counts": {},
+ "examples_wrong": [
+  {
+   "i": 0,
+   "true": "0436",
+   "pred": "",
+   "edits": 4
+  },
+  {
+   "i": 1,
+   "true": "3",
+   "pred": "",
+   "edits": 1
+  },
+  {
+   "i": 2,
+   "true": "455800",
+   "pred": "",
+   "edits": 6
+  },
+  {
+   "i": 3,
+   "true": "2",
+   "pred": "",
+   "edits": 1
+  },
+  {
+   "i": 4,
+   "true": "565775",
+   "pred": "",
+   "edits": 6
+  },
+  {
+   "i": 5,
+   "true": "3460782",
+   "pred": "",
+   "edits": 7
+  },
+  {
+   "i": 6,
+   "true": "8659",
+   "pred": "",
+   "edits": 4
+  },
+  {
+   "i": 7,
+   "true": "69878534",
+   "pred": "",
+   "edits": 8
+  },
+  {
+   "i": 8,
+   "true": "4879050",
+   "pred": "",
+   "edits": 7
+  },
+  {
+   "i": 9,
+   "true": "64582384",
+   "pred": "",
+   "edits": 8
+  },
+  {
+   "i": 10,
+   "true": "59062",
+   "pred": "",
+   "edits": 5
+  },
+  {
+   "i": 11,
+   "true": "5610284",
+   "pred": "",
+   "edits": 7
+  },
+  {
+   "i": 12,
+   "true": "19",
+   "pred": "",
+   "edits": 2
+  },
+  {
+   "i": 13,
+   "true": "0",
+   "pred": "",
+   "edits": 1
+  },
+  {
+   "i": 14,
+   "true": "490",
+   "pred": "",
+   "edits": 3
+  },
+  {
+   "i": 15,
+   "true": "17714550",
+   "pred": "",
+   "edits": 8
+  },
+  {
+   "i": 16,
+   "true": "86614",
+   "pred": "",
+   "edits": 5
+  },
+  {
+   "i": 17,
+   "true": "092",
+   "pred": "",
+   "edits": 3
+  },
+  {
+   "i": 18,
+   "true": "608289",
+   "pred": "",
+   "edits": 6
+  },
+  {
+   "i": 19,
+   "true": "742",
+   "pred": "",
+   "edits": 3
+  },
+  {
+   "i": 20,
+   "true": "6477",
+   "pred": "",
+   "edits": 4
+  },
+  {
+   "i": 21,
+   "true": "9968795",
+   "pred": "",
+   "edits": 7
+  },
+  {
+   "i": 22,
+   "true": "18793",
+   "pred": "",
+   "edits": 5
+  },
+  {
+   "i": 23,
+   "true": "137",
+   "pred": "",
+   "edits": 3
+  }
+ ]
+}

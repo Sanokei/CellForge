@@ -1,0 +1,57 @@
+{
+ "version": "dev-diag/1",
+ "n": 400,
+ "exact_match": 1.0,
+ "cer": 0.0,
+ "total_edits": 0,
+ "total_ref_chars": 1828,
+ "failures": 0,
+ "failure_reasons": {},
+ "exact_by_true_length": {
+  "1": "55/55",
+  "2": "37/37",
+  "3": "54/54",
+  "4": "47/47",
+  "5": "56/56",
+  "6": "46/46",
+  "7": "47/47",
+  "8": "58/58"
+ },
+ "length_error_rate": 0.0,
+ "top_length_confusions": [],
+ "per_position_char_acc_when_length_right": {
+  "0": 1.0,
+  "1": 1.0,
+  "2": 1.0,
+  "3": 1.0,
+  "4": 1.0,
+  "5": 1.0,
+  "6": 1.0,
+  "7": 1.0
+ },
+ "top_char_confusions": [],
+ "exec": {
+  "node_execs": 139,
+  "macs": 584304000,
+  "peak_tensor_elements": 11673600
+ },
+ "route_counts": {},
+ "examples_wrong": [],
+ "dev_set": "dev_main (dev_main-9ca8e4db0e71f0e2), first 400",
+ "stats": {
+  "unique_param_storage": 11593,
+  "expanded_param_uses": 11593,
+  "nonzero_slots": 9062,
+  "constant_slots_in_op_args": 24,
+  "cell_defs": 2,
+  "bundle_defs": 2,
+  "reachable_defs": 4,
+  "expanded_instances": 4,
+  "nesting_depth": 2,
+  "edges": 82,
+  "dispatch_nodes": 0,
+  "param_bytes_float64": 92744
+ },
+ "outputs": "runs\\p1\\tasks\\r1-flat\\evals\\000",
+ "dev_evals_used": 1
+}

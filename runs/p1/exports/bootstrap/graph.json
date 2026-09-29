@@ -1,0 +1,92 @@
+{
+ "defs": {
+  "encode_root": {
+   "inputs": [
+    "image"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "ink",
+     "in": {
+      "x": "$image"
+     },
+     "use": "op:mean"
+    }
+   ],
+   "outputs": {
+    "colink": "ink"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "colink",
+    "step",
+    "prev",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "logits",
+     "use": "param:boot_logits"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "like": "$prev",
+      "x": "logits"
+     },
+     "use": "op:broadcast_to"
+    }
+   ],
+   "outputs": {
+    "logits": "lg",
+    "state": "$state"
+   }
+  }
+ },
+ "entries": {
+  "encode": "encode_root",
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/eos-constant/1",
+  "max_len": 12,
+  "pixel_contract": {
+   "height": 32,
+   "ink": "bright",
+   "normalize": "uint8/255",
+   "width": 128
+  },
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ]
+ },
+ "params": {
+  "boot_logits": {
+   "sha256": "3f519cfb4ea77f32f5b8ada1abaad7d4b738d2f03d0f0e04113381af42006b87",
+   "shape": [
+    13
+   ]
+  }
+ }
+}

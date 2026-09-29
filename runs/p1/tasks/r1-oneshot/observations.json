@@ -1,0 +1,17 @@
+[
+ {"type": "observation",
+  "summary": "Dev images: DejaVuSansMono size 20, glyph cells repeat every 12 px starting at manifest x; glyph band is 15 rows starting at row 8+y_jitter; ink occupies cell offsets 1..10 (first ink offset 2 for '1', 1 otherwise).",
+  "sources": ["runs/p1/dev/dev_main-9ca8e4db0e71f0e2/png/00005.png", "runs/p1/dev/dev_main-9ca8e4db0e71f0e2/png/00007.png", "runs/p1/dev/dev_main-9ca8e4db0e71f0e2/png/00015.png", "runs/p1/dev/dev_main-9ca8e4db0e71f0e2/manifest.json"],
+  "state": "measured-on-development",
+  "components": ["encode_root", "step_root"]},
+ {"type": "observation",
+  "summary": "Proposal passes dev-eval --validate-only (ok=true, 1811 param values, 41 op-arg constants). No accuracy measured (one-shot arm, budget 0).",
+  "sources": ["runs/p1/tasks/r1-oneshot/proposal.json"],
+  "state": "measured-on-development",
+  "components": ["encode_root", "step_root", "tmpl_cell"]},
+ {"type": "claim",
+  "summary": "Nearest-template scoring (-0.5||I-H||^2 with a blank template for EOS) on a vertically aligned band, searched over 3 window starts per 12-px cell anchored at the first ink column, should give ~97% exact match (range 90-100%).",
+  "sources": ["runs/p1/tasks/r1-oneshot/notes.md"],
+  "state": "proposed",
+  "components": ["tmpl_cell", "step_root"]}
+]
