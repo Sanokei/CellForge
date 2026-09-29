@@ -334,6 +334,13 @@ def apply_ops(graph: Graph, ops: list[dict], resolver=None) -> tuple[Graph, bool
 
 
 def behavior_equal(a: Graph, b: Graph, imgs, tol: float = 1e-9, kind: str = "ocr") -> tuple[bool, str]:
+    if kind == "clf":
+        from ..runtime.clf import predict_logits
+        la, _ = predict_logits(a, imgs)
+        lb, _ = predict_logits(b, imgs)
+        if la.shape != lb.shape or not np.allclose(la, lb, atol=tol, rtol=0, equal_nan=True):
+            return False, "logits differ"
+        return True, "equivalent"
     if kind == "lm":
         from ..runtime.lm import score_texts
         ra, ia = score_texts(a, imgs)
@@ -370,7 +377,10 @@ def validate_proposal(graph: Graph, proposal: dict, sample_imgs,
         g, pure = apply_ops(graph, ops, resolver)
         g.validate(limits)
         prof = check_profile(g, profile)
-        if kind == "lm":
+        if kind == "clf":
+            from ..runtime.clf import predict_logits
+            predict_logits(g, sample_imgs)
+        elif kind == "lm":
             from ..runtime.lm import score_texts
             score_texts(g, sample_imgs)
         else:

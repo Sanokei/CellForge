@@ -1,0 +1,159 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 1.8115,
+ "top1": 0.6493,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.071,
+   "n": 992,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.385,
+   "n": 1979,
+   "share_of_total_bits": 0.005
+  },
+  "after_period_space": {
+   "bpc": 3.321,
+   "n": 1758,
+   "share_of_total_bits": 0.036
+  },
+  "doc_start": {
+   "bpc": 2.142,
+   "n": 165,
+   "share_of_total_bits": 0.002
+  },
+  "in_word": {
+   "bpc": 1.324,
+   "n": 68275,
+   "share_of_total_bits": 0.558
+  },
+  "word_start": {
+   "bpc": 3.979,
+   "n": 16209,
+   "share_of_total_bits": 0.398
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 128,
+   "pos": 391,
+   "bits": 19.3,
+   "context": "eople in the land saw the king",
+   "target": "'"
+  },
+  {
+   "doc": 25,
+   "pos": 210,
+   "bits": 18.08,
+   "context": "important. max ran to the mail",
+   "target": "m"
+  },
+  {
+   "doc": 99,
+   "pos": 281,
+   "bits": 17.87,
+   "context": "in the bag with his lunch. he ",
+   "target": "z"
+  },
+  {
+   "doc": 55,
+   "pos": 171,
+   "bits": 17.24,
+   "context": ". sue liked to watch fred jump",
+   "target": "."
+  },
+  {
+   "doc": 158,
+   "pos": 368,
+   "bits": 15.56,
+   "context": ". they played together in the ",
+   "target": "q"
+  },
+  {
+   "doc": 161,
+   "pos": 499,
+   "bits": 15.33,
+   "context": "sad dog and felt bad. the cat ",
+   "target": "r"
+  },
+  {
+   "doc": 76,
+   "pos": 257,
+   "bits": 15.29,
+   "context": "d to cry. her dad noticed and ",
+   "target": "q"
+  },
+  {
+   "doc": 150,
+   "pos": 427,
+   "bits": 15.14,
+   "context": " a ball and threw it. the dog ",
+   "target": "r"
+  },
+  {
+   "doc": 101,
+   "pos": 365,
+   "bits": 15.06,
+   "context": "e tree bent down, and the cat ",
+   "target": "j"
+  },
+  {
+   "doc": 163,
+   "pos": 225,
+   "bits": 14.95,
+   "context": "ho had many friends. one day, ",
+   "target": "f"
+  },
+  {
+   "doc": 35,
+   "pos": 511,
+   "bits": 14.68,
+   "context": "never came back. tim was very ",
+   "target": "u"
+  },
+  {
+   "doc": 116,
+   "pos": 464,
+   "bits": 14.65,
+   "context": "ed and said it was okay. they ",
+   "target": "z"
+  }
+ ],
+ "route_counts": {},
+ "exec": {
+  "node_execs": 92554,
+  "macs": 783393164832,
+  "peak_tensor_elements": 11502645
+ },
+ "generation": {
+  "greedy": [
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree ",
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree ",
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree "
+  ],
+  "sampled_t0.8": [
+   "the big blue so the big blue so the big blue so the big blue so the big blue so the big blue so the big blue so the big blue so the big blue so the big blue so the big blue so the big blue so the big ",
+   "mia, hi grew to brings around towels and he he said, so lily was around tom? sarah was around towels and he he said, so tommy was and he he said, so they said, so they said, so they said, so they said",
+   "a loses of the pink until she saite said, \"friends and the pink panda helped!\" loved to play with the little great and the pink panda helped!\"ask and the pink panda helped the little great and the pin",
+   "a cat's moved and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old and an old",
+   "there with the stropo sky like a new there with the big there with the big there with the big there with the big there with the big there with the big there with the big there with the big there with ",
+   "the big robot do not worry can your mom's but the big robot do not worry can your mom's but the big robot do not worry can your mom's but the big robot do not worry can your mom's but the big robot do"
+  ],
+  "complete_sentences": 13,
+  "distinct_sentence_rate": 0.308,
+  "in_lexicon_word_rate": 0.98,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

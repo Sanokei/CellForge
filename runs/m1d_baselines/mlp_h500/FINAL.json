@@ -1,0 +1,35 @@
+{
+ "label": "m1d-mlp_h500",
+ "protocol": "mnist1d/1",
+ "model_hash": "6d541e35e4ef4dcb6534e68ec4a613948521a160548c18a6dc30b35a3101e454",
+ "time": "2026-09-29T21:45:55Z",
+ "n": 2000,
+ "acc": 0.5995,
+ "acc_wilson95": [
+  0.5779,
+  0.6208
+ ],
+ "failures": 0,
+ "chance": 0.1,
+ "per_class_acc": {
+  "0": 0.955,
+  "1": 0.319,
+  "2": 0.371,
+  "3": 0.905,
+  "4": 0.337,
+  "5": 0.464,
+  "6": 0.929,
+  "7": 0.512,
+  "8": 0.762,
+  "9": 0.428
+ },
+ "macs_total": 50000000,
+ "literature_reference": {
+  "logistic": 0.32,
+  "mlp": 0.68,
+  "cnn": 0.94,
+  "gru": 0.91,
+  "human": 0.96,
+  "source": "Greydanus & Kobak, Scaling down deep learning with MNIST-1D (ICML 2024), Table 1; gradient-trained, ~4000 examples; not reproduced here"
+ }
+}

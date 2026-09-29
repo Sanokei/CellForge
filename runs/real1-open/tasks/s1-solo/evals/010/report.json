@@ -1,0 +1,159 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 1.716,
+ "top1": 0.6538,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.071,
+   "n": 992,
+   "share_of_total_bits": 0.0
+  },
+  "after_period": {
+   "bpc": 0.385,
+   "n": 1979,
+   "share_of_total_bits": 0.005
+  },
+  "after_period_space": {
+   "bpc": 3.193,
+   "n": 1758,
+   "share_of_total_bits": 0.037
+  },
+  "doc_start": {
+   "bpc": 2.131,
+   "n": 165,
+   "share_of_total_bits": 0.002
+  },
+  "in_word": {
+   "bpc": 1.27,
+   "n": 68275,
+   "share_of_total_bits": 0.565
+  },
+  "word_start": {
+   "bpc": 3.692,
+   "n": 16209,
+   "share_of_total_bits": 0.39
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 128,
+   "pos": 391,
+   "bits": 19.3,
+   "context": "eople in the land saw the king",
+   "target": "'"
+  },
+  {
+   "doc": 25,
+   "pos": 210,
+   "bits": 18.06,
+   "context": "important. max ran to the mail",
+   "target": "m"
+  },
+  {
+   "doc": 99,
+   "pos": 281,
+   "bits": 15.95,
+   "context": "in the bag with his lunch. he ",
+   "target": "z"
+  },
+  {
+   "doc": 7,
+   "pos": 530,
+   "bits": 14.47,
+   "context": "ried to help, but it could not",
+   "target": "."
+  },
+  {
+   "doc": 116,
+   "pos": 464,
+   "bits": 14.43,
+   "context": "ed and said it was okay. they ",
+   "target": "z"
+  },
+  {
+   "doc": 38,
+   "pos": 83,
+   "bits": 14.41,
+   "context": "e loved to watch cartoons on t",
+   "target": "v"
+  },
+  {
+   "doc": 28,
+   "pos": 446,
+   "bits": 14.37,
+   "context": "y. the hanger was not alone an",
+   "target": "y"
+  },
+  {
+   "doc": 155,
+   "pos": 185,
+   "bits": 14.22,
+   "context": "t find any food yet. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 37,
+   "pos": 448,
+   "bits": 14.17,
+   "context": "he was safe. she gave him a re",
+   "target": "w"
+  },
+  {
+   "doc": 10,
+   "pos": 518,
+   "bits": 14.17,
+   "context": "lt so happy with her makeup on",
+   "target": "."
+  },
+  {
+   "doc": 118,
+   "pos": 123,
+   "bits": 14.16,
+   "context": "riends to play with. one day, ",
+   "target": "k"
+  },
+  {
+   "doc": 70,
+   "pos": 60,
+   "bits": 14.16,
+   "context": "shy cat named kitty. one day, ",
+   "target": "k"
+  }
+ ],
+ "route_counts": {},
+ "exec": {
+  "node_execs": 102771,
+  "macs": 783393164832,
+  "peak_tensor_elements": 11502645
+ },
+ "generation": {
+  "greedy": [
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree ",
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree ",
+   "the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree and the big tree "
+  ],
+  "sampled_t0.8": [
+   "the big blue so the big blue so the prdod would you can jumping because she she she have not sad and and and she been the big blue so the big blue so the pretty theystonghelere, they said, daddy said,",
+   "mia, hi grew to brings around to brings a book until to brings a book until to brings a book until to brings a book until to brings a book on three with the on the the little bunny around to brings a ",
+   "a loses of tim was so even the dew been the sockses falling the deep and sometimeshas was so even the deep and sometimeshas was so even the sockses falling the deep and sometimeshas was so even the so",
+   "a catchinghope is alive i have to see the big to play to play to play to play to play it it wanted a fast grandpa for his friends have to see the big to play it it wanted a little. the big to play it ",
+   "there with the toy,\"takes not sad, and the peach or and the peach and the peach and the peach and the peach and the peach and the bag land caught present has not has not sad, the bag land caught sad a",
+   "the big ridden of her toys can your mom's can your mom's can your mom's can your mom's can your mom's can your mom's can your mom's can your mom's can your mom's can your mom's were start toys were st"
+  ],
+  "complete_sentences": 6,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.96,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ }
+}

@@ -59,3 +59,23 @@ def bootstrap_lm(charset: str, ctx_len: int = 8) -> Graph:
     g.meta = {"task": "lm", "vocab": vocab, "state_dim": 0, "ctx_len": ctx_len,
               "primitive_version": "cellforge-ops/1", "bootstrap": LM_BOOTSTRAP_ID}
     return g
+
+
+CLF_BOOTSTRAP_ID = "bootstrap/zero-logits/1"
+
+
+def bootstrap_clf(n_classes: int = 10, length: int = 40) -> Graph:
+    """Constant zero logits: predicts class 0 everywhere (accuracy = class-0 frequency)."""
+    g = Graph()
+    g.params["boot_logits"] = np.zeros(n_classes)
+    g.defs["predict_root"] = {
+        "kind": "bundle", "inputs": ["x"],
+        "nodes": [{"id": "l", "use": "param:boot_logits"},
+                  {"id": "s", "use": "op:sum", "in": {"x": "$x"}, "args": {"axis": 0, "keepdims": True}},
+                  {"id": "z", "use": "op:scale", "in": {"x": "s"}, "args": {"c": 0.0}},
+                  {"id": "lg", "use": "op:add", "in": {"a": "l", "b": "z"}}],
+        "outputs": {"logits": "lg"}}
+    g.entries = {"predict": "predict_root"}
+    g.meta = {"task": "clf", "n_classes": n_classes, "input_length": length,
+              "primitive_version": "cellforge-ops/1", "bootstrap": CLF_BOOTSTRAP_ID}
+    return g

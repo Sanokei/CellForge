@@ -28,7 +28,7 @@ from ..memory.retrieve import DEFAULT_POLICY, policy_hash
 from ..memory.store import MemoryStore
 from ..reference.evaluator import evaluate
 from ..reference.protocols import PROTOCOLS
-from .bootstrap import bootstrap, bootstrap_lm
+from .bootstrap import bootstrap, bootstrap_clf, bootstrap_lm
 from .transactions import validate_proposal
 
 HARNESS_VERSION_FILE = "harness/HARNESS_VERSION"
@@ -62,7 +62,17 @@ class Run:
         (root / "harness/memory_policy.json").write_text(json.dumps(DEFAULT_POLICY, indent=1))
         (root / "harness/curriculum.json").write_text(json.dumps({"version": "curriculum/1", "stages": {}}, indent=1))
         run = cls(root)
-        if kind == "lm":
+        if kind == "clf":
+            from ..data.mnist1d_data import split_from_protocol
+            X, y = split_from_protocol(proto, "anchor")
+            (root / "anchor").mkdir()
+            np.savez_compressed(root / "anchor/data.npz", x=X, y=y)
+            man = {"split": "anchor", "n": int(len(y)), "x_sha256": sha256_bytes(X.tobytes()),
+                   "y_sha256": sha256_bytes(y.tobytes()), "spec": proto["anchor"]}
+            (root / "anchor/manifest.json").write_text(json.dumps(man, indent=1))
+            mh = sha256_bytes((root / "anchor/manifest.json").read_bytes())
+            g = bootstrap_clf(proto["n_classes"], proto["input_length"])
+        elif kind == "lm":
             raw = Path(proto["anchor_file"]).read_bytes()
             (root / "anchor").mkdir()
             (root / "anchor/texts.json").write_bytes(raw)
@@ -155,7 +165,16 @@ class Run:
             return json.loads((self.root / "anchor/texts.json").read_text())
         return json.loads(Path(PROTOCOLS[self.cfg["protocol"]]["dev_files"][name]).read_text())
 
+    def clf_data(self, name: str):
+        from ..data.mnist1d_data import split_from_protocol
+        if name == "anchor":
+            z = np.load(self.root / "anchor/data.npz")
+            return z["x"], z["y"]
+        return split_from_protocol(PROTOCOLS[self.cfg["protocol"]], name)
+
     def sample_imgs(self, n: int = 8):
+        if self.kind == "clf":
+            return self.clf_data("dev_eval")[0][:8]
         if self.kind == "lm":
             return self.lm_texts("dev_eval")[:4]
         imgs, _, _ = load_dataset(self.root / "anchor")
@@ -171,7 +190,15 @@ class Run:
 
     def reference_eval(self, h: str, reason: str) -> dict:
         g = self.load_graph(h)
-        if self.kind == "lm":
+        if self.kind == "clf":
+            from ..runtime.clf import evaluate_clf
+            X, y = self.clf_data("anchor")
+            res = evaluate_clf(g, X, y)
+            for k in ("confusion", "pred", "exec"):
+                res.pop(k, None)
+            res["model_hash"] = h
+            res["protocol"] = "clf-acc/1"
+        elif self.kind == "lm":
             from ..reference.lm_eval import evaluate_lm
             res = evaluate_lm(g, self.lm_texts("anchor"))
             res.pop("per_doc_bits"); res.pop("per_doc_tokens")
@@ -209,11 +236,11 @@ class Run:
         out = {"ok": True, "new_hash": new_hash, "pure_refactor": v["pure_refactor"], "ledger_seq": entry["seq"]}
         if evaluate_anchor and not v["pure_refactor"]:
             res = self.reference_eval(new_hash, reason=f"accept:{task_id}")
-            keys = ("bpc", "top1", "failures", "n_tokens") if self.kind == "lm" else (
+            keys = ("acc", "failures", "n") if self.kind == "clf" else ("bpc", "top1", "failures", "n_tokens") if self.kind == "lm" else (
                 "exact_match", "cer", "failures", "n_cases", "total_edits", "total_ref_chars")
             out["anchor"] = {k: res[k] for k in keys}
             best = self.anchor_history().get(self.resolve("ref_best"))
-            better = (lambda a, b: a["bpc"] < b["bpc"]) if self.kind == "lm" else (
+            better = (lambda a, b: a["acc"] > b["acc"]) if self.kind == "clf" else (lambda a, b: a["bpc"] < b["bpc"]) if self.kind == "lm" else (
                 lambda a, b: (a["cer"], -a["exact_match"]) < (b["cer"], -b["exact_match"]))
             if best is None or better(res, best):
                 self.set_branch("ref_best", new_hash)

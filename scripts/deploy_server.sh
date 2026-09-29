@@ -12,7 +12,7 @@ tar czf - --exclude=runs --exclude=fonts --exclude=__pycache__ --exclude=.git --
              /usr/share/fonts/truetype/freefont/FreeMono.ttf /usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf; do
       ln -sf $f /opt/cellforge/fonts/; done
     [ -x /opt/cellforge/venv/bin/python ] || python3 -m venv /opt/cellforge/venv
-    /opt/cellforge/venv/bin/pip install -q numpy==1.26.4 pillow==10.2.0 >/dev/null
+    /opt/cellforge/venv/bin/pip install -q "numpy>=1.26,<2.3" pillow==10.2.0 pyarrow "scipy==1.13.1" mnist1d "matplotlib<3.9" >/dev/null 2>&1
     /opt/cellforge/venv/bin/pip install -q --no-deps -e /opt/cellforge/code >/dev/null
     chown -R root:root /opt/cellforge/code && chmod -R a+rX,go-w /opt/cellforge
     chown evaluator:evaluator /srv/cellforge-private && chmod 700 /srv/cellforge-private

@@ -16,7 +16,7 @@ T = {c:i for i,c in enumerate(V)}
 T['^'] = 1
 NV = 36
 P = dict(K2=20.0, ctx_scale=0.8, eps=0.003, rank_decay=0.78, rank_top=30.0, shard=3000,
-         beta=0.03, delta=1e-5, lex3=0.6, seen_g=1.6, seen_o=0.3, seen_on=1, ind_on=1, w3=0.9, w5=0.9, w8=0.8, pi_pow=1.0, out='proposal.json')
+         beta=0.03, delta=1e-5, lex3=0.6, seen_g=1.6, seen_o=0.3, seen_on=1, ind_on=1, w3=1.0, w5=1.8, w8=1.6, ws3=0.0, ws5=0.5, ws8=0.7, pi_pow=1.0, pi_floor=0.6, unk_on=1, wc_s=1.0, out='proposal.json')
 for a in sys.argv[1:]:
     k, v = a.split('=')
     P[k] = v if k == 'out' else float(v)
@@ -91,7 +91,7 @@ def group_masses(p):
 
 PIm = np.zeros((K, G))
 for s_, row in C_.PI.items():
-    r = np.array(row, float)**P['pi_pow']; r[C_.GI['QT']] = max(r[C_.GI['QT']], 0.4); PIm[C_.SI[s_]] = r/r.sum()
+    r = np.array(row, float)**P['pi_pow'] + P['pi_floor']; r[C_.GI['QT']] = max(r[C_.GI['QT']], 0.4); PIm[C_.SI[s_]] = r/r.sum()
 
 UNI = np.zeros(NV); UNI[3:] = 1.0/33.0
 FB = np.zeros((NV, NV))   # column = previous char, entries = next-char probs (my typed bigram tendencies)
@@ -214,8 +214,8 @@ PUNCT = {
 for c, p in PUNCT.items():
     add_unit(dunits, c, False, logv(p) - logv(base), 'punct')
 
-COL_BD, COL_Q, COL_PHI = 288, 296, 297
-NX = 301
+COL_BD, COL_Q, COL_PHI, COL_WC = 288, 296, 297, 301
+NX = 305
 def col(row, ch): return row*36+T[ch]
 special = []
 p_close = dist({' ':.72,'.':.12,',':.10,'!':.02,'?':.01,'<eos>':.01})
@@ -225,6 +225,10 @@ special.append(([(COL_Q,1.0)], 0.0, dq, 'inq'))
 for c, bump in (('.',3.0),('!',2.2),('?',2.2),(',',2.2)):
     d = np.zeros(NV); d[T['"']] = bump; d[T[' ']] = -0.5
     special.append(([(col(7,c),1.0),(COL_Q,1.0)], -1.0, d, 'qpunct'))
+WC_D = [(0.35,0.05),(0.45,0.10),(0.45,0.10),(0.40,0.0)]   # (period, comma) log-odds increments per word-count threshold
+for j, (dp, dc) in enumerate(WC_D):
+    d = np.zeros(NV); d[T['.']] = dp*P['wc_s']; d[T[',']] = dc*P['wc_s']
+    special.append(([(COL_WC+j,1.0)], 0.0, d, 'wc%d'%j))
 EOS_INC = [2.7,1.2,0.95,1.15]
 for j, inc in enumerate(EOS_INC):
     d = np.zeros(NV); d[T['<eos>']] = inc
@@ -299,6 +303,9 @@ ops.append({"op":"set_param","name":"bd.b1","value":[1.0]*8})
 ops.append({"op":"put_def","name":"cell_bd","def":{"kind":"cell","act":"identity","params":{"W1":"bd.W1","b1":"bd.b1"}}})
 ops.append({"op":"set_param","name":"phi.W1","value":[[0.05]]*4})
 ops.append({"op":"set_param","name":"phi.b1","value":[-10.0,-15.0,-20.0,-25.0]})
+ops.append({"op":"set_param","name":"wc.W1","value":[[0.8]]*4})
+ops.append({"op":"set_param","name":"wc.b1","value":[-0.8*t_ for t_ in (5.5, 8.5, 11.5, 15.5)]})
+ops.append({"op":"put_def","name":"cell_wc","def":{"kind":"cell","act":"sigmoid","params":{"W1":"wc.W1","b1":"wc.b1"}}})
 ops.append({"op":"put_def","name":"cell_phi","def":{"kind":"cell","act":"sigmoid","params":{"W1":"phi.W1","b1":"phi.b1"}}})
 # log approximation cell (piecewise linear, knots by factor 2 from 1e-9 up to 2)
 knots = [0.0] + [1e-9*2**i for i in range(0, 32)]
@@ -318,6 +325,7 @@ ops.append({"op":"put_def","name":"cell_fb","def":{"kind":"cell","act":"identity
 padm = np.zeros(NV); padm[0] = -30; padm[1] = -30
 ops.append({"op":"set_param","name":"padm","value":padm.tolist()})
 
+WOFF = 1 + K + (1296*36 if int(P['seen_on']) else 0) + (640*36 if int(P['ind_on']) else 0)
 nodes = [
  {"id":"cf","use":"op:reshape","in":{"x":"$ctx"},"args":{"shape":[288]}},
  {"id":"bd","use":"cell_bd","in":{"x":"cf"}},
@@ -328,7 +336,16 @@ nodes = [
  {"id":"q1","use":"op:add","in":{"a":"iq","b":"sq"}},
  {"id":"qn","use":"op:add","in":{"a":"q1","b":"qs"}},
  {"id":"ph","use":"cell_phi","in":{"x":"$step"}},
- {"id":"x","use":"op:concat","in":{"x0":"cf","x1":"bd","x2":"qn","x3":"ph"},"args":{"axis":0}},
+ {"id":"wco","use":"op:slice","in":{"x":"$state"},"args":{"axis":0,"start":WOFF,"stop":WOFF+1}},
+ {"id":"spw","use":"op:slice","in":{"x":"cf"},"args":{"axis":0,"start":7*36+3,"stop":7*36+4}},
+ {"id":"ep1","use":"op:slice","in":{"x":"cf"},"args":{"axis":0,"start":7*36+5,"stop":7*36+8}},
+ {"id":"ep2","use":"op:sum","in":{"x":"ep1"},"args":{"axis":0,"keepdims":True}},
+ {"id":"wc1","use":"op:add","in":{"a":"wco","b":"spw"}},
+ {"id":"epn","use":"op:scale","in":{"x":"ep2"},"args":{"c":-1.0}},
+ {"id":"epb","use":"op:bias","in":{"x":"epn"},"args":{"c":1.0}},
+ {"id":"wcn","use":"op:mul","in":{"a":"wc1","b":"epb"}},
+ {"id":"wph","use":"cell_wc","in":{"x":"wcn"}},
+ {"id":"x","use":"op:concat","in":{"x0":"cf","x1":"bd","x2":"qn","x3":"ph","x4":"wph"},"args":{"axis":0}},
  # class state
  {"id":"co","use":"op:slice","in":{"x":"$state"},"args":{"axis":0,"start":1,"stop":1+K}},
 ]
@@ -341,6 +358,19 @@ def add_chain(ids, prefix, out_name, cellprefix='cell_'):
             nodes.append({"id":f"{prefix}a{i}","use":"op:add","in":{"a":prev,"b":f"{prefix}y{i}"}}); prev = f"{prefix}a{i}"
     return prev
 ycls = add_chain(c_ids, 'c', 'ycls')
+if int(P['unk_on']):
+    unkv = np.zeros(K); unkv[C_.SI['NAME']] = 0.5; unkv[C_.SI['NOUN']] = 0.4; unkv[C_.SI['ADJ']] = 0.1
+    ops.append({"op":"set_param","name":"unkv","value":unkv.tolist()})
+    nodes += [
+     {"id":"ksum","use":"op:sum","in":{"x":ycls},"args":{"axis":0,"keepdims":True}},
+     {"id":"spf","use":"op:slice","in":{"x":"cf"},"args":{"axis":0,"start":7*36+3,"stop":7*36+4}},
+     {"id":"fk0","use":"op:sub","in":{"a":"spf","b":"ksum"}},
+     {"id":"fk","use":"op:relu","in":{"x":"fk0"}},
+     {"id":"unkp","use":"param:unkv"},
+     {"id":"yunk","use":"op:mul","in":{"a":"fk","b":"unkp"}},
+     {"id":"ycl2","use":"op:add","in":{"a":ycls,"b":"yunk"}},
+    ]
+    ycls = "ycl2"
 nodes += [
  {"id":"fsum","use":"op:sum","in":{"x":ycls},"args":{"axis":0,"keepdims":True}},
  {"id":"fco","use":"op:mul","in":{"a":"fsum","b":"co"}},
@@ -448,6 +478,7 @@ if IND:
      {"id":"S7","use":"op:add","in":{"a":"S6","b":sk(6)}},
      {"id":"S8","use":"op:add","in":{"a":"S7","b":sk(7)}},
     ]
+    nodes.append({"id":"bdl","use":"op:slice","in":{"x":"bd"},"args":{"axis":0,"start":7,"stop":8}})
     boosts = []
     for n, wn in ((3,P['w3']),(5,P['w5']),(8,P['w8'])):
         nodes += [
@@ -458,7 +489,10 @@ if IND:
          {"id":f"vt{n}","use":"op:matmul","in":{"a":f"eae{n}","b":"hn"}},
          {"id":f"vr{n}","use":"op:reshape","in":{"x":f"vt{n}"},"args":{"shape":[36]}},
          {"id":f"vh{n}","use":"op:tanh","in":{"x":f"vr{n}"}},
-         {"id":f"vs{n}","use":"op:scale","in":{"x":f"vh{n}"},"args":{"c":float(wn)}},
+         {"id":f"vs0{n}","use":"op:scale","in":{"x":f"vh{n}"},"args":{"c":float(wn)}},
+         {"id":f"gs{n}","use":"op:scale","in":{"x":"bdl"},"args":{"c":-(1.0-P['ws%d'%n])}},
+         {"id":f"gb{n}","use":"op:bias","in":{"x":f"gs{n}"},"args":{"c":1.0}},
+         {"id":f"vs{n}","use":"op:mul","in":{"a":f"vs0{n}","b":f"gb{n}"}},
         ]
         boosts.append(f"vs{n}")
     nodes += [
@@ -469,9 +503,11 @@ if IND:
     final = "l4"
     nodes.append({"id":"stn2","use":"op:concat","in":{"x0":state_out,"x1":"hnf"},"args":{"axis":0}})
     state_out = "stn2"
+nodes.append({"id":"stn3","use":"op:concat","in":{"x0":state_out,"x1":"wcn"},"args":{"axis":0}})
+state_out = "stn3"
 ops.append({"op":"put_def","name":"step_root","def":{"kind":"bundle","inputs":["ctx","prev","step","state"],"nodes":nodes,"outputs":{"logits":final,"state":state_out}}})
 ops.append({"op":"delete_param","name":"boot_logits"})
-ops.append({"op":"set_state_dim","value":1+K+(1296*36 if SEEN else 0)+(640*36 if IND else 0)})
+ops.append({"op":"set_state_dim","value":1+K+(1296*36 if SEEN else 0)+(640*36 if IND else 0)+1})
 prop = {"author":"s1-solo","rationale":"Class-bigram word trie (typed lexicon, typed word classes and class transitions, log via piecewise-linear cell) + typed context deltas + punctuation/quote/length units + in-story pair memory in recurrent state.","ops":ops}
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', P['out'])
 json.dump(prop, open(out,'w'))

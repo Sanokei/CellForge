@@ -1,0 +1,186 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 2.4973,
+ "top1": 0.5117,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.33,
+   "n": 992,
+   "share_of_total_bits": 0.001
+  },
+  "after_period": {
+   "bpc": 0.62,
+   "n": 1979,
+   "share_of_total_bits": 0.005
+  },
+  "after_period_space": {
+   "bpc": 3.182,
+   "n": 1758,
+   "share_of_total_bits": 0.025
+  },
+  "doc_start": {
+   "bpc": 1.172,
+   "n": 165,
+   "share_of_total_bits": 0.001
+  },
+  "in_word": {
+   "bpc": 2.284,
+   "n": 68275,
+   "share_of_total_bits": 0.699
+  },
+  "word_start": {
+   "bpc": 3.696,
+   "n": 16209,
+   "share_of_total_bits": 0.268
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 38,
+   "pos": 83,
+   "bits": 19.17,
+   "context": "e loved to watch cartoons on t",
+   "target": "v"
+  },
+  {
+   "doc": 146,
+   "pos": 77,
+   "bits": 18.43,
+   "context": " loved to watch films on his t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 444,
+   "bits": 18.43,
+   "context": "opened the box and saw a new t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 177,
+   "bits": 18.43,
+   "context": "lay, but tim wanted to watch t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 72,
+   "bits": 18.43,
+   "context": "amed tim. tim loved to watch t",
+   "target": "v"
+  },
+  {
+   "doc": 117,
+   "pos": 207,
+   "bits": 15.47,
+   "context": "y bear, mr. bear. she said, \"m",
+   "target": "r"
+  },
+  {
+   "doc": 107,
+   "pos": 259,
+   "bits": 15.47,
+   "context": "to throw a ball. lily said, \"m",
+   "target": "r"
+  },
+  {
+   "doc": 2,
+   "pos": 327,
+   "bits": 15.47,
+   "context": "caterpillar and smiled. \"hi, m",
+   "target": "r"
+  },
+  {
+   "doc": 2,
+   "pos": 256,
+   "bits": 15.47,
+   "context": "roduce you to my new friend, m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 436,
+   "bits": 15.47,
+   "context": "the toy box and went to bed. m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 352,
+   "bits": 15.47,
+   "context": "t better. after playing with m",
+   "target": "r"
+  },
+  {
+   "doc": 117,
+   "pos": 241,
+   "bits": 15.47,
+   "context": "ear, let me comb your hair.\" m",
+   "target": "r"
+  }
+ ],
+ "route_counts": {
+  "/step/d": {
+   "ex_bos": 165,
+   "ex_wordstart": 17967,
+   "ex_inword_short": 35532,
+   "ex_inword_long": 32020,
+   "ex_punct": 3170,
+   "ex_quote": 386,
+   "ex_apos": 138
+  }
+ },
+ "exec": {
+  "node_execs": 10459029,
+  "macs": 541405701,
+  "peak_tensor_elements": 269352
+ },
+ "generation": {
+  "greedy": [
+   "on the be too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too to",
+   "on the be too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too to",
+   "on the be too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too to"
+  ],
+  "sampled_t0.8": [
+   "our dodid\"he sad an every some my for and on the rouly found tooval helk all day foucopoumy an one day, an toon't lesole prs wanted tom ranyfome, and the bewhucousm, somee fring like to love be in the",
+   "ondorfu. tot tot sara he wanted toomom sad juspidrped too, ton giode \"in some could mor and the watig to pre toomobucawhaood he haveawes bo told the beacr wanted toofabthed to bifia sonoda sam tomormy",
+   "beaumitop love too momo. toonggat. told the see the want toolt \"come beautinuly dad and he could thals plivomimexy sawulul'sswsnin an ling wabonfeltomywe?\" me best doototay. he wanted tome we he co an",
+   "and took toole kntesetu. it want toged. tood, some grenn, and too, an cat to play was stl, and the butis s be heashavopli tom, be play tom dicave's little bed seng he saing all the little boled every ",
+   "samomed. too and the sam too wanted too he sandoongrlfttilukenckicrunawolire \"time and he wantesnd wathe sawe g be and and he was an be little giket on. insen lots of fry park. sawhed, an bifor wanted",
+   "the be and some. tooung way wanted toour, sascr, and the saupllosin lily an the little ball laucang sam \"re g. in the lougg toly helwe in the samy happy all there was very happy. me. somemonuson and h"
+  ],
+  "complete_sentences": 30,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.64,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ },
+ "dev_set": "dev_eval first 165 docs",
+ "stats": {
+  "unique_param_storage": 30754,
+  "expanded_param_uses": 70717,
+  "nonzero_slots": 3480,
+  "constant_slots_in_op_args": 131,
+  "cell_defs": 95,
+  "bundle_defs": 23,
+  "reachable_defs": 113,
+  "expanded_instances": 543,
+  "nesting_depth": 4,
+  "edges": 13299,
+  "dispatch_nodes": 1,
+  "param_bytes_float64": 246032
+ },
+ "profile": "ladder-micro/1",
+ "dev_evals_used": 18
+}

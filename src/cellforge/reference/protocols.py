@@ -78,3 +78,19 @@ PROTOCOLS["tinyreal/1"] = {
     "final_gen": {"n": 100, "temperature": 0.8},
     "max_unique_params": 20_000_000,
 }
+
+
+PROTOCOLS["mnist1d/1"] = {
+    "kind": "clf",
+    "n_classes": 10,
+    "input_length": 40,
+    "generator": "mnist1d (Greydanus 2020) default args; num_samples/seed/train_split overridden per split",
+    "dev_train": {"seed": 1101, "num_samples": 5000, "train_split": 0.8, "part": "x"},      # 4000 signals
+    "dev_eval": {"seed": 1102, "num_samples": 2500, "train_split": 0.6, "part": "x_test"},   # 1000 signals
+    "anchor": {"seed": 1103, "num_samples": 2500, "train_split": 0.6, "part": "x_test"},     # 1000 signals
+    "final": {"n": 2000},  # fresh secret seed per evaluation, generated on the evaluation server
+    "literature_reference": {"logistic": 0.32, "mlp": 0.68, "cnn": 0.94, "gru": 0.91, "human": 0.96,
+                             "source": "Greydanus & Kobak, Scaling down deep learning with MNIST-1D (ICML 2024), Table 1; "
+                                       "gradient-trained, ~4000 examples; not reproduced here"},
+    "max_unique_params": 2_000_000,
+}

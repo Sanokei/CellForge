@@ -1,0 +1,67 @@
+{
+ "defs": {
+  "predict_root": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "l",
+     "use": "param:boot_logits"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "s",
+     "in": {
+      "x": "$x"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "c": 0.0
+     },
+     "id": "z",
+     "in": {
+      "x": "s"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "a": "l",
+      "b": "z"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   }
+  }
+ },
+ "entries": {
+  "predict": "predict_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/zero-logits/1",
+  "input_length": 40,
+  "n_classes": 10,
+  "primitive_version": "cellforge-ops/1",
+  "task": "clf"
+ },
+ "params": {
+  "boot_logits": {
+   "sha256": "479249c350f43b4cc1aed37a82ceca4e285e433c54db934bb52017c6804b4cdc",
+   "shape": [
+    10
+   ]
+  }
+ }
+}

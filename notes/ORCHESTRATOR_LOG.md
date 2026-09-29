@@ -198,3 +198,26 @@ paper/cellforge.tex, and the PDF is rebuilt with `scripts/build_paper.sh` (serve
 latexmk) right after. Done so far: Exp 1 (digit OCR), Exp 2 (tinylm hierarchical-MoE LMs).
 Pending (add when finished): real-text delegated ladder-micro vs solo open; frontier
 benchmarks; breeding.
+
+## MNIST-1D and the harness-upgrade loop (owner request, 2026-09-29)
+
+Owner: "try 1d mnist to see if we keep upgrading these harnesses to create the neurons".
+Interpreted as MNIST-1D (Greydanus 2020): procedural 40-point signals, 10 classes,
+generator installed from PyPI (`mnist1d`; downloaded package, small). protocol
+mnist1d/1: dev_train 4000 (seed 1101), dev_eval 1000 (seed 1102), anchor 1000 (seed 1103),
+final = 2000 fresh signals with an operator-side secret seed per evaluation on the evaluation
+server. Package source contains the true templates: makers told not to read it (disclosed
+exposure risk: it sits in site-packages on the authoring machine; enforcement is instruction
+only).
+Controls (final n=2000): logistic 0.336 [.315,.357]; MLP-100 0.594 [.572,.615];
+MLP-500 0.600 [.578,.621]. Literature (not reproduced): logistic .32, MLP .68, CNN .94,
+GRU .91, human .96. My MLPs are untuned (100 epochs, no early stopping) so they sit below
+the literature MLP number.
+Harness upgrade machinery (G3): diagnostics plugins, static + subprocess sandbox + differential
+metric test + determinism; activation is a versioned, ledgered harness change. Negative tests:
+metric-corrupting plugin rejected (differential stage), os/open plugin rejected (static stage).
+Design: Round A = 3 independent makers with harness v1 (run m1d1). Then a harness-maker upgrades
+diagnostics using Round A evidence; Round B = 3 fresh makers with harness v2 (run m1d-h2, same
+bootstrap and dev data). Compare final accuracies on fresh server data at matched dev-eval
+budgets. Makers are fresh agents each round (no carry-over), so differences are attributable
+to the harness (plus sampling noise from n=3).

@@ -1,0 +1,186 @@
+{
+ "version": "dev-diag-lm/1",
+ "n_docs": 165,
+ "n_tokens": 89378,
+ "bpc": 2.502,
+ "top1": 0.5148,
+ "failures": 0,
+ "uniform_bpc_reference": 5.1699,
+ "bits_by_context": {
+  "after_comma": {
+   "bpc": 0.33,
+   "n": 992,
+   "share_of_total_bits": 0.001
+  },
+  "after_period": {
+   "bpc": 0.62,
+   "n": 1979,
+   "share_of_total_bits": 0.005
+  },
+  "after_period_space": {
+   "bpc": 3.182,
+   "n": 1758,
+   "share_of_total_bits": 0.025
+  },
+  "doc_start": {
+   "bpc": 1.172,
+   "n": 165,
+   "share_of_total_bits": 0.001
+  },
+  "in_word": {
+   "bpc": 2.278,
+   "n": 68275,
+   "share_of_total_bits": 0.696
+  },
+  "word_start": {
+   "bpc": 3.746,
+   "n": 16209,
+   "share_of_total_bits": 0.272
+  }
+ },
+ "worst_positions": [
+  {
+   "doc": 38,
+   "pos": 83,
+   "bits": 20.89,
+   "context": "e loved to watch cartoons on t",
+   "target": "v"
+  },
+  {
+   "doc": 146,
+   "pos": 77,
+   "bits": 19.54,
+   "context": " loved to watch films on his t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 444,
+   "bits": 19.54,
+   "context": "opened the box and saw a new t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 177,
+   "bits": 19.54,
+   "context": "lay, but tim wanted to watch t",
+   "target": "v"
+  },
+  {
+   "doc": 108,
+   "pos": 72,
+   "bits": 19.54,
+   "context": "amed tim. tim loved to watch t",
+   "target": "v"
+  },
+  {
+   "doc": 158,
+   "pos": 503,
+   "bits": 19.1,
+   "context": "d. they were very happy in the",
+   "target": "i"
+  },
+  {
+   "doc": 41,
+   "pos": 175,
+   "bits": 19.1,
+   "context": "d her mom to include it in the",
+   "target": "i"
+  },
+  {
+   "doc": 51,
+   "pos": 464,
+   "bits": 17.42,
+   "context": "etimes, but now he knows there",
+   "target": "'"
+  },
+  {
+   "doc": 93,
+   "pos": 108,
+   "bits": 16.55,
+   "context": ". it had four wheels and went ",
+   "target": "v"
+  },
+  {
+   "doc": 88,
+   "pos": 505,
+   "bits": 16.55,
+   "context": "the car were happy. they went ",
+   "target": "v"
+  },
+  {
+   "doc": 115,
+   "pos": 178,
+   "bits": 16.31,
+   "context": "f food. the cat said, \"i want ",
+   "target": "f"
+  },
+  {
+   "doc": 151,
+   "pos": 571,
+   "bits": 16.31,
+   "context": " and went home, happy with the",
+   "target": "i"
+  }
+ ],
+ "route_counts": {
+  "/step/d": {
+   "ex_bos": 165,
+   "ex_wordstart": 17967,
+   "ex_inword_short": 35532,
+   "ex_inword_long": 32020,
+   "ex_punct": 3170,
+   "ex_quote": 386,
+   "ex_apos": 138
+  }
+ },
+ "exec": {
+  "node_execs": 10459620,
+  "macs": 541405701,
+  "peak_tensor_elements": 269352
+ },
+ "generation": {
+  "greedy": [
+   "on the little girl named too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too",
+   "on the little girl named too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too",
+   "on the little girl named too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too too"
+  ],
+  "sampled_t0.8": [
+   "out ll. he was be nerrkyferk'ted skitt the sadurpes, and the park could not he was a lot more \"lily park lots of and the parkst every little ball makilfryrploongommuzy. tood to play withelad lily and ",
+   "once upon a time sawang took onkimaulid cadd one day tood, and the be make gem tooly the sahelleug looke ge friend tooe we he was he was jumpms,jumppr. to he said told forest dofor and the sam he said",
+   "be the sad vied somethed and saidy and the be and sad more more an the said,\"y mang thought some toois goothopupeal tomig, the sad the park time can in the some and the an and sam wanted tocathey he l",
+   "and the little git the lifink froroded for ephotikitornothing the sasiry the samprd fooys wate be said on to her mom and sand tooko. toousoloe. toorply and he was the little girl was sad and toldre to",
+   "sakomeavilou and this saw me lily mant tormed can re tooulkidublki. man and heanasclly and and way an and the muryfled wanted too \"!\" made best friends sad said the beambursaty. sal, and the som the l",
+   "the be and the ned forfrny downg. the little girl and the little girl on too be nebl tooul. fris and be wanted to play want tookilkel \"!\" and sawiddaitoul can in to play we every day,\"!\" \"whodorienoms"
+  ],
+  "complete_sentences": 25,
+  "distinct_sentence_rate": 1.0,
+  "in_lexicon_word_rate": 0.782,
+  "failures": [
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len",
+   "max_len"
+  ],
+  "note": "grammaticality is measured only by the private final evaluator"
+ },
+ "dev_set": "dev_eval first 165 docs",
+ "stats": {
+  "unique_param_storage": 30754,
+  "expanded_param_uses": 70717,
+  "nonzero_slots": 3480,
+  "constant_slots_in_op_args": 132,
+  "cell_defs": 95,
+  "bundle_defs": 23,
+  "reachable_defs": 113,
+  "expanded_instances": 543,
+  "nesting_depth": 4,
+  "edges": 13300,
+  "dispatch_nodes": 1,
+  "param_bytes_float64": 246032
+ },
+ "profile": "ladder-micro/1",
+ "dev_evals_used": 16
+}

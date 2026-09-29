@@ -1,0 +1,72 @@
+{
+ "defs": {
+  "mlp": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "mlp.W1",
+    "W2": "mlp.W2",
+    "b1": "mlp.b1",
+    "b2": "mlp.b2"
+   }
+  },
+  "predict_root": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lg",
+     "in": {
+      "x": "$x"
+     },
+     "use": "mlp"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   }
+  }
+ },
+ "entries": {
+  "predict": "predict_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "baseline": "mlp H=500 epochs=100 seed=0 on dev_train (4000)",
+  "bootstrap": "bootstrap/zero-logits/1",
+  "input_length": 40,
+  "n_classes": 10,
+  "primitive_version": "cellforge-ops/1",
+  "task": "clf"
+ },
+ "params": {
+  "mlp.W1": {
+   "sha256": "f937b392922e01836f1efce3d4aa6d8b2f8c92d4be137a18caad98415916511d",
+   "shape": [
+    500,
+    40
+   ]
+  },
+  "mlp.W2": {
+   "sha256": "7dd579945aa7b40742f87e273ff289996210330449c375d82c6922e419ef0613",
+   "shape": [
+    10,
+    500
+   ]
+  },
+  "mlp.b1": {
+   "sha256": "9b16acb533569b7a021c0a1498c4364ddb2a29d589031b005a1b3f6f05ea4e2d",
+   "shape": [
+    500
+   ]
+  },
+  "mlp.b2": {
+   "sha256": "cb4fb22823cc4b612f84b69b60cce1a487184ec37a476efec79588109634e31d",
+   "shape": [
+    10
+   ]
+  }
+ }
+}

@@ -170,7 +170,7 @@ class Graph:
             if not NAME_RE.match(name):
                 raise GraphError(f"bad definition name {name!r}")
             self._validate_def(name, d, limits)
-        required = ("step",) if self.meta.get("task") == "lm" else ("encode", "step")
+        required = {"lm": ("step",), "clf": ("predict",)}.get(self.meta.get("task"), ("encode", "step"))
         for entry in required:
             if entry not in self.entries:
                 raise GraphError(f"missing entry {entry}")
@@ -270,7 +270,7 @@ class Graph:
                 return memo[n]
             memo[n] = 1 + sum(count(c) for c in self.children(n) if c in self.defs)
             return memo[n]
-        return sum(count(self.entries[e]) for e in ("encode", "step") if e in self.entries)
+        return sum(count(self.entries[e]) for e in self.entries)
 
     def stats(self) -> dict:
         """Resource and structure counts (bundle count is not capability evidence)."""
@@ -285,7 +285,7 @@ class Graph:
             for c in self.children(n):
                 walk(c, mult)
 
-        for e in ("encode", "step"):
+        for e in list(self.entries):
             if e in self.entries:
                 walk(self.entries[e], 1)
 
@@ -316,7 +316,7 @@ class Graph:
             "bundle_defs": sum(1 for d in self.defs.values() if d["kind"] == "bundle"),
             "reachable_defs": len(reachable),
             "expanded_instances": self.expanded_instances(),
-            "nesting_depth": max((depth(self.entries[e]) for e in ("encode", "step") if e in self.entries), default=0),
+            "nesting_depth": max((depth(self.entries[e]) for e in self.entries), default=0),
             "edges": edge_count,
             "dispatch_nodes": sum(1 for d in self.defs.values() if d["kind"] == "bundle"
                                   for n in d["nodes"] if n["use"] == "dispatch"),

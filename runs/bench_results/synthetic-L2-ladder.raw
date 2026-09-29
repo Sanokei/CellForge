@@ -2,55 +2,56 @@
  "protocol": "mc-loglik/1",
  "label": "synthetic-L2-ladder",
  "model_hash": "2e63d1f337d2d0f8faa91eadda814c6de837d030aaf03dc0c7c6c54f63936218",
- "time": "2026-09-29T20:57:10Z",
+ "time": "2026-09-29T21:19:10Z",
+ "split": "all",
  "results": {
   "mmlu": {
-   "n": 200,
-   "acc": 0.22,
+   "n": 1000,
+   "acc": 0.214,
    "acc_ci95": [
-    0.1682,
-    0.2824
+    0.1897,
+    0.2405
    ],
-   "acc_norm": 0.25,
+   "acc_norm": 0.243,
    "acc_norm_ci95": [
-    0.1951,
-    0.3143
+    0.2174,
+    0.2705
    ],
    "chance": 0.25,
-   "char_coverage": 0.8914,
-   "seconds": 35.9
+   "char_coverage": 0.9117,
+   "seconds": 225.3
   },
   "arc_challenge": {
-   "n": 200,
-   "acc": 0.25,
+   "n": 1000,
+   "acc": 0.188,
    "acc_ci95": [
-    0.1951,
-    0.3143
+    0.165,
+    0.2134
    ],
-   "acc_norm": 0.21,
+   "acc_norm": 0.224,
    "acc_norm_ci95": [
-    0.1593,
-    0.2716
+    0.1992,
+    0.2509
    ],
    "chance": 0.25,
-   "char_coverage": 0.9623,
-   "seconds": 27.1
+   "char_coverage": 0.96,
+   "seconds": 123.2
   },
   "hellaswag": {
-   "n": 200,
-   "acc": 0.24,
+   "n": 1000,
+   "acc": 0.268,
    "acc_ci95": [
-    0.1861,
-    0.3037
+    0.2415,
+    0.2963
    ],
-   "acc_norm": 0.245,
+   "acc_norm": 0.264,
    "acc_norm_ci95": [
-    0.1906,
-    0.309
+    0.2376,
+    0.2922
    ],
    "chance": 0.25,
-   "char_coverage": 0.9856,
-   "seconds": 51.1
+   "char_coverage": 0.9861,
+   "seconds": 242.8
   }
  }
 }

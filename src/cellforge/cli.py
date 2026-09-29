@@ -33,7 +33,7 @@ def cmd_init_run(args):
     from .reference.protocols import PROTOCOLS
     r = Run.init(args.run, args.protocol, arm=args.arm, strict=args.strict, profile=args.profile)
     proto = PROTOCOLS[args.protocol]
-    if proto.get("kind") == "lm":
+    if proto.get("kind") in ("lm", "clf"):
         _print({"run": str(r.root), "branches": r.branches(), "anchor": r.anchor_history()})
         return
     spec = proto["anchor"]["spec"]
@@ -115,6 +115,40 @@ def cmd_dev_eval(args):
             _print({"ok": False, "error": v["error"], "dev_evals_used": used + 1})
             return
         g = v["graph"]
+    if r.kind == "clf":
+        from .harness import diagnostics_clf
+        X, y = r.clf_data("dev_eval" if args.set == "dev_main" else args.set)
+        n = min(args.n, len(y))
+        out = tdir / "evals" / f"{used:03d}"
+        rep = diagnostics_clf.run(g, X[:n], y[:n], out_dir=out)
+        from .harness import sandbox
+        plug = sandbox.active_plugin(r)
+        if plug is not None and "error" not in rep:
+            try:
+                nodes = sandbox.declared_trace_nodes(plug.read_text(encoding="utf-8"))
+                pout = sandbox.run_plugin(plug, sandbox.make_ctx(r, g, X[:n], y[:n], nodes))
+                heat = pout.pop("heatmaps", {}) if isinstance(pout, dict) else {}
+                from PIL import Image
+                import numpy as _np
+                for hname, arr in heat.items():
+                    a = _np.asarray(arr, dtype=float)
+                    if a.ndim == 2 and a.size <= 200_000:
+                        lo, hi = a.min(), a.max()
+                        img = ((a - lo) / (hi - lo + 1e-12) * 255).astype(_np.uint8)
+                        k = max(1, int(256 // max(img.shape)))
+                        Image.fromarray(_np.kron(img, _np.ones((k, k), dtype=_np.uint8))).save(out / f"heat_{hname}.png")
+                        pout.setdefault("heatmap_files", []).append(f"heat_{hname}.png")
+                rep["plugin"] = {"file": plug.name, "output": pout}
+            except Exception as e:  # plugin failures never break dev-eval
+                rep["plugin_error"] = str(e)[:300]
+        rep["dev_set"] = f"dev_eval first {n} signals"
+        rep["stats"] = g.stats()
+        rep["profile"] = r.profile
+        rep["dev_evals_used"] = used + 1
+        with usage.open("a") as f:
+            f.write(json.dumps({"time": time.time(), "ok": "error" not in rep, "n": n, "acc": rep.get("acc")}) + chr(10))
+        _print(rep)
+        return
     if r.kind == "lm":
         from .harness import diagnostics_lm
         import re as _re
@@ -317,10 +351,12 @@ def cmd_memory(args):
 
 
 def cmd_harness(args):
-    from .harness.sandbox import check_plugin
+    from .harness.sandbox import activate, check_plugin
     r = _run(args)
-    res = check_plugin(Path(args.proposal), r)
-    _print(res)
+    if args.activate:
+        _print(activate(r, Path(args.proposal), args.note))
+    else:
+        _print(check_plugin(Path(args.proposal), r))
 
 
 def cmd_report(args):
@@ -372,6 +408,7 @@ def main(argv=None):
     p.add_argument("--type", default="observation"); p.add_argument("--body"); p.add_argument("--producer", default="maker")
     p.add_argument("--packet"); p.add_argument("--last", type=int, default=30); p.set_defaults(fn=cmd_memory)
     p = sp.add_parser("harness-check"); p.add_argument("--run", required=True); p.add_argument("--proposal", required=True)
+    p.add_argument("--activate", action="store_true"); p.add_argument("--note", default="")
     p.set_defaults(fn=cmd_harness)
     p = sp.add_parser("report"); p.add_argument("--run", required=True); p.set_defaults(fn=cmd_report)
     p = sp.add_parser("smoke"); p.add_argument("--workdir", default="runs/_smoke"); p.set_defaults(fn=cmd_smoke)

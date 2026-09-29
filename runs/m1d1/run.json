@@ -1,0 +1,18 @@
+{
+ "protocol": "mnist1d/1",
+ "kind": "clf",
+ "profile": "open/1",
+ "arm": "open",
+ "created": "2026-09-29T21:42:31Z",
+ "limits": {
+  "max_unique_params": 2000000,
+  "max_expanded_instances": 50000,
+  "max_defs": 5000,
+  "max_depth": 64,
+  "strict_microcells": false
+ },
+ "budget": {
+  "maker_tasks": 200,
+  "dev_evals_per_task": 25
+ }
+}

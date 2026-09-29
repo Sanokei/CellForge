@@ -7,9 +7,10 @@ CIRC = ["cl_router","cl_qstate","cl_bigram","cl_trigram","cl_words_fn","cl_words
         "cl_colloc","cl_endpunct","cl_quote","cl_apos","cl_name_write","cl_name_read"]
 NONAME = cfg.get("noname", False)
 used = {"cl_router","cl_qstate"} | (set() if NONAME else {"cl_name_write"}) | {k for e in cfg["experts"].values() for k,w in e.items() if w}
+V2={"cl_words_fn","cl_trigram","cl_endpunct","cl_apos","cl_colloc","cl_name_write"}
 ops = []
 for c in [c for c in CIRC if c in used]:
-    ops += json.load(open(os.path.join(T, f"c-{c}", "proposal.json")))["ops"]
+    ops += json.load(open(os.path.join(T, ("c2-" if c in V2 else "c-")+c, "proposal.json")))["ops"]
 ARGS = {"cl_endpunct": ("ctx","q"), "cl_quote": ("ctx","q"), "cl_name_read": ("ctx","nm")}
 def circuit_node(name):
     a = ARGS.get(name, ("ctx",))
