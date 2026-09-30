@@ -336,3 +336,19 @@ ARC-AGI-3 (interactive, scored by action efficiency vs humans per level, normali
 - Local play via the `arc-agi` PyPI package; agent interface is_done()/choose_action(); starter random agent scores 0.0.
 Assessment: ARC-AGI-3 is the best fit for a PURE cell-based agent (perception cells, state-hash cells, frontier/explorer graph, evolved exploration policy),
 because training-free graph explorers already place near the top of the preview and run on CPU. Needs: pip install arc-agi (owner approval), Kaggle notebook by owner.
+
+## 2026-09-30: shared-perception MoE design pointer
+Design note for a single shared-perception cell/circuit/expert architecture across ARC-AGI-2, ARC-AGI-3 and the Paper Prize: docs/SHARED_PERCEPTION_MOE.md. Design only; no new measurements.
+
+## Evolutionary mechanisms test: diversity archive and Red Queen (2026-09-30, research/claude_arc/evo/)
+Splits by crc32(name)%5 on public TRAINING tasks: VALIDATION = bucket 0 (228), DEV = buckets 1-4 (772). Enumerative depth<=2 solver
+(3249 chains) + fitted routines (objects routine excluded), per-task time cap. Full enumeration costs ~1.2 s/task, so caps of 0.15/0.3 s test ordering.
+Mechanism 1 (probe-signature novelty + MAP-Elites niche archive, k=8): 574/3249 chains (17.7%) are exact behavioural duplicates on 150 probe grids,
+1 dead; near-duplicate rate among the survivors 3.9% at >=0.98 similarity (7.7% at 0.95, 16.9% at 0.90); 0 DEV tasks would be lost by rejecting
+0.98-near-dups. VALIDATION solved/228 (false positives): baseline order 20(2) @0.15s, 20(3) @0.3s, 22(6) @5s; novelty-dedup 20(2), 20(3), 22(6) with
+~20% fewer chains tried and 0.17 s less per task at the 5 s cap; niche-archive order 17(1), 18(2), 21(7): worse. Reason: dev-popular chains
+are consistent-but-wrong on new tasks and fill the two attempts ahead of the fitted routines. Only 40/772 DEV tasks are solved by any chain.
+Mechanism 2 (Red Queen, 80 generations, 24 generators/24 solvers, 3 seeds, ~1.5e5 solver evaluations each; matched-budget random control): archives stay tiny
+(9-13 solvers, almost all depth 1). VALIDATION solved 20/228 for baseline, all 3 Red Queen seeds and all 3 control seeds (identical). DEV secondary:
+71 baseline, Red Queen 71/72/71, control 71/71/71. No measurable gain. Caveats: one validation split, small effect sizes are undetectable at n=228,
+generators are mostly depth 1 (difficulty filter rejects ~65% of candidates as too hard), no depth-3 chain reached the front of the ordering.

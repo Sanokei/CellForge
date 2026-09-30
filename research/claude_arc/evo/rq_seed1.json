@@ -1,0 +1,231 @@
+{
+ "seed": 1,
+ "G": 80,
+ "stats": {
+  "gen_proposed": 1920,
+  "gen_invalid": 128,
+  "gen_dup": 273,
+  "gen_too_easy": 0,
+  "gen_too_hard": 3570,
+  "gen_added": 280,
+  "gen_revived": 12,
+  "sol_proposed": 1920,
+  "sol_added": 9,
+  "sol_replaced": 0
+ },
+ "evals": 144592,
+ "hist": [
+  {
+   "g": 0,
+   "n_gens": 23,
+   "n_solv": 0,
+   "evals": 0,
+   "covered": 0
+  },
+  {
+   "g": 4,
+   "n_gens": 32,
+   "n_solv": 5,
+   "evals": 2779,
+   "covered": 16
+  },
+  {
+   "g": 8,
+   "n_gens": 44,
+   "n_solv": 8,
+   "evals": 7002,
+   "covered": 31
+  },
+  {
+   "g": 12,
+   "n_gens": 60,
+   "n_solv": 9,
+   "evals": 12445,
+   "covered": 48
+  },
+  {
+   "g": 16,
+   "n_gens": 72,
+   "n_solv": 9,
+   "evals": 18756,
+   "covered": 60
+  },
+  {
+   "g": 20,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 26637,
+   "covered": 71
+  },
+  {
+   "g": 24,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 35130,
+   "covered": 75
+  },
+  {
+   "g": 28,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 43116,
+   "covered": 80
+  },
+  {
+   "g": 32,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 51004,
+   "covered": 80
+  },
+  {
+   "g": 36,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 58857,
+   "covered": 80
+  },
+  {
+   "g": 40,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 66487,
+   "covered": 80
+  },
+  {
+   "g": 44,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 74713,
+   "covered": 80
+  },
+  {
+   "g": 48,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 82486,
+   "covered": 80
+  },
+  {
+   "g": 52,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 90544,
+   "covered": 80
+  },
+  {
+   "g": 56,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 99019,
+   "covered": 80
+  },
+  {
+   "g": 60,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 106561,
+   "covered": 80
+  },
+  {
+   "g": 64,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 114858,
+   "covered": 80
+  },
+  {
+   "g": 68,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 122924,
+   "covered": 80
+  },
+  {
+   "g": 72,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 130208,
+   "covered": 80
+  },
+  {
+   "g": 76,
+   "n_gens": 80,
+   "n_solv": 9,
+   "evals": 138389,
+   "covered": 80
+  }
+ ],
+ "solvers": [
+  {
+   "chain": [
+    "mirror_4"
+   ],
+   "cov": 20,
+   "cost": 1
+  },
+  {
+   "chain": [
+    "FIT"
+   ],
+   "cov": 15,
+   "cost": 3
+  },
+  {
+   "chain": [
+    "denoise"
+   ],
+   "cov": 14,
+   "cost": 1
+  },
+  {
+   "chain": [
+    "down2"
+   ],
+   "cov": 12,
+   "cost": 1
+  },
+  {
+   "chain": [
+    "block_pick"
+   ],
+   "cov": 10,
+   "cost": 1
+  },
+  {
+   "chain": [
+    "symfill1"
+   ],
+   "cov": 10,
+   "cost": 1
+  },
+  {
+   "chain": [
+    "symfill9"
+   ],
+   "cov": 7,
+   "cost": 1
+  },
+  {
+   "chain": [
+    "fliplr"
+   ],
+   "cov": 6,
+   "cost": 1
+  },
+  {
+   "chain": [
+    "symfill7"
+   ],
+   "cov": 4,
+   "cost": 1
+  }
+ ],
+ "n_generators": 80,
+ "gen_depth_hist": {
+  "1": 46,
+  "2": 27,
+  "3": 7
+ },
+ "sec": 205
+}
