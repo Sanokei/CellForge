@@ -1,0 +1,72 @@
+{
+  "status": "complete baseline and DSL; coverage job separate",
+  "sources": {
+    "baseline": {
+      "rows": 1000,
+      "sha256": "d88c3eb302bd75ccfdd03d609bce66e171e6357b0089941c9d88718e7e48a386",
+      "bytes": 77501
+    },
+    "dsl": {
+      "rows": 1000,
+      "sha256": "a545bd49ad894502a31eeff864373527589dc8e1ed8210359eacde9e17fd2b26",
+      "bytes": 339602
+    }
+  },
+  "split": "crc32(task ID without .json) % 5",
+  "statistics": {
+    "dev_strict": {
+      "n": 816,
+      "base_solved": 82,
+      "base_consistent": 91,
+      "base_fp": 9,
+      "dsl_solved": 86,
+      "dsl_attempted": 88,
+      "dsl_fp": 2,
+      "comb_solved": 127,
+      "comb_attempted": 137,
+      "comb_fp": 10
+    },
+    "dev_top2": {
+      "n": 816,
+      "base_solved": 82,
+      "base_consistent": 91,
+      "base_fp": 9,
+      "dsl_solved": 106,
+      "dsl_attempted": 109,
+      "dsl_fp": 3,
+      "comb_solved": 135,
+      "comb_attempted": 145,
+      "comb_fp": 10
+    },
+    "val_strict": {
+      "n": 184,
+      "base_solved": 14,
+      "base_consistent": 20,
+      "base_fp": 6,
+      "dsl_solved": 11,
+      "dsl_attempted": 12,
+      "dsl_fp": 1,
+      "comb_solved": 20,
+      "comb_attempted": 26,
+      "comb_fp": 6
+    },
+    "val_top2": {
+      "n": 184,
+      "base_solved": 14,
+      "base_consistent": 20,
+      "base_fp": 6,
+      "dsl_solved": 15,
+      "dsl_attempted": 17,
+      "dsl_fp": 2,
+      "comb_solved": 21,
+      "comb_attempted": 27,
+      "comb_fp": 6
+    }
+  },
+  "tests": 9,
+  "caveats": [
+    "Validation differs from the 228-task filename-hash split.",
+    "Combined analyzer deduplicates by object identity, not prediction hash; counts reflect that policy.",
+    "No generator filtering on validation."
+  ]
+}

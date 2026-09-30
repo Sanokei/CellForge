@@ -50,9 +50,16 @@ def main():
     if a.agent == "random":
         used = random_agent(env, a.budget, a.seed)
     else:
-        from explorer import Explorer
+        if a.agent.startswith("v5"):
+            from explorer5 import Explorer as E5
+            flags = a.agent.split(":")[1].split(",") if ":" in a.agent else []
+        else:
+            from explorer import Explorer
         logf = (lambda *x: print(*x, file=sys.stderr)) if a.verbose else (lambda *x: events.append(" ".join(map(str, x))))
-        ex = Explorer(env, a.budget, seed=a.seed, log=logf, use_action_stats=(a.agent == "explorer2"))
+        if a.agent.startswith("v5"):
+            ex = E5(env, a.budget, seed=a.seed, log=logf, flags=flags)
+        else:
+            ex = Explorer(env, a.budget, seed=a.seed, log=logf, use_action_stats=(a.agent == "explorer2"))
         used = ex.run()
     dt = time.time() - t0
     sc = arc.close_scorecard(card)
@@ -62,7 +69,8 @@ def main():
                score=run.get("score"), actions=run.get("actions"), state=str(run.get("state")),
                level_actions=run.get("level_actions"), secs=round(dt, 1),
                peak_mb=round(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024),
-               tags=info.tags, events=events[-12:])
+               tags=info.tags, events=events[-12:],
+               level_used=getattr(ex, 'level_paths', None) if a.agent != 'random' else None)
     print("RESULT " + json.dumps(out))
 
 

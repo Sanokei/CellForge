@@ -1,0 +1,76 @@
+{
+  "status": "partial live sweep; not a completed experiment",
+  "expected_runs": 180,
+  "source": {
+    "rows": 110,
+    "sha256": "6c8dfb620adcc182f61df3d161fcc98d41bc1042adf06856165f7922816bc19f",
+    "bytes": 133051
+  },
+  "statistics": {
+    "A lam=0.0 control=0": {
+      "runs": 20,
+      "fit_ever": 13,
+      "fit_final": 12,
+      "delayed_generalization": 4
+    },
+    "B lam=0.001 control=0": {
+      "runs": 20,
+      "fit_ever": 11,
+      "fit_final": 11,
+      "delayed_generalization": 3
+    },
+    "B lam=0.004 control=0": {
+      "runs": 20,
+      "fit_ever": 12,
+      "fit_final": 11,
+      "delayed_generalization": 5
+    },
+    "B lam=0.016 control=0": {
+      "runs": 20,
+      "fit_ever": 12,
+      "fit_final": 12,
+      "delayed_generalization": 3
+    },
+    "D lam=0.0 control=0": {
+      "runs": 20,
+      "fit_ever": 0,
+      "fit_final": 0,
+      "delayed_generalization": 0
+    },
+    "A lam=0.0 control=1": {
+      "runs": 2,
+      "fit_ever": 1,
+      "fit_final": 1,
+      "delayed_generalization": 0
+    },
+    "B lam=0.001 control=1": {
+      "runs": 2,
+      "fit_ever": 1,
+      "fit_final": 1,
+      "delayed_generalization": 0
+    },
+    "B lam=0.004 control=1": {
+      "runs": 2,
+      "fit_ever": 1,
+      "fit_final": 1,
+      "delayed_generalization": 0
+    },
+    "B lam=0.016 control=1": {
+      "runs": 2,
+      "fit_ever": 1,
+      "fit_final": 1,
+      "delayed_generalization": 0
+    },
+    "D lam=0.0 control=1": {
+      "runs": 2,
+      "fit_ever": 0,
+      "fit_final": 0,
+      "delayed_generalization": 0
+    }
+  },
+  "caveats": [
+    "Historical evolved neural-weight experiment; excluded from pure authored/fitted runtime.",
+    "No additional weight search launched.",
+    "C stop-at-fit is derived, not an independent arm."
+  ]
+}
