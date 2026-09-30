@@ -359,3 +359,15 @@ directed state-action graph with BFS-to-frontier and level-root RESET edge. Leve
 Mean official-style score 0.19 for both random and the best explorer (scores are dominated by the (baseline/actions)^2 term; cleared levels take 100s-1000s of actions).
 Solved mostly level 1 only (tu93 3 levels, sc25/vc33 2). Failures: large avatar state spaces (wa30, re86, tr87), many-target click games (sb26, lp85 L2), hidden state (ls20 L2, g50t).
 Takeaway: blind novelty search clears easy first levels but is nowhere near action-efficient; it needs goal-directed signals. Details and table: research/claude_arc3/README.md.
+
+### Update 2026-09-30 (object/relation cells, v5; developed on TRAINING only)
+New fitted cell families (research/claude_arc/objects.py, objects2.py, objects3.py; parameters set by exact demo consistency,
+strict test-key coverage, no gradients): region recolor/paint (objects, enclosed holes, separator cells; ~30 property keys: size,
+rank, extremes, holes, shape, border, color set, uniqueness; absolute color or relational color source: ring/minority/
+largest/smallest/nearest; areas self/bbox/ring/fill-holes), slide-to-contact, move-toward-target, same-color pair lines, learned
+rays per (color,direction), marker stamping (offset rules), periodic/diagonal-periodic completion, count-to-output layouts
+(histograms, sorted color lists, count-sized uniform grids), block/separator-cell summaries, object crop by selector.
+ARC-AGI-2 public TRAINING (1,000), depth<=2 + all fitters, 3 workers: 97 -> 126 (first batch) -> 131/1000 (13.1%).
+Demo-consistent chains 111 -> 149; false positives 14 -> 18. Object fitters alone solve 63 (35 not solved by the old library).
+Time ~2.8 s/task (shared PC; old 1.7). EVALUATION (scored once, not tuned): 0/120, again 0 tasks with a demo-consistent chain.
+Caveat: gains are training-only; the evaluation gap is not closed by these cells. Tests: research/claude_arc/test_objects.py.
