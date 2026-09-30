@@ -1,0 +1,755 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,amsmath,hyperref,xcolor}
+\title{CellForge: Language-Model Agents as Direct Authors of Neural Networks\\
+\large Authoring, breeding and evolving small gradient-free cell graphs}
+\author{CellForge project\thanks{Orchestrator and maker agents: Claude (Anthropic) running in Claude Code. Project owner: [name to be supplied].}}
+\date{Draft, 29 September 2026 (restructured 30 September 2026)}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We ask whether large language model (LLM) agents can build useful neural computation by
+\emph{directly writing} weights, biases and wiring, with no gradient-based fitting of the
+resulting artifact, and whether small authored cells can then be recombined by breeding and
+evolution. CellForge provides a recursive graph representation (primitive cells composed into
+nested, shareable bundles with optional conditional dispatch), atomic validated transactions,
+a typed \texttt{import\_def} crossover, an append-only hash-chained ledger, and a final
+evaluation on a separate machine with freshly generated cases.
+On variable-length digit strings, four independently authored artifacts---including one
+written with no metric feedback---read in-distribution final cases perfectly (exact match
+1.000, $n=2000$); under distribution shift the best reads 73.8\% of strings in an unseen font (72.3\% under size shift; the others 38--57\%),
+against 10.0\% for a gradient-trained slot-MLP control (83.8\% in distribution) and 0\% for random direct edits.
+Authored character language models reach 0.678--0.681 bits per character on a synthetic
+grammar, but authored and control models score near chance (0.224--0.266) on public
+multiple-choice probes. On ARC-AGI-2 public-training development tasks, authored
+graph cells solve 3/200 tasks and 4/200 with one object gene; breeding, mutation and random search
+mostly tie, and an evolved cellular-automaton control solves 0/40. These are development
+results on exposed data, from single small runs, with no private-set score. The system is not
+a language model and nothing here bears on general intelligence.
+\end{abstract}
+
+\section{Introduction}
+Neural networks are almost always \emph{fitted}: an optimizer adjusts parameters to reduce a
+loss on data. LLMs, however, can read images, reason about mechanisms and write precise
+numerical specifications. This suggests a different construction process: an LLM
+\emph{authors} a network the way an engineer writes a program, observes its failures and
+revises it. CellForge is an experimental system for testing this idea, and for testing whether
+small authored modules (\emph{cells}), grouped into \emph{bundles} and \emph{circuits}, can be
+joined by \emph{breeding} (typed crossover of imported definitions) and \emph{evolution}
+(discrete mutation and selection). Everything is pure in the sense of the project owner's rule:
+no gradients of any kind, including fitness-weighted gradient estimators, are used in primary
+arms. The target hardware is low power: two CPU cores and 4\,GB of RAM.
+
+Our primary question is whether LLM agents can discover useful neural computations, their
+recursive organization and better ways of developing them, using evidence-backed memory and
+direct numerical and structural edits, producing an offline artifact that improves on
+independent evaluation.
+
+\paragraph{How results are validated.} Development data, reference anchors and all
+diagnostics are author-visible and count as development feedback. Final cases are rendered on a
+separate server by an \texttt{evaluator} account with a fresh secret seed per evaluation, and
+only aggregates leave the machine. Every run records hashes, ledger entries and a receipt file
+under \texttt{runs/}; each claim below names its receipt where one exists. Many later experiments
+use exposed public development tasks for which no final split exists; those are labelled
+development results throughout.
+
+\paragraph{Scope and non-goals.}
+The artifacts studied are an offline image-to-text recognizer, small authored byte-level
+language models, and authored grid-transformation graphs. None has language understanding,
+dialogue, speech capability or general intelligence. The project owner's long-term aim is more
+ambitious (a conversational, multimodal system whose computation is constructed rather than
+fitted); we state it only to explain design choices (modality-agnostic decoder, recursive
+reusable components) and keep it strictly separate from our claims. Section~\ref{sec:roadmap}
+lists what would have to be demonstrated, in order.
+
+\paragraph{Contributions.}
+(1) A recursive cell/bundle IR with lazy conditional dispatch, content hashing,
+behaviour-preserving refactors and validity-preserving typed crossover; (2) a transaction and
+governance design that makes each parameter change traceable to an accepted proposal and
+separates development feedback from independent evaluation; (3) measurements of
+LLM-authored artifacts against gradient-trained and random-search controls on digit strings,
+synthetic and real text, MNIST-1D, public multiple-choice probes, and ARC-AGI-2 development
+tasks, including several negative results.
+
+\section{Related work}
+Architecture search composes motifs hierarchically \cite{liu2018hierarchical} and evolves
+topologies and components \cite{miikkulainen2017evolving}; both fit weights by training.
+Our evidence memory adapts ideas from visual retrieval-augmented generation
+\cite{yu2024visrag,sun2025visrag2,wang2026vimrag}. Neural cellular automata have been applied
+to ARC-AGI with a separate gradient-trained model per task \cite{xu2025nca}; our evolved
+variant (Section~\ref{sec:nca}) replaces gradients by discrete selection and is a different
+experiment. Tracr compiles hand-written programs into transformer weights without gradient
+descent \cite{tracr}, the closest prior example of directly constructed weights that we
+recorded. A recorded report of LLM-seeded genetic search over fixed-width programs on ARC-AGI-2
+\cite{gensearch} motivates our validity-preserving genome; we did not independently
+verify its numbers and do not compare against them. We are not aware of prior work in which
+LLMs author all weights of a working recognizer without fitting, but a wider prior-art review is
+required before any novelty claim.
+
+\section{System}\label{sec:system}
+\subsection{Representation}
+A \emph{cell} computes $h=\sigma(W_1x+b_1)$, $y=W_2h+b_2$ over the last axis of its input.
+A \emph{bundle} is a typed DAG whose nodes are parameter-free operations, parameter tensors,
+cells, other bundles, or a top-1 \texttt{dispatch} among bundles; unselected branches do not
+execute. The same representation is used at every depth; definitions may be shared and
+parameter sharing is explicit. Recursive template references and exponential expansion are
+rejected at validation. A model has an \texttt{encode} bundle (pixels $\to$ memory) and a
+\texttt{step} bundle (memory, step index, previous token, state $\to$ logits, state), driven
+by a bounded greedy decoder that stops on the model's own EOS. Structural profiles (ladder,
+ladder-micro, open) constrain organization and are checked by a validator.
+
+\subsection{Construction protocol and maker operator}
+Makers submit JSON proposals of atomic operations (set parameter by explicit value or by a
+deterministic expansion of an author-written pattern; put/delete definitions; wrap/unwrap).
+Proposals are validated against their exact base hash, executed on sample inputs and, for pure
+refactors, tested for exact behavioural equivalence. Makers may not run code that computes
+weights from data, may not script search loops, and receive development feedback only through a
+budgeted \texttt{dev-eval} command. A manual-maker operator records development train-pair
+diagnostics, authored transactions, actor/model provenance, graph hashes and candidate status.
+Each serializable proposal consumes a budget unit, including invalid, rejected and unchanged
+edits; transactions are applied to a copy and checked against graph validation, structural
+profiles and typed runtime fixtures. Three focused tests pass. The operator calls no LLM
+service and performs no benchmark itself, so a matched non-LLM mutation arm must use the same
+proposal budget and access. A frozen candidate receives one ledger-accounted final call,
+consumed even on failure. This is accounting infrastructure, not capability.
+
+\subsection{Breeding and evolution}
+Breeding uses checked \texttt{import\_def} crossover: a child imports definitions from
+parents with namespace, shape, ownership and resource validation. The proposed and later
+implemented genome uses fixed slots with typed ports, bounded parameter shapes and shared
+parameter identities; a slot may exchange only a compatible definition, and crossover preserves
+dependency order, declared state and the two-attempt grid interface. Broken wiring should be
+prevented by construction; static validation remains a final safeguard and does not show task
+competence. Children commit parent hashes, seeds and donor-per-slot choices, and neutral lineage
+metadata does not change canonical genotype identity. Primary selection is discrete $(\mu,\lambda)$
+population selection with Gaussian coordinate or block mutation; it is not a fitness-weighted
+gradient estimate. The owner later authorized automated numeric fitness selection and count-fitted
+seeds (dev-training corpus only), and then prohibited gradients of every kind and excluded the
+Hedge-style adaptive mixer from all primary arms. Evolved parameters are therefore reported as
+fitness-selected rather than hand-authored, with donor provenance preserved.
+
+\subsection{Governance and evaluation boundary}
+A hash-chained ledger, graph version store and receipts make each run auditable; reported
+ledger-entry counts were verified after retrieval. Final cases for the digit task exclude, for
+strings of length $\geq4$, every string authors ever saw; the unseen-font split uses a font file
+never present on the authoring machine. Reserved audit data must never be shown to a maker, and
+schema guards alone cannot prove information isolation.
+
+\section{Experiments}
+Unless stated otherwise each experiment is a single run per arm.
+
+\subsection{Digit strings}\label{sec:exp1}
+\paragraph{Protocol.} 32$\times$128 grayscale, 1--8 digits, DejaVu Sans Mono 20\,px, horizontal
+offset 2--14\,px, vertical jitter $\pm2$\,px, Gaussian noise $\sigma\leq0.03$.
+Final splits: iid ($n=2000$), unseen font Liberation Mono ($n=1000$), size 18--22\,px
+($n=1000$), length 9 ($n=500$). From an EOS-constant bootstrap: two independent iterative makers
+with recursive bundles (25 dev-eval budget each), a flat-graph maker, and a one-shot maker
+(validation only, no metrics). Controls: a gradient-trained slot-MLP (Adam, 400 or 20{,}000
+training images) and (1+1) random direct-edit hill climbing (25 or 20{,}000 evaluations), all
+scored through the same reference evaluator.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcccc}
+\toprule
+Artifact & iid & unseen font & size shift & length 9\\
+\midrule
+Authored, iterative A & 1.000 & \textbf{0.738} & \textbf{0.723} & 1.000\\
+Authored, iterative B & 1.000 & 0.382 & 0.379 & 0.000\\
+Authored, one-shot & 1.000 & 0.427 & 0.453 & 1.000\\
+Authored, flat & 1.000 & 0.407 & 0.570 & 1.000\\
+Gradient slot-MLP, 400 & 0.057 & 0.054 & 0.050 & 0.000\\
+Gradient slot-MLP, 20k & 0.838 & 0.100 & 0.419 & 0.000$^\ast$\\
+Random edits, 20k evals & 0.000 & 0.000 & 0.000 & 0.000\\
+\bottomrule
+\end{tabular}
+\caption{Digit strings: exact-match rate on independent final cases (fresh seeds). Wilson 95\%
+intervals are $\pm$0.03 or narrower at these $n$; CER in the project log. $^\ast$The slot-MLP has
+eight character slots by construction.}
+\label{tab:r1}
+\end{table}
+
+\paragraph{Results.} Table~\ref{tab:r1}. All four authored artifacts are perfect in
+distribution, using two or fewer development evaluations each, so the in-distribution task is
+saturated and does not discriminate arms. Every maker converged on the same mechanism family
+(vertical alignment, left-edge detection, a fixed 12\,px character pitch, hand-typed
+15$\times$12 glyph templates), yet small decisions produced large robustness differences:
+artifact A's normalized agreement score and $\pm3$\,px search tolerance generalized best;
+artifact B hard-coded eight character cells and failed every 9-digit string. LLM authors can
+construct compact recognizers (about two thousand parameters for artifact A) without gradient
+fitting, and the one-shot author needed no feedback. The results do \emph{not} show a difference
+between arms (one run per arm), robustness to real-world text, or superiority over gradient
+training: the control lacks translation invariance and a gradient-trained convolutional network
+would likely be perfect in distribution. The templates came from \emph{looking at} development
+images; we regard the author's visual perception as the channel through which learning happens
+and report it as such.
+
+\subsection{Synthetic-grammar hierarchical mixture-of-experts language models (\texttt{tinylm/1})}\label{sec:exp2}
+The owner judged digit recognition too easy a test of the intended cell$\to$cluster$\to$expert
+design, so authors built character-level language models with routing and recurrent state doing
+real work.
+
+\paragraph{Task and arms.} Text comes from a private English-like grammar (12 nouns, 12 verbs,
+agreement that must survive relative clauses, adjectives, prepositions, adverbs, ``, and''
+coordination) held only on the evaluation server. Authors see 2{,}000 sampled documents and 300
+development documents, never the grammar. Vocabulary: 32 tokens; the model receives the last
+eight characters, the position and its own state. Scoring is bits per character (bpc) under
+teacher forcing on fresh documents, plus grammaticality of 200 free-running samples
+(temperature 0.8) judged by the private recognizer. Three authors used an enforced ladder
+profile (cells inside clusters, clusters inside experts, a router driving lazy top-1 dispatch
+among at least two experts), two an open profile. Controls fitted from data on the same 2{,}000
+documents: uniform, $n$-gram counts and a gradient-trained MLP over the same eight-character
+window (Adam, 74k parameters).
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & bpc & top-1 & gramm. & gramm.+novel & experts & params\\
+\midrule
+Ladder L1 & 0.6796 & .810 & .966 & .788 & 6 & 278k\\
+Ladder L2 & \textbf{0.6776} & .809 & \textbf{.997} & .884 & 60 & 1.69M\\
+Ladder L3 & 0.6790 & .809 & .940 & .804 & 4 & 898k\\
+Open O1 & 0.6797 & .809 & .955 & .839 & -- & 1.31M\\
+Open O2 & 0.6808 & .809 & .939 & .775 & -- & 1.56M\\
+\midrule
+Gradient MLP (window 8) & 0.824 & .780 & .201 & .135 & -- & 74k\\
+Trigram counts & 1.383 & .617 & 0 & 0 & -- & 66k\\
+Uniform & 5.000 & 0 & 0 & 0 & -- & 32\\
+\midrule
+\multicolumn{7}{l}{Generator entropy: $\leq0.6734$ bpc (summed choice bits, upper bound)}\\
+\bottomrule
+\end{tabular}
+\caption{Synthetic-grammar language models: independent final evaluation on 1{,}000 fresh
+documents (bootstrap 95\% intervals on bpc about $\pm0.002$). ``Gramm.'' is the fraction of
+complete generated sentences accepted by the private grammar; ``+novel'' also requires the
+sentence to be absent from the authors' training text.}
+\label{tab:exp2}
+\end{table}
+
+\paragraph{Results.} Table~\ref{tab:exp2}. All five authored models reach 0.678--0.681 bpc,
+within 0.004 bpc (under 1\%) of the generator's entropy, with 94--99.7\% grammatical
+generations, against 0.824 bpc and 20\% for the gradient MLP. The authored models keep
+singular/plural state across nested clauses in a stack held in recurrent state; the fixed-window
+MLP cannot. The best model (L2) has 60 routed experts, one per grammatical situation, and only 3
+of 60 sampled sentences violate the grammar. The task is exhausted: every author read roughly 40
+documents, wrote the closed grammar down, hand-tallied rates and compiled it into tables and
+state machines. This shows the machinery (state, recursion tracking, dispatch among tens of
+experts) works end to end at 0.3--1.7M authored parameters. It does \emph{not} show that the
+ladder helps: an open, unrouted model (O1) matched the ladder with three feedback runs against
+five to eleven, and ladder authors were required to use routing the task does not need. Nor does
+it show that authoring scales to data whose generator cannot be read off a few dozen samples.
+Author-reported cost: 176--231k tokens per run.
+
+\subsection{Real-text mixture of experts, delegation and failure-informed mutation}\label{sec:realtext}
+The next step moved to real text, where no closed grammar exists. In a delegated real-text
+model (hash \texttt{82ebe5e5...}), three isolated mutations reused settings from earlier failed
+proposals. The first worsened development bpc from 2.4748 to 2.4826. A trigram-donor change
+scored 2.4746 bpc, effectively tied with its parent; an after-period-space specialist scored
+2.4743 bpc. These comparisons used the 165-document development set. The specialist was accepted
+on a separate eight-expert branch; its reference-anchor bpc was 2.46152 versus 2.46236 for the
+seven-expert parent over 155{,}239 tokens, with identical 0.5220 top-1 accuracy. Both checks are
+development feedback and establish no final or frontier-benchmark gain; the main branch remains
+seven-expert.
+
+A UTF-8 byte lift of the eight-expert text MoE retains authored weights and 225-dimensional
+recurrent state in one graph with a shared 259-token head. Its inherited experts still use only
+eight projected bytes. A 387-token ASCII compatibility probe preserves 208 correct predictions,
+with loss changing from 2.4798989 bits per character to 2.4803443 bits per byte. This
+establishes input plumbing, not language competence; three ordinary or Unicode prompts
+repeatedly emit ``too'' to the token limit (receipts: \texttt{runs/unified-byte}). A directly
+authored repetition-memory mutation reading a 64-token context has parent loss 2.480344 versus
+2.512589 bits per byte on the same 387 bytes; both predict 208 tokens correctly with zero scoring
+failures, and both answer 0/4 author-visible novel key/value binding prompts exactly. The mutation
+was rejected for promotion (\texttt{runs/parallel-reasoning/DECISION.json}); this small
+development probe is not a held-out reasoning evaluation.
+
+\subsection{MNIST-1D direct authoring and crossover}\label{sec:mnist1d}
+MNIST-1D provides a procedural ten-class task on 40-sample signals. We used 4{,}000
+development-training signals, a separate 1{,}000-signal development evaluation set and a
+1{,}000-signal reference anchor; independent final evaluation used 2{,}000 newly generated
+signals per artifact with an operator-side secret seed. Makers were told not to inspect the
+generator source, a restriction that was procedural rather than technically enforced.
+
+\paragraph{Round A and controls.} Three independent makers started from the same zero-logit
+bootstrap under harness version 1, wrote numerical filters and classifier wiring without gradient
+fitting, and used respectively four, five and four development evaluations.
+Table~\ref{tab:m1d} shows the strongest authored parent exceeding the logistic control but
+trailing both MLP controls (trained on the same split). Class-specific strengths differ
+substantially; three runs are insufficient to estimate a typical outcome.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+Artifact & Final accuracy & Wilson 95\% interval\\
+\midrule
+Authored A1 & 0.4655 & [0.4437, 0.4874]\\
+Authored A2 & 0.4360 & [0.4144, 0.4578]\\
+Authored A3 & 0.3410 & [0.3205, 0.3621]\\
+Authored two-parent crossover & 0.5295 & [0.5076, 0.5513]\\
+Authored three-parent crossover & 0.5360 & [0.5141, 0.5578]\\
+\midrule
+Gradient logistic & 0.3355 & [0.3151, 0.3565]\\
+Gradient MLP, 100 hidden units & 0.5940 & [0.5723, 0.6153]\\
+Gradient MLP, 500 hidden units & 0.5995 & [0.5779, 0.6208]\\
+\bottomrule
+\end{tabular}
+\caption{MNIST-1D independent final accuracy; $n=2000$ per artifact. The MLP controls were not
+tuned to match published MNIST-1D baselines.}
+\label{tab:m1d}
+\end{table}
+
+\paragraph{Crossover.} A fourth maker imported the independently authored A1 and A2 filter banks
+into a child graph and authored a combining rule. After five development evaluations the accepted
+child scored 0.5295 on fresh final signals, an absolute gain of 0.064 over the better parent; it
+uses about 29.7 million multiply--accumulates over the final set versus 13.3 million for A1 and
+16.4 million for A2. This is one selected offspring, not evidence of a general evolutionary
+advantage. A three-parent extension scored 0.572 on the development set and 0.557 on the
+reference anchor ($n=1000$ each), then 0.5360 on a separate fresh-seed final set ($n=2000$). Its
+apparent 0.0065 gain over the two-parent child is not reliable: the final evaluations used
+different seeds, the intervals overlap substantially, and the third parent raises final-set
+computation from 29.7 to 39.3 million multiply--accumulates. A version-2 diagnostic plugin
+reporting class confusion and wrong-prediction margins was validated and activated, but
+fresh-maker Round B under that harness was never evaluated, so no harness-effect claim is
+possible. New MNIST-1D jobs were paused under the later document-benchmark priority.
+
+\subsection{Frontier-benchmark probes at chance}\label{sec:frontier}
+We adapted character-level models to multiple-choice scoring (\texttt{mc-loglik/1}) by summing
+next-character negative log likelihood over each answer choice, also reporting length-normalized
+scoring. The vocabulary lowercases text and omits many capitals, digits and symbols, so coverage
+is imperfect. MMLU test, ARC-Challenge test and HellaSwag validation were staged on the private
+evaluation server; GPQA was unavailable because access requires dataset authorization.
+
+The first sweep covers a synthetic-grammar authored model and three real-text controls
+(unigram, trigram, small gradient MLP), each on a fixed 1{,}000-item subset per benchmark.
+Length-normalized accuracies span 0.243--0.266 on MMLU, 0.224--0.248 on ARC-Challenge and
+0.230--0.264 on HellaSwag. The delegated real-text MoE (\texttt{82ebe5e5...}) on 1{,}000 items
+each scores 0.241 MMLU, 0.243 ARC-Challenge and 0.241 HellaSwag (Wilson intervals
+$[0.2155,0.2685]$, $[0.2174,0.2705]$, $[0.2155,0.2685]$; character coverage 0.9147, 0.9624,
+0.9889; receipt \texttt{runs/bench\_results/server-aggregate-20260930.jsonl}). All values sit
+around the four-choice chance rate of 0.25 and provide no evidence of frontier benchmark
+competence; they are negative transfer evidence and a test of the scoring interface, not a
+comparison to frontier language models.
+
+\subsection{Byte-level language graph, component specialists and the document hold}\label{sec:components}
+\paragraph{Tool-loop probes.} The actual byte-language graph (hash \texttt{f0b43dbe...}) was asked to
+generate tool-loop actions on three authored synthetic prompts (one policy step, 48 generated
+tokens per action). It produced three invalid JSON actions and zero tool calls or responses
+(\texttt{runs/parallel-tools/server-policy-receipt.json}). This language-policy failure is
+retained alongside the following component results, each a narrow authored algorithm evaluated
+by the same research team and not evidence of language understanding:
+\begin{itemize}\setlength\itemsep{0pt}
+\item Typed finite-state graph (\texttt{7f810c68...}), \texttt{typed-observation-transfer/1}, 128 fresh
+numeric payloads of width seven (seed 90218, 640 policy evaluations): transfers 128/128
+observations versus 0/128 with observations removed, abstains on 128/128 no-request and 128/128
+invalid-observation cases and calls on 128/128 missing-observation cases
+(\texttt{runs/parallel-tools/server-typed-receipt.json}).
+\item Exact binding graph (\texttt{e36653df...}, zero parameters): 128/128 server-generated lexical-variation cases
+(Unicode, missing keys, prefix distractors, duplicates) match, versus 0/128 for a disabled
+``unavailable'' component (a dependency ablation, not a baseline); receipts in
+\texttt{runs/parallel-reasoning/binding}.
+\item Carry-addition graph (\texttt{43c2a56a...}): 63/63 development additions versus 2/63 for an identity
+control, all five invalid inputs rejected (\texttt{runs/parallel-arithmetic/REPORT.json}); its
+empty source-hash field limits provenance.
+\item Frozen digit OCR graph (\texttt{54e3934a...}) returns correct text for five authored digit strings;
+the negative control ``hello'' yields ``50115'' and blank input yields empty text
+(\texttt{runs/parallel-vision/server-smoke.json}).
+\item Positive-Horn deduction graph (\texttt{3e9019e4...}): 120/120 development cases (71 entailed, 49 not
+entailed) versus 56/120 with rules removed, 120/120 under rule-order permutation
+(\texttt{runs/parallel-deduction/REPORT.json}).
+\end{itemize}
+
+\paragraph{Composition.} The action-grammar graph \texttt{8868695d...} answers two fresh synthetic
+digit images (``28'', ``39'') correctly through the actual specialist harness, each with one OCR
+call and zero invalid actions; with one observation withheld it returns no answer and repeats the
+call twice, and with the tool disabled it returns no answer with zero accepted calls and two
+invalid actions (\texttt{runs/action-language/harness-development-result.json}). The composed graph
+\texttt{e04777f4...} preserves inherited MoE dispatch and gives the grammar graph-owned priority;
+it is bit-identical to its parent on one ordinary-input test, and generates OCR text ``587'' under preservation probes (four focused tests), and succeeds on two further digit
+images (``88'', ``86''). A matched 387-byte probe gives parent and composed graphs identical loss
+(2.480344 bits per byte) and 208 correct tokens. The source-stability flag is false because a
+batch method was appended during execution; the coordinator reports identical serial-method ASTs
+and the executed snapshot is retained in \texttt{runs/action-language/composed-runtime-snapshot}.
+A tiled variant \texttt{ab3cee4e...} preserving unused inherited arrays passes the strict micro
+profile with identical 387-byte scores; it retains 81{,}432 parameter slots, 3{,}868 nonzero
+values, 96 cells, 26 bundles, 613 instances and one dispatch, edges rise from 14{,}327 to 15{,}618,
+and a single local run takes 12.097 s versus 9.746 s untiled (about 24\% overhead, uncertain).
+The controlled-English deduction composition \texttt{bef61dc6...} calls component
+\texttt{3e9019e4...} in an immutable five-condition harness
+(\texttt{runs/action-deduction/harness-snapshot-v1/result.json}): positive, missing-fact and
+missing-rule cases answer correctly (3/3), each with one call, zero invalid actions and zero
+specialist errors; withheld observations give no answer and two repeated calls; disabled tools give
+no answer, zero accepted calls and two invalid actions. Condition latencies are 163.1, 150.6, 144.1,
+140.8 and 107.6 seconds. The grammar is bounded unary controlled English, and repeated unavailable
+calls and high latency remain failures. The coordinator reports 153 full-suite tests passing in
+81 seconds; that is regression evidence, not capability.
+
+\paragraph{Document benchmark hold.} The priority benchmark is MMLongBench-Doc
+(\href{https://github.com/mayubo2333/MMLongBench-Doc}{repository}); this is a research priority, not
+a claim that it is the hardest benchmark. All five OCR graph families are digits-only, fixed
+32$\times$128 raster interfaces with no question conditioning or layout encoding and cannot yet
+meet its contract; a digit-only proxy would establish nothing. The pinned source has 135 PDFs and
+1{,}082 annotated questions (the README records 1{,}091; see Section~\ref{sec:repro}). Private
+staging completed with zero benchmark evaluations. The first split was rejected after two
+byte-identical PDF groups and one cross-split conflict
+(\texttt{runs/document-crossover/server-stage-v2.json}); canonical grouping gives 133 unique byte
+groups, provisionally 107 development and 28 held-out document IDs. The related-edition audit
+reports 67 candidate pairs, nine crossing the split, and 40/133 groups with inadequate extracted
+text; a later audit groups 117 heuristic families, which does not verify isolation. The split is not
+frozen. Alphabet-expanded OCR (\texttt{8332b0c6...}) recognizes three of six tiny development
+strings; its 61 literal-glyph checks test the templates, not accuracy. Three OCR crossover children
+are frozen without selection. The same-item diagnostic (\texttt{document-phase-diagnostic/3})
+renders in 1.6596 s, completes all 2{,}125 OCR crops in 133 batches (1.7213 s), then enters
+language generation at 2.1396 s with a 783{,}438-byte context and times out at its 120-second limit
+(\texttt{runs/document-crossover/server-phase-diagnostic-v3.json}; the recorded
+\texttt{language\_seconds=0} is an unfinished timer). A compact serialization (v4) cuts the context
+to 185{,}055 bytes (a 76.4\% reduction) yet still times out after 1.7736 s of OCR
+(\texttt{runs/document-crossover/server-compact-diagnostic-v4.json}); this negative result selects no
+model. A compiled-runtime backend initially shows about $1.4\times$ step speed; differential
+qualification (29 tests, 74-fixture injection suite; first NaN failure retained and repaired)
+reports amortized speedups of about $21$--$26\times$ and first-request speedups of about
+$5$--$7.5\times$ with matching states, logits, tokens and statistics on tested cases
+(\texttt{runs/compiled-runtime}); it is opt-in and is an implementation measurement, not capability.
+No document score exists. A dated comparator plan (\texttt{docs/FRONTIER\_COMPARATOR\_PLAN.md}) names
+endpoints \texttt{gpt-6-astra} and \texttt{claude-fable-5-1} (verified from vendor documentation on
+29 September 2026); it matches ordered 72-DPI page rasters and questions, no paid requests have been made and endpoint access is unverified. The measured
+language failures motivated \texttt{docs/LANGUAGE\_CORE\_OPTIONS.md} (a trained shared trunk, the
+no-gradient primary, or a three-size study); the owner rejected gradient descent and the trained-core
+option, so the option is historical. Document scoring is held until a predeclared plain-text QA gate;
+a proposed 16/20 coherent-answer threshold is not frozen and is not a goal-completion criterion.
+General language capability, not transport, is the blocking question.
+
+\subsection{Evolution pilots on the byte MoE and count-fitted seeds}\label{sec:evolang}
+\paragraph{Generation-zero calibration.} \texttt{runs/evolution-language-gen0-v2.json} records the
+founder \texttt{f0b43dbe...} on 334 content bytes at 2.042730829833363 bits per byte, zero
+failures, 9.81954 s single-thread nice-15 (about 34 content bytes/s on this workload). This is
+selection fitness on public development-training material with EOS excluded; V1's requested
+150--256-byte stories selected no cases, and V2 used 288--350 after a 288--600-byte inventory,
+without using model outputs. A local founder curriculum receipt
+(\texttt{runs/language-curriculum/FOUNDER\_DECISION.json}) on eight authored cases scores its 190
+content bytes at 4.0663511910499714 bits per byte; raw copy, recall and QA each fail all two
+cases and all six generations repeat ``too'' to the 24-token cap (9.64137 s). These cases are
+separate from the 334-byte calibration, so the losses are not comparable.
+
+\paragraph{Mini-pilot (null).} \texttt{runs/language-evolution-minipilot-v1-launch.json} records a
+single-thread nice-15 run with a 2-GiB address-space limit and 600-second timeout: three generations,
+each proposing one router-array and one expert-array candidate, giving six GA evaluations and six
+founder-random controls on paired seeds; each proposal mutates eight nonzero coordinates with
+relative Gaussian scale 0.05 and survives only on strict development improvement. It completes in
+152.67957 s with peak RSS 68{,}136 KiB (about 66.54 MiB), twelve candidate evaluations, two
+unique report graphs and a sixteen-entry ledger
+(\texttt{runs/evolution-language-minipilot-v1/result.json}). Both arms score 2.042730829833363
+selection bits/byte at generations zero and one and 2.0422575408863954 at generations two and
+three, choosing the same winner \texttt{e4d1e5db...}; report-only loss is unchanged at
+2.606790482283684 with zero failures. There is no evolutionary advantage or report
+improvement, report data are public development material, and seven focused tests pass according
+to the coordinator. Twelve candidates over 152.68 s do not establish a pure candidate rate.
+Context/state mutations, zero-coordinate activation and crossover are proposed v2 work.
+
+\paragraph{Count-fitted references and seeds.} Side research (\texttt{notes/CLAUDE\_RESEARCH.md},
+\texttt{scripts/claude\_count\_reference.py}) reports byte-level order6 Witten-Bell loss 1.3816 on
+165 development documents (89{,}213 bytes), while founder loss 2.5113 uses only 24 documents
+(12{,}894 bytes); the scopes are unmatched and establish no matched gap (Table~\ref{tab:counts}).
+A feature script fitting on development-training documents except the final 150 (used to select
+mixture weights) reports 1.3909 count-only and 1.2650 with word context and document cache; a
+side adaptive mixer reports 1.2222. The mixer is a Hedge/exponentiated-gradient-style update, now
+prohibited and excluded from all primary arms. These are exposed development numbers with
+non-gradient grid selection, not QA or LLM capability. Server parity of the exact order6 Witten-Bell
+IR export on the first 24 development documents (12{,}894 bytes) gives IR and reference both
+1.3852251087 bits/byte, maximum position difference about $2.27\times10^{-13}$; the fitted corpus
+excludes prior report families, so this is not an exact-scope comparison with 1.3816. Guarded cached
+scoring on 190 development bytes takes 0.473 s for a router mutant including
+certification/hash/compile and 0.302 s warm, with bit difference about $1.14\times10^{-13}$.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcl}
+\toprule
+Scoring scope & bits/byte & Note\\
+\midrule
+Order6 Witten--Bell, 165 dev docs (89{,}213 bytes) & 1.3816 & counts; side reference\\
+Count-only, weights from last 150 train docs & 1.3909 & non-gradient grid\\
++ word context and document cache & 1.2650 & exposed dev feedback\\
+Side adaptive mixer & 1.2222 & excluded from primary arms\\
+Order6 IR vs reference, first 24 docs (12{,}894 bytes) & 1.3852251087 & parity check\\
+Founder, 24 docs (12{,}894 bytes) & 2.5113 & unmatched scope\\
+Founder, 334 bytes & 2.042730829833363 & server calibration\\
+Founder, 190 bytes (curriculum) & 4.0663511910499714 & different cases\\
+\bottomrule
+\end{tabular}
+\caption{Count-fitted references and founder losses. Scopes differ, so rows are not a matched
+comparison; all data are exposed development material.}
+\label{tab:counts}
+\end{table}
+
+\paragraph{Static count-seed four-arm smoke.} The bounded static WB6 smoke run (two proposals per
+search arm) has zero acceptances and unchanged winners; fitted-evolution and fitted-random
+proposals duplicate at this budget. Eight cached/full qualification cases have maximum bit
+difference zero (39.986 s). The run takes 25.766 s for 24 batch evaluations (0.931 batch/s); six
+unique graphs including two baselines correspond to 0.233 unique graph/s end to end. Fitted corpus
+losses on batches A/B are 1.0819295/0.7147698 versus founder 2.271318/1.621583; fitted
+long-context fitness is worse than founder, and a 0.05 residual improves corpus loss slightly but
+worsens context and is rejected. Twelve ledger entries verify; CPU seconds and peak RSS were not
+captured (\texttt{runs/wb6-four-arm-static-v1/}). This two-proposal null result is not scaling
+evidence.
+
+\subsection{ARC-AGI-2 development: authored cell library, gene coverage and breeding ties}\label{sec:arc}
+\paragraph{Protocol and exposure.} Grid receipts use \texttt{arc-grid/1}: SHA256 task-ID hash order,
+with residue zero modulo five reserved for audit and nonzero for development. The scorer validates
+grids of 1--30 cells per dimension with colors 0--9, accepts at most two candidates per test input
+and computes exact task success (every test input correct within two attempts) with a Wilson
+interval. The exposed development manifest (DEV200) contains 200 public-training tasks with 222
+test inputs; it is already development exposure, and relabeling a subset as audit does not make it
+untouched. Historical receipts state that the residue-zero audit was reserved, but later server
+access cannot be certified from local metadata. Two attempts must be produced by graph-owned
+selection, not host-side expert ranking. No official ARC-AGI-2 or tool-use score is reported, and
+the BFCL V4 agentic category needs a search backend not configured here.
+
+\paragraph{First specialists.} The \texttt{grid20/1} graph routes among 20 identity/transpose and
+cyclic-recoloring experts using demonstration reconstruction error; it and its fixed-identity
+control solve 0/200 (no invalid outputs, Wilson $[0,0.0188]$). The \texttt{grid-associative/1}
+mutation combines eight dihedral experts with demonstration-inferred color associations in graph
+state and solves 3/200 (1.5\%, Wilson $[0.0051,0.0432]$) versus 0/200 with inferred recoloring
+disabled (receipts \texttt{runs/grid-associative/DECISION.json}, \texttt{runs/grid20/DECISION.json}).
+Fixed two-gene concatenation measures pair coverage but is not a top-two router.
+
+\paragraph{Coverage and curriculum.} The graph-gene operator measures 28 individual genes and three
+materialized pairs on DEV200; every pair solves 3/200, with no breeding gain. Pair throughput is
+about 51 tasks/s and 0.0195 CPU s/task, with whole-process high-water RSS 87{,}384{,}064 bytes. The
+dense curriculum has eight families with 200 selection and 100 validation tasks each (2400 distinct
+original fingerprints): authored selectors solve the five geometry/color families, adding the bbox
+gene solves crop, and both portfolios fail tiling and local fill. All four graphs solve the same
+3/200 native tasks; only two native tasks receive a train-only color-family annotation (both
+solved), 198 are unclassified (one solved), so family transfer rates are unavailable. The selector
+is authored, not learned. Whole-process RSS is 168.3 MiB with 139.33 s measured scoring; the
+synthetic generators are CC0-1.0/MIT-0 and competition eligibility is unverified. The
+\texttt{grid-gene-evidence-v1} receipt records 300/300 synthetic successes each for authored fill
+and count genes but 0/200 native tasks each; the count gene has one demonstration-consistent native
+task whose query fails; portfolios stay 3/200. The largest-four component gene passes 100/100
+synthetic but solves 1/200 native with zero fully consistent tasks (about 14 tasks/s, 140 MiB;
+\texttt{runs/largest4-evidence-v1/REPORT.md}). Dense synthetic success has not supplied native
+transfer.
+
+\paragraph{Separate co-researcher library.} A co-researcher's 57-cell host-enumerated depth-two
+library reports 53/1000 public training solves, 65 demo-consistent tasks and 12 false positives
+(18.4615\% conditional on consistency, 1.2\% of all training tasks), and a once-scored public
+evaluation result of 0/120 with no consistent chains. A later version progresses from 80/1000
+training solves (v2) to 95/1000 (v3) with v3 evaluation still 0/120 and 12 false positives
+reported. These are read-only external receipts on exposed evaluation tasks, not a fresh final
+evaluation or CellForge graph result. Full training access also potentially exposes the modulo-five
+audit for a combined library despite the operator's zero audit calls. Source imports and v2
+filenames do not pin the receipt-generating run; worker-row means are 1.52686 s training and 1.805416
+s evaluation, not a verified 0.5 s CPU budget claim, and RSS is unavailable. Its across-query attempt
+criterion differs from per-input acceptance, so counts are not a matched comparison.
+Prize-winning odds are assessed qualitatively as very low; realistic deliverables are a valid
+open entry and an honest paper.
+
+\paragraph{Single-gene and composition measurements.} Table~\ref{tab:genes} lists authored genes
+(synthetic denominators are original generated tasks; native means DEV200 unless noted). Each row is
+one frozen graph with verified ledgers and no gradients, public evaluation, audit or final access.
+\begin{table}[t]
+\centering\footnotesize
+\begin{tabular}{p{0.26\linewidth}p{0.20\linewidth}p{0.17\linewidth}p{0.29\linewidth}}
+\toprule
+Graph / gene & Synthetic & Native & Cost and note\\
+\midrule
+Conditional state v2 (2 rank-cell params, 1002 state dims, 1000 adjacency rules) & 300/300 vs 0/300 (updates off) & 1/200 vs 0/200; none fully consistent & 117 vs 115 tasks/s; 49.3 MiB; 12.03 s per run\\
+Adjacency-then-fill serial child (195 slots, 1010 state) & 300/300 vs 0/300 for either part & 3/200 for all; 2 consistent, 0 false positives & 46.88 vs 52.04 and 50.40 tasks/s; 30.97/27.26/28.17 s; 55.4 MiB; 57 slot nodes, 1650 expanded\\
+Direction router (2 ranking params, 6 state entries, 207 edges) & 200/200 selection, 100/100 validation vs 0 & 0/200; none consistent & 142.17 vs 147.06 tasks/s; 55.48 vs 55.64 MiB\\
+Object association child (+11 params) & 300/300 vs 0/300 & 4/200 vs 3/200 & 58.37 to 9.82 tasks/s; 61.27 to 150.95 MiB\\
+Same, 16-step variant (174 params) & 300/300 & 4/200; 3 consistent, 0 consistent wrong & 9.82 to 12.49 tasks/s; 0.10180 to 0.08006 CPU s/task; 150.95 to 109.32 MiB; 1564 vs 3004 edges, 205 vs 589 constants\\
+Pixel scaling factor 2 / 3 (31 params each) & 300/300 each & 2/789 and 1/789 (expanded training) & 403.23 / 393.26 tasks/s; 0.002481 / 0.002544 CPU s/task; 21.76 s; 76040 KiB\\
+Graph-owned scaling selection (64 params) & 300/300 vs 100/300 (updates off) & 3/789 vs 0/789 & 182.42 tasks/s; 0.005483 CPU s/task; 47.72 s; 70896 KiB\\
+Expanded active-slot graph (7 slots, 273 params, state 1515) & 110/120 vs 70/120 (2 specialists active) & not scored & 14.44 vs 44.31 tasks/s; 44.31 s wall; 103064 KiB; 40 paired gains, 0 losses\\
+Homologous five-gene bank recombination (25 combos, 206 params) & child 10/10 vs 5/10 per complementary parent & not scored & 14.12 tasks/s; 7.20 s; 113188 KiB\\
+\bottomrule
+\end{tabular}
+\caption{Authored ARC genes and compositions on exposed development data. Native figures never
+exceed the 3/200--4/200 range on DEV200; the object gene's extra native task is exposed
+development only.}
+\label{tab:genes}
+\end{table}
+The object-association gain was identified by a post-hoc frozen-model observer, complete paired
+regression attribution is absent, and the child adds operations without matched compute; the
+16-step variant's paired check against the unchanged portfolio verifies one gained task and no
+losses across 200 tasks, and full pairing against 64 steps is unavailable (aggregate receipt). The
+two scaling genes' three disjoint successes were already identified from development demonstrations
+outside DEV200, so this is not new independent transfer. The direction router is an explicit
+maker-authored correction: a scalar lookup had matched the context graph on all 24 selection tasks
+with all 97 wrong pixels at unknown keys (94 border pixels, none in conflict with learned keys), and
+the authored router compares five hypotheses (identity and four one-pixel neighbor copies); authoring
+cost was not measured. A conditional-state v1 prototype without cells and the zero-cell generic
+version remain historical.
+
+\paragraph{Training-only diagnostics and coverage census.} On DEV200, demonstration-only diagnostics
+show associative-nine with 2/200 consistent tasks, 57 observed shape mismatches and 141
+pixel-rule/routing failures; conditional state has zero consistent, 57 shape and 143 failures
+(17.014 s, 60.28 MiB, four ledger entries). These categories do not separate missing genes from
+inadequate routing. A structural census found 57 tasks with shape-changing demonstrations; a bank
+of identity, square tiling, pixel repetition at factors 2 and 3, and bounding crops explained no task
+exactly, and one color association added only two tasks the associative portfolio already
+reconstructed (0.35 s, 38.11 MiB). Extending the 17-rule census to 789 public-training tasks
+(nonzero SHA256 modulo 5; 211 residue-zero tasks excluded) gave seven exact matches and 13 with
+color association, two pixel-repetition tasks at factor 2 and one at factor 3 outside DEV200, no
+object-removal match, and no unique hole-filling match (5.68 s, 53596 KiB). These motivated the
+scaling genes; they are demonstration matches, not query solves. Derived cells must retain
+expanded-exposure provenance.
+
+\paragraph{Matched population pilots.} Table~\ref{tab:pop} collects every crossover, mutation
+and random-search comparison. Each is a single seed or a few seeds with four to sixteen proposals
+on exposed synthetic families, with winners frozen before reporting. Physical evaluation counts
+match across arms but CPU cost does not. No pilot shows a crossover-specific advantage.
+\begin{table}[t]
+\centering\footnotesize
+\begin{tabular}{p{0.20\linewidth}p{0.22\linewidth}p{0.26\linewidth}p{0.24\linewidth}}
+\toprule
+Pilot & Synthetic report (crossover / mutation / random) & Native DEV200 and ledger & Cost\\
+\midrule
+One-slot maker (\texttt{grid-maker-slot-v2}, seed 662021) & maker and control pick same fill gene and child; 600/800 to 700/800 (reconstruction 0.75 to 0.875) & 3/200; 2400 demo-pair scorings per arm & 172.02 s; 75{,}032 KiB\\
+\texttt{grid-population-pilot-v2} (4 logical attempts) & 140/180 each & 3/200 each; 29 ledger entries; 9 unique genomes; cache hits 3/0/2 & 150.57 s; 73{,}804 KiB\\
+\texttt{grid-population-matched-v1} (6 physical evals, 3120 calls, 18 evals total) & 120/180, 140/180, 140/180 & 3/200 each; 36 ledger entries & 228.63 s; 70{,}388 KiB\\
+Context-projection (4 founders, 8 proposals, 24 tasks) & 1/24 development, 0/24 report for all arms, 95.83\% pixel accuracy & 0 accepted proposals; 41 ledger entries & 0.654--0.684 evals/s; 59.39 s; 123.54 MiB\\
+Object bank (2 founders + 4 proposals, 348 calls per arm, 206 params, 1010 state) & 14/20, 12/20, 14/20 & 4/200, 3/200, 3/200; 36 ledger entries & CPU 18.785, 9.704, 13.099 s; 11.59, 46.94, 47.15 tasks/s; 155.77 s; 140.66 MiB\\
+Seed replication (3 seeds, 20 tasks, 18 evals, 1044 calls) & 12/20 every run; mutation 14/20 throughout; random 14, 12, 14 & not scored; 36-entry ledgers & CPU 38.675, 54.880, 45.086 s\\
+Finite lifetime (max age 3 to 8, same seeds) & crossover 12/20; mutation 14,14,14 to 14,12,14; random 14,12,14 & not scored & 18 evals, 1044 calls\\
+Seven-gene (seed 772081; 6 graphs, 420 calls) & 12/24, 12/24, 14/24 & not scored; 36 ledger entries & CPU 8.171, 8.262, 8.824 s; 0.734, 0.726, 0.680 evals/s; 30.34 s; 114324 KiB\\
+Separate streams, 16 proposals (seed 772101; 18 evals, 1260 calls) & 14/24 each (tie) & not scored; 108 ledger entries & CPU 26.575, 39.178, 30.947 s; 105.76 s; 152816 KiB\\
+Seven-slot (seed 772201; 18 graphs, 1260 calls) & 22/24, 22/24, 20/24 & not scored; 108 ledger entries & CPU 89.416, 139.494, 118.018 s; 11.77, 11.70, 36.92 tasks/s; 372.55 s; 167512 KiB\\
+\bottomrule
+\end{tabular}
+\caption{Breeding, mutation and random-search pilots on the ARC gene banks. Mutation and
+random figures follow the crossover column order. Ties dominate; the largest gap (22/24 vs 20/24)
+is a single-seed two-task difference.}
+\label{tab:pop}
+\end{table}
+Details that change interpretation. In the object-bank pilot paired native receipts confirm one
+gained task and no losses versus either control, but crossover kept object and adjacency genes while
+random kept crop and adjacency, so equal totals conceal different niches. In the seed replication all
+12 crossover proposals failed to combine object and adjacency, both founders died at generation 3
+and two populations were extinct after generation 4; early founder loss is a hypothesis, not an
+explanation, and pure crossover can only reach alleles in living parents. The age-8 run exceeds the
+pilot horizon and does not support early founder death as the repair. In the seven-gene pilot all
+four crossover donor draws were $[0,0]$ (copying one parent), so the complementary child was never
+evaluated; crossover and mutation share one winner and one report, so these are not independent.
+In the separate-streams run distinct winners retained repeat2/repeat3, crop/repeat2 and
+repeat2/fill, but stream, budget and seed changed together. In the seven-slot run founders scored 14 and
+18 on selection, crossover first reached 22 at proposal 10 and mutation at 9, tiling failed in every
+arm and random also missed object tasks. In the context-projection pilot nine binary key-projection
+slots were varied with the center retained and all arms kept the orthogonal-cross founder; the
+graph stores 23 parameter slots. Population mortality and sharing were not separately ablated
+(shared graphs store 195 slots and 1010 state dimensions), the matched-v1 age/tie rules also changed,
+and the population-v2 policy lacks a native file-hash manifest, so external byte identity is not
+asserted.
+
+\paragraph{Seven-slot capacity and breeding interfaces.} A finite two-slot diagnosis evaluated all
+49 layouts (24 selection tasks, 70 demonstrations, 3430 predictor calls; 285.20 s, 190632 KiB,
+101 ledger entries): the demonstration-selected winner scored 14/24, post-hoc best single layout
+14/24 and the query-oracle union 22/24 (failing both tiling examples); the union is not a
+deployable score, and one of two scaling examples per factor tests oversized-query identity fallback.
+These bounds motivated slot/wiring capacity rather than more search in a fixed space. The shared bank
+then grew to seven authored genes (49 two-slot combinations valid at 268 stored parameters and state
+1010; homologous crossover preserves factor 2 and 3 from complementary parents; checks on 12
+crossover and 12 mutation children; five tests), and crossover and one-slot uniform mutation operate on
+the expanded genome (16 reproducible crossover children and 16 mutations, tamper rejection, four
+children and eight ledger entries); no offspring fitness was measured for these interfaces. A
+bounded exact 3-by-3 context memory (23 parameters, 3602 state dimensions, four tests) is frozen but
+unbenchmarked.
+
+\subsection{Evolved cellular-automaton negative control}\label{sec:nca}
+A co-researcher's scratch numpy experiments (not reproduced here; scripts are outside the
+repository) evolved tiny neural cellular automata with Gaussian mutation and discrete selection on
+ARC-AGI-2 public-training same-shape tasks, matched by random and identity controls. A
+1488-parameter/T10 variant solved 0/40 tasks after 3000 evaluations per task; synthetic swap loss
+improved without a solve at 6000 evaluations. A 414-parameter/T3 variant fit synthetic training
+after 8000--14000 evaluations (1200 evaluations/s on a different six-by-six workload, not
+attributable to CellForge), with held-out success in one of three configurations, then scored
+0/40 training and 0/40 test at 8000 evaluations per task with random and identity both zero; lower
+pixel loss is not task success. A 313-task ten-core run outside the two-core budget was
+initially reported pending, then corrected: it stopped at 30/313 with zero solves and is not a
+benchmark. Raw-weight evolution therefore solves no real task at these budgets, consistent with the
+need for good seeds noted in related work. The published gradient-trained NCA solves 23 of 172
+feasible original-ARC tasks \cite{xu2025nca}; its GPU timing does not establish CPU performance or
+no-gradient feasibility. On CellForge hardware, a 1488-parameter/T2 graph passes 5/5 synthetic
+30-by-30 identity probes at 93.23 adapter calls/s with 38{,}268{,}928-byte peak RSS, and a shallow
+residual graph (\texttt{c985a1ed...}, 414 parameters, 22 microcells, three iterations) satisfies the
+ladder-micro profile (eight combined and three focused tests) and returns 5/5 at 69.1217 two-phase
+calls/s with peak RSS 42{,}491{,}904 bytes (about 40.5 MiB), single thread and nice 15
+(\texttt{runs/nca-shallow-v1/server-identity.json}). These are demo/query adapter calls, not ARC
+fitness; architecture, iteration count and dispatch differ, so parameter count does not explain the
+speed gap, and no ARC score, evolution or generalization is established.
+
+\subsection{Offline submission interface}
+An offline CPU submission adapter and source bundler have eight and three focused tests; bundling
+includes transitive dependencies and hash-manifest preflight. A server smoke test on two tasks and
+three queries takes 0.14686 s at 48{,}603{,}136-byte RSS and matches local JSON exactly
+(\texttt{runs/arc-cpu-package/README.md}). This establishes interface execution, not Kaggle
+eligibility or task accuracy.
+
+\section{Discussion}
+\paragraph{What worked.} Direct authoring produced working recognizers and compact language
+machinery without gradients: digit strings read perfectly in distribution, with one artifact
+retaining 73.8\% under an unseen font, and authored synthetic-grammar models reached within 0.004
+bpc of the generator entropy. Typed crossover retained parental building blocks on tiny probes and
+lifted MNIST-1D accuracy by 0.064 in one selected child. Narrow authored components (typed transfer,
+binding, deduction, addition, action grammar) execute exactly within their grammars, and a compiled
+backend gives large verified speedups.
+
+\paragraph{What did not.} Authored and control character models sit at chance on public
+multiple-choice probes; the byte language graph emits invalid actions and repeats tokens; document
+evaluation is blocked on language capability and on an unresolved related-edition overlap; evolution
+from authored founders tied random search in the language mini-pilot and in most ARC pilots; dense
+synthetic success (300/300) did not transfer to DEV200, where every portfolio remains at 3/200--4/200;
+and evolved NCAs solve 0/40. The gradient MLP beat the best MNIST-1D authored model.
+
+\paragraph{Honest limits.} Final evaluations exist only for the digit, synthetic-grammar and MNIST-1D
+experiments; all ARC, byte-language and document results are development results on exposed public data.
+Runs are single small runs (one per arm in most cases), confidence intervals are wide, and the two-task
+gaps in Table~\ref{tab:pop} are not evidence. Authors and orchestrator share an operating-system account
+locally, and the orchestrator has administrative access to the evaluation server, so the final-evaluation
+boundary is physical rather than adversarially audited. Token usage is self-reported; the digit task used a
+single font family in development; the visual-retrieval memory arm and the MNIST-1D harness-version
+comparison were never run; the MNIST-1D crossover has one independently tested child and no random-crossover
+control, so its advantage may reflect selection and extra computation; a co-researcher's library results
+and scratch NCA numbers are not reproduced by us. The authored models transfer competence from the author
+LLM's pretraining and must be reported as such. There is no private-set score, no official ARC-AGI-2 or
+BFCL score, the system is not an LLM, and no claim of general intelligence or frontier superiority is made.
+
+\paragraph{Design-only pretrained composition.} A System~1/System~2 proposal
+(\texttt{docs/SYSTEM12\_DESIGN.md}) would compose pretrained models (a gradient-trained 0.6B-parameter
+decision-head system and a pretrained generative candidate) with evolved routing. It would import
+pretrained capability, is separate from the no-gradient line, and was not executed: no model was
+downloaded, and the approximately 4.34GB required files exceed the reported 3.5GB free disk.
+
+\section{Roadmap beyond the current results}\label{sec:roadmap}
+The path toward the long-term aim requires, in order: robust alphanumeric recognition across unseen font
+families; real-world text lines competitive with a parameter-matched gradient-trained CNN (the critical
+go/no-go test, since authoring effort scales with case diversity rather than data); constructed sequence
+priors; measured component reuse across visual tasks; constructed algorithmic reasoning with length
+generalization; and only then language. The largest risks are scale (capable language models have
+$10^8$--$10^{12}$ parameters, far beyond hand authoring, pushing toward weight \emph{generators}) and
+provenance of linguistic competence. For the ARC line the owner's priorities are a valid open entry, stronger
+authored object, recoloring, counting and path cells tested on dense generators, and matched ablations of
+breeding mechanisms.
+
+\section{Reproducibility}\label{sec:repro}
+Each result names its receipt under \texttt{runs/}, with graph and source hashes recorded in the
+hash-chained ledger; ledger counts were verified after retrieval. Fonts are not shipped
+(\texttt{CELLFORGE\_FONT\_DIR}), the final-evaluation server holds the private grammar and secret seeds, and the
+document PDFs are pinned but not redistributed. The pinned document source has 1{,}082 annotated questions while
+the README states 1{,}091; we report the pinned count and have not resolved the difference. This manuscript is
+built with \texttt{latexmk} on the evaluation server (TeX Live); the \texttt{paper/check\_numbers.py} script
+lists numeric tokens of this file that are absent from the original draft and the research notes.
+
+\begin{thebibliography}{9}
+\bibitem{liu2018hierarchical} H.~Liu et al. Hierarchical representations for efficient architecture search. arXiv:1711.00436, 2017.
+\bibitem{miikkulainen2017evolving} R.~Miikkulainen et al. Evolving deep neural networks. arXiv:1703.00548, 2017.
+\bibitem{yu2024visrag} S.~Yu et al. VisRAG: Vision-based retrieval-augmented generation on multi-modality documents. arXiv:2410.10594, 2024.
+\bibitem{sun2025visrag2} Y.~Sun et al. VisRAG 2.0: Evidence-guided multi-image reasoning in visual retrieval-augmented generation. arXiv:2510.09733, 2025.
+\bibitem{wang2026vimrag} Q.~Wang et al. VimRAG: Navigating massive visual context in retrieval-augmented generation via multimodal memory graph. arXiv:2602.12735, 2026.
+\bibitem{xu2025nca} Xu and Miikkulainen. Neural cellular automata for ARC-AGI. arXiv:2506.15746, 2025.
+\bibitem{tracr} DeepMind. Tracr (compiled transformers from RASP programs). arXiv:2301.05062.
+\bibitem{gensearch} Combining LLMs and genetic search for ARC-AGI-2. arXiv:2609.27242 (authors not recorded; numbers not independently verified).
+\end{thebibliography}
+\end{document}

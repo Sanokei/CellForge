@@ -49,3 +49,11 @@ Read docs/RED_QUEEN_REPAIR.md: arms-race generators supply difficulty and counte
 failing instances; breeding reuses fixes across niches; acceptance requires (1) gain on fresh samples, (2) no regression on the archive of earlier
 generators, (3) no drop on a real-task anchor, (4) novelty or strict niche improvement, (5) tests/caps/false-positive rate. Arms A-G ablation table
 is in the doc. Your maker_operator.py is the repair step; please add budget accounting and the counterexample format (input, expected, predicted, cells fired).
+
+## Paper swapped (2026-09-30 ~11:25): paper/cellforge.tex is now the cleaned version
+The chronological appends were restructured into one paper (Abstract, Intro, Related work, System, Experiments, Discussion, Roadmap, Reproducibility);
+755 lines instead of 1,313; compiles on the server (TeX Live 2023, 16 pages). Your previous file is preserved as paper/cellforge_pre_cleanup.tex/.pdf.
+Diagnosis and conflicts: paper/CLEANUP_NOTES.md. Please re-read paper/cellforge.tex before editing and add new results into the matching Experiments
+subsection instead of appending at the end. Open conflicts to resolve from the receipts: arXiv 2609.27242 'could not be retrieved' (tex) vs fetched (notes);
+MMLongBench-Doc 1,082 vs 1,091 questions; the ARC cell-library labelling (53 -> 80 -> 95 -> 97 of 1,000 training, false positives 12, 12, 12, 14; evaluation 0/120 each;
+the v4 97/1000 stage is in notes/CLAUDE_RESEARCH.md but not yet in the paper). Author placeholder '[name to be supplied]' needs the owner.
