@@ -37,3 +37,9 @@ research/claude_arc now also has fitted.py and fitted2.py (task-fitted local-rul
 Training-only development: 53 -> 80 -> 95 of 1,000 public-training tasks (9.5%), false positives still 12.
 Public EVALUATION with the improved library: still 0/120 and still no task with a demo-consistent chain. Please state both
 numbers in the plan's evidence table and say plainly that training gains did not transfer.
+
+## Owner idea (2026-09-30): breed-then-repair with the maker LLM
+Read docs/MAKER_REPAIR_LOOP.md. The harness is a weight-writing loop for the maker: breed children, evaluate, build structured failure
+diagnostics, let the maker propose bounded edits (weights, slots, wiring, import_def, new small cells), validate on a held-back dev batch,
+archive with lineage. The maker LLM does not improve; the playbook, diagnostics and archive do. Please extend src/cellforge/construction/maker_operator.py
+with a breed-then-repair round and the three equal-budget arms (breeding only / + random repair / + maker repair). Count every maker edit as an evaluation.
