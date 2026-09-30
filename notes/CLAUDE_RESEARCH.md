@@ -297,3 +297,22 @@ Applicable to our ARC library (diversity + selection bottlenecks): (a) behaviour
 outputs on all training inputs duplicate an existing one (cheap, already partly done by the 'seen' key in solve.py); (b) niche archive
 (MAP-Elites style) keyed by task features (shape relation, object count, colour count) keeping the best cell per niche; (c) Red-Queen
 selection: a generator/solver arms race where each new cell must beat the archive of earlier cells on generator tasks.
+
+## Literature pass 7: targeted ARC resources (2026-09-30; fetched pages/abstracts)
+- ARC Prize 2025 (Kaggle): NVARC (NVIDIA) 27.64% public LB / 24% private ARC-AGI-2 at ~$0.20/task: fine-tuned ~4B model, synthetic data,
+  test-time training, TRM components; ARChitects 16.53% (masked-diffusion LLM, recursive refinement). All gradient-trained, GPU, open-sourced.
+- Pang, 'Efficient Evolutionary Program Synthesis' (ctpang.substack.com): 26.0% ARC-AGI-2 semi-private at ~$0.51/task using Grok-4 (API) to write
+  Python programs per task; best programs accumulate in a library (1,000 training tasks -> 538 library programs); library starts empty (no hand
+  primitives). Needs an LLM at inference; the 538-program library is reusable offline but does not by itself solve new tasks without the LLM.
+  Berman reported 29.4% with a related approach (per survey snippet).
+- ARGA / GPAR (object-centric, non-learning): convert the grid to several graph abstractions (objects + relations), search a graph DSL with
+  filters/transformations and constraint-guided search; ARGA solves 57/160 object-centric ARC-1 tasks (36%) with ~3 orders of magnitude
+  fewer search nodes than brute force (arXiv 2210.09880). The right template for object/relation cells.
+- Hodel ARC-DSL (github.com/michaelhodel/arc-dsl, MIT, 637 KB): mature hand-written DSL (objects, colorfilter, fork, fill, ...) with hand-written
+  solver programs for the 400 ARC-1 training tasks, plus a writeup PDF. re-arc (github.com/michaelhodel/re-arc, MIT, 57 MB): per-task generators
+  for the same 400 tasks (1000 verified examples each). Compatible with the open-source requirement; not yet downloaded.
+- ARC-TGI (arXiv 2603.05099): 461 human-verified task generators (180 ARC-Mini, 215 ARC-AGI-1, 66 ARC-AGI-2 incl. 11 evaluation-family) with
+  reasoning-chain templates. License CC BY-NC-SA 4.0 (non-commercial, share-alike): likely INCOMPATIBLE with the prize's CC0/MIT-0-style release
+  requirement for code we ship; do not bundle; verify before any use. Note some generators cover ARC-AGI-2 evaluation-family tasks (contamination).
+Plan: adopt Hodel's MIT ARC-DSL primitives as a richer base cell set and re-arc generators as the Red-Queen/dense-fitness curriculum (ARC-1 families),
+develop on training only, keep the evaluation set sealed. Needs owner approval to download the two MIT repos.
