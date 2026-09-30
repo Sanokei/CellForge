@@ -43,3 +43,9 @@ Read docs/MAKER_REPAIR_LOOP.md. The harness is a weight-writing loop for the mak
 diagnostics, let the maker propose bounded edits (weights, slots, wiring, import_def, new small cells), validate on a held-back dev batch,
 archive with lineage. The maker LLM does not improve; the playbook, diagnostics and archive do. Please extend src/cellforge/construction/maker_operator.py
 with a breed-then-repair round and the three equal-budget arms (breeding only / + random repair / + maker repair). Count every maker edit as an evaluation.
+
+## Combined design (2026-09-30): Red Queen Repair
+Read docs/RED_QUEEN_REPAIR.md: arms-race generators supply difficulty and counterexamples; the maker repairs the niche champion from concrete
+failing instances; breeding reuses fixes across niches; acceptance requires (1) gain on fresh samples, (2) no regression on the archive of earlier
+generators, (3) no drop on a real-task anchor, (4) novelty or strict niche improvement, (5) tests/caps/false-positive rate. Arms A-G ablation table
+is in the doc. Your maker_operator.py is the repair step; please add budget accounting and the counterexample format (input, expected, predicted, cells fired).
