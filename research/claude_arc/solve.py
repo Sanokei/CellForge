@@ -4,7 +4,7 @@ import sys, os, json, glob, time, itertools
 import numpy as np
 from multiprocessing import Pool
 from cells import CELLS
-from fitted import fit_local_rule
+from fitted import fit_local_rule, fit_role_rule
 from fitted2 import fit_shape_changing
 
 DEFAULT_ROOT = ("C:/Users/wkeif/AppData/Local/Temp/claude/C--Users-wkeif-Documents-GitHub-CellForge/"
@@ -96,6 +96,8 @@ def run_task(a):
     sols = search(tr, te, depth, tl)
     for kind, preds in fit_local_rule(tr, te):
         sols.append((("fit:" + kind,), False, preds))
+    for kind, preds in fit_role_rule(tr, te):
+        sols.append((("fit:" + kind,), False, preds))
     for kind, preds in fit_shape_changing(tr, te):
         sols.append((("fit:" + kind,), False, preds))
     attempts = []
@@ -118,6 +120,6 @@ if __name__ == "__main__":
     with Pool(workers) as p:
         res = p.map(run_task, [(f, depth, tl) for f in files], chunksize=1)
     ns = sum(r["solved"] for r in res)
-    json.dump(res, open(f"results_{split}_d{depth}_v3.json", "w"))
+    json.dump(res, open(f"results_{split}_d{depth}_v4.json", "w"))
     print(f"{split} depth<={depth}: solved {ns}/{len(res)} ({100 * ns / len(res):.1f}%) in {time.time() - t0:.0f}s; "
           f"tasks with any demo-consistent chain: {sum(r['n_sols'] > 0 for r in res)}")

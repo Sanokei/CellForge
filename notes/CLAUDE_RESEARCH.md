@@ -239,3 +239,21 @@ demo-consistent chain (fitted or enumerated). Training gains do not transfer to 
 Reading: a hand-written, fitted-by-counting cell library reaches ~9.5% on public training in ~10 min CPU, but the public
 evaluation set (closest proxy for the hidden test) requires structure this library does not represent. Do not present
 training-set numbers as competition-relevant performance.
+
+### Update 2026-09-30 (later): gap study and color-invariant rules
+Gap study (research/claude_arc/gap_study.py, gap_study.json; statistics only, no solutions inspected, no tuning),
+public ARC-AGI-2 training (1,000) vs evaluation (120):
+| statistic | training | evaluation |
+|---|---:|---:|
+| same-shape tasks | 68.0% | 67.5% |
+| mean input cells | 182 | 373 |
+| mean colors per input | 3.9 | 5.3 |
+| mean objects per input | 4.7 | 5.7 |
+| same-shape tasks with a conflict-free local rule (best of 13 feature sets) | 22.4% | 7.4% |
+| mean best local-rule conflict rate | 5.9% | 5.8% |
+Evaluation grids are ~2x larger with more colors and objects, and local-rule expressibility is ~3x lower.
+Added color-invariant 'role' local rules (neighbor relations: background / same as center / other / outside; output token
+absolute color or 'same as center'). Training: 95 -> 97/1,000 (9.7%), demo-consistent 111, false positives 14 (+2).
+Evaluation (scored only, not tuned): still 0/120 and still zero tasks with any demo-consistent chain.
+Conclusion: the evaluation failure is not explained by absolute-color keys; the rules are non-local / object-relational and
+need cells that reason about objects, correspondences and multi-step structure.

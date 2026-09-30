@@ -141,3 +141,79 @@ def fit_local_rule(train, test_in):
         if cover:
             accepted.append((kind, preds))
     return accepted
+
+
+# ---- color-invariant (role) local rules ------------------------------------------------------------------------
+# Keys describe relations (background / same as center / other color / outside) instead of absolute colors, so a rule fitted
+# on some colors transfers to unseen colors. Output token is either an absolute color or "same as center color".
+
+def _roles(g, offsets):
+    bg = bg_color(g); h, w = g.shape
+    rel = []
+    for dy, dx in offsets:
+        n = _nb(g, dy, dx)
+        r = np.where(n == -1, 0, np.where(n == bg, 1, np.where(n == g, 2, 3)))
+        rel.append(r)
+    return bg, rel
+
+
+def role_features(g, kind):
+    h, w = g.shape
+    if kind == "role_n8":
+        bg, rel = _roles(g, D8)
+        return [[(int(g[i, j] == bg),) + tuple(int(r[i, j]) for r in rel) for j in range(w)] for i in range(h)]
+    if kind == "role_n4":
+        bg, rel = _roles(g, D4)
+        return [[(int(g[i, j] == bg),) + tuple(int(r[i, j]) for r in rel) for j in range(w)] for i in range(h)]
+    if kind == "role_count":
+        bg, rel = _roles(g, D8)
+        return [[(int(g[i, j] == bg), sum(int(r[i, j] == 2) for r in rel), sum(int(r[i, j] == 3) for r in rel)) for j in range(w)] for i in range(h)]
+    if kind == "role_comp":
+        bg = bg_color(g); size, border, rank = _comp_props(g)
+        return [[(int(g[i, j] == bg), min(int(size[i, j]), 12), int(border[i, j]), int(rank[i, j])) for j in range(w)] for i in range(h)]
+    if kind == "role_ray":
+        bg = bg_color(g); r = _ray_colors(g)
+        return [[(int(g[i, j] == bg),) + tuple(int(0 if r[k, i, j] == -1 else (2 if r[k, i, j] == g[i, j] else 3)) for k in range(4)) for j in range(w)] for i in range(h)]
+    raise KeyError(kind)
+
+
+ROLE_KINDS = ["role_count", "role_comp", "role_n4", "role_ray", "role_n8"]
+
+
+def _token_ok(tok, center, out):
+    return out == center if tok == "same" else out == tok
+
+
+def fit_role_rule(train, test_in):
+    if not all(x.shape == y.shape for x, y in train):
+        return []
+    accepted = []
+    for kind in ROLE_KINDS:
+        cand = {}
+        for x, y in train:
+            f = role_features(x, kind)
+            for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    k, c, o = f[i][j], int(x[i, j]), int(y[i, j])
+                    toks = {o, "same"} if o == c else {o}
+                    cand[k] = toks if k not in cand else (cand[k] & toks)
+        if any(not v for v in cand.values()):
+            continue
+        table = {k: ("same" if "same" in v else min(v)) for k, v in cand.items()}
+        if all(v == "same" for v in table.values()):
+            continue  # identity
+        preds, cover = [], True
+        for tg in test_in:
+            f = role_features(tg, kind); o = np.zeros(tg.shape, dtype=int)
+            for i in range(tg.shape[0]):
+                for j in range(tg.shape[1]):
+                    k = f[i][j]
+                    if k not in table:
+                        cover = False; break
+                    o[i, j] = tg[i, j] if table[k] == "same" else table[k]
+                if not cover: break
+            if not cover: break
+            preds.append(o)
+        if cover:
+            accepted.append((kind, preds))
+    return accepted
