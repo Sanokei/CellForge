@@ -316,3 +316,23 @@ selection: a generator/solver arms race where each new cell must beat the archiv
   requirement for code we ship; do not bundle; verify before any use. Note some generators cover ARC-AGI-2 evaluation-family tasks (contamination).
 Plan: adopt Hodel's MIT ARC-DSL primitives as a richer base cell set and re-arc generators as the Red-Queen/dense-fitness curriculum (ARC-1 families),
 develop on training only, keep the evaluation set sealed. Needs owner approval to download the two MIT repos.
+
+## Literature pass 8: pure (no-LLM, CPU) approaches — ARC-AGI-2 ceiling and the ARC-AGI-3 opening (2026-09-30)
+ARC-AGI-2 for pure search (reported; some from search snippets):
+- Icecuber (ARC 2020 winner): 142 hand-written unary grid functions, C++ brute force stacking up to 4; 20.6% on the ARC-1 private test. Search results
+  also state ARC-AGI-2's evaluation set is curated to FILTER OUT tasks solvable by shallow transformation search and brute-force search is limited to depth
+  3-4 (unverified snippet; it would explain our 0/120 on public evaluation with a 57-cell depth-2 library).
+- VSA object-centric solver (arXiv 2511.08747, non-neural): 10.8% ARC-AGI-1 train, 3.0% ARC-AGI-1 eval, 94.5% Sort-of-ARC, 83.1% 1D-ARC.
+- MADIL (MDL-based program synthesis, arXiv 2505.01081): ~7% on ARC-AGI-1 at ArcPrize 2024 (abstract-level).
+Expect a pure ARC-AGI-2 solver to land near zero on the hidden evaluation set; the value there is the paper, not a prize.
+ARC-AGI-3 (interactive, scored by action efficiency vs humans per level, normalised 0-100%; submission.parquet; Kaggle offline):
+- arXiv 2512.24156 'Graph-Based Exploration for ARC-AGI-3': TRAINING-FREE, no ML; segments frames into components, prioritises actions by visual salience,
+  keeps a directed state graph and prefers untested state-action pairs; preview challenge: median 30/52 levels solved over six games, 3rd on the private
+  leaderboard, reported to beat frontier-LLM agents; code CC-BY-4.0; AAAI 2026 workshop paper.
+- ARC-AGI-3 preview results (arcprize.org/blog/arc-agi-3-preview-30-day-learnings): 1st StochasticGoose 12.58% (CNN action-learning RL, gradient),
+  2nd Blind Squirrel 6.71% (state-graph pruning + ResNet18 value model), LLM-only agents performed poorly; top scores still ~12% of human efficiency.
+- 2026 Kaggle public notebooks: 'ARC-AGI-3: Graph-Based Exploration (lightweight)' public score 0.09; a Go-Explore state-graph agent with zero ML reports 0.23 public
+  and clears levels on 6-8 public games (repo README claims; unverified).
+- Local play via the `arc-agi` PyPI package; agent interface is_done()/choose_action(); starter random agent scores 0.0.
+Assessment: ARC-AGI-3 is the best fit for a PURE cell-based agent (perception cells, state-hash cells, frontier/explorer graph, evolved exploration policy),
+because training-free graph explorers already place near the top of the preview and run on CPU. Needs: pip install arc-agi (owner approval), Kaggle notebook by owner.
