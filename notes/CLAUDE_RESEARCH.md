@@ -352,3 +352,10 @@ Mechanism 2 (Red Queen, 80 generations, 24 generators/24 solvers, 3 seeds, ~1.5e
 (9-13 solvers, almost all depth 1). VALIDATION solved 20/228 for baseline, all 3 Red Queen seeds and all 3 control seeds (identical). DEV secondary:
 71 baseline, Red Queen 71/72/71, control 71/71/71. No measurable gain. Caveats: one validation split, small effect sizes are undetectable at n=228,
 generators are mostly depth 1 (difficulty filter rejects ~65% of candidates as too hard), no depth-3 chain reached the front of the ordering.
+
+## 2026-09-30: pure training-free state-graph explorer on the 25 public ARC-AGI-3 games (research/claude_arc3/)
+Built and ran (arc-agi 0.9.9, local in-process games, 3000-action budget, seed 0, no ML/LLM): frame hash with volatile-counter mask, component salience order,
+directed state-action graph with BFS-to-frontier and level-root RESET edge. Levels cleared out of 190: random 5, explorer 14, explorer + action-class statistics 17.
+Mean official-style score 0.19 for both random and the best explorer (scores are dominated by the (baseline/actions)^2 term; cleared levels take 100s-1000s of actions).
+Solved mostly level 1 only (tu93 3 levels, sc25/vc33 2). Failures: large avatar state spaces (wa30, re86, tr87), many-target click games (sb26, lp85 L2), hidden state (ls20 L2, g50t).
+Takeaway: blind novelty search clears easy first levels but is nowhere near action-efficient; it needs goal-directed signals. Details and table: research/claude_arc3/README.md.
