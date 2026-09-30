@@ -276,3 +276,24 @@ What this does and does not show: strong ARC-AGI results exist, but every one us
 on CPU) or a gradient-trained model. None shows a no-gradient, hand-authored-cell solver on ARC-AGI-2. The transferable lessons: (1) success
 is generation-bound, so widen hypothesis generation (LLM-authored cell libraries built OFFLINE, not at inference); (2) keep diversity, avoid
 over-prescriptive refinement; (3) a verified candidate pool is large but ranking/selection is the next bottleneck on small models.
+
+## Literature pass 6: Sakana AI and hand-compiled weights (2026-09-30; summaries from fetched pages)
+Owner believes Sakana has a paper on hand-written weights. I could NOT find one (searched English and Japanese; Sakana blog index scanned).
+Closest real items found:
+- Tracr (DeepMind, arXiv 2301.05062): compiles RASP programs into transformer weights by hand-coded components, no gradient descent;
+  a genuine precedent for compiling authored logic into weights (our CellForge authored graphs are the same idea). Not Sakana, not ARC.
+- Sakana 'Digital Red Queen' (sakana.ai/drq, Jan 2026): LLM as mutation operator; each new Core War warrior must beat ALL accumulated
+  predecessors (adversarial arms-race archive); independent runs show convergent evolution at the behaviour level; single lineage, not
+  parallel coevolution; sandbox only. Directly matches the owner's 'competition it must adapt to'.
+- Sakana 'ShinkaEvolve' (Sept 2025): sample-efficient LLM-driven evolution: balanced parent sampling, NOVELTY REJECTION SAMPLING (embedding
+  similarity + LLM judgement to skip trivial variants), bandit selection across an LLM ensemble; 150 samples for circle packing, 75
+  generations for an AIME agent; needs human-defined fitness metrics.
+- Sakana M2N2 / quality-diversity model merging: niche-preserving archive keeps models with complementary strengths.
+- Sakana PC-ALM (Sept 14 2026, 'Training 1000-layer networks without backpropagation'): layer-local, but it performs gradient descent on an
+  augmented Lagrangian (local gradient steps), so it is NOT consistent with a strict no-gradient rule; tested on MNIST/CIFAR-scale only.
+- DISCREPANCY: an automatic summary called CompressARC 'non-gradient based' (arXiv 2512.06104). Earlier sources describe per-puzzle training
+  by gradient descent on a 76K-param model; treat the 'non-gradient' claim as unverified and probably wrong.
+Applicable to our ARC library (diversity + selection bottlenecks): (a) behavioural novelty rejection: drop candidate cells/programs whose
+outputs on all training inputs duplicate an existing one (cheap, already partly done by the 'seen' key in solve.py); (b) niche archive
+(MAP-Elites style) keyed by task features (shape relation, object count, colour count) keeping the best cell per niche; (c) Red-Queen
+selection: a generator/solver arms race where each new cell must beat the archive of earlier cells on generator tasks.
