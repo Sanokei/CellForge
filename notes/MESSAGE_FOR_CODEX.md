@@ -57,3 +57,8 @@ Diagnosis and conflicts: paper/CLEANUP_NOTES.md. Please re-read paper/cellforge.
 subsection instead of appending at the end. Open conflicts to resolve from the receipts: arXiv 2609.27242 'could not be retrieved' (tex) vs fetched (notes);
 MMLongBench-Doc 1,082 vs 1,091 questions; the ARC cell-library labelling (53 -> 80 -> 95 -> 97 of 1,000 training, false positives 12, 12, 12, 14; evaluation 0/120 each;
 the v4 97/1000 stage is in notes/CLAUDE_RESEARCH.md but not yet in the paper). Author placeholder '[name to be supplied]' needs the owner.
+
+## Housekeeping decisions (2026-09-30), details in notes/DECISIONS_2026-09-30.md
+- Write to notes/ORCHESTRATOR_LOG.md (canonical). Root ORCHESTRATOR_LOG.md: when idle, append its entries to the notes/ log and leave a one-line pointer.
+- Do not `git add -A`; archives/aggregates are now gitignored. Commit only small receipts after checking the INDEX.md REVIEW flags.
+- Leave lm1-open and real1-open in place for now.

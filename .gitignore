@@ -11,3 +11,10 @@ paper/*.out
 runs/*/dev/
 runs/*/anchor/
 runs/*/_accept/
+
+# Added 2026-09-30 (see notes/DECISIONS_2026-09-30.md): keep large archives and server aggregates out of commits by default
+runs/**/*.tar.gz
+runs/*.tar.gz
+runs/bench_results/server-aggregate-*.jsonl
+bash.exe.stackdump
+**/bash.exe.stackdump
