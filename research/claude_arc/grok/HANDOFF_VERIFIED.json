@@ -1,68 +1,68 @@
 {
-  "status": "partial live sweep; not a completed experiment",
+  "status": "complete historical sweep",
   "expected_runs": 180,
   "source": {
-    "rows": 110,
-    "sha256": "6c8dfb620adcc182f61df3d161fcc98d41bc1042adf06856165f7922816bc19f",
-    "bytes": 133051
+    "rows": 180,
+    "sha256": "b2ebad827a7d4d56570cfcdd754f775d38fa52c68c1dc88f2887c1848dd6a995",
+    "bytes": 218020
   },
   "statistics": {
     "A lam=0.0 control=0": {
-      "runs": 20,
-      "fit_ever": 13,
-      "fit_final": 12,
-      "delayed_generalization": 4
+      "runs": 30,
+      "fit_ever": 21,
+      "fit_final": 20,
+      "delayed_generalization": 6
     },
     "B lam=0.001 control=0": {
-      "runs": 20,
-      "fit_ever": 11,
-      "fit_final": 11,
-      "delayed_generalization": 3
-    },
-    "B lam=0.004 control=0": {
-      "runs": 20,
-      "fit_ever": 12,
-      "fit_final": 11,
+      "runs": 30,
+      "fit_ever": 17,
+      "fit_final": 17,
       "delayed_generalization": 5
     },
+    "B lam=0.004 control=0": {
+      "runs": 30,
+      "fit_ever": 18,
+      "fit_final": 17,
+      "delayed_generalization": 6
+    },
     "B lam=0.016 control=0": {
-      "runs": 20,
-      "fit_ever": 12,
-      "fit_final": 12,
-      "delayed_generalization": 3
+      "runs": 30,
+      "fit_ever": 18,
+      "fit_final": 18,
+      "delayed_generalization": 5
     },
     "D lam=0.0 control=0": {
-      "runs": 20,
+      "runs": 30,
       "fit_ever": 0,
       "fit_final": 0,
       "delayed_generalization": 0
     },
     "A lam=0.0 control=1": {
-      "runs": 2,
-      "fit_ever": 1,
-      "fit_final": 1,
-      "delayed_generalization": 0
+      "runs": 6,
+      "fit_ever": 3,
+      "fit_final": 3,
+      "delayed_generalization": 1
     },
     "B lam=0.001 control=1": {
-      "runs": 2,
-      "fit_ever": 1,
-      "fit_final": 1,
-      "delayed_generalization": 0
+      "runs": 6,
+      "fit_ever": 3,
+      "fit_final": 3,
+      "delayed_generalization": 2
     },
     "B lam=0.004 control=1": {
-      "runs": 2,
-      "fit_ever": 1,
-      "fit_final": 1,
-      "delayed_generalization": 0
+      "runs": 6,
+      "fit_ever": 3,
+      "fit_final": 3,
+      "delayed_generalization": 1
     },
     "B lam=0.016 control=1": {
-      "runs": 2,
-      "fit_ever": 1,
-      "fit_final": 1,
-      "delayed_generalization": 0
+      "runs": 6,
+      "fit_ever": 3,
+      "fit_final": 3,
+      "delayed_generalization": 2
     },
     "D lam=0.0 control=1": {
-      "runs": 2,
+      "runs": 6,
       "fit_ever": 0,
       "fit_final": 0,
       "delayed_generalization": 0

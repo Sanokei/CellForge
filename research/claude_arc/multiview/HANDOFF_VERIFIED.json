@@ -1,6 +1,142 @@
 {
   "status": "complete validation",
-  "development_status": "development results absent; selection ablation unfinished",
+  "development_status": "complete",
+  "development_source": {
+    "rows": 772,
+    "sha256": "000266f1c742ca9e9c4a6ccd2e871d6f5cd7a124cb9e04222a62e3cf07003852",
+    "bytes": 1247551
+  },
+  "development_statistics": {
+    "A baseline (existing, full)": {
+      "solved": 101,
+      "fp": 14,
+      "consistent": 115,
+      "sec_per_task": 1.54,
+      "n": 772
+    },
+    "B mv@g0 + existing full": {
+      "solved": 112,
+      "fp": 13,
+      "consistent": 125,
+      "sec_per_task": 1.73,
+      "n": 772
+    },
+    "B mv@g1 + existing full": {
+      "solved": 112,
+      "fp": 13,
+      "consistent": 125,
+      "sec_per_task": 1.73,
+      "n": 772
+    },
+    "B mv@g2 + existing full": {
+      "solved": 119,
+      "fp": 15,
+      "consistent": 134,
+      "sec_per_task": 1.73,
+      "n": 772
+    },
+    "B mv@g3 + existing full": {
+      "solved": 119,
+      "fp": 15,
+      "consistent": 134,
+      "sec_per_task": 1.73,
+      "n": 772
+    },
+    "B mv@g4 + existing full": {
+      "solved": 119,
+      "fp": 15,
+      "consistent": 134,
+      "sec_per_task": 1.73,
+      "n": 772
+    },
+    "D existing@g0 only (no mv)": {
+      "solved": 97,
+      "fp": 12,
+      "consistent": 109,
+      "sec_per_task": 0.46,
+      "n": 772
+    },
+    "D existing@g1 only (no mv)": {
+      "solved": 98,
+      "fp": 11,
+      "consistent": 109,
+      "sec_per_task": 0.54,
+      "n": 772
+    },
+    "D existing@g2 only (no mv)": {
+      "solved": 101,
+      "fp": 11,
+      "consistent": 112,
+      "sec_per_task": 0.67,
+      "n": 772
+    },
+    "D existing@g3 only (no mv)": {
+      "solved": 102,
+      "fp": 13,
+      "consistent": 115,
+      "sec_per_task": 1.0,
+      "n": 772
+    },
+    "D existing@g4 only (no mv)": {
+      "solved": 101,
+      "fp": 14,
+      "consistent": 115,
+      "sec_per_task": 1.54,
+      "n": 772
+    },
+    "E existing@g0 + mv@g0": {
+      "solved": 108,
+      "fp": 11,
+      "consistent": 119,
+      "sec_per_task": 0.65,
+      "n": 772
+    },
+    "E existing@g1 + mv@g1": {
+      "solved": 109,
+      "fp": 10,
+      "consistent": 119,
+      "sec_per_task": 0.72,
+      "n": 772
+    },
+    "E existing@g2 + mv@g2": {
+      "solved": 119,
+      "fp": 12,
+      "consistent": 131,
+      "sec_per_task": 0.86,
+      "n": 772
+    },
+    "E existing@g3 + mv@g3": {
+      "solved": 120,
+      "fp": 14,
+      "consistent": 134,
+      "sec_per_task": 1.19,
+      "n": 772
+    },
+    "E existing@g4 + mv@g4": {
+      "solved": 119,
+      "fp": 15,
+      "consistent": 134,
+      "sec_per_task": 1.73,
+      "n": 772
+    },
+    "F random-g control (mean of 5 seeds; existing+mv)": {
+      "solved": 114.6,
+      "fp": 12.8,
+      "consistent": 127.4,
+      "sec_per_task": 1.01,
+      "n": 772,
+      "solved_min": 112,
+      "solved_max": 116
+    }
+  },
+  "development_selected_arm": "E existing@g3 + mv@g3",
+  "selected_validation": {
+    "solved": 31,
+    "fp": 5,
+    "consistent": 36,
+    "sec_per_task": 1.22,
+    "n": 228
+  },
   "expected_validation_tasks": 228,
   "source": {
     "rows": 228,
@@ -133,7 +269,7 @@
   },
   "tests": 8,
   "caveats": [
-    "No arm selected from validation.",
+    "Arm selection uses development outcomes only.",
     "Runtime estimates reuse cached timings rather than separately timed arms."
   ]
 }

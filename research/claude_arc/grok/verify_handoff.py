@@ -52,19 +52,26 @@ def main():
         final = r['snaps'][-1]; c['fit_final'] += final['demo_exact']
         f = r['fitsnap']
         c['delayed_generalization'] += bool(f and r['efit'] <= 30000 and f['extra20'] < .5 and final['demo_exact'] and final['extra20'] >= .5 and final['extra20'] >= f['extra20'] + .3)
-    save(grok, dict(status='partial live sweep; not a completed experiment', expected_runs=180, source=meta, statistics=dict(counts), caveats=['Historical evolved neural-weight experiment; excluded from pure authored/fitted runtime.', 'No additional weight search launched.', 'C stop-at-fit is derived, not an independent arm.']))
+    save(grok, dict(status='complete historical sweep' if len(rows) == 180 else 'partial sweep', expected_runs=180, source=meta, statistics=dict(counts), caveats=['Historical evolved neural-weight experiment; excluded from pure authored/fitted runtime.', 'No additional weight search launched.', 'C stop-at-fit is derived, not an independent arm.']))
     mv = arc / 'multiview'; rows, meta = read(mv / 'results/val.jsonl')
     assert len({r['task'] for r in rows}) == len(rows)
     assert all(r['bucket'] == zlib.crc32(r['task'].encode()) % 5 == 0 for r in rows)
     spec = importlib.util.spec_from_file_location('mv_analysis', mv / 'analyze.py')
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
-    save(mv, dict(status='complete validation' if len(rows) == 228 else 'partial validation', development_status='development results absent; selection ablation unfinished', expected_validation_tasks=228, source=meta, split='crc32(filename including .json) % 5', statistics=mod.arms(rows), tests=8, caveats=['No arm selected from validation.', 'Runtime estimates reuse cached timings rather than separately timed arms.']))
+    dev, devmeta = read(mv / 'results/dev.jsonl') if (mv / 'results/dev.jsonl').exists() else ([], None)
+    assert all(r['bucket'] == zlib.crc32(r['task'].encode()) % 5 != 0 for r in dev)
+    assert len({r['task'] for r in dev}) == len(dev)
+    da = mod.arms(dev) if dev else {}
+    eligible = {k: v for k, v in da.items() if k[0] in 'BDE'}
+    selected = max(eligible, key=lambda k: (eligible[k]['solved'], -eligible[k]['fp'])) if eligible else None
+    va = mod.arms(rows)
+    save(mv, dict(status='complete validation' if len(rows) == 228 else 'partial validation', development_status='complete' if len(dev) == 772 else 'incomplete', development_source=devmeta, development_statistics=da, development_selected_arm=selected, selected_validation=va.get(selected), expected_validation_tasks=228, source=meta, split='crc32(filename including .json) % 5', statistics=va, tests=8, caveats=['Arm selection uses development outcomes only.', 'Runtime estimates reuse cached timings rather than separately timed arms.']))
     a3 = ROOT / 'research/claude_arc3'; stats = {}
     for path in sorted((a3 / 'results').glob('*.jsonl')):
         rows, meta = read(path)
         assert len({(r['game'], r['seed']) for r in rows}) == len(rows)
         stats[path.name] = dict(source=meta, complete=len(rows)==25, levels=sum(r['levels'] for r in rows), available_levels=sum(r['n_levels'] for r in rows), mean_score=sum(r['score'] for r in rows)/len(rows), seconds=sum(r['secs'] for r in rows), peak_mb=max(r['peak_mb'] for r in rows))
-    save(a3, dict(status='seed-0 local receipts; server seed-1 sweep remains active', statistics=stats, caveats=['Compare complete 25-game runs only.', 'One seed; no hidden games measured.', 'Full v5 clears fewer levels than v4.']))
+    save(a3, dict(status='full v5 seeds 0,1,2 completed; some flag ablations partial', statistics=stats, caveats=['Compare complete 25-game runs only.', 'v4 has only seed 0; no paired multi-seed advantage established.', 'No hidden games measured.', 'Full v5 clears fewer levels than v4 on seed 0.']))
 
 if __name__ == '__main__':
     main()

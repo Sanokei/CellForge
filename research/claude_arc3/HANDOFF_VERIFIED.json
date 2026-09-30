@@ -1,5 +1,5 @@
 {
-  "status": "seed-0 local receipts; server seed-1 sweep remains active",
+  "status": "full v5 seeds 0,1,2 completed; some flag ablations partial",
   "statistics": {
     "explorer_v1.jsonl": {
       "source": {
@@ -79,6 +79,32 @@
       "seconds": 641.3,
       "peak_mb": 140
     },
+    "v5_all_s1.jsonl": {
+      "source": {
+        "rows": 25,
+        "sha256": "8d4fb75fd9a454583d87320821d0bbfa5375e1ff43c053f59440e677665c9bd5",
+        "bytes": 11903
+      },
+      "complete": true,
+      "levels": 16,
+      "available_levels": 183,
+      "mean_score": 0.13947161143138753,
+      "seconds": 705.4,
+      "peak_mb": 140
+    },
+    "v5_all_s2.jsonl": {
+      "source": {
+        "rows": 25,
+        "sha256": "639f09aad83f0bfb2fbee33d20dcf0d3f18118af82edfe1e1dd60de2530f2be7",
+        "bytes": 11876
+      },
+      "complete": true,
+      "levels": 15,
+      "available_levels": 183,
+      "mean_score": 0.18918575839065224,
+      "seconds": 586.4000000000001,
+      "peak_mb": 140
+    },
     "v5_nm.jsonl": {
       "source": {
         "rows": 25,
@@ -134,7 +160,8 @@
   },
   "caveats": [
     "Compare complete 25-game runs only.",
-    "One seed; no hidden games measured.",
-    "Full v5 clears fewer levels than v4."
+    "v4 has only seed 0; no paired multi-seed advantage established.",
+    "No hidden games measured.",
+    "Full v5 clears fewer levels than v4 on seed 0."
   ]
 }
