@@ -257,3 +257,22 @@ absolute color or 'same as center'). Training: 95 -> 97/1,000 (9.7%), demo-consi
 Evaluation (scored only, not tuned): still 0/120 and still zero tasks with any demo-consistent chain.
 Conclusion: the evaluation failure is not explained by absolute-color keys; the rules are non-local / object-relational and
 need cells that reason about objects, correspondences and multi-step structure.
+
+## Literature pass 5 (2026-09-30, owner asked for papers with proof the approach can work; abstract/summary level, fetched)
+- Cost-Effective Agent Harnesses for ARC-AGI-1 (arXiv 2607.06764; a Japanese-language alphaxiv summary exists): DeepSeek V3.2 in
+  non-thinking mode via API, no ARC fine-tuning; Explorer-Definer pipeline 57.5% pass@2 at $0.25/task, Reflective Orchestrator
+  67.25% at $0.62/task on the ARC-AGI-1 public 400; ablations (removing a 'think tool' costs 5.75 pp); stated finding: generation-bound,
+  not selection-bound ('broader generation, not better ranking'). No ARC-AGI-2 result in the abstract. Needs an API: not offline.
+- Small AI model reaches 76% on ARC-AGI-1 (Cognizant AI Lab blog): 75M-param autoregressive transformer trained from scratch on ARC data
+  (gradient-trained; the blog says an initial evolutionary approach was abandoned), ~4 h on one H100, ~76% pass@2 on ARC-AGI-1 public eval,
+  ~17% on ARC-AGI-2; correct answer in candidate pool ~83% of tasks but ranking picks it ~76%.
+- Modality-Driven Search with Holistic Trace Judging (arXiv 2606.31543): multi-modality candidate generation + long-context judge;
+  72.9% ARC-AGI-2 semi-private at $38.99/task, 76.1% public at $19.69/task with frontier models; 'extensive negative results' (prescriptive
+  templates and iterative refinement reduce hypothesis diversity). Expensive; not offline.
+- Sakana AI (Japan): AB-MCTS multi-LLM inference-time search solved more ARC-AGI-2 tasks than any single model (about 30% with unlimited
+  guesses; far lower under the 2-attempt rule per reporting); M2N2 evolutionary model merging with niche/diversity archive. Chollet commented on
+  X (x.com/fchollet/status/1939995081710477720). I could not identify a specific Japanese Twitter-only ARC paper; unverified beyond these.
+What this does and does not show: strong ARC-AGI results exist, but every one uses either a frontier LLM at inference (API/GPU, not offline
+on CPU) or a gradient-trained model. None shows a no-gradient, hand-authored-cell solver on ARC-AGI-2. The transferable lessons: (1) success
+is generation-bound, so widen hypothesis generation (LLM-authored cell libraries built OFFLINE, not at inference); (2) keep diversity, avoid
+over-prescriptive refinement; (3) a verified candidate pool is large but ranking/selection is the next bottleneck on small models.
