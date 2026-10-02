@@ -37,6 +37,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('command', choices=['run', 'verify'])
     ap.add_argument('root', type=Path)
+    ap.add_argument('--repair-from', type=Path, help='One new charged proposal from a saved runtime failure; not a continuation loop')
     a = ap.parse_args()
     if a.command == 'verify':
         entry = json.loads((a.root / 'FOUNDER.json').read_text(encoding='utf-8'))
@@ -55,6 +56,15 @@ def main():
     save(a.root / 'PROBE.json', manifest)
     save(a.root / 'STANDARD.json', standard)
     prompt = CONTRACT + '\nOVERRIDE the single-game objective. Write ONE SHARED generic policy; set game=shared. No game facts, identities, screenshots or solutions are provided. Infer object roles and action effects online using frames and persistent mem. Literal tensors guide exploration and short planning. The SAME source and weights run unchanged with fresh memory for each environment. No game fingerprints or stored solutions. Public development pilot, not held-out.'
+    if a.repair_from:
+        parent = json.loads((a.repair_from / 'FOUNDER.json').read_text(encoding='utf-8'))
+        previous = json.loads((a.repair_from / 'RESULT.json').read_text(encoding='utf-8'))
+        failures = sorted({row['result']['error'] for row in previous['games'] if row['result'].get('error')})
+        if not failures:
+            raise SystemExit('Repair requires a recorded runtime failure; no tuning from game scores.')
+        manifest['repair_parent'] = str(a.repair_from)
+        manifest['repair_parent_sha256'] = hashlib.sha256((a.repair_from / 'FOUNDER.json').read_bytes()).hexdigest()
+        prompt += '\nRUNTIME REPAIR ONLY. Previous shared proposal never executed a valid action. Fix the concrete runtime failures, retaining the generic online mechanism. Return complete source and literal tensors. Allowed builtins are: ' + ', '.join(sorted(C.restricted_globals()['__builtins__'])) + '\nFailures: ' + json.dumps(failures) + '\nPrior proposal: ' + json.dumps(parent)
     save(a.root / 'PROMPT.json', dict(prompt=prompt))
     (a.root / 'PROMPT.txt').write_text(prompt, encoding='utf-8')
     proposal = dict(arm='llm', seed=0, hash_or_null=None, charged=True, outcome='invalid')
