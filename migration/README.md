@@ -11,3 +11,5 @@ Excluded: Git administrative/authentication metadata and rebuildable cache/envir
 Hetzner backup: `cellforge-1:/srv/cellforge-inbox/windows-migration-20261002/`. The snapshot is separate from all live server working directories.
 
 Local cleanup requires verified server/GitHub receipts and resolved ownership. This branch does not claim cleanup is complete.
+
+Supplement: 126 authored CellForge Temp scratchpad files (854,588 bytes) are preserved in cellforge-temp-scratch.zip. Raw ARC benchmark/dependency downloads and eight private session-output folders/two image folders remain excluded and untouched; see temp-inventory.json. These exclusions and linked-worktree ownership must be resolved before complete local cleanup.
