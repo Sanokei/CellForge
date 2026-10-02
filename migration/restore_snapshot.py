@@ -17,4 +17,6 @@ with zipfile.ZipFile(a.snapshot) as z:
    if not dest.is_relative_to(out):raise ValueError(name)
    dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(name))
 print('Restored and verified',len(d['files']),'files')
-print('Recover Git history with: git clone',str(out/'receipts/history.bundle'),'<new-checkout>')
+if (out/'receipts/history.bundle').exists():
+ print('Recover Git history with: git clone',str(out/'receipts/history.bundle'),'<new-checkout>')
+
