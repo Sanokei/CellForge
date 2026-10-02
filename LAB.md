@@ -45,8 +45,12 @@ never read the ARC evaluation split; the maker sees only generated tasks or a ta
 same positions; nothing self-reported counts, only recomputation; never edit `ARC_FLOOR.json`, `HARD_LANES.json`, the standard/arc-goal tests.
 
 ## 5. Known red (left red, not weakened)
-`tests.test_one_standard` + `tests.test_standard_semantic`: 5 failures, all in two legacy local pilots (`runs/weights-cell-population-g1`, `runs/weights-arc-best-a5-v1`), which
-already declare their limits in their own STANDARD.json. `tests.test_arc_goal` needs `ARC_ROOT` (server only). Owner to archive or fix.
+The two historical pilot failures were archived with owner approval; both standard
+suites passed before the new probe. The new single-seed shared-founder probes
+are intentionally below the full qualification standard and now cause two
+standard failures and three semantic errors. Broader architecture replay has two
+additional failures; details and logs are below. No tests or floors were changed.
+`tests.test_arc_goal` requires server ARC_ROOT and independently passed 14/14.
 
 ## Owner decisions and Codex resumption (2026-10-02)
 The owner returned and authorized committing/pushing/merging the source snapshot,
@@ -97,6 +101,13 @@ no crossover/router qualification, no standard semantic evaluator. It truthfully
 ships STANDARD.json and remains red: 25 standard tests in 4.666 seconds, two
 failures and three errors. See `reports/shared-probe-standard-qualification-20261002.log`.
 The legacy archival was not used to conceal these new qualification failures.
+
+Runtime-repaired shared policy: all ar25/lp85/sc25 policy and control runs were
+valid, 1500 actions each, zero levels in every arm. No-op counts: 1363, 1500, 353;
+distinct frames: 107, 1, 689. Two charged writer calls total, no managers; meter
+62% after repair. Do not expand the 16-call campaign from this result. The next
+hypothesis must address observed action-effect / no-op recovery failures before
+a larger population study. Evidence summary: `reports/ARC3_SHARED_PROBE_20261002.md`.
 
 ## 6. Decisions only the owner can make
 1. ARC-AGI-2 public EVALUATION split: run the frozen structure-bank protocol once on its 120 tasks (about 120-250 maker calls, roughly 2-5% of a weekly limit). This is the only
