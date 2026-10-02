@@ -79,6 +79,25 @@ predate the shared-policy runner changes. Do not weaken the fail-closed admissio
 or rehash historical receipts to hide them. Full log:
 `reports/owner-resumption-gates-20261002.log`.
 
+Fresh server ARC goal recomputation (existing `goalcheck3` package): 14 tests in
+304.723 seconds, OK. This validates the saved public-training result and the
+owner's existing floor; it is not new-game evidence.
+
+First shared-founder probe `runs/weights-arc3-shared-probe-20261002`: zero levels,
+zero actions on all three games because the source called unavailable builtin
+`str`. Controls crashed too. Independent replay matches. This is a runtime
+invalid proposal, not evidence against shared adaptation. One separate charged
+runtime-repair probe was started with the exact error and allowed builtin list,
+no game observations or tuning feedback; it stops after one proposal as well.
+The maker meter moved from 61% to 62% across the first probe (shared desktop
+activity included; this delta cannot be attributed to that call alone).
+
+The new probe is below ONE_STANDARD: one seed, no charged random-edit population,
+no crossover/router qualification, no standard semantic evaluator. It truthfully
+ships STANDARD.json and remains red: 25 standard tests in 4.666 seconds, two
+failures and three errors. See `reports/shared-probe-standard-qualification-20261002.log`.
+The legacy archival was not used to conceal these new qualification failures.
+
 ## 6. Decisions only the owner can make
 1. ARC-AGI-2 public EVALUATION split: run the frozen structure-bank protocol once on its 120 tasks (about 120-250 maker calls, roughly 2-5% of a weekly limit). This is the only
    honest novelty test; without it "95% on training" means "the maker knows ARC training tasks".
