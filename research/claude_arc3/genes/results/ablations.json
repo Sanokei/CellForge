@@ -1,0 +1,3820 @@
+{
+  "generator_commit": "f6a0ba841c2f1e56b6ec862aa1aafdf49465f628",
+  "generator_root": "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0",
+  "source_sha256": {
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\research\\claude_arc3\\genes\\agent.py": "ad61b6f69f658e14f76df3f06050c0e852107595f097f24e75dac69b95f781cb",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\research\\claude_arc3\\genes\\benchmark.py": "420d055799e243608063af6c33de975ae88dd30416a2af1bc01008395f973fe1",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\research\\claude_arc3\\genes\\learning.py": "63a0209e3fb63d7926ca580d2c4b4f38049f33e425b995feff90d521886b79d6",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\research\\claude_arc3\\genes\\perception.py": "70c035d4f2ed9e86983c0abc75ea26027c2e787761a3a0f1476618c9f30b9911",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\research\\claude_arc3\\genes\\planning.py": "b3825e18c70e1a5294dd247de86f8aed0f20a94ad00505a0caafc38bb3ad282e",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\research\\claude_arc3\\genes\\__init__.py": "eddd9f855a70ef2d2850310b46c16280a4aee583180184e2e35cc20d16fc27da",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\agents.py": "faaac754cac36c155b6fdf169631c4c798bfd75c84b90a928e4c78d613aac448",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\archive.py": "c33aea38c1982288148b096eeae9c8002d2b928f145f2d09ab0407a3c7e75121",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\arcshim.py": "e75e7095a82a736a0edbd2374c11a810b0332e27f28fc92d97846486168a8764",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\demo_round.py": "50ecd56a399f996c0994fae7765b4fe799d35c0e5cb48cabaf65dcc95d85903b",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\games.py": "15249ee7360b4411cc77e3e2b7ca88bdca8555dc685d720cd1a0c6b2250927dd",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\loop.py": "7498dc86bd008c168d937255f50403389d99558c29fd537644076df1522dd748",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\test_gan.py": "d0c4257db78a7c711a5364cf1430da5dcecf886b9b9d2addb5cd27730b905e0e",
+    "C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\.claude\\worktrees\\agent-a2b9d147b88810cc0\\research\\claude_arc3\\gan\\__init__.py": "6eaa265f8a676f804b26bdc7e745e98bd1db112fa3a10de33cdaf6653e9463ae"
+  },
+  "budget": 300,
+  "seeds": 3,
+  "seconds": 26.13,
+  "summary": {
+    "touch/genes": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 87,
+      "deaths": 2,
+      "mean_score": 0.2303739302547453
+    },
+    "touch/random": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 5,
+      "used": 496,
+      "deaths": 1,
+      "mean_score": 0.10694199978233572
+    },
+    "touch/no_effects": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 462,
+      "deaths": 11,
+      "mean_score": 0.02087105134953494
+    },
+    "touch/no_terrain": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 5,
+      "used": 338,
+      "deaths": 88,
+      "mean_score": 0.20370726358807867
+    },
+    "touch/no_goals": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 159,
+      "deaths": 0,
+      "mean_score": 0.06520283122604122
+    },
+    "touch/no_keydoor": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 87,
+      "deaths": 2,
+      "mean_score": 0.2303739302547453
+    },
+    "touch/no_push": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 87,
+      "deaths": 2,
+      "mean_score": 0.2303739302547453
+    },
+    "touch/no_hazard_motion": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 87,
+      "deaths": 2,
+      "mean_score": 0.2303739302547453
+    },
+    "keydoor/genes": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 132,
+      "deaths": 0,
+      "mean_score": 0.36459653762500643
+    },
+    "keydoor/random": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 2,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.0030471447291093093
+    },
+    "keydoor/no_effects": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 2,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.000728911772448145
+    },
+    "keydoor/no_terrain": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 3,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.19901816744895864
+    },
+    "keydoor/no_goals": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 235,
+      "deaths": 0,
+      "mean_score": 0.11758669082258265
+    },
+    "keydoor/no_keydoor": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 3,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.19901816744895864
+    },
+    "keydoor/no_push": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 132,
+      "deaths": 0,
+      "mean_score": 0.36459653762500643
+    },
+    "keydoor/no_hazard_motion": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 132,
+      "deaths": 0,
+      "mean_score": 0.36459653762500643
+    },
+    "push/genes": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 4,
+      "used": 365,
+      "deaths": 0,
+      "mean_score": 0.20887575589046956
+    },
+    "push/random": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 0,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.0
+    },
+    "push/no_effects": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 0,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.0
+    },
+    "push/no_terrain": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 4,
+      "used": 365,
+      "deaths": 0,
+      "mean_score": 0.20887575589046956
+    },
+    "push/no_goals": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 346,
+      "deaths": 0,
+      "mean_score": 0.04822649993146489
+    },
+    "push/no_keydoor": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 4,
+      "used": 365,
+      "deaths": 0,
+      "mean_score": 0.20887575589046956
+    },
+    "push/no_push": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 0,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.0
+    },
+    "push/no_hazard_motion": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 4,
+      "used": 365,
+      "deaths": 0,
+      "mean_score": 0.20887575589046956
+    },
+    "seq/genes": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 118,
+      "deaths": 0,
+      "mean_score": 0.3499062051231063
+    },
+    "seq/random": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 4,
+      "used": 590,
+      "deaths": 0,
+      "mean_score": 0.01614275431054662
+    },
+    "seq/no_effects": {
+      "episodes": 3,
+      "wins": 2,
+      "levels": 4,
+      "used": 616,
+      "deaths": 0,
+      "mean_score": 0.031930538498763754
+    },
+    "seq/no_terrain": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 118,
+      "deaths": 0,
+      "mean_score": 0.3499062051231063
+    },
+    "seq/no_goals": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 369,
+      "deaths": 0,
+      "mean_score": 0.08802359298610503
+    },
+    "seq/no_keydoor": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 118,
+      "deaths": 0,
+      "mean_score": 0.3499062051231063
+    },
+    "seq/no_push": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 118,
+      "deaths": 0,
+      "mean_score": 0.3499062051231063
+    },
+    "seq/no_hazard_motion": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 118,
+      "deaths": 0,
+      "mean_score": 0.3499062051231063
+    },
+    "click/genes": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 45,
+      "deaths": 0,
+      "mean_score": 0.3837037037037037
+    },
+    "click/random": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 2,
+      "used": 900,
+      "deaths": 0,
+      "mean_score": 0.00015868370150762048
+    },
+    "click/no_effects": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 45,
+      "deaths": 0,
+      "mean_score": 0.3837037037037037
+    },
+    "click/no_terrain": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 45,
+      "deaths": 0,
+      "mean_score": 0.3837037037037037
+    },
+    "click/no_goals": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 45,
+      "deaths": 0,
+      "mean_score": 0.3837037037037037
+    },
+    "click/no_keydoor": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 45,
+      "deaths": 0,
+      "mean_score": 0.3837037037037037
+    },
+    "click/no_push": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 45,
+      "deaths": 0,
+      "mean_score": 0.3837037037037037
+    },
+    "click/no_hazard_motion": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 45,
+      "deaths": 0,
+      "mean_score": 0.3837037037037037
+    },
+    "hazard/genes": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 71,
+      "deaths": 0,
+      "mean_score": 0.2563383769078074
+    },
+    "hazard/random": {
+      "episodes": 3,
+      "wins": 0,
+      "levels": 2,
+      "used": 900,
+      "deaths": 18,
+      "mean_score": 0.0009905864108640475
+    },
+    "hazard/no_effects": {
+      "episodes": 3,
+      "wins": 1,
+      "levels": 3,
+      "used": 687,
+      "deaths": 12,
+      "mean_score": 0.00934772794829624
+    },
+    "hazard/no_terrain": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 71,
+      "deaths": 0,
+      "mean_score": 0.2563383769078074
+    },
+    "hazard/no_goals": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 196,
+      "deaths": 0,
+      "mean_score": 0.11930481832331762
+    },
+    "hazard/no_keydoor": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 71,
+      "deaths": 0,
+      "mean_score": 0.2563383769078074
+    },
+    "hazard/no_push": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 71,
+      "deaths": 0,
+      "mean_score": 0.2563383769078074
+    },
+    "hazard/no_hazard_motion": {
+      "episodes": 3,
+      "wins": 3,
+      "levels": 6,
+      "used": 76,
+      "deaths": 1,
+      "mean_score": 0.2268588737529952
+    }
+  },
+  "episodes": [
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 17,
+      "deaths": 0,
+      "score": 0.22376543209876543,
+      "events": {
+        "goal_test": 8
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 21,
+      "deaths": 0,
+      "score": 0.2577777777777778,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 71,
+      "deaths": 0,
+      "score": 0.0136479608698526,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 17,
+      "deaths": 0,
+      "score": 0.22376543209876543,
+      "events": {
+        "goal_test": 8
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 26,
+      "deaths": 0,
+      "score": 0.10167125803489441,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 17,
+      "deaths": 0,
+      "score": 0.22376543209876543,
+      "events": {
+        "goal_test": 8
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 17,
+      "deaths": 0,
+      "score": 0.22376543209876543,
+      "events": {
+        "goal_test": 8
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 0,
+      "genome": {
+        "family": "touch",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 8,
+      "win": true,
+      "levels": 2,
+      "used": 17,
+      "deaths": 0,
+      "score": 0.22376543209876543,
+      "events": {
+        "goal_test": 8
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "genes",
+      "opt": 13,
+      "win": true,
+      "levels": 2,
+      "used": 21,
+      "deaths": 0,
+      "score": 0.3765432098765432,
+      "events": {
+        "goal_test": 13
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "random",
+      "opt": 13,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.03125,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_effects",
+      "opt": 13,
+      "win": true,
+      "levels": 2,
+      "used": 101,
+      "deaths": 0,
+      "score": 0.04046120597906666,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_terrain",
+      "opt": 13,
+      "win": true,
+      "levels": 2,
+      "used": 21,
+      "deaths": 0,
+      "score": 0.3765432098765432,
+      "events": {
+        "goal_test": 13
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_goals",
+      "opt": 13,
+      "win": true,
+      "levels": 2,
+      "used": 79,
+      "deaths": 0,
+      "score": 0.05157725696632329,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_keydoor",
+      "opt": 13,
+      "win": true,
+      "levels": 2,
+      "used": 21,
+      "deaths": 0,
+      "score": 0.3765432098765432,
+      "events": {
+        "goal_test": 13
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_push",
+      "opt": 13,
+      "win": true,
+      "levels": 2,
+      "used": 21,
+      "deaths": 0,
+      "score": 0.3765432098765432,
+      "events": {
+        "goal_test": 13
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 1,
+      "genome": {
+        "family": "touch",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_hazard_motion",
+      "opt": 13,
+      "win": true,
+      "levels": 2,
+      "used": 21,
+      "deaths": 0,
+      "score": 0.3765432098765432,
+      "events": {
+        "goal_test": 13
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 49,
+      "deaths": 2,
+      "score": 0.09081314878892735,
+      "events": {
+        "goal_test": 25,
+        "death": 2
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 175,
+      "deaths": 1,
+      "score": 0.03179822156922942,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 290,
+      "deaths": 11,
+      "score": 0.008503987199685557,
+      "events": {
+        "death": 11
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 11,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 88,
+      "score": 0.010813148788927337,
+      "events": {
+        "goal_test": 190,
+        "death": 88
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 54,
+      "deaths": 0,
+      "score": 0.04235997867690595,
+      "events": {}
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 49,
+      "deaths": 2,
+      "score": 0.09081314878892735,
+      "events": {
+        "goal_test": 25,
+        "death": 2
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 49,
+      "deaths": 2,
+      "score": 0.09081314878892735,
+      "events": {
+        "goal_test": 25,
+        "death": 2
+      }
+    },
+    {
+      "family": "touch",
+      "seed": 2,
+      "genome": {
+        "family": "touch",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 49,
+      "deaths": 2,
+      "score": 0.09081314878892735,
+      "events": {
+        "goal_test": 25,
+        "death": 2
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 17,
+      "win": true,
+      "levels": 2,
+      "used": 26,
+      "deaths": 0,
+      "score": 0.42885487528344673,
+      "events": {
+        "goal_test": 18,
+        "collection": 4
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 17,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 17,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0010330578512396695,
+      "events": {
+        "collection": 22
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 17,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.2222222222222222,
+      "events": {
+        "goal_test": 292,
+        "collection": 2
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 17,
+      "win": true,
+      "levels": 2,
+      "used": 55,
+      "deaths": 0,
+      "score": 0.10330578512396693,
+      "events": {
+        "collection": 6
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 17,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.2222222222222222,
+      "events": {
+        "goal_test": 12,
+        "collection": 30
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 17,
+      "win": true,
+      "levels": 2,
+      "used": 26,
+      "deaths": 0,
+      "score": 0.42885487528344673,
+      "events": {
+        "goal_test": 18,
+        "collection": 4
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 0,
+      "genome": {
+        "family": "keydoor",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 17,
+      "win": true,
+      "levels": 2,
+      "used": 26,
+      "deaths": 0,
+      "score": 0.42885487528344673,
+      "events": {
+        "goal_test": 18,
+        "collection": 4
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "genes",
+      "opt": 27,
+      "win": true,
+      "levels": 2,
+      "used": 41,
+      "deaths": 0,
+      "score": 0.441128125,
+      "events": {
+        "goal_test": 32,
+        "collection": 3
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "random",
+      "opt": 27,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.00092315673828125,
+      "events": {}
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_effects",
+      "opt": 27,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0011536774661047653,
+      "events": {
+        "collection": 7
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_terrain",
+      "opt": 27,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.236328125,
+      "events": {
+        "goal_test": 291,
+        "collection": 2
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_goals",
+      "opt": 27,
+      "win": true,
+      "levels": 2,
+      "used": 115,
+      "deaths": 0,
+      "score": 0.056641787343780996,
+      "events": {
+        "collection": 8
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_keydoor",
+      "opt": 27,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.236328125,
+      "events": {
+        "goal_test": 159,
+        "collection": 3
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_push",
+      "opt": 27,
+      "win": true,
+      "levels": 2,
+      "used": 41,
+      "deaths": 0,
+      "score": 0.441128125,
+      "events": {
+        "goal_test": 32,
+        "collection": 3
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 1,
+      "genome": {
+        "family": "keydoor",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_hazard_motion",
+      "opt": 27,
+      "win": true,
+      "levels": 2,
+      "used": 41,
+      "deaths": 0,
+      "score": 0.441128125,
+      "events": {
+        "goal_test": 32,
+        "collection": 3
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 29,
+      "win": true,
+      "levels": 2,
+      "used": 65,
+      "deaths": 0,
+      "score": 0.22380661259157242,
+      "events": {
+        "goal_test": 45,
+        "collection": 6
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 29,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.008218277449046678,
+      "events": {}
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 29,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "collection": 9
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 29,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.13850415512465372,
+      "events": {
+        "goal_test": 280,
+        "collection": 4
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 29,
+      "win": true,
+      "levels": 2,
+      "used": 65,
+      "deaths": 0,
+      "score": 0.1928125,
+      "events": {
+        "collection": 4
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 29,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.13850415512465372,
+      "events": {
+        "goal_test": 157,
+        "collection": 5
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 29,
+      "win": true,
+      "levels": 2,
+      "used": 65,
+      "deaths": 0,
+      "score": 0.22380661259157242,
+      "events": {
+        "goal_test": 45,
+        "collection": 6
+      }
+    },
+    {
+      "family": "keydoor",
+      "seed": 2,
+      "genome": {
+        "family": "keydoor",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 29,
+      "win": true,
+      "levels": 2,
+      "used": 65,
+      "deaths": 0,
+      "score": 0.22380661259157242,
+      "events": {
+        "goal_test": 45,
+        "collection": 6
+      }
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 15,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.3082357203236324,
+      "events": {
+        "goal_test": 3,
+        "push_plan": 16
+      }
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 15,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 15,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 15,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.3082357203236324,
+      "events": {
+        "goal_test": 3,
+        "push_plan": 16
+      }
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 15,
+      "win": true,
+      "levels": 2,
+      "used": 73,
+      "deaths": 0,
+      "score": 0.04378948469978547,
+      "events": {
+        "push_plan": 16
+      }
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 15,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.3082357203236324,
+      "events": {
+        "goal_test": 3,
+        "push_plan": 16
+      }
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 15,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "goal_test": 188
+      }
+    },
+    {
+      "family": "push",
+      "seed": 0,
+      "genome": {
+        "family": "push",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 15,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.3082357203236324,
+      "events": {
+        "goal_test": 3,
+        "push_plan": 16
+      }
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "genes",
+      "opt": 20,
+      "win": true,
+      "levels": 2,
+      "used": 38,
+      "deaths": 0,
+      "score": 0.3183915473477763,
+      "events": {
+        "goal_test": 8,
+        "push_plan": 21,
+        "deadlock_reset": 1
+      }
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "random",
+      "opt": 20,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_effects",
+      "opt": 20,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_terrain",
+      "opt": 20,
+      "win": true,
+      "levels": 2,
+      "used": 38,
+      "deaths": 0,
+      "score": 0.3183915473477763,
+      "events": {
+        "goal_test": 8,
+        "push_plan": 21,
+        "deadlock_reset": 1
+      }
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_goals",
+      "opt": 20,
+      "win": true,
+      "levels": 2,
+      "used": 92,
+      "deaths": 0,
+      "score": 0.04583015895055207,
+      "events": {
+        "push_plan": 18
+      }
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_keydoor",
+      "opt": 20,
+      "win": true,
+      "levels": 2,
+      "used": 38,
+      "deaths": 0,
+      "score": 0.3183915473477763,
+      "events": {
+        "goal_test": 8,
+        "push_plan": 21,
+        "deadlock_reset": 1
+      }
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_push",
+      "opt": 20,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "goal_test": 296
+      }
+    },
+    {
+      "family": "push",
+      "seed": 1,
+      "genome": {
+        "family": "push",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_hazard_motion",
+      "opt": 20,
+      "win": true,
+      "levels": 2,
+      "used": 38,
+      "deaths": 0,
+      "score": 0.3183915473477763,
+      "events": {
+        "goal_test": 8,
+        "push_plan": 21,
+        "deadlock_reset": 1
+      }
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 32,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "goal_test": 7,
+        "push_plan": 289
+      }
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 32,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 32,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 32,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "goal_test": 7,
+        "push_plan": 289
+      }
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 32,
+      "win": true,
+      "levels": 2,
+      "used": 181,
+      "deaths": 0,
+      "score": 0.05505985614405714,
+      "events": {
+        "push_plan": 75,
+        "deadlock_reset": 3
+      }
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 32,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "goal_test": 7,
+        "push_plan": 289
+      }
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 32,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "goal_test": 296
+      }
+    },
+    {
+      "family": "push",
+      "seed": 2,
+      "genome": {
+        "family": "push",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 32,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "goal_test": 7,
+        "push_plan": 289
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.49111111111111105,
+      "events": {
+        "goal_test": 19,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 92,
+      "deaths": 0,
+      "score": 0.0422965724298141,
+      "events": {}
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 70,
+      "deaths": 0,
+      "score": 0.07661613699912681,
+      "events": {
+        "collection": 4
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.49111111111111105,
+      "events": {
+        "goal_test": 19,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 65,
+      "deaths": 0,
+      "score": 0.1501978342357351,
+      "events": {
+        "collection": 3
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.49111111111111105,
+      "events": {
+        "goal_test": 19,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.49111111111111105,
+      "events": {
+        "goal_test": 19,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 0,
+      "genome": {
+        "family": "seq",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 19,
+      "win": true,
+      "levels": 2,
+      "used": 27,
+      "deaths": 0,
+      "score": 0.49111111111111105,
+      "events": {
+        "goal_test": 19,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "genes",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 31,
+      "deaths": 0,
+      "score": 0.2385381235827664,
+      "events": {
+        "goal_test": 22,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "random",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 198,
+      "deaths": 0,
+      "score": 0.006131690501825757,
+      "events": {}
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_effects",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 246,
+      "deaths": 0,
+      "score": 0.01917547849716446,
+      "events": {
+        "collection": 6
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_terrain",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 31,
+      "deaths": 0,
+      "score": 0.2385381235827664,
+      "events": {
+        "goal_test": 22,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_goals",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 71,
+      "deaths": 0,
+      "score": 0.077537865649208,
+      "events": {
+        "collection": 3
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_keydoor",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 31,
+      "deaths": 0,
+      "score": 0.2385381235827664,
+      "events": {
+        "goal_test": 22,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_push",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 31,
+      "deaths": 0,
+      "score": 0.2385381235827664,
+      "events": {
+        "goal_test": 22,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 1,
+      "genome": {
+        "family": "seq",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_hazard_motion",
+      "opt": 16,
+      "win": true,
+      "levels": 2,
+      "used": 31,
+      "deaths": 0,
+      "score": 0.2385381235827664,
+      "events": {
+        "goal_test": 22,
+        "collection": 2
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 34,
+      "win": true,
+      "levels": 2,
+      "used": 60,
+      "deaths": 0,
+      "score": 0.32006938067544133,
+      "events": {
+        "goal_test": 52,
+        "collection": 4
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 34,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 34,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {
+        "collection": 10
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 34,
+      "win": true,
+      "levels": 2,
+      "used": 60,
+      "deaths": 0,
+      "score": 0.32006938067544133,
+      "events": {
+        "goal_test": 52,
+        "collection": 4
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 34,
+      "win": true,
+      "levels": 2,
+      "used": 233,
+      "deaths": 0,
+      "score": 0.03633507907337202,
+      "events": {
+        "collection": 6
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 34,
+      "win": true,
+      "levels": 2,
+      "used": 60,
+      "deaths": 0,
+      "score": 0.32006938067544133,
+      "events": {
+        "goal_test": 52,
+        "collection": 4
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 34,
+      "win": true,
+      "levels": 2,
+      "used": 60,
+      "deaths": 0,
+      "score": 0.32006938067544133,
+      "events": {
+        "goal_test": 52,
+        "collection": 4
+      }
+    },
+    {
+      "family": "seq",
+      "seed": 2,
+      "genome": {
+        "family": "seq",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 34,
+      "win": true,
+      "levels": 2,
+      "used": 60,
+      "deaths": 0,
+      "score": 0.32006938067544133,
+      "events": {
+        "goal_test": 52,
+        "collection": 4
+      }
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 5,
+      "win": true,
+      "levels": 2,
+      "used": 9,
+      "deaths": 0,
+      "score": 0.5555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 5,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 3.0517578125e-05,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 5,
+      "win": true,
+      "levels": 2,
+      "used": 9,
+      "deaths": 0,
+      "score": 0.5555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 5,
+      "win": true,
+      "levels": 2,
+      "used": 9,
+      "deaths": 0,
+      "score": 0.5555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 5,
+      "win": true,
+      "levels": 2,
+      "used": 9,
+      "deaths": 0,
+      "score": 0.5555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 5,
+      "win": true,
+      "levels": 2,
+      "used": 9,
+      "deaths": 0,
+      "score": 0.5555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 5,
+      "win": true,
+      "levels": 2,
+      "used": 9,
+      "deaths": 0,
+      "score": 0.5555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 0,
+      "genome": {
+        "family": "click",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 5,
+      "win": true,
+      "levels": 2,
+      "used": 9,
+      "deaths": 0,
+      "score": 0.5555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "genes",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 14,
+      "deaths": 0,
+      "score": 0.52,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "random",
+      "opt": 6,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0004455335263978614,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_effects",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 14,
+      "deaths": 0,
+      "score": 0.52,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_terrain",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 14,
+      "deaths": 0,
+      "score": 0.52,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_goals",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 14,
+      "deaths": 0,
+      "score": 0.52,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_keydoor",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 14,
+      "deaths": 0,
+      "score": 0.52,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_push",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 14,
+      "deaths": 0,
+      "score": 0.52,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 1,
+      "genome": {
+        "family": "click",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_hazard_motion",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 14,
+      "deaths": 0,
+      "score": 0.52,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 22,
+      "deaths": 0,
+      "score": 0.07555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 6,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 0,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 22,
+      "deaths": 0,
+      "score": 0.07555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 22,
+      "deaths": 0,
+      "score": 0.07555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 22,
+      "deaths": 0,
+      "score": 0.07555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 22,
+      "deaths": 0,
+      "score": 0.07555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 22,
+      "deaths": 0,
+      "score": 0.07555555555555556,
+      "events": {}
+    },
+    {
+      "family": "click",
+      "seed": 2,
+      "genome": {
+        "family": "click",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 6,
+      "win": true,
+      "levels": 2,
+      "used": 22,
+      "deaths": 0,
+      "score": 0.07555555555555556,
+      "events": {}
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 23,
+      "deaths": 0,
+      "score": 0.2699704142011834,
+      "events": {
+        "goal_test": 11
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 12,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 12,
+      "score": 0.0003462603878116343,
+      "events": {}
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 87,
+      "deaths": 3,
+      "score": 0.02787422839506173,
+      "events": {
+        "death": 3
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 23,
+      "deaths": 0,
+      "score": 0.2699704142011834,
+      "events": {
+        "goal_test": 11
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 25,
+      "deaths": 0,
+      "score": 0.2338888888888889,
+      "events": {}
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 23,
+      "deaths": 0,
+      "score": 0.2699704142011834,
+      "events": {
+        "goal_test": 11
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 23,
+      "deaths": 0,
+      "score": 0.2699704142011834,
+      "events": {
+        "goal_test": 11
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 0,
+      "genome": {
+        "family": "hazard",
+        "n": 5,
+        "density": 0.0,
+        "extra": 0,
+        "n_levels": 2,
+        "perm": 0,
+        "palette": 73,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 23,
+      "deaths": 0,
+      "score": 0.2699704142011834,
+      "events": {
+        "goal_test": 11
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "genes",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.2437755102040816,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "random",
+      "opt": 11,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 4,
+      "score": 0.0026254988447805085,
+      "events": {}
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_effects",
+      "opt": 11,
+      "win": false,
+      "levels": 1,
+      "used": 300,
+      "deaths": 7,
+      "score": 0.00016895544982698963,
+      "events": {
+        "death": 7
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_terrain",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.2437755102040816,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_goals",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 61,
+      "deaths": 0,
+      "score": 0.11193422296186721,
+      "events": {}
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_keydoor",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.2437755102040816,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_push",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.2437755102040816,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 1,
+      "genome": {
+        "family": "hazard",
+        "n": 6,
+        "density": 0.05,
+        "extra": 1,
+        "n_levels": 2,
+        "perm": 7,
+        "palette": 1082,
+        "noop": 1
+      },
+      "variant": "no_hazard_motion",
+      "opt": 11,
+      "win": true,
+      "levels": 2,
+      "used": 29,
+      "deaths": 1,
+      "score": 0.155337000739645,
+      "events": {
+        "goal_test": 16,
+        "death": 1
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "genes",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.25526920631815736,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "random",
+      "opt": 12,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 2,
+      "score": 0.0,
+      "events": {}
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_effects",
+      "opt": 12,
+      "win": false,
+      "levels": 0,
+      "used": 300,
+      "deaths": 2,
+      "score": 0.0,
+      "events": {
+        "death": 2
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_terrain",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.25526920631815736,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_goals",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 110,
+      "deaths": 0,
+      "score": 0.012091343119196747,
+      "events": {}
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_keydoor",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.25526920631815736,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_push",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.25526920631815736,
+      "events": {
+        "goal_test": 12
+      }
+    },
+    {
+      "family": "hazard",
+      "seed": 2,
+      "genome": {
+        "family": "hazard",
+        "n": 7,
+        "density": 0.1,
+        "extra": 2,
+        "n_levels": 2,
+        "perm": 14,
+        "palette": 2091,
+        "noop": 0
+      },
+      "variant": "no_hazard_motion",
+      "opt": 12,
+      "win": true,
+      "levels": 2,
+      "used": 24,
+      "deaths": 0,
+      "score": 0.25526920631815736,
+      "events": {
+        "goal_test": 12
+      }
+    }
+  ]
+}

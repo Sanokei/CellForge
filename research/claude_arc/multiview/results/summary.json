@@ -1,0 +1,387 @@
+{
+ "dev_buckets": "1-4",
+ "val_bucket": "0",
+ "dev": {
+  "A baseline (existing, full)": {
+   "solved": 101,
+   "fp": 14,
+   "consistent": 115,
+   "sec_per_task": 1.54,
+   "n": 772
+  },
+  "B mv@g0 + existing full": {
+   "solved": 112,
+   "fp": 13,
+   "consistent": 125,
+   "sec_per_task": 1.73,
+   "n": 772
+  },
+  "B mv@g1 + existing full": {
+   "solved": 112,
+   "fp": 13,
+   "consistent": 125,
+   "sec_per_task": 1.73,
+   "n": 772
+  },
+  "B mv@g2 + existing full": {
+   "solved": 119,
+   "fp": 15,
+   "consistent": 134,
+   "sec_per_task": 1.73,
+   "n": 772
+  },
+  "B mv@g3 + existing full": {
+   "solved": 119,
+   "fp": 15,
+   "consistent": 134,
+   "sec_per_task": 1.73,
+   "n": 772
+  },
+  "B mv@g4 + existing full": {
+   "solved": 119,
+   "fp": 15,
+   "consistent": 134,
+   "sec_per_task": 1.73,
+   "n": 772
+  },
+  "D existing@g0 only (no mv)": {
+   "solved": 97,
+   "fp": 12,
+   "consistent": 109,
+   "sec_per_task": 0.46,
+   "n": 772
+  },
+  "D existing@g1 only (no mv)": {
+   "solved": 98,
+   "fp": 11,
+   "consistent": 109,
+   "sec_per_task": 0.54,
+   "n": 772
+  },
+  "D existing@g2 only (no mv)": {
+   "solved": 101,
+   "fp": 11,
+   "consistent": 112,
+   "sec_per_task": 0.67,
+   "n": 772
+  },
+  "D existing@g3 only (no mv)": {
+   "solved": 102,
+   "fp": 13,
+   "consistent": 115,
+   "sec_per_task": 1.0,
+   "n": 772
+  },
+  "D existing@g4 only (no mv)": {
+   "solved": 101,
+   "fp": 14,
+   "consistent": 115,
+   "sec_per_task": 1.54,
+   "n": 772
+  },
+  "E existing@g0 + mv@g0": {
+   "solved": 108,
+   "fp": 11,
+   "consistent": 119,
+   "sec_per_task": 0.65,
+   "n": 772
+  },
+  "E existing@g1 + mv@g1": {
+   "solved": 109,
+   "fp": 10,
+   "consistent": 119,
+   "sec_per_task": 0.72,
+   "n": 772
+  },
+  "E existing@g2 + mv@g2": {
+   "solved": 119,
+   "fp": 12,
+   "consistent": 131,
+   "sec_per_task": 0.86,
+   "n": 772
+  },
+  "E existing@g3 + mv@g3": {
+   "solved": 120,
+   "fp": 14,
+   "consistent": 134,
+   "sec_per_task": 1.19,
+   "n": 772
+  },
+  "E existing@g4 + mv@g4": {
+   "solved": 119,
+   "fp": 15,
+   "consistent": 134,
+   "sec_per_task": 1.73,
+   "n": 772
+  },
+  "F random-g control (mean of 5 seeds; existing+mv)": {
+   "solved": 114.6,
+   "fp": 12.8,
+   "consistent": 127.4,
+   "sec_per_task": 1.01,
+   "n": 772,
+   "solved_min": 112,
+   "solved_max": 116
+  }
+ },
+ "val": {
+  "A baseline (existing, full)": {
+   "solved": 29,
+   "fp": 5,
+   "consistent": 34,
+   "sec_per_task": 1.61,
+   "n": 228
+  },
+  "B mv@g0 + existing full": {
+   "solved": 30,
+   "fp": 5,
+   "consistent": 35,
+   "sec_per_task": 1.79,
+   "n": 228
+  },
+  "B mv@g1 + existing full": {
+   "solved": 30,
+   "fp": 5,
+   "consistent": 35,
+   "sec_per_task": 1.79,
+   "n": 228
+  },
+  "B mv@g2 + existing full": {
+   "solved": 31,
+   "fp": 5,
+   "consistent": 36,
+   "sec_per_task": 1.79,
+   "n": 228
+  },
+  "B mv@g3 + existing full": {
+   "solved": 31,
+   "fp": 5,
+   "consistent": 36,
+   "sec_per_task": 1.79,
+   "n": 228
+  },
+  "B mv@g4 + existing full": {
+   "solved": 31,
+   "fp": 5,
+   "consistent": 36,
+   "sec_per_task": 1.79,
+   "n": 228
+  },
+  "D existing@g0 only (no mv)": {
+   "solved": 27,
+   "fp": 3,
+   "consistent": 30,
+   "sec_per_task": 0.49,
+   "n": 228
+  },
+  "D existing@g1 only (no mv)": {
+   "solved": 28,
+   "fp": 2,
+   "consistent": 30,
+   "sec_per_task": 0.56,
+   "n": 228
+  },
+  "D existing@g2 only (no mv)": {
+   "solved": 29,
+   "fp": 2,
+   "consistent": 31,
+   "sec_per_task": 0.7,
+   "n": 228
+  },
+  "D existing@g3 only (no mv)": {
+   "solved": 29,
+   "fp": 5,
+   "consistent": 34,
+   "sec_per_task": 1.04,
+   "n": 228
+  },
+  "D existing@g4 only (no mv)": {
+   "solved": 29,
+   "fp": 5,
+   "consistent": 34,
+   "sec_per_task": 1.61,
+   "n": 228
+  },
+  "E existing@g0 + mv@g0": {
+   "solved": 28,
+   "fp": 3,
+   "consistent": 31,
+   "sec_per_task": 0.67,
+   "n": 228
+  },
+  "E existing@g1 + mv@g1": {
+   "solved": 29,
+   "fp": 2,
+   "consistent": 31,
+   "sec_per_task": 0.74,
+   "n": 228
+  },
+  "E existing@g2 + mv@g2": {
+   "solved": 31,
+   "fp": 2,
+   "consistent": 33,
+   "sec_per_task": 0.88,
+   "n": 228
+  },
+  "E existing@g3 + mv@g3": {
+   "solved": 31,
+   "fp": 5,
+   "consistent": 36,
+   "sec_per_task": 1.22,
+   "n": 228
+  },
+  "E existing@g4 + mv@g4": {
+   "solved": 31,
+   "fp": 5,
+   "consistent": 36,
+   "sec_per_task": 1.79,
+   "n": 228
+  },
+  "F random-g control (mean of 5 seeds; existing+mv)": {
+   "solved": 30.0,
+   "fp": 3.2,
+   "consistent": 33.2,
+   "sec_per_task": 1.09,
+   "n": 228,
+   "solved_min": 30,
+   "solved_max": 30
+  }
+ },
+ "dev_selected_arm": "E existing@g3 + mv@g3",
+ "val_of_selected": {
+  "solved": 31,
+  "fp": 5,
+  "consistent": 36,
+  "sec_per_task": 1.22,
+  "n": 228
+ },
+ "contrib_dev": {
+  "rescued_by_family": {
+   "mv_px/hist+pix|src:obj": 1,
+   "mv_px/proj": 1,
+   "mv_px/pix|src:pix": 1,
+   "mv_px/pix|src:sym": 4,
+   "mv_px/obj+pix|src:sym": 1,
+   "mv_px/hist": 1,
+   "mv_px/hist+pix": 1,
+   "mv_px/pix+sym": 2,
+   "mv_px/obj|src:pix+proj": 1,
+   "mv_px/sym|src:sym": 1,
+   "mv_px/pix+proj|src:sym": 1,
+   "mv_px/obj|src:sym": 1,
+   "mv_blk": 1,
+   "mv_px/pix+sym|src:pix+sym": 1
+  },
+  "rescued": [
+   [
+    "09c534e7.json",
+    "px:n8same+crank"
+   ],
+   [
+    "25d8a9c8.json",
+    "px:row_same"
+   ],
+   [
+    "66e6c45b.json",
+    "px:n4nz"
+   ],
+   [
+    "7f4411dc.json",
+    "px:n4nz"
+   ],
+   [
+    "91714a58.json",
+    "px:n8same+o_largest"
+   ],
+   [
+    "9caf5b84.json",
+    "px:crank"
+   ],
+   [
+    "a5f85a15.json",
+    "px:par_j+crank"
+   ],
+   [
+    "a8610ef7.json",
+    "px:colour+sy_V"
+   ],
+   [
+    "ba97ae07.json",
+    "px:o_size"
+   ],
+   [
+    "c35c1b4c.json",
+    "px:sy_H"
+   ],
+   [
+    "ce039d91.json",
+    "px:colour+sy_H"
+   ],
+   [
+    "d23f8c26.json",
+    "px:is_bg+col_max"
+   ],
+   [
+    "d5d6de2d.json",
+    "px:o_inbox"
+   ],
+   [
+    "e57337a4.json",
+    "blk:b_nnz"
+   ],
+   [
+    "e729b7be.json",
+    "px:is_bg"
+   ],
+   [
+    "e9afcf9a.json",
+    "px:par_j"
+   ],
+   [
+    "f25ffba3.json",
+    "px:is_bg"
+   ],
+   [
+    "f76d97a5.json",
+    "px:is_bg+per_role"
+   ]
+  ],
+  "tasks_with_a_correct_mv_candidate": {
+   "mv_px/hist+pix": 2,
+   "mv_px/obj+pix": 10,
+   "mv_px/pix": 21,
+   "mv_px/proj": 2,
+   "mv_px/obj": 5,
+   "mv_blk": 3,
+   "mv_px/hist": 2,
+   "mv_px/pix+sym": 3,
+   "mv_px/sym": 1,
+   "mv_px/pix+proj": 1
+  },
+  "harmed_by_mv_full": []
+ },
+ "contrib_val": {
+  "rescued_by_family": {
+   "mv_px/hist+obj|src:obj+sym": 1,
+   "mv_px/pix|src:hist+pix": 1
+  },
+  "rescued": [
+   [
+    "b7256dcd.json",
+    "px:o_n_adj+cnt_rank_top"
+   ],
+   [
+    "fc754716.json",
+    "px:n8same"
+   ]
+  ],
+  "tasks_with_a_correct_mv_candidate": {
+   "mv_px/pix": 5,
+   "mv_px/obj": 1,
+   "mv_px/hist+obj": 1,
+   "mv_px/hist+pix": 1,
+   "mv_px/obj+sym": 1
+  },
+  "harmed_by_mv_full": []
+ }
+}
