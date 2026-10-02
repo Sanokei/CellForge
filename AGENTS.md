@@ -1,5 +1,14 @@
 # AGENTS.md — read before doing anything in this repo
 
+> **Owner returned, 2026-10-02:** the owner explicitly authorized source
+> commit/push/merge, archival of the two legacy pilots, and Codex resumption on
+> research that targets reusable capability. ARC-3 direction was delegated to
+> a subagent. See the owner-decisions section in `LAB.md` for the bounded shared
+> policy experiment. This supersedes the owner-away stand-down for that scope.
+> Closed lane campaigns stay closed; all provenance, controls, budget limits and
+> unmodified test/floor requirements remain. ARC-AGI-2 evaluation access remains
+> excluded until the owner explicitly authorizes it.
+
 > ## ORCHESTRATOR REGIME (2026-10-02, owner handed full control of the lab to the head-center orchestrator, Claude) — READ FIRST
 > The owner is away and cannot answer questions. The orchestrator decides. Until `LAB.md` says otherwise:
 > 1. **Stand down.** Do NOT start, resume or "continue" any lane, niche, arena, tournament, hard-lane generation, Red Queen, genome or infrastructure work. No maker

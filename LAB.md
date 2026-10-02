@@ -48,6 +48,37 @@ same positions; nothing self-reported counts, only recomputation; never edit `AR
 `tests.test_one_standard` + `tests.test_standard_semantic`: 5 failures, all in two legacy local pilots (`runs/weights-cell-population-g1`, `runs/weights-arc-best-a5-v1`), which
 already declare their limits in their own STANDARD.json. `tests.test_arc_goal` needs `ARC_ROOT` (server only). Owner to archive or fix.
 
+## Owner decisions and Codex resumption (2026-10-02)
+The owner returned and authorized committing/pushing/merging the source snapshot,
+archiving both legacy pilots, and resuming useful research. This supersedes the
+owner-away stand-down for the bounded experiment below; other closed lanes stay closed.
+The ARC-3 direction was explicitly delegated to a subagent.
+
+Archive state verified locally: `weights-arc-best-a5-v1` is preserved under
+`runs/_archive_legacy/`; `weights-cell-population-g1` retains its location for
+population recomputation, with `STANDARD.archived.json` and `ARCHIVED.md`.
+No tests were changed. On 2026-10-02 the two standard suites ran 25 tests in
+38.842 seconds, OK. The previous five failures are historical, not current.
+
+Research decision: stop spending on routine game-specific ARC-3 campaigns.
+Test a single shared policy/tensor set that learns from its action/frame history,
+without game-ID routing. First step: one metered founder proposal on a frozen
+three-game development panel, with zero, three random-tensor draws and blind
+controls, then stop and assess. See `docs/ARC3_NEXT_EXPERIMENT.md` for the full
+bounded protocol. Existing public games are development evidence, never newly
+held-out games. Neither a passing pilot nor the existing ARC floor establishes AGI.
+The ARC-AGI-2 evaluation split remains excluded unless the owner explicitly lifts
+that restriction; a clarification is pending.
+
+Broader architecture verification was also run: 78 tests in 47.756 seconds,
+FAILED (2). `test_action_verification` rejects the corrected-g3 saved population
+against changed installed `cell_population` source and differing replay budgets /
+membership; `test_circuit_population` expects admission using claimed outcomes
+without the execution evidence now required by `CircuitArchive`. These failures
+predate the shared-policy runner changes. Do not weaken the fail-closed admission
+or rehash historical receipts to hide them. Full log:
+`reports/owner-resumption-gates-20261002.log`.
+
 ## 6. Decisions only the owner can make
 1. ARC-AGI-2 public EVALUATION split: run the frozen structure-bank protocol once on its 120 tasks (about 120-250 maker calls, roughly 2-5% of a weekly limit). This is the only
    honest novelty test; without it "95% on training" means "the maker knows ARC training tasks".
