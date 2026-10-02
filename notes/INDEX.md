@@ -1,3 +1,5 @@
+> **2026-10-02: start at `/LAB.md` (repo root). It supersedes the reading order below; everything listed here is evidence or history, not current instructions.**
+
 # notes/ and docs/ index
 
 Generated 2026-09-30 11:30 from file times, read-only `git ls-files` / `git status --short`, and first lines / keyword counts of each file. Owner-agent attributions are inferred from file names, mentions and notes/MESSAGE_FOR_CODEX.md and notes/RESEARCH_LOOP.md; "Likely"/"Unknown" means not stated in the file. Nothing was moved or edited. Codex is editing these directories concurrently, so dates drift.

@@ -294,7 +294,7 @@ def cmd_export(args):
     g = r.load_graph(args.graph)
     out = Path(args.out)
     h = g.save(out)
-    card = {"model_hash": h, "stats": g.stats(), "vocab": g.meta["vocab"],
+    card = {"model_hash": h, "stats": g.stats(), "vocab": g.meta.get("vocab"),
             "pixel_contract": g.meta.get("pixel_contract"), "task": g.meta.get("task", "ocr"), "primitive_version": g.meta.get("primitive_version"),
             "bootstrap": g.meta.get("bootstrap"), "run_protocol": r.cfg["protocol"],
             "inference_dependencies": ["numpy", "cellforge.runtime (ops/interp/decoder)", "cellforge.ir.graph"],
@@ -316,6 +316,69 @@ def cmd_predict(args):
         raise SystemExit(f"image must be {pc['height']}x{pc['width']} (got {img.shape})")
     preds, info = decode(g, img[None])
     _print({"prediction": preds[0], "failure": info["failure"][0]})
+
+
+def cmd_generate_text(args):
+    from .ir.graph import Graph
+    from .runtime.lm import generate
+    graph = Graph.load(args.artifact)
+    if graph.meta.get("task") != "lm":
+        raise SystemExit("generate-text requires a language-model artifact")
+    if args.max_tokens <= 0:
+        raise SystemExit("--max-tokens must be positive")
+    prompt = Path(args.prompt_file).read_text(encoding="utf-8") if args.prompt_file else (args.prompt or "")
+    texts, info = generate(graph, 1, max_len=args.max_tokens, temperature=args.temperature,
+                           seed=args.seed, prompts=[prompt], backend=args.backend,
+                           state_only_prefill=args.state_only_prefill)
+    _print({"model_hash": graph.hash(), "text": texts[0], "failure": info["failure"][0],
+            "generated_tokens": len(info["token_ids"][0]), "token_ids": info["token_ids"][0],
+            "backend": info["backend"], "state_only_prefill": info["state_only_prefill"],
+            "counter_scope": info["counter_scope"],
+            "text_codec": info["text_codec"], "exec": info["exec"]})
+
+
+def cmd_specialist_chat(args):
+    from PIL import Image
+    from .ir.graph import Graph
+    from .runtime.specialists import run_model_with_specialist
+    graph = Graph.load(args.artifact)
+    prompt = Path(args.prompt_file).read_text(encoding="utf-8") if args.prompt_file else args.prompt
+    images = {}
+    for specification in args.image:
+        image_id, separator, path = specification.partition("=")
+        if not separator or not image_id or not path or image_id in images:
+            raise SystemExit("--image requires a unique ID=path")
+        with Image.open(path) as image:
+            images[image_id] = np.asarray(image.convert("L"), dtype=np.uint8).copy()
+    def load(path):
+        return Graph.load(path) if path else None
+    result = run_model_with_specialist(
+        graph, prompt, load(args.arc_artifact), binding_graph=load(args.binding_artifact),
+        arithmetic_graph=load(args.arithmetic_artifact), ocr_graph=load(args.ocr_artifact),
+        deduction_graph=load(args.deduction_artifact),
+        images=images, observation_mode=args.observation_mode,
+        backend=args.backend, state_only_prefill=args.state_only_prefill,
+        max_steps=args.max_steps, max_action_tokens=args.max_action_tokens,
+        max_context_bytes=args.max_context_bytes)
+    _print(result)
+
+
+def cmd_document_answer(args):
+    from PIL import Image
+    from .ir.graph import Graph
+    from .runtime.document import DocumentBudget, DocumentPredictor
+    pages = []
+    for path in args.page:
+        with Image.open(path) as image:
+            pages.append(np.asarray(image.convert("L"), dtype=np.uint8).copy())
+    question = Path(args.question_file).read_text(encoding="utf-8") if args.question_file else args.question
+    predictor = DocumentPredictor(Graph.load(args.artifact), Graph.load(args.ocr_artifact),
+                                  DocumentBudget(max_pages=args.max_pages, max_crops=args.max_crops,
+                                                 max_answer_tokens=args.max_answer_tokens),
+                                  observation_format=args.observation_format, backend=args.backend,
+                                  state_only_prefill=args.state_only_prefill)
+    _print(predictor({"pages": pages, "question": question}, observation_mode=args.observation_mode,
+                     shuffle_seed=args.shuffle_seed))
 
 
 def cmd_evaluate(args):
@@ -401,6 +464,37 @@ def main(argv=None):
     p.add_argument("--out", required=True); p.set_defaults(fn=cmd_export)
     p = sp.add_parser("predict"); p.add_argument("--artifact", required=True); p.add_argument("--image", required=True)
     p.set_defaults(fn=cmd_predict)
+    p = sp.add_parser("generate-text"); p.add_argument("--artifact", required=True)
+    prompt = p.add_mutually_exclusive_group(); prompt.add_argument("--prompt"); prompt.add_argument("--prompt-file")
+    p.add_argument("--max-tokens", type=int, default=128); p.add_argument("--temperature", type=float, default=0)
+    p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--backend", choices=["reference", "compiled"], default="reference")
+    p.add_argument("--state-only-prefill", action="store_true"); p.set_defaults(fn=cmd_generate_text)
+    p = sp.add_parser("specialist-chat"); p.add_argument("--artifact", required=True)
+    prompt = p.add_mutually_exclusive_group(required=True)
+    prompt.add_argument("--prompt"); prompt.add_argument("--prompt-file")
+    for name in ("arc", "binding", "arithmetic", "ocr", "deduction"):
+        p.add_argument("--" + name + "-artifact")
+    p.add_argument("--image", action="append", default=[], metavar="ID=PATH")
+    p.add_argument("--observation-mode", choices=["actual", "withheld"], default="actual")
+    p.add_argument("--max-steps", type=int, default=4)
+    p.add_argument("--max-action-tokens", type=int, default=2048)
+    p.add_argument("--max-context-bytes", type=int, default=65536)
+    p.add_argument("--backend", choices=["reference", "compiled"], default="reference")
+    p.add_argument("--state-only-prefill", action="store_true")
+    p.set_defaults(fn=cmd_specialist_chat)
+    p = sp.add_parser("document-answer"); p.add_argument("--artifact", required=True)
+    p.add_argument("--ocr-artifact", required=True); p.add_argument("--page", action="append", required=True)
+    question = p.add_mutually_exclusive_group(required=True)
+    question.add_argument("--question"); question.add_argument("--question-file")
+    p.add_argument("--max-pages", type=int, default=64); p.add_argument("--max-crops", type=int, default=4096)
+    p.add_argument("--max-answer-tokens", type=int, default=1024)
+    p.add_argument("--observation-format", choices=["full", "compact"], default="full")
+    p.add_argument("--backend", choices=["reference", "compiled"], default="reference")
+    p.add_argument("--state-only-prefill", action="store_true")
+    p.add_argument("--observation-mode", choices=["actual", "withheld", "shuffled"], default="actual")
+    p.add_argument("--shuffle-seed", type=int, default=0)
+    p.set_defaults(fn=cmd_document_answer)
     p = sp.add_parser("evaluate"); p.add_argument("--artifact", required=True); p.add_argument("--dataset", required=True)
     p.set_defaults(fn=cmd_evaluate)
     p = sp.add_parser("memory"); p.add_argument("mcmd", choices=["query", "record", "inspect", "check-evidence"])

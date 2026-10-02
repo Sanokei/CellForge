@@ -20,13 +20,14 @@ import numpy as np
 from ..ir.graph import Graph, GraphError
 from .decoder import BOS, EOS, PAD
 from .interp import Interpreter
+from .text_codec import BYTE_CODEC, encode_content, decode_content
 
 FAILURE_BITS = 8.0
 
 
-def encode_text(vocab: list[str], text: str) -> list[int]:
+def encode_text(vocab: list[str], text: str, codec=None) -> list[int]:
     idx = {c: i for i, c in enumerate(vocab)}
-    return [idx[BOS]] + [idx[c] for c in text] + [idx[EOS]]
+    return [idx[BOS]] + encode_content(vocab, text, codec) + [idx[EOS]]
 
 
 def _log2_softmax(logits: np.ndarray) -> np.ndarray:
@@ -40,7 +41,7 @@ def score_texts(graph: Graph, texts: list[str], collect_routes: bool = False):
     V = len(vocab)
     K = int(graph.meta.get("ctx_len", 8))
     S = int(graph.meta.get("state_dim", 0))
-    seqs = [encode_text(vocab, t) for t in texts]
+    seqs = [encode_text(vocab, t, graph.meta.get("text_codec")) for t in texts]
     B = len(seqs)
     T = max(len(s) for s in seqs)
     tok = np.zeros((B, T), dtype=np.int64)
@@ -82,30 +83,46 @@ def score_texts(graph: Graph, texts: list[str], collect_routes: bool = False):
         correct[rows] += (np.argmax(np.where(np.isfinite(lg), lg, -np.inf), axis=1) == tgt)
         state[rows] = np.where(np.isfinite(ns), ns, 0.0)
     n_tok = L - 1
-    bits = np.where(failed, FAILURE_BITS * n_tok, bits)
-    info = {"exec": it.stats.as_dict(), "per_pos_bits": per_pos_bits, "tokens": tok, "lengths": L}
+    failure_bits = max(FAILURE_BITS, float(np.log2(V) + 1)) if graph.meta.get("text_codec") == BYTE_CODEC else FAILURE_BITS
+    bits = np.where(failed, failure_bits * n_tok, bits)
+    if graph.meta.get("text_codec") == BYTE_CODEC:
+        correct = np.where(failed, 0, correct)
+    info = {"exec": it.stats.as_dict(), "per_pos_bits": per_pos_bits, "tokens": tok, "lengths": L,
+            "token_unit": "utf8_byte" if graph.meta.get("text_codec") == BYTE_CODEC else "character",
+            "failure_bits_per_token": failure_bits}
     return {"bits": bits, "n_tokens": n_tok, "correct": correct, "failed": failed}, info
 
 
 def generate(graph: Graph, n: int, max_len: int = 200, temperature: float = 0.0, seed: int = 0,
-             prompts: list[str] | None = None):
+             prompts: list[str] | None = None, *, backend: str = "reference",
+             state_only_prefill: bool = False):
     """Free-running generation. temperature 0 = greedy. Sampling randomness lives in
     the driver (seeded), not in the model."""
+    if backend not in ("reference", "compiled"):
+        raise ValueError("backend must be reference or compiled")
+    if state_only_prefill and backend != "compiled":
+        raise ValueError("state-only prefill requires the compiled backend")
     vocab = graph.meta["vocab"]
     V = len(vocab)
     K = int(graph.meta.get("ctx_len", 8))
     S = int(graph.meta.get("state_dim", 0))
     rng = np.random.default_rng(seed)
     eos, bos = vocab.index(EOS), vocab.index(BOS)
-    idx = {c: i for i, c in enumerate(vocab)}
     prompts = prompts or [""] * n
+    if len(prompts) != n:
+        raise ValueError("one prompt is required per generated sequence")
     ctx = np.zeros((n, K, V))
     state = np.zeros((n, S))
     out_tokens: list[list[int]] = [[] for _ in range(n)]
     done = np.zeros(n, dtype=bool)
     failure = [None] * n
-    it = Interpreter(graph)
-    feed = [[bos] + [idx[c] for c in p] for p in prompts]
+    if backend == "compiled":
+        from .compiled import CompiledInterpreter
+        it = CompiledInterpreter(graph)
+        it.assert_frozen()
+    else:
+        it = Interpreter(graph)
+    feed = [[bos] + encode_content(vocab, p, graph.meta.get("text_codec")) for p in prompts]
     total = max(len(f) for f in feed) + max_len
     for t in range(total):
         rows = np.nonzero(~done)[0]
@@ -115,10 +132,18 @@ def generate(graph: Graph, n: int, max_len: int = 200, temperature: float = 0.0,
         ctx[rows] = np.roll(ctx[rows], -1, axis=1)
         ctx[rows, K - 1] = 0.0
         ctx[rows, K - 1, cur] = 1.0
-        out = it.run_bundle(graph.entries["step"], {"ctx": ctx[rows], "prev": ctx[rows, K - 1],
-                                                    "step": np.full((rows.size, 1), float(t)),
-                                                    "state": state[rows]}, "/gen")
-        lg = np.asarray(out["logits"]).reshape(rows.size, -1)
+        inputs = {"ctx": ctx[rows], "prev": ctx[rows, K - 1],
+                  "step": np.full((rows.size, 1), float(t)), "state": state[rows]}
+        # Demand only state when every active row still consumes prompt bytes.
+        # Mixed prompt/generation batches retain full eager execution. All state
+        # dependencies execute; teacher-forced scoring is unchanged.
+        demand_state = (state_only_prefill and all(t + 1 < len(feed[i]) for i in rows)
+                        and "state" in graph.defs[graph.entries["step"]]["outputs"])
+        if demand_state:
+            out = it.run_bundle_outputs(graph.entries["step"], inputs, ["state"], "/gen")
+        else:
+            out = it.run_bundle(graph.entries["step"], inputs, "/gen")
+        lg = None if demand_state else np.asarray(out["logits"]).reshape(rows.size, -1)
         ns = np.asarray(out.get("state", np.zeros((rows.size, S)))).reshape(rows.size, -1)
         state[rows] = np.where(np.isfinite(ns), ns, 0.0)
         for j, i in enumerate(rows):
@@ -145,5 +170,16 @@ def generate(graph: Graph, n: int, max_len: int = 200, temperature: float = 0.0,
                 if len(out_tokens[i]) >= max_len:
                     done[i] = True
                     failure[i] = failure[i] or "max_len"
-    texts = ["".join(vocab[c] for c in toks) for toks in out_tokens]
-    return texts, {"failure": failure, "exec": it.stats.as_dict()}
+    texts = []
+    for i, tokens in enumerate(out_tokens):
+        try:
+            texts.append(decode_content(vocab, tokens, graph.meta.get("text_codec")))
+        except UnicodeDecodeError:
+            # Preserve malformed byte output as explicit evidence; the driver
+            # does not repair the model's tokens into apparently valid text.
+            texts.append(None)
+            failure[i] = "invalid_utf8"
+    return texts, {"failure": failure, "exec": it.stats.as_dict(), "token_ids": out_tokens,
+                   "text_codec": graph.meta.get("text_codec", "characters"),
+                   "backend": backend, "state_only_prefill": state_only_prefill,
+                   "counter_scope": "demanded closure semantic operations" if state_only_prefill else "full eager semantic operations"}

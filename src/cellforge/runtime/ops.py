@@ -167,6 +167,45 @@ def op_broadcast_to(inputs, args):
     return np.broadcast_to(x, np.broadcast_shapes(x.shape, like.shape)).copy()
 
 
+def op_csr_lookup(inputs, args):
+    """Look up numeric keys in sorted CSR rows, densifying selected rows only.
+
+    Tables have a leading shared (1) or per-example batch dimension. Missing
+    keys return zero rows. This is generic array indexing, with no text parsing,
+    model fitting, or answer logic. Exporters certify sorted keys and CSR shape;
+    selected-row bounds are checked here. Table parameters remain graph-owned.
+    """
+    query = np.asarray(inputs['query']).reshape(-1)
+    width = int(args['width'])
+    if width < 1 or not np.isfinite(query).all():
+        raise ValueError('csr_lookup: finite queries and positive width required')
+    B = len(query)
+    arrays = {k: np.asarray(inputs[k]) for k in ('keys', 'offsets', 'columns', 'values')}
+    if any(a.ndim != 2 or a.shape[0] not in (1, B) for a in arrays.values()):
+        raise ValueError('csr_lookup: shared or per-example vector tables required')
+    result = np.zeros((B, width))
+    # Shared tables perform one vectorized search; rows are copied sparsely.
+    shared = arrays['keys'].shape[0] == 1
+    located = np.searchsorted(arrays['keys'][0], query) if shared else None
+    for b in range(B):
+        table = {k: a[0 if a.shape[0] == 1 else b] for k, a in arrays.items()}
+        keys, offsets = table['keys'], table['offsets']
+        if len(offsets) != len(keys)+1 or len(table['columns']) != len(table['values']):
+            raise ValueError('csr_lookup: inconsistent CSR dimensions')
+        row = int(located[b]) if shared else int(np.searchsorted(keys, query[b]))
+        if row == len(keys) or keys[row] != query[b]:
+            continue
+        start, stop = int(offsets[row]), int(offsets[row+1])
+        if offsets[row] != start or offsets[row+1] != stop or not 0 <= start <= stop <= len(table['values']):
+            raise ValueError('csr_lookup: invalid selected row offsets')
+        columns = table['columns'][start:stop]
+        indices = columns.astype(np.int64)
+        if np.any(indices != columns) or np.any(indices < 0) or np.any(indices >= width):
+            raise ValueError('csr_lookup: invalid selected column')
+        np.add.at(result[b], indices, table['values'][start:stop])
+    return result
+
+
 OPS = {
     "patchify": (op_patchify, ["x"]),
     "reshape": (op_reshape, ["x"]),
@@ -184,6 +223,9 @@ OPS = {
     "square": (_unary(np.square), ["x"]),
     "neg": (_unary(np.negative), ["x"]),
     "exp": (_unary(lambda x: np.exp(np.clip(x, -EXP_CLIP, EXP_CLIP))), ["x"]),
+    "log": (_unary(np.log), ["x"]),
+    "divide": (lambda inputs, args: inputs['a']/inputs['b'], ['a', 'b']),
+    "power": (lambda inputs, args: np.power(inputs['a'], inputs['b']), ['a', 'b']),
     "step": (_unary(lambda x: (x > 0).astype(np.float64)), ["x"]),
     "sum": (op_reduce("sum"), ["x"]),
     "mean": (op_reduce("mean"), ["x"]),
@@ -201,6 +243,7 @@ OPS = {
     "onehot_argmax": (op_onehot_argmax, ["x"]),
     "expand": (op_expand, ["x"]),
     "broadcast_to": (op_broadcast_to, ["x", "like"]),
+    "csr_lookup": (op_csr_lookup, ['query', 'keys', 'offsets', 'columns', 'values']),
 }
 
 # Args that carry numerical constants (counted as constant slots).

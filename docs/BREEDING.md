@@ -1,5 +1,24 @@
 # LLM-directed breeding (`breeding/1`)
 
+## Owner override: evolutionary language program (2026-09-30)
+
+The owner now explicitly authorizes automatic population mutation, crossover,
+and discrete fitness selection for the language core. This supersedes the
+historical automatic-search prohibition below; that text records the earlier
+protocol rather than the current restriction. Gradient descent, backpropagation,
+and gradient estimators remain forbidden. In particular, fitness-weighted ES
+perturbation updates estimate a gradient and are excluded. Random mutation
+followed by discrete survivor selection is permitted.
+
+Generation zero is unified-byte artifact
+`f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb`.
+Use frozen development fitness, equal-budget random-search controls, immutable
+parent/donor hashes, and a reporting split never consumed by selection. Preserve
+rejected donors. Document benchmarks remain on hold until plain-text QA works.
+Corpus bits/byte and `mc-byte-loglik/1` multiple-choice scores are distinct metrics.
+Neither a loss reduction nor a component success establishes general language
+capability, AGI, or frontier superiority.
+
 Owner idea (2026-09-29): let the LLM pick the best models and "breed" them, treating
 construction as evolution driven by benchmarks. This document says how to do that
 without breaking what the project claims.
@@ -22,6 +41,14 @@ Breeding is therefore run as follows:
   to "reconcile" a crossover (re-tune the router or weights so imported parts
   cooperate), using the normal dev-eval budget.
 * Every child records its parents (task packets + ledger), so lineage is auditable.
+
+Failed development candidates remain eligible as **mutation donors**. A maker may
+reuse a specific cell, circuit, expert, or typed scalar from one, but must name the
+donor proposal and evaluation, isolate the transferred change where possible, and
+evaluate the resulting child against the current survivor. The donor's failure is
+evidence about its original context, not proof that every part is useless. A new
+child survives only on a fresh development comparison under its stated budget;
+the failed result is retained in the record.
 
 Population-style comparison arms (labelled, never feeding the primary):
 `random-crossover` (import random parts, no LLM choice) and `no-breeding`

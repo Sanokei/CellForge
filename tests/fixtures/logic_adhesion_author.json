@@ -1,0 +1,1021 @@
+{
+  "protocol": "literal-adhesion-author-response/1",
+  "actor": "delegated adapter-track numerical author",
+  "requested_task_model": "gpt-6.1-sol",
+  "requested_reasoning_effort": "low",
+  "observed_backend_model": null,
+  "prompt": "Propose bounded alternative adhesion topologies between actual18threshold-net-v1founders with measured bit competence. Avoid deliberateadderchain baseline; target2bitmax with actualcmp2andmux. Only explicit earliernode/externalbitbindings, numerical affineglue, exacttypedports. Charge invalid/neutral alternatives. No host-solving, tasklabels, answerfilling, gradients, shared admission edits. Freeze truth tables and lexicalport declarations beforeexecution.",
+  "reasoning": "Actual cmp2 produces[gt,eq,lt]. Actual mux selects b when s1elsea. ltselection routes eachbit ofbwhenbgreater; gtselection needs swappedpayload. eqselection and zero-unconnected are null/controlhypotheses. Negativeglue should fail bitcontract ongtcases. Width and cycleinvalid are explicitchargednegativeproposals. No outputoranswerlookups are inserted.",
+  "proposals": [
+    {
+      "name": "lt-selector",
+      "arm": "llm-proposal",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "external": "a0"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a0"
+              },
+              "b": {
+                "external": "b0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a1"
+              },
+              "b": {
+                "external": "b1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 4
+    },
+    {
+      "name": "gt-control-topology",
+      "arm": "llm-proposal",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "external": "a0"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a0"
+              },
+              "b": {
+                "external": "b0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a1"
+              },
+              "b": {
+                "external": "b1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 4
+    },
+    {
+      "name": "eq-selector",
+      "arm": "llm-proposal",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "external": "a0"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a0"
+              },
+              "b": {
+                "external": "b0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a1"
+              },
+              "b": {
+                "external": "b1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 4
+    },
+    {
+      "name": "gt-swapped-payload",
+      "arm": "llm-proposal",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "external": "a0"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "b0"
+              },
+              "b": {
+                "external": "a0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "b1"
+              },
+              "b": {
+                "external": "a1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 4
+    },
+    {
+      "name": "unconnected-zero",
+      "arm": "control",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "external": "a0"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a0"
+              },
+              "b": {
+                "external": "b0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a1"
+              },
+              "b": {
+                "external": "b1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 4
+    },
+    {
+      "name": "nonbit-negative-glue",
+      "arm": "llm-proposal",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "external": "a0"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  -1,
+                  0,
+                  1
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a0"
+              },
+              "b": {
+                "external": "b0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a1"
+              },
+              "b": {
+                "external": "b1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 4
+    },
+    {
+      "name": "wrong-width",
+      "arm": "llm-proposal",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "external": "a0"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a0"
+              },
+              "b": {
+                "external": "b0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a1"
+              },
+              "b": {
+                "external": "b1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 3
+    },
+    {
+      "name": "cycle-invalid",
+      "arm": "llm-proposal",
+      "spec": {
+        "format": "typed-bit-adhesion/1",
+        "inputs": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "parents": [
+          "cmp2",
+          "mux"
+        ],
+        "nodes": [
+          {
+            "id": "compare",
+            "kind": "cell",
+            "cell": "cmp2",
+            "inputs": {
+              "a0": {
+                "node": "low",
+                "port": "y"
+              },
+              "a1": {
+                "external": "a1"
+              },
+              "b0": {
+                "external": "b0"
+              },
+              "b1": {
+                "external": "b1"
+              }
+            }
+          },
+          {
+            "id": "adhere",
+            "kind": "glue",
+            "input_ports": [
+              "gt",
+              "eq",
+              "lt"
+            ],
+            "output_ports": [
+              "s"
+            ],
+            "inputs": {
+              "gt": {
+                "node": "compare",
+                "port": "gt"
+              },
+              "eq": {
+                "node": "compare",
+                "port": "eq"
+              },
+              "lt": {
+                "node": "compare",
+                "port": "lt"
+              }
+            },
+            "params": {
+              "W": [
+                [
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "b": [
+                0
+              ]
+            }
+          },
+          {
+            "id": "low",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a0"
+              },
+              "b": {
+                "external": "b0"
+              }
+            }
+          },
+          {
+            "id": "high",
+            "kind": "cell",
+            "cell": "mux",
+            "inputs": {
+              "s": {
+                "node": "adhere",
+                "port": "s"
+              },
+              "a": {
+                "external": "a1"
+              },
+              "b": {
+                "external": "b1"
+              }
+            }
+          }
+        ],
+        "outputs": {
+          "max0": {
+            "node": "low",
+            "port": "y"
+          },
+          "max1": {
+            "node": "high",
+            "port": "y"
+          }
+        },
+        "newly_authored": [
+          "adhere.W",
+          "adhere.b"
+        ]
+      },
+      "charged": true,
+      "new_numeric_positions": 4
+    }
+  ],
+  "inheritance": "Actual cmp2andmux numeric tensors retained exactly; wiring/selectorcoefficients newly authored. Two muxinvocations explicitly share one founderdefinition.",
+  "limitation": "This is a small directlyauthored compoundlogic hypothesis, not learnedadhesionadvantage, weightcrossover, actioncell or primarypopulation admission."
+}

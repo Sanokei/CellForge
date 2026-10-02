@@ -28,6 +28,7 @@ import numpy as np
 
 from ..ir.graph import Graph
 from ..runtime.lm import encode_text, score_texts
+from ..runtime.text_codec import BYTE_CODEC, BYTE_VOCAB
 
 PROTOCOL = "mc-loglik/1"
 LETTERS = "abcd"
@@ -43,7 +44,13 @@ def wilson(k, n, z=1.96):
     return [round((c - r) / d, 4), round((c + r) / d, 4)]
 
 
-def normalizer(vocab):
+def normalizer(vocab, codec=None):
+    if codec == BYTE_CODEC:
+        if vocab != BYTE_VOCAB:
+            raise ValueError("byte benchmark requires canonical vocabulary")
+        return lambda text: (text, 1.0)
+    if codec is not None:
+        raise ValueError(f"unsupported benchmark text codec: {codec}")
     keep = set(c for c in vocab if len(c) == 1)
 
     def norm(s: str):
@@ -93,14 +100,15 @@ def subset(items, n, seed_path: Path, name: str):
 def score_choices(graph: Graph, prompts, conts, chunk=48):
     """Return per-(prompt,cont) total bits over cont chars. Inputs are normalized strings."""
     texts = [p + " " + c for p, c in zip(prompts, conts)]
-    starts = [len(p) + 1 for p in prompts]  # first index of continuation chars (the char after the space)
+    byte_mode = graph.meta.get("text_codec") == BYTE_CODEC
+    starts = [(len(p.encode("utf-8")) if byte_mode else len(p)) + 1 for p in prompts]
     bits = np.zeros(len(texts))
     for i in range(0, len(texts), chunk):
         batch = texts[i:i + chunk]
         r, info = score_texts(graph, batch)
         ppb = info["per_pos_bits"]
         for j, t in enumerate(batch):
-            s, e = starts[i + j], len(t)
+            s, e = starts[i + j], len(t.encode("utf-8")) if byte_mode else len(t)
             bits[i + j] = ppb[j, s:e].sum() if e > s else np.inf
         if r["failed"].any():
             for j in np.nonzero(r["failed"])[0]:
@@ -110,7 +118,8 @@ def score_choices(graph: Graph, prompts, conts, chunk=48):
 
 def eval_bench(graph: Graph, items, max_prompt_chars=600):
     vocab = graph.meta["vocab"]
-    norm = normalizer(vocab)
+    byte_mode = graph.meta.get("text_codec") == BYTE_CODEC
+    norm = normalizer(vocab, graph.meta.get("text_codec"))
     prompts, conts, meta = [], [], []
     covs = []
     for ii, it in enumerate(items):
@@ -122,7 +131,7 @@ def eval_bench(graph: Graph, items, max_prompt_chars=600):
             covs.append(cc)
             prompts.append(p)
             conts.append(c)
-            meta.append((ii, ci, len(c)))
+            meta.append((ii, ci, len(c.encode("utf-8")) if byte_mode else len(c)))
     bits = score_choices(graph, prompts, conts)
     correct = correct_n = 0
     per_group: dict[str, list[int]] = {}
@@ -157,7 +166,8 @@ def main(argv=None):
     a = ap.parse_args(argv)
     g = Graph.load(a.artifact)
     bdir = Path(a.private) / "bench"
-    out = {"protocol": PROTOCOL, "label": a.label, "model_hash": g.hash(),
+    out = {"protocol": "mc-byte-loglik/1" if g.meta.get("text_codec") == BYTE_CODEC else PROTOCOL,
+           "label": a.label, "model_hash": g.hash(),
            "time": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "split": a.split, "results": {}}
     for name in a.benches.split(","):
         t0 = time.time()

@@ -14,6 +14,8 @@ Op types
   delete_def  {name}
   set_entry   {entry, def}
   set_state_dim {value}
+  numeric_recipe {from, recipe}      exact homologous donor hash and explicit
+                                    tensor masks / matrix-row scales
   wrap        {parent, nodes, new_def, new_node}   pure refactor
   unwrap      {parent, node}                        pure refactor (inline)
 
@@ -272,12 +274,30 @@ def import_def(g: Graph, src: Graph, name: str, prefix: str = "", replace: bool 
 
 
 # ----------------------------------------------------------------- applying
+MAX_GRID_BANK_GENES = 16
+
+
+def _check_expanded_slots(graph):
+    record = graph.meta.get("expanded_genome")
+    if record is None:
+        return
+    slots, alleles, bank = record["slots"], record["alleles"], record["available_genes"]
+    if slots != list(range(8, 8+len(alleles))) or not 7 <= len(alleles) <= 9 or not 7 <= len(bank) <= MAX_GRID_BANK_GENES or len(set(bank)) != len(bank):
+        raise TransactionError("invalid expanded slot contract")
+    if graph.meta.get("gradients") is not False:
+        raise TransactionError("expanded slot repairs require no-gradient provenance")
+    for slot, gene in zip(slots, alleles):
+        if gene not in bank or graph.defs[f"expanded_slot_{slot}"] != graph.defs[gene]:
+            raise TransactionError("expanded allele record disagrees with wiring")
+
+
 def apply_ops(graph: Graph, ops: list[dict], resolver=None) -> tuple[Graph, bool]:
     """Apply ops to a copy. Returns (new_graph, pure_refactor_only).
 
     ``resolver(ref) -> Graph`` resolves other model versions for ``import_def``.
     """
     g = graph.copy()
+    _check_expanded_slots(g)
     pure = True
     for i, op in enumerate(ops):
         t = op.get("op")
@@ -304,6 +324,53 @@ def apply_ops(graph: Graph, ops: list[dict], resolver=None) -> tuple[Graph, bool
                     raise TransactionError("def must be an object")
                 g.defs[op["name"]] = copy.deepcopy(d)
                 pure = False
+            elif t == "set_slot_gene":
+                record = g.meta["expanded_genome"]
+                slot, gene = op["slot"], op["gene"]
+                if type(slot) is not int or slot not in record["slots"] or gene not in record["available_genes"]:
+                    raise TransactionError("declared typed slot and bank gene required")
+                old = record["alleles"][record["slots"].index(slot)]
+                before = g.hash()
+                g.defs[f"expanded_slot_{slot}"] = copy.deepcopy(g.defs[gene])
+                record["alleles"][record["slots"].index(slot)] = gene
+                if old != gene:
+                    record.update(parent_hashes=[before], operator="authored typed-slot repair",
+                                  repaired_slot=slot, old_allele=old, new_allele=gene)
+                    record.pop("donor_per_slot", None)
+                    record.pop("operator_seed", None)
+                pure = False
+            elif t == "import_slot_gene":
+                if resolver is None:
+                    raise TransactionError("typed donor resolver required")
+                record = g.meta["expanded_genome"]
+                slot, prefix, name = op["slot"], op["prefix"], op["name"]
+                if type(slot) is not int or slot not in record["slots"] or not isinstance(prefix, str) or not prefix:
+                    raise TransactionError("declared slot and nonempty donor prefix required")
+                if len(record["available_genes"]) >= MAX_GRID_BANK_GENES:
+                    raise TransactionError("typed gene bank carrying capacity reached")
+                if prefix + name in record["available_genes"]:
+                    raise TransactionError("donor gene already in typed bank")
+                donor = resolver(op["from"])
+                if donor.hash() != op["from"] or donor.meta.get("gradients") is not False:
+                    raise TransactionError("exact no-gradient donor hash required")
+                definition = donor.defs[name]
+                if definition.get("role") != "cluster" or set(definition.get("inputs", [])) != {"input", "input_height", "input_width"} or set(definition.get("outputs", {})) != {"colors", "height", "width"}:
+                    raise TransactionError("typed grid geometry donor required")
+                before = g.hash()
+                old = record["alleles"][record["slots"].index(slot)]
+                imported = import_def(g, donor, name, prefix=prefix, replace=False)
+                gene = prefix + name
+                record["available_genes"].append(gene)
+                g.defs[f"expanded_slot_{slot}"] = copy.deepcopy(g.defs[gene])
+                record["alleles"][record["slots"].index(slot)] = gene
+                record.update(parent_hashes=[before], operator="authored typed donor import and slot repair",
+                              repaired_slot=slot, old_allele=old, new_allele=gene)
+                record.pop("donor_per_slot", None)
+                record.pop("operator_seed", None)
+                g.meta.setdefault("slot_gene_imports", []).append({"parent_hash": before,
+                    "donor_hash": donor.hash(), "source_definition": name,
+                    "prefix": prefix, "imported_defs": imported, "slot": slot})
+                pure = False
             elif t == "delete_def":
                 del g.defs[op["name"]]
                 pure = False
@@ -320,6 +387,15 @@ def apply_ops(graph: Graph, ops: list[dict], resolver=None) -> tuple[Graph, bool
                     raise TransactionError("import_def is unavailable without a graph resolver")
                 import_def(g, resolver(op["from"]), op["name"], op.get("prefix", ""), bool(op.get("replace", False)))
                 pure = False
+            elif t == "numeric_recipe":
+                if resolver is None:
+                    raise TransactionError("numeric_recipe requires an exact graph resolver")
+                donor = resolver(op["from"])
+                if donor.hash() != op["from"]:
+                    raise TransactionError("numeric_recipe donor hash mismatch")
+                from .numeric_recipe import apply_numeric_recipe
+                g = apply_numeric_recipe(g, donor, op["recipe"])
+                pure = False
             elif t == "wrap":
                 wrap(g, op["parent"], op["nodes"], op["new_def"], op["new_node"])
             elif t == "unwrap":
@@ -330,6 +406,7 @@ def apply_ops(graph: Graph, ops: list[dict], resolver=None) -> tuple[Graph, bool
             raise TransactionError(f"op {i} ({t}): {e}") from e
     # drop parameters no definition references? No: unreferenced params are kept
     # explicitly and reported; authors delete them deliberately.
+    _check_expanded_slots(g)
     return g, pure
 
 

@@ -1,0 +1,231 @@
+{
+  "schema": "hard-lanes/1",
+  "owner": "HEAD-CENTER CONTROLLED (orchestrator role, owner request 2026-10-01). Codex may not edit this file, tests/hard_lane_checks.py, tests/test_hard_lane_focus.py or scripts/lane_snapshot.py. Request lane registration or changes in notes/.",
+  "directive_utc": "2026-10-01T18:45:00+00:00",
+  "server": {
+    "ssh": "cellforge-1",
+    "base": "/srv/cellforge-inbox/two-loop-20261001"
+  },
+  "policy": {
+    "saturation_fraction": 0.95,
+    "min_dev_tasks_for_hard_lane": 24,
+    "min_hard_generations": 8,
+    "snapshot_max_age_minutes": 120,
+    "max_idle_minutes": 25,
+    "arc_stall_window": 3,
+    "stall_status_words": [
+      "waiting",
+      "declared_",
+      "user_stop",
+      "saturation_pause",
+      "deadline",
+      "paused",
+      "idle",
+      "complete"
+    ],
+    "neutral_rationale_regex": "no (strict |fresh )?(development |fresh )?gain (is )?possible|already solves|already [0-9]+/[0-9]+|reports [0-9]+/[0-9]+ (successes|solved|correct|with no errors|and no errors)|preserves the parent.s (step |boolean )?decisions",
+    "plateau_patience": 12
+  },
+  "lanes": [
+    {
+      "id": "arithmetic-subtraction",
+      "run": "weights-arithmetic-subtraction-continuous",
+      "format": "generations",
+      "role": "closed",
+      "dev_total": 9,
+      "why": "LLM 9/9 at generation 1, then 28 further generations with zero admissions. One generation was enough."
+    },
+    {
+      "id": "reasoning-horn",
+      "run": "weights-reasoning-cell-epochs",
+      "format": "generations",
+      "role": "closed",
+      "why": "LLM 24/24 from generation 1 in both niches; six generations of neutral rescalings."
+    },
+    {
+      "id": "spatial-quorum",
+      "run": "weights-spatial-hardlane",
+      "format": "generations",
+      "role": "closed",
+      "dev_total": 40,
+      "why": "LLM 40/40 at generation 1; maker rationale states no gain is possible."
+    },
+    {
+      "id": "signed-deduction",
+      "run": "weights-hard-signed-deduction",
+      "format": "generations",
+      "role": "closed",
+      "dev_total": 8,
+      "why": "Declared hard but only 8 dev tasks; LLM 8/8 at generation 1. Generations 2+ were neutral. Stopped by head-center 2026-10-01."
+    },
+    {
+      "id": "resource-planning",
+      "run": "weights-resource-planning",
+      "format": "generations",
+      "role": "hard",
+      "dev_total": 8,
+      "why": "Codex-started 18:43. Only 8 dev tasks, but the maker iterates on a concrete failing case (7/8, 12-step vs 11-step plan), so it is policed as an honest hard lane. OPTIONAL: it does not count toward the three required hard lanes, and it closes by itself (no headroom) once it reaches 8/8. Stopped by head-center 19:35Z at a plateau; judged only on what it does after 19:40Z.",
+      "optional": true,
+      "min_dev_tasks": 8,
+      "forgiven_through_utc": "2026-10-01T19:40:00+00:00"
+    },
+    {
+      "id": "action-continuation",
+      "run": "weights-action-continuation",
+      "format": "opaque",
+      "role": "closed",
+      "why": "Historical: 6 dev cases, LLM 6/6 at generation 1. Different file format; closed, not policed beyond the unregistered-lane rule."
+    },
+    {
+      "id": "arc-moe-continuation",
+      "run": "weights-arc-moe-continuation",
+      "format": "arc",
+      "role": "closed",
+      "why": "Superseded by arc-moe (smallskill-v2). 0/100, one iteration."
+    },
+    {
+      "id": "arc-moe",
+      "run": "weights-arc-moe-smallskill-v2",
+      "format": "arc",
+      "role": "closed",
+      "why": "Closed 2026-10-01: router-only lane over two cells whose best-expert ceiling is 0 of 100, so no router edit could ever gain. Superseded by arc-skills (maker-written skill niches with an ARC-selected breeding step): held-out 1 -> 43 of 579, report split 0 -> 22 of 289."
+    },
+    {
+      "id": "reasoning-multistep",
+      "run": "weights-hard-multistep-reasoning-v2",
+      "format": "generations",
+      "role": "hard",
+      "why": "Required hard lane (owner: reasoning). Registered 2026-10-02 00:25Z on Codex's request: resource_lookahead3 (constrained depth-three receding planning), 48 development tasks, generation 1 was an invalid maker attempt (shell tools, cancelled) and earns no credit. Honest null so far: clean report maker 41/48 vs random champions 44/48, 13/48, 46/48.",
+      "dev_total": 48
+    },
+    {
+      "id": "tool-use",
+      "run": "weights-hard-tool-use-v2",
+      "format": "generations",
+      "role": "hard",
+      "why": "Required hard lane (owner: tool use). Registered 2026-10-01 23:15Z on Codex's request: bfcl_call2 over BFCL multiple-function schemas, 48 development schemas, independent matched random-parent admission. Baseline note: a random lineage scored 33/48 at generation 1, so the task is easy for random weights; the lane must widen the LLM-vs-random gap (harder tiers), not just reach a high absolute score.",
+      "dev_total": 48
+    },
+    {
+      "id": "language-skills",
+      "run": "weights-head-arena3",
+      "format": "driver",
+      "role": "hard",
+      "why": "Language-type skills as literal weights: in-context token association (induction-style) and periodic sequence continuation. Measured by distinct niches earned; easy skills get one generation.",
+      "base": "/srv/cellforge-inbox/head-20261001",
+      "niches": [
+        "association",
+        "sequence"
+      ],
+      "min_niches": 2
+    },
+    {
+      "id": "ocr-skills",
+      "run": "weights-head-arena3",
+      "format": "driver",
+      "role": "hard",
+      "why": "OCR-type skills as literal weights: prototype template-match of glyphs/shapes. Measured by distinct niches earned.",
+      "base": "/srv/cellforge-inbox/head-20261001",
+      "niches": [
+        "glyph"
+      ],
+      "min_niches": 1
+    },
+    {
+      "id": "arc-skills",
+      "run": "weights-head-arena3",
+      "base": "/srv/cellforge-inbox/head-20261001",
+      "format": "driver",
+      "role": "hard",
+      "niches": [
+        "tiling",
+        "neighbor",
+        "object",
+        "crop",
+        "ray",
+        "gravity",
+        "symmetry",
+        "scale",
+        "context2",
+        "objmove2"
+      ],
+      "min_niches": 4,
+      "min_report_gain": 5,
+      "why": "ARC-driven skills from the hand-built baseline's most-used list (tiling, neighbour rules, object ops, crop, rays) plus breeding and mutation selected on real ARC. Must beat the baseline by >= 5 on the REPORT split, which is never used for selection."
+    },
+    {
+      "id": "tool-use-pilot",
+      "run": "weights-hard-tool-use",
+      "format": "generations",
+      "role": "closed",
+      "dev_total": 48,
+      "forgiven_through_utc": "2026-10-01T23:15:00+00:00",
+      "why": "Codex's first tool-use pilot: solved the labelled requests in generation 1, random controls were proposal scores not evolved champions, three identical founders. Preserved, stopped by Codex 23:10Z; superseded by weights-hard-tool-use-v2."
+    },
+    {
+      "id": "multistep-pilot",
+      "run": "weights-hard-multistep-reasoning",
+      "format": "generations",
+      "role": "closed",
+      "dev_total": 48,
+      "forgiven_through_utc": "2026-10-02T00:30:00+00:00",
+      "why": "Full-horizon planning pilot: the maker saturated 48/48 on its FIRST generation. Closed solved easy tier (Codex's own correction); superseded by the receding-horizon v2."
+    },
+    {
+      "id": "wall-follow2",
+      "run": "weights-wall-follow2",
+      "format": "generations",
+      "role": "closed",
+      "forgiven_through_utc": "2026-10-02T00:30:00+00:00",
+      "why": "Frozen negative: constant turn-priority wall following solves its generated family but fails the full DEV task cc9053aa (Codex note 23:43Z)."
+    },
+    {
+      "id": "wall-pruned",
+      "run": "weights-wall-pruned4",
+      "format": "generations",
+      "role": "hard",
+      "optional": true,
+      "dev_total": 48,
+      "min_dev_tasks": 24,
+      "why": "Codex section 5 C: wall tracing with hazard exclusion and dead-spur pruning (wall_pruned4); 48 generated development cases; restricted oracle solves cc9053aa in 24/48 variants. Optional: honesty-policed, not required."
+    },
+    {
+      "id": "anchor-assign",
+      "run": "weights-anchor-assign4",
+      "format": "generations",
+      "role": "hard",
+      "optional": true,
+      "dev_total": 48,
+      "min_dev_tasks": 24,
+      "why": "Codex section 5 C: anchor-relative assignment (anchor_assign_skill); 48 generated development cases; baseline generation 1: LLM 0/48 and random 0/48 (huge headroom). Optional: honesty-policed, not required."
+    },
+    {
+      "id": "frame-infer",
+      "run": "weights-frame-corner3",
+      "format": "generations",
+      "role": "closed",
+      "dev_total": 48,
+      "why": "Codex section 5 C: frame corner inference (frame_corner3). Generation 1 baseline: LLM 48/48, random 0/48: saturated, one generation, closed. Head driver v12 measured its ARC value: +1 selection task. Generation 1 is legitimate (forgiven through 00:30Z); any later generation is a neutral rewrite and is flagged.",
+      "forgiven_through_utc": "2026-10-02T00:30:00+00:00"
+    },
+    {
+      "id": "reference-paint",
+      "run": "weights-reference-paint3",
+      "format": "generations",
+      "role": "closed",
+      "dev_total": 48,
+      "why": "Codex section 5 C: reference painting (reference_paint3). Generation 1 baseline: LLM 48/48, random 0/48: saturated, one generation, closed. Head driver v12 measured its ARC value: +0 selection tasks. Generation 1 is legitimate (forgiven through 00:30Z); any later generation is a neutral rewrite and is flagged.",
+      "forgiven_through_utc": "2026-10-02T00:30:00+00:00"
+    },
+    {
+      "id": "corridor-marker",
+      "run": "weights-corridor-marker2",
+      "format": "generations",
+      "role": "hard",
+      "optional": true,
+      "dev_total": 48,
+      "min_dev_tasks": 24,
+      "why": "Codex section 5 C: corridor marker (corridor_marker2); only a SELECTION_DIAGNOSTIC so far, no generation yet. Optional: honesty-policed, not required. Cell Wars season 1: all three houses 24/24 on the generated niche."
+    }
+  ]
+}
