@@ -13,3 +13,7 @@ Hetzner backup: `cellforge-1:/srv/cellforge-inbox/windows-migration-20261002/`. 
 Local cleanup requires verified server/GitHub receipts and resolved ownership. This branch does not claim cleanup is complete.
 
 Supplement: 126 authored CellForge Temp scratchpad files (854,588 bytes) are preserved in cellforge-temp-scratch.zip. Raw ARC benchmark/dependency downloads and eight private session-output folders/two image folders remain excluded and untouched; see temp-inventory.json. These exclusions and linked-worktree ownership must be resolved before complete local cleanup.
+
+Artifact coverage verified: all 28 v2 parts were uploaded, their GitHub SHA-256 digests matched, and every part was downloaded and hashed in order. Reassembled bytes (228,744,131) match the fully restored Hetzner snapshot. Current transport manifest: parts-v2.json. The original four-part parts.json is retained as the superseded transport plan after an HTTP 408; use only v2 parts for restoration.
+
+Local cleanup has not occurred. Mixed private session outputs (219 files, 56 empty) and the two project/reference screenshots remain local. Direct inspection of login-related excerpts and copying the private-session images were rejected by automatic approval review. Seven linked Claude worktrees still need a current ownership handoff; old timestamps and lack of matching processes alone are insufficient.
