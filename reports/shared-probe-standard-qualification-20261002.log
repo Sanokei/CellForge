@@ -1,0 +1,87 @@
+test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun) ... FAIL
+test_founders_are_llm_written_literal_weights (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_genomes_are_weights_with_valid_lineage (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_llm_arm_and_random_control_present (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_mutation_origin_matches_arm (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_required_fields (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun) ... FAIL
+test_accuracy_improves_over_generations (tests.test_one_standard.Milestone) ... ok
+test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone) ... ok
+test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone) ... ok
+test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone) ... ok
+test_many_distinct_weight_genomes (tests.test_one_standard.Milestone) ... ok
+test_agents_md_exists_and_points_to_standard (tests.test_one_standard.RepoGuards) ... C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_one_standard.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\AGENTS.md' mode='r' encoding='utf-8'>
+  t = open(p, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*. ... ok
+test_standard_doc_exists (tests.test_one_standard.RepoGuards) ... ok
+test_clean_run_llm_beats_random_recomputed (tests.test_standard_semantic.MetaTests) ... ok
+test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests) ... ok
+test_each_cheat_is_caught_by_its_check (tests.test_standard_semantic.MetaTests) ... ok
+test_random_arm_cannot_win_by_inflated_claims (tests.test_standard_semantic.MetaTests)
+If random claims higher accuracy than its recomputed accuracy, the recompute check must flag it. ... ok
+test_unequal_budget_cheat_is_caught (tests.test_standard_semantic.MetaTests) ... ok
+test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns) ... ERROR
+test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns) ... ERROR
+test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns) ... ERROR
+test_missing_router_weights_is_caught (tests.test_standard_semantic.RouterMeta) ... ok
+test_useful_router_passes_and_useless_router_is_caught (tests.test_standard_semantic.RouterMeta) ... ok
+
+======================================================================
+ERROR: test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_standard_semantic.py", line 305, in test_every_semantic_check_passes_on_every_real_run
+    self.assertEqual(chk(run), [], "%s on %s" % (chk.__name__, run))
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\standard_checks.py", line 97, in check_accuracy_recomputed
+    ev = evaluator(s)
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+KeyError: 'evaluator'
+
+======================================================================
+ERROR: test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_standard_semantic.py", line 315, in test_recomputed_llm_beats_random_on_a_real_run
+    ok.append(C.check_llm_vs_random_recomputed(run) == [])
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\standard_checks.py", line 281, in check_llm_vs_random_recomputed
+    ev = evaluator(s)
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+KeyError: 'evaluator'
+
+======================================================================
+ERROR: test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_standard_semantic.py", line 309, in test_router_exists_matters_and_was_llm_mutated_on_a_real_run
+    self.assertEqual(C.check_router_present_and_matters(run), [], run)
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\standard_checks.py", line 304, in check_router_present_and_matters
+    ev = evaluator(s)
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+KeyError: 'evaluator'
+
+======================================================================
+FAIL: test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_one_standard.py", line 117, in test_equal_charged_budget_every_arm_and_seed
+    self.assertEqual(n, s["budget_per_arm"], "%s arm=%s seed=%s charged %d" % (p, arm, seed, n))
+AssertionError: 0 != 1 : C:\Users\wkeif\Documents\GitHub\CellForge\runs\weights-arc3-shared-probe-20261002\STANDARD.json arm=random seed=0 charged 0
+
+======================================================================
+FAIL: test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_one_standard.py", line 110, in test_seeds_predeclared_and_enough
+    self.assertGreaterEqual(len(set(s["seeds"])), MIN_SEEDS, p)
+AssertionError: 1 not greater than or equal to 3 : C:\Users\wkeif\Documents\GitHub\CellForge\runs\weights-arc3-shared-probe-20261002\STANDARD.json
+
+----------------------------------------------------------------------
+Ran 25 tests in 4.627s
+
+FAILED (failures=2, errors=3)

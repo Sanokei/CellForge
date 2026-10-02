@@ -1,0 +1,104 @@
+test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_founders_are_llm_written_literal_weights (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_genomes_are_weights_with_valid_lineage (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_llm_arm_and_random_control_present (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_mutation_origin_matches_arm (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_required_fields (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun) ... ok
+test_accuracy_improves_over_generations (tests.test_one_standard.Milestone) ... ok
+test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone) ... ok
+test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone) ... ok
+test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone) ... ok
+test_many_distinct_weight_genomes (tests.test_one_standard.Milestone) ... ok
+test_agents_md_exists_and_points_to_standard (tests.test_one_standard.RepoGuards) ... C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_one_standard.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\AGENTS.md' mode='r' encoding='utf-8'>
+  t = open(p, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*. ... ok
+test_standard_doc_exists (tests.test_one_standard.RepoGuards) ... ok
+test_clean_run_llm_beats_random_recomputed (tests.test_standard_semantic.MetaTests) ... ok
+test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests) ... ok
+test_each_cheat_is_caught_by_its_check (tests.test_standard_semantic.MetaTests) ... ok
+test_random_arm_cannot_win_by_inflated_claims (tests.test_standard_semantic.MetaTests)
+If random claims higher accuracy than its recomputed accuracy, the recompute check must flag it. ... ok
+test_unequal_budget_cheat_is_caught (tests.test_standard_semantic.MetaTests) ... ok
+test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns) ... ok
+test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns) ... ok
+test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns) ... ok
+test_missing_router_weights_is_caught (tests.test_standard_semantic.RouterMeta) ... ok
+test_useful_router_passes_and_useless_router_is_caught (tests.test_standard_semantic.RouterMeta) ... ok
+test_authored_patch_emits_snapshot_footprint_and_preserves_fallback (tests.test_cell_population_contract.PopulationContractTests) ... ok
+test_executed_child_predictions_and_numeric_parent_contributions (tests.test_cell_population_contract.PopulationContractTests) ... ok
+test_non_numeric_slots_and_unproven_structural_repairs_rejected (tests.test_cell_population_contract.PopulationContractTests) ... ok
+test_old_ensemble_and_slots_fail_architecture_gate (tests.test_cell_population_contract.PopulationContractTests) ... ok
+test_reporting_cannot_enter_archive (tests.test_cell_population_contract.PopulationContractTests) ... ok
+test_selection_changes_live_population_and_keeps_old_opponent (tests.test_cell_population_contract.PopulationContractTests) ... ok
+test_unearned_cell_cannot_assemble (tests.test_cell_population_contract.PopulationContractTests) ... ok
+test_executor_has_no_intent_and_exact_effects (tests.test_action_attribution.TestActionAttribution) ... ok
+test_invalid_tensor_rejected (tests.test_action_attribution.TestActionAttribution) ... ok
+test_missing_arguments_and_escape_never_execute (tests.test_action_attribution.TestActionAttribution) ... ok
+test_no_execution_of_generated_code (tests.test_action_attribution.TestActionAttribution) ... ok
+test_weights_control_action_and_every_argument (tests.test_action_attribution.TestActionAttribution) ... ok
+test_adapter_matches_worker_v2_and_no_host_fill (tests.test_action_attribution.TestJointActionAttribution) ... ok
+test_joint_cells_control_output_and_executor_cannot_fill (tests.test_action_attribution.TestJointActionAttribution) ... ok
+test_reporting_cannot_select_and_scope_is_not_arc (tests.test_action_attribution.TestJointActionAttribution) ... ok
+test_missing_evidence_fails_closed (tests.test_action_verification.TestActionVerification) ... ok
+test_saved_trial_recomputes_and_never_grants_scientific_acceptance (tests.test_action_verification.TestActionVerification) ... ok
+test_stale_weight_evidence_fails_closed (tests.test_action_verification.TestActionVerification) ... ok
+test_tampered_scores_fail_even_with_updated_self_declared_hash (tests.test_action_verification.TestActionVerification) ... ok
+test_fabricated_live_membership_fails_even_after_rehash (tests.test_action_verification.TestPopulationVerification) ... ok
+test_population_replay_reconstructs_selection_and_budgets (tests.test_action_verification.TestPopulationVerification) ... FAIL
+test_unmatched_budget_and_unexecuted_gate_fail_after_rehash (tests.test_action_verification.TestPopulationVerification) ... ok
+test_actual_numeric_contribution_not_cached_scores (tests.test_adhesion.TestAdhesionBehavior) ... ok
+test_cycles_and_missing_inputs_cannot_execute (tests.test_adhesion.TestAdhesionBehavior) ... ok
+test_labels_callbacks_and_host_max_cannot_execute (tests.test_adhesion.TestAdhesionBehavior) ... ok
+test_sharing_and_numeric_provenance (tests.test_adhesion.TestAdhesionBehavior) ... ok
+test_unused_donor_cannot_inflate_inheritance (tests.test_adhesion.TestAdhesionBehavior) ... ok
+test_absent_contribution_cannot_earn_circuit_admission (tests.test_circuit_population.TestCircuitPopulation) ... ok
+test_genome_identity_binds_inherited_numerical_weights (tests.test_circuit_population.TestCircuitPopulation) ... ok
+test_historical_regression_blocks_apparent_gain (tests.test_circuit_population.TestCircuitPopulation) ... ok
+test_invalid_and_equivalent_proposals_are_charged_without_lineage_growth (tests.test_circuit_population.TestCircuitPopulation) ... FAIL
+test_fabricated_parent_tensor_edge_and_history_rejected (tests.test_action_growth_integrity.TestGrowthIntegrity) ... ok
+test_historical_growth_is_explicitly_untrusted (tests.test_action_growth_integrity.TestGrowthIntegrity) ... ok
+test_input_preflight_never_grants_runtime_acceptance (tests.test_action_growth_integrity.TestGrowthIntegrity) ... ok
+test_missing_and_partial_coverage_rejected_even_with_new_anchor (tests.test_action_growth_integrity.TestGrowthIntegrity) ... ok
+test_rehashed_forged_reporting_and_budget_cannot_replace_external_anchor (tests.test_action_growth_integrity.TestGrowthIntegrity) ... ok
+test_selected_router_uses_live_tensors_and_rejects_retired (tests.test_action_growth_integrity.TestGrowthIntegrity) ... ok
+test_unbound_runtime_and_changed_parent_rejected (tests.test_action_growth_integrity.TestGrowthIntegrity) ... ok
+test_caps_and_fixture_rates_are_computed_not_boolean_labels (tests.test_action_phase_protocol.TestActionPhaseProtocol) ... ok
+test_dropped_rejected_charge_and_fabricated_transition_rejected (tests.test_action_phase_protocol.TestActionPhaseProtocol) ... ok
+test_fabricated_outcomes_or_fixture_rate_rejected (tests.test_action_phase_protocol.TestActionPhaseProtocol) ... ok
+test_invalid_authoring_is_charged_before_binding_rejection (tests.test_action_phase_protocol.TestActionPhaseProtocol) ... ok
+test_random_parent_is_independent_survivor_and_charges_precede_execution (tests.test_action_phase_protocol.TestActionPhaseProtocol) ... ok
+test_raw_parent_prompt_tensor_shape_and_budget_binding (tests.test_action_phase_protocol.TestActionPhaseProtocol) ... ok
+test_report_selection_rejected_without_admission (tests.test_action_phase_protocol.TestActionPhaseProtocol) ... ok
+test_dropped_rejected_charge_rejected_by_independent_replay (tests.test_action_cell_continuation.TestCellContinuationReplay) ... ok
+test_rehashed_phase_parent_or_response_cannot_change_external_phase_anchor (tests.test_action_cell_continuation.TestCellContinuationReplay) ... ok
+test_substituted_router_author_is_not_consulted (tests.test_action_cell_continuation.TestCellContinuationReplay) ... ok
+test_two_sequential_phases_replay_real_literal_effects_and_independent_controls (tests.test_action_cell_continuation.TestCellContinuationReplay) ... ok
+test_development_report_overlap_rejected (tests.test_experiment_manifest.TestExperimentManifest) ... ok
+test_duplicate_keys_rejected (tests.test_experiment_manifest.TestExperimentManifest) ... ok
+test_label_or_partition_change_breaks_frozen_hash (tests.test_experiment_manifest.TestExperimentManifest) ... ok
+test_overwritten_case_list_and_wrong_filename_rejected (tests.test_experiment_manifest.TestExperimentManifest) ... ok
+
+======================================================================
+FAIL: test_population_replay_reconstructs_selection_and_budgets (tests.test_action_verification.TestPopulationVerification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_action_verification.py", line 40, in test_population_replay_reconstructs_selection_and_budgets
+    self.assertTrue(r["population_replay"]["passed"],r)
+AssertionError: False is not true : {'schema': 'cellforge-verified-action-trial/1', 'kind': 'independent-population', 'artifact_binding': {'RUNTIME_GATE_RESULT.json': '50bec05b0b354b40137d2c323429c38388dcfa107d3d4dc4786f91656ac4658a', 'baseline.json': '55a1169961cde989d11239487de48546bdbeb4fe5539bb204dafc38c9e8749a1', 'run.py': 'a3e48a20166f58657799321ecbb539ba055ec99c8b1a439b02efcc0a3993c196', 'RUN_GATE.json': '0ea2ed61c3c3c08062d66eeb0e4fbc9e874aa91694424d02d8489d4abbe1ce06', 'proposal2.json': '75663eca839d9c5829f5a759dfd4d568d9989304dcfd926d0e13630d5ce0af5c', 'START.json': 'afb7f44c657c8149ebdbfd923168a55ac95c49775671789b2dfe4dfb6ca6d3d3', 'RESULT.json': '02788db22fc0dcd2bb1ec8d9328e3101597929bbd239819a0563873ddf8e46a8', 'FINAL_SEAL.json': '5b9973a4c53842ca960d3f9257270dacab05bb29a4e10be149aae2567bcc8e8c', 'router-parent.json': '5407d4821719e7e5b07ecd6a7bac5a149a7f02b39b8e9bdf2a688a8d296594f4', 'router-author.json': '43a32308f4b29ec185de5e1e02c320e835db20886f1277469448bce9b8c785e2', 'router-corpora.json': 'cc272fe1bf78c7078b070c92a397c3325dc377b6b4a18a33ca98cb4c6cba178b', 'proposal3.json': 'f3e63f2c453b74814de7149ea50346c090aa43863508ce57802e5edc27c704b5', 'MANIFEST.json': '82b92409a702cd7ccf00af3622b1ec28db831152682340235d3987e1382fddbc', 'runtime-gate-tests.log': 'c6de486030d4da8f3b2a05fc19588914421befc3e12bc999b8c70b887cc3c293', 'evaluation.log': '5a8e87f8ca61b99930d31ad7b68b87ef22af75f2dbab355f6a8847a632c4b823', 'proposal1.json': '326c0db8943dd064f3d70a8273c294dfe646c2d5fa12e1e74905c9d4a11593af', 'tests/test_action_attribution.py': '80b2432ae1d91255b12d410ef21e610761d8980fb30a1761ec7b0986160f5a39', 'tests/fixtures/tool_action_router_v2.json': 'e28db4557d053aef697a690244aedd0f3ff5dff1c85795fd013ca47649f598bb', 'src/cellforge/__init__.py': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'src/cellforge/construction/tool_action_router_adapter.py': '773008aef4cad58bd6388f167a5820dd631ee8142c6ca71f6103b44cea93a5eb', 'src/cellforge/construction/cell_population.py': '7e3223b6feb26f0f20007a170747245fd2c6a2ece54b281d511bf6762a5d41b0', 'src/cellforge/construction/joint_weight_population.py': '91ea141e2e9e5aee04386dde823505e37801723e2c70b925b24b60d450e8142e', 'src/cellforge/construction/action_argument_cell.py': '1d0ddaf4f7630702b70162ab3ede6f61037beb5bf1c586f14deee356920d3fcb', 'src/cellforge/construction/tool_router_evolution.py': '2948879ce48950e08d52eda3f0c453a6a289aae57391166b7a5d87eb60dbd7a1', 'src/cellforge/construction/action_population.py': '6e3b65d26f3e5fa0947d532a175ffcf27a44b5b9b9e89f6265e169792abde534', 'src/cellforge/construction/repair_acceptance.py': '4203e2de1d0c104f42591d62e4760ab24b9f7e8b479156898fbf30f4483e0ee5', 'src/cellforge/construction/action_packet.py': '171a745c3aa472e572dada534de993435307afd347f8e9bd4616e7bc287c22c4', 'src/cellforge/construction/red_queen_history.py': '20f98e924ddb2e2802d97042faf33cc167e5f984ee09de3195dbe33afe743d5b', 'src/cellforge/construction/__init__.py': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'runs/baseline-logic-math-cells/tool_cells2.json': '55a1169961cde989d11239487de48546bdbeb4fe5539bb204dafc38c9e8749a1'}, 'mechanism_replay': {'passed': False, 'errors': ['installed_source_differs:cell_population', 'router_control_or_budget_differs:101', 'argument_control_or_budget_differs', 'argument_control_or_budget_differs', 'argument_control_or_budget_differs', 'membership_birth_retirement_archive_differs:101', 'router_control_or_budget_differs:202', 'argument_control_or_budget_differs', 'argument_control_or_budget_differs', 'argument_control_or_budget_differs', 'membership_birth_retirement_archive_differs:202', 'router_control_or_budget_differs:303', 'argument_control_or_budget_differs', 'argument_control_or_budget_differs', 'argument_control_or_budget_differs', 'membership_birth_retirement_archive_differs:303', 'fixture_filename_not_copyable:reporting:newbare:JOURNAL']}, 'evidence_quality': {'passed': False, 'errors': ['fixture_filename_not_copyable:reporting:newbare:JOURNAL']}, 'population_replay': {'passed': False, 'counts': [{'seed': 101, 'live': {'action-arguments-lexical': 1, 'action-router-keywords': 1}, 'admitted': 2, 'retired': 2}, {'seed': 202, 'live': {'action-arguments-lexical': 1, 'action-router-keywords': 1}, 'admitted': 2, 'retired': 2}, {'seed': 303, 'live': {'action-arguments-lexical': 1, 'action-router-keywords': 1}, 'admitted': 2, 'retired': 2}], 'checks': ['numeric maker response binding', 'matched edit masks/ranges/budgets', 'live parent lineage', 'executed selection and historical opponents', 'births/retirements/memberships', 'actual joint packets/file effects']}, 'runtime_acceptance': False, 'scientific_acceptance': False, 'scientific_headline_allowed': False, 'scope': 'controlled lexical action niche only; not full architecture, evolved topology or ARC transfer'}
+
+======================================================================
+FAIL: test_invalid_and_equivalent_proposals_are_charged_without_lineage_growth (tests.test_circuit_population.TestCircuitPopulation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_circuit_population.py", line 13, in test_invalid_and_equivalent_proposals_are_charged_without_lineage_growth
+    self.assertTrue(d["accepted"]);self.assertEqual(len(a.history),2)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 78 tests in 47.756s
+
+FAILED (failures=2)
