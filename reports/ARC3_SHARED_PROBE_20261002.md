@@ -12,7 +12,8 @@ no competence or weight dependence can be inferred. Fresh replay matches.
 Repair (`runs/weights-arc3-shared-repair-20261002`) used the exact runtime error
 and sandbox builtin list, without game feedback. It ran validly but solved no
 levels. All zero, three random-tensor draws and blind runs were valid and also
-solved no levels.
+solved no levels. Independent replay in a fresh process matched completed levels,
+action costs, completion steps, errors and control validity on the entire panel.
 
 | Game | Levels / credited | Actions | No-op actions | Distinct frames |
 |---|---:|---:|---:|---:|
