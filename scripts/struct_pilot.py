@@ -112,6 +112,8 @@ def feedback_of(res, task, box, source, params):
             return feedback
         feedback["replay_inconsistency"] = "No failing demonstration reproduced; do not fabricate a counterexample."
         return feedback
+    if res.get("control_errors"):
+        return {"control_execution_errors": res["control_errors"]}
     return {"tensors_do_not_matter": "zeroed tensors fit %s of %s demonstrations, random tensors fit %s" % (res["zero_fit"], res["n_demos"], res["random_fit"])}
 
 

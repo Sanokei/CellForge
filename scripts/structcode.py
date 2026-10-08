@@ -248,8 +248,10 @@ def fit(box, source, params, task, extra=None):
 
 def evaluate(box, source, shapes, params, task):
     """Full acceptance test. Returns a dict: valid, demos_fit (of n), zero_fit, random_fit (max over 3 draws), controls_ok, solved_test (None when the
-    test outputs are not available), errors."""
-    res = {"valid": False, "demos_fit": 0, "n_demos": len(task["train"]), "zero_fit": None, "random_fit": None, "controls_ok": False, "solved_test": None, "errors": []}
+    test outputs are not available), errors. Control outcomes retain arm/seed
+    attribution separately; an execution error is never a successful ablation."""
+    res = {"valid": False, "demos_fit": 0, "n_demos": len(task["train"]), "zero_fit": None, "random_fit": None, "controls_ok": False, "solved_test": None,
+           "errors": [], "control_results": [], "control_errors": []}
     ok, why = validate(source)
     if not ok:
         res["errors"].append(why)
@@ -262,9 +264,16 @@ def evaluate(box, source, shapes, params, task):
     res["demos_fit"], errs = fit(box, source, params, task)
     res["errors"] += errs[:2]
     if res["demos_fit"] == res["n_demos"]:
-        res["zero_fit"] = fit(box, source, zeros_like(params), task)[0]
-        res["random_fit"] = max(fit(box, source, random_like(params, s), task)[0] for s in (11, 12, 13))
-        res["controls_ok"] = res["zero_fit"] < res["n_demos"] and res["random_fit"] < res["n_demos"]
+        controls = [("zero", None, zeros_like(params))]
+        controls.extend(("random", seed, random_like(params, seed)) for seed in (11, 12, 13))
+        for arm, seed, control_params in controls:
+            hits, errors = fit(box, source, control_params, task)
+            res["control_results"].append({"arm": arm, "seed": seed, "fit": hits, "errors": errors})
+            res["control_errors"].extend({"arm": arm, "seed": seed, "error": error} for error in errors)
+        res["zero_fit"] = res["control_results"][0]["fit"]
+        res["random_fit"] = max(control["fit"] for control in res["control_results"][1:])
+        res["controls_ok"] = (not res["control_errors"] and res["zero_fit"] < res["n_demos"]
+                              and res["random_fit"] < res["n_demos"])
         if all("output" in t for t in task["test"]):
             res["solved_test"] = all(box.call(source, params, t["input"], task["train"])[0] == t["output"] for t in task["test"])
     return res

@@ -1,0 +1,90 @@
+test_a_raw_lut_with_invalid_random_controls_is_rejected (tests.test_structcode.Acceptance.test_a_raw_lut_with_invalid_random_controls_is_rejected) ... ok
+test_a_structure_that_ignores_its_tensors_fails_the_controls (tests.test_structcode.Acceptance.test_a_structure_that_ignores_its_tensors_fails_the_controls) ... ok
+test_rejected_source_never_reaches_the_worker (tests.test_structcode.Acceptance.test_rejected_source_never_reaches_the_worker) ... ok
+test_wrong_tensors_fit_nothing_and_stop_early (tests.test_structcode.Acceptance.test_wrong_tensors_fit_nothing_and_stop_early) ... ok
+test_a_memory_bomb_dies_inside_the_worker (tests.test_structcode.Runtime.test_a_memory_bomb_dies_inside_the_worker) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 8 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_a_structure_runs_in_the_worker_and_reads_its_tensors (tests.test_structcode.Runtime.test_a_structure_runs_in_the_worker_and_reads_its_tensors) ... ok
+test_an_endless_loop_is_killed_and_the_next_call_still_works (tests.test_structcode.Runtime.test_an_endless_loop_is_killed_and_the_next_call_still_works) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 17 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=8 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=9 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 20 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=8 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=9 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_bad_outputs_are_refused (tests.test_structcode.Runtime.test_bad_outputs_are_refused) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 23 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=10 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=11 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_errors_inside_a_structure_are_reported_never_raised (tests.test_structcode.Runtime.test_errors_inside_a_structure_are_reported_never_raised) ... ok
+test_a_plain_numpy_structure_is_accepted_and_demo_use_is_detected (tests.test_structcode.StaticWhitelist.test_a_plain_numpy_structure_is_accepted_and_demo_use_is_detected) ... ok
+test_every_escape_attempt_is_rejected (tests.test_structcode.StaticWhitelist.test_every_escape_attempt_is_rejected) ... ok
+test_shapes_and_tensor_budget_are_enforced (tests.test_structcode.StaticWhitelist.test_shapes_and_tensor_budget_are_enforced) ... ok
+test_any_perfect_control_rejects_without_runtime_error (tests.test_structcode_control_errors.Controls.test_any_perfect_control_rejects_without_runtime_error) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 14 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_attempt_never_accepts_crashed_controls_with_fake_author_only (tests.test_structcode_control_errors.Controls.test_attempt_never_accepts_crashed_controls_with_fake_author_only) ... ok
+test_candidate_failure_skips_every_control (tests.test_structcode_control_errors.Controls.test_candidate_failure_skips_every_control) ... ok
+test_each_arm_error_fails_closed_and_retains_all_attribution (tests.test_structcode_control_errors.Controls.test_each_arm_error_fails_closed_and_retains_all_attribution) ... ok
+test_feedback_retains_control_errors_without_reading_or_executing (tests.test_structcode_control_errors.Controls.test_feedback_retains_control_errors_without_reading_or_executing) ... ok
+test_invalid_source_or_shapes_never_execute (tests.test_structcode_control_errors.Controls.test_invalid_source_or_shapes_never_execute) ... ok
+test_multiple_errors_are_not_truncated (tests.test_structcode_control_errors.Controls.test_multiple_errors_are_not_truncated) ... ok
+test_valid_wrong_controls_accept_with_exact_seeds_and_leave_one_out (tests.test_structcode_control_errors.Controls.test_valid_wrong_controls_accept_with_exact_seeds_and_leave_one_out) ... ok
+test_raw_lut_rejects_all_three_invalid_random_controls (tests.test_structcode_control_errors.SandboxControls.test_raw_lut_rejects_all_three_invalid_random_controls) ... ok
+test_total_domain_fixture_accepts_valid_wrong_controls (tests.test_structcode_control_errors.SandboxControls.test_total_domain_fixture_accepts_valid_wrong_controls) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 26 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=4 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/threading.py:1016: ResourceWarning: unclosed file <_io.TextIOWrapper name=5 encoding='UTF-8'>
+  del self._target, self._args, self._kwargs
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_difference_payload_is_bounded (tests.test_struct_pilot_feedback.Feedback.test_difference_payload_is_bounded) ... ok
+test_invalid_and_control_feedback_never_execute (tests.test_struct_pilot_feedback.Feedback.test_invalid_and_control_feedback_never_execute) ... ok
+test_later_failure_and_leave_one_out_context (tests.test_struct_pilot_feedback.Feedback.test_later_failure_and_leave_one_out_context) ... ok
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 29 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_nondeterministic_replay_does_not_invent_failure (tests.test_struct_pilot_feedback.Feedback.test_nondeterministic_replay_does_not_invent_failure) ... ok
+test_runtime_error_is_preserved (tests.test_struct_pilot_feedback.Feedback.test_runtime_error_is_preserved) ... ok
+test_shape_failure_has_no_fake_pixel_count (tests.test_struct_pilot_feedback.Feedback.test_shape_failure_has_no_fake_pixel_count) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 2.487s
+
+OK

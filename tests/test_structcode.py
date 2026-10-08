@@ -137,11 +137,13 @@ class Acceptance(unittest.TestCase):
     def tearDownClass(cls):
         cls.box.close()
 
-    def test_a_structure_whose_tensors_carry_the_rule_is_accepted_and_solves_the_hidden_test(self):
+    def test_a_raw_lut_with_invalid_random_controls_is_rejected(self):
         res = X.evaluate(self.box, LUT, self.shapes, {"lut": self.lut}, self.task)
         self.assertTrue(res["valid"])
         self.assertEqual(res["demos_fit"], res["n_demos"])
-        self.assertTrue(res["controls_ok"], res)
+        self.assertFalse(res["controls_ok"], res)
+        self.assertEqual({error["seed"] for error in res["control_errors"]}, {11, 12, 13})
+        self.assertTrue(all("output values" in error["error"] for error in res["control_errors"]))
         self.assertTrue(res["solved_test"])
 
     def test_a_structure_that_ignores_its_tensors_fails_the_controls(self):
