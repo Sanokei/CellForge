@@ -171,6 +171,9 @@ class WeightWorkers:
             self._load()
             if any(not row['finished'] for row in self._attempts.values()):
                 self._halt('interrupted_reservation')
+            elif any(row['submitted'] is None or row.get('submission_uncertain', False)
+                     for row in self._attempts.values()):
+                self._halt('uncertain_submission')
             self._executor = ThreadPoolExecutor(max_workers=config['parallelism'],
                                                 thread_name_prefix='weight-worker')
         except BaseException:
@@ -565,6 +568,7 @@ class WeightWorkers:
                     outcome.update(submitted=submitted, proposals=len(proposals), utc=maker.now())
                     if dispatched and submitted is None:
                         outcome['submission_uncertain'] = True
+                        self._halt('uncertain_submission', call)
                     self._append(outcome)
                 finally:
                     self._inflight -= 1

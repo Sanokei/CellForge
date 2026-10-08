@@ -167,9 +167,14 @@ def _worker_main():
 
 # ---------------------------------------------------------------- client (parent process)
 def _pump(proc, lines):
-    for line in proc.stdout:
-        lines.put(line)
-    lines.put(None)  # end of stream: the worker exited
+    try:
+        for line in proc.stdout:
+            lines.put(line)
+    finally:
+        try:
+            proc.stdout.close()
+        finally:
+            lines.put(None)  # end of stream: the worker exited
 
 
 class Sandbox:
@@ -177,6 +182,8 @@ class Sandbox:
 
     def __init__(self, timeout=TIMEOUT):
         self.timeout, self.proc, self.lines, self.n = timeout, None, None, 0
+        self.reader = None
+        self.closing = False
         self.network_isolated = False
 
     def _start(self):
@@ -192,20 +199,45 @@ class Sandbox:
         if os.name == "nt":
             env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
         self.proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, env=env, cwd=os.path.dirname(os.path.abspath(__file__)))
+        self.closing = False
         self.lines = queue.Queue()
-        threading.Thread(target=_pump, args=(self.proc, self.lines), daemon=True).start()
+        self.reader = threading.Thread(target=_pump, args=(self.proc, self.lines), daemon=True)
+        self.reader.start()
 
     def close(self):
-        if self.proc and self.proc.poll() is None:
-            self.proc.kill()
+        proc = self.proc
+        if proc is None:
+            return
+        self.closing = True
+        if proc.poll() is None:
+            proc.kill()
+        try:
+            proc.wait(timeout=TIMEOUT)
+        except subprocess.TimeoutExpired:
+            # Keep ownership so a later close can retry; never wait without a
+            # bound on a process that the OS has not finished killing.
+            return
+        finally:
+            if proc.stdin:
+                try:
+                    proc.stdin.close()
+                except OSError:  # The killed worker may have closed its pipe.
+                    pass
+        if self.reader:
+            self.reader.join(timeout=TIMEOUT)
         self.proc = None
+        self.closing = False
 
     def call(self, source, params, grid, demos):
         """Returns (grid, None) or (None, error string). Never raises for anything the structure does."""
         ok, why = validate(source)
         if not ok:
             return None, "rejected: " + why
-        if self.proc is None or self.proc.poll() is not None:
+        if self.proc is not None and (self.closing or self.proc.poll() is not None):
+            self.close()
+            if self.proc is not None:
+                return None, "worker cleanup pending"
+        if self.proc is None:
             self._start()
         self.n += 1
         req = {"id": self.n, "source": source, "params": {k: np.asarray(v, float).tolist() for k, v in params.items()}, "grid": grid,

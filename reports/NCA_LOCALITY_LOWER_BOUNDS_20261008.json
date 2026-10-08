@@ -1,0 +1,826 @@
+{
+  "compatible_demos": 17,
+  "compatible_task_ids": [
+    "1a07d186",
+    "712bf12e",
+    "984d8a3e",
+    "bd283c4a",
+    "ed36ccf7",
+    "ef135b50"
+  ],
+  "diagnostic_source_sha256": "693856b87f29dd78550a6ffceaf4a0d58f215a8f5981788e09ada5abd1c26ed2",
+  "input_provenance": {
+    "base_commit": "02beaf18251fca5ed1f1eb55e92f00a3e3820e88",
+    "input_files": [
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/0c786b71.json",
+        "sha256": "497326e9e2cf39638aab91870b337296076bdb8f5705700bf32c611519adc8b7"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/1a07d186.json",
+        "sha256": "60b22b6ff74d67ae2d90f550074e39294e711929817104d61772a239624efd86"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/3194b014.json",
+        "sha256": "8ace0dd2177372fdc46ced781a08eeb709d8e388edfb66f9822fcbd8ccc8ab38"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/46442a0e.json",
+        "sha256": "36af545fcd8773bc4ece84f05f13bc653f9244b6ece90885ea0b300a6813e7d1"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/712bf12e.json",
+        "sha256": "2b79a91d6833464d9241b75dddd15cbd3f7f022e656318a12da4782297b563ec"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/984d8a3e.json",
+        "sha256": "e2d34fe6bf9dc598281fce4b05d4687606905c2247bd9d2c37528595c759e1e7"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/bd283c4a.json",
+        "sha256": "9c1739f93f3ac1a82f846846f08dfa8934e47a34b7d713b3038b32fc247eab7c"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/c8cbb738.json",
+        "sha256": "6e043a7d955bf3baf84bd2caa05c2bbac8fe5982640c2c890afb57c3c9d1d8c6"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/ed36ccf7.json",
+        "sha256": "32fd06b6af2c3dec783e1081b7f170c7c93fcceab46f44e7e763040d374f935a"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/ef135b50.json",
+        "sha256": "6561162591c0b2fe70815feecc87df43bd0f46bff3bdd8a60886bc7599f61fbf"
+      },
+      {
+        "path": "reports/nca-capacity-20261008/demonstrations/f5b8619d.json",
+        "sha256": "ad9c3ab7f4e1ffeff67903fcbb8306cffb76652426ecf9034819ad231003a2b4"
+      }
+    ],
+    "input_inventory_sha256": "14ea47a0fbeda01fcff1b39087994175a3b6b6de399df50610e5f01f66110c33",
+    "materialization_sha256": "ef24cc8192156d77534bfb7701422286504872a277bdb13a9f7291637e6f8f99"
+  },
+  "minimum_individual_radius_not_ruled_out": {
+    "1a07d186": 4,
+    "712bf12e": 2,
+    "984d8a3e": 2,
+    "bd283c4a": 2,
+    "ed36ccf7": 1,
+    "ef135b50": 2
+  },
+  "minimum_shared_radius_not_ruled_out": 4,
+  "qualification": "Necessary locality conditions only; no learned weights, capacity proof or held-out evaluation.",
+  "schema": "nca-locality-lower-bound/1",
+  "shape_incompatible_pairs": [
+    {
+      "demo_index": 0,
+      "task_id": "0c786b71"
+    },
+    {
+      "demo_index": 1,
+      "task_id": "0c786b71"
+    },
+    {
+      "demo_index": 2,
+      "task_id": "0c786b71"
+    },
+    {
+      "demo_index": 0,
+      "task_id": "3194b014"
+    },
+    {
+      "demo_index": 1,
+      "task_id": "3194b014"
+    },
+    {
+      "demo_index": 2,
+      "task_id": "3194b014"
+    },
+    {
+      "demo_index": 0,
+      "task_id": "46442a0e"
+    },
+    {
+      "demo_index": 1,
+      "task_id": "46442a0e"
+    },
+    {
+      "demo_index": 2,
+      "task_id": "46442a0e"
+    },
+    {
+      "demo_index": 0,
+      "task_id": "c8cbb738"
+    },
+    {
+      "demo_index": 1,
+      "task_id": "c8cbb738"
+    },
+    {
+      "demo_index": 2,
+      "task_id": "c8cbb738"
+    },
+    {
+      "demo_index": 0,
+      "task_id": "f5b8619d"
+    },
+    {
+      "demo_index": 1,
+      "task_id": "f5b8619d"
+    },
+    {
+      "demo_index": 2,
+      "task_id": "f5b8619d"
+    }
+  ],
+  "sweep": [
+    {
+      "conflict_classes": 10,
+      "pixel_error_lower_bound": 372,
+      "positions": 2061,
+      "radius": 0,
+      "repeated_signature_classes": 10,
+      "unique_signatures": 10,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 6,
+          "pixel_error_lower_bound": 28
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 1,
+          "pixel_error_lower_bound": 110
+        },
+        "984d8a3e": {
+          "conflict_classes": 3,
+          "pixel_error_lower_bound": 44
+        },
+        "bd283c4a": {
+          "conflict_classes": 6,
+          "pixel_error_lower_bound": 106
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 4,
+          "pixel_error_lower_bound": 17
+        },
+        "ef135b50": {
+          "conflict_classes": 1,
+          "pixel_error_lower_bound": 33
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": [
+        {
+          "left": {
+            "demo_index": 0,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 0,
+            "y": 0
+          },
+          "right": {
+            "demo_index": 0,
+            "required_color": 2,
+            "task_id": "1a07d186",
+            "x": 3,
+            "y": 2
+          },
+          "signature_sha256": "d0bca111f8628137adc4c16f123496dcdd1d590d06cb5d9acd68b39fe656fb97"
+        },
+        {
+          "left": {
+            "demo_index": 0,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 10,
+            "y": 5
+          },
+          "right": {
+            "demo_index": 0,
+            "required_color": 1,
+            "task_id": "1a07d186",
+            "x": 0,
+            "y": 10
+          },
+          "signature_sha256": "080a9ed428559ef602668b4c00f114f1a11c3f6b02a435f0bdc154578e4d7f22"
+        },
+        {
+          "left": {
+            "demo_index": 0,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 3,
+            "y": 0
+          },
+          "right": {
+            "demo_index": 0,
+            "required_color": 2,
+            "task_id": "1a07d186",
+            "x": 0,
+            "y": 3
+          },
+          "signature_sha256": "038966de9f6b9a901b20b4c6ca8b2a46009feebe031babc842d43690c0bc222b"
+        }
+      ]
+    },
+    {
+      "conflict_classes": 54,
+      "pixel_error_lower_bound": 112,
+      "positions": 2061,
+      "radius": 1,
+      "repeated_signature_classes": 224,
+      "unique_signatures": 755,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 8,
+          "pixel_error_lower_bound": 11
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 28,
+          "pixel_error_lower_bound": 66
+        },
+        "984d8a3e": {
+          "conflict_classes": 10,
+          "pixel_error_lower_bound": 11
+        },
+        "bd283c4a": {
+          "conflict_classes": 2,
+          "pixel_error_lower_bound": 2
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 6,
+          "pixel_error_lower_bound": 21
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": [
+        {
+          "left": {
+            "demo_index": 0,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 0,
+            "y": 0
+          },
+          "right": {
+            "demo_index": 2,
+            "required_color": 9,
+            "task_id": "ed36ccf7",
+            "x": 0,
+            "y": 0
+          },
+          "signature_sha256": "4cd9be698b19b88b052955e0efd1742722a43525eb64eeb5ca1df3c1587e3a0c"
+        },
+        {
+          "left": {
+            "demo_index": 0,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 1,
+            "y": 0
+          },
+          "right": {
+            "demo_index": 0,
+            "required_color": 2,
+            "task_id": "712bf12e",
+            "x": 4,
+            "y": 0
+          },
+          "signature_sha256": "5c649b586ee41953bf735582caf741f11305fa2b58e1c82c22b60da8e5553bb3"
+        },
+        {
+          "left": {
+            "demo_index": 1,
+            "required_color": 0,
+            "task_id": "712bf12e",
+            "x": 4,
+            "y": 0
+          },
+          "right": {
+            "demo_index": 2,
+            "required_color": 2,
+            "task_id": "712bf12e",
+            "x": 9,
+            "y": 0
+          },
+          "signature_sha256": "1d7b5acad7379987343a3d5b32de166392e8611bd35e68a36aa8857b93123c49"
+        }
+      ]
+    },
+    {
+      "conflict_classes": 7,
+      "pixel_error_lower_bound": 7,
+      "positions": 2061,
+      "radius": 2,
+      "repeated_signature_classes": 91,
+      "unique_signatures": 1662,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 6,
+          "pixel_error_lower_bound": 6
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "984d8a3e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "bd283c4a": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": [
+        {
+          "left": {
+            "demo_index": 0,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 2,
+            "y": 6
+          },
+          "right": {
+            "demo_index": 1,
+            "required_color": 9,
+            "task_id": "ef135b50",
+            "x": 4,
+            "y": 2
+          },
+          "signature_sha256": "df257cdeff2ee2d7ffe40eacffd4536a8dbb2f4707c26f1a114d7cf5e4e54fdc"
+        },
+        {
+          "left": {
+            "demo_index": 0,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 2,
+            "y": 9
+          },
+          "right": {
+            "demo_index": 0,
+            "required_color": 1,
+            "task_id": "1a07d186",
+            "x": 10,
+            "y": 9
+          },
+          "signature_sha256": "0b8a809a555e91c96470a7aa1b1007cd05290aaa9ec0d1c31a3f69ed3cd1e435"
+        },
+        {
+          "left": {
+            "demo_index": 2,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 2,
+            "y": 4
+          },
+          "right": {
+            "demo_index": 2,
+            "required_color": 8,
+            "task_id": "1a07d186",
+            "x": 7,
+            "y": 4
+          },
+          "signature_sha256": "5554d7afef03b69b95427ac5f4086714e1a9bb74c0f2ce22bd26151a8f58485e"
+        }
+      ]
+    },
+    {
+      "conflict_classes": 2,
+      "pixel_error_lower_bound": 2,
+      "positions": 2061,
+      "radius": 3,
+      "repeated_signature_classes": 34,
+      "unique_signatures": 1956,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 2,
+          "pixel_error_lower_bound": 2
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "984d8a3e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "bd283c4a": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": [
+        {
+          "left": {
+            "demo_index": 2,
+            "required_color": 8,
+            "task_id": "1a07d186",
+            "x": 3,
+            "y": 6
+          },
+          "right": {
+            "demo_index": 2,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 4,
+            "y": 6
+          },
+          "signature_sha256": "85f6e22ccc58cf4888903d1b0574ad03251b03005ae2d5d5da6b50707ffc1fe7"
+        },
+        {
+          "left": {
+            "demo_index": 1,
+            "required_color": 4,
+            "task_id": "1a07d186",
+            "x": 11,
+            "y": 3
+          },
+          "right": {
+            "demo_index": 1,
+            "required_color": 0,
+            "task_id": "1a07d186",
+            "x": 11,
+            "y": 11
+          },
+          "signature_sha256": "4538e8d33389d88da448680fcd7545bef7e766b6a9fbbd0da27aff4d1a6ff497"
+        }
+      ]
+    },
+    {
+      "conflict_classes": 0,
+      "pixel_error_lower_bound": 0,
+      "positions": 2061,
+      "radius": 4,
+      "repeated_signature_classes": 12,
+      "unique_signatures": 2030,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "984d8a3e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "bd283c4a": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": []
+    },
+    {
+      "conflict_classes": 0,
+      "pixel_error_lower_bound": 0,
+      "positions": 2061,
+      "radius": 5,
+      "repeated_signature_classes": 2,
+      "unique_signatures": 2055,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "984d8a3e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "bd283c4a": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": []
+    },
+    {
+      "conflict_classes": 0,
+      "pixel_error_lower_bound": 0,
+      "positions": 2061,
+      "radius": 6,
+      "repeated_signature_classes": 1,
+      "unique_signatures": 2060,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "984d8a3e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "bd283c4a": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": []
+    },
+    {
+      "conflict_classes": 0,
+      "pixel_error_lower_bound": 0,
+      "positions": 2061,
+      "radius": 7,
+      "repeated_signature_classes": 0,
+      "unique_signatures": 2061,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "984d8a3e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "bd283c4a": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": []
+    },
+    {
+      "conflict_classes": 0,
+      "pixel_error_lower_bound": 0,
+      "positions": 2061,
+      "radius": 8,
+      "repeated_signature_classes": 0,
+      "unique_signatures": 2061,
+      "within_task": {
+        "0c786b71": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "1a07d186": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "3194b014": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "46442a0e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "712bf12e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "984d8a3e": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "bd283c4a": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "c8cbb738": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ed36ccf7": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "ef135b50": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        },
+        "f5b8619d": {
+          "conflict_classes": 0,
+          "pixel_error_lower_bound": 0
+        }
+      },
+      "witnesses": []
+    }
+  ],
+  "total_demos": 32,
+  "total_tasks": 11
+}
