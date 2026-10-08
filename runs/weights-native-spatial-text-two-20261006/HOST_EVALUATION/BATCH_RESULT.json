@@ -1,0 +1,84 @@
+{
+  "actual_author_context_sha256": null,
+  "attempt_hashes": [
+    "825062fe69d7a22e850809994f065611c6e11e90ef40bb9d0572b228f2aae218",
+    "4986507df2eb07799690c5c84635e8febdf7888e3c4cbf15c0c6396a73c03981"
+  ],
+  "automatic_admission": false,
+  "charged_positions": {
+    "native": 334,
+    "random": 334
+  },
+  "counts": [
+    {
+      "hand_coded": {
+        "development_selection": 0,
+        "search_fitness": 1
+      },
+      "random": {
+        "development_selection": 0,
+        "search_fitness": 0
+      },
+      "zero": {
+        "development_selection": 0,
+        "search_fitness": 0
+      }
+    },
+    {
+      "hand_coded": {
+        "development_selection": 0,
+        "search_fitness": 1
+      },
+      "native": {
+        "development_selection": 0,
+        "search_fitness": 0
+      },
+      "random": {
+        "development_selection": 0,
+        "search_fitness": 0
+      },
+      "zero": {
+        "development_selection": 0,
+        "search_fitness": 0
+      }
+    }
+  ],
+  "credits": null,
+  "cumulative_native_arc_positions": {
+    "native": 538,
+    "random": 538
+  },
+  "hash": "78e28103555cdb992459938afc37fc9b00805c74e605a4b475057af7855c9a7f",
+  "new_model_calls": 0,
+  "protocol_hash": "0dc2db5b429adff6cba5f1119ceda3be5fc0f370a4058394a403b0d7faade33c",
+  "report_accessed": false,
+  "result_hashes": [
+    "11885aec5af1ba625e46272efbe3107edae123ee5af2e8564ba0471a6d48627e",
+    "76bf6ee4fd5fd70227f6dfa2108813bfc1cec75fb8934fd2639a6fedad8c2db1"
+  ],
+  "runtime_errors": [
+    {
+      "hand_coded": 0,
+      "random": 3,
+      "zero": 0
+    },
+    {
+      "hand_coded": 0,
+      "native": 0,
+      "random": 3,
+      "zero": 0
+    }
+  ],
+  "schema": "cellforge-native-text-batch-result/1",
+  "scientific_acceptance": false,
+  "validation": [
+    {
+      "error": "ValueError: exactly one candidate required; refusal/invalid attempts remain charged",
+      "status": "invalid_or_refused"
+    },
+    {
+      "error": null,
+      "status": "valid"
+    }
+  ]
+}

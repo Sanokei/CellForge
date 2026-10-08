@@ -1,0 +1,21 @@
+{
+  "author_calls_max": 4,
+  "author_revision_from_query_feedback": false,
+  "credits_used": null,
+  "datasets": [
+    "ARC-AGI official public training",
+    "ARC-AGI-2 official public training"
+  ],
+  "forbidden_sources": [
+    "public evaluation",
+    "private or semi-private evaluation"
+  ],
+  "frozen_before_new_task_contents": true,
+  "hash": "82c8311a41a9cf622b18a2bf9918accef454d696c640462cd982216201ac6c1e",
+  "kind": "arc_training_selection_seed/1",
+  "owner_authorized": "Parent specifically authorized pinned official public-training downloads for this bounded batch.",
+  "prior_exposure_policy": "Exclude exact known prior task IDs. If local inventory cannot establish complete historical exposure coverage, label newly selected with unverified earlier exposure, never never-seen.",
+  "seed": 202610060303,
+  "selection": "Inventory official training ID lists and pinned commits without task contents. Exclude recorded prior task IDs and all ARC1/ARC2 shared IDs from ARC2 pool. Rank remaining IDs independently per dataset by sha256(seed:dataset:task_id); take first two. No outcome-based selection or retries.",
+  "selection_count_per_dataset": 2
+}

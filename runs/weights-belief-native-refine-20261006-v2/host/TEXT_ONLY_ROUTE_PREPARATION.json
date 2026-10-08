@@ -1,0 +1,38 @@
+{
+  "schema": "cellforge-belief-text-only-route-preparation/1",
+  "packet_id": "belief-native-20261006-refine-v2",
+  "freeze_sha256": "8e6f48a3f841fcf65f735899712abdf0d454e642e4f12287cd845ec45a6b24ba",
+  "route": "fresh native author context supplied the exact two authorized files as text; no executor or file tools permitted by instruction",
+  "route_status": "prepared_only; no new author invoked",
+  "distinct_from_failed_dispatch": true,
+  "failed_dispatch_source_thread_id": "01a10f5e-863c-71c7-8115-7b55fa47903b",
+  "failed_dispatch_source_turn_id": "01a10f5e-9033-72a2-b7a9-a9c0c7cad1c7",
+  "failed_dispatch_receipt": "host/AUTHOR_INFRASTRUCTURE_FAILURE.json",
+  "failed_process_retried": false,
+  "sandbox_or_permissions_changed": false,
+  "denied_process_executed": false,
+  "author_files": [
+    {
+      "path": "author/AUTHORING_PACKET.json",
+      "bytes": 26542,
+      "sha256": "becac8db0a796f92852ffa0e09415df9a07419fe4d695ed894bbcfd6fb60acea"
+    },
+    {
+      "path": "author/RESPONSE_SCHEMA.json",
+      "bytes": 754,
+      "sha256": "ae879411da680d5344df4c6157ed7c70a3065f2edad105ff45bc289b49ae9bc4"
+    }
+  ],
+  "combined_bytes": 27296,
+  "token_count_exact": null,
+  "token_estimate": "roughly 9000-14000; expected to fit approximately 15000 tokens, not a tokenizer-verified hard bound",
+  "encoding": "UTF-8 ASCII content with LF newlines and one trailing LF per file",
+  "compact_derivative_created": false,
+  "transmission_allowlist": ["author/AUTHORING_PACKET.json", "author/RESPONSE_SCHEMA.json"],
+  "host_or_development_file_content_transmitted": false,
+  "replacement_weights_authored": false,
+  "new_author_credit_usage": null,
+  "credit_status": "unknown; no claim that a future native call is free",
+  "tool_enforcement": "No tool-disabled platform flag is claimed. This route requests text-only authoring with an explicit prohibition on all tool use; parent must verify the actual author trace before accepting provenance.",
+  "next_step": "Parent decides whether to initiate a fresh text-only author context with exactly the authorized input texts. Return the candidate as response text, not by executing a process or writing a file in the denied author environment."
+}

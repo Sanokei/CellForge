@@ -1,0 +1,925 @@
+{
+  "author_inputs": {
+    "author01": {
+      "AUTHOR_INPUT.txt": {
+        "bytes": 6643,
+        "sha256": "db8361a9c2fda3bc1000aa84c4efbbaef2fe2c140f6831c924ec96ef1bd4e75d"
+      },
+      "PACKET.json": {
+        "bytes": 4499,
+        "sha256": "9d78e5ac12161d4e6a237912fa8ab4e0dabca536bb0e8843b352d724e730c753"
+      },
+      "RESPONSE_SCHEMA.json": {
+        "bytes": 1705,
+        "sha256": "66d294ffe0d4d2c8a6cded1f23a604573f380c849a60fc3efc7a25aef408b667"
+      }
+    },
+    "author02": {
+      "AUTHOR_INPUT.txt": {
+        "bytes": 6643,
+        "sha256": "36a213f5625584bcd6ae8aba88f6eff72a132b3dbe5db3bd48aac7acdf055039"
+      },
+      "PACKET.json": {
+        "bytes": 4499,
+        "sha256": "bd15f8f86cb0c88ea1c658bc8c2abc79b69d07774c61289345612d03ecc07ef3"
+      },
+      "RESPONSE_SCHEMA.json": {
+        "bytes": 1705,
+        "sha256": "66d294ffe0d4d2c8a6cded1f23a604573f380c849a60fc3efc7a25aef408b667"
+      }
+    },
+    "author03": {
+      "AUTHOR_INPUT.txt": {
+        "bytes": 6643,
+        "sha256": "da6926a597525bd9a5fbff7b545b1b2ec1a0f93a0412f08f757caec553f65d81"
+      },
+      "PACKET.json": {
+        "bytes": 4499,
+        "sha256": "6ef9fa1f0e939bd1c69fe81c608cb83ef1c2201c758c9f4819152e587aea17e2"
+      },
+      "RESPONSE_SCHEMA.json": {
+        "bytes": 1705,
+        "sha256": "66d294ffe0d4d2c8a6cded1f23a604573f380c849a60fc3efc7a25aef408b667"
+      }
+    },
+    "author04": {
+      "AUTHOR_INPUT.txt": {
+        "bytes": 6643,
+        "sha256": "a7c2bc3c77b57d8b7d22b32ffa7c5e197539439791c04a8352706c2e250a2498"
+      },
+      "PACKET.json": {
+        "bytes": 4499,
+        "sha256": "5cc2768f956abf2d8e614e6718fc906527f8ad99faa9ea20f42dd1b308707d4c"
+      },
+      "RESPONSE_SCHEMA.json": {
+        "bytes": 1705,
+        "sha256": "66d294ffe0d4d2c8a6cded1f23a604573f380c849a60fc3efc7a25aef408b667"
+      }
+    }
+  },
+  "authoring_mode": "parent-coordinated isolated native authors; no local model dispatcher",
+  "automatic_admission": false,
+  "automatic_dispatch": false,
+  "automatic_retry": false,
+  "base_protocol": {
+    "accounting_scope": "native ARC grid proposal sequence; other experiments accounted separately",
+    "authoring_route": "native Codex agent file artifact; not maker.ask",
+    "automatic_admission": false,
+    "bound_evidence": {
+      "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_EVALUATION\\ATTEMPT.json": "c27474961a669d752252c952b33b26a21f5aa07ceb2d4c180e878aead800d11c",
+      "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_EVALUATION\\PROTOCOL.json": "3135513a49dfc4c14c95706ed2e8ed824a0a82b8ada7dd3258caa767a55a3720",
+      "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_EVALUATION\\RESULT.json": "d6f39db69dc155451137997a782a37f5125e2e230bd38fda26fccf5b8a696943"
+    },
+    "composition": [
+      "ray_cast",
+      "tile_orient"
+    ],
+    "credit_usage": null,
+    "cumulative_positions_after_attempt": {
+      "native": 371,
+      "random": 371
+    },
+    "fresh_inputs": {
+      "manifest": "D:\\Github\\CellForge\\data\\arcagi2-local-20261006\\FRESH_INPUTS_MANIFEST_RECTANGULAR.json",
+      "sha256": "e9f1774ea2b05f60314c8dd99a2553e5c8d5aea3652cd2fc924381ae6ccdd8df"
+    },
+    "hash": "c04a14447cd76cb4be0cbe44d4b711c4f61ed1cbc6c20ecfa0b4d986d79af382",
+    "host_algorithm_boundary": "Host code already implements ray propagation, collision handling, geometric transforms and tile assembly. Authored values control source-color gates, directions, stop policy, paint choice, tile counts and tile orientations; this is not learning these algorithms.",
+    "maximum_submissions": 1,
+    "native_sequence_number": 3,
+    "new_algorithms_invented_by_weights": false,
+    "operator": "founder",
+    "parent_hashes": [],
+    "partitions": {
+      "development_selection": [
+        "f9d67f8b",
+        "9565186b",
+        "a6953f00",
+        "31d5ba1a"
+      ],
+      "search_fitness": [
+        "1a07d186",
+        "bd283c4a",
+        "3194b014",
+        "f5b8619d"
+      ]
+    },
+    "positions_per_arm": 167,
+    "prior_attempt_hash": "0cfcaf77aa3653bb86332adea3d845f46d4fc40d238401b4ce2b2010cd5b4fe4",
+    "random_distribution": "uniform[-9,9] at all 167 leaf positions including inactive slots",
+    "random_seed": 2026100604,
+    "reference_arm": "hand_coded",
+    "reference_cell": {
+      "compatibility": {
+        "interface": {
+          "context": "demonstration-pairs/1",
+          "input": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "output": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "schema": "cellforge-cell-interface/1",
+          "version": 1
+        },
+        "kind": "chain",
+        "parts": [
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "dirs": {
+                "dtype": "float64",
+                "shape": [
+                  8
+                ]
+              },
+              "paint": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "src": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "stop": {
+                "dtype": "float64",
+                "shape": [
+                  3
+                ]
+              }
+            },
+            "reference_hash": "901c3cedffb43b59f8042f0fed4dc96c9fa13e140b2fcf452b6fa312387406db",
+            "schema": "cellforge-cell-reference/1",
+            "template": "ray_cast",
+            "weight_id": "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e"
+          },
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "orient": {
+                "dtype": "float64",
+                "shape": [
+                  4,
+                  4,
+                  8
+                ]
+              },
+              "pec": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              },
+              "per": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              }
+            },
+            "reference_hash": "5d4134981a4e6c86c81112b960c12192a49e0b45ae35f0dd30364146d7c07646",
+            "schema": "cellforge-cell-reference/1",
+            "template": "tile_orient",
+            "weight_id": "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3"
+          }
+        ],
+        "reference_hash": "b6e3befddbde711127a8fa47a60be237d6282a9c3e17db28b79642476c0d03ca",
+        "schema": "cellforge-cell-reference/1",
+        "weight_id": "1ad8b49c9e1e497f51f0002b1c302421f2056f08a15b4213962c8bd23d7e3fb1"
+      },
+      "id": "1ad8b49c9e1e497f51f0002b1c302421f2056f08a15b4213962c8bd23d7e3fb1",
+      "kind": "chain",
+      "parents": [
+        "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e",
+        "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3"
+      ],
+      "parts": [
+        {
+          "id": "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e",
+          "kind": "cell",
+          "params": {
+            "dirs": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "paint": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "src": [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "stop": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "template": "ray_cast"
+        },
+        {
+          "id": "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3",
+          "kind": "cell",
+          "params": {
+            "orient": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ]
+            ],
+            "pec": [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "per": [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "template": "tile_orient"
+        }
+      ]
+    },
+    "report_accessed": false,
+    "request_hashes": {
+      "AUTHORING_PACKET_CANDIDATE.json": "ede26dc1d8f95a3d3c65c04ef5f47986efb69ee406df371196f6a35e332b65a5",
+      "HOST_FEASIBILITY.json": "36a2f9ef049552cec5cb00e2dfca64aa36cb2ff5708f083127722f0ccbe385f4",
+      "PACKET_MANIFEST.json": "75bef6461b804dddc3370e9a8c993734670bfdedb79230ff371e853237a0170d",
+      "RESPONSE_SCHEMA_CANDIDATE.json": "2792127426ad8e6444cc61da240f75462c4bf6fdb9184da59f8e9a81efa99fde",
+      "SELECTION.json": "4c5312488f153fac5ab01fdd9e1730218ecc40a7cec80f14bc337fb2efaaaef5"
+    },
+    "reserved_report_ids": [
+      "d282b262",
+      "11dc524f"
+    ],
+    "response_kind": "ray_cast_then_tile_orient/1",
+    "schema": "cellforge-native-import-protocol/1",
+    "scope_hash": "dfc452c8ad2e4af24ff8246802da58b2d8b9b12c3ea9f29fced870f42e5c5b03",
+    "selection_basis": "search demonstration inspection and disclosed hand-coded feasibility; no independent generalization claim",
+    "source_hashes": {
+      "cell_contracts.py": "bdbee291fe2cec190ffd1c3747e3c402de15171dbbd596a989c199fe360f852c",
+      "fresh_inputs.py": "0151b8e27e9bc47adde6d56524ecd085c51ac69502b3d454f4af8e387a441001",
+      "native_proposal_import.py": "71a6f1322847874936e2e1c25f69d8fc50bcafd8eac6c2a4bc4439fade5a96a6",
+      "skillcore.py": "3f6b926ecb7650f041c2e0d8ee42dc0271588c76701ce9e30414b3007bcc5b8c"
+    },
+    "task_id": "f5b8619d",
+    "template": "typed_chain"
+  },
+  "base_root": "D:\\Github\\CellForge\\runs\\weights-native-spatial-plan-20261006-fix1",
+  "bound_evidence": {
+    "D:\\Github\\CellForge\\runs\\weights-native-spatial-text-two-20261006\\HOST_EVALUATION\\ATTEMPT2.json": "9e3b04e9aba0bb870350a4b73e2b1376772623cd9040dec8c267aa54c2647ce2",
+    "D:\\Github\\CellForge\\runs\\weights-native-spatial-text-two-20261006\\HOST_EVALUATION\\BATCH_RESULT.json": "03ee47913fcac243e4bee9ada92a70e8acc08648d2a7e6dc011488267cd47fb9",
+    "D:\\Github\\CellForge\\runs\\weights-native-spatial-text-two-20261006\\HOST_EVALUATION\\PROTOCOL.json": "769b7ad8f45048a8c18bfa4912d580eb979669727d2245826e795a3710d195bd",
+    "D:\\Github\\CellForge\\runs\\weights-native-spatial-text-two-20261006\\HOST_EVALUATION\\RESULT2.json": "3e58b171ae032fe573f9e96d19a8ba9e2881221b65ad020b022532b13e4e24a0",
+    "D:\\Github\\CellForge\\runs\\weights-native-spatial-text-two-20261006\\TEXT_ROUTE_RECEIPTS\\ATTEMPT2_RESPONSE.json": "3aeee9ba2b3dae94bed3eea3113467383a3a5e8aa7be283a65ed0ccd71beac64",
+    "D:\\Github\\CellForge\\runs\\weights-native-spatial-text-two-20261006\\TEXT_ROUTE_RECEIPTS\\SOURCE.json": "b0710fba2fcab29eebd53411bf45c02698afa6569382a3d2e3a9cb2b11fe4c3a"
+  },
+  "credit_ceiling_owner_stated": 62000,
+  "credit_usage": null,
+  "cumulative_positions_if_all_four_consumed": 1206,
+  "diagnostic_arms": [
+    "parent",
+    "hand_coded",
+    "zero"
+  ],
+  "diagnostic_constraint_exception": "Unmodified historical/zero diagnostic tensors need not satisfy the new proposal vocabulary.",
+  "feedback_sha256": "93ba0a8820e0359b8adc432484c308348ee909b472a8d5a80e3a4e1fe30349f3",
+  "fixed_positions": 64,
+  "free_positions": 103,
+  "hash": "aec8ec5ce406ec718a6b4af32e5e2d413f7880a1d3d212e7ec48720881cee91e",
+  "maximum_author_calls": 4,
+  "maximum_positions_per_arm": 668,
+  "maximum_submissions_per_slot": 1,
+  "parent_cell": {
+    "compatibility": {
+      "interface": {
+        "context": "demonstration-pairs/1",
+        "input": {
+          "dtype": "integer",
+          "encoding": "cellforge-grid-token/1",
+          "rank": 2,
+          "type": "grid"
+        },
+        "output": {
+          "dtype": "integer",
+          "encoding": "cellforge-grid-token/1",
+          "rank": 2,
+          "type": "grid"
+        },
+        "schema": "cellforge-cell-interface/1",
+        "version": 1
+      },
+      "kind": "chain",
+      "parts": [
+        {
+          "implementation_version": "legacy/1",
+          "interface": {
+            "context": "demonstration-pairs/1",
+            "input": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "output": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "schema": "cellforge-cell-interface/1",
+            "version": 1
+          },
+          "kind": "cell",
+          "layout": {
+            "dirs": {
+              "dtype": "float64",
+              "shape": [
+                8
+              ]
+            },
+            "paint": {
+              "dtype": "float64",
+              "shape": [
+                10
+              ]
+            },
+            "src": {
+              "dtype": "float64",
+              "shape": [
+                10
+              ]
+            },
+            "stop": {
+              "dtype": "float64",
+              "shape": [
+                3
+              ]
+            }
+          },
+          "reference_hash": "2c85ec99d9e4a00c756bac4cd8989a12a0bc1211041a0fddabde708eef2d816a",
+          "schema": "cellforge-cell-reference/1",
+          "template": "ray_cast",
+          "weight_id": "39d5151aaa6b7638027019bbfb73824811128394c5f053cf004cc6ceaf37a78f"
+        },
+        {
+          "implementation_version": "legacy/1",
+          "interface": {
+            "context": "demonstration-pairs/1",
+            "input": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "output": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "schema": "cellforge-cell-interface/1",
+            "version": 1
+          },
+          "kind": "cell",
+          "layout": {
+            "orient": {
+              "dtype": "float64",
+              "shape": [
+                4,
+                4,
+                8
+              ]
+            },
+            "pec": {
+              "dtype": "float64",
+              "shape": [
+                4
+              ]
+            },
+            "per": {
+              "dtype": "float64",
+              "shape": [
+                4
+              ]
+            }
+          },
+          "reference_hash": "2129320895ff9174f9c0f41b78f04728d460a9240578e29da46e4c99022acb56",
+          "schema": "cellforge-cell-reference/1",
+          "template": "tile_orient",
+          "weight_id": "955e5d92d5930059fedd147276de93bd2765ab44bd677c369231e0f8f7d0dd22"
+        }
+      ],
+      "reference_hash": "de9262325e61efebdc9e7267e08905a132778b78179c4b35c9b94df6b141b026",
+      "schema": "cellforge-cell-reference/1",
+      "weight_id": "46ac442d654c2ba36a36e57132278dd8bbbe36be62a1a6fedb2c37f525109976"
+    },
+    "id": "46ac442d654c2ba36a36e57132278dd8bbbe36be62a1a6fedb2c37f525109976",
+    "kind": "chain",
+    "parents": [
+      "39d5151aaa6b7638027019bbfb73824811128394c5f053cf004cc6ceaf37a78f",
+      "955e5d92d5930059fedd147276de93bd2765ab44bd677c369231e0f8f7d0dd22"
+    ],
+    "parts": [
+      {
+        "id": "39d5151aaa6b7638027019bbfb73824811128394c5f053cf004cc6ceaf37a78f",
+        "kind": "cell",
+        "params": {
+          "dirs": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "paint": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "src": [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "stop": [
+            1,
+            0,
+            0
+          ]
+        },
+        "template": "ray_cast"
+      },
+      {
+        "id": "955e5d92d5930059fedd147276de93bd2765ab44bd677c369231e0f8f7d0dd22",
+        "kind": "cell",
+        "params": {
+          "orient": [
+            [
+              [
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            [
+              [
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            [
+              [
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            [
+              [
+                -1,
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                9,
+                -1,
+                -1,
+                -1,
+                -1
+              ]
+            ]
+          ],
+          "pec": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "per": [
+            -1,
+            1,
+            -1,
+            -1
+          ]
+        },
+        "template": "tile_orient"
+      }
+    ]
+  },
+  "policy": "rectangular-safe-spatial-literals/1",
+  "positions_per_arm_per_attempt": 167,
+  "previous_native_arc_positions": 538,
+  "random_distribution": "103 free literals independently uniform[-9,9]; 64 orientation tail literals fixed to -9, identical restrictions for native and random arms; all 167 charged",
+  "random_seeds": {
+    "author01": 2026100611,
+    "author02": 2026100612,
+    "author03": 2026100613,
+    "author04": 2026100614
+  },
+  "ranking": "descriptive best-of-four per arm: most development task successes, then search successes, then ascending cell ID; no automatic admission",
+  "report_accessed": false,
+  "schema": "cellforge-four-author-spatial-protocol/1",
+  "selection_basis": "Spatial family and task chosen using search demonstrations and prior search feedback; not independent generalization.",
+  "slots": [
+    "author01",
+    "author02",
+    "author03",
+    "author04"
+  ],
+  "source_hashes": {
+    "cell_contracts.py": "bdbee291fe2cec190ffd1c3747e3c402de15171dbbd596a989c199fe360f852c",
+    "fresh_inputs.py": "0151b8e27e9bc47adde6d56524ecd085c51ac69502b3d454f4af8e387a441001",
+    "native_parallel_batch.py": "e220bd2d6e23a81a5c677972f7cad58e9440fa29f6024c6ba9f49515f2b95790",
+    "native_proposal_import.py": "71a6f1322847874936e2e1c25f69d8fc50bcafd8eac6c2a4bc4439fade5a96a6",
+    "skillcore.py": "3f6b926ecb7650f041c2e0d8ee42dc0271588c76701ce9e30414b3007bcc5b8c"
+  }
+}

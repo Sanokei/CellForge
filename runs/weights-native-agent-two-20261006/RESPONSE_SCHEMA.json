@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "params": {
+        "additionalProperties": false,
+        "properties": {
+          "keep": {
+            "items": {
+              "maximum": 9,
+              "minimum": -9,
+              "type": "number"
+            },
+            "maxItems": 1,
+            "minItems": 1,
+            "type": "array"
+          },
+          "sim": {
+            "items": {
+              "items": {
+                "maximum": 9,
+                "minimum": -9,
+                "type": "number"
+              },
+              "maxItems": 10,
+              "minItems": 10,
+              "type": "array"
+            },
+            "maxItems": 10,
+            "minItems": 10,
+            "type": "array"
+          },
+          "temp": {
+            "items": {
+              "maximum": 9,
+              "minimum": -9,
+              "type": "number"
+            },
+            "maxItems": 1,
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "sim",
+          "temp",
+          "keep"
+        ],
+        "type": "object"
+      },
+      "rationale": {
+        "maxLength": 4096,
+        "type": "string"
+      },
+      "task_id": {
+        "const": "1a07d186"
+      }
+    },
+    "required": [
+      "task_id",
+      "params",
+      "rationale"
+    ],
+    "type": "object"
+  },
+  "maxItems": 1,
+  "minItems": 1,
+  "type": "array"
+}

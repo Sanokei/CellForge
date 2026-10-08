@@ -1,0 +1,70 @@
+{
+  "actual_active_orientation_indices": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "actual_paint_mode": "source color",
+  "actual_stop_policy_index": 0,
+  "actual_tile_counts": [
+    2,
+    2
+  ],
+  "basis": "actual supplied tensor values, frozen forward semantics, and reference search training demonstrations only",
+  "conclusion": "With no positive paint value, this candidate can only preserve/propagate input colors; tiling/transforms cannot create color 8 absent from all three training inputs but required in their outputs. This diagnoses these weights on shown examples, not a limitation of the template family.",
+  "hash": "bdc61bd4bf2bc6d47966c9b17be37f462fd4dcd956e13df9fb478b35802f93d1",
+  "query_or_development_or_report_examples_used": false,
+  "rationale_discrepancies": [
+    "stop is argmax([1,0,0]) = 0, not the claimed index 1",
+    "active tile orientation indices are [[0,0],[1,1]], not identity/flip-horizontal/flip-vertical/rotate180 in the four active positions"
+  ],
+  "rationale_used_by_predictor": false,
+  "reference_packet_sha256": "ede26dc1d8f95a3d3c65c04ef5f47986efb69ee406df371196f6a35e332b65a5",
+  "response_sha256": "3aeee9ba2b3dae94bed3eea3113467383a3a5e8aa7be283a65ed0ccd71beac64",
+  "result_hash": "76bf6ee4fd5fd70227f6dfa2108813bfc1cec75fb8934fd2639a6fedad8c2db1",
+  "schema": "cellforge-spatial-search-static-review/1",
+  "task_id": "f5b8619d",
+  "training_color_evidence": [
+    {
+      "example": 0,
+      "expected_colors": [
+        0,
+        5,
+        8
+      ],
+      "input_colors": [
+        0,
+        5
+      ]
+    },
+    {
+      "example": 1,
+      "expected_colors": [
+        0,
+        2,
+        8
+      ],
+      "input_colors": [
+        0,
+        2
+      ]
+    },
+    {
+      "example": 2,
+      "expected_colors": [
+        0,
+        4,
+        8
+      ],
+      "input_colors": [
+        0,
+        4
+      ]
+    }
+  ]
+}

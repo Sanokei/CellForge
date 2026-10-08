@@ -1,0 +1,63 @@
+{
+  "acquisition_hash": "85e357009b869622881edeb6a1a76f1a7211722707dd8c18ca591a8ec7fd0b9e",
+  "arbitrary_source_execution": false,
+  "author_dispatch": "Parent native Codex only; raw response, backend/reasoning/thread/turn captured or unknown.",
+  "calls_per_task": 1,
+  "credit_usage": null,
+  "cross_dataset_shared_ids_excluded_from_arc2": 391,
+  "genome_position_credit": 0,
+  "hash": "45283aa5504dc47797a5dcb67eb4565c8b3f18313d00022e0ca66b1a11793a8b",
+  "instructions_sha256": "2bb496fc1eacb31297ca9819bd4e299ea3a3b97eaccaf88cb03fe58383478b70",
+  "kind": "direct_prediction_batch/2",
+  "license_by_dataset": {
+    "ARC-AGI": "Apache-2.0",
+    "ARC-AGI-2": "Apache-2.0"
+  },
+  "max_author_calls": 4,
+  "previous_scorer_sha256": "a54805b435b71512ad26b36953938dd9c99d4ddcf1b100556b718e2548906d58",
+  "prior_exposure_label": "Newly selected; absent from inventoried local text records. Remote/nontext history and model pretraining exposure unverified.",
+  "qualification": "Existing red/incomplete ONE_STANDARD status carried forward; no unrelated broad suite rerun.",
+  "response_schema": "Same strict data-only digit-row schema; bind expected task ID and query count to frozen packet.",
+  "scoring": "Freeze each response and provenance before host-only exact query scoring; direct prediction and identity; fresh-process replay only; no label feedback, query-based choice or retry.",
+  "selection_hash": "921cd69afab5e81223c312a121bd55ac30026d568685aeb60d7be50b10e490b9",
+  "source_hash": "dabbdb93f6d0e1c93a79ec61cb71454a92b298bb6ca43f7ff70b4107cfb0fa66",
+  "stop": "STOP or one consumed response per task, including invalid/refused output. No automatic author.",
+  "tasks": [
+    {
+      "data_path": "data\\arc-training-batch03-20261006\\ARC-AGI\\training\\46442a0e.json",
+      "data_sha256": "5680e89c67fbebd9358035eb82a5106be4d186e3a506df82aeabed03aeb60c43",
+      "dataset": "ARC-AGI",
+      "packet_bytes": 329,
+      "packet_sha256": "31984bcf9da7e02f1e8d1a5d530c7890013bdafe081281a3a90bf4c1156a13ae",
+      "query_count": 1,
+      "task_id": "46442a0e"
+    },
+    {
+      "data_path": "data\\arc-training-batch03-20261006\\ARC-AGI\\training\\c8cbb738.json",
+      "data_sha256": "41fadf0604ffaa1c61a26915d9e5f921945a37e9cb7fa17eb860aebf1d3787fc",
+      "dataset": "ARC-AGI",
+      "packet_bytes": 1105,
+      "packet_sha256": "cba42af0b7394ba008433504d97d8fcf0d8e32f2d6bf71320766582718fae9d1",
+      "query_count": 1,
+      "task_id": "c8cbb738"
+    },
+    {
+      "data_path": "data\\arc-training-batch03-20261006\\ARC-AGI-2\\training\\984d8a3e.json",
+      "data_sha256": "9a90683f81aa630cbc4c763bff2ed2675411e7d6a3f2940ea75decf520bff3db",
+      "dataset": "ARC-AGI-2",
+      "packet_bytes": 966,
+      "packet_sha256": "389de676d63414d29069655d6f8941db92a1c69d9e45cb11a750e9b297c97b77",
+      "query_count": 1,
+      "task_id": "984d8a3e"
+    },
+    {
+      "data_path": "data\\arc-training-batch03-20261006\\ARC-AGI-2\\training\\0c786b71.json",
+      "data_sha256": "beeb1e24f976e18889899569fec9cdb4fda4b9a4ca9b551c91cad653262a5de1",
+      "dataset": "ARC-AGI-2",
+      "packet_bytes": 411,
+      "packet_sha256": "dbb3e2b587dba48af94b3689631a401c23b5b824507b0d2b1b604e3a303e14ab",
+      "query_count": 1,
+      "task_id": "0c786b71"
+    }
+  ]
+}

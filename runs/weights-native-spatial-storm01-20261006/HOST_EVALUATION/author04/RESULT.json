@@ -1,0 +1,2126 @@
+{
+  "attempt_hash": "337e8d2eda92ca679d04f2e48432dcd38a41da2b62fbc0ec66a1d493b8470ec3",
+  "automatic_admission": false,
+  "cells": {
+    "hand_coded": {
+      "compatibility": {
+        "interface": {
+          "context": "demonstration-pairs/1",
+          "input": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "output": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "schema": "cellforge-cell-interface/1",
+          "version": 1
+        },
+        "kind": "chain",
+        "parts": [
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "dirs": {
+                "dtype": "float64",
+                "shape": [
+                  8
+                ]
+              },
+              "paint": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "src": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "stop": {
+                "dtype": "float64",
+                "shape": [
+                  3
+                ]
+              }
+            },
+            "reference_hash": "901c3cedffb43b59f8042f0fed4dc96c9fa13e140b2fcf452b6fa312387406db",
+            "schema": "cellforge-cell-reference/1",
+            "template": "ray_cast",
+            "weight_id": "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e"
+          },
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "orient": {
+                "dtype": "float64",
+                "shape": [
+                  4,
+                  4,
+                  8
+                ]
+              },
+              "pec": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              },
+              "per": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              }
+            },
+            "reference_hash": "5d4134981a4e6c86c81112b960c12192a49e0b45ae35f0dd30364146d7c07646",
+            "schema": "cellforge-cell-reference/1",
+            "template": "tile_orient",
+            "weight_id": "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3"
+          }
+        ],
+        "reference_hash": "b6e3befddbde711127a8fa47a60be237d6282a9c3e17db28b79642476c0d03ca",
+        "schema": "cellforge-cell-reference/1",
+        "weight_id": "1ad8b49c9e1e497f51f0002b1c302421f2056f08a15b4213962c8bd23d7e3fb1"
+      },
+      "id": "1ad8b49c9e1e497f51f0002b1c302421f2056f08a15b4213962c8bd23d7e3fb1",
+      "kind": "chain",
+      "parents": [
+        "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e",
+        "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3"
+      ],
+      "parts": [
+        {
+          "id": "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e",
+          "kind": "cell",
+          "params": {
+            "dirs": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "paint": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "src": [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "stop": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "template": "ray_cast"
+        },
+        {
+          "id": "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3",
+          "kind": "cell",
+          "params": {
+            "orient": [
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ]
+            ],
+            "pec": [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "per": [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "template": "tile_orient"
+        }
+      ]
+    },
+    "native": {
+      "compatibility": {
+        "interface": {
+          "context": "demonstration-pairs/1",
+          "input": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "output": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "schema": "cellforge-cell-interface/1",
+          "version": 1
+        },
+        "kind": "chain",
+        "parts": [
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "dirs": {
+                "dtype": "float64",
+                "shape": [
+                  8
+                ]
+              },
+              "paint": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "src": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "stop": {
+                "dtype": "float64",
+                "shape": [
+                  3
+                ]
+              }
+            },
+            "reference_hash": "87cde39fe2c3992e67bd53d2e568c219ce2315e3643d67be973bf2ecc91b3e32",
+            "schema": "cellforge-cell-reference/1",
+            "template": "ray_cast",
+            "weight_id": "49a856fa669da7fcc38e907094d995a9c9f91439d2d3c3eba769b6e66b8f21db"
+          },
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "orient": {
+                "dtype": "float64",
+                "shape": [
+                  4,
+                  4,
+                  8
+                ]
+              },
+              "pec": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              },
+              "per": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              }
+            },
+            "reference_hash": "fe5679355af59bc7ac627116d4bb11003a8f3d5c8394598821e22ec1cb4494e7",
+            "schema": "cellforge-cell-reference/1",
+            "template": "tile_orient",
+            "weight_id": "dc191597f78f49206036ba646d78f2899fac221e5891a2420806c2a2c306fb36"
+          }
+        ],
+        "reference_hash": "d8fb217b6973e198aabd4da6ed2abab02aade89584bb37fd08f288511508efa9",
+        "schema": "cellforge-cell-reference/1",
+        "weight_id": "bcef4e93af6a2418aa4bea08bcb6435cb47816441cbbb9881b3b37ede8de4b45"
+      },
+      "id": "bcef4e93af6a2418aa4bea08bcb6435cb47816441cbbb9881b3b37ede8de4b45",
+      "kind": "chain",
+      "parents": [
+        "49a856fa669da7fcc38e907094d995a9c9f91439d2d3c3eba769b6e66b8f21db",
+        "dc191597f78f49206036ba646d78f2899fac221e5891a2420806c2a2c306fb36"
+      ],
+      "parts": [
+        {
+          "id": "49a856fa669da7fcc38e907094d995a9c9f91439d2d3c3eba769b6e66b8f21db",
+          "kind": "cell",
+          "params": {
+            "dirs": [
+              9,
+              -9,
+              -9,
+              -9,
+              9,
+              -9,
+              -9,
+              -9
+            ],
+            "paint": [
+              -9,
+              -9,
+              -9,
+              -9,
+              -9,
+              -9,
+              -9,
+              -9,
+              9,
+              -9
+            ],
+            "src": [
+              -9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9
+            ],
+            "stop": [
+              9,
+              -9,
+              -9
+            ]
+          },
+          "template": "ray_cast"
+        },
+        {
+          "id": "dc191597f78f49206036ba646d78f2899fac221e5891a2420806c2a2c306fb36",
+          "kind": "cell",
+          "params": {
+            "orient": [
+              [
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ]
+              ],
+              [
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ]
+              ],
+              [
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ]
+              ],
+              [
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ],
+                [
+                  9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9,
+                  -9
+                ]
+              ]
+            ],
+            "pec": [
+              -9,
+              9,
+              -9,
+              -9
+            ],
+            "per": [
+              -9,
+              9,
+              -9,
+              -9
+            ]
+          },
+          "template": "tile_orient"
+        }
+      ]
+    },
+    "parent": {
+      "compatibility": {
+        "interface": {
+          "context": "demonstration-pairs/1",
+          "input": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "output": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "schema": "cellforge-cell-interface/1",
+          "version": 1
+        },
+        "kind": "chain",
+        "parts": [
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "dirs": {
+                "dtype": "float64",
+                "shape": [
+                  8
+                ]
+              },
+              "paint": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "src": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "stop": {
+                "dtype": "float64",
+                "shape": [
+                  3
+                ]
+              }
+            },
+            "reference_hash": "2c85ec99d9e4a00c756bac4cd8989a12a0bc1211041a0fddabde708eef2d816a",
+            "schema": "cellforge-cell-reference/1",
+            "template": "ray_cast",
+            "weight_id": "39d5151aaa6b7638027019bbfb73824811128394c5f053cf004cc6ceaf37a78f"
+          },
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "orient": {
+                "dtype": "float64",
+                "shape": [
+                  4,
+                  4,
+                  8
+                ]
+              },
+              "pec": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              },
+              "per": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              }
+            },
+            "reference_hash": "2129320895ff9174f9c0f41b78f04728d460a9240578e29da46e4c99022acb56",
+            "schema": "cellforge-cell-reference/1",
+            "template": "tile_orient",
+            "weight_id": "955e5d92d5930059fedd147276de93bd2765ab44bd677c369231e0f8f7d0dd22"
+          }
+        ],
+        "reference_hash": "de9262325e61efebdc9e7267e08905a132778b78179c4b35c9b94df6b141b026",
+        "schema": "cellforge-cell-reference/1",
+        "weight_id": "46ac442d654c2ba36a36e57132278dd8bbbe36be62a1a6fedb2c37f525109976"
+      },
+      "id": "46ac442d654c2ba36a36e57132278dd8bbbe36be62a1a6fedb2c37f525109976",
+      "kind": "chain",
+      "parents": [
+        "39d5151aaa6b7638027019bbfb73824811128394c5f053cf004cc6ceaf37a78f",
+        "955e5d92d5930059fedd147276de93bd2765ab44bd677c369231e0f8f7d0dd22"
+      ],
+      "parts": [
+        {
+          "id": "39d5151aaa6b7638027019bbfb73824811128394c5f053cf004cc6ceaf37a78f",
+          "kind": "cell",
+          "params": {
+            "dirs": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "paint": [
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "src": [
+              -1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "stop": [
+              1,
+              0,
+              0
+            ]
+          },
+          "template": "ray_cast"
+        },
+        {
+          "id": "955e5d92d5930059fedd147276de93bd2765ab44bd677c369231e0f8f7d0dd22",
+          "kind": "cell",
+          "params": {
+            "orient": [
+              [
+                [
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              ],
+              [
+                [
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              ],
+              [
+                [
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              ],
+              [
+                [
+                  -1,
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  -1,
+                  -1,
+                  -1,
+                  9,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              ]
+            ],
+            "pec": [
+              -1,
+              1,
+              -1,
+              -1
+            ],
+            "per": [
+              -1,
+              1,
+              -1,
+              -1
+            ]
+          },
+          "template": "tile_orient"
+        }
+      ]
+    },
+    "random": {
+      "compatibility": {
+        "interface": {
+          "context": "demonstration-pairs/1",
+          "input": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "output": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "schema": "cellforge-cell-interface/1",
+          "version": 1
+        },
+        "kind": "chain",
+        "parts": [
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "dirs": {
+                "dtype": "float64",
+                "shape": [
+                  8
+                ]
+              },
+              "paint": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "src": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "stop": {
+                "dtype": "float64",
+                "shape": [
+                  3
+                ]
+              }
+            },
+            "reference_hash": "d51e03f683455543e95ba20fa444e264db31fae7a4e9a5f961f8f906dfc44feb",
+            "schema": "cellforge-cell-reference/1",
+            "template": "ray_cast",
+            "weight_id": "d315d5cb521b5455b47d69914beba1de9e068d3adffb7c0bc4f5dd3f20253e42"
+          },
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "orient": {
+                "dtype": "float64",
+                "shape": [
+                  4,
+                  4,
+                  8
+                ]
+              },
+              "pec": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              },
+              "per": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              }
+            },
+            "reference_hash": "149eb6b69d3962801681aea213a64b65e483f8c7b86eb0be0066265f57de598e",
+            "schema": "cellforge-cell-reference/1",
+            "template": "tile_orient",
+            "weight_id": "39620e77d6c5ad826b8a5f35164c933d0d30350dca8e10455a25379b1d2df959"
+          }
+        ],
+        "reference_hash": "f383d51468206f4cbafa662197171b018b1aeca8c8ecfb448f1e3cad2a11dc72",
+        "schema": "cellforge-cell-reference/1",
+        "weight_id": "963116d107a61a037699397fcb6b2fd638ba04a764d96680ce7838e20a2aa783"
+      },
+      "id": "963116d107a61a037699397fcb6b2fd638ba04a764d96680ce7838e20a2aa783",
+      "kind": "chain",
+      "parents": [
+        "d315d5cb521b5455b47d69914beba1de9e068d3adffb7c0bc4f5dd3f20253e42",
+        "39620e77d6c5ad826b8a5f35164c933d0d30350dca8e10455a25379b1d2df959"
+      ],
+      "parts": [
+        {
+          "id": "d315d5cb521b5455b47d69914beba1de9e068d3adffb7c0bc4f5dd3f20253e42",
+          "kind": "cell",
+          "params": {
+            "dirs": [
+              -6.283600376113554,
+              -1.248626614914702,
+              3.5574269874534785,
+              8.37752074526124,
+              6.571977571634497,
+              6.989188646634316,
+              -7.352413786108112,
+              8.494293746387243
+            ],
+            "paint": [
+              1.7345041417114473,
+              -0.9091310669693371,
+              -6.591526159850814,
+              5.286730801770625,
+              -3.781621482187351,
+              -4.910490980263158,
+              7.057039952673435,
+              -3.279418219193997,
+              -5.2762587453551575,
+              5.183190333461479
+            ],
+            "src": [
+              5.078848643472689,
+              -1.92871937506722,
+              2.5914757138678475,
+              6.676451932969059,
+              1.9292047195817332,
+              2.7399992599516647,
+              -8.696362208953804,
+              1.2848454768945619,
+              -7.501493893631866,
+              7.9092223351465805
+            ],
+            "stop": [
+              -8.118312831058283,
+              3.540118681816402,
+              3.5259552797355376
+            ]
+          },
+          "template": "ray_cast"
+        },
+        {
+          "id": "39620e77d6c5ad826b8a5f35164c933d0d30350dca8e10455a25379b1d2df959",
+          "kind": "cell",
+          "params": {
+            "orient": [
+              [
+                [
+                  8.799883344867101,
+                  1.4187195634249878,
+                  6.592400678176723,
+                  -4.223769020145052,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  1.4234497510219377,
+                  -0.2010503986487393,
+                  4.889131005209304,
+                  4.061018162480195,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -0.8135049134536896,
+                  0.9375578675781249,
+                  3.690998801794345,
+                  -3.0575954664869798,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -8.696903658936451,
+                  -4.736591605784806,
+                  -0.07076646576767764,
+                  -3.121940761424624,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ]
+              ],
+              [
+                [
+                  0.7894123896385654,
+                  -1.692869563028978,
+                  6.668838728446847,
+                  3.1989972153954707,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -1.2411726430632077,
+                  -2.4831230652761116,
+                  -4.366090351809346,
+                  8.959289550472807,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -7.521619088835805,
+                  6.061065822234314,
+                  3.760945297830805,
+                  -3.099678863207493,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -0.7932972515590837,
+                  8.89623930163145,
+                  -1.7175895005693587,
+                  -8.677113920443253,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ]
+              ],
+              [
+                [
+                  -3.1435351411878063,
+                  7.544379255728536,
+                  -4.745393770764,
+                  4.7073481733918126,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -6.5617062883545145,
+                  6.144010193123389,
+                  4.453007869888475,
+                  -4.332435578263171,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -8.84802578590111,
+                  4.2314032281365055,
+                  1.6571066785144364,
+                  4.3815373437150065,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -3.678962479536329,
+                  1.3575919529703118,
+                  5.571764920819165,
+                  6.879334473526047,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ]
+              ],
+              [
+                [
+                  -2.003224217149562,
+                  6.031063916399752,
+                  0.27723433713114076,
+                  8.038448857789046,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  0.5530472074938331,
+                  -1.1428071838771334,
+                  0.9390464485533823,
+                  2.6563911437920105,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -2.515570527332053,
+                  -3.7645183077425433,
+                  2.0960866742826063,
+                  0.07804815718628433,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ],
+                [
+                  -6.256671893037974,
+                  6.951893513707503,
+                  6.638650691564724,
+                  -3.1856256051049687,
+                  -9.0,
+                  -9.0,
+                  -9.0,
+                  -9.0
+                ]
+              ]
+            ],
+            "pec": [
+              -7.75017387812909,
+              2.9576707772655144,
+              2.683486229833438,
+              6.831796287653146
+            ],
+            "per": [
+              -0.2384672295649075,
+              8.801682795838015,
+              6.60250405391491,
+              -3.621411374914068
+            ]
+          },
+          "template": "tile_orient"
+        }
+      ]
+    },
+    "zero": {
+      "compatibility": {
+        "interface": {
+          "context": "demonstration-pairs/1",
+          "input": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "output": {
+            "dtype": "integer",
+            "encoding": "cellforge-grid-token/1",
+            "rank": 2,
+            "type": "grid"
+          },
+          "schema": "cellforge-cell-interface/1",
+          "version": 1
+        },
+        "kind": "chain",
+        "parts": [
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "dirs": {
+                "dtype": "float64",
+                "shape": [
+                  8
+                ]
+              },
+              "paint": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "src": {
+                "dtype": "float64",
+                "shape": [
+                  10
+                ]
+              },
+              "stop": {
+                "dtype": "float64",
+                "shape": [
+                  3
+                ]
+              }
+            },
+            "reference_hash": "389a692d4f96bbd45192f9837e44c0a51e23896fa81d0cecca0e5f46062587c2",
+            "schema": "cellforge-cell-reference/1",
+            "template": "ray_cast",
+            "weight_id": "56713ccdfd11d4f18271e3b2dac817485a599a8d27db63634dc9f74b747e0ee9"
+          },
+          {
+            "implementation_version": "legacy/1",
+            "interface": {
+              "context": "demonstration-pairs/1",
+              "input": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "output": {
+                "dtype": "integer",
+                "encoding": "cellforge-grid-token/1",
+                "rank": 2,
+                "type": "grid"
+              },
+              "schema": "cellforge-cell-interface/1",
+              "version": 1
+            },
+            "kind": "cell",
+            "layout": {
+              "orient": {
+                "dtype": "float64",
+                "shape": [
+                  4,
+                  4,
+                  8
+                ]
+              },
+              "pec": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              },
+              "per": {
+                "dtype": "float64",
+                "shape": [
+                  4
+                ]
+              }
+            },
+            "reference_hash": "f8296be06b01947885594695a7da22dc1c837dbeb532cfab7cbd80945cfb8deb",
+            "schema": "cellforge-cell-reference/1",
+            "template": "tile_orient",
+            "weight_id": "c6965b1f1e0d03182fa87da79b7dec8287c16d2b607646002c2b65c65d976b14"
+          }
+        ],
+        "reference_hash": "317e268cb90d7b8d730a6f193e5cd17911b449d2709190cbf11186ce62f98131",
+        "schema": "cellforge-cell-reference/1",
+        "weight_id": "6ecfb9158052dc786433c2af3aa9a39b206bc9b190f570eb753b579ee02eb2ed"
+      },
+      "id": "6ecfb9158052dc786433c2af3aa9a39b206bc9b190f570eb753b579ee02eb2ed",
+      "kind": "chain",
+      "parents": [
+        "56713ccdfd11d4f18271e3b2dac817485a599a8d27db63634dc9f74b747e0ee9",
+        "c6965b1f1e0d03182fa87da79b7dec8287c16d2b607646002c2b65c65d976b14"
+      ],
+      "parts": [
+        {
+          "id": "56713ccdfd11d4f18271e3b2dac817485a599a8d27db63634dc9f74b747e0ee9",
+          "kind": "cell",
+          "params": {
+            "dirs": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "paint": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "src": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "stop": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "template": "ray_cast"
+        },
+        {
+          "id": "c6965b1f1e0d03182fa87da79b7dec8287c16d2b607646002c2b65c65d976b14",
+          "kind": "cell",
+          "params": {
+            "orient": [
+              [
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              [
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ]
+            ],
+            "pec": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "per": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "template": "tile_orient"
+        }
+      ]
+    }
+  },
+  "charged_positions": {
+    "native": 167,
+    "random": 167
+  },
+  "counts": {
+    "hand_coded": {
+      "development_selection": 0,
+      "search_fitness": 1
+    },
+    "native": {
+      "development_selection": 0,
+      "search_fitness": 1
+    },
+    "parent": {
+      "development_selection": 0,
+      "search_fitness": 0
+    },
+    "random": {
+      "development_selection": 0,
+      "search_fitness": 0
+    },
+    "zero": {
+      "development_selection": 0,
+      "search_fitness": 0
+    }
+  },
+  "credit_usage": null,
+  "evaluations": {
+    "hand_coded": {
+      "development_selection": {
+        "31d5ba1a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "34f9418fbe42936b6a405c88f0ca09251d0a2f9c83a067d8541da5e86602f43c"
+        },
+        "9565186b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "da1d769fcb732c38d54abd26b1049fda22d01da392a7836c970bf0d0e61f28f5"
+        },
+        "a6953f00": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "e57e3eeecab5e49f6c5534fe95f647c542791dc040dc4dfc6ef2315f5d7a0033"
+        },
+        "f9d67f8b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "38f0b0c2bafea47eb584e8048e3c15770ed9e09508be3ca460a55a85712f927d"
+        }
+      },
+      "search_fitness": {
+        "1a07d186": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "a3b4fb708a20ed5434562f03391689facd4094063226df488e44280cdea13def"
+        },
+        "3194b014": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "fecb6047718a24f05d5626e3c6fd4791308c3d7b7607d4bee7b5cf0df0a05fe9"
+        },
+        "bd283c4a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "029678112431397faece17686c40ada4a62a27777f723ae157bd1ea9169b7326"
+        },
+        "f5b8619d": {
+          "correct": true,
+          "errors": [],
+          "prediction_sha256": "8a86c7e6c9e388d1ef2d4beb754e6a4d733c4799440ba83cb209e3e134c887a4"
+        }
+      }
+    },
+    "native": {
+      "development_selection": {
+        "31d5ba1a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "34f9418fbe42936b6a405c88f0ca09251d0a2f9c83a067d8541da5e86602f43c"
+        },
+        "9565186b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "da1d769fcb732c38d54abd26b1049fda22d01da392a7836c970bf0d0e61f28f5"
+        },
+        "a6953f00": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "e57e3eeecab5e49f6c5534fe95f647c542791dc040dc4dfc6ef2315f5d7a0033"
+        },
+        "f9d67f8b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "38f0b0c2bafea47eb584e8048e3c15770ed9e09508be3ca460a55a85712f927d"
+        }
+      },
+      "search_fitness": {
+        "1a07d186": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "a3b4fb708a20ed5434562f03391689facd4094063226df488e44280cdea13def"
+        },
+        "3194b014": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "fecb6047718a24f05d5626e3c6fd4791308c3d7b7607d4bee7b5cf0df0a05fe9"
+        },
+        "bd283c4a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "029678112431397faece17686c40ada4a62a27777f723ae157bd1ea9169b7326"
+        },
+        "f5b8619d": {
+          "correct": true,
+          "errors": [],
+          "prediction_sha256": "8a86c7e6c9e388d1ef2d4beb754e6a4d733c4799440ba83cb209e3e134c887a4"
+        }
+      }
+    },
+    "parent": {
+      "development_selection": {
+        "31d5ba1a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "e50f456b9036366083a5092821701b804c398e6da7af66344bba0c9a47603d48"
+        },
+        "9565186b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "52953553dc723577e846eaf5ddf9bc7935a1b8944980ed6a9f3e9948390b47e7"
+        },
+        "a6953f00": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "3b8ddea2c7cf70735a9320c1b7965316e0991e42aa9603febde8d50e93d23e68"
+        },
+        "f9d67f8b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "c40c8bdb8b1f177ce0c23a21b3308dd5782ee82640775d78e7d2ac995a54f05d"
+        }
+      },
+      "search_fitness": {
+        "1a07d186": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "7cb64eb9e617edd8653215b8b09ae751adf4ed78421a6e2217c83ced7827b8d4"
+        },
+        "3194b014": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "f0ef7514bf5693be39c587f212a4fcb1f024ba65ff72c51fb1db3af4a13ad8aa"
+        },
+        "bd283c4a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "ea479cee7d4d79709bf7f57946a21868f649120074944cb432142007bf03dbcc"
+        },
+        "f5b8619d": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "4bb95c2434893bf417ba821168b929c7beeaa8216adcdebcac5a5bac75d3c80b"
+        }
+      }
+    },
+    "random": {
+      "development_selection": {
+        "31d5ba1a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "0511f85ea85575b380c9702fb0a0d53a301f181efae5dc8d2833bd2ca06cdef8"
+        },
+        "9565186b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "9f81534fcc43d7986bbe768da4a6f74d9dbab7f948235f7a873bc9e068a5c905"
+        },
+        "a6953f00": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "0bda563c6083854ba884bbbac13fc643f72de72db0ceaf923b7dc020ca164105"
+        },
+        "f9d67f8b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "3fe855727043fac29a95fc04457f3748bee8e60cce76e27ed86d2a02f185de31"
+        }
+      },
+      "search_fitness": {
+        "1a07d186": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "2f83ae753e938dd86484dd7efe56a4f45b1889f406f3ad77d8db57162c2b4e82"
+        },
+        "3194b014": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "7650a581fa8ca15cb96343004a04cc8fdee01b1c9f6a1d3a4d50195a01ce623e"
+        },
+        "bd283c4a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "9cb33ccbdee878d16e2d13812aeadb23d7464961121ed6b12d315686e487a51c"
+        },
+        "f5b8619d": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "d7f6b048004ad84ebb2e5b841fc8fba3076ed5230a1b4499fa879ff803ea8907"
+        }
+      }
+    },
+    "zero": {
+      "development_selection": {
+        "31d5ba1a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "5d0072b2a4b8c42ae4560b741af2f893ebf4d0224c860c947661e35686ffc4a2"
+        },
+        "9565186b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "eed015e84e430e8d4376078f41966bd91c5d13d17c520cf4ff02000318c9a792"
+        },
+        "a6953f00": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "1b3080fed8c992f2c9e4b7dbac7d6004252b49334ec5997e0f9865a71a5ba0bd"
+        },
+        "f9d67f8b": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "2b4a4a013bf4bf92e9d3ab4564656426e82068e102d0b39c713548cf7a862048"
+        }
+      },
+      "search_fitness": {
+        "1a07d186": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "d48261c18a167798fcccabed588e223c2c7fe50d8fd7eb5bc73e4c56a259cf7b"
+        },
+        "3194b014": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "54f08a27d3b8b8242c46a6e6cd578703ae8a31faaa813800b3fe90d8bf0daf36"
+        },
+        "bd283c4a": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "f08555eb3951db2bc3dd9af4abe0d79ed85ad0b4962d2993be6219aec72ca7ed"
+        },
+        "f5b8619d": {
+          "correct": false,
+          "errors": [],
+          "prediction_sha256": "cf5845670777daee440a661d14d33264d166434d3c70be5f9a7ea8c2f2f2f8a1"
+        }
+      }
+    }
+  },
+  "hash": "564d5216400967fabea4b921ff9b2e9653700e321ed9524811a2fd374c099568",
+  "operation": "complete_literal_replacement",
+  "parent_hashes": [
+    "46ac442d654c2ba36a36e57132278dd8bbbe36be62a1a6fedb2c37f525109976"
+  ],
+  "protocol_hash": "aec8ec5ce406ec718a6b4af32e5e2d413f7880a1d3d212e7ec48720881cee91e",
+  "report_accessed": false,
+  "runtime_errors": {
+    "hand_coded": 0,
+    "native": 0,
+    "parent": 0,
+    "random": 0,
+    "zero": 0
+  },
+  "schema": "cellforge-parallel-native-result/1",
+  "scientific_acceptance": false,
+  "slot": "author04",
+  "validation": {
+    "error": null,
+    "status": "valid"
+  }
+}

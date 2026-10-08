@@ -1,0 +1,77 @@
+{
+  "game_id": "ls20-9607627b",
+  "initial_available_actions": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "actions": [
+    {
+      "id": 1,
+      "name": "ACTION1",
+      "data_schema": {
+        "properties": {
+          "game_id": {
+            "default": "",
+            "title": "Game Id",
+            "type": "string"
+          }
+        },
+        "title": "SimpleAction",
+        "type": "object"
+      }
+    },
+    {
+      "id": 2,
+      "name": "ACTION2",
+      "data_schema": {
+        "properties": {
+          "game_id": {
+            "default": "",
+            "title": "Game Id",
+            "type": "string"
+          }
+        },
+        "title": "SimpleAction",
+        "type": "object"
+      }
+    },
+    {
+      "id": 3,
+      "name": "ACTION3",
+      "data_schema": {
+        "properties": {
+          "game_id": {
+            "default": "",
+            "title": "Game Id",
+            "type": "string"
+          }
+        },
+        "title": "SimpleAction",
+        "type": "object"
+      }
+    },
+    {
+      "id": 4,
+      "name": "ACTION4",
+      "data_schema": {
+        "properties": {
+          "game_id": {
+            "default": "",
+            "title": "Game Id",
+            "type": "string"
+          }
+        },
+        "title": "SimpleAction",
+        "type": "object"
+      }
+    }
+  ],
+  "model_contract": {
+    "id": "integer from latest available_actions",
+    "data": "object matching that action schema"
+  },
+  "initialization_reset_id": 0,
+  "reset_not_in_baseline_queue": true
+}

@@ -1,0 +1,914 @@
+{
+  "allowed_inputs": [
+    "this packet",
+    "the matching RESPONSE_SCHEMA.json"
+  ],
+  "forward_semantics": {
+    "hidden": "h[j]=tanh(sum_i parameters[12*j+i]*x[i] + parameters[192+j]), j=0..15",
+    "input": "x[0:5]=old distribution, x[5:10]=observed-new distribution, x[10]=object-match, x[11]=observation",
+    "intended_behavior": "Use observed-new when both bits are 1; otherwise preserve old. No host bypass implements this for the model.",
+    "locations": "0,1,2,3,unknown=4; bits are numeric 0 or 1",
+    "logits": "z[k]=sum_j parameters[208+16*k+j]*h[j]+parameters[288+k], k=0..4",
+    "mask": "When observation=0, observed-new is [0,0,0,0,1]. World locations never enter the kernel.",
+    "output": "p[k]=exp(z[k]-max(z))/sum_l exp(z[l]-max(z)); finite affine overflow is an error",
+    "score": "Primary: recursive rollout top-1 correctness; exact ties choose lowest index. Diagnostic: max probability error <=0.05 and mean L1; all are frozen before authoring."
+  },
+  "instructions": [
+    "Return exactly one JSON object matching the response schema. No Markdown or executable code.",
+    "Write the numeric literals directly. Do not run code, fit/train/search weights, call tools or use external data.",
+    "Do not read the repository, runtime/reference implementation, evaluator, host files, development data, seeds or outcomes.",
+    "Only the declared search examples below are provided. No evaluator access or feedback is authorized.",
+    "The host applies the same kernel to every actor/object slot and carries all predictions forward; it does not repair errors.",
+    "Representations are structured events only, not language, emotions, demographics, intentions or full social awareness.",
+    "This is one bounded literal-authoring attempt, not a claim of learned or general intelligence."
+  ],
+  "packet_id": "belief-native-20261006-one",
+  "parameter_schema": {
+    "dtype": "finite-binary64",
+    "flattening": "row-major",
+    "hash_encoding": "SHA256(schema ASCII + NUL + 293 big-endian binary64 values); -0 => +0",
+    "hidden_activation": "tanh",
+    "input_order": [
+      "old[0:5]",
+      "observed_new[0:5]",
+      "object_match",
+      "observation"
+    ],
+    "output_activation": "softmax",
+    "parameter_count": 293,
+    "schema": "cellforge-belief-mlp/1",
+    "tensors": [
+      {
+        "count": 192,
+        "name": "W1",
+        "offset": 0,
+        "shape": [
+          16,
+          12
+        ]
+      },
+      {
+        "count": 16,
+        "name": "b1",
+        "offset": 192,
+        "shape": [
+          16
+        ]
+      },
+      {
+        "count": 80,
+        "name": "W2",
+        "offset": 208,
+        "shape": [
+          5,
+          16
+        ]
+      },
+      {
+        "count": 5,
+        "name": "b2",
+        "offset": 288,
+        "shape": [
+          5
+        ]
+      }
+    ]
+  },
+  "response_schema_file": "RESPONSE_SCHEMA.json",
+  "search_examples": [
+    {
+      "category": "seen",
+      "event_index": 0,
+      "expected": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "unseen",
+      "event_index": 1,
+      "expected": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 2,
+      "expected": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "unknown",
+      "event_index": 3,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "seen",
+      "event_index": 4,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "unseen",
+      "event_index": 5,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 6,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "unknown",
+      "event_index": 7,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100611"
+    },
+    {
+      "category": "seen",
+      "event_index": 0,
+      "expected": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "unseen",
+      "event_index": 1,
+      "expected": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 2,
+      "expected": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "unknown",
+      "event_index": 3,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "seen",
+      "event_index": 4,
+      "expected": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "unseen",
+      "event_index": 5,
+      "expected": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 6,
+      "expected": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "unknown",
+      "event_index": 7,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100612"
+    },
+    {
+      "category": "seen",
+      "event_index": 0,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "unseen",
+      "event_index": 1,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 2,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "unknown",
+      "event_index": 3,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "seen",
+      "event_index": 4,
+      "expected": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "unseen",
+      "event_index": 5,
+      "expected": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 6,
+      "expected": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "unknown",
+      "event_index": 7,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100613"
+    },
+    {
+      "category": "seen",
+      "event_index": 0,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100614"
+    },
+    {
+      "category": "unseen",
+      "event_index": 1,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100614"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 2,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100614"
+    },
+    {
+      "category": "unknown",
+      "event_index": 3,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100614"
+    },
+    {
+      "category": "seen",
+      "event_index": 4,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100614"
+    },
+    {
+      "category": "unseen",
+      "event_index": 5,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "scenario_id": "search-2026100614"
+    },
+    {
+      "category": "unrelated",
+      "event_index": 6,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100614"
+    },
+    {
+      "category": "unknown",
+      "event_index": 7,
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scenario_id": "search-2026100614"
+    }
+  ],
+  "search_family": "Four two-actor/two-object scenarios, eight events each. The 32 query examples below are teacher-forced reference targets, balanced eight per category.",
+  "task": "Author one complete set of 293 literal belief-cell MLP parameters."
+}

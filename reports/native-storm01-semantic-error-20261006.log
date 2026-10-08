@@ -1,0 +1,22 @@
+COMMAND: python -m unittest tests.test_standard_semantic.MetaTests.test_clean_run_passes_every_check -v
+TIMEOUT_SECONDS: 20
+EXIT_CODE: 1
+ELAPSED_SECONDS: 0.203
+test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests.test_clean_run_passes_every_check) ... ERROR
+
+======================================================================
+ERROR: test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests.test_clean_run_passes_every_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_standard_semantic.py", line 211, in test_clean_run_passes_every_check
+    run = build_run(self.tmp)
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\Github\CellForge\tests\test_standard_semantic.py", line 40, in build_run
+    os.makedirs(run, exist_ok=True)
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmpl3x91_e7\\weights-fake'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (errors=1)

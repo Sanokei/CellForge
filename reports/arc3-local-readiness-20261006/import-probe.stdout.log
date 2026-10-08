@@ -1,0 +1,52 @@
+{
+  "imports": "ok",
+  "game_instances": 0,
+  "actions": 0,
+  "blocked_events": [
+    {
+      "event": "socket.__new__",
+      "stack": [
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 1331,
+          "function": "_find_and_load_unlocked"
+        },
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 935,
+          "function": "_load_unlocked"
+        },
+        {
+          "file": "<frozen importlib._bootstrap_external>",
+          "line": 999,
+          "function": "exec_module"
+        },
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 488,
+          "function": "_call_with_frames_removed"
+        },
+        {
+          "file": "D:\\Github\\CellForge\\.venv-arc3\\Lib\\site-packages\\urllib3\\util\\connection.py",
+          "line": 137,
+          "function": "<module>"
+        },
+        {
+          "file": "D:\\Github\\CellForge\\.venv-arc3\\Lib\\site-packages\\urllib3\\util\\connection.py",
+          "line": 126,
+          "function": "_has_ipv6"
+        },
+        {
+          "file": "C:\\Users\\wkeif\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\socket.py",
+          "line": 233,
+          "function": "__init__"
+        },
+        {
+          "file": "D:\\Github\\CellForge\\reports\\arc3-local-readiness-20261006\\import_probe.py",
+          "line": 11,
+          "function": "audit"
+        }
+      ]
+    }
+  ]
+}

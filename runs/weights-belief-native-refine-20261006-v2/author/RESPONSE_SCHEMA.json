@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "packet_id": {
+      "const": "belief-native-20261006-refine-v2"
+    },
+    "parameters": {
+      "items": {
+        "maximum": 1.7976931348623157e+308,
+        "minimum": -1.7976931348623157e+308,
+        "type": "number"
+      },
+      "maxItems": 293,
+      "minItems": 293,
+      "type": "array"
+    },
+    "rationale": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema": {
+      "const": "cellforge-belief-native-response/1"
+    }
+  },
+  "required": [
+    "schema",
+    "packet_id",
+    "parameters",
+    "rationale"
+  ],
+  "title": "One literal belief-cell response",
+  "type": "object"
+}

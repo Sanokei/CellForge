@@ -1,0 +1,1079 @@
+{
+  "actual_author_access_log_verified": false,
+  "admitted": false,
+  "author_credit_usage": null,
+  "controls_identical_to_pre_author_check": true,
+  "credit_status": "unknown, not free",
+  "file_sha256": {
+    "FREEZE.json": "79ebfc7d0fdddcddcadad2d3a416f5f990d6244f94a2e35c30451d7541d80f7f",
+    "host/AUTHOR_ISOLATION_SUPPLEMENT.json": "f481ed02dd17a0288ae382114f2805155ca8f5b258e031dbf7cf965647989074",
+    "host/attempt/ATTEMPT.json": "7e14bdd49a219d8ecc30d5ee2684792957261c051d4e0912d9e70c421ae8f42f",
+    "host/attempt/IMPORTED_CELL.json": "755ca061ac9282d7f9bd2ae84d88557be417562d65fe2383f6f5c0f8304dcf42",
+    "host/attempt/RESPONSE_CAPTURE.bin": "e1d621efe1c282e9002bf9da4f6ed5d83537a405ff289a578e08e16fd43ff17b",
+    "host/attempt/RESULT.json": "9a81f6dfa6f8dec4d782bc89512a40be195765e5ad460f13b475f9f838208dce",
+    "host/attempt/SOURCE_RECEIPT.json": "2dbb3ef01852d9c6b1416288537068bca7b726910d0e66dd5edf28a0749b5a6c"
+  },
+  "import_count": 1,
+  "isolation": "fresh-context prompt restrictions; not tool-disabled or an enforced filesystem sandbox",
+  "literal_count": 293,
+  "native_and_random_charged_positions_each": 293,
+  "parameter_hash": "e3208ca9f6769feb65e855cb51ed8896779ef31eccd331761701f7a24d645552",
+  "reference_repairs_model": false,
+  "replay_result_sha256": "9a81f6dfa6f8dec4d782bc89512a40be195765e5ad460f13b475f9f838208dce",
+  "schema": "cellforge-belief-evaluation-receipt/1",
+  "scientific_acceptance": false,
+  "second_author_started": false,
+  "separate_process_replay_equal": true,
+  "source_completion": "Parent confirmed terminal completion before import.",
+  "strict_schema_valid": true,
+  "summary": {
+    "native": {
+      "development": {
+        "rollout": {
+          "accuracy": 0.21875,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.9865900847466718,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.875,
+              "categorical_errors": 2,
+              "correct": 14,
+              "mean_l1": 0.3036633181001275,
+              "predictions": 16,
+              "probability_errors": 2,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.9843638873808231,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.9844254024794807,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 50,
+          "correct": 14,
+          "mean_l1": 1.5647606731767758,
+          "predictions": 64,
+          "probability_errors": 50,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 0.5,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.9868719420105783,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.9868719420105783,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.05243770426665555,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.05259810787099388,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 32,
+          "correct": 32,
+          "mean_l1": 1.0196949240397015,
+          "predictions": 64,
+          "probability_errors": 32,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        }
+      },
+      "search": {
+        "rollout": {
+          "accuracy": 0.125,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.985570731021888,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.5,
+              "categorical_errors": 4,
+              "correct": 4,
+              "mean_l1": 1.0238892608768417,
+              "predictions": 8,
+              "probability_errors": 4,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.9841355946864367,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.9844068069681278,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 28,
+          "correct": 4,
+          "mean_l1": 1.7445005983883235,
+          "predictions": 32,
+          "probability_errors": 28,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 0.5,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.9868719420105783,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.9868719420105783,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0525446400028811,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.05259810787099388,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 16,
+          "correct": 16,
+          "mean_l1": 1.0197216579737578,
+          "predictions": 32,
+          "probability_errors": 16,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        }
+      }
+    },
+    "random": {
+      "development": {
+        "rollout": {
+          "accuracy": 0.140625,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.25,
+              "categorical_errors": 12,
+              "correct": 4,
+              "mean_l1": 1.5980468077830943,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.6825182258773819,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.25,
+              "categorical_errors": 12,
+              "correct": 4,
+              "mean_l1": 1.6142903892601281,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.0625,
+              "categorical_errors": 15,
+              "correct": 1,
+              "mean_l1": 1.6082755745078667,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 55,
+          "correct": 9,
+          "mean_l1": 1.6257827493571178,
+          "predictions": 64,
+          "probability_errors": 64,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 0.109375,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.125,
+              "categorical_errors": 14,
+              "correct": 2,
+              "mean_l1": 1.59657705715169,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.6811285556506037,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.25,
+              "categorical_errors": 12,
+              "correct": 4,
+              "mean_l1": 1.6099141462883297,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.0625,
+              "categorical_errors": 15,
+              "correct": 1,
+              "mean_l1": 1.6032433818665328,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 57,
+          "correct": 7,
+          "mean_l1": 1.622715785239289,
+          "predictions": 64,
+          "probability_errors": 64,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        }
+      },
+      "search": {
+        "rollout": {
+          "accuracy": 0.25,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.25,
+              "categorical_errors": 6,
+              "correct": 2,
+              "mean_l1": 1.5473893761514297,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.682275689938888,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.5,
+              "categorical_errors": 4,
+              "correct": 4,
+              "mean_l1": 1.5344098616878965,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.25,
+              "categorical_errors": 6,
+              "correct": 2,
+              "mean_l1": 1.5269319705306854,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 24,
+          "correct": 8,
+          "mean_l1": 1.572751724577225,
+          "predictions": 32,
+          "probability_errors": 32,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 0.21875,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.125,
+              "categorical_errors": 7,
+              "correct": 1,
+              "mean_l1": 1.5412568068056005,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6787417333119856,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.5,
+              "categorical_errors": 4,
+              "correct": 4,
+              "mean_l1": 1.5287224764723666,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.25,
+              "categorical_errors": 6,
+              "correct": 2,
+              "mean_l1": 1.5208259795866468,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 25,
+          "correct": 7,
+          "mean_l1": 1.56738674904415,
+          "predictions": 32,
+          "probability_errors": 32,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        }
+      }
+    },
+    "reference": {
+      "development": {
+        "rollout": {
+          "accuracy": 1.0,
+          "by_category": {
+            "seen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 0,
+          "correct": 64,
+          "mean_l1": 0.0,
+          "predictions": 64,
+          "probability_errors": 0,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 4,
+          "solved": true,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 1.0,
+          "by_category": {
+            "seen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 16,
+              "mean_l1": 0.0,
+              "predictions": 16,
+              "probability_errors": 0,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 0,
+          "correct": 64,
+          "mean_l1": 0.0,
+          "predictions": 64,
+          "probability_errors": 0,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 4,
+          "solved": true,
+          "unresolved": 0
+        }
+      },
+      "search": {
+        "rollout": {
+          "accuracy": 1.0,
+          "by_category": {
+            "seen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 0,
+          "correct": 32,
+          "mean_l1": 0.0,
+          "predictions": 32,
+          "probability_errors": 0,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 4,
+          "solved": true,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 1.0,
+          "by_category": {
+            "seen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 1.0,
+              "categorical_errors": 0,
+              "correct": 8,
+              "mean_l1": 0.0,
+              "predictions": 8,
+              "probability_errors": 0,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": true,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 0,
+          "correct": 32,
+          "mean_l1": 0.0,
+          "predictions": 32,
+          "probability_errors": 0,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 4,
+          "solved": true,
+          "unresolved": 0
+        }
+      }
+    },
+    "zero": {
+      "development": {
+        "rollout": {
+          "accuracy": 0.234375,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.3125,
+              "categorical_errors": 11,
+              "correct": 5,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.3125,
+              "categorical_errors": 11,
+              "correct": 5,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.3125,
+              "categorical_errors": 11,
+              "correct": 5,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 49,
+          "correct": 15,
+          "mean_l1": 1.6,
+          "predictions": 64,
+          "probability_errors": 64,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 0.234375,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.3125,
+              "categorical_errors": 11,
+              "correct": 5,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 16,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.3125,
+              "categorical_errors": 11,
+              "correct": 5,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.3125,
+              "categorical_errors": 11,
+              "correct": 5,
+              "mean_l1": 1.6,
+              "predictions": 16,
+              "probability_errors": 16,
+              "queries": 16,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 49,
+          "correct": 15,
+          "mean_l1": 1.6,
+          "predictions": 64,
+          "probability_errors": 64,
+          "queries": 64,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        }
+      },
+      "search": {
+        "rollout": {
+          "accuracy": 0.0,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 32,
+          "correct": 0,
+          "mean_l1": 1.6,
+          "predictions": 32,
+          "probability_errors": 32,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        },
+        "teacher_forced": {
+          "accuracy": 0.0,
+          "by_category": {
+            "seen": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unknown": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unrelated": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            },
+            "unseen": {
+              "accuracy": 0.0,
+              "categorical_errors": 8,
+              "correct": 0,
+              "mean_l1": 1.6,
+              "predictions": 8,
+              "probability_errors": 8,
+              "queries": 8,
+              "runtime_errors": 0,
+              "solved": false,
+              "unresolved": 0
+            }
+          },
+          "categorical_errors": 32,
+          "correct": 0,
+          "mean_l1": 1.6,
+          "predictions": 32,
+          "probability_errors": 32,
+          "queries": 32,
+          "runtime_errors": 0,
+          "scenario_count": 4,
+          "scenarios_solved": 0,
+          "solved": false,
+          "unresolved": 0
+        }
+      }
+    }
+  }
+}

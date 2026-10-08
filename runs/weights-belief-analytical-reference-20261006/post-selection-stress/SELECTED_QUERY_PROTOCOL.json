@@ -1,0 +1,12 @@
+{
+  "classification": "post-selection known-rule expressivity, not untouched final test or ONE_STANDARD qualification",
+  "derivation": "From exhaustive saved every-slot failure records, without re-executing the model. No selected-query L1/identity statistic is claimed.",
+  "every_slot_freeze_sha256": "5ec4ed6abd920c005c4b7211f86831b0291538c8df7a755291c589855fc91e53",
+  "metrics": "top-1 errors and probability-threshold errors for selected query; whole-scenario pass and unresolved/runtime counts, separate from every-slot metrics",
+  "pre_stress_evaluation": true,
+  "queries_per_scenario": 32,
+  "scenario_count": 9,
+  "schema": "cellforge-belief-stress-selected-query-plan/1",
+  "selector": "For event index i=0..31 select actor=(i//4)%4, object=i%4. For renamed scenarios apply its declared actor permutation to the selected actor; object stays unchanged.",
+  "total_queries": 288
+}

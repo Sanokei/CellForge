@@ -10,6 +10,7 @@ A chain cell (A then B) is the breeding product: its tensors are the parents' te
 Routing is the literal router of the joint genome: scores = route.W @ (-demonstration error) + route.b, argmax picks one cell per task.
 Demonstration-aware cells see the other demonstrations only (leave-one-out), never the demonstration they are being scored on.
 """
+import copy
 import hashlib
 import importlib.util
 import json
@@ -1417,17 +1418,93 @@ def valid_params(template, params):
 
 
 def make_cell(template, params, **meta):
-    cell = {"kind": "cell", "template": template, "params": params}
+    cell = {"kind": "cell", "template": template, "params": copy.deepcopy(params)}
     cell["id"] = digest({"t": template, "p": params})
-    cell.update(meta)
+    cell.update(copy.deepcopy(meta))
     return cell
 
 
 def chain_cell(a, b, **meta):
-    cell = {"kind": "chain", "parts": [a, b], "parents": [a["id"], b["id"]]}
+    cell = {"kind": "chain", "parts": copy.deepcopy([a, b]), "parents": [a["id"], b["id"]]}
     cell["id"] = digest({"chain": [a["id"], b["id"]]})
-    cell.update(meta)
+    cell.update(copy.deepcopy(meta))
     return cell
+
+
+def cell_reference(cell):
+    import cell_contracts as contracts
+    pending = [cell]
+    while pending:
+        part = pending.pop()
+        if part.get('kind') == 'chain':
+            pending.extend(part['parts'])
+        elif part.get('kind') != 'cell' or not valid_params(part.get('template'), part.get('params')):
+            raise ValueError('cell tensors do not match the registered template')
+        else:
+            contracts.validate_tensor_override(part['params'], part['params'])
+    return contracts.reference(cell, TEMPLATES)
+
+
+def typed_chain_cell(a, b, **meta):
+    """Explicit typed composition; historical chain identities stay reproducible."""
+    import cell_contracts as contracts
+    first, second = cell_reference(a), cell_reference(b)
+    contracts.require_chain(first, second)
+    child = chain_cell(a, b, **meta)
+    child['compatibility'] = cell_reference(child)
+    return child
+
+
+def export_bank(cells, router):
+    """Versioned circuit artifact with numeric weights and a bound expert roster."""
+    import cell_contracts as contracts
+    body = {'schema': 'cellforge-skill-bank/1', 'experts': [cell_reference(c) for c in cells],
+            'router': contracts.router_contract(cells, router), 'tensors': to_tensors(cells, router)}
+    return copy.deepcopy(dict(body, artifact_hash=digest(body)))
+
+
+def predict_bank(artifact, task, tensors=None):
+    """Execute typed topology with saved or caller-supplied literal tensors.
+
+    Validate the original checkpoint first. An explicit override is used for
+    every cell and router coefficient, including zero/random controls; it never
+    inherits a saved numeric value. Identical ablated experts remain distinct
+    ordered slots, without claiming their original numerical identities.
+    """
+    if artifact.get('schema') != 'cellforge-skill-bank/1':
+        raise ValueError('unsupported skill-bank artifact version')
+    body = {k: v for k, v in artifact.items() if k != 'artifact_hash'}
+    if digest(body) != artifact.get('artifact_hash'):
+        raise ValueError('skill-bank artifact hash mismatch')
+    def restore(ref, flat):
+        if ref['kind'] == 'cell':
+            return make_cell(ref['template'], flat)
+        if ref['kind'] != 'chain' or len(ref.get('parts', [])) != 2:
+            raise ValueError('unsupported exported circuit structure')
+        if any(not key.startswith(('A.', 'B.')) for key in flat):
+            raise ValueError('unexpected chain tensor prefix')
+        first = {key[2:]: value for key, value in flat.items() if key.startswith('A.')}
+        second = {key[2:]: value for key, value in flat.items() if key.startswith('B.')}
+        return chain_cell(restore(ref['parts'][0], first), restore(ref['parts'][1], second))
+    # Use the recorded template identities, not shape-based template inference.
+    def restore_bank(weights):
+        cells = [restore(ref, {key.split(':', 1)[1]: value for key, value in weights.items()
+                              if key.startswith('%d:' % index)}) for index, ref in enumerate(artifact['experts'])]
+        return cells, {'route.W': weights['route.W'], 'route.b': weights['route.b']}
+    cells, router = restore_bank(artifact['tensors'])
+    actual = export_bank(cells, router)
+    if actual != artifact:
+        raise ValueError('expert order, interface/layout version or router binding differs')
+    if tensors is not None:
+        import cell_contracts as contracts
+        weights = contracts.validate_tensor_override(tensors, artifact['tensors'])
+        cells, router = restore_bank(weights)
+    # Keep routing on the explicitly restored cells throughout execution.
+    demos = task['train']
+    scorer = Scorer([])
+    errors = np.array([scorer.demo_error(cell, {'id': 'query', 'task': task}) for cell in cells])
+    index = int(np.argmax(np.asarray(router['route.W']) @ -errors + np.asarray(router['route.b'])))
+    return [[run(cells[index], query['input'], demos)] for query in task['test']]
 
 
 def run(cell, grid, demos):
@@ -1459,6 +1536,20 @@ def passes(cell, task):
         return True
     except Exception:
         return False
+
+
+def task_outcome(cell, task):
+    """Search-fitness outcome with execution failure distinct from a wrong answer."""
+    demos = task['train']
+    try:
+        if not task['test'] or not demos:
+            return None
+        outcomes = [run(cell, query['input'], demos) == query['output'] for query in task['test']]
+        if not uses_context(cell):
+            outcomes.extend(run(cell, demo['input'], demos) == demo['output'] for demo in demos)
+        return bool(all(outcomes))
+    except Exception:
+        return None
 
 
 def positions(cell):

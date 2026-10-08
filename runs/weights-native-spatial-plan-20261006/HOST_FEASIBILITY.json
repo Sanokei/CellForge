@@ -1,0 +1,815 @@
+{
+  "candidate_admission": false,
+  "development_or_report_predictions": 0,
+  "hand_coded_chain": {
+    "compatibility": {
+      "interface": {
+        "context": "demonstration-pairs/1",
+        "input": {
+          "dtype": "integer",
+          "encoding": "cellforge-grid-token/1",
+          "rank": 2,
+          "type": "grid"
+        },
+        "output": {
+          "dtype": "integer",
+          "encoding": "cellforge-grid-token/1",
+          "rank": 2,
+          "type": "grid"
+        },
+        "schema": "cellforge-cell-interface/1",
+        "version": 1
+      },
+      "kind": "chain",
+      "parts": [
+        {
+          "implementation_version": "legacy/1",
+          "interface": {
+            "context": "demonstration-pairs/1",
+            "input": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "output": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "schema": "cellforge-cell-interface/1",
+            "version": 1
+          },
+          "kind": "cell",
+          "layout": {
+            "dirs": {
+              "dtype": "float64",
+              "shape": [
+                8
+              ]
+            },
+            "paint": {
+              "dtype": "float64",
+              "shape": [
+                10
+              ]
+            },
+            "src": {
+              "dtype": "float64",
+              "shape": [
+                10
+              ]
+            },
+            "stop": {
+              "dtype": "float64",
+              "shape": [
+                3
+              ]
+            }
+          },
+          "reference_hash": "901c3cedffb43b59f8042f0fed4dc96c9fa13e140b2fcf452b6fa312387406db",
+          "schema": "cellforge-cell-reference/1",
+          "template": "ray_cast",
+          "weight_id": "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e"
+        },
+        {
+          "implementation_version": "legacy/1",
+          "interface": {
+            "context": "demonstration-pairs/1",
+            "input": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "output": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "schema": "cellforge-cell-interface/1",
+            "version": 1
+          },
+          "kind": "cell",
+          "layout": {
+            "orient": {
+              "dtype": "float64",
+              "shape": [
+                4,
+                4,
+                8
+              ]
+            },
+            "pec": {
+              "dtype": "float64",
+              "shape": [
+                4
+              ]
+            },
+            "per": {
+              "dtype": "float64",
+              "shape": [
+                4
+              ]
+            }
+          },
+          "reference_hash": "5d4134981a4e6c86c81112b960c12192a49e0b45ae35f0dd30364146d7c07646",
+          "schema": "cellforge-cell-reference/1",
+          "template": "tile_orient",
+          "weight_id": "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3"
+        }
+      ],
+      "reference_hash": "b6e3befddbde711127a8fa47a60be237d6282a9c3e17db28b79642476c0d03ca",
+      "schema": "cellforge-cell-reference/1",
+      "weight_id": "1ad8b49c9e1e497f51f0002b1c302421f2056f08a15b4213962c8bd23d7e3fb1"
+    },
+    "id": "1ad8b49c9e1e497f51f0002b1c302421f2056f08a15b4213962c8bd23d7e3fb1",
+    "kind": "chain",
+    "parents": [
+      "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e",
+      "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3"
+    ],
+    "parts": [
+      {
+        "id": "d48fc98f248b79662f18fbdbd48e48b77563282d53729e164655c716a1821d2e",
+        "kind": "cell",
+        "params": {
+          "dirs": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "paint": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "src": [
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "stop": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "template": "ray_cast"
+      },
+      {
+        "id": "46b9551a82dcb46a43939d387ec4ecf39577191562b3510c8611d6ed3fcb0fd3",
+        "kind": "cell",
+        "params": {
+          "orient": [
+            [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ]
+          ],
+          "pec": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "per": [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        "template": "tile_orient"
+      }
+    ]
+  },
+  "hand_coded_chain_results": [
+    {
+      "correct": true,
+      "prediction_hash": "c2638619b79c3c63a0d664ea61d3fa2cd52e689d13549745e9701ab2a7131a69",
+      "runtime_error": null
+    },
+    {
+      "correct": true,
+      "prediction_hash": "a2db60e43018db45b931037b51841ef1f4a35dcc659be19d094bb563de3f3c6c",
+      "runtime_error": null
+    },
+    {
+      "correct": true,
+      "prediction_hash": "1d0ca5af577891e6095e1c72827b8efce154d9903b6e3e33a7dc26da2e3c9008",
+      "runtime_error": null
+    }
+  ],
+  "hash": "b53e30d1a0e6d2078c06a11ed4a0f1168f9994615a9c831da7306ca74da5a528",
+  "interface": {
+    "context": "demonstration-pairs/1",
+    "input": {
+      "dtype": "integer",
+      "encoding": "cellforge-grid-token/1",
+      "rank": 2,
+      "type": "grid"
+    },
+    "output": {
+      "dtype": "integer",
+      "encoding": "cellforge-grid-token/1",
+      "rank": 2,
+      "type": "grid"
+    },
+    "schema": "cellforge-cell-interface/1",
+    "version": 1
+  },
+  "llm_authored": false,
+  "parameter_search": false,
+  "query_predictions": 0,
+  "schema": "cellforge-search-structure-feasibility/1",
+  "script_sha256": "b69f7df4012537152f08a4c5c70301858b486ebee3642098702c15481a4c49a1",
+  "weight_positions": 0,
+  "zero_chain": {
+    "compatibility": {
+      "interface": {
+        "context": "demonstration-pairs/1",
+        "input": {
+          "dtype": "integer",
+          "encoding": "cellforge-grid-token/1",
+          "rank": 2,
+          "type": "grid"
+        },
+        "output": {
+          "dtype": "integer",
+          "encoding": "cellforge-grid-token/1",
+          "rank": 2,
+          "type": "grid"
+        },
+        "schema": "cellforge-cell-interface/1",
+        "version": 1
+      },
+      "kind": "chain",
+      "parts": [
+        {
+          "implementation_version": "legacy/1",
+          "interface": {
+            "context": "demonstration-pairs/1",
+            "input": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "output": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "schema": "cellforge-cell-interface/1",
+            "version": 1
+          },
+          "kind": "cell",
+          "layout": {
+            "dirs": {
+              "dtype": "float64",
+              "shape": [
+                8
+              ]
+            },
+            "paint": {
+              "dtype": "float64",
+              "shape": [
+                10
+              ]
+            },
+            "src": {
+              "dtype": "float64",
+              "shape": [
+                10
+              ]
+            },
+            "stop": {
+              "dtype": "float64",
+              "shape": [
+                3
+              ]
+            }
+          },
+          "reference_hash": "389a692d4f96bbd45192f9837e44c0a51e23896fa81d0cecca0e5f46062587c2",
+          "schema": "cellforge-cell-reference/1",
+          "template": "ray_cast",
+          "weight_id": "56713ccdfd11d4f18271e3b2dac817485a599a8d27db63634dc9f74b747e0ee9"
+        },
+        {
+          "implementation_version": "legacy/1",
+          "interface": {
+            "context": "demonstration-pairs/1",
+            "input": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "output": {
+              "dtype": "integer",
+              "encoding": "cellforge-grid-token/1",
+              "rank": 2,
+              "type": "grid"
+            },
+            "schema": "cellforge-cell-interface/1",
+            "version": 1
+          },
+          "kind": "cell",
+          "layout": {
+            "orient": {
+              "dtype": "float64",
+              "shape": [
+                4,
+                4,
+                8
+              ]
+            },
+            "pec": {
+              "dtype": "float64",
+              "shape": [
+                4
+              ]
+            },
+            "per": {
+              "dtype": "float64",
+              "shape": [
+                4
+              ]
+            }
+          },
+          "reference_hash": "f8296be06b01947885594695a7da22dc1c837dbeb532cfab7cbd80945cfb8deb",
+          "schema": "cellforge-cell-reference/1",
+          "template": "tile_orient",
+          "weight_id": "c6965b1f1e0d03182fa87da79b7dec8287c16d2b607646002c2b65c65d976b14"
+        }
+      ],
+      "reference_hash": "317e268cb90d7b8d730a6f193e5cd17911b449d2709190cbf11186ce62f98131",
+      "schema": "cellforge-cell-reference/1",
+      "weight_id": "6ecfb9158052dc786433c2af3aa9a39b206bc9b190f570eb753b579ee02eb2ed"
+    },
+    "id": "6ecfb9158052dc786433c2af3aa9a39b206bc9b190f570eb753b579ee02eb2ed",
+    "kind": "chain",
+    "parents": [
+      "56713ccdfd11d4f18271e3b2dac817485a599a8d27db63634dc9f74b747e0ee9",
+      "c6965b1f1e0d03182fa87da79b7dec8287c16d2b607646002c2b65c65d976b14"
+    ],
+    "parts": [
+      {
+        "id": "56713ccdfd11d4f18271e3b2dac817485a599a8d27db63634dc9f74b747e0ee9",
+        "kind": "cell",
+        "params": {
+          "dirs": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "paint": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "src": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "stop": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "template": "ray_cast"
+      },
+      {
+        "id": "c6965b1f1e0d03182fa87da79b7dec8287c16d2b607646002c2b65c65d976b14",
+        "kind": "cell",
+        "params": {
+          "orient": [
+            [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ]
+          ],
+          "pec": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "per": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "template": "tile_orient"
+      }
+    ]
+  },
+  "zero_chain_results": [
+    {
+      "correct": false,
+      "prediction_hash": "06d470804725e74f509acaa7a8f65224ace3ed412daf71ec0d7f4cf5e4697b47",
+      "runtime_error": null
+    },
+    {
+      "correct": false,
+      "prediction_hash": "eff23312562ff6ba32fb80a4df5006b0bd693fe9d29337a27daa989b46d17fa6",
+      "runtime_error": null
+    },
+    {
+      "correct": false,
+      "prediction_hash": "d5e1895db8528dff6da322daa262a40902480c043d8647a4c9f3cb3b3034b0b8",
+      "runtime_error": null
+    }
+  ],
+  "zero_snap_to_line_results": [
+    {
+      "correct": true,
+      "prediction_hash": "257e238ffeaf6870dcbe816ab8249cfcc193bcb38135041383aa0fbed96b538a",
+      "runtime_error": null
+    },
+    {
+      "correct": true,
+      "prediction_hash": "1d5cb5f9b3a4184a0bf7baffc57ca7057d967879ef1316927ff854ce859e498b",
+      "runtime_error": null
+    },
+    {
+      "correct": true,
+      "prediction_hash": "aa3e65627e196c69980fddaaab5cdac43a6501e53a7863d68be86cece92b7e72",
+      "runtime_error": null
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "arm": "direct_codex_grid_prediction_baseline",
+  "demonstrations": [
+    {
+      "input": [
+        "4489494494",
+        "4944544594",
+        "5994594594",
+        "5944594944",
+        "5949444454",
+        "5949449454",
+        "5945459444",
+        "5949459449",
+        "5949449548",
+        "4944949544"
+      ],
+      "output": [
+        "4444499558",
+        "4444499958",
+        "4444499955",
+        "4444499955",
+        "4444499955",
+        "4444499955",
+        "4444499955",
+        "4444499955",
+        "4444499955",
+        "4444499955"
+      ]
+    },
+    {
+      "input": [
+        "2666656666",
+        "2626652626",
+        "6526252522",
+        "6666256562",
+        "6266266662",
+        "8265662868",
+        "5225662668",
+        "5225266626",
+        "6266286526",
+        "6266286566"
+      ],
+      "output": [
+        "6666622258",
+        "6666622258",
+        "6666622258",
+        "6666622258",
+        "6666622258",
+        "6666622258",
+        "6666622255",
+        "6666622255",
+        "6666622255",
+        "6666662255"
+      ]
+    }
+  ],
+  "instructions": [
+    "Infer the rule from the demonstrations and predict the query output. Each string is one row and each digit is one cell.",
+    "Tools-free reasoning only. Return data, no code. No benchmark or AGI completion claims.",
+    "Return one JSON object with exactly task_id, predictions, rationale. predictions is a list of grids; each grid is a list of digit strings. One grid is required for the one query.",
+    "All rows within a grid must have equal nonzero length; at most 30 rows and 30 columns, colors 0..9.",
+    "This is a direct reasoning baseline, separate from literal neural weights. No labels or feedback from the query will be returned for revision."
+  ],
+  "query_inputs": [
+    [
+      "3333933838",
+      "8293383838",
+      "8298983338",
+      "8398382823",
+      "8398392829",
+      "8398393329",
+      "8393338329",
+      "8333933389",
+      "3383938389",
+      "3383938389"
+    ]
+  ],
+  "task_id": "bd283c4a"
+}

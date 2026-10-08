@@ -1,0 +1,17 @@
+{
+  "author_calls_max": 4,
+  "credit_usage": null,
+  "datasets": [
+    "ARC-AGI",
+    "ARC-AGI-2"
+  ],
+  "frozen_before_new_task_contents": true,
+  "hash": "1a8ab8a52303ac3e1bf04681d3df11e195efc7040cf09bac25297647ebcf8c48",
+  "kind": "arc_training_selection_seed/1",
+  "prior_exposure_policy": "Newly selected and absent from scanned local text records; remote/nontext/model exposure unverified.",
+  "query_feedback_revision": false,
+  "seed": 202610060404,
+  "selection": "Reuse batch03 official pinned training manifests and inventory. Add every locally selected task ID since that inventory. Exclude known prior IDs; exclude all shared ARC1/ARC2 IDs from ARC2 pool. Rank by sha256(seed:dataset:task_id), take first two per dataset.",
+  "selection_count_per_dataset": 2,
+  "stop_after_batch": "Deliberate capability/weights research checkpoint; no larger campaign or batch05 prepared automatically."
+}

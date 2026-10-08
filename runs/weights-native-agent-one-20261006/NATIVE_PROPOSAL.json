@@ -1,0 +1,22 @@
+[
+  {
+    "task_id": "1a07d186",
+    "params": {
+      "sim": [
+        [8, -4, -4, -4, -4, -4, -4, -4, -4, -4],
+        [-4, 8, -4, -4, -4, -4, -4, -4, -4, -4],
+        [-4, -4, 8, -4, -4, -4, -4, -4, -4, -4],
+        [-4, -4, -4, 8, -4, -4, -4, -4, -4, -4],
+        [-4, -4, -4, -4, 8, -4, -4, -4, -4, -4],
+        [-4, -4, -4, -4, -4, 8, -4, -4, -4, -4],
+        [-4, -4, -4, -4, -4, -4, 8, -4, -4, -4],
+        [-4, -4, -4, -4, -4, -4, -4, 8, -4, -4],
+        [-4, -4, -4, -4, -4, -4, -4, -4, 8, -4],
+        [-4, -4, -4, -4, -4, -4, -4, -4, -4, 8]
+      ],
+      "temp": [1],
+      "keep": [0.25]
+    },
+    "rationale": "Use a strong diagonal and uniformly low off-diagonal similarities so each seen input colour primarily retrieves its own demonstrated output distribution. A modest positive keep term preserves the original colour when that colour is absent from the demonstration context, while remaining below the near-unit confidence of a strongly attended seen mapping. This is a best attempt based only on the supplied examples and template description; it makes no claim about held-out performance."
+  }
+]

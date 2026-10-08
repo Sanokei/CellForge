@@ -1,0 +1,70 @@
+{
+  "basis": "Frozen ray_cast and tile_orient use source/direction signs and stop/paint/tile argmax decisions only; all decisions match. The 16 changed orientation maxima (9 versus 1) do not change either predictor. No new evaluation.",
+  "differing_scalar_positions": 16,
+  "forward_choices": {
+    "all_orientation_indices": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "directions": [
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "paint": null,
+    "src_gates": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "stop": 0,
+    "tile_counts": [
+      2,
+      2
+    ]
+  },
+  "functional_diversity_count": 1,
+  "hash": "b1a76376c944ab9d142accf9334d36942a0fe29903ff4dd9048b17d7dabfc460",
+  "numeric_genome_ids_distinct": true,
+  "result_hashes": {
+    "founder_a": "5225f991303199815ff5875de2dcfb96ab74109718fede31239b999d924dacc3",
+    "founder_b": "b93b1e93a66d82f0562fe565a034d6db7723c31c8923878a458f332a5afdc357"
+  },
+  "same_all_forward_choices": true,
+  "same_ray_params": true,
+  "schema": "cellforge-forward-choice-comparison/1"
+}

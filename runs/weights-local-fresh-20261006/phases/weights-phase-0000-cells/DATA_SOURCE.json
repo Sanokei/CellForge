@@ -1,0 +1,84 @@
+{
+  "commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+  "evaluation_downloaded": false,
+  "historical_partitions_reused": false,
+  "license": "Apache-2.0",
+  "license_sha256": "8360699be7ffadd4b460e4287c1f7d0ada282518ee8e375fff603b1b3ecbb43f",
+  "panels": {
+    "development_selection": [
+      {
+        "downloaded": true,
+        "git_blob": "d31c4745028cda6e57ce583dcb0ea20d0a1289d3",
+        "id": "f9d67f8b",
+        "sha256": "abb635a7ec456908283c2b08afdb1290c1d351fe1ce8eb74c6786b32478a9ab3",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/f9d67f8b.json"
+      },
+      {
+        "downloaded": true,
+        "git_blob": "df13f5e1b696af1a10a987d7f55f0931ab1debbc",
+        "id": "9565186b",
+        "sha256": "b95ab9b2a856750946cd48c9c47cfdb4d0420f04ddb2b92129e747685a04f878",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/9565186b.json"
+      },
+      {
+        "downloaded": true,
+        "git_blob": "ae8b682e00dbf3d37614ddd627fa00c28db76c24",
+        "id": "a6953f00",
+        "sha256": "5bb5e89552d9e26ba211f1f4a5c850866ce1bc8c607daa16ef8f39733b524502",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/a6953f00.json"
+      },
+      {
+        "downloaded": true,
+        "git_blob": "d587f6ae80733df9d08c6e8fac412a51f8d66c81",
+        "id": "31d5ba1a",
+        "sha256": "ecb308ce307eb55c65eacc17228aa43b6a0b6a9297f33c8eb1ef2ea53edcfe35",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/31d5ba1a.json"
+      }
+    ],
+    "report": [
+      {
+        "downloaded": false,
+        "git_blob": "d265a78b8d45cf9367abee02c7e6edfc4422f510",
+        "id": "d282b262"
+      },
+      {
+        "downloaded": false,
+        "git_blob": "e530cd853178735ff6e586765c183d4b5948e59b",
+        "id": "11dc524f"
+      }
+    ],
+    "search_fitness": [
+      {
+        "downloaded": true,
+        "git_blob": "975891f659a4b4e06c31f8972cfe9e0b967fe01a",
+        "id": "1a07d186",
+        "sha256": "0ad1a3e4b81ac395a44566439d422dbff0caf9b37fa48fd31910beae76cac0b2",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/1a07d186.json"
+      },
+      {
+        "downloaded": true,
+        "git_blob": "664ea58e3e5e2737b3ae7606edf6a23805f94012",
+        "id": "bd283c4a",
+        "sha256": "b2fbcd9330ebe69381dd53e4fa1f67b82c705578c731b79e4f01dc85400c79e1",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/bd283c4a.json"
+      },
+      {
+        "downloaded": true,
+        "git_blob": "217781bc474eaedb5b4b8c3f461ed8a1e6d84504",
+        "id": "3194b014",
+        "sha256": "7ce0d5b3b9d05fb51203a798cff9db24cd7c5838558e37d166ca89a7edfbb38a",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/3194b014.json"
+      },
+      {
+        "downloaded": true,
+        "git_blob": "9a801114cec9617cdd19538e08ee8cd5762af300",
+        "id": "f5b8619d",
+        "sha256": "3368d676b689bd29110310a305b7cc24e1f8388dc43c5aca254d96b7541d43bc",
+        "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/f5b8619d.json"
+      }
+    ]
+  },
+  "repository": "https://github.com/arcprize/ARC-AGI-2",
+  "schema": "cellforge-public-training-inputs/1",
+  "selection_rule": "exclude existing audit hash; rank by sha256(cellforge-fresh-local-20261006:+id); first4 search; next4 val-even; next2 val-odd report"
+}

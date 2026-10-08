@@ -1,0 +1,36 @@
+{
+  "author_calls_by_preparation": 0,
+  "author_visible_feedback": "one primary teacher-forced observed-update failure, its exact forward intermediates, and first three search rollout outcomes; no development evidence",
+  "forward_trace_equal": true,
+  "host_designed_replacement_weights": false,
+  "new_author_credit_usage": null,
+  "parent_freeze_sha256": "79ebfc7d0fdddcddcadad2d3a416f5f990d6244f94a2e35c30451d7541d80f7f",
+  "parent_parameter_hash": "e3208ca9f6769feb65e855cb51ed8896779ef31eccd331761701f7a24d645552",
+  "parent_result_sha256": "9a81f6dfa6f8dec4d782bc89512a40be195765e5ad460f13b475f9f838208dce",
+  "primary_failure": {
+    "actual_top1": 0,
+    "expected_top1": 1,
+    "new_path_advantage_expected_over_old": 2.2499482152937844e-06,
+    "observation": "Both event bits are 1. Hidden nodes 5..9 receive preactivations 8 or 12 and saturate near +1; their output contributions are nearly common across locations. Hidden nodes 0..4 carry the old-location signal. The equal output biases cancel in comparisons. The resulting largest logit selects old location 0 rather than the observed location 1.",
+    "old_path_advantage_old_over_expected": 4.999546021312976,
+    "replacement_weights_provided": false,
+    "scope": "directly recomputed from this search input and the supplied V1 coefficients",
+    "total_logit_advantage_old_over_expected": 4.99954377136476,
+    "untested_hypotheses_claimed_proven": false
+  },
+  "rollout_uses_own_predictions": true,
+  "saved_search_outcomes_equal": true,
+  "schema": "cellforge-belief-v2-preparation/1",
+  "search_event_indices": [
+    0,
+    1,
+    2
+  ],
+  "search_scenario_id": "search-2026100611",
+  "source_and_data_parent_hashes": {
+    "host/DEVELOPMENT.json": "b8422c66735b5a753790498235d90b6d9000a6efaa4794e0037623c6b71f6f4f",
+    "host/SEARCH.json": "c7cd1220543c6a7eec494725bc353eab8d8ba20b86ecee797486c003d5248f7f",
+    "host/evaluate.py": "a752d1e514e0e4c25c39106eeb8f378898f97b804e53cb535eb562edcdef91bb",
+    "host/runtime/belief_cell.py": "1b60df6ddefb4f7c231278bf87c2c2853a581283195d285201ff902eef75f700"
+  }
+}

@@ -1,5 +1,12 @@
 # Cleanup notes for paper/cellforge.tex (diagnosis, 30 September 2026)
 
+**6 October 2026:** `paper/cellforge.tex` is the active living manuscript and now
+contains the native ARC, synthetic-transfer, composition and adapter evidence.
+`cellforge_clean.tex` and the pre-cleanup files remain historical snapshots.
+Existing PDFs were not regenerated for this revision; do not use them as the
+current paper. The number-check script below targets the historical cleanup
+snapshot, not the new evidence. See [revision notes](REVISION_20261006.md).
+
 Cleaned version: `paper/cellforge_clean.tex` (original untouched). Build: `latexmk -pdf` on server
 `cellforge-1` (TeX Live 2023, no build script in paper/; `build.log` is from a stale 5-page build).
 Number check: `python paper/check_numbers.py`.

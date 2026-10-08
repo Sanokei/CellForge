@@ -1,0 +1,16 @@
+COMMAND: python -m unittest tests.test_native_composition_batch -v
+TIMEOUT: 30 seconds; one numerical thread
+EXIT: 0
+ELAPSED: 12.328s
+test_invalid_specialist_is_charged_then_rejects_without_development (tests.test_native_composition_batch.Composition.test_invalid_specialist_is_charged_then_rejects_without_development) ... ok
+test_matching_random_blocks_acceptance_and_stop_still_blocks (tests.test_native_composition_batch.Composition.test_matching_random_blocks_acceptance_and_stop_still_blocks) ... ok
+test_oracle_and_bank_independent_fixture_and_stripped_queries (tests.test_native_composition_batch.Composition.test_oracle_and_bank_independent_fixture_and_stripped_queries) ... ok
+test_production_generator_structure_only_and_no_outputs (tests.test_native_composition_batch.Composition.test_production_generator_structure_only_and_no_outputs) ... ok
+test_runtime_exception_is_never_a_feature_including_legacy_swallow (tests.test_native_composition_batch.Composition.test_runtime_exception_is_never_a_feature_including_legacy_swallow) ... ok
+test_two_stage_freeze_seal_search_selection_and_final_replay (tests.test_native_composition_batch.Composition.test_two_stage_freeze_seal_search_selection_and_final_replay) ... ok
+test_valid_failures_can_replace_once_full346_positions (tests.test_native_composition_batch.Composition.test_valid_failures_can_replace_once_full346_positions) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 11.719s
+
+OK

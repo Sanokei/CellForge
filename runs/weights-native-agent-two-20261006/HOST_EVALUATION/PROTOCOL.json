@@ -1,0 +1,204 @@
+{
+  "authoring_route": "native Codex agent file artifact; not maker.ask",
+  "automatic_admission": false,
+  "bound_evidence": {
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-one-20261006\\HOST_EVALUATION\\ATTEMPT.json": "35bad88efe0320f7fe708b1c5398e99d61399e309d7046d40999746441287617",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-one-20261006\\HOST_EVALUATION\\PROTOCOL.json": "ae45f171910b577a6ef72b4bb628696a67e2753e5bbbe02081dd71de74d3d7d1",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-one-20261006\\HOST_EVALUATION\\RESPONSE_CAPTURE.bin": "f0e1d5f99799223aa144bd327639f7512e1a57bdfa5415213c75baff7caef468",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-one-20261006\\HOST_EVALUATION\\RESULT.json": "4e4362ecb559feb0d657db6b73b9dcfeb4835c2b860239244b63262f45dcd5dc",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_MEMORY\\EVOLUTION_EVENTS.jsonl": "95f9933a6a6b771fb62c997ff7089606458e13377df24121450455452d0fa1d8",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_MEMORY\\EVOLUTION_MANIFEST.json": "0651e859ade841445491f514432efa8d061f6f0a9705cf1b5385945ec4dcd90c",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_MEMORY\\FAILURES.jsonl": "4b843dea8cef885679e7a2d6317b6538c10bc68d178f3438de87a85a23e0442a",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_MEMORY\\SEARCH_RECEIPT.json": "2776f742636d69d5501a0b2e0acb262d699d31013fc9e933e10cdbbe722a0804",
+    "D:\\Github\\CellForge\\runs\\weights-native-agent-two-20261006\\HOST_MEMORY\\VERIFIED_FEEDBACK.json": "46182a9deb0796325fe6849617a15d26dfd45247c73f6c442f26191c169f0b29"
+  },
+  "credit_usage": null,
+  "cumulative_positions_after_attempt": {
+    "native": 204,
+    "random": 204
+  },
+  "fresh_inputs": {
+    "manifest": "D:\\Github\\CellForge\\data\\arcagi2-local-20261006\\FRESH_INPUTS_MANIFEST_RECTANGULAR.json",
+    "sha256": "e9f1774ea2b05f60314c8dd99a2553e5c8d5aea3652cd2fc924381ae6ccdd8df"
+  },
+  "hash": "dfd65bc94e64bc58100bcd36828469abdb15112b236b49b71638b5da16112dad",
+  "maximum_submissions": 1,
+  "native_sequence_number": 2,
+  "operator": "complete_tensor_replacement",
+  "parent_hashes": [
+    "bd81c47cfcdf4694aac57f43d87412bb3a31c0244f1a75eebf49739330e96bd5"
+  ],
+  "partitions": {
+    "development_selection": [
+      "f9d67f8b",
+      "9565186b",
+      "a6953f00",
+      "31d5ba1a"
+    ],
+    "search_fitness": [
+      "1a07d186",
+      "bd283c4a",
+      "3194b014",
+      "f5b8619d"
+    ]
+  },
+  "positions_per_arm": 102,
+  "prior_attempt_hash": "5b47941ed9906732bc396f2ec8c1ebb9325176f675817f4ae8b0c1dc62bd059c",
+  "random_distribution": "uniform[-9,9] at all 102 positions",
+  "random_seed": 2026100603,
+  "reference_cell": {
+    "id": "bd81c47cfcdf4694aac57f43d87412bb3a31c0244f1a75eebf49739330e96bd5",
+    "kind": "cell",
+    "params": {
+      "keep": [
+        0.25
+      ],
+      "sim": [
+        [
+          8,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          8,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          8,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          8,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          8,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          8,
+          -4,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          8,
+          -4,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          8,
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          8,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          -4,
+          8
+        ]
+      ],
+      "temp": [
+        1
+      ]
+    },
+    "template": "assoc_induct"
+  },
+  "report_accessed": false,
+  "request_hashes": {
+    "AUTHORING_PACKET_V2.json": "53d65db6ec6f4479bfc6f4c1af2b9e66198c113c36767e0f62c4bf1f403f8f9b",
+    "REQUEST_MANIFEST.json": "e9ab252e907db2e84e7d8b285403981ae54b6d58ec60d3d9b62ea3d86f64fe64",
+    "RESPONSE_SCHEMA.json": "1eaf67ee775689c554fb02d62ceaf112c5180ed288cc332b82a7c40b4b1ef667"
+  },
+  "reserved_report_ids": [
+    "d282b262",
+    "11dc524f"
+  ],
+  "schema": "cellforge-native-import-protocol/1",
+  "scope_hash": "dfc452c8ad2e4af24ff8246802da58b2d8b9b12c3ea9f29fced870f42e5c5b03",
+  "source_hashes": {
+    "cell_contracts.py": "bdbee291fe2cec190ffd1c3747e3c402de15171dbbd596a989c199fe360f852c",
+    "fresh_inputs.py": "0151b8e27e9bc47adde6d56524ecd085c51ac69502b3d454f4af8e387a441001",
+    "native_proposal_import.py": "e5b39641fddf9ded8b84eb1fa59c8a9fd9acbe2b553742ff2374291b5d024b78",
+    "skillcore.py": "3f6b926ecb7650f041c2e0d8ee42dc0271588c76701ce9e30414b3007bcc5b8c"
+  },
+  "task_id": "1a07d186",
+  "template": "assoc_induct"
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "items": {
+    "additionalProperties": false,
+    "properties": {
+      "params": {
+        "additionalProperties": false,
+        "properties": {
+          "ray_cast": {
+            "additionalProperties": false,
+            "properties": {
+              "dirs": {
+                "items": {
+                  "maximum": 9,
+                  "minimum": -9,
+                  "type": "number"
+                },
+                "maxItems": 8,
+                "minItems": 8,
+                "type": "array"
+              },
+              "paint": {
+                "items": {
+                  "maximum": 9,
+                  "minimum": -9,
+                  "type": "number"
+                },
+                "maxItems": 10,
+                "minItems": 10,
+                "type": "array"
+              },
+              "src": {
+                "items": {
+                  "maximum": 9,
+                  "minimum": -9,
+                  "type": "number"
+                },
+                "maxItems": 10,
+                "minItems": 10,
+                "type": "array"
+              },
+              "stop": {
+                "items": {
+                  "maximum": 9,
+                  "minimum": -9,
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              }
+            },
+            "required": [
+              "src",
+              "dirs",
+              "stop",
+              "paint"
+            ],
+            "type": "object"
+          },
+          "tile_orient": {
+            "additionalProperties": false,
+            "properties": {
+              "orient": {
+                "items": {
+                  "items": {
+                    "items": {
+                      "maximum": 9,
+                      "minimum": -9,
+                      "type": "number"
+                    },
+                    "maxItems": 8,
+                    "minItems": 8,
+                    "type": "array"
+                  },
+                  "maxItems": 4,
+                  "minItems": 4,
+                  "type": "array"
+                },
+                "maxItems": 4,
+                "minItems": 4,
+                "type": "array"
+              },
+              "pec": {
+                "items": {
+                  "maximum": 9,
+                  "minimum": -9,
+                  "type": "number"
+                },
+                "maxItems": 4,
+                "minItems": 4,
+                "type": "array"
+              },
+              "per": {
+                "items": {
+                  "maximum": 9,
+                  "minimum": -9,
+                  "type": "number"
+                },
+                "maxItems": 4,
+                "minItems": 4,
+                "type": "array"
+              }
+            },
+            "required": [
+              "per",
+              "pec",
+              "orient"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "ray_cast",
+          "tile_orient"
+        ],
+        "type": "object"
+      },
+      "rationale": {
+        "maxLength": 4096,
+        "type": "string"
+      },
+      "task_id": {
+        "const": "f5b8619d"
+      }
+    },
+    "required": [
+      "task_id",
+      "params",
+      "rationale"
+    ],
+    "type": "object"
+  },
+  "maxItems": 1,
+  "minItems": 1,
+  "type": "array"
+}

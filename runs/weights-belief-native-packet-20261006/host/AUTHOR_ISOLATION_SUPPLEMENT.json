@@ -1,0 +1,39 @@
+{
+  "schema": "cellforge-belief-author-isolation-supplement/1",
+  "packet_id": "belief-native-20261006-one",
+  "freeze_sha256": "79ebfc7d0fdddcddcadad2d3a416f5f990d6244f94a2e35c30451d7541d80f7f",
+  "parent_thread_id": "01a1036c-dd09-77ee-a2b7-df840ec710c7",
+  "source_thread_id": "01a10f55-cbcd-75e6-a3bf-9fce52f7001f",
+  "source_turn_id": "01a10f55-d64e-7531-ad0b-a5c06baa123f",
+  "model": "gpt-6-luna",
+  "reasoning": "low",
+  "source_evidence": "Parent-reported source IDs and model/settings; terminal completion has not been confirmed.",
+  "author_state_at_receipt": "awaiting_confirmed_terminal_completion",
+  "author_attempt_limit": 1,
+  "second_author_authorized": false,
+  "actual_isolation_as_reported_by_parent": {
+    "fresh_context": true,
+    "working_directory": "author",
+    "read_restriction_mechanism": "explicit author instructions",
+    "allowed_read_paths": [
+      "author/AUTHORING_PACKET.json",
+      "author/RESPONSE_SCHEMA.json"
+    ],
+    "allowed_output_path": "author/NATIVE_PROPOSAL.json",
+    "tool_disabled": false,
+    "filesystem_isolation_enforced": false,
+    "platform_tool_disabled_flag_available": false,
+    "actual_access_log_verified": false
+  },
+  "frozen_tool_disabled_requirement_met": false,
+  "deviation": "The frozen README/protocol requested a tool-disabled author. The parent reports that this platform lacks that flag and has directed use of a fresh author context with explicit read restrictions. This is prompt-restricted isolation, not an enforced filesystem sandbox; actual compliance cannot be inferred from working-directory separation.",
+  "supplement_scope": "Append-only record of the parent-reported isolation limitation. Does not alter or rehash frozen files, relax data/scoring contracts, attest actual author accesses, or claim that the original tool-disabled condition was met.",
+  "author_credit_usage": null,
+  "author_credit_status": "unknown, not zero or free",
+  "response_inspected": false,
+  "response_captured": false,
+  "import_performed": false,
+  "replay_performed": false,
+  "import_gate": "Wait for parent confirmation of terminal completion before reading or importing the response; do not import a partial file.",
+  "host_panels_changed": false
+}

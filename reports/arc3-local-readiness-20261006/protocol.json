@@ -1,0 +1,16 @@
+{
+  "purpose": "Offline SDK fixture readiness only; not an ARC-3 benchmark or learned policy result",
+  "game_id": "bt11-fd9df0622a1a",
+  "seed": 0,
+  "initial_resets": 1,
+  "max_action_steps": 16,
+  "max_total_engine_actions": 17,
+  "wall_seconds": 30,
+  "stop_on": ["WIN", "GAME_OVER"],
+  "actions": [3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4],
+  "action_data": {},
+  "selection": "Fixed alternating data queue; no policy source, no adaptation, no retries",
+  "operation_mode": "OFFLINE",
+  "network": "Restricted execution sandbox plus child CPython audit denial of every socket event",
+  "sandbox_limit": "Trusted publisher engine/fixture only. No Windows bounded-memory sandbox for untrusted policy code is established."
+}

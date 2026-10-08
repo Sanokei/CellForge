@@ -1,0 +1,33 @@
+{
+  "schema": "cellforge-belief-native-response/1",
+  "packet_id": "belief-native-20261006-one",
+  "parameters": [
+    5,0,0,0,0,0,0,0,0,0,0,0,
+    0,5,0,0,0,0,0,0,0,0,0,0,
+    0,0,5,0,0,0,0,0,0,0,0,0,
+    0,0,0,5,0,0,0,0,0,0,0,0,
+    0,0,0,0,5,0,0,0,0,0,0,0,
+    0,0,0,0,0,4,0,0,0,0,4,4,
+    0,0,0,0,0,0,4,0,0,0,4,4,
+    0,0,0,0,0,0,0,4,0,0,4,4,
+    0,0,0,0,0,0,0,0,4,0,4,4,
+    0,0,0,0,0,0,0,0,0,4,4,4,
+    0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,
+
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+
+    5,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,
+    0,5,0,0,0,0,10,0,0,0,0,0,0,0,0,0,
+    0,0,5,0,0,0,0,10,0,0,0,0,0,0,0,0,
+    0,0,0,5,0,0,0,0,10,0,0,0,0,0,0,0,
+    0,0,0,0,5,0,0,0,0,10,0,0,0,0,0,0,
+
+    9.640275800758168,9.640275800758168,9.640275800758168,9.640275800758168,9.640275800758168
+  ],
+  "rationale": "The first five hidden units encode the five old-state coordinates. The next five detect each observed-state coordinate jointly with object_match=1 and observation=1: their tanh input is 4*(new[k]+object_match+observation-2.5), which is positive only when all three inputs are 1. Each output combines its old-state unit with its gated observed-state unit; the output bias offsets the inactive gate response. The remaining six hidden units are zero. The network therefore preserves old state when either control bit is 0 and selects observed state when both are 1, including unknown as coordinate 4. Parameters are literal, finite values; no score is claimed."
+}

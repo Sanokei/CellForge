@@ -1,0 +1,84 @@
+COMMAND: python -m unittest tests.test_one_standard -v
+TIMEOUT_SECONDS: 30
+EXIT_CODE: 1
+ELAPSED_SECONDS: 0.265
+test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed) ... FAIL
+test_founders_are_llm_written_literal_weights (tests.test_one_standard.ContractOfEveryWeightsRun.test_founders_are_llm_written_literal_weights) ... ok
+test_genomes_are_weights_with_valid_lineage (tests.test_one_standard.ContractOfEveryWeightsRun.test_genomes_are_weights_with_valid_lineage) ... ok
+test_llm_arm_and_random_control_present (tests.test_one_standard.ContractOfEveryWeightsRun.test_llm_arm_and_random_control_present) ... ok
+test_mutation_origin_matches_arm (tests.test_one_standard.ContractOfEveryWeightsRun.test_mutation_origin_matches_arm) ... ok
+test_required_fields (tests.test_one_standard.ContractOfEveryWeightsRun.test_required_fields) ... ok
+test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough) ... FAIL
+test_accuracy_improves_over_generations (tests.test_one_standard.Milestone.test_accuracy_improves_over_generations) ... FAIL
+test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone.test_crossover_children_exist_and_are_new) ... FAIL
+test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone.test_enough_niches_and_llm_founders) ... FAIL
+test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone.test_llm_mutation_beats_random_control) ... FAIL
+test_many_distinct_weight_genomes (tests.test_one_standard.Milestone.test_many_distinct_weight_genomes) ... FAIL
+test_agents_md_exists_and_points_to_standard (tests.test_one_standard.RepoGuards.test_agents_md_exists_and_points_to_standard) ... D:\Github\CellForge\tests\test_one_standard.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\Github\\CellForge\\AGENTS.md' mode='r' encoding='utf-8'>
+  t = open(p, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards.test_no_new_gene_list_runs_after_cutoff)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*. ... ok
+test_standard_doc_exists (tests.test_one_standard.RepoGuards.test_standard_doc_exists) ... ok
+
+======================================================================
+FAIL: test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_one_standard.py", line 117, in test_equal_charged_budget_every_arm_and_seed
+    self.assertEqual(n, s["budget_per_arm"], "%s arm=%s seed=%s charged %d" % (p, arm, seed, n))
+AssertionError: 0 != 2 : D:\Github\CellForge\runs\weights-local-maker-initial-20261006\STANDARD.json arm=llm seed=11 charged 0
+
+======================================================================
+FAIL: test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_one_standard.py", line 110, in test_seeds_predeclared_and_enough
+    self.assertGreaterEqual(len(set(s["seeds"])), MIN_SEEDS, p)
+AssertionError: 1 not greater than or equal to 3 : D:\Github\CellForge\runs\weights-belief-analytical-reference-20261006\STANDARD.json
+
+======================================================================
+FAIL: test_accuracy_improves_over_generations (tests.test_one_standard.Milestone.test_accuracy_improves_over_generations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_one_standard.py", line 203, in test_accuracy_improves_over_generations
+    self.assertTrue(ok, "accuracy does not rise across generations")
+AssertionError: False is not true : accuracy does not rise across generations
+
+======================================================================
+FAIL: test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone.test_crossover_children_exist_and_are_new)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_one_standard.py", line 190, in test_crossover_children_exist_and_are_new
+    self.assertGreater(n, 0, "no crossover children")
+AssertionError: 0 not greater than 0 : no crossover children
+
+======================================================================
+FAIL: test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone.test_enough_niches_and_llm_founders)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_one_standard.py", line 168, in test_enough_niches_and_llm_founders
+    self.assertTrue(ok, ">=%d niches with >=%d LLM-authored founders each" % (MIN_NICHES, MIN_FOUNDERS_PER_NICHE))
+AssertionError: False is not true : >=4 niches with >=3 LLM-authored founders each
+
+======================================================================
+FAIL: test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone.test_llm_mutation_beats_random_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_one_standard.py", line 183, in test_llm_mutation_beats_random_control
+    self.assertTrue(ok, "no run shows LLM-written mutations beating the random-weight control")
+AssertionError: False is not true : no run shows LLM-written mutations beating the random-weight control
+
+======================================================================
+FAIL: test_many_distinct_weight_genomes (tests.test_one_standard.Milestone.test_many_distinct_weight_genomes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_one_standard.py", line 172, in test_many_distinct_weight_genomes
+    self.assertGreaterEqual(n, MIN_DISTINCT_GENOMES, "only %d distinct weight genomes" % n)
+AssertionError: 0 not greater than or equal to 100 : only 0 distinct weight genomes
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.065s
+
+FAILED (failures=7)

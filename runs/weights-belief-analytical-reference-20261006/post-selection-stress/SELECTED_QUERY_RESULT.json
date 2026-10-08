@@ -1,0 +1,2472 @@
+{
+  "classification": "post-selection known-rule expressivity stress; no held-out independence or ONE_STANDARD claim",
+  "cohorts": {
+    "categorical": {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": 6,
+      "correct": 192,
+      "distribution_scenario_pass": 6,
+      "predictions": 192,
+      "probability_errors": 0,
+      "queries": 192,
+      "runtime_errors": 0,
+      "unresolved": 0
+    },
+    "distributed": {
+      "categorical_errors": 8,
+      "categorical_scenario_pass": 2,
+      "correct": 88,
+      "distribution_scenario_pass": 0,
+      "predictions": 96,
+      "probability_errors": 73,
+      "queries": 96,
+      "runtime_errors": 0,
+      "unresolved": 0
+    }
+  },
+  "derivation": "One predeclared slot per event. Exact counts derived from exhaustive every-slot failure records; no new model execution, feedback or scoring-rule edits.",
+  "every_slot_result_sha256": "1d6f29e62757c2987df43c510f0214ea27719d7f11dee69d5bfb951b63024fbb",
+  "scenarios": [
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "categorical",
+      "correct": 32,
+      "distribution_scenario_pass": true,
+      "predictions": 32,
+      "probability_errors": 0,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "all-pairs-then-unseen-32",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "categorical",
+      "correct": 32,
+      "distribution_scenario_pass": true,
+      "predictions": 32,
+      "probability_errors": 0,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "all-pairs-then-unseen-32-rename-a",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "categorical",
+      "correct": 32,
+      "distribution_scenario_pass": true,
+      "predictions": 32,
+      "probability_errors": 0,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "all-pairs-then-unseen-32-rename-b",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "categorical",
+      "correct": 32,
+      "distribution_scenario_pass": true,
+      "predictions": 32,
+      "probability_errors": 0,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "distractor-partial-observation-32",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "categorical",
+      "correct": 32,
+      "distribution_scenario_pass": true,
+      "predictions": 32,
+      "probability_errors": 0,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "distractor-partial-observation-32-rename-a",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "categorical",
+      "correct": 32,
+      "distribution_scenario_pass": true,
+      "predictions": 32,
+      "probability_errors": 0,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "distractor-partial-observation-32-rename-b",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 8,
+      "categorical_scenario_pass": false,
+      "cohort": "distributed",
+      "correct": 24,
+      "distribution_scenario_pass": false,
+      "predictions": 32,
+      "probability_errors": 24,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": true,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": true,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": true,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": true,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": true,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": true,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": true,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": true,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "mixed-unseen-preserve-32",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "distributed",
+      "correct": 32,
+      "distribution_scenario_pass": false,
+      "predictions": 32,
+      "probability_errors": 18,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": false,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "mixed-unrelated-preserve-32",
+      "unresolved": 0
+    },
+    {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": true,
+      "cohort": "distributed",
+      "correct": 32,
+      "distribution_scenario_pass": false,
+      "predictions": 32,
+      "probability_errors": 31,
+      "queries": 32,
+      "query_outcomes": [
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 0,
+          "object": 0,
+          "probability_error": false,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 1,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 2,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 3,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 4,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 5,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 6,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 7,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 8,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 9,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 10,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 11,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 12,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 13,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 14,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 15,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 16,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 17,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 18,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 0,
+          "categorical_error": false,
+          "event": 19,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 20,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 21,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 22,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 1,
+          "categorical_error": false,
+          "event": 23,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 24,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 25,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 26,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 2,
+          "categorical_error": false,
+          "event": 27,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 28,
+          "object": 0,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 29,
+          "object": 1,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 30,
+          "object": 2,
+          "probability_error": true,
+          "resolved": true
+        },
+        {
+          "actor": 3,
+          "categorical_error": false,
+          "event": 31,
+          "object": 3,
+          "probability_error": true,
+          "resolved": true
+        }
+      ],
+      "runtime_errors": 0,
+      "scenario_id": "near-tie-repeated-preserve-32",
+      "unresolved": 0
+    }
+  ],
+  "schema": "cellforge-belief-stress-selected-query-result/1",
+  "selected_query_freeze_sha256": "a9a9567161e7ced6fb018e8403f93b045216b09853cc17c120924bfab17db833"
+}

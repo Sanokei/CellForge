@@ -1,0 +1,24 @@
+test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed) ... FAIL
+test_founders_are_llm_written_literal_weights (tests.test_one_standard.ContractOfEveryWeightsRun.test_founders_are_llm_written_literal_weights) ... ok
+test_genomes_are_weights_with_valid_lineage (tests.test_one_standard.ContractOfEveryWeightsRun.test_genomes_are_weights_with_valid_lineage) ... ok
+test_llm_arm_and_random_control_present (tests.test_one_standard.ContractOfEveryWeightsRun.test_llm_arm_and_random_control_present) ... ok
+test_mutation_origin_matches_arm (tests.test_one_standard.ContractOfEveryWeightsRun.test_mutation_origin_matches_arm) ... ok
+test_required_fields (tests.test_one_standard.ContractOfEveryWeightsRun.test_required_fields) ... ok
+test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough) ... FAIL
+test_accuracy_improves_over_generations (tests.test_one_standard.Milestone.test_accuracy_improves_over_generations) ... FAIL
+test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone.test_crossover_children_exist_and_are_new) ... FAIL
+test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone.test_enough_niches_and_llm_founders) ... FAIL
+test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone.test_llm_mutation_beats_random_control) ... FAIL
+test_many_distinct_weight_genomes (tests.test_one_standard.Milestone.test_many_distinct_weight_genomes) ... FAIL
+test_agents_md_exists_and_points_to_standard (tests.test_one_standard.RepoGuards.test_agents_md_exists_and_points_to_standard) ... D:\Github\CellForge\tests\test_one_standard.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='D:\\Github\\CellForge\\AGENTS.md' mode='r' encoding='utf-8'>
+  t = open(p, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards.test_no_new_gene_list_runs_after_cutoff)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*. ... ok
+test_standard_doc_exists (tests.test_one_standard.RepoGuards.test_standard_doc_exists) ... ok
+test_clean_run_llm_beats_random_recomputed (tests.test_standard_semantic.MetaTests.test_clean_run_llm_beats_random_recomputed) ... ERROR
+test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests.test_clean_run_passes_every_check) ... ERROR
+test_each_cheat_is_caught_by_its_check (tests.test_standard_semantic.MetaTests.test_each_cheat_is_caught_by_its_check) ... 
+STATUS: TIMEOUT
+ELAPSED: 30.016s

@@ -1,0 +1,93 @@
+test_arc3_shared_pilot (unittest.loader._FailedTest.test_arc3_shared_pilot) ... ERROR
+test_arc3cell (unittest.loader._FailedTest.test_arc3cell) ... ERROR
+test_answer_reading_evaluator_gets_nothing (tests.test_arc_goal.MetaTests.test_answer_reading_evaluator_gets_nothing) ... D:\Github\CellForge\tests\test_arc_goal.py:70: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmpaxt6bvrz\\runs\\weights-x\\ARC_SCORE.json' mode='r' encoding='cp1252'>
+  sc = json.load(open(p))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_baseline_import_caught (tests.test_arc_goal.MetaTests.test_baseline_import_caught) ... D:\Github\CellForge\tests\arc_goal_checks.py:160: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmpa0poi5ir\\runs\\weights-x\\ev.py' mode='r' encoding='utf-8'>
+  src = open(os.path.join(run, sc["evaluator"]), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_honest_run_passes (tests.test_arc_goal.MetaTests.test_honest_run_passes) ... D:\Github\CellForge\tests\arc_goal_checks.py:160: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmp91iie9mg\\runs\\weights-x\\ev.py' mode='r' encoding='utf-8'>
+  src = open(os.path.join(run, sc["evaluator"]), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_inflated_claim_caught (tests.test_arc_goal.MetaTests.test_inflated_claim_caught) ... D:\Github\CellForge\tests\test_arc_goal.py:70: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmplrsm6ax0\\runs\\weights-x\\ARC_SCORE.json' mode='r' encoding='cp1252'>
+  sc = json.load(open(p))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_score_file_fails (tests.test_arc_goal.MetaTests.test_no_score_file_fails) ... ok
+test_not_beating_control_caught (tests.test_arc_goal.MetaTests.test_not_beating_control_caught) ... D:\Github\CellForge\tests\test_arc_goal.py:134: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmpu_nj8yaw\\runs\\weights-x\\ARC_SCORE.json' mode='r' encoding='cp1252'>
+  sc = json.load(open(p))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_owner_floor (tests.test_arc_goal.MetaTests.test_owner_floor) ... D:\Github\CellForge\tests\test_arc_goal.py:142: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmpq72625bs\\f.json' mode='w' encoding='cp1252'>
+  json.dump({"min_solved_fraction": 0.01}, open(fl, "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_score_not_from_weights_caught (tests.test_arc_goal.MetaTests.test_score_not_from_weights_caught) ... ok
+test_stalled_history_caught (tests.test_arc_goal.MetaTests.test_stalled_history_caught) ... ok
+test_too_few_iterations_caught (tests.test_arc_goal.MetaTests.test_too_few_iterations_caught) ... ok
+test_too_few_tasks_caught (tests.test_arc_goal.MetaTests.test_too_few_tasks_caught) ... ok
+test_an_arc_scored_run_exists (tests.test_arc_goal.RealRuns.test_an_arc_scored_run_exists) ... FAIL
+test_best_real_run_passes_every_arc_check (tests.test_arc_goal.RealRuns.test_best_real_run_passes_every_arc_check) ... FAIL
+test_owner_floor_met (tests.test_arc_goal.RealRuns.test_owner_floor_met) ... FAIL
+
+======================================================================
+ERROR: test_arc3_shared_pilot (unittest.loader._FailedTest.test_arc3_shared_pilot)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_arc3_shared_pilot
+Traceback (most recent call last):
+  File "C:\Users\wkeif\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Github\CellForge\tests\test_arc3_shared_pilot.py", line 8, in <module>
+    import arc3_shared_pilot as P
+  File "D:\Github\CellForge\scripts\arc3_shared_pilot.py", line 6, in <module>
+    import arc3_env as E
+  File "D:\Github\CellForge\scripts\arc3_env.py", line 18, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+
+
+======================================================================
+ERROR: test_arc3cell (unittest.loader._FailedTest.test_arc3cell)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_arc3cell
+Traceback (most recent call last):
+  File "C:\Users\wkeif\AppData\Local\Programs\Python\Python312\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Github\CellForge\tests\test_arc3cell.py", line 8, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+
+
+======================================================================
+FAIL: test_an_arc_scored_run_exists (tests.test_arc_goal.RealRuns.test_an_arc_scored_run_exists)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc_goal.py", line 151, in test_an_arc_scored_run_exists
+    self.assertTrue(self.runs(), "no runs/weights-*/ARC_SCORE.json: the loop has never measured ARC-AGI accuracy of its weights")
+AssertionError: [] is not true : no runs/weights-*/ARC_SCORE.json: the loop has never measured ARC-AGI accuracy of its weights
+
+======================================================================
+FAIL: test_best_real_run_passes_every_arc_check (tests.test_arc_goal.RealRuns.test_best_real_run_passes_every_arc_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc_goal.py", line 155, in test_best_real_run_passes_every_arc_check
+    self.assertTrue(rs, "no ARC_SCORE.json")
+AssertionError: [] is not true : no ARC_SCORE.json
+
+======================================================================
+FAIL: test_owner_floor_met (tests.test_arc_goal.RealRuns.test_owner_floor_met)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc_goal.py", line 161, in test_owner_floor_met
+    self.assertTrue(rs, "no ARC_SCORE.json")
+AssertionError: [] is not true : no ARC_SCORE.json
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.434s
+
+FAILED (failures=3, errors=2)

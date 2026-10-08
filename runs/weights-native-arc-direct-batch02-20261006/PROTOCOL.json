@@ -1,0 +1,43 @@
+{
+  "arbitrary_source_execution": false,
+  "author_dispatch": "Parent native Codex only; capture raw response and actual model/reasoning/thread/turn or unknown.",
+  "calls_per_task": 1,
+  "credit_usage": null,
+  "evaluation_access": false,
+  "genome_position_credit": 0,
+  "hash": "771b44e8ae1cea78ed3fd69f5637fbccea9a3e05eb496b5dd85dc1504d52af99",
+  "instructions_sha256": "99f6f3b468b37dd2da10d51205a38ed41f39c88cd030f537f24a301e1399f0c2",
+  "kind": "direct_prediction_batch/1",
+  "max_author_calls": 3,
+  "prior_scorer_sha256": "b4f678abf2207bfa366c8fd8905b64f8384e7754c0a1990bd3d5fdc1111cc7d5",
+  "qualification": "Carry existing red/incomplete ONE_STANDARD status; no broad suite reruns for each baseline score.",
+  "query_outputs_in_packets": false,
+  "reserved_report_touched": false,
+  "response_schema": "Same strict data-only digit-row schema and limits as prior scorer; task identifier bound independently for each of the three slots.",
+  "scope": "These three tasks are already SEARCH data with prior scoring and/or author exposure. No novelty or held-out claim. f5b8619d was previously solved by a literal ray/tile cell; preserve that history.",
+  "scoring": "Freeze each raw response and provenance before host-only exact query scoring; compare direct prediction and identity; independent replay only, no label feedback or retry.",
+  "stop": "STOP or one consumed response per task. Invalid/refused responses consume their slot. No automatic authors.",
+  "tasks": [
+    {
+      "data_sha256": "0ad1a3e4b81ac395a44566439d422dbff0caf9b37fa48fd31910beae76cac0b2",
+      "packet_bytes": 2552,
+      "packet_sha256": "090796c40c65e3d90d47b1ad82958e3ae3d3135c8f142ee0ec44e68209c75008",
+      "query_count": 1,
+      "task_id": "1a07d186"
+    },
+    {
+      "data_sha256": "7ce0d5b3b9d05fb51203a798cff9db24cd7c5838558e37d166ca89a7edfbb38a",
+      "packet_bytes": 2023,
+      "packet_sha256": "a0a3b64641cb4f18335efa9d428bb5a28774664c1fd768c498ddf5d87694d37a",
+      "query_count": 1,
+      "task_id": "3194b014"
+    },
+    {
+      "data_sha256": "3368d676b689bd29110310a305b7cc24e1f8388dc43c5aca254d96b7541d43bc",
+      "packet_bytes": 501,
+      "packet_sha256": "90dc934ed0285c3ba767de247e3c73a8e64b39ff02b2e41cbaa80917eae47080",
+      "query_count": 1,
+      "task_id": "f5b8619d"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+COMMAND: python -m unittest tests.test_native_transfer_curriculum -v
+LIMIT: 30 seconds, one numerical thread
+ELAPSED: 4.531s
+EXIT: 0
+test_acceptance_uses_all_random_scores_without_reselecting_either_winner (tests.test_native_transfer_curriculum.TransferCurriculum.test_acceptance_uses_all_random_scores_without_reselecting_either_winner) ... ok
+test_both_winners_use_only_search_scores (tests.test_native_transfer_curriculum.TransferCurriculum.test_both_winners_use_only_search_scores) ... ok
+test_development_unread_before_selection_and_one_time_open_replays (tests.test_native_transfer_curriculum.TransferCurriculum.test_development_unread_before_selection_and_one_time_open_replays) ... ok
+test_failed_founder_requires_one_search_only_replacement (tests.test_native_transfer_curriculum.TransferCurriculum.test_failed_founder_requires_one_search_only_replacement) ... ok
+test_fixed_mask_charge_and_stop_unchanged (tests.test_native_transfer_curriculum.TransferCurriculum.test_fixed_mask_charge_and_stop_unchanged) ... ok
+test_four_attempt_cap_and_invalid_replacements_are_charged (tests.test_native_transfer_curriculum.TransferCurriculum.test_four_attempt_cap_and_invalid_replacements_are_charged) ... ok
+test_independent_manual_oracle_and_separate_reference_fixtures (tests.test_native_transfer_curriculum.TransferCurriculum.test_independent_manual_oracle_and_separate_reference_fixtures) ... ok
+test_invalids_charge_without_repair_and_source_response_tampering_fails (tests.test_native_transfer_curriculum.TransferCurriculum.test_invalids_charge_without_repair_and_source_response_tampering_fails) ... ok
+test_prospective_generator_structure_only_no_labels_or_scoring (tests.test_native_transfer_curriculum.TransferCurriculum.test_prospective_generator_structure_only_no_labels_or_scoring) ... ok
+test_sealed_input_tamper_fails_closed_before_prediction (tests.test_native_transfer_curriculum.TransferCurriculum.test_sealed_input_tamper_fails_closed_before_prediction) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 3.944s
+
+OK

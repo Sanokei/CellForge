@@ -1,0 +1,78 @@
+{
+  "acceptance": {
+    "all_scored_arms_runtime_errors": 0,
+    "minimum_margin_over_all_random_development_scores": 6,
+    "native_development_exact": 24,
+    "native_search_exact": 12,
+    "permutation_pairs": 4,
+    "reference_development_exact": 24
+  },
+  "automatic_admission": false,
+  "automatic_dispatch": false,
+  "counts": {
+    "demonstrations": 6,
+    "development": 24,
+    "search": 12
+  },
+  "credit_usage": null,
+  "development_policy": "Inputs frozen; labels unmaterialized until one-time final opening after search-only selection. Never feed development outcomes to an author.",
+  "eligibility": "Two founders; one replacement only for each valid founder with search errors. No repair for invalid or search-perfect founders.",
+  "file_hashes": {
+    "AUTHORING/FOUNDER_INPUT.txt": "1fc5c5f9a6ca361ddc622956fe138a0ec7ed78be024238908a707c82cfd8925f",
+    "AUTHORING/RESPONSE_SCHEMA.json": "e1228a8a5701b2ead1954360a8a2525221f2ac5d1c7c98d56306c7f4dd3c0c5e",
+    "HOST_EVALUATION/DEVELOPMENT_INPUTS_SEALED.json": "8107d41e8dbeabab944eb905a3be2afa1b6df59f9a43871ea20c18fb7b95cae4",
+    "SEARCH_DEMONSTRATIONS.json": "baa2244457854f63420746bf7cfa18595205378ba9868e7db6db220db17e9ca7",
+    "SEARCH_FITNESS.json": "1c8aa12f2b80d8c3248a89deefeeb871481aca75b7a23f1789616a275af12e17"
+  },
+  "fixed_positions": 64,
+  "fixture_checks": {
+    "fixture_input_hash": "6ce9aa5c07d7b4a58a2b419206bf7d0ba01f4319d829fac7ce386dfb7250df9a",
+    "fixtures": 3,
+    "manual_oracle_fixture": true,
+    "prospective_development_scored": false,
+    "reference_exact": true
+  },
+  "free_positions": 103,
+  "generator_rule": "One marker per occupied column; fill that column with its color; tile identity/fliplr/flipud/rot180 in a 2x2 arrangement.",
+  "hash": "496773ea9e06b45fcb72a16bbb74c6f38ad74b6c244998a2a20b0770307f719d",
+  "limitations": [
+    "Host implements the rule family; not ARC qualification or algorithm discovery.",
+    "Column filling makes vertical flips observationally redundant.",
+    "Synthetic seeds do not imply independent founder/model seeds."
+  ],
+  "max_completions": 4,
+  "max_positions_per_arm": 668,
+  "panel_seeds": {
+    "demonstrations": 20261006201,
+    "development": 20261006203,
+    "search": 20261006202
+  },
+  "parents": {
+    "repair_a": "founder_a",
+    "repair_b": "founder_b"
+  },
+  "positions_per_attempt_per_arm": 167,
+  "random_seeds": {
+    "founder_a": 20261006211,
+    "founder_b": 20261006212,
+    "repair_a": 20261006213,
+    "repair_b": 20261006214
+  },
+  "schema": "cellforge-synthetic-transfer/1",
+  "selection": "For BOTH arms: greatest search exact count, then ascending cell ID; all valid zero-error consumed candidates eligible. Freeze before opening development.",
+  "slots": [
+    "founder_a",
+    "founder_b",
+    "repair_a",
+    "repair_b"
+  ],
+  "source_hashes": {
+    "cell_contracts.py": "bdbee291fe2cec190ffd1c3747e3c402de15171dbbd596a989c199fe360f852c",
+    "fresh_inputs.py": "0151b8e27e9bc47adde6d56524ecd085c51ac69502b3d454f4af8e387a441001",
+    "native_parallel_batch.py": "e220bd2d6e23a81a5c677972f7cad58e9440fa29f6024c6ba9f49515f2b95790",
+    "native_proposal_import.py": "71a6f1322847874936e2e1c25f69d8fc50bcafd8eac6c2a4bc4439fade5a96a6",
+    "native_transfer_curriculum.py": "4439334a307c331082eb5d132c8f0bb81d38d834362cf2380614799f18b83736",
+    "skillcore.py": "3f6b926ecb7650f041c2e0d8ee42dc0271588c76701ce9e30414b3007bcc5b8c"
+  },
+  "task_id": "synthetic-column-mirror-v1"
+}

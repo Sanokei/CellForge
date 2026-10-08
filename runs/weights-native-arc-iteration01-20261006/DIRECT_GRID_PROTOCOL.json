@@ -1,0 +1,32 @@
+{
+  "accounting": "One baseline model call, including invalid/refused response. No genome or random-weight position credit. Preserve exact raw response and provenance before any label read for scoring.",
+  "author_route": "Parent authorized native Codex only; model/reasoning/thread/turn captured in actual response provenance.",
+  "baselines": {
+    "host_inferred": "Count input colors; rank by (-count,color); fill columns left-to-right and bottom-to-top, preserving grid shape. Frozen from training only; ties untested on demonstrations.",
+    "identity": "Return query input unchanged."
+  },
+  "credit_usage": null,
+  "data_sha256": "b2fbcd9330ebe69381dd53e4fa1f67b82c705578c731b79e4f01dc85400c79e1",
+  "execution": "Parse and compare data only. No authored Python, imports, model tools, downloads, API or remote access.",
+  "hash": "d9deb8813bf22b4e48811da993560ce6a3cef152992d4f76a6cb636da5f788df",
+  "kind": "direct_grid_baseline/1",
+  "max_author_calls": 1,
+  "packet_sha256": "1b05db409c0d69419fb7641f56fb1ccd4b5282b3e4225084aaf544598af84c17",
+  "response_schema": {
+    "duplicate_keys": "reject",
+    "exact_keys": [
+      "task_id",
+      "predictions",
+      "rationale"
+    ],
+    "nonfinite": "reject",
+    "predictions": "Exactly one list of 1..30 digit strings, equal width 1..30; ASCII digits 0..9.",
+    "rationale_max_utf8_bytes": 4096,
+    "raw_max_bytes": 65536,
+    "task_id": "bd283c4a"
+  },
+  "result_scope": "Previously declared public-training search task. Development evidence; no held-out transfer, weight-learning or AGI claim.",
+  "selection": "Freeze raw response before host-only exact query scoring; no retry or revision from query labels.",
+  "stop": "STOP file, missing provenance, malformed response or one consumed attempt. No automatic call.",
+  "task_id": "bd283c4a"
+}

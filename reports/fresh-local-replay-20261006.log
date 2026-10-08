@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "C:\Users\wkeif\AppData\Local\Temp\cellforge-verify-fresh-20261006.py", line 53, in <module>
+    prediction = evaluator.predict(weights, blind)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Github\CellForge\runs\weights-local-fresh-20261006-fix1\phases\weights-phase-0000-cells\arc_eval.py", line 13, in predict
+    return _m.predict_bank(bank, task, tensors=weights)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Github\CellForge\runs\weights-local-fresh-20261006-fix1\phases\weights-phase-0000-cells\skillcore.py", line 1507, in predict_bank
+    return [[run(cells[index], query['input'], demos)] for query in task['test']]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Github\CellForge\runs\weights-local-fresh-20261006-fix1\phases\weights-phase-0000-cells\skillcore.py", line 1517, in run
+    return TEMPLATES[cell["template"]]["fn"](cell["params"], grid, demos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Github\CellForge\runs\weights-local-fresh-20261006-fix1\phases\weights-phase-0000-cells\skillcore.py", line 42, in tile_orient
+    raise ValueError("transposing tile transform needs a square input")
+ValueError: transposing tile transform needs a square input

@@ -1,0 +1,192 @@
+test_early_win_remains_valid (tests.test_arc3_run_integrity.ObservationIntegrity.test_early_win_remains_valid) ... ok
+test_interrupted_control_cannot_earn_shared_policy_credit (tests.test_arc3_run_integrity.ObservationIntegrity.test_interrupted_control_cannot_earn_shared_policy_credit) ... FAIL
+test_missing_action_observation_is_invalid_and_action_is_charged (tests.test_arc3_run_integrity.ObservationIntegrity.test_missing_action_observation_is_invalid_and_action_is_charged) ... FAIL
+test_missing_initial_observation_is_invalid_without_an_action (tests.test_arc3_run_integrity.ObservationIntegrity.test_missing_initial_observation_is_invalid_without_an_action) ... FAIL
+test_missing_reset_observation_is_invalid_and_reset_is_charged (tests.test_arc3_run_integrity.ObservationIntegrity.test_missing_reset_observation_is_invalid_and_reset_is_charged) ... FAIL
+test_valid_budget_exhaustion_remains_valid (tests.test_arc3_run_integrity.ObservationIntegrity.test_valid_budget_exhaustion_remains_valid) ... ok
+test_changed_aggregate_totals_are_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_aggregate_totals_are_detected) ... 
+  test_changed_aggregate_totals_are_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_aggregate_totals_are_detected) (field='raw_total') ... FAIL
+  test_changed_aggregate_totals_are_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_aggregate_totals_are_detected) (field='credited_total') ... FAIL
+test_changed_control_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_control_evidence_is_detected) ... 
+  test_changed_control_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_control_evidence_is_detected) (arm='zero') ... FAIL
+  test_changed_control_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_control_evidence_is_detected) (arm='blind') ... FAIL
+  test_changed_control_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_control_evidence_is_detected) (arm='random') ... FAIL
+test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) ... 
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='game') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='seed') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='budget') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='n_levels') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='state') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='resets') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='noops') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='distinct') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='action_hist') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='final_frame') ... FAIL
+  test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='trace') ... FAIL
+test_json_round_trip_preserves_replay_equality (tests.test_arc3_run_integrity.ReplayIntegrity.test_json_round_trip_preserves_replay_equality) ... ok
+
+======================================================================
+FAIL: test_interrupted_control_cannot_earn_shared_policy_credit (tests.test_arc3_run_integrity.ObservationIntegrity.test_interrupted_control_cannot_earn_shared_policy_credit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 113, in test_interrupted_control_cannot_earn_shared_policy_credit
+    self.assertEqual(measured['credited_total'], 0)
+AssertionError: 3 != 0
+
+======================================================================
+FAIL: test_missing_action_observation_is_invalid_and_action_is_charged (tests.test_arc3_run_integrity.ObservationIntegrity.test_missing_action_observation_is_invalid_and_action_is_charged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 85, in test_missing_action_observation_is_invalid_and_action_is_charged
+    self.assertIsNotNone(result['error'])
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_missing_initial_observation_is_invalid_without_an_action (tests.test_arc3_run_integrity.ObservationIntegrity.test_missing_initial_observation_is_invalid_without_an_action)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 79, in test_missing_initial_observation_is_invalid_without_an_action
+    self.assertIsNotNone(result['error'])
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_missing_reset_observation_is_invalid_and_reset_is_charged (tests.test_arc3_run_integrity.ObservationIntegrity.test_missing_reset_observation_is_invalid_and_reset_is_charged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 90, in test_missing_reset_observation_is_invalid_and_reset_is_charged
+    self.assertIsNotNone(result['error'])
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_changed_aggregate_totals_are_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_aggregate_totals_are_detected) (field='raw_total')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 159, in test_changed_aggregate_totals_are_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_aggregate_totals_are_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_aggregate_totals_are_detected) (field='credited_total')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 159, in test_changed_aggregate_totals_are_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_control_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_control_evidence_is_detected) (arm='zero')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 152, in test_changed_control_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_control_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_control_evidence_is_detected) (arm='blind')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 152, in test_changed_control_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_control_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_control_evidence_is_detected) (arm='random')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 152, in test_changed_control_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='game')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='seed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='budget')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='n_levels')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='state')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='resets')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='noops')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='distinct')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='action_hist')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='final_frame')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+======================================================================
+FAIL: test_changed_exploration_or_protocol_evidence_is_detected (tests.test_arc3_run_integrity.ReplayIntegrity.test_changed_exploration_or_protocol_evidence_is_detected) (field='trace')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Github\CellForge\tests\test_arc3_run_integrity.py", line 142, in test_changed_exploration_or_protocol_evidence_is_detected
+    self.assertNotEqual(self.pilot.metrics(self.record), self.pilot.metrics(changed))
+AssertionError: [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])] == [('fixture', (0, 2, None, []), 0, True, (0, 2, None, []), (0, 2, None, []), [(0, 2, None, []), (0, 2, None, []), (0, 2, None, [])])]
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.180s
+
+FAILED (failures=20)
+Expected regression demonstration: previous source rejected: True

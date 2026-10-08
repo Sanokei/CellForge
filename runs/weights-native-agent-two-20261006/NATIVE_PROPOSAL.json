@@ -1,0 +1,22 @@
+[
+  {
+    "task_id": "1a07d186",
+    "params": {
+      "sim": [
+        [8, -4, -4, -4, -4, -4, -4, -4, -4, -4],
+        [-4, 8, -4, -4, -4, -4, -4, -4, -4, -4],
+        [-4, -4, 8, -4, -4, -4, -4, -4, -4, -4],
+        [-4, -4, -4, 8, -4, -4, -4, -4, -4, -4],
+        [-4, -4, -4, -4, 8, -4, -4, -4, -4, -4],
+        [-4, -4, -4, -4, -4, 8, -4, -4, -4, -4],
+        [-4, -4, -4, -4, -4, -4, 8, -4, -4, -4],
+        [-4, -4, -4, -4, -4, -4, -4, 8, -4, -4],
+        [-4, -4, -4, -4, -4, -4, -4, -4, 8, -4],
+        [-4, -4, -4, -4, -4, -4, -4, -4, -4, 8]
+      ],
+      "temp": [1],
+      "keep": [0.9]
+    },
+    "rationale": "Mechanism hypothesis: increasing keep from 0.25 to 0.9 may let a query color that is absent or weakly represented in the other demonstrations retain its input value when the pooled attended output distribution is diffuse. The strong diagonal and low off-diagonal similarities remain as before, so clearly supported color mappings may still dominate the copy bias. Observed evidence: the supplied verified feedback says the previous candidate predicted an all-zero grid for demonstration 0, while its expected grid retains a full color-2 line and several color-1/color-2 pixels. The expected grid also relocates some isolated pixels. The template applies color decisions independently at each pixel and cannot move pixels, so this tensor cannot express those relocations. Whether raising keep improves any evaluated result is unknown; the feedback does not establish that this is the cause of the failure or that the revised candidate will succeed."
+  }
+]

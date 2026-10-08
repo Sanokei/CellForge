@@ -29,9 +29,16 @@ def evaluate(entry, checkpoint=None):
     return dict(games=rows, credited_total=sum(r['credited'] for r in rows), raw_total=sum(r['result']['levels'] for r in rows))
 
 def metrics(result):
+    """Compare saved evidence, including exploration failures and bounded traces."""
     def run_metrics(r):
-        return (r['levels'], r['used'], r.get('error'), r['level_steps'])
-    return [(r['game'], run_metrics(r['result']), r['credited'], r['controls_valid'], run_metrics(r['controls']['zero']), run_metrics(r['controls']['blind']), [run_metrics(x) for x in r['controls']['random']]) for r in result['games']]
+        diagnostics = ('game', 'seed', 'budget', 'n_levels', 'state', 'resets',
+                       'noops', 'distinct', 'action_hist', 'final_frame')
+        # JSON round trips turn trace tuples into lists; compare their values.
+        trace = tuple(tuple(step) for step in r['trace']) if 'trace' in r else None
+        return (r['levels'], r['used'], r.get('error'), r['level_steps'],
+                tuple((key, r.get(key)) for key in diagnostics), trace)
+    games = [(r['game'], run_metrics(r['result']), r['credited'], r['controls_valid'], run_metrics(r['controls']['zero']), run_metrics(r['controls']['blind']), [run_metrics(x) for x in r['controls']['random']]) for r in result['games']]
+    return dict(games=games, credited_total=result['credited_total'], raw_total=result['raw_total'])
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)

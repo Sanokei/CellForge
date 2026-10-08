@@ -1,0 +1,231 @@
+{
+  "invariant_from_source": "For fixed input and context, every occurrence of one input color receives the same output color; dimensions are preserved.",
+  "observations": [
+    {
+      "minimum_pixel_errors_for_any_uniform_per_color_map": 10,
+      "same_input_color_requires_different_output_colors": [
+        {
+          "expected_colors": [
+            0,
+            1,
+            2
+          ],
+          "input_color": 0,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                0,
+                0
+              ]
+            },
+            {
+              "expected": 1,
+              "position": [
+                9,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "expected_colors": [
+            0,
+            1
+          ],
+          "input_color": 1,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                5,
+                10
+              ]
+            },
+            {
+              "expected": 1,
+              "position": [
+                10,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "expected_colors": [
+            0,
+            2
+          ],
+          "input_color": 2,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                0,
+                3
+              ]
+            },
+            {
+              "expected": 2,
+              "position": [
+                3,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "shape": [
+        15,
+        14
+      ],
+      "training_example_index": 0
+    },
+    {
+      "minimum_pixel_errors_for_any_uniform_per_color_map": 8,
+      "same_input_color_requires_different_output_colors": [
+        {
+          "expected_colors": [
+            0,
+            3,
+            4
+          ],
+          "input_color": 0,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                0,
+                0
+              ]
+            },
+            {
+              "expected": 3,
+              "position": [
+                3,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "expected_colors": [
+            0,
+            3
+          ],
+          "input_color": 3,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                3,
+                6
+              ]
+            },
+            {
+              "expected": 3,
+              "position": [
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "expected_colors": [
+            0,
+            4
+          ],
+          "input_color": 4,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                3,
+                1
+              ]
+            },
+            {
+              "expected": 4,
+              "position": [
+                0,
+                12
+              ]
+            }
+          ]
+        }
+      ],
+      "shape": [
+        18,
+        19
+      ],
+      "training_example_index": 1
+    },
+    {
+      "minimum_pixel_errors_for_any_uniform_per_color_map": 6,
+      "same_input_color_requires_different_output_colors": [
+        {
+          "expected_colors": [
+            0,
+            8
+          ],
+          "input_color": 0,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                0,
+                0
+              ]
+            },
+            {
+              "expected": 8,
+              "position": [
+                4,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "expected_colors": [
+            0,
+            8
+          ],
+          "input_color": 8,
+          "witness": [
+            {
+              "expected": 0,
+              "position": [
+                1,
+                7
+              ]
+            },
+            {
+              "expected": 8,
+              "position": [
+                5,
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "shape": [
+        15,
+        16
+      ],
+      "training_example_index": 2
+    }
+  ],
+  "partition": "search_fitness",
+  "query_or_selection_or_report_data_read": false,
+  "recommendation": "Stop same-template retries on this task; review a spatially sensitive cell or composition before any further author call.",
+  "review_script_sha256": "f55f6282b65096ec56ed8e928e76447b1f25ec7ace94b366bc94294ed4fb2bc4",
+  "schema": "cellforge-search-template-review/1",
+  "scope_of_conclusion": "Exact reproduction of these shown demonstration transformations is impossible for this template, regardless of its weights. This does not prove an outcome on an unseen query or identify the intended spatial rule.",
+  "shown_packet_sha256": "480180c9a379148bf4b0d6d603a2011991334aeb4ccaa8336bce766764091aa3",
+  "skillcore_sha256": "3f6b926ecb7650f041c2e0d8ee42dc0271588c76701ce9e30414b3007bcc5b8c",
+  "task_id": "1a07d186",
+  "template": "assoc_induct"
+}

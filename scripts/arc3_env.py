@@ -76,7 +76,9 @@ def play(source, params, game, budget=1500, seed=0, blind=False, wall=240.0, kee
     out = {"game": game, "seed": seed, "budget": budget, "n_levels": n_levels, "levels": 0, "used": 0, "resets": 0, "noops": 0, "error": policy.error,
            "level_steps": [], "state": "NOT_FINISHED", "distinct": 0, "action_hist": {}}
     seen, trace, started = set(), [], time.time()
-    prev = last_frame(resp)
+    prev = last_frame(resp) if resp is not None else None
+    if resp is None:
+        out["error"] = "environment returned no initial observation"
     zero = np.zeros((64, 64), dtype=np.uint8)
     while out["used"] < budget and resp is not None and resp.state != GameState.WIN and not out["error"]:
         if time.time() - started > wall:
@@ -87,6 +89,7 @@ def play(source, params, game, budget=1500, seed=0, blind=False, wall=240.0, kee
             out["used"] += 1
             out["resets"] += 1
             if resp is None:
+                out["error"] = "environment returned no observation after reset"
                 break
             prev = last_frame(resp)
             continue
@@ -108,6 +111,7 @@ def play(source, params, game, budget=1500, seed=0, blind=False, wall=240.0, kee
         out["used"] += 1
         out["action_hist"][str(action)] = out["action_hist"].get(str(action), 0) + 1
         if resp is None:
+            out["error"] = "environment returned no observation after action"
             break
         new = last_frame(resp)
         if np.array_equal(new, prev):

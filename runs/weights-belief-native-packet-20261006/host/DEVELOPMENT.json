@@ -1,0 +1,1902 @@
+[
+  {
+    "actor_count": 4,
+    "events": [
+      {
+        "destination": 2,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 1,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 3,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 2,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 3,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 3,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 1,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 2,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 1,
+        "observed_by": [
+          1,
+          3
+        ]
+      }
+    ],
+    "family": "four-slot-four-cycle-alternating",
+    "initial_beliefs": [
+      [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    ],
+    "initial_world": [
+      3,
+      4,
+      1,
+      4
+    ],
+    "object_count": 4,
+    "queries": [
+      {
+        "actor_id": 1,
+        "category": "seen",
+        "event_index": 0,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 1,
+        "category": "unseen",
+        "event_index": 1,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 1,
+        "category": "unrelated",
+        "event_index": 2,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 1,
+        "category": "unknown",
+        "event_index": 3,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 2,
+        "category": "seen",
+        "event_index": 4,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 2,
+        "category": "unrelated",
+        "event_index": 5,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 2,
+        "category": "unseen",
+        "event_index": 6,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 2,
+        "category": "unknown",
+        "event_index": 7,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 2,
+        "category": "seen",
+        "event_index": 8,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 2,
+        "category": "unseen",
+        "event_index": 9,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 2,
+        "category": "unrelated",
+        "event_index": 10,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 2,
+        "category": "unknown",
+        "event_index": 11,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 3,
+        "category": "seen",
+        "event_index": 12,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 3,
+        "category": "unrelated",
+        "event_index": 13,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 3,
+        "category": "unseen",
+        "event_index": 14,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 3,
+        "category": "unknown",
+        "event_index": 15,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 1
+      }
+    ],
+    "scenario_id": "development-2026100621",
+    "seed": 2026100621
+  },
+  {
+    "actor_count": 4,
+    "events": [
+      {
+        "destination": 3,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 3,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 2,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 2,
+        "observed_by": [
+          1,
+          3
+        ]
+      }
+    ],
+    "family": "four-slot-four-cycle-alternating",
+    "initial_beliefs": [
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "initial_world": [
+      2,
+      1,
+      0,
+      0
+    ],
+    "object_count": 4,
+    "queries": [
+      {
+        "actor_id": 0,
+        "category": "seen",
+        "event_index": 0,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 0,
+        "category": "unseen",
+        "event_index": 1,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 0,
+        "category": "unrelated",
+        "event_index": 2,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 0,
+        "category": "unknown",
+        "event_index": 3,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 1,
+        "category": "seen",
+        "event_index": 4,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unrelated",
+        "event_index": 5,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unseen",
+        "event_index": 6,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unknown",
+        "event_index": 7,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 2,
+        "category": "seen",
+        "event_index": 8,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 2,
+        "category": "unseen",
+        "event_index": 9,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 2,
+        "category": "unrelated",
+        "event_index": 10,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 2,
+        "category": "unknown",
+        "event_index": 11,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 3,
+        "category": "seen",
+        "event_index": 12,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 3,
+        "category": "unrelated",
+        "event_index": 13,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 3,
+        "category": "unseen",
+        "event_index": 14,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 3,
+        "category": "unknown",
+        "event_index": 15,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 2
+      }
+    ],
+    "scenario_id": "development-2026100622",
+    "seed": 2026100622
+  },
+  {
+    "actor_count": 4,
+    "events": [
+      {
+        "destination": 2,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 1,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 2,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 2,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 3,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      }
+    ],
+    "family": "four-slot-four-cycle-alternating",
+    "initial_beliefs": [
+      [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "initial_world": [
+      4,
+      4,
+      0,
+      3
+    ],
+    "object_count": 4,
+    "queries": [
+      {
+        "actor_id": 2,
+        "category": "seen",
+        "event_index": 0,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 2,
+        "category": "unseen",
+        "event_index": 1,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 2,
+        "category": "unrelated",
+        "event_index": 2,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 2,
+        "category": "unknown",
+        "event_index": 3,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 3,
+        "category": "seen",
+        "event_index": 4,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 3,
+        "category": "unrelated",
+        "event_index": 5,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 3,
+        "category": "unseen",
+        "event_index": 6,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 3,
+        "category": "unknown",
+        "event_index": 7,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 1,
+        "category": "seen",
+        "event_index": 8,
+        "expected": [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unseen",
+        "event_index": 9,
+        "expected": [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unrelated",
+        "event_index": 10,
+        "expected": [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unknown",
+        "event_index": 11,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 0,
+        "category": "seen",
+        "event_index": 12,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 0,
+        "category": "unrelated",
+        "event_index": 13,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 0,
+        "category": "unseen",
+        "event_index": 14,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 0,
+        "category": "unknown",
+        "event_index": 15,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 0
+      }
+    ],
+    "scenario_id": "development-2026100623",
+    "seed": 2026100623
+  },
+  {
+    "actor_count": 4,
+    "events": [
+      {
+        "destination": 0,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 1,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 1,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 0,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 1,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 0,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 2,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 3,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 2,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 2,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 3,
+        "object_id": 0,
+        "observed_by": [
+          1,
+          3
+        ]
+      },
+      {
+        "destination": 1,
+        "object_id": 3,
+        "observed_by": [
+          0,
+          2
+        ]
+      },
+      {
+        "destination": 4,
+        "object_id": 3,
+        "observed_by": [
+          1,
+          3
+        ]
+      }
+    ],
+    "family": "four-slot-four-cycle-alternating",
+    "initial_beliefs": [
+      [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "initial_world": [
+      2,
+      1,
+      3,
+      3
+    ],
+    "object_count": 4,
+    "queries": [
+      {
+        "actor_id": 0,
+        "category": "seen",
+        "event_index": 0,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 0,
+        "category": "unseen",
+        "event_index": 1,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 0,
+        "category": "unrelated",
+        "event_index": 2,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 0,
+        "category": "unknown",
+        "event_index": 3,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 1
+      },
+      {
+        "actor_id": 3,
+        "category": "seen",
+        "event_index": 4,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 3,
+        "category": "unrelated",
+        "event_index": 5,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 3,
+        "category": "unseen",
+        "event_index": 6,
+        "expected": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 3,
+        "category": "unknown",
+        "event_index": 7,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 0
+      },
+      {
+        "actor_id": 0,
+        "category": "seen",
+        "event_index": 8,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 0,
+        "category": "unseen",
+        "event_index": 9,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 0,
+        "category": "unrelated",
+        "event_index": 10,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 0,
+        "category": "unknown",
+        "event_index": 11,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 2
+      },
+      {
+        "actor_id": 1,
+        "category": "seen",
+        "event_index": 12,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unrelated",
+        "event_index": 13,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unseen",
+        "event_index": 14,
+        "expected": [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "object_id": 3
+      },
+      {
+        "actor_id": 1,
+        "category": "unknown",
+        "event_index": 15,
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "object_id": 3
+      }
+    ],
+    "scenario_id": "development-2026100624",
+    "seed": 2026100624
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "algorithm": [
+    "Validate nonempty rectangular palette-10 grid no larger than 30x30 and exact finite tensor shapes in [-9,9].",
+    "Count each present color. Sort colors by descending rank.weight[0]*count, breaking ties by ascending color ID.",
+    "Expand each color by its ORIGINAL input count. No learned color lookup, no output-size prediction.",
+    "argmax(scan.axis) chooses row-major or column-major coordinates. argmax(scan.row) and argmax(scan.col) choose ascending/descending coordinate order.",
+    "Fill those coordinates with the ordered colors and return the original shape."
+  ],
+  "hash": "ad85fc6aeeb0522bbbed5bb8b92966d3e352700aea363573ee9c543e5814d7a0",
+  "implementation_version": "frequency_pack/1",
+  "implemented": false,
+  "integration": [
+    "One additive function and versioned TEMPLATES entry in skillcore.py; never change existing template behavior.",
+    "Existing make_cell/cell_reference/typed-bank contracts support the declared interface and layout.",
+    "Separate tensor-only native packet and raw provenance would be required before any author call; current direct-grid baseline stays separate.",
+    "No specialist-service admission change is necessary for an offline research probe. No generators, runtime, API, deployment or arbitrary source required."
+  ],
+  "interface": "existing cellforge-cell-interface/1; integer rank-two palette-10 grid to same-shape grid",
+  "invariants": [
+    "At most 900 input/output cells and 10 color groups. Bounded deterministic host function; no authored code evaluation.",
+    "Output shape and per-color multiplicities always equal input, including zero and random controls.",
+    "All-zero parameters have defined tie behavior. Equal color counts use fixed documented color-ID tie break; no evidence that this tie policy transfers."
+  ],
+  "kind": "static_design_only/1",
+  "literal_positions": 7,
+  "model_calls": 0,
+  "proposed_template": "frequency_pack_v1",
+  "query_scored": false,
+  "random_baseline_warning": {
+    "chance_best_of_24": 0.7875236322311855,
+    "chance_best_of_3": 0.176025390625,
+    "chance_of_demonstrated_behavior_per_draw": 0.0625,
+    "derivation": "One rank sign times three independent binary traversal choices; continuous symmetric random tensors, no ties.",
+    "nonzero_effective_choices": 16,
+    "scope": "Analytical behavior-space estimate for these demonstrations, not a measured ARC result."
+  },
+  "recommendation": "Keep the host-inferred program as a baseline now. Do not spend an extra author merely to celebrate solving this small selector space; if implemented later, report matched-random luck and limited semantics openly.",
+  "scientific_limit": "Host supplies counting, sorting and placement algorithms. Tensor coefficients choose coarse behavior. This does not learn the algorithm or constitute a neural architecture discovery.",
+  "shapes": {
+    "rank.weight": [
+      1
+    ],
+    "scan.axis": [
+      2
+    ],
+    "scan.col": [
+      2
+    ],
+    "scan.row": [
+      2
+    ]
+  }
+}

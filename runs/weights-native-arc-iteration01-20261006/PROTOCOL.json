@@ -1,0 +1,76 @@
+{
+  "arms": {
+    "program": {
+      "conditional_training_failure_revisions": 1,
+      "founders": 1
+    },
+    "weights": {
+      "conditional_training_failure_revisions": 1,
+      "founders": 1,
+      "matched_random_seed_per_attempt": [
+        20261006601,
+        20261006602
+      ],
+      "max_positions_per_attempt": 256
+    }
+  },
+  "author_selection": "Training demonstrations only, leave-one-out, exact grid accuracy then pixel error; failed controls or runtime errors invalidate weight-dependence evidence. All raw responses and invalid attempts retained.",
+  "closed_campaigns_reopened": false,
+  "code_sha256": {
+    "arc3_env.py": "5f7c8ef636a8981b9137533afd43979eeadd93dcb5d6d2333017fb33d13ab788",
+    "arc3cell.py": "85b37c124e2d11f7d586fcd819f7753a5731eedaa716aabaeabd96e076f36de2",
+    "struct_pilot.py": "6c3ef9f741d8540e9fc03d787c5aab4c2e2add9e32c8230dbf637485dc743331",
+    "structcode.py": "d52cda323fd6fd311a18db953cd5db087b72d1b1d5014c91f5f6ec5c8d068339"
+  },
+  "controls": "Program: separately labeled host-inferred/reference and identity baselines. Weights: zero, one position-matched random proposal per attempt (same shapes/ranges), plus two diagnostic random draws; record errors and separate diagnostic budgets. Direct program is a stronger non-weight baseline.",
+  "credits": {
+    "ceiling": 62000,
+    "meter": "unknown; parent must reserve bounded tranche; no paid API/cloud fallback",
+    "usage": null
+  },
+  "dataset_commit": "f3283f727488ad98fe575ea6a5ac981e4a188e49",
+  "hash": "1f416bd8ae9e141fbcc46079eea9b78e177ee0caa3fdbae58e89d012ae85b4e8",
+  "held_out_policy": "No ARC2 evaluation files. No reserved report IDs d282b262/11dc524f downloaded or read. Existing four-task development panel is spent; not an independent held-out set.",
+  "kind": "native_arc_iteration/1",
+  "max_author_calls": 4,
+  "packets_sha256": {
+    "AUTHOR_PROGRAM.json": "40c3c593d59e1f84e901539a56dbb27c78634fe33735c7094f37e20761155772",
+    "AUTHOR_WEIGHTS.json": "991052ee384e6b33177fb9d524bc7440683c38b02a5e82fc92dac81f0d6d33f7"
+  },
+  "query_evaluation": "One frozen selection per arm on own task query, afterwards only; labels never enter candidate process. Independently replay from saved source and literals. Existing search query was previously scored, so result is development evidence.",
+  "runtime_requirement": "Existing AST sandbox inside authorized Linux runtime with bounded memory, wall kill, clean environment and confirmed network isolation; Windows wall-only fallback is not used.",
+  "status": "prepared_not_dispatched_runtime_blocked",
+  "stop": "STOP file or exhausted two attempts per arm; passing all demonstrations freezes that arm immediately. No retry from query outcomes.",
+  "task": {
+    "downloaded": true,
+    "git_blob": "664ea58e3e5e2737b3ae7606edf6a23805f94012",
+    "id": "bd283c4a",
+    "sha256": "b2fbcd9330ebe69381dd53e4fa1f67b82c705578c731b79e4f01dc85400c79e1",
+    "url": "https://raw.githubusercontent.com/arcprize/ARC-AGI-2/f3283f727488ad98fe575ea6a5ac981e4a188e49/data/training/bd283c4a.json"
+  },
+  "trajectory_fields": [
+    "attempt",
+    "arm",
+    "parent_candidate_hash",
+    "prompt_sha256",
+    "raw_response_sha256",
+    "model_and_reasoning",
+    "platform_thread_and_turn",
+    "credit_usage_or_unknown",
+    "source_and_tensor_hashes",
+    "candidate_budget",
+    "matched_random_budget",
+    "demo_predictions",
+    "actual_failing_demo_and_grid_differences",
+    "errors",
+    "freeze_reason",
+    "previous_record_hash"
+  ],
+  "trial_limits": {
+    "concurrency": 1,
+    "max_address_space_bytes": 1610612736,
+    "max_grid_call_seconds": 2,
+    "max_trial_seconds": 30,
+    "numerical_threads": 1
+  }
+}

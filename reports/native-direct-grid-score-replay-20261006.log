@@ -1,0 +1,54 @@
+Parser/comparison checks passed: valid grid; 8 invalid payloads; pixel and shape mismatch.
+{
+  "kind": "direct_grid_baseline_result/1",
+  "task_id": "bd283c4a",
+  "protocol_hash": "d9deb8813bf22b4e48811da993560ce6a3cef152992d4f76a6cb636da5f788df",
+  "response_freeze_hash": "0bc8cc915ecf88f4450adc8e5a1ae73b7114842137e647b0b5a7e7b04fbb6ef1",
+  "grader_sha256": "b4f678abf2207bfa366c8fd8905b64f8384e7754c0a1990bd3d5fdc1111cc7d5",
+  "data_sha256": "b2fbcd9330ebe69381dd53e4fa1f67b82c705578c731b79e4f01dc85400c79e1",
+  "outcomes": {
+    "direct_codex": {
+      "task_exact": true,
+      "queries": [
+        {
+          "exact": true,
+          "shape_matches": true,
+          "differing_pixels": 0
+        }
+      ]
+    },
+    "identity": {
+      "task_exact": false,
+      "queries": [
+        {
+          "exact": false,
+          "shape_matches": true,
+          "differing_pixels": 72
+        }
+      ]
+    },
+    "host_inferred_program": {
+      "task_exact": true,
+      "queries": [
+        {
+          "exact": true,
+          "shape_matches": true,
+          "differing_pixels": 0
+        }
+      ]
+    }
+  },
+  "author_calls": 1,
+  "credit_usage": null,
+  "model_backend": null,
+  "reasoning": "xhigh",
+  "genome_positions": 0,
+  "weight_result": false,
+  "scope": "Previously exposed public-training search task; not held-out transfer.",
+  "hash": "4b4a307a1e2eeef3412b7553f05fc7c20a2dde3a670096b3754ea5bc599ba2c3"
+}
+
+EXIT: 0 ELAPSED: 0.375s
+Independent direct-grid replay matched: 4b4a307a1e2eeef3412b7553f05fc7c20a2dde3a670096b3754ea5bc599ba2c3
+
+EXIT: 0 ELAPSED: 0.344s

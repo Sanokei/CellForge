@@ -1,0 +1,137 @@
+{
+  "additional_author_calls_authorized": 0,
+  "batch_hash": "f7ee36eb75b19f49e31d1030f9a359bb7f9b382b76cce733483ef9b88ab9ee62",
+  "credit_usage": null,
+  "hash": "282b4d15cb0bbf1db656cc0e5d9d7807e13e62404aa110ee1e3795a22132aa6f",
+  "report": "reports/NATIVE_STORM01_RESULT_20261006.md",
+  "report_accessed": false,
+  "schema": "cellforge-bounded-batch-terminal/1",
+  "scientific_acceptance": false,
+  "slots": [
+    {
+      "counts": {
+        "hand_coded": {
+          "development_selection": 0,
+          "search_fitness": 1
+        },
+        "parent": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "random": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "zero": {
+          "development_selection": 0,
+          "search_fitness": 0
+        }
+      },
+      "response_sha256": "6d29f9b7a2c73431489c2a9bf0928ffe68c429d3ab38667190019e936a6c625b",
+      "result_hash": "ba5ab9737a8444eda48800e078d2e56524193775796bdb5d805a8fb409615d7a",
+      "slot": "author01",
+      "validation": {
+        "error": "ValueError: duplicate JSON field",
+        "status": "invalid_or_refused"
+      }
+    },
+    {
+      "counts": {
+        "hand_coded": {
+          "development_selection": 0,
+          "search_fitness": 1
+        },
+        "native": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "parent": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "random": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "zero": {
+          "development_selection": 0,
+          "search_fitness": 0
+        }
+      },
+      "response_sha256": "8117c458b878e3b17658f426a92ac057125d0140b868cae8b5077ecc8f9f3f1e",
+      "result_hash": "10d27beae954378277d0983d88cc9bdbd5289d741a9ff0ab1d9fcbadcbf2b9c2",
+      "slot": "author02",
+      "validation": {
+        "error": null,
+        "status": "valid"
+      }
+    },
+    {
+      "counts": {
+        "hand_coded": {
+          "development_selection": 0,
+          "search_fitness": 1
+        },
+        "parent": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "random": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "zero": {
+          "development_selection": 0,
+          "search_fitness": 0
+        }
+      },
+      "response_sha256": "1beb575de88e486bf3ff32a79f9324378cd5663d7434320b7d934abf3c31e0e1",
+      "result_hash": "a5c0094f4a8c8d101661effa8b1464ba51a5d00830819387b69677dcbd2dcf77",
+      "slot": "author03",
+      "validation": {
+        "error": "ValueError: all transpose/quarter-turn entries must be literal -9",
+        "status": "invalid_or_refused"
+      }
+    },
+    {
+      "counts": {
+        "hand_coded": {
+          "development_selection": 0,
+          "search_fitness": 1
+        },
+        "native": {
+          "development_selection": 0,
+          "search_fitness": 1
+        },
+        "parent": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "random": {
+          "development_selection": 0,
+          "search_fitness": 0
+        },
+        "zero": {
+          "development_selection": 0,
+          "search_fitness": 0
+        }
+      },
+      "response_sha256": "a5228f662d3ebad6950c4613dec953322e53dfc1002d65d4a4d0be07f6b745f9",
+      "result_hash": "564d5216400967fabea4b921ff9b2e9653700e321ed9524811a2fd374c099568",
+      "slot": "author04",
+      "validation": {
+        "error": null,
+        "status": "valid"
+      }
+    }
+  ],
+  "standard_declaration": "Preparation-time STANDARD.json retained; not a qualified ONE_STANDARD ledger.",
+  "status": "all_four_consumed_evaluated_and_independently_replayed",
+  "validation": {
+    "focused_tests": "7 passed",
+    "independent_saved_runtime_replay": "all four exact",
+    "one_standard_diagnostic": "15 tests, 7 failures",
+    "required_combined_standard_suites": "30-second timeout after failures/errors",
+    "semantic_fixture_diagnostic": "1 test, 1 error: Windows temporary-directory access denied"
+  }
+}

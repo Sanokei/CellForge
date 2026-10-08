@@ -90,10 +90,28 @@ def feedback_of(res, task, box, source, params):
     if not res["valid"]:
         return {"rejected": res["errors"][:1]}
     if res["demos_fit"] < res["n_demos"]:
-        d = task["train"][0]
-        out, error = box.call(source, params, d["input"], task["train"][1:])
-        return {"demonstrations_reproduced": "%d of %d" % (res["demos_fit"], res["n_demos"]), "first_demonstration": {"input": d["input"], "expected": d["output"],
-                                                                                                                       "predicted": out if out is not None else error}}
+        feedback = {"demonstrations_reproduced": "%d of %d" % (res["demos_fit"], res["n_demos"])}
+        # Reproduce fit's leave-one-out context. A passing first example is not
+        # a counterexample; never consult task['test'] to choose this feedback.
+        for i, d in enumerate(task["train"]):
+            out, error = box.call(source, params, d["input"], [e for j, e in enumerate(task["train"]) if j != i])
+            if not error and out == d["output"]:
+                continue
+            failure = {"index": i, "input": d["input"], "expected": d["output"], "predicted": out, "error": error}
+            if error is None and out is not None:
+                expected = d["output"]
+                same_shape = len(out) == len(expected) and all(len(a) == len(b) for a, b in zip(out, expected))
+                failure["shape_matches"] = same_shape
+                if same_shape:
+                    differences = [{"row": r, "column": c, "expected": value, "predicted": out[r][c]}
+                                   for r, row in enumerate(expected) for c, value in enumerate(row) if out[r][c] != value]
+                    failure["differing_pixels"] = len(differences)
+                    failure["grid_differences"] = differences[:64]
+                    failure["differences_truncated"] = len(differences) > 64
+            feedback["failing_demonstration"] = failure
+            return feedback
+        feedback["replay_inconsistency"] = "No failing demonstration reproduced; do not fabricate a counterexample."
+        return feedback
     return {"tensors_do_not_matter": "zeroed tensors fit %s of %s demonstrations, random tensors fit %s" % (res["zero_fit"], res["n_demos"], res["random_fit"])}
 
 

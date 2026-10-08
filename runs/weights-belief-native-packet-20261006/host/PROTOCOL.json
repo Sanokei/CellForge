@@ -1,0 +1,63 @@
+{
+  "access_boundary": "parent must provide only author/ files through a tool-disabled native call; folders/hashes are not an OS sandbox",
+  "attempt_limit": 1,
+  "author_credit_status": "unknown, not zero or free",
+  "author_credit_usage": null,
+  "category_weighting": "equal query counts; all actor/object slots still execute every event",
+  "charged_positions_per_attempt": {
+    "native": 293,
+    "random": 293
+  },
+  "development_family": "four-slot-four-cycle-alternating",
+  "development_feedback_to_author": false,
+  "development_queries": 64,
+  "development_seeds": [
+    2026100621,
+    2026100622,
+    2026100623,
+    2026100624
+  ],
+  "diagnostics": [
+    "teacher-forced top-1",
+    "probability error >0.05 count",
+    "mean L1",
+    "per-category and per-scenario outcomes"
+  ],
+  "error_policy": "no repair/fallback; runtime failures recorded; remaining rollout queries unresolved and included in denominator",
+  "limitations": [
+    "original synthetic scenarios only",
+    "single author attempt",
+    "no natural-language competence",
+    "no independently held-out generalization claim",
+    "no ONE_STANDARD qualification"
+  ],
+  "no_auto_admission": true,
+  "no_retry": true,
+  "packet_id": "belief-native-20261006-one",
+  "parameter_count": 293,
+  "pre_author_freeze": true,
+  "primary_metric": "recursive-rollout top-1 query accuracy; scenario solved iff every query correct and no runtime error",
+  "probability_tolerance": 0.05,
+  "query_categories": [
+    "seen",
+    "unseen",
+    "unrelated",
+    "unknown"
+  ],
+  "random_distribution": "one uniform[-0.25,0.25] draw at each of 293 positions, stdlib Random",
+  "random_seed": 2026100631,
+  "schema": "cellforge-belief-native-protocol/1",
+  "search_family": "two-slot-two-cycle",
+  "search_queries": 32,
+  "search_seeds": [
+    2026100611,
+    2026100612,
+    2026100613,
+    2026100614
+  ],
+  "source_status": "awaiting parent-supplied native receipt; no author has been invoked by this preparation",
+  "source_thread_id": null,
+  "source_turn_id": null,
+  "tie_policy": "lowest index",
+  "zero_and_reference": "diagnostic controls, not charged proposals; reference is hand-coded oracle"
+}

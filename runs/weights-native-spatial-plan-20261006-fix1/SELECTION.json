@@ -1,0 +1,28 @@
+{
+  "authored_positions_per_future_attempt": 167,
+  "automatic_dispatch": false,
+  "diagnostic_plan": "One source-derived hand-coded chain and its all-zero control on the three selected demonstrations; one all-zero snap_to_line cell on the three original demonstrations. No parameter search or query scoring.",
+  "diagnostic_weights_are_llm_authored": false,
+  "hash": "177b89f5b495120e48c94d019a3ae0c0a0d1cd823db43027aa1723b8041eada8",
+  "inspected_demonstration_hashes": {
+    "1a07d186": "f7c791dac435c1ccddb74fd04ebc8de1f1508e526d75aa8a94a6e7331fc19043",
+    "3194b014": "58d59bddcfd81acdbbdb4cef0055e3bdcd72ef4c8a81b8e873329f88f62b2cb4",
+    "bd283c4a": "92e3bfa6a90d535a5fd73cb4bd031da884ca8c9caf5df900fe7ff7d2a56d5cbb",
+    "f5b8619d": "a2ee221e4fb487eec78b5e30dce2a9126236c41ad7fe9c5f764a0000083db50e"
+  },
+  "maximum_future_author_calls_recommended": 1,
+  "original_task_diagnostic": "snap_to_line can express 1a07d186, but zero tensors choose background 0 and orphan removal; check this disqualifying control before further model work.",
+  "partition": "search_fitness",
+  "random_positions_per_future_attempt": 167,
+  "rationale": "Shown outputs fill source-bearing columns with color 8 while preserving source pixels, then repeat the entire resulting grid in two rows and two columns. Existing ray casting followed by whole-grid tiling can express this; uniform per-color mapping cannot.",
+  "schema": "cellforge-search-structure-selection/1",
+  "scientific_acceptance": false,
+  "selected_task_id": "f5b8619d",
+  "skillcore_sha256": "3f6b926ecb7650f041c2e0d8ee42dc0271588c76701ce9e30414b3007bcc5b8c",
+  "source_manifest_sha256": "911a5a1d0aca72a2aa3f5e3b25e8d579cbf5b4fcd158d09ce6dc02ebd19d1e95",
+  "status": "plan only; no model call",
+  "templates": [
+    "ray_cast",
+    "tile_orient"
+  ]
+}

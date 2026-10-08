@@ -1,0 +1,31 @@
+2026-10-06: selected operational checks, bundled Python 3.12.14
+Environment: OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
+Each test/diagnostic child: subprocess.run(..., timeout=30).
+
+Command: python -m unittest tests.test_skill_niches.TruthCellsSolveTheirOwnTasks.test_association_uses_only_other_demonstrations tests.test_skill_niches.ChainsAreTheBreedingProduct.test_tensor_roundtrip_preserves_chains_and_predictions tests.test_skill_niches.RouterAndScorer.test_zero_tensors_solve_nothing -v
+
+test_association_uses_only_other_demonstrations (tests.test_skill_niches.TruthCellsSolveTheirOwnTasks.test_association_uses_only_other_demonstrations)
+Leave-one-out: an unseen mapping cannot be solved by peeking at the pair being scored. ... ok
+test_tensor_roundtrip_preserves_chains_and_predictions (tests.test_skill_niches.ChainsAreTheBreedingProduct.test_tensor_roundtrip_preserves_chains_and_predictions) ... ok
+test_zero_tensors_solve_nothing (tests.test_skill_niches.RouterAndScorer.test_zero_tensors_solve_nothing) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.023s
+
+OK
+bounded_component_checks_seconds=0.563
+
+In-memory typed diagnostic: C:\Users\wkeif\AppData\Local\Temp\cellforge-typed-readiness-20261006.py
+{"fixture": "existing synthetic glyph truth_cell, not an LLM founder", "maker_calls": 0, "original_artifact_preserved": "pass", "query_output_stripping": "pass", "run_artifacts_created": 0, "scalar_override_rejected": "pass", "shape_preserving_zero_override_executes_and_changes_prediction": "pass", "tampered_artifact_rejected": "pass", "typed_export_predict": "pass"}
+bounded_typed_readiness_seconds=0.344
+
+Read-only account probe, app-server proxy:
+{"status": "blocked", "error_type": "RuntimeError", "detail": "proxy ended before requested response", "model_turns_created": 0}
+{"proxy_exit": 1, "seconds": 1.875}
+
+Read-only account probe, app-server --stdio (same diagnostic retains proxy labels):
+{"status": "blocked", "error_type": "RuntimeError", "detail": "proxy ended before requested response", "model_turns_created": 0}
+{"proxy_exit": 1, "seconds": 1.859}
+
+These synthetic checks do not qualify an experiment under ONE_STANDARD and do
+not replace the protected scientific gates. No full phase or maker was run.

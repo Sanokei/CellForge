@@ -1,0 +1,72 @@
+{
+  "access_boundary": "fresh author context, explicit two-file read restrictions, tool access may exist; prompt-restricted, not tool-disabled or an enforced filesystem sandbox",
+  "attempt_limit": 1,
+  "author_credit_status": "unknown, not zero or free",
+  "author_credit_usage": null,
+  "category_weighting": "equal query counts; all actor/object slots still execute every event",
+  "charged_positions_per_attempt": {
+    "native": 293,
+    "random": 293
+  },
+  "development_family": "four-slot-four-cycle-alternating",
+  "development_feedback_to_author": false,
+  "development_queries": 64,
+  "development_seeds": [
+    2026100621,
+    2026100622,
+    2026100623,
+    2026100624
+  ],
+  "diagnostics": [
+    "teacher-forced top-1",
+    "probability error >0.05 count",
+    "mean L1",
+    "per-category and per-scenario outcomes"
+  ],
+  "error_policy": "no repair/fallback; runtime failures recorded; remaining rollout queries unresolved and included in denominator",
+  "family_author_attempt_limit": 2,
+  "family_author_attempt_ordinal": 2,
+  "feedback_policy": "original search examples plus one exact observed-update failure and its next two search rollout outcomes only",
+  "limitations": [
+    "original synthetic scenarios only",
+    "single author attempt",
+    "no natural-language competence",
+    "no independently held-out generalization claim",
+    "no ONE_STANDARD qualification"
+  ],
+  "no_auto_admission": true,
+  "no_retry": true,
+  "packet_id": "belief-native-20261006-refine-v2",
+  "panel_policy": "byte-identical V1 search/development data and unchanged evaluation semantics; one new predeclared random control seed for this separately charged attempt",
+  "parameter_count": 293,
+  "parent_freeze_sha256": "79ebfc7d0fdddcddcadad2d3a416f5f990d6244f94a2e35c30451d7541d80f7f",
+  "parent_parameter_hash": "e3208ca9f6769feb65e855cb51ed8896779ef31eccd331761701f7a24d645552",
+  "parent_response_sha256": "e1d621efe1c282e9002bf9da4f6ed5d83537a405ff289a578e08e16fd43ff17b",
+  "parent_result_sha256": "9a81f6dfa6f8dec4d782bc89512a40be195765e5ad460f13b475f9f838208dce",
+  "pre_author_freeze": true,
+  "primary_metric": "recursive-rollout top-1 query accuracy; scenario solved iff every query correct and no runtime error",
+  "probability_tolerance": 0.05,
+  "query_categories": [
+    "seen",
+    "unseen",
+    "unrelated",
+    "unknown"
+  ],
+  "random_distribution": "one uniform[-0.25,0.25] draw at each of 293 positions, stdlib Random",
+  "random_seed": 2026100632,
+  "schema": "cellforge-belief-native-protocol/1",
+  "search_family": "two-slot-two-cycle",
+  "search_queries": 32,
+  "search_seeds": [
+    2026100611,
+    2026100612,
+    2026100613,
+    2026100614
+  ],
+  "source_status": "V2 author not invoked; source IDs and exact credit usage unknown",
+  "source_thread_id": null,
+  "source_turn_id": null,
+  "third_author_requires_review": true,
+  "tie_policy": "lowest index",
+  "zero_and_reference": "diagnostic controls, not charged proposals; reference is hand-coded oracle"
+}

@@ -1,0 +1,88 @@
+{
+  "admitted": false,
+  "author_calls": 0,
+  "classification": "post-selection known-rule expressivity stress; not an untouched final test or ONE_STANDARD qualification",
+  "deployed": false,
+  "every_slot": {
+    "categorical": {
+      "categorical_errors": 0,
+      "categorical_scenarios_passed": 6,
+      "distribution_scenarios_passed": 6,
+      "identity_errors": 3072,
+      "max_abs_error": 1.6928670132365653e-08,
+      "predictions": 3072,
+      "probability_errors": 0,
+      "runtime_errors": 0,
+      "scenarios": 6,
+      "slot_count": 3072,
+      "unresolved": 0
+    },
+    "distributed": {
+      "categorical_errors": 122,
+      "categorical_scenarios_passed": 2,
+      "distribution_scenarios_passed": 0,
+      "identity_errors": 1467,
+      "max_abs_error": 0.7899999830713299,
+      "predictions": 1536,
+      "probability_errors": 1168,
+      "runtime_errors": 0,
+      "scenarios": 3,
+      "slot_count": 1536,
+      "unresolved": 0
+    }
+  },
+  "every_slot_freeze_sha256": "5ec4ed6abd920c005c4b7211f86831b0291538c8df7a755291c589855fc91e53",
+  "execution": {
+    "event_yield_seconds": 0.01,
+    "external_timeout_seconds": 120,
+    "return_code": 0,
+    "stderr": "",
+    "stdout_sha256": "7990e76b9d92cdac6f2df7f4c69497e77f46f077d12420316a52c864534aaa26",
+    "threads": 1,
+    "wall_seconds": 3.639999999999418
+  },
+  "files_sha256": {
+    "EXECUTION_RECEIPT.json": "e35516c22a8af5ce8cd725927580d55470ed85cfcb02de55e0cf3475b1aaf80d",
+    "PROTOCOL.json": "b448cc15b3b787ba3aa4387515784eb049d6cebaaa8adcbc3426e5c99428a54a",
+    "RESULT.json": "1d6f29e62757c2987df43c510f0214ea27719d7f11dee69d5bfb951b63024fbb",
+    "SCENARIOS.json": "02d18dd8677dcee63e2e41e8e0ea81333fce9f9fed8c7e6c521769a8e66ffe3f",
+    "SELECTED_QUERY_PROTOCOL.json": "16fe6240a5fca39dfc1255e81450fb67369f874e216080fb018bca4489b8b976",
+    "SELECTED_QUERY_RESULT.json": "2f2d894ec26d0feeaa2bc3f5ddcd9e79c36e25dfcba5c9ff6f2879fe918ae946",
+    "WEIGHTS.json": "e82022f7ae3c5921ac36aaa3711336b7979ec95e9786062520e7d366da9e74af"
+  },
+  "optimization_steps": 0,
+  "original_result_and_frozen_files_unchanged": true,
+  "parameter_hash": "9ca57f326afc539f87020a679e445842aec1eb2e5ad04c80615097f3d969e8d3",
+  "renaming_comparisons": 4,
+  "renaming_comparisons_passed": 4,
+  "schema": "cellforge-belief-post-selection-stress-completion/1",
+  "selected_query": {
+    "categorical": {
+      "categorical_errors": 0,
+      "categorical_scenario_pass": 6,
+      "correct": 192,
+      "distribution_scenario_pass": 6,
+      "predictions": 192,
+      "probability_errors": 0,
+      "queries": 192,
+      "runtime_errors": 0,
+      "unresolved": 0
+    },
+    "distributed": {
+      "categorical_errors": 8,
+      "categorical_scenario_pass": 2,
+      "correct": 88,
+      "distribution_scenario_pass": 0,
+      "predictions": 96,
+      "probability_errors": 73,
+      "queries": 96,
+      "runtime_errors": 0,
+      "unresolved": 0
+    }
+  },
+  "selected_query_freeze_sha256": "a9a9567161e7ced6fb018e8403f93b045216b09853cc17c120924bfab17db833",
+  "stress_repeated": false,
+  "top1_failure_max_probability_error": 0.0006111099423562194,
+  "uniform_target_top1_failure_count": 122,
+  "weights_byte_identical_to_successful_analytical_reference": true
+}
