@@ -1,0 +1,40 @@
+test_answer_reading_evaluator_gets_nothing (tests.test_arc_goal.MetaTests.test_answer_reading_evaluator_gets_nothing) ... /srv/cellforge-inbox/arc-best-a5-audit-20261001/tests/test_arc_goal.py:70: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpl6x6sjax/runs/weights-x/ARC_SCORE.json' mode='r' encoding='UTF-8'>
+  sc = json.load(open(p))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_baseline_import_caught (tests.test_arc_goal.MetaTests.test_baseline_import_caught) ... /srv/cellforge-inbox/arc-best-a5-audit-20261001/tests/arc_goal_checks.py:160: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpn9mlburb/runs/weights-x/ev.py' mode='r' encoding='utf-8'>
+  src = open(os.path.join(run, sc["evaluator"]), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_honest_run_passes (tests.test_arc_goal.MetaTests.test_honest_run_passes) ... /srv/cellforge-inbox/arc-best-a5-audit-20261001/tests/arc_goal_checks.py:160: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3_r00_q1/runs/weights-x/ev.py' mode='r' encoding='utf-8'>
+  src = open(os.path.join(run, sc["evaluator"]), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_inflated_claim_caught (tests.test_arc_goal.MetaTests.test_inflated_claim_caught) ... /srv/cellforge-inbox/arc-best-a5-audit-20261001/tests/test_arc_goal.py:70: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpn_1opit_/runs/weights-x/ARC_SCORE.json' mode='r' encoding='UTF-8'>
+  sc = json.load(open(p))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_score_file_fails (tests.test_arc_goal.MetaTests.test_no_score_file_fails) ... ok
+test_not_beating_control_caught (tests.test_arc_goal.MetaTests.test_not_beating_control_caught) ... /srv/cellforge-inbox/arc-best-a5-audit-20261001/tests/test_arc_goal.py:134: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp_59_1mht/runs/weights-x/ARC_SCORE.json' mode='r' encoding='UTF-8'>
+  sc = json.load(open(p))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_owner_floor (tests.test_arc_goal.MetaTests.test_owner_floor) ... /srv/cellforge-inbox/arc-best-a5-audit-20261001/tests/test_arc_goal.py:142: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp2zvl0jx4/f.json' mode='w' encoding='UTF-8'>
+  json.dump({"min_solved_fraction": 0.01}, open(fl, "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_score_not_from_weights_caught (tests.test_arc_goal.MetaTests.test_score_not_from_weights_caught) ... ok
+test_stalled_history_caught (tests.test_arc_goal.MetaTests.test_stalled_history_caught) ... ok
+test_too_few_iterations_caught (tests.test_arc_goal.MetaTests.test_too_few_iterations_caught) ... ok
+test_too_few_tasks_caught (tests.test_arc_goal.MetaTests.test_too_few_tasks_caught) ... ok
+test_an_arc_scored_run_exists (tests.test_arc_goal.RealRuns.test_an_arc_scored_run_exists) ... ok
+test_best_real_run_passes_every_arc_check (tests.test_arc_goal.RealRuns.test_best_real_run_passes_every_arc_check) ... /srv/cellforge-inbox/arc-best-a5-audit-20261001/tests/arc_goal_checks.py:160: ResourceWarning: unclosed file <_io.TextIOWrapper name='/srv/cellforge-inbox/arc-best-a5-audit-20261001/runs/weights-arc-best-a5-v1/arc_eval.py' mode='r' encoding='utf-8'>
+  src = open(os.path.join(run, sc["evaluator"]), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_owner_floor_met (tests.test_arc_goal.RealRuns.test_owner_floor_met) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 8.023s
+
+OK

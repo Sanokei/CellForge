@@ -1,0 +1,308 @@
+{
+  "artifacts": [
+    {
+      "name": "base",
+      "hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+      "stats": {
+        "unique_param_storage": 268,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 139,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 8,
+        "bundle_defs": 40,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2144
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-seven-gene-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "bbox.geometry",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ],
+        "scaling_imports": [
+          {
+            "factor": 2,
+            "donor_hash": "de2865fae49c9bf5a0ea1eb49444c6d55c0569c76405c70711053f77be7573da",
+            "transaction": [
+              "scaling_bank2_dimension",
+              "scaling_bank2_repeat.gene"
+            ]
+          },
+          {
+            "factor": 3,
+            "donor_hash": "22c4a9dcecd8a1e401321808a3d0f41e764dc738e8d54b988dd86245df0e7a46",
+            "transaction": [
+              "scaling_bank3_dimension",
+              "scaling_bank3_repeat.gene"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "parent-repeat2-identity",
+      "hash": "7fc86b41f4bcdd4423758d8fa04c25319557e9e719fb4dd8890715a6bbdf44ba",
+      "stats": {
+        "unique_param_storage": 268,
+        "expanded_param_uses": 2940,
+        "nonzero_slots": 139,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 8,
+        "bundle_defs": 40,
+        "reachable_defs": 36,
+        "expanded_instances": 113,
+        "nesting_depth": 4,
+        "edges": 812,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2144
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-seven-gene-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "scaling_bank2_repeat.gene",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ],
+        "scaling_imports": [
+          {
+            "factor": 2,
+            "donor_hash": "de2865fae49c9bf5a0ea1eb49444c6d55c0569c76405c70711053f77be7573da",
+            "transaction": [
+              "scaling_bank2_dimension",
+              "scaling_bank2_repeat.gene"
+            ]
+          },
+          {
+            "factor": 3,
+            "donor_hash": "22c4a9dcecd8a1e401321808a3d0f41e764dc738e8d54b988dd86245df0e7a46",
+            "transaction": [
+              "scaling_bank3_dimension",
+              "scaling_bank3_repeat.gene"
+            ]
+          }
+        ],
+        "parent_hashes": [
+          "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate declared alleles"
+      }
+    },
+    {
+      "name": "parent-identity-repeat3",
+      "hash": "90b7876b442346f4c9f264b9b3002ac3a37b9191f64f0224d0b4f41055c79581",
+      "stats": {
+        "unique_param_storage": 268,
+        "expanded_param_uses": 2940,
+        "nonzero_slots": 139,
+        "constant_slots_in_op_args": 44,
+        "cell_defs": 8,
+        "bundle_defs": 40,
+        "reachable_defs": 36,
+        "expanded_instances": 113,
+        "nesting_depth": 4,
+        "edges": 821,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2144
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-seven-gene-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "geometry_0",
+          "scaling_bank3_repeat.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ],
+        "scaling_imports": [
+          {
+            "factor": 2,
+            "donor_hash": "de2865fae49c9bf5a0ea1eb49444c6d55c0569c76405c70711053f77be7573da",
+            "transaction": [
+              "scaling_bank2_dimension",
+              "scaling_bank2_repeat.gene"
+            ]
+          },
+          {
+            "factor": 3,
+            "donor_hash": "22c4a9dcecd8a1e401321808a3d0f41e764dc738e8d54b988dd86245df0e7a46",
+            "transaction": [
+              "scaling_bank3_dimension",
+              "scaling_bank3_repeat.gene"
+            ]
+          }
+        ],
+        "parent_hashes": [
+          "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate declared alleles"
+      }
+    },
+    {
+      "name": "child-repeat2-repeat3",
+      "hash": "761ec1f4e3eb3cbe5dd527b046dc0ca898d85bd11fee82223e4c34e5d564179a",
+      "stats": {
+        "unique_param_storage": 268,
+        "expanded_param_uses": 3126,
+        "nonzero_slots": 139,
+        "constant_slots_in_op_args": 58,
+        "cell_defs": 8,
+        "bundle_defs": 40,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 895,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2144
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-seven-gene-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ],
+        "scaling_imports": [
+          {
+            "factor": 2,
+            "donor_hash": "de2865fae49c9bf5a0ea1eb49444c6d55c0569c76405c70711053f77be7573da",
+            "transaction": [
+              "scaling_bank2_dimension",
+              "scaling_bank2_repeat.gene"
+            ]
+          },
+          {
+            "factor": 3,
+            "donor_hash": "22c4a9dcecd8a1e401321808a3d0f41e764dc738e8d54b988dd86245df0e7a46",
+            "transaction": [
+              "scaling_bank3_dimension",
+              "scaling_bank3_repeat.gene"
+            ]
+          }
+        ],
+        "parent_hashes": [
+          "7fc86b41f4bcdd4423758d8fa04c25319557e9e719fb4dd8890715a6bbdf44ba",
+          "90b7876b442346f4c9f264b9b3002ac3a37b9191f64f0224d0b4f41055c79581"
+        ],
+        "operator_seed": 1,
+        "operator": "homologous uniform two-slot crossover",
+        "donor_per_slot": [
+          0,
+          1
+        ],
+        "no_change_vs_left": false
+      }
+    }
+  ],
+  "typed_combinations_checked": 49,
+  "benchmark_tasks_read": 0,
+  "efficacy_measured": false
+}

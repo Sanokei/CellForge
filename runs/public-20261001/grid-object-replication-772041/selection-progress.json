@@ -1,0 +1,1178 @@
+{
+  "attempts": {
+    "crossover": [
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24",
+        "artifact_hash": "8c441f3a560a1fdea63c7c8e44ed1ab3e59836fb60ddedc750e8948af85ec68a",
+        "genome": {
+          "alleles": [
+            "object_bank_largest4.gene",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "homologous uniform two-slot crossover",
+          "operator_seed": 772041,
+          "parent_hashes": [
+            "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d",
+            "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "donor_per_slot": [
+            1,
+            1
+          ],
+          "no_change_vs_left": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 12,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 4.046681273,
+          "wall_seconds": 4.047325749001175
+        },
+        "attempt": 1,
+        "sampling": {
+          "seed": 772041,
+          "generation": 0,
+          "parent_hashes": [
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993",
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993"
+          ],
+          "probabilities": {
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.5,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.5
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d",
+          "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1"
+        ]
+      },
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "584a9f1d9226842b2fc23caa11836fb195ce1105f7386ed1986c6d4635be7b2e",
+        "artifact_hash": "0c9582e173601a01fdfbc76cc05a4d96bc14aa8ca7b6bd2236595b000669762b",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "homologous uniform two-slot crossover",
+          "operator_seed": 772042,
+          "parent_hashes": [
+            "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d",
+            "8c441f3a560a1fdea63c7c8e44ed1ab3e59836fb60ddedc750e8948af85ec68a"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "donor_per_slot": [
+            0,
+            1
+          ],
+          "no_change_vs_left": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 10,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 0.9808803309999998,
+          "wall_seconds": 0.9810070169987739
+        },
+        "attempt": 2,
+        "sampling": {
+          "seed": 772042,
+          "generation": 1,
+          "parent_hashes": [
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993",
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24"
+          ],
+          "probabilities": {
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.5,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.5
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d",
+          "8c441f3a560a1fdea63c7c8e44ed1ab3e59836fb60ddedc750e8948af85ec68a"
+        ]
+      },
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24",
+        "artifact_hash": "644ee08614add47eb7bb02ecd3ff5dfe55b2952a9da1dff9b00908e82aba4637",
+        "genome": {
+          "alleles": [
+            "object_bank_largest4.gene",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "homologous uniform two-slot crossover",
+          "operator_seed": 772043,
+          "parent_hashes": [
+            "8c441f3a560a1fdea63c7c8e44ed1ab3e59836fb60ddedc750e8948af85ec68a",
+            "0c9582e173601a01fdfbc76cc05a4d96bc14aa8ca7b6bd2236595b000669762b"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "donor_per_slot": [
+            0,
+            1
+          ],
+          "no_change_vs_left": true
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 12,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 4.106363141999999,
+          "wall_seconds": 4.1074632669988205
+        },
+        "attempt": 3,
+        "sampling": {
+          "seed": 772043,
+          "generation": 2,
+          "parent_hashes": [
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24",
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24"
+          ],
+          "probabilities": {
+            "584a9f1d9226842b2fc23caa11836fb195ce1105f7386ed1986c6d4635be7b2e": 0.239430758988016,
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.38028462050599204,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.38028462050599204
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "8c441f3a560a1fdea63c7c8e44ed1ab3e59836fb60ddedc750e8948af85ec68a",
+          "0c9582e173601a01fdfbc76cc05a4d96bc14aa8ca7b6bd2236595b000669762b"
+        ]
+      },
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "584a9f1d9226842b2fc23caa11836fb195ce1105f7386ed1986c6d4635be7b2e",
+        "artifact_hash": "691150740a80632cd99511c4a75a75ef91a772848ad0d173f4db2d4a723aa1c3",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "homologous uniform two-slot crossover",
+          "operator_seed": 772044,
+          "parent_hashes": [
+            "0c9582e173601a01fdfbc76cc05a4d96bc14aa8ca7b6bd2236595b000669762b",
+            "0c9582e173601a01fdfbc76cc05a4d96bc14aa8ca7b6bd2236595b000669762b"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "donor_per_slot": [
+            0,
+            0
+          ],
+          "no_change_vs_left": true
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 10,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 0.9643809020000003,
+          "wall_seconds": 0.9644707140032551
+        },
+        "attempt": 4,
+        "sampling": {
+          "seed": 772044,
+          "generation": 3,
+          "parent_hashes": [
+            "584a9f1d9226842b2fc23caa11836fb195ce1105f7386ed1986c6d4635be7b2e",
+            "584a9f1d9226842b2fc23caa11836fb195ce1105f7386ed1986c6d4635be7b2e"
+          ],
+          "probabilities": {
+            "584a9f1d9226842b2fc23caa11836fb195ce1105f7386ed1986c6d4635be7b2e": 1.0
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "0c9582e173601a01fdfbc76cc05a4d96bc14aa8ca7b6bd2236595b000669762b",
+          "0c9582e173601a01fdfbc76cc05a4d96bc14aa8ca7b6bd2236595b000669762b"
+        ]
+      }
+    ],
+    "mutation_only": [
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223",
+        "artifact_hash": "56b49f91ace808f396d242207bdea98046e2edc96b508950d0fec69a9f3aa8d5",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "object_bank_largest4.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "one-slot uniform 5-allele mutation",
+          "operator_seed": 772041,
+          "parent_hashes": [
+            "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "mutated_slot": 1,
+          "old_allele": "bank_adjacency_recolor.gene",
+          "new_allele": "object_bank_largest4.gene",
+          "no_change": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 12,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 4.30596418,
+          "wall_seconds": 4.306635538996488
+        },
+        "attempt": 1,
+        "sampling": {
+          "seed": 772041,
+          "generation": 0,
+          "parent_hashes": [
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993",
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993"
+          ],
+          "probabilities": {
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.5,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.5
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d",
+          "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d"
+        ]
+      },
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "389c3475f42135916cde53baa2b2f5b9e14e2c3e67b63e249aae858516582ca2",
+        "artifact_hash": "60104cda8d1d65243d3f3f38b699d932a48c517fe31ce7a29dc4eab2de274001",
+        "genome": {
+          "alleles": [
+            "bank_local_fill.gene",
+            "object_bank_largest4.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "one-slot uniform 5-allele mutation",
+          "operator_seed": 772042,
+          "parent_hashes": [
+            "56b49f91ace808f396d242207bdea98046e2edc96b508950d0fec69a9f3aa8d5"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "mutated_slot": 0,
+          "old_allele": "geometry_0",
+          "new_allele": "bank_local_fill.gene",
+          "no_change": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 14,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 4.437798856000001,
+          "wall_seconds": 4.438294349994976
+        },
+        "attempt": 2,
+        "sampling": {
+          "seed": 772042,
+          "generation": 1,
+          "parent_hashes": [
+            "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223",
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993"
+          ],
+          "probabilities": {
+            "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223": 0.30917874396135264,
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.38164251207729466,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.30917874396135264
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "56b49f91ace808f396d242207bdea98046e2edc96b508950d0fec69a9f3aa8d5",
+          "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d"
+        ]
+      },
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24",
+        "artifact_hash": "a00ee7c8780c4bee23385929f19eee4339bab80a89932eae27f50ba122ca4264",
+        "genome": {
+          "alleles": [
+            "object_bank_largest4.gene",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "one-slot uniform 5-allele mutation",
+          "operator_seed": 772043,
+          "parent_hashes": [
+            "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "mutated_slot": 0,
+          "old_allele": "object_bank_largest4.gene",
+          "new_allele": "object_bank_largest4.gene",
+          "no_change": true
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 12,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 4.377353012,
+          "wall_seconds": 4.377996304996486
+        },
+        "attempt": 3,
+        "sampling": {
+          "seed": 772043,
+          "generation": 2,
+          "parent_hashes": [
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24",
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24"
+          ],
+          "probabilities": {
+            "389c3475f42135916cde53baa2b2f5b9e14e2c3e67b63e249aae858516582ca2": 0.3213417510249991,
+            "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223": 0.19825115199013096,
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.28215594499473895,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.19825115199013096
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1",
+          "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1"
+        ]
+      },
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "b6abc69f9161ab37cb1a198753c8d9bfe69143a028c2c1f0ec6ca151f3614be0",
+        "artifact_hash": "efa6271b59b4b7b5dfaae8f4c1732b270b36b0a8acd61a72278e6dc23d48cf7f",
+        "genome": {
+          "alleles": [
+            "bbox.geometry",
+            "object_bank_largest4.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "operator": "one-slot uniform 5-allele mutation",
+          "operator_seed": 772044,
+          "parent_hashes": [
+            "56b49f91ace808f396d242207bdea98046e2edc96b508950d0fec69a9f3aa8d5"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "mutated_slot": 0,
+          "old_allele": "geometry_0",
+          "new_allele": "bbox.geometry",
+          "no_change": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 14,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 4.501038205,
+          "wall_seconds": 4.501570647000335
+        },
+        "attempt": 4,
+        "sampling": {
+          "seed": 772044,
+          "generation": 3,
+          "parent_hashes": [
+            "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223",
+            "389c3475f42135916cde53baa2b2f5b9e14e2c3e67b63e249aae858516582ca2"
+          ],
+          "probabilities": {
+            "389c3475f42135916cde53baa2b2f5b9e14e2c3e67b63e249aae858516582ca2": 0.5705645161290324,
+            "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223": 0.4294354838709677
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "56b49f91ace808f396d242207bdea98046e2edc96b508950d0fec69a9f3aa8d5",
+          "60104cda8d1d65243d3f3f38b699d932a48c517fe31ce7a29dc4eab2de274001"
+        ]
+      }
+    ],
+    "random_search": [
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "0d49324060c5c4497652b6758f693209df2b634c58327ba2c224b97b8b782b43",
+        "artifact_hash": "1df1464bf727fadee5e7fca0725527d766e88772c9154abce7d001c98c06a1f6",
+        "genome": {
+          "alleles": [
+            "object_bank_largest4.gene",
+            "object_bank_largest4.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "parent_hashes": [
+            "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265"
+          ],
+          "operator_seed": 772041,
+          "operator": "instantiate declared alleles"
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 12,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 7.223053868000001,
+          "wall_seconds": 7.224097158999939
+        },
+        "attempt": 1,
+        "sampling": {
+          "seed": 772041,
+          "generation": 0,
+          "parent_hashes": [
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993",
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993"
+          ],
+          "probabilities": {
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.5,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.5
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      },
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "3cf70cdf6618fca24b6bd7ca1b11a2320753f512fb3a1f9b79242b26fc35db86",
+        "artifact_hash": "fe2a09fe5ba9b640c28483b898054c3a3e45868b19aca2e53d8cef22d91a10a0",
+        "genome": {
+          "alleles": [
+            "bbox.geometry",
+            "bank_local_fill.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "parent_hashes": [
+            "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265"
+          ],
+          "operator_seed": 772042,
+          "operator": "instantiate declared alleles"
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 14,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 1.2290501339999977,
+          "wall_seconds": 1.2292457430012291
+        },
+        "attempt": 2,
+        "sampling": {
+          "seed": 772042,
+          "generation": 1,
+          "parent_hashes": [
+            "0d49324060c5c4497652b6758f693209df2b634c58327ba2c224b97b8b782b43",
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993"
+          ],
+          "probabilities": {
+            "0d49324060c5c4497652b6758f693209df2b634c58327ba2c224b97b8b782b43": 0.30917874396135264,
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.38164251207729466,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.30917874396135264
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      },
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223",
+        "artifact_hash": "327598c7a1875266f43f417742a8c2442afc3be8f727cb945a4569b76636e90b",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "object_bank_largest4.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "parent_hashes": [
+            "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265"
+          ],
+          "operator_seed": 772043,
+          "operator": "instantiate declared alleles"
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          "solved": 12,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 4.145804353000003,
+          "wall_seconds": 4.146449439002026
+        },
+        "attempt": 3,
+        "sampling": {
+          "seed": 772043,
+          "generation": 2,
+          "parent_hashes": [
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24",
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24"
+          ],
+          "probabilities": {
+            "0d49324060c5c4497652b6758f693209df2b634c58327ba2c224b97b8b782b43": 0.1950500789024508,
+            "3cf70cdf6618fca24b6bd7ca1b11a2320753f512fb3a1f9b79242b26fc35db86": 0.3594570223181218,
+            "e714e4ee90e23e9486390da90b05e98426d9e07862de2a11fa263cdc7bade993": 0.2504428198769766,
+            "f21b1a09c5af7a82e00730f5147e966c78c39c34c3d2d32a495c0ac2ff15cb24": 0.1950500789024508
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      },
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "e72e603a93f904be4d194f358d5a19e8028850dd661d7e6a0ab30aec5efd52b7",
+        "artifact_hash": "26f315a6e73d57d5d72852a903420b7a89b8ecb339575a4cac43f4f68989fee2",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "bbox.geometry"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene"
+          ],
+          "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+          "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "import_def_lineage": [
+            "bank_adjacency_recolor.source",
+            "bank_adjacency_recolor.marker",
+            "bank_adjacency_recolor.gene"
+          ],
+          "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+          "object_import_lineage": [
+            "object_bank_largest4.color",
+            "object_bank_largest4.gene"
+          ],
+          "protocol": "fixed-two-slot-object-bank/1",
+          "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+          "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+          "slots": [
+            "slot8_geometry",
+            "slot9_geometry"
+          ],
+          "parent_hashes": [
+            "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265"
+          ],
+          "operator_seed": 772044,
+          "operator": "instantiate declared alleles"
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 12,
+          "tasks": 20,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 58,
+          "cpu_seconds": 1.0559694490000027,
+          "wall_seconds": 1.0560928500053706
+        },
+        "attempt": 4,
+        "sampling": {
+          "seed": 772044,
+          "generation": 3,
+          "parent_hashes": [
+            "3cf70cdf6618fca24b6bd7ca1b11a2320753f512fb3a1f9b79242b26fc35db86",
+            "0d49324060c5c4497652b6758f693209df2b634c58327ba2c224b97b8b782b43"
+          ],
+          "probabilities": {
+            "0d49324060c5c4497652b6758f693209df2b634c58327ba2c224b97b8b782b43": 0.27116806937005866,
+            "3cf70cdf6618fca24b6bd7ca1b11a2320753f512fb3a1f9b79242b26fc35db86": 0.4576638612598827,
+            "3db02980a262e2ba18ffa1f2bacc4e0de3417f5ff858734cb796b0c59f6c0223": 0.27116806937005866
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      }
+    ]
+  },
+  "costs": {
+    "crossover": {
+      "physical_evaluations": 6,
+      "predictor_calls": 348,
+      "evaluation_cpu_seconds": 14.827767087999998,
+      "evaluation_wall_seconds": 14.831526722002309,
+      "arm_cpu_seconds": 15.099137063,
+      "arm_wall_seconds": 15.103119742998388,
+      "failed_evaluations": 0
+    },
+    "mutation_only": {
+      "physical_evaluations": 6,
+      "predictor_calls": 348,
+      "evaluation_cpu_seconds": 22.925497552000003,
+      "evaluation_wall_seconds": 22.928598966995196,
+      "arm_cpu_seconds": 23.202190049000002,
+      "arm_wall_seconds": 23.205448761000298,
+      "failed_evaluations": 0
+    },
+    "random_search": {
+      "physical_evaluations": 6,
+      "predictor_calls": 348,
+      "evaluation_cpu_seconds": 18.753665506000004,
+      "evaluation_wall_seconds": 18.75657324801432,
+      "arm_cpu_seconds": 18.978437696,
+      "arm_wall_seconds": 18.981379780998395,
+      "failed_evaluations": 0
+    }
+  }
+}

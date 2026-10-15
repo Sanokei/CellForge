@@ -1,0 +1,2444 @@
+{
+ "defs": {
+  "nca_shallow_gene": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n2",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n4",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n5",
+     "in": {
+      "x": "n4"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n6",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n8",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n10",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n12",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n13",
+     "in": {
+      "x": "n12"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n14",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n16",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n17",
+     "in": {
+      "x": "n16"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n18",
+     "in": {
+      "x0": "n1",
+      "x1": "n3",
+      "x2": "n5",
+      "x3": "n7",
+      "x4": "n9",
+      "x5": "n11",
+      "x6": "n13",
+      "x7": "n15",
+      "x8": "n17"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 0,
+      "stop": 30
+     },
+     "id": "n19",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 30,
+      "stop": 60
+     },
+     "id": "n20",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 60,
+      "stop": 90
+     },
+     "id": "n21",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n22",
+     "in": {
+      "x": "n19"
+     },
+     "use": "shallow.h0.c0"
+    },
+    {
+     "id": "n23",
+     "in": {
+      "x": "n20"
+     },
+     "use": "shallow.h0.c1"
+    },
+    {
+     "id": "n24",
+     "in": {
+      "x": "n21"
+     },
+     "use": "shallow.h0.c2"
+    },
+    {
+     "id": "n25",
+     "in": {
+      "a": "n22",
+      "b": "n23"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n26",
+     "in": {
+      "a": "n25",
+      "b": "n24"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n27",
+     "in": {
+      "x": "n26"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n28",
+     "in": {
+      "x": "n27"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n29",
+     "in": {
+      "x": "n19"
+     },
+     "use": "shallow.h1.c0"
+    },
+    {
+     "id": "n30",
+     "in": {
+      "x": "n20"
+     },
+     "use": "shallow.h1.c1"
+    },
+    {
+     "id": "n31",
+     "in": {
+      "x": "n21"
+     },
+     "use": "shallow.h1.c2"
+    },
+    {
+     "id": "n32",
+     "in": {
+      "a": "n29",
+      "b": "n30"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n33",
+     "in": {
+      "a": "n32",
+      "b": "n31"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n34",
+     "in": {
+      "x": "n33"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n35",
+     "in": {
+      "x": "n34"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n36",
+     "in": {
+      "x": "n19"
+     },
+     "use": "shallow.h2.c0"
+    },
+    {
+     "id": "n37",
+     "in": {
+      "x": "n20"
+     },
+     "use": "shallow.h2.c1"
+    },
+    {
+     "id": "n38",
+     "in": {
+      "x": "n21"
+     },
+     "use": "shallow.h2.c2"
+    },
+    {
+     "id": "n39",
+     "in": {
+      "a": "n36",
+      "b": "n37"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n40",
+     "in": {
+      "a": "n39",
+      "b": "n38"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n41",
+     "in": {
+      "x": "n40"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n42",
+     "in": {
+      "x": "n41"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n43",
+     "in": {
+      "x": "n19"
+     },
+     "use": "shallow.h3.c0"
+    },
+    {
+     "id": "n44",
+     "in": {
+      "x": "n20"
+     },
+     "use": "shallow.h3.c1"
+    },
+    {
+     "id": "n45",
+     "in": {
+      "x": "n21"
+     },
+     "use": "shallow.h3.c2"
+    },
+    {
+     "id": "n46",
+     "in": {
+      "a": "n43",
+      "b": "n44"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n47",
+     "in": {
+      "a": "n46",
+      "b": "n45"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n48",
+     "in": {
+      "x": "n47"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n49",
+     "in": {
+      "x": "n48"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n50",
+     "in": {
+      "x0": "n28",
+      "x1": "n35",
+      "x2": "n42",
+      "x3": "n49"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n51",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o0"
+    },
+    {
+     "id": "n52",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o1"
+    },
+    {
+     "id": "n53",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o2"
+    },
+    {
+     "id": "n54",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o3"
+    },
+    {
+     "id": "n55",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o4"
+    },
+    {
+     "id": "n56",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o5"
+    },
+    {
+     "id": "n57",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o6"
+    },
+    {
+     "id": "n58",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o7"
+    },
+    {
+     "id": "n59",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o8"
+    },
+    {
+     "id": "n60",
+     "in": {
+      "x": "n50"
+     },
+     "use": "shallow.o9"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n61",
+     "in": {
+      "x0": "n51",
+      "x1": "n52",
+      "x2": "n53",
+      "x3": "n54",
+      "x4": "n55",
+      "x5": "n56",
+      "x6": "n57",
+      "x7": "n58",
+      "x8": "n59",
+      "x9": "n60"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n62",
+     "in": {
+      "a": "$input",
+      "b": "n61"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n63",
+     "in": {
+      "a": "n62",
+      "b": "$input_mask"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n64",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n65",
+     "in": {
+      "x": "n64"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n66",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n67",
+     "in": {
+      "x": "n66"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n68",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n69",
+     "in": {
+      "x": "n68"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n70",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n71",
+     "in": {
+      "x": "n70"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n72",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n73",
+     "in": {
+      "x": "n72"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n74",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n75",
+     "in": {
+      "x": "n74"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n76",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n77",
+     "in": {
+      "x": "n76"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n78",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n79",
+     "in": {
+      "x": "n78"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n80",
+     "in": {
+      "x": "n63"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n81",
+     "in": {
+      "x": "n80"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n82",
+     "in": {
+      "x0": "n65",
+      "x1": "n67",
+      "x2": "n69",
+      "x3": "n71",
+      "x4": "n73",
+      "x5": "n75",
+      "x6": "n77",
+      "x7": "n79",
+      "x8": "n81"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 0,
+      "stop": 30
+     },
+     "id": "n83",
+     "in": {
+      "x": "n82"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 30,
+      "stop": 60
+     },
+     "id": "n84",
+     "in": {
+      "x": "n82"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 60,
+      "stop": 90
+     },
+     "id": "n85",
+     "in": {
+      "x": "n82"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n86",
+     "in": {
+      "x": "n83"
+     },
+     "use": "shallow.h0.c0"
+    },
+    {
+     "id": "n87",
+     "in": {
+      "x": "n84"
+     },
+     "use": "shallow.h0.c1"
+    },
+    {
+     "id": "n88",
+     "in": {
+      "x": "n85"
+     },
+     "use": "shallow.h0.c2"
+    },
+    {
+     "id": "n89",
+     "in": {
+      "a": "n86",
+      "b": "n87"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n90",
+     "in": {
+      "a": "n89",
+      "b": "n88"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n91",
+     "in": {
+      "x": "n90"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n92",
+     "in": {
+      "x": "n91"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n93",
+     "in": {
+      "x": "n83"
+     },
+     "use": "shallow.h1.c0"
+    },
+    {
+     "id": "n94",
+     "in": {
+      "x": "n84"
+     },
+     "use": "shallow.h1.c1"
+    },
+    {
+     "id": "n95",
+     "in": {
+      "x": "n85"
+     },
+     "use": "shallow.h1.c2"
+    },
+    {
+     "id": "n96",
+     "in": {
+      "a": "n93",
+      "b": "n94"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n97",
+     "in": {
+      "a": "n96",
+      "b": "n95"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n98",
+     "in": {
+      "x": "n97"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n99",
+     "in": {
+      "x": "n98"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n100",
+     "in": {
+      "x": "n83"
+     },
+     "use": "shallow.h2.c0"
+    },
+    {
+     "id": "n101",
+     "in": {
+      "x": "n84"
+     },
+     "use": "shallow.h2.c1"
+    },
+    {
+     "id": "n102",
+     "in": {
+      "x": "n85"
+     },
+     "use": "shallow.h2.c2"
+    },
+    {
+     "id": "n103",
+     "in": {
+      "a": "n100",
+      "b": "n101"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n104",
+     "in": {
+      "a": "n103",
+      "b": "n102"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n105",
+     "in": {
+      "x": "n104"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n106",
+     "in": {
+      "x": "n105"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n107",
+     "in": {
+      "x": "n83"
+     },
+     "use": "shallow.h3.c0"
+    },
+    {
+     "id": "n108",
+     "in": {
+      "x": "n84"
+     },
+     "use": "shallow.h3.c1"
+    },
+    {
+     "id": "n109",
+     "in": {
+      "x": "n85"
+     },
+     "use": "shallow.h3.c2"
+    },
+    {
+     "id": "n110",
+     "in": {
+      "a": "n107",
+      "b": "n108"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n111",
+     "in": {
+      "a": "n110",
+      "b": "n109"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n112",
+     "in": {
+      "x": "n111"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n113",
+     "in": {
+      "x": "n112"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n114",
+     "in": {
+      "x0": "n92",
+      "x1": "n99",
+      "x2": "n106",
+      "x3": "n113"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n115",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o0"
+    },
+    {
+     "id": "n116",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o1"
+    },
+    {
+     "id": "n117",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o2"
+    },
+    {
+     "id": "n118",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o3"
+    },
+    {
+     "id": "n119",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o4"
+    },
+    {
+     "id": "n120",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o5"
+    },
+    {
+     "id": "n121",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o6"
+    },
+    {
+     "id": "n122",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o7"
+    },
+    {
+     "id": "n123",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o8"
+    },
+    {
+     "id": "n124",
+     "in": {
+      "x": "n114"
+     },
+     "use": "shallow.o9"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n125",
+     "in": {
+      "x0": "n115",
+      "x1": "n116",
+      "x2": "n117",
+      "x3": "n118",
+      "x4": "n119",
+      "x5": "n120",
+      "x6": "n121",
+      "x7": "n122",
+      "x8": "n123",
+      "x9": "n124"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n126",
+     "in": {
+      "a": "n63",
+      "b": "n125"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n127",
+     "in": {
+      "a": "n126",
+      "b": "$input_mask"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n128",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n129",
+     "in": {
+      "x": "n128"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n130",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n131",
+     "in": {
+      "x": "n130"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n132",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n133",
+     "in": {
+      "x": "n132"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n134",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n135",
+     "in": {
+      "x": "n134"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n136",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n137",
+     "in": {
+      "x": "n136"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 0
+     },
+     "id": "n138",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n139",
+     "in": {
+      "x": "n138"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n140",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n141",
+     "in": {
+      "x": "n140"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n142",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 0
+     },
+     "id": "n143",
+     "in": {
+      "x": "n142"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n144",
+     "in": {
+      "x": "n127"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n145",
+     "in": {
+      "x": "n144"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n146",
+     "in": {
+      "x0": "n129",
+      "x1": "n131",
+      "x2": "n133",
+      "x3": "n135",
+      "x4": "n137",
+      "x5": "n139",
+      "x6": "n141",
+      "x7": "n143",
+      "x8": "n145"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 0,
+      "stop": 30
+     },
+     "id": "n147",
+     "in": {
+      "x": "n146"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 30,
+      "stop": 60
+     },
+     "id": "n148",
+     "in": {
+      "x": "n146"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 60,
+      "stop": 90
+     },
+     "id": "n149",
+     "in": {
+      "x": "n146"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n150",
+     "in": {
+      "x": "n147"
+     },
+     "use": "shallow.h0.c0"
+    },
+    {
+     "id": "n151",
+     "in": {
+      "x": "n148"
+     },
+     "use": "shallow.h0.c1"
+    },
+    {
+     "id": "n152",
+     "in": {
+      "x": "n149"
+     },
+     "use": "shallow.h0.c2"
+    },
+    {
+     "id": "n153",
+     "in": {
+      "a": "n150",
+      "b": "n151"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n154",
+     "in": {
+      "a": "n153",
+      "b": "n152"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n155",
+     "in": {
+      "x": "n154"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n156",
+     "in": {
+      "x": "n155"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n157",
+     "in": {
+      "x": "n147"
+     },
+     "use": "shallow.h1.c0"
+    },
+    {
+     "id": "n158",
+     "in": {
+      "x": "n148"
+     },
+     "use": "shallow.h1.c1"
+    },
+    {
+     "id": "n159",
+     "in": {
+      "x": "n149"
+     },
+     "use": "shallow.h1.c2"
+    },
+    {
+     "id": "n160",
+     "in": {
+      "a": "n157",
+      "b": "n158"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n161",
+     "in": {
+      "a": "n160",
+      "b": "n159"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n162",
+     "in": {
+      "x": "n161"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n163",
+     "in": {
+      "x": "n162"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n164",
+     "in": {
+      "x": "n147"
+     },
+     "use": "shallow.h2.c0"
+    },
+    {
+     "id": "n165",
+     "in": {
+      "x": "n148"
+     },
+     "use": "shallow.h2.c1"
+    },
+    {
+     "id": "n166",
+     "in": {
+      "x": "n149"
+     },
+     "use": "shallow.h2.c2"
+    },
+    {
+     "id": "n167",
+     "in": {
+      "a": "n164",
+      "b": "n165"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n168",
+     "in": {
+      "a": "n167",
+      "b": "n166"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n169",
+     "in": {
+      "x": "n168"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n170",
+     "in": {
+      "x": "n169"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n171",
+     "in": {
+      "x": "n147"
+     },
+     "use": "shallow.h3.c0"
+    },
+    {
+     "id": "n172",
+     "in": {
+      "x": "n148"
+     },
+     "use": "shallow.h3.c1"
+    },
+    {
+     "id": "n173",
+     "in": {
+      "x": "n149"
+     },
+     "use": "shallow.h3.c2"
+    },
+    {
+     "id": "n174",
+     "in": {
+      "a": "n171",
+      "b": "n172"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n175",
+     "in": {
+      "a": "n174",
+      "b": "n173"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": 0.3333333333333333
+     },
+     "id": "n176",
+     "in": {
+      "x": "n175"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "n177",
+     "in": {
+      "x": "n176"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n178",
+     "in": {
+      "x0": "n156",
+      "x1": "n163",
+      "x2": "n170",
+      "x3": "n177"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n179",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o0"
+    },
+    {
+     "id": "n180",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o1"
+    },
+    {
+     "id": "n181",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o2"
+    },
+    {
+     "id": "n182",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o3"
+    },
+    {
+     "id": "n183",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o4"
+    },
+    {
+     "id": "n184",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o5"
+    },
+    {
+     "id": "n185",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o6"
+    },
+    {
+     "id": "n186",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o7"
+    },
+    {
+     "id": "n187",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o8"
+    },
+    {
+     "id": "n188",
+     "in": {
+      "x": "n178"
+     },
+     "use": "shallow.o9"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n189",
+     "in": {
+      "x0": "n179",
+      "x1": "n180",
+      "x2": "n181",
+      "x3": "n182",
+      "x4": "n183",
+      "x5": "n184",
+      "x6": "n185",
+      "x7": "n186",
+      "x8": "n187",
+      "x9": "n188"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n190",
+     "in": {
+      "a": "n127",
+      "b": "n189"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n191",
+     "in": {
+      "a": "n190",
+      "b": "$input_mask"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n191",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  },
+  "shallow.h0.c0": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h0.c0.W",
+    "b1": "shallow.h0.b"
+   }
+  },
+  "shallow.h0.c1": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h0.c1.W",
+    "b1": "shallow.h0.b"
+   }
+  },
+  "shallow.h0.c2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h0.c2.W",
+    "b1": "shallow.h0.b"
+   }
+  },
+  "shallow.h1.c0": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h1.c0.W",
+    "b1": "shallow.h1.b"
+   }
+  },
+  "shallow.h1.c1": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h1.c1.W",
+    "b1": "shallow.h1.b"
+   }
+  },
+  "shallow.h1.c2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h1.c2.W",
+    "b1": "shallow.h1.b"
+   }
+  },
+  "shallow.h2.c0": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h2.c0.W",
+    "b1": "shallow.h2.b"
+   }
+  },
+  "shallow.h2.c1": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h2.c1.W",
+    "b1": "shallow.h2.b"
+   }
+  },
+  "shallow.h2.c2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h2.c2.W",
+    "b1": "shallow.h2.b"
+   }
+  },
+  "shallow.h3.c0": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h3.c0.W",
+    "b1": "shallow.h3.b"
+   }
+  },
+  "shallow.h3.c1": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h3.c1.W",
+    "b1": "shallow.h3.b"
+   }
+  },
+  "shallow.h3.c2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.h3.c2.W",
+    "b1": "shallow.h3.b"
+   }
+  },
+  "shallow.o0": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o0.W",
+    "b1": "shallow.o0.b"
+   }
+  },
+  "shallow.o1": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o1.W",
+    "b1": "shallow.o1.b"
+   }
+  },
+  "shallow.o2": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o2.W",
+    "b1": "shallow.o2.b"
+   }
+  },
+  "shallow.o3": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o3.W",
+    "b1": "shallow.o3.b"
+   }
+  },
+  "shallow.o4": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o4.W",
+    "b1": "shallow.o4.b"
+   }
+  },
+  "shallow.o5": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o5.W",
+    "b1": "shallow.o5.b"
+   }
+  },
+  "shallow.o6": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o6.W",
+    "b1": "shallow.o6.b"
+   }
+  },
+  "shallow.o7": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o7.W",
+    "b1": "shallow.o7.b"
+   }
+  },
+  "shallow.o8": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o8.W",
+    "b1": "shallow.o8.b"
+   }
+  },
+  "shallow.o9": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "shallow.o9.W",
+    "b1": "shallow.o9.b"
+   }
+  },
+  "shallow_expert0": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width"
+     },
+     "use": "nca_shallow_gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "shallow_expert1": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width"
+     },
+     "use": "nca_shallow_gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "shallow_root": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {},
+     "use": "shallow_router"
+    },
+    {
+     "args": {
+      "branches": [
+       "shallow_expert0",
+       "shallow_expert1"
+      ],
+      "k": 1
+     },
+     "id": "n1",
+     "in": {
+      "index": "$index",
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_mask": "$output_mask",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "scores": "n0.scores",
+      "state": "$state"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1.color_logits",
+    "height_logits": "n1.height_logits",
+    "state": "n1.state",
+    "width_logits": "n1.width_logits"
+   },
+   "role": "root"
+  },
+  "shallow_router": {
+   "inputs": [],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "n": 2,
+      "start": 0.0,
+      "step": 0.0
+     },
+     "id": "n0",
+     "in": {},
+     "use": "op:coords"
+    }
+   ],
+   "outputs": {
+    "scores": "n0"
+   },
+   "role": "router"
+  }
+ },
+ "entries": {
+  "grid_step": "shallow_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "construction": "direct-authored shallow NCA/1; no fitting or gradient methods",
+  "grid_attempts": 1,
+  "grid_interface": "grid-graph/1",
+  "limitations": "residual skip preserves all10colors at zero output weights; different from Claude direct NCA, not a replication; same-size, no demonstration adaptation; two identical experts exist for ladder dispatch compatibility, not distinct capability",
+  "nca_recipe": {
+   "architecture": "residual",
+   "channels": 10,
+   "features": 90,
+   "hidden": 4,
+   "iterations": 3,
+   "parameterization": "360hiddenW+4sharedbias+40outputW+10outputbias; hidden tiled W stored3x and summed/3 to share effective bias exactly",
+   "seed": "identity"
+  },
+  "profile": "ladder-micro/1",
+  "state_dim": 0,
+  "task": "grid"
+ },
+ "params": {
+  "shallow.h0.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.h0.c0.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h0.c1.W": {
+   "sha256": "057cc1cffefba1d290dbe9ad38f949ebd555305bbd74c53b35aaff4e8cb1c37a",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h0.c2.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h1.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.h1.c0.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h1.c1.W": {
+   "sha256": "39ad75ecc5107a083d38535b54f88cdee439d7682d245c56975438cef4fc0499",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h1.c2.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h2.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.h2.c0.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h2.c1.W": {
+   "sha256": "6324046742ba53029355d70d7f8c5495755ae96f08f84f0a504825db78d2933e",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h2.c2.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h3.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.h3.c0.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h3.c1.W": {
+   "sha256": "6b2e024909ccb9659159f3a15a4cfdea79f615640dbc95a55caba165707f18c5",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.h3.c2.W": {
+   "sha256": "145d996cd7a7cae1b1eab20bf99b43b1e7ef2ad2281953b8bc01e96c52553aed",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "shallow.o0.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o0.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o1.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o1.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o2.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o2.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o3.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o3.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o4.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o4.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o5.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o5.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o6.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o6.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o7.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o7.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o8.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o8.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "shallow.o9.W": {
+   "sha256": "79423cc8f2900eb1e61e776e1a9db87e7198467fdc61e283bebcea18586e3c97",
+   "shape": [
+    1,
+    4
+   ]
+  },
+  "shallow.o9.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "protocol": "living-two-slot-pilot/1",
+  "proposals_per_arm": 4,
+  "arms": [
+    "crossover",
+    "mutation_only",
+    "random_search"
+  ],
+  "capacity": 4,
+  "max_age": 3,
+  "selection_tasks": 180,
+  "selection_manifest": "162e9c534e6b3e69b70766d4ed51a63f3d7378fda600412b5e6a87d9d0e61a95",
+  "selection_seed_base": 1741000,
+  "seed_base": 772031,
+  "fitness": "all demonstrations reconstructed by either ranked output, task Boolean; no queries",
+  "winner": "highest absolute solve count among evaluated archive, hash tie",
+  "random_control": "uniform two alleles from shared four-allele bank, no fitness-guided proposal",
+  "mate_rule": "if sampled same hash twice and another contemporary exists, second mate is lowest-hash distinct contemporary",
+  "cache_rule": "all proposals counted; same two alleles reuse deterministic fitness, reported as cache hits",
+  "mortality_sharing": "same living helper on crossover/mutation; controls do not isolate these mechanisms",
+  "validation_seed_base": 1941000,
+  "validation_per_family": 20,
+  "public_evaluation_loaded": false,
+  "audit_evaluations": 0,
+  "final_evaluations": 0,
+  "gradients": false,
+  "source_sha256": "50682102116d1b004b0d2156197d688afe7a338aa9fa2f0c7bfce5a86cf611b5",
+  "source_graphs": {
+    "base": "5d0d8ce9787ab85b3e9016835288af756d29d95644e160b4f1968d70992a47c4",
+    "parent-fill-identity": "4c26393ad5b3aa468e25f0b4ccb4f3ccfac7062088220e86012365acfa8d1c5f",
+    "parent-identity-adjacency": "3c4f6e3c6010655cf4ea769fd393667b13d6108b4d3ae9b42c3ff5cdc6076e73",
+    "child-fill-adjacency": "512fe48b836de2eb73ba1814d4da3f0d9b4b4736ab177a1427405fe033cecdb1"
+  },
+  "limitations": "tiny four-proposal pilot, narrow synthetic curriculum, exposed nativeDEV; no frontier inference"
+}

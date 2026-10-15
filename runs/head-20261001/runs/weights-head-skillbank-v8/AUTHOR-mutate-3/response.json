@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No satisfying tensors exist in this template. The task moves markers by distances and rotates their displacement around colour 1; none of the available keys records those distances. These tensors select the relevant background and directional context, but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes): colour-8 objects with one, three, or zero holes become 7, 3, or 2 respectively; colour-1 objects become background. Including colour distinguishes the one-hole blue marker from the one-hole colour-8 object."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist in this template. Object recolouring cannot move the interior colours onto exterior background cells. Choosing another background cannot help: the exterior zero component requires multiple output colours and therefore cannot be recoloured uniformly."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist in this template. In demonstration 2, pixels (1,1) and (8,7), using zero-based coordinates, have identical complete 3x3 neighbourhoods, but must output 8 and 0 respectively. Consequently every available neighbourhood key collides."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist in this template. In demonstration 1, pixels (1,3) and (3,2), using zero-based coordinates, share own colour 8 and the identical eight-neighbour pattern, yet require outputs 9 and 8. Every available key therefore collides."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist in this template. Enabling colour 8 fixes its missing rays, but intersections require colour 2. Source-colour painting cannot introduce 2 in demonstration 1; constant painting with 2 would incorrectly make every ray cell 2."
+  }
+]

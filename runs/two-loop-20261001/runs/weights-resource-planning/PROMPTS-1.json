@@ -1,0 +1,4502 @@
+[
+  {
+    "feedback_sha256": "7f5c119f1cc5aa77ab837d2cf0f9140b3b56c1cb05e2e51c9c843027532bc666",
+    "prompt": {
+      "base_params": {
+        "policy.W1": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "policy.b1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "base_sha256": "787436267b0664a9055103bf705d72c4a69c36e0d3e657163ed812b33761a58e",
+      "contract": {
+        "action_order": [
+          "acquire",
+          "assemble",
+          "deliver",
+          "recharge"
+        ],
+        "activation": "identity",
+        "bounds": {
+          "capacity": 3,
+          "cost": 4,
+          "goal": 3,
+          "max_energy": 9,
+          "max_steps": 16
+        },
+        "feature_order": [
+          "material_after",
+          "goods_after",
+          "remaining_goal_after",
+          "energy_after",
+          "free_cargo_after",
+          "steps_left_after"
+        ],
+        "input": "{initial:{materials,goods,delivered,energy},goal,capacity,max_energy,costs:{acquire,assemble,deliver},max_steps}",
+        "interface": "resource-production-planning-cell/1",
+        "output": "{status,plan,steps,state,trace}",
+        "positions": 28,
+        "selection": "each role-specific projected state scores using its corresponding affine policy row; argmax ties lowest action index; no legality masking",
+        "semantics": "acquire adds1 material; assemble consumes1 material adds1 goods; deliver consumes1 goods incrementsdelivered; each consumes taskdeclared energy. recharge fills battery but cannot be chosen at fullenergy. Cargo materials+goods<=capacity. Illegal selected actions fail. Complete within deadline; task scored against independent shortest BFS length.",
+        "shapes": {
+          "policy.W1": [
+            4,
+            6
+          ],
+          "policy.b1": [
+            4
+          ]
+        },
+        "weight_bounds": [
+          -9,
+          9
+        ]
+      },
+      "crossover": {
+        "parents": [
+          "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d"
+        ],
+        "status": "missing_distinct_viable_donor"
+      },
+      "development_evidence": {
+        "completed": 0,
+        "errors": [],
+        "learning_claim": false,
+        "outcomes": {
+          "dev-asymmetric-costs": false,
+          "dev-batch-capacity": false,
+          "dev-double-tight-energy": false,
+          "dev-empty-battery": false,
+          "dev-initial-goods": false,
+          "dev-initial-material": false,
+          "dev-single-cycle": false,
+          "dev-three-deliveries": false
+        },
+        "partition": "development",
+        "solved": 0,
+        "total": 8,
+        "traces": [
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 3
+            },
+            "goal_complete": false,
+            "id": "dev-single-cycle",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 12
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 4,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      4.0,
+                      0.0,
+                      11.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      3.0,
+                      1.0,
+                      11.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      4.0,
+                      2.0,
+                      11.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      5.0,
+                      1.0,
+                      11.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 4,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      -1.0,
+                      10.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      2.0,
+                      0.0,
+                      10.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      3.0,
+                      1.0,
+                      10.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      5.0,
+                      0.0,
+                      10.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 4,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "recharge",
+                "acquire",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 4
+            },
+            "goal_complete": false,
+            "id": "dev-empty-battery",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 4,
+              "max_steps": 5
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      -1.0,
+                      0.0,
+                      4.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      -2.0,
+                      1.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      -1.0,
+                      2.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      4.0,
+                      1.0,
+                      4.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 4,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 1
+            },
+            "goal_complete": false,
+            "id": "dev-initial-goods",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 1,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 3
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 1,
+                "materials": 0
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      1.0,
+                      1.0,
+                      1.0,
+                      4.0,
+                      -1.0,
+                      2.0
+                    ],
+                    [
+                      -1.0,
+                      2.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      4.0,
+                      1.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      5.0,
+                      0.0,
+                      2.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 1,
+                    "materials": 0
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 2,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver",
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 8
+            },
+            "goal_complete": false,
+            "id": "dev-double-tight-energy",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 2,
+              "initial": {
+                "delivered": 0,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 4,
+              "max_steps": 10
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      0.0,
+                      0.0,
+                      9.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      2.0,
+                      -1.0,
+                      1.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      1.0,
+                      0.0,
+                      2.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      1.0,
+                      9.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      -1.0,
+                      -1.0,
+                      8.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      2.0,
+                      -2.0,
+                      0.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      1.0,
+                      -1.0,
+                      1.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      0.0,
+                      8.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 2
+            },
+            "goal_complete": false,
+            "id": "dev-initial-material",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 3,
+                "goods": 0,
+                "materials": 1
+              },
+              "max_energy": 3,
+              "max_steps": 5
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 3,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      2.0,
+                      -1.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      1.0,
+                      0.0,
+                      4.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      2.0,
+                      1.0,
+                      4.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      4.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 3,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 4
+            },
+            "goal_complete": false,
+            "id": "dev-asymmetric-costs",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 2,
+                "assemble": 3,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 6,
+              "max_steps": 7
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      0.0,
+                      1.0,
+                      6.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      -1.0,
+                      2.0,
+                      6.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      6.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      6.0,
+                      2.0,
+                      6.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 2,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      -2.0,
+                      0.0,
+                      5.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      -3.0,
+                      1.0,
+                      5.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      -1.0,
+                      2.0,
+                      5.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      6.0,
+                      1.0,
+                      5.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 2,
+                "energy": 6,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "assemble",
+                "assemble",
+                "deliver",
+                "recharge",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 7
+            },
+            "goal_complete": false,
+            "id": "dev-batch-capacity",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 2,
+              "initial": {
+                "delivered": 0,
+                "energy": 7,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 7,
+              "max_steps": 10
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 288,
+                "node_execs": 3,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 0,
+                "materials": 2
+              },
+              "status": "invalid_action",
+              "steps": 3,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      6.0,
+                      1.0,
+                      9.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      2.0,
+                      5.0,
+                      2.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      1.0,
+                      6.0,
+                      3.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      2.0,
+                      9.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 6,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 7,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      5.0,
+                      0.0,
+                      8.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      2.0,
+                      4.0,
+                      1.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      1.0,
+                      5.0,
+                      2.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      1.0,
+                      8.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 6,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                },
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      3.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      -1.0,
+                      7.0
+                    ],
+                    [
+                      1.0,
+                      1.0,
+                      2.0,
+                      3.0,
+                      0.0,
+                      7.0
+                    ],
+                    [
+                      2.0,
+                      -1.0,
+                      1.0,
+                      4.0,
+                      1.0,
+                      7.0
+                    ],
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      0.0,
+                      7.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "step": 3
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 3,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "recharge",
+                "assemble",
+                "assemble",
+                "deliver",
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 11
+            },
+            "goal_complete": false,
+            "id": "dev-three-deliveries",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 1,
+                "assemble": 1,
+                "deliver": 2
+              },
+              "goal": 3,
+              "initial": {
+                "delivered": 0,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 14
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 288,
+                "node_execs": 3,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 2
+              },
+              "status": "invalid_action",
+              "steps": 3,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      3.0,
+                      1.0,
+                      1.0,
+                      13.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      3.0,
+                      1.0,
+                      2.0,
+                      13.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      2.0,
+                      0.0,
+                      3.0,
+                      13.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      2.0,
+                      13.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 2,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      3.0,
+                      0.0,
+                      0.0,
+                      12.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      1.0,
+                      12.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      2.0,
+                      -1.0,
+                      2.0,
+                      12.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      1.0,
+                      12.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      3.0,
+                      0.0,
+                      3.0,
+                      -1.0,
+                      -1.0,
+                      11.0
+                    ],
+                    [
+                      1.0,
+                      1.0,
+                      3.0,
+                      -1.0,
+                      0.0,
+                      11.0
+                    ],
+                    [
+                      2.0,
+                      -1.0,
+                      2.0,
+                      -2.0,
+                      1.0,
+                      11.0
+                    ],
+                    [
+                      2.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      0.0,
+                      11.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "step": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "edit_contract": "All28 literal finite positions [-9,9], nonzero numerical mutation from supplied base. No files/tools/network/reporting. When crossover supplied retain at least one numerically distinguishing inherited scalar unchanged from EACH parent. Remaining params are authored mutation. Never invent gains.",
+      "generation": 1,
+      "interface": "resource-production-planning-cell/1",
+      "parent_id": "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d",
+      "parent_params": {
+        "policy.W1": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "policy.b1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "partition": "development",
+      "seed": 901
+    },
+    "prompt_sha256": "627cffb874722fdb59a0652d2c3bdfe31e99335b0d897c7b33e2ae47f2593378",
+    "seed": 901
+  },
+  {
+    "feedback_sha256": "7f5c119f1cc5aa77ab837d2cf0f9140b3b56c1cb05e2e51c9c843027532bc666",
+    "prompt": {
+      "base_params": {
+        "policy.W1": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "policy.b1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "base_sha256": "787436267b0664a9055103bf705d72c4a69c36e0d3e657163ed812b33761a58e",
+      "contract": {
+        "action_order": [
+          "acquire",
+          "assemble",
+          "deliver",
+          "recharge"
+        ],
+        "activation": "identity",
+        "bounds": {
+          "capacity": 3,
+          "cost": 4,
+          "goal": 3,
+          "max_energy": 9,
+          "max_steps": 16
+        },
+        "feature_order": [
+          "material_after",
+          "goods_after",
+          "remaining_goal_after",
+          "energy_after",
+          "free_cargo_after",
+          "steps_left_after"
+        ],
+        "input": "{initial:{materials,goods,delivered,energy},goal,capacity,max_energy,costs:{acquire,assemble,deliver},max_steps}",
+        "interface": "resource-production-planning-cell/1",
+        "output": "{status,plan,steps,state,trace}",
+        "positions": 28,
+        "selection": "each role-specific projected state scores using its corresponding affine policy row; argmax ties lowest action index; no legality masking",
+        "semantics": "acquire adds1 material; assemble consumes1 material adds1 goods; deliver consumes1 goods incrementsdelivered; each consumes taskdeclared energy. recharge fills battery but cannot be chosen at fullenergy. Cargo materials+goods<=capacity. Illegal selected actions fail. Complete within deadline; task scored against independent shortest BFS length.",
+        "shapes": {
+          "policy.W1": [
+            4,
+            6
+          ],
+          "policy.b1": [
+            4
+          ]
+        },
+        "weight_bounds": [
+          -9,
+          9
+        ]
+      },
+      "crossover": {
+        "parents": [
+          "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d"
+        ],
+        "status": "missing_distinct_viable_donor"
+      },
+      "development_evidence": {
+        "completed": 0,
+        "errors": [],
+        "learning_claim": false,
+        "outcomes": {
+          "dev-asymmetric-costs": false,
+          "dev-batch-capacity": false,
+          "dev-double-tight-energy": false,
+          "dev-empty-battery": false,
+          "dev-initial-goods": false,
+          "dev-initial-material": false,
+          "dev-single-cycle": false,
+          "dev-three-deliveries": false
+        },
+        "partition": "development",
+        "solved": 0,
+        "total": 8,
+        "traces": [
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 3
+            },
+            "goal_complete": false,
+            "id": "dev-single-cycle",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 12
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 4,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      4.0,
+                      0.0,
+                      11.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      3.0,
+                      1.0,
+                      11.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      4.0,
+                      2.0,
+                      11.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      5.0,
+                      1.0,
+                      11.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 4,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      -1.0,
+                      10.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      2.0,
+                      0.0,
+                      10.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      3.0,
+                      1.0,
+                      10.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      5.0,
+                      0.0,
+                      10.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 4,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "recharge",
+                "acquire",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 4
+            },
+            "goal_complete": false,
+            "id": "dev-empty-battery",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 4,
+              "max_steps": 5
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      -1.0,
+                      0.0,
+                      4.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      -2.0,
+                      1.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      -1.0,
+                      2.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      4.0,
+                      1.0,
+                      4.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 4,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 1
+            },
+            "goal_complete": false,
+            "id": "dev-initial-goods",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 1,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 3
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 1,
+                "materials": 0
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      1.0,
+                      1.0,
+                      1.0,
+                      4.0,
+                      -1.0,
+                      2.0
+                    ],
+                    [
+                      -1.0,
+                      2.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      4.0,
+                      1.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      5.0,
+                      0.0,
+                      2.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 1,
+                    "materials": 0
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 2,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver",
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 8
+            },
+            "goal_complete": false,
+            "id": "dev-double-tight-energy",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 2,
+              "initial": {
+                "delivered": 0,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 4,
+              "max_steps": 10
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      0.0,
+                      0.0,
+                      9.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      2.0,
+                      -1.0,
+                      1.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      1.0,
+                      0.0,
+                      2.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      1.0,
+                      9.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      -1.0,
+                      -1.0,
+                      8.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      2.0,
+                      -2.0,
+                      0.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      1.0,
+                      -1.0,
+                      1.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      0.0,
+                      8.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 2
+            },
+            "goal_complete": false,
+            "id": "dev-initial-material",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 3,
+                "goods": 0,
+                "materials": 1
+              },
+              "max_energy": 3,
+              "max_steps": 5
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 3,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      2.0,
+                      -1.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      1.0,
+                      0.0,
+                      4.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      2.0,
+                      1.0,
+                      4.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      4.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 3,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 4
+            },
+            "goal_complete": false,
+            "id": "dev-asymmetric-costs",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 2,
+                "assemble": 3,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 6,
+              "max_steps": 7
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      0.0,
+                      1.0,
+                      6.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      -1.0,
+                      2.0,
+                      6.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      6.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      6.0,
+                      2.0,
+                      6.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 2,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      -2.0,
+                      0.0,
+                      5.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      -3.0,
+                      1.0,
+                      5.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      -1.0,
+                      2.0,
+                      5.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      6.0,
+                      1.0,
+                      5.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 2,
+                "energy": 6,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "assemble",
+                "assemble",
+                "deliver",
+                "recharge",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 7
+            },
+            "goal_complete": false,
+            "id": "dev-batch-capacity",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 2,
+              "initial": {
+                "delivered": 0,
+                "energy": 7,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 7,
+              "max_steps": 10
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 288,
+                "node_execs": 3,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 0,
+                "materials": 2
+              },
+              "status": "invalid_action",
+              "steps": 3,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      6.0,
+                      1.0,
+                      9.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      2.0,
+                      5.0,
+                      2.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      1.0,
+                      6.0,
+                      3.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      2.0,
+                      9.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 6,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 7,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      5.0,
+                      0.0,
+                      8.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      2.0,
+                      4.0,
+                      1.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      1.0,
+                      5.0,
+                      2.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      1.0,
+                      8.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 6,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                },
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      3.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      -1.0,
+                      7.0
+                    ],
+                    [
+                      1.0,
+                      1.0,
+                      2.0,
+                      3.0,
+                      0.0,
+                      7.0
+                    ],
+                    [
+                      2.0,
+                      -1.0,
+                      1.0,
+                      4.0,
+                      1.0,
+                      7.0
+                    ],
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      0.0,
+                      7.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "step": 3
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 3,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "recharge",
+                "assemble",
+                "assemble",
+                "deliver",
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 11
+            },
+            "goal_complete": false,
+            "id": "dev-three-deliveries",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 1,
+                "assemble": 1,
+                "deliver": 2
+              },
+              "goal": 3,
+              "initial": {
+                "delivered": 0,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 14
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 288,
+                "node_execs": 3,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 2
+              },
+              "status": "invalid_action",
+              "steps": 3,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      3.0,
+                      1.0,
+                      1.0,
+                      13.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      3.0,
+                      1.0,
+                      2.0,
+                      13.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      2.0,
+                      0.0,
+                      3.0,
+                      13.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      2.0,
+                      13.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 2,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      3.0,
+                      0.0,
+                      0.0,
+                      12.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      1.0,
+                      12.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      2.0,
+                      -1.0,
+                      2.0,
+                      12.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      1.0,
+                      12.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      3.0,
+                      0.0,
+                      3.0,
+                      -1.0,
+                      -1.0,
+                      11.0
+                    ],
+                    [
+                      1.0,
+                      1.0,
+                      3.0,
+                      -1.0,
+                      0.0,
+                      11.0
+                    ],
+                    [
+                      2.0,
+                      -1.0,
+                      2.0,
+                      -2.0,
+                      1.0,
+                      11.0
+                    ],
+                    [
+                      2.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      0.0,
+                      11.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "step": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "edit_contract": "All28 literal finite positions [-9,9], nonzero numerical mutation from supplied base. No files/tools/network/reporting. When crossover supplied retain at least one numerically distinguishing inherited scalar unchanged from EACH parent. Remaining params are authored mutation. Never invent gains.",
+      "generation": 1,
+      "interface": "resource-production-planning-cell/1",
+      "parent_id": "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d",
+      "parent_params": {
+        "policy.W1": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "policy.b1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "partition": "development",
+      "seed": 902
+    },
+    "prompt_sha256": "7c5e4e824f2a4d5816fad8e97abb95787e769395b41aacfc1b700183d9dae662",
+    "seed": 902
+  },
+  {
+    "feedback_sha256": "7f5c119f1cc5aa77ab837d2cf0f9140b3b56c1cb05e2e51c9c843027532bc666",
+    "prompt": {
+      "base_params": {
+        "policy.W1": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "policy.b1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "base_sha256": "787436267b0664a9055103bf705d72c4a69c36e0d3e657163ed812b33761a58e",
+      "contract": {
+        "action_order": [
+          "acquire",
+          "assemble",
+          "deliver",
+          "recharge"
+        ],
+        "activation": "identity",
+        "bounds": {
+          "capacity": 3,
+          "cost": 4,
+          "goal": 3,
+          "max_energy": 9,
+          "max_steps": 16
+        },
+        "feature_order": [
+          "material_after",
+          "goods_after",
+          "remaining_goal_after",
+          "energy_after",
+          "free_cargo_after",
+          "steps_left_after"
+        ],
+        "input": "{initial:{materials,goods,delivered,energy},goal,capacity,max_energy,costs:{acquire,assemble,deliver},max_steps}",
+        "interface": "resource-production-planning-cell/1",
+        "output": "{status,plan,steps,state,trace}",
+        "positions": 28,
+        "selection": "each role-specific projected state scores using its corresponding affine policy row; argmax ties lowest action index; no legality masking",
+        "semantics": "acquire adds1 material; assemble consumes1 material adds1 goods; deliver consumes1 goods incrementsdelivered; each consumes taskdeclared energy. recharge fills battery but cannot be chosen at fullenergy. Cargo materials+goods<=capacity. Illegal selected actions fail. Complete within deadline; task scored against independent shortest BFS length.",
+        "shapes": {
+          "policy.W1": [
+            4,
+            6
+          ],
+          "policy.b1": [
+            4
+          ]
+        },
+        "weight_bounds": [
+          -9,
+          9
+        ]
+      },
+      "crossover": {
+        "parents": [
+          "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d"
+        ],
+        "status": "missing_distinct_viable_donor"
+      },
+      "development_evidence": {
+        "completed": 0,
+        "errors": [],
+        "learning_claim": false,
+        "outcomes": {
+          "dev-asymmetric-costs": false,
+          "dev-batch-capacity": false,
+          "dev-double-tight-energy": false,
+          "dev-empty-battery": false,
+          "dev-initial-goods": false,
+          "dev-initial-material": false,
+          "dev-single-cycle": false,
+          "dev-three-deliveries": false
+        },
+        "partition": "development",
+        "solved": 0,
+        "total": 8,
+        "traces": [
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 3
+            },
+            "goal_complete": false,
+            "id": "dev-single-cycle",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 12
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 4,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      4.0,
+                      0.0,
+                      11.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      3.0,
+                      1.0,
+                      11.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      4.0,
+                      2.0,
+                      11.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      5.0,
+                      1.0,
+                      11.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 4,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      -1.0,
+                      10.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      2.0,
+                      0.0,
+                      10.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      3.0,
+                      1.0,
+                      10.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      5.0,
+                      0.0,
+                      10.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 4,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "recharge",
+                "acquire",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 4
+            },
+            "goal_complete": false,
+            "id": "dev-empty-battery",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 4,
+              "max_steps": 5
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      -1.0,
+                      0.0,
+                      4.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      -2.0,
+                      1.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      -1.0,
+                      2.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      4.0,
+                      1.0,
+                      4.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 4,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 1
+            },
+            "goal_complete": false,
+            "id": "dev-initial-goods",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 1,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 3
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 1,
+                "materials": 0
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      1.0,
+                      1.0,
+                      1.0,
+                      4.0,
+                      -1.0,
+                      2.0
+                    ],
+                    [
+                      -1.0,
+                      2.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      0.0,
+                      4.0,
+                      1.0,
+                      2.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      5.0,
+                      0.0,
+                      2.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 1,
+                    "materials": 0
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 2,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver",
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 8
+            },
+            "goal_complete": false,
+            "id": "dev-double-tight-energy",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 2,
+              "initial": {
+                "delivered": 0,
+                "energy": 1,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 4,
+              "max_steps": 10
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      0.0,
+                      0.0,
+                      9.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      2.0,
+                      -1.0,
+                      1.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      1.0,
+                      0.0,
+                      2.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      1.0,
+                      9.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      -1.0,
+                      -1.0,
+                      8.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      2.0,
+                      -2.0,
+                      0.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      1.0,
+                      -1.0,
+                      1.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      0.0,
+                      8.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 2
+            },
+            "goal_complete": false,
+            "id": "dev-initial-material",
+            "input": {
+              "capacity": 1,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 3,
+                "goods": 0,
+                "materials": 1
+              },
+              "max_energy": 3,
+              "max_steps": 5
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 96,
+                "node_execs": 1,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 3,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 1,
+              "trace": [
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      2.0,
+                      -1.0,
+                      4.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      1.0,
+                      0.0,
+                      4.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      2.0,
+                      1.0,
+                      4.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      4.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 3,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 1
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 1,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 4
+            },
+            "goal_complete": false,
+            "id": "dev-asymmetric-costs",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 2,
+                "assemble": 3,
+                "deliver": 1
+              },
+              "goal": 1,
+              "initial": {
+                "delivered": 0,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 6,
+              "max_steps": 7
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 192,
+                "node_execs": 2,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 1
+              },
+              "status": "invalid_action",
+              "steps": 2,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      0.0,
+                      1.0,
+                      6.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      1.0,
+                      -1.0,
+                      2.0,
+                      6.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      0.0,
+                      1.0,
+                      3.0,
+                      6.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      1.0,
+                      6.0,
+                      2.0,
+                      6.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 2,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      1.0,
+                      -2.0,
+                      0.0,
+                      5.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      1.0,
+                      -3.0,
+                      1.0,
+                      5.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      0.0,
+                      -1.0,
+                      2.0,
+                      5.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      1.0,
+                      6.0,
+                      1.0,
+                      5.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 2,
+                "energy": 6,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "assemble",
+                "assemble",
+                "deliver",
+                "recharge",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 7
+            },
+            "goal_complete": false,
+            "id": "dev-batch-capacity",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 1,
+                "assemble": 2,
+                "deliver": 1
+              },
+              "goal": 2,
+              "initial": {
+                "delivered": 0,
+                "energy": 7,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 7,
+              "max_steps": 10
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 288,
+                "node_execs": 3,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 5,
+                "goods": 0,
+                "materials": 2
+              },
+              "status": "invalid_action",
+              "steps": 3,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      6.0,
+                      1.0,
+                      9.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      2.0,
+                      5.0,
+                      2.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      1.0,
+                      6.0,
+                      3.0,
+                      9.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      2.0,
+                      9.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 6,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 7,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      5.0,
+                      0.0,
+                      8.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      2.0,
+                      4.0,
+                      1.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      1.0,
+                      5.0,
+                      2.0,
+                      8.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      1.0,
+                      8.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 6,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                },
+                {
+                  "error": "cargo_capacity_exceeded",
+                  "features": [
+                    [
+                      3.0,
+                      0.0,
+                      2.0,
+                      4.0,
+                      -1.0,
+                      7.0
+                    ],
+                    [
+                      1.0,
+                      1.0,
+                      2.0,
+                      3.0,
+                      0.0,
+                      7.0
+                    ],
+                    [
+                      2.0,
+                      -1.0,
+                      1.0,
+                      4.0,
+                      1.0,
+                      7.0
+                    ],
+                    [
+                      2.0,
+                      0.0,
+                      2.0,
+                      7.0,
+                      0.0,
+                      7.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 5,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "step": 3
+                }
+              ]
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "final_state": {
+                "delivered": 3,
+                "energy": 0,
+                "goods": 0,
+                "materials": 0
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "recharge",
+                "assemble",
+                "assemble",
+                "deliver",
+                "acquire",
+                "recharge",
+                "assemble",
+                "deliver",
+                "deliver"
+              ],
+              "reachable": true,
+              "shortest_steps": 11
+            },
+            "goal_complete": false,
+            "id": "dev-three-deliveries",
+            "input": {
+              "capacity": 2,
+              "costs": {
+                "acquire": 1,
+                "assemble": 1,
+                "deliver": 2
+              },
+              "goal": 3,
+              "initial": {
+                "delivered": 0,
+                "energy": 2,
+                "goods": 0,
+                "materials": 0
+              },
+              "max_energy": 5,
+              "max_steps": 14
+            },
+            "length_score": 0.0,
+            "predicted": {
+              "execution": {
+                "macs": 288,
+                "node_execs": 3,
+                "peak_tensor_elements": 16,
+                "route_counts": {}
+              },
+              "plan": [
+                "acquire",
+                "acquire",
+                "acquire"
+              ],
+              "state": {
+                "delivered": 0,
+                "energy": 0,
+                "goods": 0,
+                "materials": 2
+              },
+              "status": "invalid_action",
+              "steps": 3,
+              "trace": [
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      1.0,
+                      0.0,
+                      3.0,
+                      1.0,
+                      1.0,
+                      13.0
+                    ],
+                    [
+                      -1.0,
+                      1.0,
+                      3.0,
+                      1.0,
+                      2.0,
+                      13.0
+                    ],
+                    [
+                      0.0,
+                      -1.0,
+                      2.0,
+                      0.0,
+                      3.0,
+                      13.0
+                    ],
+                    [
+                      0.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      2.0,
+                      13.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 2,
+                    "goods": 0,
+                    "materials": 0
+                  },
+                  "step": 1
+                },
+                {
+                  "error": null,
+                  "features": [
+                    [
+                      2.0,
+                      0.0,
+                      3.0,
+                      0.0,
+                      0.0,
+                      12.0
+                    ],
+                    [
+                      0.0,
+                      1.0,
+                      3.0,
+                      0.0,
+                      1.0,
+                      12.0
+                    ],
+                    [
+                      1.0,
+                      -1.0,
+                      2.0,
+                      -1.0,
+                      2.0,
+                      12.0
+                    ],
+                    [
+                      1.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      1.0,
+                      12.0
+                    ]
+                  ],
+                  "legal": true,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 1,
+                    "goods": 0,
+                    "materials": 1
+                  },
+                  "step": 2
+                },
+                {
+                  "error": "insufficient_energy",
+                  "features": [
+                    [
+                      3.0,
+                      0.0,
+                      3.0,
+                      -1.0,
+                      -1.0,
+                      11.0
+                    ],
+                    [
+                      1.0,
+                      1.0,
+                      3.0,
+                      -1.0,
+                      0.0,
+                      11.0
+                    ],
+                    [
+                      2.0,
+                      -1.0,
+                      2.0,
+                      -2.0,
+                      1.0,
+                      11.0
+                    ],
+                    [
+                      2.0,
+                      0.0,
+                      3.0,
+                      5.0,
+                      0.0,
+                      11.0
+                    ]
+                  ],
+                  "legal": false,
+                  "scores": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "selected_action": "acquire",
+                  "state_after": null,
+                  "state_before": {
+                    "delivered": 0,
+                    "energy": 0,
+                    "goods": 0,
+                    "materials": 2
+                  },
+                  "step": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "edit_contract": "All28 literal finite positions [-9,9], nonzero numerical mutation from supplied base. No files/tools/network/reporting. When crossover supplied retain at least one numerically distinguishing inherited scalar unchanged from EACH parent. Remaining params are authored mutation. Never invent gains.",
+      "generation": 1,
+      "interface": "resource-production-planning-cell/1",
+      "parent_id": "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d",
+      "parent_params": {
+        "policy.W1": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "policy.b1": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "partition": "development",
+      "seed": 903
+    },
+    "prompt_sha256": "832ad77ab1663dc809526acc8682ee2ecebce618699d62ce517b0c73c9782270",
+    "seed": 903
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {"task_id":"sym-s0-m1","params":{"mask":[0,1,0,0,0,0,0,0,0,0],"sym":[1,0,0,0]},"rationale":"Colour 1 is missing: demonstration 3 fills row 7's first three cells with 4,4,0 from their left-right partners."},
+  {"task_id":"sym-s0-m2","params":{"mask":[0,0,1,0,0,0,0,0,0,0],"sym":[1,0,0,0]},"rationale":"Colour 2 is missing: demonstration 1 replaces column 5 in the last three rows with 3,0,0 from column 2."},
+  {"task_id":"sym-s2-m0","params":{"mask":[1,0,0,0,0,0,0,0,0,0],"sym":[0,0,1,0]},"rationale":"Colour 0 is missing in grids symmetric across both axes: demonstration 2 restores 4,3,1 in column 4; demonstration 3 restores the bottom-row zeros to 2,2,1."},
+  {"task_id":"sym-s1-m3","params":{"mask":[0,0,0,1,0,0,0,0,0,0],"sym":[0,1,0,0]},"rationale":"Colour 3 is missing: demonstration 1 restores rows 2 and 3 from rows 9 and 8, including 5,5,0 and 0,5,2."},
+  {"task_id":"sym-s1-m4","params":{"mask":[0,0,0,0,1,0,0,0,0,0],"sym":[0,1,0,0]},"rationale":"Colour 4 is missing: demonstration 3 replaces row 1 column 2 with 0 from row 9 column 2; demonstration 1 restores upper patches from matching lower rows."},
+  {"task_id":"sym-s2-m3","params":{"mask":[0,0,0,1,0,0,0,0,0,0],"sym":[0,0,1,0]},"rationale":"Colour 3 is missing with both-axis symmetry: demonstration 2 restores the upper patch from lower partners, while demonstration 3 restores the middle row's last cell to 0 from its left-right partner."},
+  {"task_id":"sym-s0-m5","params":{"mask":[0,0,0,0,0,1,0,0,0,0],"sym":[1,0,0,0]},"rationale":"Colour 5 is missing: demonstration 1 restores row 7's first three cells to 2,2,3 from the right side; demonstration 3 restores the last column to 1,2,4."},
+  {"task_id":"sym-s1-m0","params":{"mask":[1,0,0,0,0,0,0,0,0,0],"sym":[0,1,0,0]},"rationale":"Colour 0 is missing: demonstration 1 fills row 8 columns 3 and 4 with 4 from row 2; demonstration 2 restores the bottom two first-column cells to 4 and 5."},
+  {"task_id":"sym-s3-m0","params":{"mask":[1,0,0,0,0,0,0,0,0,0],"sym":[0,0,0,1]},"rationale":"Colour 0 is missing under transpose symmetry: demonstration 2 restores row 1 columns 3 and 4 to 1,2 from row 3 column 1 and row 4 column 1."},
+  {"task_id":"sym-s2-m4","params":{"mask":[0,0,0,0,1,0,0,0,0,0],"sym":[0,0,1,0]},"rationale":"Colour 4 is missing with both-axis symmetry: demonstration 3 restores row 6's patch to 2,2,2 and row 7's patch to 2,5,5 using known reflected partners."}
+]

@@ -1,0 +1,187 @@
+{
+  "protocol": "priority-a-repair-batch/1",
+  "proposal": 1,
+  "runs": [
+    {
+      "seed": 775101,
+      "parent_hash": "c39b358a72dc7a756d286a1591d11a24b0f1a90d1bc58cceae5ed3adab6449cc",
+      "diagnostics_sha256": "19b2a47959c51a8ab44fd8b0877965409782eda307676610a6d0504d1138e8ca",
+      "repairs": {
+        "random_repair": {
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "0d7916a62bdd0c54622c1407502d506ea49abff31df8c18f0a6f7372e5de8acc",
+              "name": "periodic.gene",
+              "prefix": "a01_",
+              "slot": 12
+            }
+          ],
+          "donor_path": "runs/priority-a-v2/batch-01/775101-random_repair-donor",
+          "donor_hash": "0d7916a62bdd0c54622c1407502d506ea49abff31df8c18f0a6f7372e5de8acc",
+          "period": 2,
+          "slot": 12,
+          "materialized_hash": "4f060cade1650b524833be22eccf53f322f111ed9427a6bcdff87718dfd350a1",
+          "new_stored_parameters": 418,
+          "actor": "uniform bounded periodic-cell grammar",
+          "model": "none",
+          "rationale": "Uniform period1..10 and any declared slot; same new-cell grammar and bounds."
+        },
+        "maker_repair": {
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+              "name": "periodic.gene",
+              "prefix": "a01_",
+              "slot": 8
+            }
+          ],
+          "donor_path": "runs/priority-a-v2/batch-01/775101-maker_repair-donor",
+          "donor_hash": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+          "period": 3,
+          "slot": 8,
+          "materialized_hash": "faf95f2c160173c9581e8e1055caa73248c3ab75423efb195ac4020228550210",
+          "new_stored_parameters": 418,
+          "actor": "Codex root",
+          "model": "session model unspecified",
+          "rationale": "Traced failures omit markers in period-three tiles. Author period-three dilation weights and import its typed gene into an identity slot; fixed marker colors1/3/7 are exposed from real training diagnostics. Shared draft grammar predates this split; no blind novelty claim."
+        },
+        "breeding_only": {
+          "ops": [],
+          "actor": "unchanged initial bred child",
+          "model": "none",
+          "rationale": "Charged initial bred control for first proposal"
+        }
+      }
+    },
+    {
+      "seed": 775111,
+      "parent_hash": "3cb863d700061a92a198655528976cf63d32384ae1f40c034030931e092a17e5",
+      "diagnostics_sha256": "a449f6c9e0ccee415dc2b54a789425dca08e05b33bebb2bc34c90a99bfea6572",
+      "repairs": {
+        "random_repair": {
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "cb133b602fda807b00f6c0bd1d56f3c9bb7343f7e6828100be6d19bfbf3678c8",
+              "name": "periodic.gene",
+              "prefix": "a01_",
+              "slot": 11
+            }
+          ],
+          "donor_path": "runs/priority-a-v2/batch-01/775111-random_repair-donor",
+          "donor_hash": "cb133b602fda807b00f6c0bd1d56f3c9bb7343f7e6828100be6d19bfbf3678c8",
+          "period": 10,
+          "slot": 11,
+          "materialized_hash": "96355390de9bc8aab3151781c59cedad5223faf80f68ed0a7cbc5a4f0a2121ac",
+          "new_stored_parameters": 418,
+          "actor": "uniform bounded periodic-cell grammar",
+          "model": "none",
+          "rationale": "Uniform period1..10 and any declared slot; same new-cell grammar and bounds."
+        },
+        "maker_repair": {
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+              "name": "periodic.gene",
+              "prefix": "a01_",
+              "slot": 10
+            }
+          ],
+          "donor_path": "runs/priority-a-v2/batch-01/775111-maker_repair-donor",
+          "donor_hash": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+          "period": 3,
+          "slot": 10,
+          "materialized_hash": "6c0c1b7f2135d25fbab201acb5858786cfe857f5494dbc4b7fb66d047fce38d5",
+          "new_stored_parameters": 418,
+          "actor": "Codex root",
+          "model": "session model unspecified",
+          "rationale": "Traced failures omit markers in period-three tiles. Author period-three dilation weights and import its typed gene into an identity slot; fixed marker colors1/3/7 are exposed from real training diagnostics. Shared draft grammar predates this split; no blind novelty claim."
+        },
+        "breeding_only": {
+          "ops": [],
+          "actor": "unchanged initial bred child",
+          "model": "none",
+          "rationale": "Charged initial bred control for first proposal"
+        }
+      }
+    },
+    {
+      "seed": 775121,
+      "parent_hash": "eb1e13fd51d3ada240d9f3e4805994635eb16d90e4ee61d73f9128a1c576fd1d",
+      "diagnostics_sha256": "06aad6431c3c7cf62d744ef1596eb2321a114d951f122aa4e1ee28ac138f38de",
+      "repairs": {
+        "random_repair": {
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+              "name": "periodic.gene",
+              "prefix": "a01_",
+              "slot": 9
+            }
+          ],
+          "donor_path": "runs/priority-a-v2/batch-01/775121-random_repair-donor",
+          "donor_hash": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+          "period": 3,
+          "slot": 9,
+          "materialized_hash": "d39af18ab29ce99776c939cd31966fe17c6e761cc27eecc91f4109198363b325",
+          "new_stored_parameters": 418,
+          "actor": "uniform bounded periodic-cell grammar",
+          "model": "none",
+          "rationale": "Uniform period1..10 and any declared slot; same new-cell grammar and bounds."
+        },
+        "maker_repair": {
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+              "name": "periodic.gene",
+              "prefix": "a01_",
+              "slot": 9
+            }
+          ],
+          "donor_path": "runs/priority-a-v2/batch-01/775121-maker_repair-donor",
+          "donor_hash": "0d6e5851d0b6d29d7aadbfe77480baba38066fc6237e2c2615020cd804f99971",
+          "period": 3,
+          "slot": 9,
+          "materialized_hash": "d39af18ab29ce99776c939cd31966fe17c6e761cc27eecc91f4109198363b325",
+          "new_stored_parameters": 418,
+          "actor": "Codex root",
+          "model": "session model unspecified",
+          "rationale": "Traced failures omit markers in period-three tiles. Author period-three dilation weights and import its typed gene into an identity slot; fixed marker colors1/3/7 are exposed from real training diagnostics. Shared draft grammar predates this split; no blind novelty claim."
+        },
+        "breeding_only": {
+          "ops": [],
+          "actor": "unchanged initial bred child",
+          "model": "none",
+          "rationale": "Charged initial bred control for first proposal"
+        }
+      }
+    }
+  ],
+  "plan_sha256": "4f5d910f3fe1a84165a5518e98b75f048a3ea65abda2d7fbb026620685544653",
+  "vocabulary": {
+    "new_cell_grammar": "authored two-marker period dilation; explicit53weight parameters, typed port wiring",
+    "period": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "slot": "any declared slot",
+    "transaction": "import_slot_gene",
+    "new_cell_source": "build_grid_periodic_marker_gene.py shared draft available to both arms"
+  },
+  "charges_per_arm": 1,
+  "gradients": false,
+  "scored": false
+}

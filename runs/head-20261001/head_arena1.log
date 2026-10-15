@@ -1,0 +1,60 @@
+{"stage": "arena:wallpruned:Ember:g1", "utc": "2026-10-02T00:33:22.983503+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:wallpruned:Tide:g1", "utc": "2026-10-02T00:33:23.117470+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:wallpruned:Moss:g1", "utc": "2026-10-02T00:33:23.284202+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:wallpruned", "utc": "2026-10-02T00:33:25.592575+00:00", "cells": 572, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 1, "houses": 3}
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/head-20261001/arena.py", line 320, in <module>
+    main()
+  File "/srv/cellforge-inbox/head-20261001/arena.py", line 316, in main
+    arena.season_run([n for n in a.card.split(",") if n], a.gens, a.rounds)
+  File "/srv/cellforge-inbox/head-20261001/arena.py", line 271, in season_run
+    self.contest(name, gens)
+  File "/srv/cellforge-inbox/head-20261001/arena.py", line 79, in contest
+    niche = N.NICHES[name]
+            ~~~~~~~~^^^^^^
+KeyError: 'corridormarker'
+{"stage": "arena:corridormarker:Ember:g1", "utc": "2026-10-02T00:34:10.221134+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:corridormarker:Tide:g1", "utc": "2026-10-02T00:34:10.346462+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:corridormarker:Moss:g1", "utc": "2026-10-02T00:34:10.445789+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:corridormarker", "utc": "2026-10-02T00:34:13.752185+00:00", "cells": 574, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 2, "houses": 3}
+{"stage": "arena:anchorassign:Ember:g1", "utc": "2026-10-02T00:34:34.328971+00:00", "solved": 0, "luck": 0, "total": 24, "points": 0.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:anchorassign:Tide:g1", "utc": "2026-10-02T00:34:34.823004+00:00", "solved": 0, "luck": 0, "total": 24, "points": 0.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:anchorassign:Moss:g1", "utc": "2026-10-02T00:34:40.517005+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:anchorassign:Ember:g2", "utc": "2026-10-02T00:34:54.788373+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:anchorassign:Tide:g2", "utc": "2026-10-02T00:34:55.743864+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:anchorassign:Moss:g2", "utc": "2026-10-02T00:35:01.884927+00:00", "solved": 0, "luck": 0, "total": 24, "points": 0.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:anchorassign", "utc": "2026-10-02T00:35:05.873099+00:00", "cells": 576, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 2, "houses": 3}
+{"stage": "arena:frameinfer:Ember:g1", "utc": "2026-10-02T00:35:17.400179+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:frameinfer:Tide:g1", "utc": "2026-10-02T00:35:17.490611+00:00", "solved": 24, "luck": 8, "total": 24, "points": 6.667, "declined": false, "maker_errors": 0}
+{"stage": "arena:frameinfer:Moss:g1", "utc": "2026-10-02T00:35:17.565749+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:frameinfer", "utc": "2026-10-02T00:35:19.625662+00:00", "cells": 578, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 2, "houses": 3}
+{"stage": "arena:referencepaint:Ember:g1", "utc": "2026-10-02T00:35:38.380937+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:referencepaint:Tide:g1", "utc": "2026-10-02T00:35:38.860061+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:referencepaint:Moss:g1", "utc": "2026-10-02T00:35:39.219055+00:00", "solved": 24, "luck": 0, "total": 24, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:referencepaint", "utc": "2026-10-02T00:35:41.150675+00:00", "cells": 579, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 1, "houses": 3}
+{"stage": "arena:tooluse:Ember:g1", "utc": "2026-10-02T00:35:52.233125+00:00", "solved": 12, "luck": 9, "total": 12, "points": 2.5, "declined": false, "maker_errors": 0}
+{"stage": "arena:tooluse:Tide:g1", "utc": "2026-10-02T00:35:52.268731+00:00", "solved": 12, "luck": 11, "total": 12, "points": 0.833, "declined": false, "maker_errors": 0}
+{"stage": "arena:tooluse:Moss:g1", "utc": "2026-10-02T00:35:52.290412+00:00", "solved": 12, "luck": 10, "total": 12, "points": 1.667, "declined": false, "maker_errors": 0}
+{"stage": "arena:tooluse", "utc": "2026-10-02T00:35:53.141126+00:00", "cells": 579, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 0, "houses": 3}
+{"stage": "arena:analogy:Ember:g1", "utc": "2026-10-02T00:36:16.891002+00:00", "solved": 8, "luck": 0, "total": 8, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:analogy:Tide:g1", "utc": "2026-10-02T00:36:16.905908+00:00", "solved": 8, "luck": 0, "total": 8, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:analogy:Moss:g1", "utc": "2026-10-02T00:36:16.917881+00:00", "solved": 8, "luck": 0, "total": 8, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:analogy", "utc": "2026-10-02T00:36:19.323416+00:00", "cells": 582, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 3, "houses": 3}
+{"stage": "arena:context2:Ember:g1", "utc": "2026-10-02T00:39:46.012569+00:00", "solved": 32, "luck": 8, "total": 32, "points": 7.5, "declined": false, "maker_errors": 0}
+{"stage": "arena:context2:Tide:g1", "utc": "2026-10-02T00:39:47.071498+00:00", "solved": 32, "luck": 9, "total": 32, "points": 7.188, "declined": false, "maker_errors": 0}
+{"stage": "arena:context2:Moss:g1", "utc": "2026-10-02T00:39:47.980848+00:00", "solved": 32, "luck": 6, "total": 32, "points": 8.125, "declined": false, "maker_errors": 0}
+{"stage": "arena:context2", "utc": "2026-10-02T00:39:48.916403+00:00", "cells": 582, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 0, "houses": 3}
+{"stage": "arena:objmove3:Ember:g1", "utc": "2026-10-02T00:40:43.532019+00:00", "solved": 8, "luck": 0, "total": 8, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:objmove3:Tide:g1", "utc": "2026-10-02T00:40:43.591048+00:00", "solved": 8, "luck": 0, "total": 8, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:objmove3:Moss:g1", "utc": "2026-10-02T00:40:43.646308+00:00", "solved": 8, "luck": 1, "total": 8, "points": 8.75, "declined": false, "maker_errors": 0}
+{"stage": "arena:objmove3", "utc": "2026-10-02T00:40:44.545859+00:00", "cells": 582, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 0, "houses": 3}
+{"stage": "arena:blockred:Ember:g1", "utc": "2026-10-02T00:42:20.555189+00:00", "solved": 20, "luck": 1, "total": 20, "points": 9.5, "declined": false, "maker_errors": 0}
+{"stage": "arena:blockred:Tide:g1", "utc": "2026-10-02T00:42:20.657368+00:00", "solved": 20, "luck": 3, "total": 20, "points": 8.5, "declined": false, "maker_errors": 0}
+{"stage": "arena:blockred:Moss:g1", "utc": "2026-10-02T00:42:20.757231+00:00", "solved": 20, "luck": 2, "total": 20, "points": 9.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:blockred", "utc": "2026-10-02T00:42:21.792562+00:00", "cells": 582, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 0, "houses": 3}
+{"stage": "arena:outline:Ember:g1", "utc": "2026-10-02T00:43:01.752828+00:00", "solved": 6, "luck": 0, "total": 6, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:outline:Tide:g1", "utc": "2026-10-02T00:43:01.785375+00:00", "solved": 6, "luck": 0, "total": 6, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:outline:Moss:g1", "utc": "2026-10-02T00:43:01.819516+00:00", "solved": 6, "luck": 0, "total": 6, "points": 10.0, "declined": false, "maker_errors": 0}
+{"stage": "arena:outline", "utc": "2026-10-02T00:43:02.795967+00:00", "cells": 582, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 0, "houses": 3}
+{"stage": "breed:round1", "utc": "2026-10-02T00:44:10.443389+00:00", "cells": 582, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "pairs_evaluated": 96, "children_valid": 58, "children_admitted": 0, "children_rejected_no_arc_gain": 58, "random_chain_valid": 6}
+{"stage": "mutate:round1", "utc": "2026-10-02T00:45:25.689982+00:00", "cells": 582, "depth2": 6, "arc_dev": 14, "arc_val": 28, "arc_report": 29, "arc_held_out": 57, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "targets": 6, "mutations_tried": 6, "mutations_declined_structural": 0, "mutations_admitted": 0, "random_edits_that_would_gain": 0, "charged_positions_per_arm": 119}

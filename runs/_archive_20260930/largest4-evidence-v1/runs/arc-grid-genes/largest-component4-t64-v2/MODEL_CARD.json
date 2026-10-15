@@ -1,0 +1,55 @@
+{
+  "hash": "a961d80ef024773ac8ecaf1f83cbdfaa8845b6068a5a39e46ab3f2c1aaf6cba4",
+  "stats": {
+    "unique_param_storage": 11,
+    "expanded_param_uses": 44,
+    "nonzero_slots": 9,
+    "constant_slots_in_op_args": 550,
+    "cell_defs": 1,
+    "bundle_defs": 5,
+    "reachable_defs": 6,
+    "expanded_instances": 10,
+    "nesting_depth": 4,
+    "edges": 2188,
+    "dispatch_nodes": 1,
+    "param_bytes_float64": 88
+  },
+  "gene_node_count": 1340,
+  "expanded_ir_nodes_all_dispatch_branches": 2695,
+  "largest_membership_tensor_elements": 810000,
+  "profile": {
+    "profile": "ladder-micro/1",
+    "dispatches": 1,
+    "experts": [
+      "largest_expert0",
+      "largest_expert1"
+    ]
+  },
+  "gene_contract": {
+    "cluster": "largest4.gene",
+    "iterations": 64,
+    "inputs": [
+      "input",
+      "input_height",
+      "input_width"
+    ],
+    "outputs": [
+      "colors",
+      "height",
+      "width"
+    ],
+    "background": "most frequent valid input color, lowest-color tie",
+    "component": "same-color4-neighbor; labels row-major1..900",
+    "selection": "largest area, lowest row-major label tie; remove others to inferredbackground and crop selected bbox",
+    "fallback": "identity if any component labels still change on stepT+1, or no foreground"
+  },
+  "semantic_source": {
+    "path": "research/claude_arc/cells.py",
+    "sha256": "c96e32daa74ab5f103f0359f41a877519d62e2778dc5604ac407105729d62df0",
+    "read_only": true,
+    "difference": "4-connectivity vs source default8; row-major vs source color-first tie"
+  },
+  "builder_sha256": "a0e1e61b89c4cd1b5c85c5261501194abd7fa93fa0e68ec5ca26b4fe35cb1087",
+  "benchmark_tasks_read": 0,
+  "prototype_only": true
+}

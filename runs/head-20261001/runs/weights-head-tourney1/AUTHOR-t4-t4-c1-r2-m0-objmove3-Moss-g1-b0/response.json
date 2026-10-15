@@ -1,0 +1,82 @@
+[
+  {
+    "task_id": "objmove3-d0-n1",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 0, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide up while 8 stays fixed. In demonstration 3, the two 2s settle in rows 0 and 1 of column 4; in demonstration 2, the 2 remains directly below an 8."
+  },
+  {
+    "task_id": "objmove3-d0-n0",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 0, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide up against fixed 8s or settled movers. In demonstration 1, the 1 in column 3 stops below the 8, and the 2 in column 6 stops below the settled 1."
+  },
+  {
+    "task_id": "objmove3-d2-n0",
+    "params": {
+      "dir": [0, 0, 1, 0, 0, 0, 0, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide right while 8 stays fixed. Demonstration 1 moves both 2s to column 9; demonstration 2 packs the two row-3 1s into columns 5 and 6."
+  },
+  {
+    "task_id": "objmove3-d4-n1",
+    "params": {
+      "dir": [0, 0, 0, 0, 1, 0, 0, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide down while 8 stays fixed. Demonstration 1 preserves the diagonal 2 pair as one 8-connected object, translating it from rows 5–6 to rows 7–8."
+  },
+  {
+    "task_id": "objmove3-d2-n1",
+    "params": {
+      "dir": [0, 0, 1, 0, 0, 0, 0, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide right against fixed 8s and settled movers. Demonstration 1 stops the row-1 2 in column 4 before an 8; demonstration 2 stops the row-4 2 immediately left of the 1."
+  },
+  {
+    "task_id": "objmove3-d4-n0",
+    "params": {
+      "dir": [0, 0, 0, 0, 1, 0, 0, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide down while 8 stays fixed. Demonstration 1 stops the upper column-1 1 above the 8; demonstration 2 settles the column-6 2 above the bottom-row 1."
+  },
+  {
+    "task_id": "objmove3-d6-n0",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 1, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide left while 8 stays fixed. Demonstration 2 moves the vertical 1 pair to column 0 and stops the row-3 1 at column 3 beside an 8."
+  },
+  {
+    "task_id": "objmove3-d6-n1",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 1, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide left while 8 stays fixed. Demonstration 2 preserves the diagonal 2 pair, moving it together to columns 0 and 1; demonstration 3 stops the top-row 1 immediately right of the 8."
+  }
+]

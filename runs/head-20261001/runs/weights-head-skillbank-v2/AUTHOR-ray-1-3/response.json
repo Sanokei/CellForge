@@ -1,0 +1,102 @@
+[
+  {
+    "task_id": "ray-down_left-s1-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 0, 0, 1, 0, 1, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, colour 5 paints 4 downward and leftward, with the left ray stopping before colour 8. Demonstration 3 shows the same rays from colours 7, 6, and 3."
+  },
+  {
+    "task_id": "ray-right-s1-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 1, 0, 0, 0, 0, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 3 and 6 extend right in their own colours in demonstrations 1 and 2. In demonstration 3, colour 6 is blocked immediately by 8, while colour 4 extends to the right edge."
+  },
+  {
+    "task_id": "ray-all8-s2-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [0, 0, 1],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colour 1 radiates in all eight directions. In demonstration 2 its downward ray preserves the 8 and continues below it; demonstration 3 radiates colour 3 while preserving encountered 9s."
+  },
+  {
+    "task_id": "ray-all8-s1-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 has rays from colours 4, 5, and 6 in their own colours. In demonstration 2, colour 2's downward ray stops immediately before 8, while colour 4 radiates in all eight directions."
+  },
+  {
+    "task_id": "ray-left-s1-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 0, 0, 0, 0, 1, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colour 5 extends left to the edge in demonstration 1. In demonstration 2, its upper ray stops before 8, and colour 6's left ray stops before the existing 5."
+  },
+  {
+    "task_id": "ray-vertical-s2-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 0, 0, 0, 1, 0, 0, 0],
+      "stop": [0, 0, 1],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 3 and 1 fill their columns below with 4 in demonstration 1. Demonstration 2 fills the entire column through source 4, and demonstration 3 fills above and below sources 7 and 3."
+  },
+  {
+    "task_id": "ray-up-s0-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 0, 0, 0, 0, 0, 0, 0],
+      "stop": [1, 0, 0],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colour 6 paints upward with 4 in demonstration 1. In demonstration 3, that upward ray overwrites the encountered 8 with 4 and continues to the top; source 4 also paints upward."
+  },
+  {
+    "task_id": "ray-right-s1-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 1, 0, 0, 0, 0, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Sources 4 and 2 paint rightward with 4 in demonstration 1. Demonstration 2 shows colour 3 stopping before 8; demonstration 3 shows colour 5 blocked immediately by 9."
+  },
+  {
+    "task_id": "ray-right-s0-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 1, 0, 0, 0, 0, 0],
+      "stop": [1, 0, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 extends colour 3 rightward over an 8. Demonstration 2 extends colours 5 and 6 to the right edge, overwriting encountered 9s with each source's own colour."
+  },
+  {
+    "task_id": "ray-all8-s2-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [0, 0, 1],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Sources 6 and 3 radiate 4 in all eight directions in demonstration 1. In demonstration 3, source 3's upward and leftward rays preserve encountered 8s and continue painting background beyond them."
+  }
+]

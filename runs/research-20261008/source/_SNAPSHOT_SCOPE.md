@@ -1,0 +1,1 @@
+Pinned partial source snapshot, not a Git clone. 37 Git blobs verified locally. Only published commit bfc928bf0c1f77922b4de00834412f986cd54bfa. No datasets, credentials, old runtime or giant backup. Scientific qualification remains red; no experiments authorized in this review.

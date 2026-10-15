@@ -1,0 +1,18 @@
+[
+  {
+    "task_id": "ctx-k6-3",
+    "params": {
+      "keysel": [0, 0, 0, 0, 0, 0, 1, 0],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Select nearest non-background directional colours with background 0. In demonstration 9, the changed zero has nearest colours (up, down, left, right) = (none, 3, none, 2) and becomes 2. In demonstration 10, both zeros becoming 9 share (3, none, none, 1)."
+  },
+  {
+    "task_id": "ctx-k7-0",
+    "params": {
+      "keysel": [0, 0, 0, 0, 0, 0, 0, 1],
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Select own colour and zero-based coordinates modulo 3. Zeros become 8 at residues (1, 1), and become 3 at residues (0, 2), (2, 1), and (2, 2). Demonstration 6 shows all four mappings; nonzero colours remain unchanged."
+  }
+]

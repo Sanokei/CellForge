@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 401,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "9e0cf638ae159b9258d23abdd57452d717dcde1f2197b5b4dcbc787d441f4e17",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, 1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-1.01]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 solved and no errors. Author a small carry.W perturbation from -1.0 to -1.01; retain distinguishing left contributions sum.W[0][1]=-1.0 and readout.W[0][1]=10.0, and right contributions sum.W[0][2]=1.0 and carry.b[0]=-9.5. Mutation is unevaluated; no improvement is claimed."
+  },
+  {
+    "seed": 402,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.25],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "102eaf3ee6a4739853455683b311f20ea6a8ec6cb8cf3c741626b68935fe512b",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, 1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-1.02]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 solved and no errors. Author a small carry.W perturbation from -1.0 to -1.02; retain distinguishing left contributions sum.W[0][1]=-1.0 and readout.W[0][1]=10.0, and right contributions sum.W[0][2]=1.0 and carry.b[0]=-9.5. Mutation is unevaluated; no improvement is claimed."
+  },
+  {
+    "seed": 403,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.75],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "06035fec70a2209aef342192c4f26f1702b9816f69783977927bbb23f0a24f77",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, 1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-0.99]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 solved and no errors. Author a small carry.W perturbation from -1.0 to -0.99; retain distinguishing left contributions sum.W[0][1]=-1.0 and readout.W[0][1]=10.0, and right contributions sum.W[0][2]=1.0 and carry.b[0]=-9.5. Mutation is unevaluated; no improvement is claimed."
+  }
+]

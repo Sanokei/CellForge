@@ -1,0 +1,150 @@
+{
+  "protocol": "grid-selector-ablation/1",
+  "artifacts": [
+    {
+      "family": "associative8",
+      "mode": "demo-selector",
+      "path": "associative8-demo-selector",
+      "hash": "e8be911cd846d3893d4429f27e7a7a447bb497004c57c07d0ec6695e36f79078",
+      "stats": {
+        "unique_param_storage": 139,
+        "expanded_param_uses": 2352,
+        "nonzero_slots": 47,
+        "constant_slots_in_op_args": 26,
+        "cell_defs": 1,
+        "bundle_defs": 28,
+        "reachable_defs": 29,
+        "expanded_instances": 91,
+        "nesting_depth": 4,
+        "edges": 632,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1112
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7"
+        ]
+      },
+      "state_dim": 808
+    },
+    {
+      "family": "associative8",
+      "mode": "constant-selector",
+      "path": "associative8-constant-selector",
+      "hash": "88f83f22b6afa43741b7063386ef6608004b80a1ab977cc20b059f254415edb7",
+      "stats": {
+        "unique_param_storage": 139,
+        "expanded_param_uses": 2352,
+        "nonzero_slots": 47,
+        "constant_slots_in_op_args": 28,
+        "cell_defs": 1,
+        "bundle_defs": 28,
+        "reachable_defs": 29,
+        "expanded_instances": 91,
+        "nesting_depth": 4,
+        "edges": 636,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1112
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7"
+        ]
+      },
+      "state_dim": 808
+    },
+    {
+      "family": "associative9-bbox",
+      "mode": "demo-selector",
+      "path": "associative9-bbox-demo-selector",
+      "hash": "72f3008d492d72f65fe34054f7b55afeb4c8a86fb08c0bbc76746f2b2b250a4b",
+      "stats": {
+        "unique_param_storage": 151,
+        "expanded_param_uses": 2772,
+        "nonzero_slots": 57,
+        "constant_slots_in_op_args": 40,
+        "cell_defs": 2,
+        "bundle_defs": 31,
+        "reachable_defs": 33,
+        "expanded_instances": 108,
+        "nesting_depth": 4,
+        "edges": 787,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1208
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8"
+        ]
+      },
+      "state_dim": 909
+    },
+    {
+      "family": "associative9-bbox",
+      "mode": "constant-selector",
+      "path": "associative9-bbox-constant-selector",
+      "hash": "5006e7ee04ff2c7b3a8ec1e190c5a3587197e284cd6db4d58e08a486369e6ade",
+      "stats": {
+        "unique_param_storage": 151,
+        "expanded_param_uses": 2772,
+        "nonzero_slots": 57,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 2,
+        "bundle_defs": 31,
+        "reachable_defs": 33,
+        "expanded_instances": 108,
+        "nesting_depth": 4,
+        "edges": 791,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1208
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8"
+        ]
+      },
+      "state_dim": 909
+    }
+  ],
+  "benchmark_tasks_read": 0,
+  "builder_sha256": "553b7c5a4fb0515508f2f337e7f791581bdc9a1c1306cbedbd4cd8760ba69c8d",
+  "scope": "demo reconstruction branch ranking versus fixed 0/1 branch selection; association learning preserved; neither amortized learned selector nor compute reduction"
+}

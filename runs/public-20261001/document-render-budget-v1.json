@@ -1,0 +1,29 @@
+{
+  "protocol": "document-render-budget-audit/1",
+  "renderer_policy": {
+    "protocol": "document-raster-policy/1",
+    "renderer": "pdftoppm version 24.02.0",
+    "dpi": 72,
+    "colors": "grayscale uint8; black ink white background",
+    "pages": "all ordered pages",
+    "command": "pdftoppm -r 72 -gray -png INPUT OUTPUT_PREFIX",
+    "crop_policy": "complete nonoverlapping32x128 row-major, white edge pad, invert255-x",
+    "question_serialization": "exact UTF8 question string; DocumentPredictor canonical compact JSON with ordered observations",
+    "scope": "development-only metadata feasibility; heldout PDFs not opened; no inference"
+  },
+  "policy_sha256": "4c74b8c94f7827de2da2812522a8f6063714f6169df5b67c0a3f82e96e8b236a",
+  "private_results_sha256": "85862abbcfae69c35d0d0b76fe4bedf674c2808d73db69c1f55494a0e4a86636",
+  "development_unique_pdf_groups": 106,
+  "metadata_audited": 106,
+  "metadata_failures": 0,
+  "pages_total": 4710,
+  "max_pages": 198,
+  "crops_total": 547407,
+  "max_crops": 26730,
+  "default_input_budget_feasible_documents": 65,
+  "documents_with_at_most_256_crops": 0,
+  "related_edition_split_status": "unresolved; no heldout confirmation permitted",
+  "benchmark_evaluations": 0,
+  "score": null,
+  "source_sha256": "a45cdada6f3109956bec4782ca14b6c640e73a943292a56b5a3d20c80c66cbb2"
+}

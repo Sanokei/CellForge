@@ -1,0 +1,200 @@
+{
+  "cells": {
+    "fe306a5b69ec9e8a720314425c44246bdb23e6822e1c9573cdf90c64bd861279": {
+      "id": "fe306a5b69ec9e8a720314425c44246bdb23e6822e1c9573cdf90c64bd861279",
+      "structure": "full_adder_numeric_v1",
+      "params": {
+        "sum.W": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "sum.b": [
+          0
+        ],
+        "carry.W": [
+          [
+            1
+          ]
+        ],
+        "carry.b": [
+          -9.5
+        ],
+        "readout.W": [
+          [
+            1,
+            -10
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "readout.b": [
+          0,
+          0
+        ]
+      },
+      "parents": [],
+      "provenance": {
+        "raw_response": "arithmetic_founder_author.json",
+        "model": "gpt-6.1-sol",
+        "authored_positions": 12,
+        "historical_scaffold": false,
+        "io": "{a,b,carry} -> {digit,carry}",
+        "active_role": "typed development-only arithmetic niche; no ARC promotion"
+      },
+      "scores": {
+        "fresh": {
+          "outcomes": {
+            "4f996f1a9064cfde5bdbd11d0b8b8f4881f151a8288dfef5d9de7a97f864387b": true,
+            "9e80d7d5ffb2ea4f884fce79bea5255a3f2e7a09adecbbebc3c05ce06d27a81d": true,
+            "6fcd780618b0b462bac85e072cd434469fa3ba5cdf6242a7611098b3abb8d95f": true,
+            "0854a770d68c5204f39f0707327be0848dd97e3c52321c2900e2d241ea3cb130": true,
+            "414b73346358da669e29558bb182e733a13b8fc14417f1ed79cf56073ccb0b4c": true,
+            "db386756655189a72a0e533880465a6a8644a62b24507d1ec07f1b5620c02809": true,
+            "4a83a68e24c0f23140511f3dfb06403d76b8217f3c59bbdaaf5060f849a3019b": true,
+            "cff1fa6fece7b325b96cb59113920d10e3503fea42b563ecc837e4233846e5cf": true,
+            "ed154eb02983821cc50368ab2467f1f4181211f757564ba83df49b034db8d4e5": true,
+            "aa87a9d7808abb57b09018b96a4c88f2e32232cbee0e09b0e3816ba2d2ba1e5c": true,
+            "b43e7fc95ce4de1ac013c7c70a3067e1279d5677e4f954ad69acdcee83f512e6": true,
+            "573a33a3a52e123cdcdaa2282cba73cdd87f73344461486592a68e45b3bf4572": true
+          },
+          "solved": 12,
+          "tasks": 12,
+          "invalid_outputs": 0,
+          "partition": "development",
+          "manifest": "73cf0d4561920f06687baefdf735ba907a9d80ebb537c20633e92b7605d06f5c",
+          "source": "typed-arithmetic-contract-controlled",
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "outcomes": {
+            "c810dfe61fbe99860ff3985fc5cdeafb0de828951e75fa4b442f47f2f687e629": true,
+            "70c1e6c9d086f8f5a50a4f9a9b03e67b07d4e4d8fe41e4a707505e9ea8559d10": true,
+            "1d3e7b7bf56419b58f891f91b91a51952c9556f1110c43f45695572f6d5c0880": true,
+            "01bd958c8ffb9da71a575c82b052da4f44513f16ce27c2c866545a55aaa983aa": true
+          },
+          "solved": 4,
+          "tasks": 4,
+          "invalid_outputs": 0,
+          "partition": "development",
+          "manifest": "85186adf9871a3a41dbdeaef3e6299c04114c2304d309f0908922e85cb14c7f1",
+          "source": "typed-arithmetic-contract-controlled",
+          "false_positive_given_consistency": null
+        },
+        "anchor": {
+          "outcomes": {
+            "fa01f7914622b8271f9496ef40ece476a2a6760b7987c5c9a825605df0f3dbd9": true,
+            "a3ca30fafbf79e8dcaa21d564c2c550ae45edf06cc5d50e987970c1858b5d735": true,
+            "3359b1de6e097ac021967e55a7cce432da81e8d410dd6b1fd13c8f816d63e27a": true,
+            "89e9993dd6f304905ffb33be80afbe5acf5eb6bfc71d9955bfded4572955c140": true,
+            "4f8b17bcf83f5fd1c12e903a3f2fcf27fbda14fd85fa747663b01df40cea193a": true,
+            "aa264ca28e53f0644eedac31ad5485b939c96f6c1655ecbee726616fdcc6e51e": true,
+            "ffa96e4edea05ba9cc0241033ee678352db4758cc0ad4e206e5dd38cdd1a3abb": true,
+            "135dc32695483d6190801a94f5722445b048994a36616a9c62b1da45cbb92dec": true
+          },
+          "solved": 8,
+          "tasks": 8,
+          "invalid_outputs": 0,
+          "partition": "development",
+          "manifest": "58efa183c35092f2d2a6350eed5ae255ad20fe8b827ae1a302f2481a051f6f79",
+          "source": "typed-arithmetic-contract-controlled",
+          "false_positive_given_consistency": null
+        }
+      },
+      "state": "live"
+    }
+  },
+  "live": {
+    "full_adder_numeric_v1": [
+      "fe306a5b69ec9e8a720314425c44246bdb23e6822e1c9573cdf90c64bd861279"
+    ]
+  },
+  "events": [
+    {
+      "event": "seed",
+      "cell": "fe306a5b69ec9e8a720314425c44246bdb23e6822e1c9573cdf90c64bd861279",
+      "family": "full_adder_numeric_v1"
+    }
+  ],
+  "charges": [],
+  "histories": {
+    "full_adder_numeric_v1": [
+      {
+        "graph_hash": "fe306a5b69ec9e8a720314425c44246bdb23e6822e1c9573cdf90c64bd861279",
+        "family": "full_adder_numeric_v1",
+        "structure_hash": "ed67d768e2f55820827cbcca42a13ddd09dc241e67f9408fb7740dd4e2977457",
+        "provenance": {
+          "raw_response": "arithmetic_founder_author.json",
+          "model": "gpt-6.1-sol",
+          "authored_positions": 12,
+          "historical_scaffold": false,
+          "io": "{a,b,carry} -> {digit,carry}",
+          "active_role": "typed development-only arithmetic niche; no ARC promotion"
+        },
+        "scores": {
+          "fresh": {
+            "outcomes": {
+              "4f996f1a9064cfde5bdbd11d0b8b8f4881f151a8288dfef5d9de7a97f864387b": true,
+              "9e80d7d5ffb2ea4f884fce79bea5255a3f2e7a09adecbbebc3c05ce06d27a81d": true,
+              "6fcd780618b0b462bac85e072cd434469fa3ba5cdf6242a7611098b3abb8d95f": true,
+              "0854a770d68c5204f39f0707327be0848dd97e3c52321c2900e2d241ea3cb130": true,
+              "414b73346358da669e29558bb182e733a13b8fc14417f1ed79cf56073ccb0b4c": true,
+              "db386756655189a72a0e533880465a6a8644a62b24507d1ec07f1b5620c02809": true,
+              "4a83a68e24c0f23140511f3dfb06403d76b8217f3c59bbdaaf5060f849a3019b": true,
+              "cff1fa6fece7b325b96cb59113920d10e3503fea42b563ecc837e4233846e5cf": true,
+              "ed154eb02983821cc50368ab2467f1f4181211f757564ba83df49b034db8d4e5": true,
+              "aa87a9d7808abb57b09018b96a4c88f2e32232cbee0e09b0e3816ba2d2ba1e5c": true,
+              "b43e7fc95ce4de1ac013c7c70a3067e1279d5677e4f954ad69acdcee83f512e6": true,
+              "573a33a3a52e123cdcdaa2282cba73cdd87f73344461486592a68e45b3bf4572": true
+            },
+            "solved": 12,
+            "tasks": 12,
+            "invalid_outputs": 0,
+            "partition": "development",
+            "manifest": "73cf0d4561920f06687baefdf735ba907a9d80ebb537c20633e92b7605d06f5c",
+            "source": "typed-arithmetic-contract-controlled",
+            "false_positive_given_consistency": null
+          },
+          "archive": {
+            "outcomes": {
+              "c810dfe61fbe99860ff3985fc5cdeafb0de828951e75fa4b442f47f2f687e629": true,
+              "70c1e6c9d086f8f5a50a4f9a9b03e67b07d4e4d8fe41e4a707505e9ea8559d10": true,
+              "1d3e7b7bf56419b58f891f91b91a51952c9556f1110c43f45695572f6d5c0880": true,
+              "01bd958c8ffb9da71a575c82b052da4f44513f16ce27c2c866545a55aaa983aa": true
+            },
+            "solved": 4,
+            "tasks": 4,
+            "invalid_outputs": 0,
+            "partition": "development",
+            "manifest": "85186adf9871a3a41dbdeaef3e6299c04114c2304d309f0908922e85cb14c7f1",
+            "source": "typed-arithmetic-contract-controlled",
+            "false_positive_given_consistency": null
+          },
+          "anchor": {
+            "outcomes": {
+              "fa01f7914622b8271f9496ef40ece476a2a6760b7987c5c9a825605df0f3dbd9": true,
+              "a3ca30fafbf79e8dcaa21d564c2c550ae45edf06cc5d50e987970c1858b5d735": true,
+              "3359b1de6e097ac021967e55a7cce432da81e8d410dd6b1fd13c8f816d63e27a": true,
+              "89e9993dd6f304905ffb33be80afbe5acf5eb6bfc71d9955bfded4572955c140": true,
+              "4f8b17bcf83f5fd1c12e903a3f2fcf27fbda14fd85fa747663b01df40cea193a": true,
+              "aa264ca28e53f0644eedac31ad5485b939c96f6c1655ecbee726616fdcc6e51e": true,
+              "ffa96e4edea05ba9cc0241033ee678352db4758cc0ad4e206e5dd38cdd1a3abb": true,
+              "135dc32695483d6190801a94f5722445b048994a36616a9c62b1da45cbb92dec": true
+            },
+            "solved": 8,
+            "tasks": 8,
+            "invalid_outputs": 0,
+            "partition": "development",
+            "manifest": "58efa183c35092f2d2a6350eed5ae255ad20fe8b827ae1a302f2481a051f6f79",
+            "source": "typed-arithmetic-contract-controlled",
+            "false_positive_given_consistency": null
+          }
+        }
+      }
+    ]
+  }
+}

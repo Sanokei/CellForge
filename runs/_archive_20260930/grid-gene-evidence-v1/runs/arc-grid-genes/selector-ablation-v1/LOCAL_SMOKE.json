@@ -1,0 +1,81 @@
+{
+  "protocol": "selector-ablation-local-smoke/1",
+  "test_result": "2 passed in 0.37s",
+  "synthetic_cases_only": true,
+  "benchmark_tasks_read": 0,
+  "rows": [
+    {
+      "artifact": "associative8-demo-selector",
+      "hash": "e8be911cd846d3893d4429f27e7a7a447bb497004c57c07d0ec6695e36f79078",
+      "synthetic_transpose_in_two_attempts": true,
+      "compile_seconds": 0.0526318999909563,
+      "inference_seconds": 0.012838499998906627,
+      "last_exec": {
+        "node_execs": 994,
+        "macs": 6660540,
+        "route_counts": {
+          "/grid/n26": {
+            "expert_0": 0,
+            "expert_1": 0,
+            "expert_2": 0,
+            "expert_3": 0,
+            "expert_4": 2,
+            "expert_5": 0,
+            "expert_6": 0,
+            "expert_7": 0
+          },
+          "/grid/rank_dispatch_second": {
+            "expert_0": 0,
+            "expert_1": 0,
+            "expert_2": 0,
+            "expert_3": 0,
+            "expert_4": 0,
+            "expert_5": 2,
+            "expert_6": 0,
+            "expert_7": 0
+          }
+        },
+        "peak_tensor_elements": 18000
+      }
+    },
+    {
+      "artifact": "associative8-constant-selector",
+      "hash": "88f83f22b6afa43741b7063386ef6608004b80a1ab977cc20b059f254415edb7",
+      "synthetic_transpose_in_two_attempts": false,
+      "compile_seconds": 0.051329600013559684,
+      "inference_seconds": 0.012344399990979582,
+      "last_exec": {
+        "node_execs": 996,
+        "macs": 6660540,
+        "route_counts": {
+          "/grid/n26": {
+            "expert_0": 2,
+            "expert_1": 0,
+            "expert_2": 0,
+            "expert_3": 0,
+            "expert_4": 0,
+            "expert_5": 0,
+            "expert_6": 0,
+            "expert_7": 0
+          },
+          "/grid/rank_dispatch_second": {
+            "expert_0": 0,
+            "expert_1": 2,
+            "expert_2": 0,
+            "expert_3": 0,
+            "expert_4": 0,
+            "expert_5": 0,
+            "expert_6": 0,
+            "expert_7": 0
+          }
+        },
+        "peak_tensor_elements": 18000
+      }
+    }
+  ],
+  "sources": {
+    "scripts/build_grid_selector_ablation.py": "553b7c5a4fb0515508f2f337e7f791581bdc9a1c1306cbedbd4cd8760ba69c8d",
+    "tests/test_grid_selector_ablation.py": "8d638b96ddc05bf2134678999a6b0eb8e1cc79bcffe30a8382fec48eb12c6010"
+  },
+  "resource_scope": "local single synthetic task, cold compile and full demonstration/query; server tasks/sec and peakRSS not measured; original score computation retained"
+}

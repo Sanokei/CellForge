@@ -1,0 +1,136 @@
+{
+  "policy": {
+    "protocol": "context-mask-discrete-pilot/1",
+    "proposals_per_arm": 8,
+    "founders": [
+      511,
+      186,
+      56,
+      146
+    ],
+    "selection_tasks": 24,
+    "report_tasks": 24,
+    "selection_hash": "bf2cf9ea2d43211c4e938e14277adfe445ad131fef53f2788eb1830cbbbc1aed",
+    "report_hash": "a0437b620f53be3f5a4e11fc034f2cf0ebe278da0d6d2387986dcb9e60178165",
+    "arms": [
+      "crossover",
+      "mutation",
+      "random"
+    ],
+    "physical_evaluations_per_arm": 12,
+    "fitness": "pixel accuracy; offspring accepted only if both disjoint batches improve or tie and total improves",
+    "archive": "all candidates, including rejected and duplicates; no evaluation cache",
+    "maker_input": "prior aggregate fine-memory failure evidence only; founder masks authored before pilot",
+    "source_sha256": "283ca86aaf2f2198954e000de01f190e0bad3c7364b9b4efa1d6ae541e32ef16",
+    "gradients": false,
+    "benchmark_files_loaded": false,
+    "final_evaluations": 0,
+    "limitations": "small directional-copy synthetic pilot; no native ARC or sealed claim"
+  },
+  "winners": [
+    {
+      "arm": "crossover",
+      "winner": {
+        "mask": 186,
+        "graph_hash": "d35e92ade68fbc71cb4353a6f79356a3354272819456c48f7dea4d731bd2cb53",
+        "parents": [],
+        "operator": "authored-seed",
+        "fitness": {
+          "tasks": 24,
+          "solved": 1,
+          "pixel_accuracy": 0.9501028806584365,
+          "batch_accuracy": [
+            0.9444444444444443,
+            0.955761316872428
+          ],
+          "wall_seconds": 1.4534693739988143,
+          "cpu_seconds": 1.442921973
+        }
+      },
+      "accepted": 0,
+      "evaluations": 12,
+      "report": {
+        "tasks": 24,
+        "solved": 0,
+        "pixel_accuracy": 0.9583333333333335,
+        "batch_accuracy": [
+          0.9598765432098767,
+          0.95679012345679
+        ],
+        "wall_seconds": 1.5570445579942316,
+        "cpu_seconds": 1.4658654279999936
+      },
+      "parameter_slots": 23
+    },
+    {
+      "arm": "mutation",
+      "winner": {
+        "mask": 186,
+        "graph_hash": "d35e92ade68fbc71cb4353a6f79356a3354272819456c48f7dea4d731bd2cb53",
+        "parents": [],
+        "operator": "authored-seed",
+        "fitness": {
+          "tasks": 24,
+          "solved": 1,
+          "pixel_accuracy": 0.9501028806584365,
+          "batch_accuracy": [
+            0.9444444444444443,
+            0.955761316872428
+          ],
+          "wall_seconds": 1.4977647109990357,
+          "cpu_seconds": 1.472909547999997
+        }
+      },
+      "accepted": 0,
+      "evaluations": 12,
+      "report": {
+        "tasks": 24,
+        "solved": 0,
+        "pixel_accuracy": 0.9583333333333335,
+        "batch_accuracy": [
+          0.9598765432098767,
+          0.95679012345679
+        ],
+        "wall_seconds": 1.422020451995195,
+        "cpu_seconds": 1.3948744260000012
+      },
+      "parameter_slots": 23
+    },
+    {
+      "arm": "random",
+      "winner": {
+        "mask": 186,
+        "graph_hash": "d35e92ade68fbc71cb4353a6f79356a3354272819456c48f7dea4d731bd2cb53",
+        "parents": [],
+        "operator": "authored-seed",
+        "fitness": {
+          "tasks": 24,
+          "solved": 1,
+          "pixel_accuracy": 0.9501028806584365,
+          "batch_accuracy": [
+            0.9444444444444443,
+            0.955761316872428
+          ],
+          "wall_seconds": 1.6376678880042164,
+          "cpu_seconds": 1.6153506259999943
+        }
+      },
+      "accepted": 0,
+      "evaluations": 12,
+      "report": {
+        "tasks": 24,
+        "solved": 0,
+        "pixel_accuracy": 0.9583333333333335,
+        "batch_accuracy": [
+          0.9598765432098767,
+          0.95679012345679
+        ],
+        "wall_seconds": 1.4193784330054768,
+        "cpu_seconds": 1.417654136000003
+      },
+      "parameter_slots": 23
+    }
+  ],
+  "peak_rss_bytes": 129540096,
+  "ledger_verified": 41
+}

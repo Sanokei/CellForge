@@ -1,0 +1,32 @@
+--- approved-stop-repair/observe_dispatch.py
++++ resume-revision/observe_dispatch.py
+@@ -1,5 +1,5 @@
+ """Read-only dispatch observations. An observation deadline never changes dispatch."""
+-import argparse,json,pathlib,time
++import argparse,json,pathlib,time,math
+ import supervisor as V
+ from common import Blocked
+ RESOURCE_PROPERTIES=('CPUQuotaPerSecUSec','CPUAffinity','MemoryMax','MemorySwapMax','RuntimeMaxUSec','TasksMax','PrivateNetwork')
+@@ -31,11 +31,21 @@
+             else:out['phase']='active_entry_reconciling'
+         elif info['LoadState']!='not-found' or not backend.empty(info):raise Blocked('unowned fixed unit or tree prevents an idle claim')
+         else:out['phase']='held_idle' if out['stop_present'] or not out['dispatch_present'] else 'idle_observing'
++        # Marker reads must be fresh after resources/unit transport, too.
++        stop_now=(root/'STOP').exists();dispatch_now=(root/'DISPATCH_ENABLED').exists()
++        marker_changed=(stop_now!=out['stop_present'] or dispatch_now!=out['dispatch_present'])
++        out['stop_present']=stop_now;out['dispatch_present']=dispatch_now
++        if out.get('phase')=='running_verified' and (stop_now or not dispatch_now):
++            out['phase']='owned_running_stop_requested'
++        elif marker_changed:
++            return {'phase':'snapshot_changed','observer_mutations':0,'observed_epoch':time.time()}
+         if (root/'REGISTRY.json').read_bytes()!=before:return {'phase':'snapshot_changed','observer_mutations':0,'observed_epoch':time.time()}
+         return out
+     except Exception as exc:return {'phase':'blocked_unknown','reason':str(exc)[:500],'observer_mutations':0,'observed_epoch':time.time()}
+ def watch(root,seconds=0,emit=None,sleeper=time.sleep,clock=time.monotonic,observer=observe):
+-    if seconds<0 or seconds>600:raise ValueError('observation slice must be 0..600 seconds')
++    try: finite=(type(seconds) in (int,float) and math.isfinite(seconds))
++    except (OverflowError,TypeError): finite=False
++    if not finite or seconds<0 or seconds>600:raise ValueError('observation slice must be finite and 0..600 seconds')
+     emit=emit or (lambda item:print(json.dumps(item,sort_keys=True),flush=True));end=clock()+seconds
+     while True:
+         snapshot=observer(root);emit(snapshot)

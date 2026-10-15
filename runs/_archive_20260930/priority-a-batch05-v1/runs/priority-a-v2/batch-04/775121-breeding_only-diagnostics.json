@@ -1,0 +1,1080 @@
+{
+  "partition": "development",
+  "evidence": "train-pairs",
+  "counterexamples": [
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          7,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          8,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            8
+          ]
+        ],
+        [
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            8,
+            8,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            5,
+            2,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            8,
+            5,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-10",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          9,
+          1
+        ],
+        [
+          0,
+          6,
+          9,
+          3
+        ],
+        [
+          0,
+          6,
+          7,
+          3
+        ]
+      ],
+      "expected": [
+        [
+          5,
+          9,
+          1
+        ],
+        [
+          6,
+          9,
+          3
+        ],
+        [
+          6,
+          7,
+          3
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            5
+          ],
+          [
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            9,
+            1,
+            3
+          ],
+          [
+            2,
+            9,
+            3,
+            3
+          ],
+          [
+            2,
+            7,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-11",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          8
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          3,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          6,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          6,
+          0,
+          8
+        ],
+        [
+          6,
+          0,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        [
+          6,
+          6,
+          0,
+          8,
+          5,
+          5,
+          8
+        ],
+        [
+          6,
+          6,
+          0,
+          0,
+          0,
+          5,
+          0
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            8
+          ],
+          [
+            6,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            8
+          ],
+          [
+            6,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            6,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 8,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-14",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 9,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-15",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          2,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "expected": [
+        [
+          3,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 8,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-16",
+      "family": null
+    }
+  ],
+  "graph_hash": "2f6e6b41e16dfff3a59dff7c3cc34ebc806b8c98a38c2f5b367d6a34cdfa8224",
+  "diagnostic_predictor_calls": 41,
+  "trace_scope": "reference cell-definition calls per adaptation/query step; not compiled physical-work or node-path trace"
+}

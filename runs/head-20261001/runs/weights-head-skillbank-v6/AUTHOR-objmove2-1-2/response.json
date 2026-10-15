@@ -1,0 +1,42 @@
+[
+  {
+    "task_id": "objmove2-d5-s0-c1",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 1, 0, 0],
+      "stop": [1, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1]
+    },
+    "rationale": "Objects slide down-left over background 0. In demonstration 3, the 1 moves from (2,2) to (4,0). In demonstration 1, the diagonally connected 2s at (0,2), (0,3), (1,4) move together to (2,0), (2,1), (3,2), showing 8-connectivity."
+  },
+  {
+    "task_id": "objmove2-d7-s0-c1",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 0, 1],
+      "stop": [1, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1]
+    },
+    "rationale": "Objects slide up-left over background 0. In demonstration 3, the 2 at (1,5) reaches (0,4), while the diagonal pair of 3s at (6,5), (7,4) moves rigidly to (3,2), (4,1), stopping before the left-edge 2s. This requires 8-connectivity."
+  },
+  {
+    "task_id": "objmove2-d1-s0-c1",
+    "params": {
+      "dir": [0, 1, 0, 0, 0, 0, 0, 0],
+      "stop": [1, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1]
+    },
+    "rationale": "Objects slide up-right over background 0. In demonstration 3, the horizontal 1 pair moves from row 2, columns 0–1 to row 0, columns 2–3. The diagonal 2 chain at (3,5), (4,4), (5,3) moves together one step, preserving its shape through 8-connectivity."
+  },
+  {
+    "task_id": "objmove2-d6-s1-c0",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 1, 0],
+      "stop": [0, 1],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0]
+    },
+    "rationale": "Objects move one step left over background 0 when free. In demonstration 1, the top-row 3 moves from column 4 to 3, while the blocked row-3 objects stay. In demonstration 2, the 3 at (5,1) moves to (5,0) despite the diagonally adjacent stationary 3 at (6,0), establishing 4-connectivity."
+  }
+]

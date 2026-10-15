@@ -1,0 +1,536 @@
+{
+  "author": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "route": "verified ChatGPT subscription Codex CLI",
+    "timeout_seconds": 900
+  },
+  "baseline": {
+    "interface": "signed-temporal-horn-cell/1",
+    "params": {
+      "any.W1": [
+        [
+          1.0
+        ]
+      ],
+      "any.b1": [
+        0.0
+      ],
+      "rule.W1": [
+        [
+          1.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "rule.b1": [
+        0.5
+      ]
+    },
+    "provenance": {
+      "builder_sha256": null,
+      "builder_source": "/srv/cellforge-inbox/two-loop-20261001/hard-reasoning-runtime/scripts/build_deduction_specialist.py",
+      "inherited_positions": [
+        0,
+        1,
+        6,
+        7,
+        8
+      ],
+      "kind": "historical-positive-Horn-baseline-lifted-to-new-signed-temporal-interface",
+      "learning_claim": false,
+      "numeric_lift": "all_W[1,-1],all_b.5,any_W[1],any_b0 exactly inherited; new negative/time feature coordinates explicitly zero; not a trained or fabricated-degraded founder",
+      "source": "/srv/cellforge-inbox/two-loop-20261001/hard-reasoning-runtime/src/cellforge/runtime/deduction.py",
+      "source_sha256": "34e7c44361adb2e0651eb5a36a7f3e235694d047eb62c2ad417eaa84d37595e2",
+      "structural_added_positions": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "training": "none"
+    }
+  },
+  "contract": {
+    "activation": "step",
+    "bounds": {
+      "antecedents": 4,
+      "atoms": 32,
+      "facts": 64,
+      "horizon": 8,
+      "rules": 64
+    },
+    "feature_order": [
+      "positive_matches",
+      "positive_required",
+      "negative_matches",
+      "negative_required",
+      "time_ready",
+      "time_required"
+    ],
+    "input": "{facts:[{atom,polarity}],rules:[{if:[{atom,polarity}],then:{atom,polarity},not_before:int}],query:atom,horizon:int}",
+    "interface": "signed-temporal-horn-cell/1",
+    "output": "{answer:{status,positive_round,negative_round},closure:[{atom,polarity}],trace:[round rule features/preactivation/fired]}",
+    "positions": 9,
+    "semantics": "Synchronous monotone signed evidence. Explicit negatives require evidence; absent is unknown. Contradictions do not imply arbitrary atoms. Rule fires only when all signed premises supported and current round >= not_before. Earliest query evidence round is part of the scored answer.",
+    "shapes": {
+      "any.W1": [
+        1,
+        1
+      ],
+      "any.b1": [
+        1
+      ],
+      "rule.W1": [
+        1,
+        6
+      ],
+      "rule.b1": [
+        1
+      ]
+    },
+    "weight_bounds": [
+      -9,
+      9
+    ]
+  },
+  "dependencies": {
+    "actual_reasoning": "34e7c44361adb2e0651eb5a36a7f3e235694d047eb62c2ad417eaa84d37595e2",
+    "adapter": "c0e60173247e5e30efcf12a141a5880651b1888dc2521710d0491aac0292b887",
+    "service": "d21a88cd02f834469da5c4bc41e2daebf4e7037e45f3ba1a0634f3d4e8059aee"
+  },
+  "development": [
+    {
+      "id": "dev-positive-three-hop",
+      "input": {
+        "facts": [
+          {
+            "atom": "start",
+            "polarity": 1
+          }
+        ],
+        "horizon": 6,
+        "query": "goal",
+        "rules": [
+          {
+            "if": [
+              {
+                "atom": "start",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "ready",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "ready",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "gate",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "gate",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "goal",
+              "polarity": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dev-negative-missing-chain",
+      "input": {
+        "facts": [
+          {
+            "atom": "start",
+            "polarity": 1
+          }
+        ],
+        "horizon": 6,
+        "query": "goal",
+        "rules": [
+          {
+            "if": [
+              {
+                "atom": "revoked",
+                "polarity": -1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "ready",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "ready",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "gate",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "gate",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "goal",
+              "polarity": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dev-mixed-conjunction",
+      "input": {
+        "facts": [
+          {
+            "atom": "token",
+            "polarity": 1
+          }
+        ],
+        "horizon": 6,
+        "query": "goal",
+        "rules": [
+          {
+            "if": [
+              {
+                "atom": "token",
+                "polarity": 1
+              },
+              {
+                "atom": "clearance",
+                "polarity": -1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "ready",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "ready",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "gate",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "gate",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "goal",
+              "polarity": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dev-supported-delayed-negative",
+      "input": {
+        "facts": [
+          {
+            "atom": "denied",
+            "polarity": -1
+          }
+        ],
+        "horizon": 6,
+        "query": "unsafe",
+        "rules": [
+          {
+            "if": [
+              {
+                "atom": "denied",
+                "polarity": -1
+              }
+            ],
+            "not_before": 2,
+            "then": {
+              "atom": "locked",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "locked",
+                "polarity": 1
+              }
+            ],
+            "not_before": 3,
+            "then": {
+              "atom": "can_enter",
+              "polarity": -1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "can_enter",
+                "polarity": -1
+              }
+            ],
+            "not_before": 4,
+            "then": {
+              "atom": "unsafe",
+              "polarity": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dev-contradictory-query",
+      "input": {
+        "facts": [
+          {
+            "atom": "start",
+            "polarity": 1
+          },
+          {
+            "atom": "denied",
+            "polarity": -1
+          }
+        ],
+        "horizon": 6,
+        "query": "gate",
+        "rules": [
+          {
+            "if": [
+              {
+                "atom": "start",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "ready",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "ready",
+                "polarity": 1
+              }
+            ],
+            "not_before": 3,
+            "then": {
+              "atom": "gate",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "denied",
+                "polarity": -1
+              }
+            ],
+            "not_before": 4,
+            "then": {
+              "atom": "gate",
+              "polarity": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dev-contradiction-no-explosion",
+      "input": {
+        "facts": [
+          {
+            "atom": "a",
+            "polarity": 1
+          },
+          {
+            "atom": "a",
+            "polarity": -1
+          }
+        ],
+        "horizon": 6,
+        "query": "goal",
+        "rules": [
+          {
+            "if": [
+              {
+                "atom": "missing",
+                "polarity": -1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "b",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "b",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "goal",
+              "polarity": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dev-empty-premise-delayed",
+      "input": {
+        "facts": [],
+        "horizon": 6,
+        "query": "goal",
+        "rules": [
+          {
+            "if": [],
+            "not_before": 3,
+            "then": {
+              "atom": "ready",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "ready",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "gate",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "gate",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "goal",
+              "polarity": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dev-positive-cycle-unknown",
+      "input": {
+        "facts": [],
+        "horizon": 6,
+        "query": "goal",
+        "rules": [
+          {
+            "if": [
+              {
+                "atom": "a",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "b",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "b",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "a",
+              "polarity": 1
+            }
+          },
+          {
+            "if": [
+              {
+                "atom": "b",
+                "polarity": 1
+              }
+            ],
+            "not_before": 1,
+            "then": {
+              "atom": "goal",
+              "polarity": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "development_decimal": [],
+  "frozen_selection_access": false,
+  "interface": "signed-temporal-horn-cell/1",
+  "learning_claim": false,
+  "overall_generation_cap": null,
+  "random_operator": "all9 independent uniform[-9,9] literal values; no gradient",
+  "scope": "integrated independent multistep signed temporal deduction lane; shared circuit/registry integration owned externally",
+  "seeds": [
+    801,
+    802,
+    803
+  ],
+  "selection": "strict total development gain and no previously successful task regression; all typed outputs viable"
+}

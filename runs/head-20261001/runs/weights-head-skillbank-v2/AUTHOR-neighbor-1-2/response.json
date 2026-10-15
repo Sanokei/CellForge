@@ -1,0 +1,82 @@
+[
+  {
+    "task_id": "nbr-k1-5",
+    "params": {
+      "keysel": [0, 9, 0, 0, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and nonzero 4-neighbour count. In demonstration 1, the 1 at row 1 column 4 has one nonzero neighbour and becomes 4; the 3 at row 4 column 3 has two and becomes 7."
+  },
+  {
+    "task_id": "nbr-k2-0",
+    "params": {
+      "keysel": [0, 0, 9, 0, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and nonzero 8-neighbour count. In demonstration 1, the 2 at row 1 column 2 has three nonzero neighbours and becomes 9; the 0 at row 3 column 4 has three and becomes 2."
+  },
+  {
+    "task_id": "nbr-k4-0",
+    "params": {
+      "keysel": [0, 0, 0, 0, 9, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and same-colour 4-neighbour count. In demonstration 1, both adjacent 2s in row 4 have one matching neighbour and become 6; the isolated 3s become 1, and zeros with two matching neighbours become 9."
+  },
+  {
+    "task_id": "nbr-k3-4",
+    "params": {
+      "keysel": [0, 0, 0, 9, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and the set of 8-neighbour colours. In demonstration 1, zeros surrounded by colour set {0,3} become 4, the zero at row 2 column 1 with set {0,1} becomes 7, and ones with set {0,1,2,3} become 9."
+  },
+  {
+    "task_id": "nbr-k5-1",
+    "params": {
+      "keysel": [0, 0, 0, 0, 0, 9],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and the ordered four cardinal neighbour colours. In demonstration 2, top-row zeros at columns 3 and 4 become 5, while the interior zero at row 2 column 4 with four zero neighbours becomes 2; demonstrations 1 and 3 remain unchanged."
+  },
+  {
+    "task_id": "nbr-k5-5",
+    "params": {
+      "keysel": [0, 0, 0, 0, 0, 9],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and the ordered four cardinal neighbour colours. Only demonstration 2 changes: the left-edge zeros at rows 3 and 4, each with zero neighbours above, below and right, become 4."
+  },
+  {
+    "task_id": "nbr-k5-0",
+    "params": {
+      "keysel": [0, 0, 0, 0, 0, 9],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and the ordered four cardinal neighbour colours. The sole change is demonstration 3 row 6 column 3: an interior zero with four zero cardinal neighbours becomes 7."
+  },
+  {
+    "task_id": "nbr-k3-5",
+    "params": {
+      "keysel": [0, 0, 0, 9, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and the set of 8-neighbour colours. In demonstration 1, zeros with neighbour set {0,2} become 2, those with {0,3} become 8, and those with {0,1,2,3} become 7."
+  },
+  {
+    "task_id": "nbr-k5-3",
+    "params": {
+      "keysel": [0, 0, 0, 0, 0, 9],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and the ordered four cardinal neighbour colours. Demonstration 1's top-left 2 becomes 9; demonstration 2's left-edge zeros at rows 3 and 4 become 7, and its interior zero at row 4 column 2 with four zero neighbours becomes 5."
+  },
+  {
+    "task_id": "nbr-k3-2",
+    "params": {
+      "keysel": [0, 0, 0, 9, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use own colour and the set of 8-neighbour colours. In demonstration 1, the top-left zero with neighbour set {0,2} becomes 6; the zero at row 3 column 2 and the 2 at row 2 column 2 both have set {0,1,2,3} and become 3."
+  }
+]

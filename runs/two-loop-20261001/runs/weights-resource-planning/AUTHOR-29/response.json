@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 901,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5315f647cac190533728fb03e39af588522e52f38ab0878e0a4c03db142e411d",
+    "parent_params": {
+      "policy.W1": [[-9.0,-9.0,0.0,2.0,0.0,0.0],[9.0,0.0,0.0,2.0,0.0,0.0],[0.0,9.0,0.0,2.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0]],
+      "policy.b1": [9.0,1.0,2.0,0.5]
+    },
+    "base_sha256": "b6a2382bb6b7b945e3aebfc6711f044f3e4fe48800aec54f05cdb68813e0def2",
+    "prompt_sha256": "f5d5b695ed5336a475cc80ef19dd80457f904e556d8c483e42cee956228fdbbb",
+    "feedback_sha256": "bde591261e30ec060d07b244032f14dd4641f446c17d7712972b48438758b7df",
+    "params": {
+      "policy.W1": [[-9.0,0.0,0.0,2.0,0.0,0.0],[9.0,0.0,-0.25,2.0,0.0,0.0],[0.0,9.0,0.0,2.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0]],
+      "policy.b1": [9.0,1.0,2.0,0.5]
+    },
+    "charged_positions": 28,
+    "rationale": "Development feedback reports completion in all eight cases, with three deliveries taking 12 steps against an 11-step reference. Restore material-sensitive assembly and goods-sensitive delivery from the supplied policy structure, and introduce a small remaining-goal penalty on assembly to explore delaying conversion when more deliveries remain. Preserve distinguishing left inheritance at position 0 (-9.0) and right inheritance at position 1 (0.0). This is a nonzero mutation from the supplied base; no evaluation or improvement is claimed."
+  },
+  {
+    "seed": 902,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5379ebd203597b17e4fc3be34e6f4e5af479e30c8056f226223d73631d7f4ed5",
+    "parent_params": {
+      "policy.W1": [[-9.0,-9.0,0.0,2.0,0.0,0.0],[9.0,0.0,0.0,2.0,0.0,0.0],[0.0,9.0,0.0,2.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0]],
+      "policy.b1": [9.0,1.0,1.5,0.75]
+    },
+    "base_sha256": "d47f5d04e386b9d9d55726595bfff216805f4afa0e9bb9c46be59e65dd600317",
+    "prompt_sha256": "7b094a471ca679f2dbdf7b4a5b7e6f66537a8604d486012e9e1b396ef5fdcfd7",
+    "feedback_sha256": "55f9fc75b718578bb68717cd054c049559589eed8cd98f11bac0feff0a90d695",
+    "params": {
+      "policy.W1": [[-9.0,0.0,0.0,2.0,0.0,0.0],[9.0,0.0,-0.15,2.0,0.0,0.0],[0.0,9.0,0.0,2.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0]],
+      "policy.b1": [9.0,1.0,1.5,0.75]
+    },
+    "charged_positions": 28,
+    "rationale": "The supplied development traces show seven shortest-length successes and a completed three-delivery plan with one excess step. Restore material-sensitive assembly and goods-sensitive delivery, with a modest negative remaining-goal coefficient on assembly as an exploratory change to conversion timing. Preserve distinguishing left position 0 (-9.0) and right position 1 (0.0) unchanged. The candidate differs numerically from the supplied base and has not been evaluated; no gains are asserted."
+  },
+  {
+    "seed": 903,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "8957b7123013e72790665be4516954644c907e9195e33273b0a78eef6bbf66b3",
+    "parent_params": {
+      "policy.W1": [[-9.0,-9.0,0.0,2.0,0.0,0.0],[9.0,0.0,0.0,2.0,0.0,0.0],[0.0,9.0,0.0,2.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0]],
+      "policy.b1": [9.0,1.25,1.75,0.9]
+    },
+    "base_sha256": "d3848c916287e2e177bb038ec28e89ee697f5dbc13fdd359cb85fc5f5fd8211f",
+    "prompt_sha256": "b9ff78ba81375ed79cb25a2f048614676aafe4f4747990c89a5baba87ae92977",
+    "feedback_sha256": "5573d4c75ef7cddf80642b2ffc5784be1562a0ed35038be93ae9890140fd6ba1",
+    "params": {
+      "policy.W1": [[-9.0,0.0,0.0,2.0,0.0,0.0],[9.0,0.0,-0.2,2.0,0.0,0.0],[0.0,9.0,0.0,2.0,0.0,0.0],[0.0,0.0,0.0,0.0,0.0,0.0]],
+      "policy.b1": [9.0,1.25,1.75,0.9]
+    },
+    "charged_positions": 28,
+    "rationale": "Development evidence identifies excess plan length for three deliveries, while all cases complete without reported errors. Restore inventory-sensitive assembly and delivery coefficients and add a small assembly penalty proportional to remaining goal to explore conversion timing. Retain numerically distinguishing left inheritance at position 0 (-9.0) and right inheritance at position 1 (0.0). All 28 positions are literal and bounded, with a nonzero change from the supplied base. No evaluation or improvement is claimed."
+  }
+]

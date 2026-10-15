@@ -1,0 +1,226 @@
+{
+  "artifacts": [
+    {
+      "name": "base",
+      "hash": "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-object-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "bbox.geometry",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ]
+      }
+    },
+    {
+      "name": "parent-object-identity",
+      "hash": "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2820,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 192,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 36,
+        "expanded_instances": 113,
+        "nesting_depth": 4,
+        "edges": 1462,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-object-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "object_bank_largest4.gene",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ],
+        "parent_hashes": [
+          "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate declared alleles"
+      }
+    },
+    {
+      "name": "parent-identity-adjacency",
+      "hash": "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2850,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 29,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 37,
+        "expanded_instances": 113,
+        "nesting_depth": 4,
+        "edges": 761,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-object-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "geometry_0",
+          "bank_adjacency_recolor.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ],
+        "parent_hashes": [
+          "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate declared alleles"
+      }
+    },
+    {
+      "name": "child-object-adjacency",
+      "hash": "47042f12b5815f213de8bd160effb17866e81dec566b8fe5b0bd99197f4740f1",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2916,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 193,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 38,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 1485,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "genome": {
+        "protocol": "fixed-two-slot-object-bank/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "object_bank_largest4.gene",
+          "bank_adjacency_recolor.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "3fb7f7f19bec88fe58f303deb0d04e4e0f197fe7355a955c7f5132424f139cd1",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "object_donor_hash": "0b86c199614b4190bec5f77697fe292dcc0889bd946125ba54bffb3fcf73756d",
+        "object_import_lineage": [
+          "object_bank_largest4.color",
+          "object_bank_largest4.gene"
+        ],
+        "parent_hashes": [
+          "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1",
+          "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d"
+        ],
+        "operator_seed": null,
+        "operator": "explicit complementary homologous crossover",
+        "donor_per_slot": [
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "benchmark_tasks_read": 0,
+  "efficacy_measured": false
+}

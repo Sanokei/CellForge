@@ -1,0 +1,21 @@
+{
+  "kind": "offline V5 tests only; no model healthcheck",
+  "passed": 9,
+  "checks": [
+    "16752-byte file-backed stdin with nonreading child terminates within declared wallbound",
+    "regular-file stdin; valid reasoning; exactly one final agent; exact final bytes; EOF/exit",
+    "all five validated native counters persisted and bound to terminal raw line/full trace",
+    "unobserved startup stderr remains rejected; no invented benign allowlist",
+    "disguised/unknown reasoning key rejected",
+    "disguised/unknown reasoning key rejected",
+    "saved readiness accepted",
+    "saved error/tool-positive capture rejected",
+    "saved error/tool-positive capture rejected"
+  ],
+  "blocked_stdin_elapsed_seconds": 0.432,
+  "blocked_stdin_exit": -15,
+  "model_calls": 0,
+  "V4_unchanged": true,
+  "wrapper_sha256": "5d822fff874cbd84856474ed275912a43936da3af881dff63c33e1d89539c43b",
+  "config_sha256": "47b5efcddef364d4adf45da490df38fac0cb27df9637bb15106ce56fe0de7087"
+}

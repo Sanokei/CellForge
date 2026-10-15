@@ -1,0 +1,31 @@
+{
+  "model_hash": "1fb246d922964548d4964686a51186bf9f2fbb23cea3c2cd1c23ad4328832056",
+  "stats": {
+    "unique_param_storage": 2,
+    "expanded_param_uses": 4,
+    "nonzero_slots": 1,
+    "constant_slots_in_op_args": 20,
+    "cell_defs": 1,
+    "bundle_defs": 6,
+    "reachable_defs": 7,
+    "expanded_instances": 9,
+    "nesting_depth": 4,
+    "edges": 244,
+    "dispatch_nodes": 1,
+    "param_bytes_float64": 16
+  },
+  "state_dim": 1002,
+  "builder_sha256": "d31fa4a1b1cb23f1cb757e94a32809a1d84ca6bc77e9e502e48cdd4f4786cb99",
+  "benchmark_tasks_read": 0,
+  "curriculum_scored": false,
+  "provenance": "task-fitted counting/rule selection from demonstrations only",
+  "limitations": "one simultaneous orthogonal rule; no objects or size changes; ties lexicographic",
+  "gene_contract": {
+    "update_cluster": "conditional_update",
+    "apply_expert": "conditional_expert0",
+    "state_layout": "1000 lexicographic source/marker/target errors, shared shape penalty, identity pixel error",
+    "rule": "source becomes target iff a valid orthogonal neighbor is marker; simultaneous updates",
+    "query_state_frozen": true,
+    "dimensions": "preserved; any dimension-mismatched demonstration forces identity"
+  }
+}

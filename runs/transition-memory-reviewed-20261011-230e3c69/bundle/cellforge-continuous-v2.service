@@ -1,0 +1,20 @@
+# REVIEW TEMPLATE ONLY: do not install/enable before independent approval.
+[Unit]
+Description=CellForge reviewed sequential intake v2
+After=network.target
+[Service]
+Type=simple
+WorkingDirectory=/srv/cellforge-inbox/continuous-control-v2/controller
+ExecStart=/srv/arc3-claude/venv/bin/python /srv/cellforge-inbox/continuous-control-v2/controller/supervisor.py --root /srv/cellforge-inbox/continuous-control-v2
+ExecStop=/srv/arc3-claude/venv/bin/python /srv/cellforge-inbox/continuous-control-v2/controller/supervisor.py --root /srv/cellforge-inbox/continuous-control-v2 --stop
+Restart=on-failure
+RestartSec=5
+KillMode=process
+TimeoutStopSec=60
+CPUQuota=10%
+MemoryMax=256M
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=OPENBLAS_NUM_THREADS=1
+[Install]
+WantedBy=multi-user.target
+

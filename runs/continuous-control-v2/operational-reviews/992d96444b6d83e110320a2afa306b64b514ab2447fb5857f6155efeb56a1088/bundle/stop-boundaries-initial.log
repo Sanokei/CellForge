@@ -1,0 +1,20 @@
+test_dispatch_removed_during_gates_prevents_launch (test_stop_during_launch.StopDuringLaunch) ... ok
+test_sigterm_arriving_during_gates_prevents_launch (test_stop_during_launch.StopDuringLaunch) ... ok
+test_stop_arriving_during_launch_is_terminal_before_tick_returns (test_stop_during_launch.StopDuringLaunch) ... ok
+test_stop_marker_arriving_during_gates_prevents_launch (test_stop_during_launch.StopDuringLaunch) ... ok
+test_stop_lifecycle (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: test_stop_lifecycle (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_stop_lifecycle
+Traceback (most recent call last):
+  File "C:\Users\wkeif\AppData\Local\Programs\Python\Python310\lib\unittest\loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+ModuleNotFoundError: No module named 'test_stop_lifecycle'
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 11.612s
+
+FAILED (errors=1)

@@ -1,0 +1,307 @@
+{
+  "generation": 16,
+  "utc": "2026-10-02T00:38:47.785939+00:00",
+  "total": 48,
+  "tier": 1,
+  "next_tier": 1,
+  "decisions": [
+    {
+      "seed": 1701,
+      "niche": "resource-lookahead3",
+      "arm": "llm",
+      "candidate": "8cd78e3b464965beb7a4d34ad8dbac5fbb641f3f462c223e57c8987aed7fd82b",
+      "solved": 38,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 40,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1701,
+      "niche": "resource-lookahead3",
+      "arm": "random",
+      "candidate": "6d226ea35d854a5e3011fdeb08984579a1272ad1c63437c6ad5c2df6007a53fd",
+      "solved": 1,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 41,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1702,
+      "niche": "resource-lookahead3",
+      "arm": "llm",
+      "candidate": "2640560b55167463f1f39b3fe26ca6b3cc0326852f97a761bfd814ba4c6661f1",
+      "solved": 38,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 40,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1702,
+      "niche": "resource-lookahead3",
+      "arm": "random",
+      "candidate": "a1d0f103185764ca3273215ce724473f0af09785e093bff4c39cc6076277260d",
+      "solved": 5,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 8,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1703,
+      "niche": "resource-lookahead3",
+      "arm": "llm",
+      "candidate": "f0c65e15c6e3126e0b7ec9c1bb52dbd37094b01ce4251eef5c927a370b27ada6",
+      "solved": 38,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 40,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1703,
+      "niche": "resource-lookahead3",
+      "arm": "random",
+      "candidate": "22f72cff89f2acd37f56ffbaab97dfaf0e56485b387d9661878d68e5ba405eee",
+      "solved": 6,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 41,
+      "no_regression": false,
+      "fresh_gain": false
+    }
+  ],
+  "parents": {
+    "1701": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          9,
+          9,
+          2,
+          0.3,
+          1.5,
+          4.5
+        ],
+        "action": [
+          -0.3,
+          -0.1,
+          0,
+          -0.8
+        ],
+        "horizon": [
+          -9,
+          -9,
+          9
+        ],
+        "beam": [
+          -9,
+          -9,
+          -9,
+          -9,
+          -9,
+          9
+        ]
+      },
+      "id": "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+    },
+    "1702": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          9,
+          9,
+          2.01,
+          0.3,
+          1.5,
+          4.5
+        ],
+        "action": [
+          -0.3,
+          -0.1,
+          0,
+          -0.8
+        ],
+        "horizon": [
+          -9,
+          -9,
+          9
+        ],
+        "beam": [
+          -9,
+          -9,
+          -9,
+          -9,
+          -9,
+          9
+        ]
+      },
+      "id": "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+    },
+    "1703": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          9,
+          9,
+          2.02,
+          0.3,
+          1.5,
+          4.5
+        ],
+        "action": [
+          -0.3,
+          -0.1,
+          0,
+          -0.8
+        ],
+        "horizon": [
+          -9,
+          -9,
+          9
+        ],
+        "beam": [
+          -9,
+          -9,
+          -9,
+          -9,
+          -9,
+          9
+        ]
+      },
+      "id": "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+    }
+  },
+  "random_parents": {
+    "1701": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          3.9465848229909106,
+          2.953580870649713,
+          7.535940181556015,
+          4.11262862104279,
+          -8.269225873278383,
+          -7.620895721788565
+        ],
+        "action": [
+          -5.4116735520526795,
+          -0.4322117044936107,
+          -4.948299180043243,
+          -4.3716363686890025
+        ],
+        "horizon": [
+          -3.252718601890768,
+          -2.1989359773156236,
+          -7.3093693463375935
+        ],
+        "beam": [
+          1.1708267525939604,
+          -8.911907886257353,
+          -0.8390360724528172,
+          -2.50789325305061,
+          -6.957129839922359,
+          5.9925135572815105
+        ]
+      },
+      "id": "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+    },
+    "1702": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          0.434257321456041,
+          -2.60829645225151,
+          -6.3136144586374705,
+          -5.246326255573626,
+          -8.38784619532928,
+          8.191029753931105
+        ],
+        "action": [
+          -1.119343465035671,
+          -2.92526975945973,
+          8.966423530566875,
+          -5.104908748149551
+        ],
+        "horizon": [
+          -6.1581057000286705,
+          0.7916936339527894,
+          -2.3973883511077094
+        ],
+        "beam": [
+          5.344692128515462,
+          -5.889972914630446,
+          -4.489496152486495,
+          6.122279645349444,
+          -1.976290321934706,
+          -5.533312524937276
+        ]
+      },
+      "id": "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+    },
+    "1703": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          3.580681065096133,
+          -3.9120032591013896,
+          2.4965912369756538,
+          0.5539682126179013,
+          -1.9002990004778084,
+          -5.617678691942392
+        ],
+        "action": [
+          -0.4371053206569062,
+          0.5319231456069105,
+          4.77476477216211,
+          -1.0280662244362464
+        ],
+        "horizon": [
+          2.2623623839879308,
+          8.778437362203306,
+          3.551497489737816
+        ],
+        "beam": [
+          -0.39278996199103666,
+          -6.3293587380775636,
+          5.8432275661484105,
+          8.707426218884919,
+          -7.177752742978581,
+          0.21226536225951165
+        ]
+      },
+      "id": "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+    }
+  }
+}

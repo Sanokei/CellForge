@@ -1,0 +1,89 @@
+test_missing_arm_timeout_mismatched_initial_are_incomplete (test_review.ComparisonGate) ... ok
+test_same_founder_two_seed_all_comparator_gate (test_review.ComparisonGate) ... ok
+test_single_action_gains_cannot_pass (test_review.ComparisonGate) ... ok
+test_crash_after_intent_consumes_once_without_relaunch (test_review.ControllerCrashPoints) ... FAIL
+test_crash_after_launch_adopts_same_invocation (test_review.ControllerCrashPoints) ... ERROR
+test_crash_after_state_commit_does_not_recount (test_review.ControllerCrashPoints) ... ok
+test_crash_after_third_failure_receipt_before_state (test_review.ControllerCrashPoints) ... ERROR
+test_no_marker_means_no_launch (test_review.ControllerCrashPoints) ... ok
+test_pending_cancel_consumes_cap_without_launch (test_review.ControllerCrashPoints) ... FAIL
+test_stop_priority_means_no_launch (test_review.ControllerCrashPoints) ... ok
+test_unknown_status_blocks_all_dispatch_and_receipts (test_review.ControllerCrashPoints) ... ok
+test_unowned_unit_not_stopped_or_replaced (test_review.ControllerCrashPoints) ... ok
+test_colour_renaming_invariant_features (test_review.PolicyFixtures) ... ok
+test_context_off_is_exact_aggregate_path (test_review.PolicyFixtures) ... ok
+test_delayed_public_progress_credit (test_review.PolicyFixtures) ... ok
+test_dynamic_legal_actions_and_reset (test_review.PolicyFixtures) ... ok
+test_existing_sandbox_accepts_all_new_sources (test_review.PolicyFixtures) ... ok
+test_scripted_legal_and_spatial_match_single_action (test_review.PolicyFixtures) ... ok
+test_backoff_uses_original_terminal_epoch (test_review.ReceiptReplay) ... ok
+test_completed_resets_failures_cancel_does_not (test_review.ReceiptReplay) ... ok
+test_sequence_gap_and_digest_conflict_block (test_review.ReceiptReplay) ... ok
+test_third_failed_receipt_opens_circuit_exactly_once (test_review.ReceiptReplay) ... ok
+test_actual_parameter_seed_data_version_change_identity (test_review.ScienceAndAdmission) ... ok
+test_approval_exact_binding_required (test_review.ScienceAndAdmission) ... ok
+test_cap_enforced_at_reservation (test_review.ScienceAndAdmission) ... ok
+test_consumed_duplicate_blocks_new_root_plan (test_review.ScienceAndAdmission) ... ok
+test_failure_circuit_survives_new_plan (test_review.ScienceAndAdmission) ... ok
+test_global_duplicate_blocks_new_study_title (test_review.ScienceAndAdmission) ... ok
+test_invalid_draw_is_rejected_without_repair (test_review.ScienceAndAdmission) ... ok
+test_manifest_discovery_and_schema (test_review.ScienceAndAdmission) ... ok
+test_plan_cap_and_resource_fields_frozen (test_review.ScienceAndAdmission) ... ok
+test_protocol_labels_paths_provenance_not_identity (test_review.ScienceAndAdmission) ... ok
+test_random_and_primary_support_masks_match (test_review.ScienceAndAdmission) ... ok
+test_semantic_adapter_explicitly_unqualified (test_review.ScienceAndAdmission) ... ok
+test_bad_cgroup_path_blocks (test_review.StatusSafety) ... ok
+test_blank_controlgroup_still_checks_expected_tree (test_review.StatusSafety) ... ok
+test_empty_dict_is_unknown (test_review.StatusSafety) ... ok
+test_existing_tree_missing_events_is_unknown (test_review.StatusSafety) ... ok
+test_failed_show_never_certifies_empty (test_review.StatusSafety) ... ok
+test_missing_properties_are_unknown (test_review.StatusSafety) ... ok
+test_running_requires_cgroup_pid_invocation (test_review.StatusSafety) ... ok
+test_transport_timeout_is_unknown (test_review.StatusSafety) ... ok
+test_unowned_description_and_invocation_block (test_review.StatusSafety) ... ok
+
+======================================================================
+ERROR: test_crash_after_launch_adopts_same_invocation (test_review.ControllerCrashPoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\test_review.py", line 220, in test_crash_after_launch_adopts_same_invocation
+    self.assertEqual(read(self.root/"REGISTRY.json")["conditions"][self.fp]["invocation"],"fixture-inv")
+KeyError: 'invocation'
+
+======================================================================
+ERROR: test_crash_after_third_failure_receipt_before_state (test_review.ControllerCrashPoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\test_review.py", line 227, in test_crash_after_third_failure_receipt_before_state
+    run=self.controller.context(s,self.fp)[3]; r=read(run/"TERMINAL.json")
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\common.py", line 26, in read
+    def read(path): return json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
+  File "C:\Users\wkeif\AppData\Local\Programs\Python\Python310\lib\pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "C:\Users\wkeif\AppData\Local\Programs\Python\Python310\lib\pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\wkeif\\AppData\\Local\\Temp\\tmpez34qsd6\\lab\\runs\\weights-transition-bf7481ed63a4f70b9ec6946a8b952cb81e7338e383214f4e27b31ac2ff01f5ee\\jobs\\72dc5edce9b88f51a213560eb202d429404af1baac5799c4896f0f32d960f33a\\TERMINAL.json'
+
+======================================================================
+FAIL: test_crash_after_intent_consumes_once_without_relaunch (test_review.ControllerCrashPoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\test_review.py", line 213, in test_crash_after_intent_consumes_once_without_relaunch
+    self.assertEqual(s["conditions"][self.fp]["status"],"interrupted")
+AssertionError: 'pending' != 'interrupted'
+- pending
++ interrupted
+
+
+======================================================================
+FAIL: test_pending_cancel_consumes_cap_without_launch (test_review.ControllerCrashPoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\test_review.py", line 248, in test_pending_cancel_consumes_cap_without_launch
+    self.assertEqual(self.backend.starts,0); self.assertEqual(s["conditions"][self.fp]["status"],"cancelled")
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 43 tests in 41.908s
+
+FAILED (failures=2, errors=2)

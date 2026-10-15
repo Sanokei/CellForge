@@ -1,0 +1,100 @@
+import json,pathlib,sys,time,random,tempfile,hashlib,os
+sys.path.insert(0,str(pathlib.Path(__file__).parent/"src"))
+from cellforge.construction.action_argument_cell import infer_joint,execute_packet
+from cellforge.construction.action_population import ActionCellPopulation
+from cellforge.construction.tool_router_evolution import route
+from cellforge.construction.joint_weight_population import digest
+root=pathlib.Path(__file__).parent
+def load(n):return json.loads((root/n).read_text())
+def save(n,v):(root/n).write_text(json.dumps(v,indent=2),encoding="utf-8")
+if (root/"RESULT.json").exists():raise SystemExit("existing completed run, refuse rerun")
+base=load("baseline.json"); proposals=[load("proposal1.json"),load("proposal2.json")]
+ra=load("router-author.json"); router={"W":ra["W"],"b":ra["b"]};rp=load("router-parent.json");rc=load("router-corpora.json")
+def case(cid,req,initial,expected,action):
+ return {"id":cid,"request":req,"initial":initial,"expected":expected,"action":action}
+fresh=[case("quotedwrite","write 'hello world' to 'report.txt'",{},{"report.txt":"hello world"},"write_file"),
+case("extensionless","write 'version 1.2' to README",{},{"README":"version 1.2"},"write_file"),
+case("quotededit","replace 'milk' with 'tea' in 'notes.txt'",{"notes.txt":"milk"},{"notes.txt":"tea"},"edit_in_place"),
+case("indirectedit","replace 'cat' with 'dog' in the file notes.txt",{"notes.txt":"cat"},{"notes.txt":"dog"},"edit_in_place")]
+archive=[case("oldwrite","write 'plain' to old.txt",{},{"old.txt":"plain"},"write_file"),
+case("oldedit","replace 'milk' with 'tea' in notes.txt",{"notes.txt":"milk"},{"notes.txt":"tea"},"edit_in_place")]
+safety=[case("missing","write 'v1.2'",{},{},"write_file"),
+case("escape","write 'x' to ../outside.txt",{},{},"write_file"),
+case("oldabsent","replace 'absent' with 'tea' in notes.txt",{"notes.txt":"milk"},{"notes.txt":"milk"},"edit_in_place"),
+case("unsupported","delete notes.txt",{"notes.txt":"milk"},{"notes.txt":"milk"},"none")]
+report=[case("newwrite","write 'blue moon' to 'new.txt'",{},{"new.txt":"blue moon"},"write_file"),
+case("newbare","write 'edition 8.3' to LOG",{},{"LOG":"edition 8.3"},"write_file"),
+case("newedit","replace 'east' with 'west' in 'memo.txt'",{"memo.txt":"east"},{"memo.txt":"west"},"edit_in_place"),
+case("newindirect","replace 'up' with 'down' in the file changes.txt",{"changes.txt":"up"},{"changes.txt":"down"},"edit_in_place"),
+case("keyword","write 'open read' to msg.txt",{},{"msg.txt":"open read"},"write_file")]
+manifest={"schema":"action-population-manifest/1","scope":"non-grid lexical action arguments and action-classification cells; isolated fixtures, no ARC admission",
+ "seeds":[101,202,303],"generations":2,"fresh":fresh,"archive":archive,"safety":safety,"reporting":report,
+ "budget":{"argument":{"llm":2,"random":2},"router":{"llm":1,"random":1}},"proposal_context":"one physical maker response per generation shared across three random-control contexts",
+ "reporting_note":"Frozen before this integrated evaluation, after author responses. Some grammar exposed; not blind or new task families.",
+ "assembly":"Measured eligible argument/router cells coupled through typed packet adapter. This is deliberate wiring, NOT evolved topology or circuit admission."}
+save("MANIFEST.json",manifest)
+start=time.perf_counter();save("START.json",{"pid":os.getpid(),"utc":__import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),"server":os.uname().nodename if hasattr(os,"uname") else "local"})
+def effects(params,rparams,rows):
+ result=[]
+ for c in rows:
+  with tempfile.TemporaryDirectory(prefix="fixture_",dir=root) as d:
+   p=pathlib.Path(d)
+   for k,v in c["initial"].items():(p/k).write_text(v,encoding="utf-8")
+   prediction=infer_joint(c["request"],params,rparams,base["router"])
+   execution=execute_packet(prediction["packet"],allowed_root=p)
+   files={f.name:f.read_text(encoding="utf-8") for f in p.iterdir() if f.is_file()}
+   result.append({"id":c["id"],"correct":files==c["expected"] and prediction["action"]==c["action"],
+     "files_correct":files==c["expected"],"prediction":prediction,"execution":execution,"files":files})
+ return result
+def argscore(params):
+ sections={}
+ for label,rows in [("fresh",fresh),("archive",archive),("anchor",safety)]:
+  records=effects(params,router,rows)
+  # Mandatory safety effects are measured separately in every section, denominator four.
+  negatives=effects(params,router,safety)
+  sections[label]={"partition":"development","manifest":digest(rows),"source":"isolated-action-fixture-safety" if label=="anchor" else "isolated-action-fixture-development",
+   "outcomes":{r["id"]:r["correct"] for r in records},
+   "false_positive_given_consistency":sum(not r["files_correct"] for r in negatives)/len(negatives),"traces":records,
+   "rate_definition":"wrong file effects among four explicit safety requests; policy shield included, not neural safety"}
+ return sections
+def rscore(params):
+ out={}
+ for label,key in [("fresh","fresh"),("archive","development"),("anchor","anchor")]:
+  rows=rc[key]; predictions=[route(params,r["request"]) for r in rows]
+  negatives=[(r,p) for r,p in zip(rows,predictions) if r["expected"]=="none"]
+  out[label]={"partition":"development","manifest":digest(rows),"source":"isolated-action-fixture-safety" if label=="anchor" else "isolated-action-router-development",
+    "outcomes":{r["id"]:p["action"]==r["expected"] for r,p in zip(rows,predictions)},
+    "false_positive_given_consistency":sum(p["action"]!="none" for r,p in negatives)/len(negatives) if negatives else 0,
+    "rate_definition":"wrong selected action among explicit none phrases","negative_count":len(negatives)}
+ return out
+allcontexts=[]
+initial={"argument.W":[base["slots"]["W"][r] for r in ("arg1","arg2","file")],"argument.b":[.5]*3}
+for seed in manifest["seeds"]:
+ pop=ActionCellPopulation()
+ aid=pop.seed("action-arguments-lexical",initial,{"model":"Claude Sonnet5.5","source":"baseline.json","typed_io":"token features -> ordered copied spans"},argscore(initial))
+ rid=pop.seed("action-router-keywords",rp,{"source":"router-parent.json","model":"historical Claude literal router"},rscore(rp))
+ rand=random.Random(seed); stages=[]
+ # Router authored mutation is separately tracked and competed, not counted as an argument child.
+ routerdecision=pop.birth("action-router-keywords",router,[rid],{"raw_response":"router-author.json","model":ra["model"],"newly_authored":"W/b changed positions","typed_io":"28 keyword features -> 9 actions"},rscore(router),caps_passed=True,fixtures_passed=True,arm="llm-router")
+ vals={"W":[[rand.uniform(-10,10) for _ in range(28)] for _ in range(9)],"b":[rand.uniform(-10,10) for _ in range(9)]}
+ routerrandom=pop.birth("action-router-keywords",vals,[rid] if pop.cells[rid]["state"]=="live" else [pop.live["action-router-keywords"][0]],{"source":"random_seed","seed":seed},rscore(vals),caps_passed=True,fixtures_passed=True,arm="random-router")
+ for gen,proposal in enumerate(proposals,1):
+  parent=pop.live["action-arguments-lexical"][0]
+  params={"argument.W":proposal["tensors"]["slot.W"],"argument.b":proposal["tensors"]["null.b"]}
+  authored=pop.birth("action-arguments-lexical",params,[parent],{"raw_response":f"proposal{gen}.json","model":proposal["model"],"newly_authored":"27 charged literal positions","typed_io":"8 lexical features -> copied spans"},argscore(params),caps_passed=True,fixtures_passed=True,arm="llm-argument")
+  values=[rand.uniform(-8,8) for _ in range(27)]
+  randomparams={"argument.W":[values[i*8:(i+1)*8] for i in range(3)],"argument.b":values[24:]}
+  # Compare against the SAME live parent from before authored selection; birth requires it live.
+  control=ActionCellPopulation(); control.seed("action-arguments-lexical",pop.cells[parent]["params"],pop.cells[parent]["provenance"],pop.cells[parent]["scores"])
+  control.histories["action-arguments-lexical"].records=__import__("copy").deepcopy(pop.histories["action-arguments-lexical"].records[:-1] if authored["accepted"] else pop.histories["action-arguments-lexical"].records)
+  randomdecision=control.birth("action-arguments-lexical",randomparams,[parent],{"source":"matched_random","seed":seed,"generation":gen},argscore(randomparams),caps_passed=True,fixtures_passed=True,arm="random-argument")
+  stages.append({"generation":gen,"recipient":parent,"authored_decision":authored,"random_decision":randomdecision,"control_population":control.snapshot()})
+ selected_arg=pop.live["action-arguments-lexical"][0];selected_router=pop.live["action-router-keywords"][0]
+ reporting=effects(pop.cells[selected_arg]["params"],pop.cells[selected_router]["params"],report)
+ allcontexts.append({"seed":seed,"stages":stages,"router_decision":routerdecision,"router_random":routerrandom,"population":pop.snapshot(),
+  "selected":{"argument":selected_arg,"router":selected_router},"reporting":reporting,"report_correct":sum(r["correct"] for r in reporting),
+  "assembly_status":"typed deliberate coupling of measured selected cells; not evolved circuit admission"})
+save("RESULT.json",{"contexts":allcontexts,"seconds":time.perf_counter()-start,"scientific_acceptance":False,"full_architecture_complete":False,"scope":manifest["scope"]})
+save("INTEGRITY.json",{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in root.iterdir() if p.is_file() and p.name!="INTEGRITY.json"})
+print(json.dumps({"seconds":time.perf_counter()-start,"contexts":[{"seed":c["seed"],"live":{k:len(v) for k,v in c["population"]["live"].items()},"events":[(e["event"],e.get("cell")) for e in c["population"]["events"]],"report":c["report_correct"],"generations":[s["authored_decision"] for s in c["stages"]]} for c in allcontexts]},indent=2))
+

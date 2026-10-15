@@ -1,0 +1,826 @@
+{
+  "policy": {
+    "protocol": "grid-demo-cache-benchmark/1",
+    "graph_hash": "f45fe6ce0d11a00625d5d78f7993c39838c06329ca2c1399ea9d55f04ea6def7",
+    "tasks": 14,
+    "order": [
+      false,
+      true,
+      true,
+      false
+    ],
+    "seed": 4637000,
+    "gradients": false,
+    "native_loaded": 0,
+    "source_sha256": "e63b43777bccbbb5b9268a6b618784e64e40372e726f65063dcb30f1bb30de4b",
+    "scope": "same frozen predictions; single-entry demonstration state cache; no solver improvement"
+  },
+  "ranked_output_parity_checks": 53,
+  "rows": [
+    {
+      "cached": false,
+      "wall_seconds": 4.218021234002663,
+      "cpu_seconds": 4.216638652000001,
+      "predictor_calls": 53,
+      "runtime_steps": 203,
+      "cache_hits": 0,
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 14,
+        "tasks_solved": 14,
+        "test_inputs": 14,
+        "test_inputs_correct": 14,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 14,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 1.085533568984829,
+        "inference_cpu_seconds": 1.0851438750000009,
+        "inference_cpu_seconds_per_task": 0.07751027678571434,
+        "tasks_per_second": 12.896883523457081,
+        "consistency_audit_wall_seconds": 3.1317466069594957,
+        "consistency_audit_cpu_seconds": 3.130845263999997,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "10",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "11",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "12",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "13",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "cached": true,
+      "wall_seconds": 2.238073724991409,
+      "cpu_seconds": 2.237457708999999,
+      "predictor_calls": 53,
+      "runtime_steps": 92,
+      "cache_hits": 39,
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 14,
+        "tasks_solved": 14,
+        "test_inputs": 14,
+        "test_inputs_correct": 14,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 14,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.3946093459962867,
+        "inference_cpu_seconds": 0.394516341000001,
+        "inference_cpu_seconds_per_task": 0.028179738642857215,
+        "tasks_per_second": 35.478125751567326,
+        "consistency_audit_wall_seconds": 1.8426835340214893,
+        "consistency_audit_cpu_seconds": 1.842247507999998,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "10",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "11",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "12",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "13",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "cached": true,
+      "wall_seconds": 2.186821733994293,
+      "cpu_seconds": 2.186442399999999,
+      "predictor_calls": 53,
+      "runtime_steps": 92,
+      "cache_hits": 39,
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 14,
+        "tasks_solved": 14,
+        "test_inputs": 14,
+        "test_inputs_correct": 14,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 14,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.37289731098280754,
+        "inference_cpu_seconds": 0.3728707329999992,
+        "inference_cpu_seconds_per_task": 0.02663362378571423,
+        "tasks_per_second": 37.54384809882813,
+        "consistency_audit_wall_seconds": 1.8131085550121497,
+        "consistency_audit_cpu_seconds": 1.8128406520000055,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "10",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "11",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "12",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "13",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "cached": false,
+      "wall_seconds": 4.391081374007626,
+      "cpu_seconds": 4.389690127999998,
+      "predictor_calls": 53,
+      "runtime_steps": 203,
+      "cache_hits": 0,
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 14,
+        "tasks_solved": 14,
+        "test_inputs": 14,
+        "test_inputs_correct": 14,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 14,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 1.1273999929835554,
+        "inference_cpu_seconds": 1.1268554079999973,
+        "inference_cpu_seconds_per_task": 0.0804896719999998,
+        "tasks_per_second": 12.417952889063223,
+        "consistency_audit_wall_seconds": 3.26289047501632,
+        "consistency_audit_cpu_seconds": 3.2621392510000042,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "10",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "11",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "12",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "13",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "peak_rss_bytes": 152563712
+}

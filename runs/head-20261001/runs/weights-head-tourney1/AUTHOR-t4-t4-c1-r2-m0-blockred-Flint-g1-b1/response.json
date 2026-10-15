@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "blockred-1x2-m2",
+    "params": {"kh": [0,0,0,0,0], "kw": [0,1,0,0,0], "mode": [0,0,1,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Each horizontal pair produces its nonzero colour only when both cells match: [2,2] becomes 2, while [2,0] becomes 0."
+  },
+  {
+    "task_id": "blockred-3x3-m3",
+    "params": {"kh": [0,0,1,0,0], "kw": [0,0,1,0,0], "mode": [0,0,0,1], "mark": [0,0,0,0,0,1,0,0,0,0]},
+    "rationale": "Each 3-by-3 block containing any nonzero cell becomes 5; in the first demonstration both right blocks become 5 and both empty left blocks become 0."
+  },
+  {
+    "task_id": "blockred-1x2-m0",
+    "params": {"kh": [0,0,0,0,0], "kw": [0,1,0,0,0], "mode": [0,0,0,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Horizontal pairs reduce to their most common colour including background: [3,3] becomes 3 and tied [0,3] becomes 0."
+  },
+  {
+    "task_id": "blockred-2x1-m0",
+    "params": {"kh": [0,1,0,0,0], "kw": [0,0,0,0,0], "mode": [0,0,0,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Vertical pairs reduce to their most common colour including background: the first demonstration preserves paired 3s and maps the vertical pair [2,0] to 0."
+  },
+  {
+    "task_id": "blockred-2x2-m2",
+    "params": {"kh": [0,1,0,0,0], "kw": [0,1,0,0,0], "mode": [0,0,1,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Only uniformly nonzero 2-by-2 blocks retain their colour: the second demonstration preserves the solid 1 block but rejects the block with three 3s and one 0."
+  },
+  {
+    "task_id": "blockred-3x3-m2",
+    "params": {"kh": [0,0,1,0,0], "kw": [0,0,1,0,0], "mode": [0,0,1,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Uniform nonzero 3-by-3 blocks retain their colour; the first demonstration preserves the solid 2 block and three solid 1 blocks, while the mixed 3-and-0 block becomes 0."
+  },
+  {
+    "task_id": "blockred-2x3-m2",
+    "params": {"kh": [0,1,0,0,0], "kw": [0,0,1,0,0], "mode": [0,0,1,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Each 2-by-3 block retains a colour only when all six cells share that nonzero colour: the third demonstration preserves the solid 1 block and maps both mixed 3-and-0 blocks to 0."
+  },
+  {
+    "task_id": "blockred-2x3-m3",
+    "params": {"kh": [0,1,0,0,0], "kw": [0,0,1,0,0], "mode": [0,0,0,1], "mark": [0,0,0,0,0,1,0,0,0,0]},
+    "rationale": "Any occupied 2-by-3 block becomes 5: the first demonstration maps both sparse 2 blocks and solid nonzero blocks to 5, while empty blocks become 0."
+  },
+  {
+    "task_id": "blockred-2x3-m1",
+    "params": {"kh": [0,1,0,0,0], "kw": [0,0,1,0,0], "mode": [0,1,0,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Each 2-by-3 block selects its most common nonzero colour: the second demonstration outputs 3 for a block containing just one 3 and five zeros, and 0 for an empty block."
+  },
+  {
+    "task_id": "blockred-2x1-m2",
+    "params": {"kh": [0,1,0,0,0], "kw": [0,0,0,0,0], "mode": [0,0,1,0], "mark": [0,0,0,0,0,0,0,0,0,0]},
+    "rationale": "Each vertical pair retains its colour only when both cells share a nonzero colour: the first demonstration preserves [3,3] and [1,1] but maps [2,0] and [1,0] to 0."
+  }
+]

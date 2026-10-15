@@ -1,0 +1,244 @@
+{
+  "schema": "earned-logic-circuit-population/2",
+  "seeds": [
+    601,
+    602,
+    603
+  ],
+  "cases": [
+    {
+      "bits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "id": "0",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "id": "1",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "expected": [
+        1,
+        0
+      ],
+      "id": "2",
+      "partition": "development"
+    },
+    {
+      "bits": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "id": "3",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "id": "4",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "id": "5",
+      "partition": "development"
+    },
+    {
+      "bits": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "id": "6",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "id": "7",
+      "partition": "development"
+    },
+    {
+      "bits": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        0
+      ],
+      "id": "8",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "id": "9",
+      "partition": "development"
+    },
+    {
+      "bits": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "expected": [
+        1,
+        0
+      ],
+      "id": "10",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "id": "11",
+      "partition": "development"
+    },
+    {
+      "bits": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "id": "12",
+      "partition": "development"
+    },
+    {
+      "bits": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "id": "13",
+      "partition": "development"
+    },
+    {
+      "bits": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "id": "14",
+      "partition": "frozen-report"
+    },
+    {
+      "bits": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "id": "15",
+      "partition": "development"
+    }
+  ],
+  "proposals_per_arm": 7,
+  "charged_positions_per_arm": 27,
+  "bootstrap_control_positions": 4,
+  "bounds": [
+    -1,
+    1
+  ],
+  "selection": "development-only, strict gain and historical retention, real primitive contributions required",
+  "reporting": "REUSED worker frozen8cases for corrective runtime validation, not fresh heldout",
+  "original_probe": "weights-logic-circuit-population-g1 remains provisional and untouched"
+}

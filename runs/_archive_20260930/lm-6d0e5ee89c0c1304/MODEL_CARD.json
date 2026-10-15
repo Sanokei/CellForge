@@ -1,0 +1,89 @@
+{
+ "model_hash": "6d0e5ee89c0c1304a46f436bfc3952043d54315990129eac8f2383c1cf903364",
+ "stats": {
+  "unique_param_storage": 897797,
+  "expanded_param_uses": 898199,
+  "nonzero_slots": 21050,
+  "constant_slots_in_op_args": 4,
+  "cell_defs": 19,
+  "bundle_defs": 15,
+  "reachable_defs": 34,
+  "expanded_instances": 40,
+  "nesting_depth": 4,
+  "edges": 171,
+  "dispatch_nodes": 1,
+  "param_bytes_float64": 7182376
+ },
+ "vocab": [
+  "<pad>",
+  "<bos>",
+  "<eos>",
+  " ",
+  ",",
+  ".",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z"
+ ],
+ "pixel_contract": null,
+ "task": "lm",
+ "primitive_version": "cellforge-ops/1",
+ "bootstrap": "bootstrap/uniform-logits/1",
+ "run_protocol": "tinylm/1",
+ "inference_dependencies": [
+  "numpy",
+  "cellforge.runtime (ops/interp/decoder)",
+  "cellforge.ir.graph"
+ ],
+ "not_included": [
+  "prompts",
+  "labels",
+  "development data",
+  "memory",
+  "author identities",
+  "keys"
+ ],
+ "anchor_result_development_feedback": {
+  "bpc": 0.6799857956351463,
+  "failures": 0,
+  "latency_s_total": 39.695,
+  "macs_total": 42065824410,
+  "model_hash": "6d0e5ee89c0c1304a46f436bfc3952043d54315990129eac8f2383c1cf903364",
+  "n_docs": 500,
+  "n_tokens": 89883,
+  "protocol": "lm-metrics/1",
+  "route_counts": {
+   "/step/d": {
+    "ex_np": 58446,
+    "ex_post": 25560,
+    "ex_punct": 2352,
+    "ex_tail": 3525
+   }
+  },
+  "top1": 0.8080504656052869,
+  "total_bits": 61119.1633
+ }
+}

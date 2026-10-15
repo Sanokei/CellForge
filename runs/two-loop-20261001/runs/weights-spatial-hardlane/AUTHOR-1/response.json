@@ -1,0 +1,74 @@
+[
+  {
+    "seed": 701,
+    "niche": "spatial_quorum",
+    "parent_id": "c9bac7d550d60387c137e56a6d238f077a698ebd57051233d1e6b782b4af6537",
+    "prompt_sha256": "c05095266e6dc60f108a6afc0c19bda6ddff83ff3f71da022e341ba5dc78a812",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,-5,-5,-5,-5,-5,-5,-5,-5,-5,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0
+      ]],
+      "b1": [-2.5]
+    },
+    "charged_positions": 91,
+    "rationale": "Supplied DEV labels support a zero center and at least three nonzero cardinal neighbors, regardless of color or corners. Count nonzero cardinal neighbors uniformly, ignore corners, and veto a nonzero center. No measured gain claimed."
+  },
+  {
+    "seed": 702,
+    "niche": "spatial_quorum",
+    "parent_id": "c9bac7d550d60387c137e56a6d238f077a698ebd57051233d1e6b782b4af6537",
+    "prompt_sha256": "576c0176403c77d28caa33be6ff9e2e14cf2f7230c3249b17dc3896e32dd96d0",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0,0,0,0,0,0,0,0,0,0,
+        0,2,2,2,2,2,2,2,2,2,
+        0,0,0,0,0,0,0,0,0,0,
+        0,2,2,2,2,2,2,2,2,2,
+        0,-9,-9,-9,-9,-9,-9,-9,-9,-9,
+        0,2,2,2,2,2,2,2,2,2,
+        0,0,0,0,0,0,0,0,0,0,
+        0,2,2,2,2,2,2,2,2,2,
+        0,0,0,0,0,0,0,0,0,0
+      ]],
+      "b1": [-5]
+    },
+    "charged_positions": 91,
+    "rationale": "Supplied DEV labels motivate equal positive weights for all nonzero cardinal colors and no corner penalties. The threshold requires three cardinal neighbors; the center penalty prevents activation for any nonzero center. No measured gain claimed."
+  },
+  {
+    "seed": 703,
+    "niche": "spatial_quorum",
+    "parent_id": "c9bac7d550d60387c137e56a6d238f077a698ebd57051233d1e6b782b4af6537",
+    "prompt_sha256": "e29799699c0c6839b5a967521f5ca820edbcb79eab44dcda56a2c41131acf045",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        5,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0
+      ]],
+      "b1": [-7.5]
+    },
+    "charged_positions": 91,
+    "rationale": "Encode the DEV-supported quorum with a zero-center bonus: five points for center color zero plus one per nonzero cardinal neighbor must exceed 7.5. Corners contribute zero. A nonzero center cannot reach threshold. No measured gain claimed."
+  }
+]

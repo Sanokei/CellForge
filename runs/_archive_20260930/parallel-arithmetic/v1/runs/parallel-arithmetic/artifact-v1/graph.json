@@ -1,0 +1,159 @@
+{
+ "defs": {
+  "addition_step": {
+   "inputs": [
+    "a",
+    "b",
+    "carry"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "digits",
+     "in": {
+      "x0": "$a",
+      "x1": "$b",
+      "x2": "$carry"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "adder",
+     "in": {
+      "digits": "digits"
+     },
+     "use": "full_adder"
+    }
+   ],
+   "outputs": {
+    "carry": "adder.carry",
+    "digit": "adder.digit"
+   },
+   "role": "cluster"
+  },
+  "carry": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "carry_W",
+    "b1": "carry_b"
+   }
+  },
+  "digit": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "digit_W",
+    "b1": "digit_b"
+   }
+  },
+  "full_adder": {
+   "inputs": [
+    "digits"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "total",
+     "in": {
+      "x": "$digits"
+     },
+     "use": "sum"
+    },
+    {
+     "id": "carry",
+     "in": {
+      "x": "total"
+     },
+     "use": "carry"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "pair",
+     "in": {
+      "x0": "total",
+      "x1": "carry"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "digit",
+     "in": {
+      "x": "pair"
+     },
+     "use": "digit"
+    }
+   ],
+   "outputs": {
+    "carry": "carry",
+    "digit": "digit"
+   },
+   "role": "cluster"
+  },
+  "sum": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "sum_W",
+    "b1": "sum_b"
+   }
+  }
+ },
+ "entries": {
+  "step": "addition_step"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "arithmetic_interface": "decimal-addition-graph/1",
+  "construction": "authored decimal full adder; no fitting or data access",
+  "limitations": "unsigned decimal addition only; no language parsing or learned reasoning",
+  "max_digits": 4096,
+  "task": "arithmetic"
+ },
+ "params": {
+  "carry_W": {
+   "sha256": "bd7c08eabc431ddc9b985e7722ca8cc3afb6f617d5190d5895c45a3242309aa0",
+   "shape": [
+    1,
+    1
+   ]
+  },
+  "carry_b": {
+   "sha256": "4c07bc3c4d33d37e8067c1e21c0b028f55c4946c758c0f06963e0f8833881ef8",
+   "shape": [
+    1
+   ]
+  },
+  "digit_W": {
+   "sha256": "a97aef77ca924bf0ceeff537bf994b45bb5826a84ba597a0bbec993d86901500",
+   "shape": [
+    1,
+    2
+   ]
+  },
+  "digit_b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "sum_W": {
+   "sha256": "d8a5ec0665f1ba8ab41493f4a260d4e81949503b55b5f62b7dd3ddc231f3f593",
+   "shape": [
+    1,
+    3
+   ]
+  },
+  "sum_b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  }
+ }
+}

@@ -1,0 +1,479 @@
+{
+ "defs": {
+  "adjacency_recolor.gene": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "adjacency_recolor.source"
+    },
+    {
+     "id": "n1",
+     "in": {
+      "x": "$input"
+     },
+     "use": "adjacency_recolor.marker"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n3",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n4",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n5",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n6",
+     "in": {
+      "x0": "n2",
+      "x1": "n3",
+      "x2": "n4",
+      "x3": "n5"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "x": "n7"
+     },
+     "use": "op:step"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "a": "n0",
+      "b": "n8"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n10",
+     "in": {
+      "x": "n9"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n12",
+     "in": {
+      "a": "$input",
+      "b": "n11"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n13",
+     "use": "param:adjacency_recolor.target"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1,
+       10
+      ]
+     },
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n15",
+     "in": {
+      "a": "n14",
+      "b": "n9"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n16",
+     "in": {
+      "a": "n12",
+      "b": "n15"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "colors": "n16",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  },
+  "adjacency_recolor.marker": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "adjacency_recolor.marker.W",
+    "b1": "adjacency_recolor.marker.b"
+   }
+  },
+  "adjacency_recolor.source": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "adjacency_recolor.source.W",
+    "b1": "adjacency_recolor.source.b"
+   }
+  },
+  "recolor_expert0": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "adjacency_recolor.gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "recolor_expert1": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "adjacency_recolor.gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "recolor_root": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "use": "recolor_router"
+    },
+    {
+     "args": {
+      "branches": [
+       "recolor_expert0",
+       "recolor_expert1"
+      ],
+      "k": 1
+     },
+     "id": "n1",
+     "in": {
+      "index": "$index",
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_mask": "$output_mask",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "scores": "n0.scores",
+      "state": "$state"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1.color_logits",
+    "height_logits": "n1.height_logits",
+    "state": "n1.state",
+    "width_logits": "n1.width_logits"
+   },
+   "role": "root"
+  },
+  "recolor_router": {
+   "inputs": [],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "n": 2,
+      "start": 0.0,
+      "step": 0.0
+     },
+     "id": "n0",
+     "use": "op:coords"
+    }
+   ],
+   "outputs": {
+    "scores": "n0"
+   },
+   "role": "router"
+  }
+ },
+ "entries": {
+  "grid_step": "recolor_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "construction": "authored conditional adjacency recolor/1; no gradients/fitted labels",
+  "gene_contract": {
+   "cluster": "adjacency_recolor.gene",
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "marker": 4,
+   "outputs": [
+    "colors",
+    "height",
+    "width"
+   ],
+   "rule": "simultaneously recolor source iff orthogonal valid neighbor is marker; all other pixels persist",
+   "source": 2,
+   "target": 3
+  },
+  "grid_attempts": 1,
+  "grid_interface": "grid-graph/1",
+  "limitations": "fixed authored colors and one-step adjacency only; no object semantics or demonstration adaptation; duplicated expert wrappers solely for profile compatibility",
+  "profile": "ladder-micro/1",
+  "state_dim": 0,
+  "task": "grid"
+ },
+ "params": {
+  "adjacency_recolor.marker.W": {
+   "sha256": "820a7cfbfd37464be6c80d05c6ebda1c9982a60ae9a6ec6174bd17119e9abe6f",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "adjacency_recolor.marker.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "adjacency_recolor.source.W": {
+   "sha256": "d572bd29037444b9d188c036bd4cbb3f13fb387237731039ee7aa2bb7e1bc148",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "adjacency_recolor.source.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "adjacency_recolor.target": {
+   "sha256": "4882977c56325295de756cc0ce9644bdad7609f3765b1c1fb3823b346733d6c3",
+   "shape": [
+    10
+   ]
+  }
+ }
+}

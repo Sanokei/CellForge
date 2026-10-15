@@ -1,0 +1,71 @@
+[
+  {
+    "seed": 401,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "20bfb3fef186f8ab11cddbf7146e1989b288d7cb91c91caff900f9a6591c0567",
+      "parent_params": {
+        "argument.W": [[6,-3,2,-5,0,-8,-8,-8,0,6,6,-8],[-3,6,0,-5,0,-8,-8,-8,0,0,-8,6],[-4,-4,0,-6,1,8,8,8,-7.25,-8,-8,-8]],
+        "argument.b": [0.5,0.5,0.5]
+      },
+      "tensors": {
+        "argument.W": [[6,-3,2,-5,0,-8,-8,-8,0,6,6,-8],[-3,6,0,-5,0,-8,-8,-8,0,0,-8,6],[-4,-4,0,-6,1.5,8,8,8,-7.25,-8,-8,-8]],
+        "argument.b": [0.5,0.5,0.5]
+      },
+      "feature_order": ["q1","q2","prev_for","is_vocab","has_dot_evenquoted","prev_to","prev_in","prev_readverb","is_function_word","prev_write","prev_replace","prev_with"],
+      "role_order": ["arg1","arg2","file"],
+      "prompt_sha256": "061b34418280961552aeda8c0791035cee04af11b5518ffdbd69184ebc096d48",
+      "feedback_sha256": "532109aacc454e1e4d5b7b1e9d5fa0457d09bab40e6b9e455ce92a4bb9d7de0e",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "justification": "Increase file has_dot_evenquoted from 1 to 1.5 to widen the supplied 0.25 score gap between notes.txt and the function-word prefix in dev-stopword-prefix and archive-9. Dotted quoted content retains a negative file score under the supplied features. This revision is unevaluated; improvement is not guaranteed."
+    }
+  },
+  {
+    "seed": 402,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "20bfb3fef186f8ab11cddbf7146e1989b288d7cb91c91caff900f9a6591c0567",
+      "parent_params": {
+        "argument.W": [[6,-3,2,-5,0,-8,-8,-8,0,6,6,-8],[-3,6,0,-5,0,-8,-8,-8,0,0,-8,6],[-4,-4,0,-6,1,8,8,8,-7.25,-8,-8,-8]],
+        "argument.b": [0.5,0.5,0.5]
+      },
+      "tensors": {
+        "argument.W": [[6,-3,2,-5,0,-8,-8,-8,0,6,6,-8],[-3,6,0,-5,0,-8,-8,-8,0,0,-8,6],[-4,-4,0,-6,2,8,8,8,-7.25,-8,-8,-8]],
+        "argument.b": [0.5,0.5,0.5]
+      },
+      "feature_order": ["q1","q2","prev_for","is_vocab","has_dot_evenquoted","prev_to","prev_in","prev_readverb","is_function_word","prev_write","prev_replace","prev_with"],
+      "role_order": ["arg1","arg2","file"],
+      "prompt_sha256": "061b34418280961552aeda8c0791035cee04af11b5518ffdbd69184ebc096d48",
+      "feedback_sha256": "532109aacc454e1e4d5b7b1e9d5fa0457d09bab40e6b9e455ce92a4bb9d7de0e",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "justification": "Increase file has_dot_evenquoted from 1 to 2 to strengthen the narrow dotted-path preference shown in dev-stopword-prefix and archive-9. Bare function-word paths receive no change, and the supplied dotted-content file score remains negative. This revision is unevaluated and does not establish a fix for safety-0 or guarantee improvement."
+    }
+  },
+  {
+    "seed": 403,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "20bfb3fef186f8ab11cddbf7146e1989b288d7cb91c91caff900f9a6591c0567",
+      "parent_params": {
+        "argument.W": [[6,-3,2,-5,0,-8,-8,-8,0,6,6,-8],[-3,6,0,-5,0,-8,-8,-8,0,0,-8,6],[-4,-4,0,-6,1,8,8,8,-7.25,-8,-8,-8]],
+        "argument.b": [0.5,0.5,0.5]
+      },
+      "tensors": {
+        "argument.W": [[6,-3,2,-5,0,-8,-8,-8,0,6,6,-8],[-3,6,0,-5,0,-8,-8,-8,0,0,-8,6],[-4,-4,0,-6,1.75,8,8,8,-7.25,-8,-8,-8]],
+        "argument.b": [0.5,0.5,0.5]
+      },
+      "feature_order": ["q1","q2","prev_for","is_vocab","has_dot_evenquoted","prev_to","prev_in","prev_readverb","is_function_word","prev_write","prev_replace","prev_with"],
+      "role_order": ["arg1","arg2","file"],
+      "prompt_sha256": "061b34418280961552aeda8c0791035cee04af11b5518ffdbd69184ebc096d48",
+      "feedback_sha256": "532109aacc454e1e4d5b7b1e9d5fa0457d09bab40e6b9e455ce92a4bb9d7de0e",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "justification": "Increase file has_dot_evenquoted from 1 to 1.75, targeting the supplied 1 versus 0.75 dotted-path/prefix scores while leaving the bare-path features unchanged. The supplied quoted dotted-content features still yield a negative file score. This is an unevaluated margin revision with no guaranteed improvement."
+    }
+  }
+]

@@ -1,0 +1,2145 @@
+{
+  "protocol": "structured-evolution/3",
+  "status": "complete_bounded_development",
+  "policy_sha256": "632b4c04585d8722111e2003edfb836777a82000991409cf4f68bac1c3b9694f",
+  "elapsed_seconds": 28.326033962999645,
+  "completed_steps": 2,
+  "records": [
+    {
+      "step": 0,
+      "island": "A",
+      "operator": "row_scale",
+      "seed": 94001,
+      "chosen_probabilities": {
+        "row_scale": 0.2,
+        "block_scale": 0.2,
+        "expert_slice": 0.2,
+        "router_gate": 0.2,
+        "typed_module": 0.2,
+        "trunk_tile": 0.0,
+        "mixing_gate": 0.0,
+        "recipe_update": 0.0,
+        "recipe_transfer": 0.0
+      },
+      "arms": {
+        "fitted_evolution": {
+          "lineage": {
+            "operator": "row_scale",
+            "seed": 94001,
+            "parent_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "donor_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "details": {
+              "parameter": "cl_bigram.W11",
+              "row": 0,
+              "factor": 1.125
+            },
+            "gradient_estimator": false,
+            "child_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+            "scheduled_operator": "row_scale",
+            "operator_fallback_reason": null
+          },
+          "accepted_vs_parent": false,
+          "scores": [
+            {
+              "fitness_bits_per_byte": 1.081929543951148,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 276.9739632514939,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  72.94269135997396,
+                  63.39912798490105,
+                  86.7892445532523,
+                  53.842899353366576
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.17989893200137885,
+                "evaluation_seconds": 0.32365681199735263,
+                "evaluations_per_second": 3.089692423986984,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.530323742001201,
+                "end_to_end_evaluations_per_second": 1.8856406394826941
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+              "prefix_cache_startup_seconds": 1.746945669001434,
+              "plan_reuse": {
+                "reused_bundles": 16,
+                "compiled_bundles": 10
+              },
+              "composite_bpb": 6.574864683000734,
+              "context_component": {
+                "fitness_bits_per_byte": 23.053670100149493,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 138.32202060089696,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    69.16101030044848,
+                    69.16101030044848
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.14832544800447067,
+                  "evaluation_seconds": 0.175578565998876,
+                  "evaluations_per_second": 5.695456016005973,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.34986033300083363,
+                  "end_to_end_evaluations_per_second": 2.8582834510639343
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+                "prefix_cache_startup_seconds": 1.741500285002985,
+                "plan_reuse": {
+                  "reused_bundles": 16,
+                  "compiled_bundles": 10
+                }
+              }
+            },
+            {
+              "fitness_bits_per_byte": 0.7147697769022873,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 182.98106288698554,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  48.89090027490192,
+                  40.20645105504305,
+                  33.47848676129037,
+                  60.40522479575021
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.26427375899947947,
+                "evaluation_seconds": 0.377655614996911,
+                "evaluations_per_second": 2.6479150853037874,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.6679562849967624,
+                "end_to_end_evaluations_per_second": 1.497103960934879
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+              "prefix_cache_startup_seconds": 1.7454584099978092,
+              "plan_reuse": {
+                "reused_bundles": 16,
+                "compiled_bundles": 10
+              },
+              "composite_bpb": 6.299494857714088,
+              "context_component": {
+                "fitness_bits_per_byte": 23.053670100149493,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 138.32202060089696,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    69.16101030044848,
+                    69.16101030044848
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.15837695100344718,
+                  "evaluation_seconds": 0.19299477100139484,
+                  "evaluations_per_second": 5.18148753363257,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.3774419549954473,
+                  "end_to_end_evaluations_per_second": 2.6494140006562388
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+                "prefix_cache_startup_seconds": 1.5553407699990203,
+                "plan_reuse": {
+                  "reused_bundles": 16,
+                  "compiled_bundles": 10
+                }
+              }
+            }
+          ],
+          "reserved_batch_slots": 4
+        },
+        "fitted_random": {
+          "lineage": {
+            "operator": "row_scale",
+            "seed": 94001,
+            "parent_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "donor_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "details": {
+              "parameter": "cl_bigram.W11",
+              "row": 0,
+              "factor": 1.125
+            },
+            "gradient_estimator": false,
+            "child_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+            "scheduled_operator": "row_scale",
+            "operator_fallback_reason": null
+          },
+          "accepted_vs_parent": false,
+          "scores": [
+            {
+              "fitness_bits_per_byte": 1.081929543951148,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 276.9739632514939,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  72.94269135997396,
+                  63.39912798490105,
+                  86.7892445532523,
+                  53.842899353366576
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.17989893200137885,
+                "evaluation_seconds": 0.32365681199735263,
+                "evaluations_per_second": 3.089692423986984,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.530323742001201,
+                "end_to_end_evaluations_per_second": 1.8856406394826941
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+              "prefix_cache_startup_seconds": 1.746945669001434,
+              "plan_reuse": {
+                "reused_bundles": 16,
+                "compiled_bundles": 10
+              },
+              "composite_bpb": 6.574864683000734,
+              "context_component": {
+                "fitness_bits_per_byte": 23.053670100149493,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 138.32202060089696,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    69.16101030044848,
+                    69.16101030044848
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.14832544800447067,
+                  "evaluation_seconds": 0.175578565998876,
+                  "evaluations_per_second": 5.695456016005973,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.34986033300083363,
+                  "end_to_end_evaluations_per_second": 2.8582834510639343
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+                "prefix_cache_startup_seconds": 1.741500285002985,
+                "plan_reuse": {
+                  "reused_bundles": 16,
+                  "compiled_bundles": 10
+                }
+              }
+            },
+            {
+              "fitness_bits_per_byte": 0.7147697769022873,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 182.98106288698554,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  48.89090027490192,
+                  40.20645105504305,
+                  33.47848676129037,
+                  60.40522479575021
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.26427375899947947,
+                "evaluation_seconds": 0.377655614996911,
+                "evaluations_per_second": 2.6479150853037874,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.6679562849967624,
+                "end_to_end_evaluations_per_second": 1.497103960934879
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+              "prefix_cache_startup_seconds": 1.7454584099978092,
+              "plan_reuse": {
+                "reused_bundles": 16,
+                "compiled_bundles": 10
+              },
+              "composite_bpb": 6.299494857714088,
+              "context_component": {
+                "fitness_bits_per_byte": 23.053670100149493,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 138.32202060089696,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    69.16101030044848,
+                    69.16101030044848
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.15837695100344718,
+                  "evaluation_seconds": 0.19299477100139484,
+                  "evaluations_per_second": 5.18148753363257,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.3774419549954473,
+                  "end_to_end_evaluations_per_second": 2.6494140006562388
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+                "prefix_cache_startup_seconds": 1.5553407699990203,
+                "plan_reuse": {
+                  "reused_bundles": 16,
+                  "compiled_bundles": 10
+                }
+              }
+            }
+          ],
+          "reserved_batch_slots": 4
+        },
+        "founder_evolution": {
+          "lineage": {
+            "operator": "row_scale",
+            "seed": 94001,
+            "parent_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "donor_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "details": {
+              "parameter": "cl_bigram.W11",
+              "row": 0,
+              "factor": 1.125
+            },
+            "gradient_estimator": false,
+            "child_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+            "scheduled_operator": "row_scale",
+            "operator_fallback_reason": null
+          },
+          "accepted_vs_parent": false,
+          "scores": [
+            {
+              "fitness_bits_per_byte": 2.271259048509777,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 581.4423164185029,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  149.22141838571088,
+                  139.8676588143583,
+                  161.58178131929836,
+                  130.77145789913536
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.1252661899998202,
+                "evaluation_seconds": 0.2914265459985472,
+                "evaluations_per_second": 3.431396397241674,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.4333299840000109,
+                "end_to_end_evaluations_per_second": 2.307710144516505
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+              "prefix_cache_startup_seconds": 1.7524764139961917,
+              "plan_reuse": {
+                "reused_bundles": 15,
+                "compiled_bundles": 10
+              },
+              "composite_bpb": 6.031976326996325,
+              "context_component": {
+                "fitness_bits_per_byte": 17.31412816245597,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 103.8847689747358,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    51.9423844873679,
+                    51.9423844873679
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.12711431800562423,
+                  "evaluation_seconds": 0.1664233100018464,
+                  "evaluations_per_second": 6.0087736506917535,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.31642451300285757,
+                  "end_to_end_evaluations_per_second": 3.1603114136450268
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+                "prefix_cache_startup_seconds": 1.5926310240029125,
+                "plan_reuse": {
+                  "reused_bundles": 15,
+                  "compiled_bundles": 10
+                }
+              }
+            },
+            {
+              "fitness_bits_per_byte": 1.6231644809118317,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 415.5301071134289,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  98.42277023491313,
+                  100.6787966354421,
+                  85.3801425752695,
+                  131.04839766780427
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.13422295200143708,
+                "evaluation_seconds": 0.29476592499850085,
+                "evaluations_per_second": 3.392522388756726,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.4462915110052563,
+                "end_to_end_evaluations_per_second": 2.2406879255837384
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+              "prefix_cache_startup_seconds": 1.5624033779968158,
+              "plan_reuse": {
+                "reused_bundles": 15,
+                "compiled_bundles": 10
+              },
+              "composite_bpb": 5.5459054012978655,
+              "context_component": {
+                "fitness_bits_per_byte": 17.31412816245597,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 103.8847689747358,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    51.9423844873679,
+                    51.9423844873679
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.22079022300022189,
+                  "evaluation_seconds": 0.16420899399963673,
+                  "evaluations_per_second": 6.089800416183125,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.4014270320039941,
+                  "end_to_end_evaluations_per_second": 2.4911127559293273
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+                "prefix_cache_startup_seconds": 1.623175484004605,
+                "plan_reuse": {
+                  "reused_bundles": 15,
+                  "compiled_bundles": 10
+                }
+              }
+            }
+          ],
+          "reserved_batch_slots": 4
+        }
+      },
+      "archive_parent_selection": {
+        "fitted": {
+          "index": 0,
+          "donor_index": 0,
+          "probabilities": [
+            1.0
+          ],
+          "entry": {
+            "hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "performance": 6.437179770357411,
+            "novelty": 1.0,
+            "failed": false
+          }
+        },
+        "pure": {
+          "index": 0,
+          "donor_index": 0,
+          "probabilities": [
+            1.0
+          ],
+          "entry": {
+            "hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "performance": 5.788416859149331,
+            "novelty": 1.0,
+            "failed": false
+          }
+        }
+      }
+    },
+    {
+      "step": 1,
+      "island": "B",
+      "operator": "trunk_tile",
+      "seed": 94002,
+      "chosen_probabilities": {
+        "row_scale": 0.0,
+        "block_scale": 0.0,
+        "expert_slice": 0.0,
+        "router_gate": 0.0,
+        "typed_module": 0.0,
+        "trunk_tile": 0.5,
+        "mixing_gate": 0.5,
+        "recipe_update": 0.0,
+        "recipe_transfer": 0.0
+      },
+      "arms": {
+        "fitted_evolution": {
+          "lineage": {
+            "operator": "mixing_gate",
+            "seed": 94002,
+            "parent_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "donor_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "details": {
+              "definition": "step_root",
+              "node": "authored_residual",
+              "old": 0.0,
+              "new": 0.05,
+              "operator": "additive bounded gate including zero activation"
+            },
+            "gradient_estimator": false,
+            "child_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+            "scheduled_operator": "trunk_tile",
+            "operator_fallback_reason": "WB CSR trunk stays immutable; activate authored residual gate instead of unavailable legacy tiles"
+          },
+          "accepted_vs_parent": false,
+          "scores": [
+            {
+              "fitness_bits_per_byte": 1.0792882236065928,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 276.29778524328776,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  73.5365010640254,
+                  62.47437764318587,
+                  86.94115425612236,
+                  53.345752279954155
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.1430203670024639,
+                "evaluation_seconds": 0.3589775529981125,
+                "evaluations_per_second": 2.785689499658654,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.5357496090000495,
+                "end_to_end_evaluations_per_second": 1.8665435927549274
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+              "prefix_cache_startup_seconds": 1.746945669001434,
+              "plan_reuse": {
+                "reused_bundles": 25,
+                "compiled_bundles": 1
+              },
+              "composite_bpb": 6.669877378931174,
+              "context_component": {
+                "fitness_bits_per_byte": 23.441644844904918,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 140.6498690694295,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    70.32493453471476,
+                    70.32493453471476
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.14748068500193767,
+                  "evaluation_seconds": 0.21533423999790102,
+                  "evaluations_per_second": 4.643943294897029,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.39262379499996314,
+                  "end_to_end_evaluations_per_second": 2.5469673838797617
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+                "prefix_cache_startup_seconds": 1.741500285002985,
+                "plan_reuse": {
+                  "reused_bundles": 25,
+                  "compiled_bundles": 1
+                }
+              }
+            },
+            {
+              "fitness_bits_per_byte": 0.7037216633880377,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 180.15274582733764,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  47.96613983457985,
+                  39.60903663570358,
+                  32.34801713675317,
+                  60.22955222030105
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.15981732499494683,
+                "evaluation_seconds": 0.39144375499745365,
+                "evaluations_per_second": 2.5546454304948742,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.5785131529992213,
+                "end_to_end_evaluations_per_second": 1.728569168765893
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+              "prefix_cache_startup_seconds": 1.7454584099978092,
+              "plan_reuse": {
+                "reused_bundles": 25,
+                "compiled_bundles": 1
+              },
+              "composite_bpb": 6.388202458767258,
+              "context_component": {
+                "fitness_bits_per_byte": 23.441644844904918,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 140.6498690694295,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    70.32493453471476,
+                    70.32493453471476
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.1485277350002434,
+                  "evaluation_seconds": 0.20137659600004554,
+                  "evaluations_per_second": 4.96582035779259,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.37784140699659474,
+                  "end_to_end_evaluations_per_second": 2.6466130537382115
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+                "prefix_cache_startup_seconds": 1.5553407699990203,
+                "plan_reuse": {
+                  "reused_bundles": 25,
+                  "compiled_bundles": 1
+                }
+              }
+            }
+          ],
+          "reserved_batch_slots": 4
+        },
+        "fitted_random": {
+          "lineage": {
+            "operator": "mixing_gate",
+            "seed": 94002,
+            "parent_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "donor_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "details": {
+              "definition": "step_root",
+              "node": "authored_residual",
+              "old": 0.0,
+              "new": 0.05,
+              "operator": "additive bounded gate including zero activation"
+            },
+            "gradient_estimator": false,
+            "child_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+            "scheduled_operator": "trunk_tile",
+            "operator_fallback_reason": "WB CSR trunk stays immutable; activate authored residual gate instead of unavailable legacy tiles"
+          },
+          "accepted_vs_parent": false,
+          "scores": [
+            {
+              "fitness_bits_per_byte": 1.0792882236065928,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 276.29778524328776,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  73.5365010640254,
+                  62.47437764318587,
+                  86.94115425612236,
+                  53.345752279954155
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.1430203670024639,
+                "evaluation_seconds": 0.3589775529981125,
+                "evaluations_per_second": 2.785689499658654,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.5357496090000495,
+                "end_to_end_evaluations_per_second": 1.8665435927549274
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+              "prefix_cache_startup_seconds": 1.746945669001434,
+              "plan_reuse": {
+                "reused_bundles": 25,
+                "compiled_bundles": 1
+              },
+              "composite_bpb": 6.669877378931174,
+              "context_component": {
+                "fitness_bits_per_byte": 23.441644844904918,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 140.6498690694295,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    70.32493453471476,
+                    70.32493453471476
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.14748068500193767,
+                  "evaluation_seconds": 0.21533423999790102,
+                  "evaluations_per_second": 4.643943294897029,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.39262379499996314,
+                  "end_to_end_evaluations_per_second": 2.5469673838797617
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+                "prefix_cache_startup_seconds": 1.741500285002985,
+                "plan_reuse": {
+                  "reused_bundles": 25,
+                  "compiled_bundles": 1
+                }
+              }
+            },
+            {
+              "fitness_bits_per_byte": 0.7037216633880377,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 180.15274582733764,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  47.96613983457985,
+                  39.60903663570358,
+                  32.34801713675317,
+                  60.22955222030105
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.15981732499494683,
+                "evaluation_seconds": 0.39144375499745365,
+                "evaluations_per_second": 2.5546454304948742,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.5785131529992213,
+                "end_to_end_evaluations_per_second": 1.728569168765893
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+              "prefix_cache_startup_seconds": 1.7454584099978092,
+              "plan_reuse": {
+                "reused_bundles": 25,
+                "compiled_bundles": 1
+              },
+              "composite_bpb": 6.388202458767258,
+              "context_component": {
+                "fitness_bits_per_byte": 23.441644844904918,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 140.6498690694295,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    70.32493453471476,
+                    70.32493453471476
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.1485277350002434,
+                  "evaluation_seconds": 0.20137659600004554,
+                  "evaluations_per_second": 4.96582035779259,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.37784140699659474,
+                  "end_to_end_evaluations_per_second": 2.6466130537382115
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+                "prefix_cache_startup_seconds": 1.5553407699990203,
+                "plan_reuse": {
+                  "reused_bundles": 25,
+                  "compiled_bundles": 1
+                }
+              }
+            }
+          ],
+          "reserved_batch_slots": 4
+        },
+        "founder_evolution": {
+          "lineage": {
+            "operator": "block_scale",
+            "seed": 94002,
+            "parent_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "donor_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "details": {
+              "parameter": "cl_words_open.v_we",
+              "start": 25,
+              "size": 6,
+              "factor": 1.125
+            },
+            "gradient_estimator": false,
+            "child_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+            "scheduled_operator": "trunk_tile",
+            "operator_fallback_reason": "no legacy fitted tiles; explicit authored expert block fallback"
+          },
+          "accepted_vs_parent": false,
+          "scores": [
+            {
+              "fitness_bits_per_byte": 2.271318357131137,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 581.4574994255711,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  149.56490198193688,
+                  139.9316185966997,
+                  161.7205526822304,
+                  130.24042616470413
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.2208638570009498,
+                "evaluation_seconds": 0.30079476600076305,
+                "evaluations_per_second": 3.3245259327333616,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.5383732660047826,
+                "end_to_end_evaluations_per_second": 1.857447356962774
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+              "prefix_cache_startup_seconds": 1.7524764139961917,
+              "plan_reuse": {
+                "reused_bundles": 25,
+                "compiled_bundles": 0
+              },
+              "composite_bpb": 6.032067734282508,
+              "context_component": {
+                "fitness_bits_per_byte": 17.31431586573662,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 103.88589519441973,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    51.942947597209866,
+                    51.942947597209866
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.10534220800036564,
+                  "evaluation_seconds": 0.167707540000265,
+                  "evaluations_per_second": 5.962761125697866,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.29043250100221485,
+                  "end_to_end_evaluations_per_second": 3.4431408211864483
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+                "prefix_cache_startup_seconds": 1.5926310240029125,
+                "plan_reuse": {
+                  "reused_bundles": 25,
+                  "compiled_bundles": 0
+                }
+              }
+            },
+            {
+              "fitness_bits_per_byte": 1.621582690109331,
+              "eligible_for_selection": true,
+              "next_byte": {
+                "content_bits": 415.12516866798876,
+                "content_bytes": 256,
+                "failed_documents": 0,
+                "eos_excluded": true,
+                "per_document_content_bits": [
+                  98.0547186230029,
+                  101.11154906027953,
+                  85.35869896494104,
+                  130.60020201976528
+                ],
+                "selection_unit": "selected UTF8 content bytes",
+                "full_content_bytes": 256
+              },
+              "timing": {
+                "startup_seconds": 0.11364854400017066,
+                "evaluation_seconds": 0.3202669780002907,
+                "evaluations_per_second": 3.1223949663617594,
+                "evaluated_bytes": 260,
+                "end_to_end_seconds": 0.4506423869970604,
+                "end_to_end_evaluations_per_second": 2.219054462816262
+              },
+              "cache_mode": "state_ancestor_cache_cold",
+              "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+              "prefix_cache_startup_seconds": 1.5624033779968158,
+              "plan_reuse": {
+                "reused_bundles": 25,
+                "compiled_bundles": 0
+              },
+              "composite_bpb": 5.544765984016154,
+              "context_component": {
+                "fitness_bits_per_byte": 17.31431586573662,
+                "eligible_for_selection": true,
+                "next_byte": {
+                  "content_bits": 103.88589519441973,
+                  "content_bytes": 6,
+                  "failed_documents": 0,
+                  "eos_excluded": true,
+                  "per_document_content_bits": [
+                    51.942947597209866,
+                    51.942947597209866
+                  ],
+                  "selection_unit": "selected UTF8 content bytes",
+                  "full_content_bytes": 168
+                },
+                "timing": {
+                  "startup_seconds": 0.10652709400164895,
+                  "evaluation_seconds": 0.17878284799371613,
+                  "evaluations_per_second": 5.593377727348588,
+                  "evaluated_bytes": 170,
+                  "end_to_end_seconds": 0.30936474399641156,
+                  "end_to_end_evaluations_per_second": 3.2324303897137012
+                },
+                "cache_mode": "state_ancestor_cache_cold",
+                "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+                "prefix_cache_startup_seconds": 1.623175484004605,
+                "plan_reuse": {
+                  "reused_bundles": 25,
+                  "compiled_bundles": 0
+                }
+              }
+            }
+          ],
+          "reserved_batch_slots": 4
+        }
+      },
+      "archive_parent_selection": {
+        "fitted": {
+          "index": 0,
+          "donor_index": 0,
+          "probabilities": [
+            0.55,
+            0.45
+          ],
+          "entry": {
+            "hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "performance": 6.437179770357411,
+            "novelty": 1.0,
+            "failed": false
+          }
+        },
+        "pure": {
+          "index": 0,
+          "donor_index": 0,
+          "probabilities": [
+            0.65,
+            0.35000000000000003
+          ],
+          "entry": {
+            "hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "performance": 5.788416859149331,
+            "novelty": 1.0,
+            "failed": false
+          }
+        }
+      }
+    }
+  ],
+  "evaluation_curve": [
+    {
+      "evaluation_index": 0,
+      "arm": "founder_baseline",
+      "step": 0,
+      "graph_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+      "cache_hit": false,
+      "seconds": 1.4748797669963096,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 2.271318357131137,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 581.4574994255711,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              149.56490198193688,
+              139.9316185966997,
+              161.7205526822304,
+              130.24042616470413
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.09792689199821325,
+            "evaluation_seconds": 0.3020294469970395,
+            "evaluations_per_second": 3.3109354400460234,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.4160618030000478,
+            "end_to_end_evaluations_per_second": 2.4034890797218535
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+          "prefix_cache_startup_seconds": 1.7524764139961917,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 0
+          },
+          "composite_bpb": 6.032067734282508,
+          "context_component": {
+            "fitness_bits_per_byte": 17.31431586573662,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 103.88589519441973,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                51.942947597209866,
+                51.942947597209866
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.0990842489991337,
+              "evaluation_seconds": 0.16932826000265777,
+              "evaluations_per_second": 5.905688749085971,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.2846016590046929,
+              "end_to_end_evaluations_per_second": 3.513682961291208
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "prefix_cache_startup_seconds": 1.5926310240029125,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 0
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 1.621582690109331,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 415.12516866798876,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              98.0547186230029,
+              101.11154906027953,
+              85.35869896494104,
+              130.60020201976528
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.17086109799856786,
+            "evaluation_seconds": 0.29316643699712586,
+            "evaluations_per_second": 3.4110316659809317,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.47984014100075,
+            "end_to_end_evaluations_per_second": 2.084027396946011
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+          "prefix_cache_startup_seconds": 1.5624033779968158,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 0
+          },
+          "composite_bpb": 5.544765984016154,
+          "context_component": {
+            "fitness_bits_per_byte": 17.31431586573662,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 103.88589519441973,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                51.942947597209866,
+                51.942947597209866
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.0995450320042437,
+              "evaluation_seconds": 0.1667051789991092,
+              "evaluations_per_second": 5.998613876329203,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.2817078509979183,
+              "end_to_end_evaluations_per_second": 3.549776821830179
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+            "prefix_cache_startup_seconds": 1.623175484004605,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "evaluation_index": 1,
+      "arm": "fitted_alone",
+      "step": 0,
+      "graph_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+      "cache_hit": false,
+      "seconds": 1.790969027999381,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 1.081929543951148,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 276.9739632514939,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              72.94269135997396,
+              63.39912798490105,
+              86.7892445532523,
+              53.842899353366576
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.1278574820025824,
+            "evaluation_seconds": 0.33676896499673603,
+            "evaluations_per_second": 2.9693947600239587,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.49090869700012263,
+            "end_to_end_evaluations_per_second": 2.0370386715714472
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+          "prefix_cache_startup_seconds": 1.746945669001434,
+          "plan_reuse": {
+            "reused_bundles": 26,
+            "compiled_bundles": 0
+          },
+          "composite_bpb": 6.574864683000734,
+          "context_component": {
+            "fitness_bits_per_byte": 23.053670100149493,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 138.32202060089696,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                69.16101030044848,
+                69.16101030044848
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.1319796759999008,
+              "evaluation_seconds": 0.1851717509998707,
+              "evaluations_per_second": 5.400391769264515,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.3429763520034612,
+              "end_to_end_evaluations_per_second": 2.9156529135568747
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "prefix_cache_startup_seconds": 1.741500285002985,
+            "plan_reuse": {
+              "reused_bundles": 26,
+              "compiled_bundles": 0
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 0.7147697769022873,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 182.98106288698554,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              48.89090027490192,
+              40.20645105504305,
+              33.47848676129037,
+              60.40522479575021
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.2174371510045603,
+            "evaluation_seconds": 0.34988833800161956,
+            "evaluations_per_second": 2.858054674561263,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.5930264210037421,
+            "end_to_end_evaluations_per_second": 1.6862655095660397
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+          "prefix_cache_startup_seconds": 1.7454584099978092,
+          "plan_reuse": {
+            "reused_bundles": 26,
+            "compiled_bundles": 0
+          },
+          "composite_bpb": 6.299494857714088,
+          "context_component": {
+            "fitness_bits_per_byte": 23.053670100149493,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 138.32202060089696,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                69.16101030044848,
+                69.16101030044848
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.13843504800024675,
+              "evaluation_seconds": 0.17910156000289135,
+              "evaluations_per_second": 5.583424287224837,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.34292982400074834,
+              "end_to_end_evaluations_per_second": 2.9160485032582577
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+            "prefix_cache_startup_seconds": 1.5553407699990203,
+            "plan_reuse": {
+              "reused_bundles": 26,
+              "compiled_bundles": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "evaluation_index": 2,
+      "arm": "fitted_evolution",
+      "step": 0,
+      "graph_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+      "cache_hit": false,
+      "seconds": 1.9496897270000773,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 1.081929543951148,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 276.9739632514939,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              72.94269135997396,
+              63.39912798490105,
+              86.7892445532523,
+              53.842899353366576
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.17989893200137885,
+            "evaluation_seconds": 0.32365681199735263,
+            "evaluations_per_second": 3.089692423986984,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.530323742001201,
+            "end_to_end_evaluations_per_second": 1.8856406394826941
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+          "prefix_cache_startup_seconds": 1.746945669001434,
+          "plan_reuse": {
+            "reused_bundles": 16,
+            "compiled_bundles": 10
+          },
+          "composite_bpb": 6.574864683000734,
+          "context_component": {
+            "fitness_bits_per_byte": 23.053670100149493,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 138.32202060089696,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                69.16101030044848,
+                69.16101030044848
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.14832544800447067,
+              "evaluation_seconds": 0.175578565998876,
+              "evaluations_per_second": 5.695456016005973,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.34986033300083363,
+              "end_to_end_evaluations_per_second": 2.8582834510639343
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+            "prefix_cache_startup_seconds": 1.741500285002985,
+            "plan_reuse": {
+              "reused_bundles": 16,
+              "compiled_bundles": 10
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 0.7147697769022873,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 182.98106288698554,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              48.89090027490192,
+              40.20645105504305,
+              33.47848676129037,
+              60.40522479575021
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.26427375899947947,
+            "evaluation_seconds": 0.377655614996911,
+            "evaluations_per_second": 2.6479150853037874,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.6679562849967624,
+            "end_to_end_evaluations_per_second": 1.497103960934879
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+          "prefix_cache_startup_seconds": 1.7454584099978092,
+          "plan_reuse": {
+            "reused_bundles": 16,
+            "compiled_bundles": 10
+          },
+          "composite_bpb": 6.299494857714088,
+          "context_component": {
+            "fitness_bits_per_byte": 23.053670100149493,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 138.32202060089696,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                69.16101030044848,
+                69.16101030044848
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.15837695100344718,
+              "evaluation_seconds": 0.19299477100139484,
+              "evaluations_per_second": 5.18148753363257,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.3774419549954473,
+              "end_to_end_evaluations_per_second": 2.6494140006562388
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+            "prefix_cache_startup_seconds": 1.5553407699990203,
+            "plan_reuse": {
+              "reused_bundles": 16,
+              "compiled_bundles": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "evaluation_index": 3,
+      "arm": "fitted_random",
+      "step": 0,
+      "graph_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+      "cache_hit": true,
+      "seconds": 1.8730061128735542e-06,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 1.081929543951148,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 276.9739632514939,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              72.94269135997396,
+              63.39912798490105,
+              86.7892445532523,
+              53.842899353366576
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.17989893200137885,
+            "evaluation_seconds": 0.32365681199735263,
+            "evaluations_per_second": 3.089692423986984,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.530323742001201,
+            "end_to_end_evaluations_per_second": 1.8856406394826941
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+          "prefix_cache_startup_seconds": 1.746945669001434,
+          "plan_reuse": {
+            "reused_bundles": 16,
+            "compiled_bundles": 10
+          },
+          "composite_bpb": 6.574864683000734,
+          "context_component": {
+            "fitness_bits_per_byte": 23.053670100149493,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 138.32202060089696,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                69.16101030044848,
+                69.16101030044848
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.14832544800447067,
+              "evaluation_seconds": 0.175578565998876,
+              "evaluations_per_second": 5.695456016005973,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.34986033300083363,
+              "end_to_end_evaluations_per_second": 2.8582834510639343
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+            "prefix_cache_startup_seconds": 1.741500285002985,
+            "plan_reuse": {
+              "reused_bundles": 16,
+              "compiled_bundles": 10
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 0.7147697769022873,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 182.98106288698554,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              48.89090027490192,
+              40.20645105504305,
+              33.47848676129037,
+              60.40522479575021
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.26427375899947947,
+            "evaluation_seconds": 0.377655614996911,
+            "evaluations_per_second": 2.6479150853037874,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.6679562849967624,
+            "end_to_end_evaluations_per_second": 1.497103960934879
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+          "prefix_cache_startup_seconds": 1.7454584099978092,
+          "plan_reuse": {
+            "reused_bundles": 16,
+            "compiled_bundles": 10
+          },
+          "composite_bpb": 6.299494857714088,
+          "context_component": {
+            "fitness_bits_per_byte": 23.053670100149493,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 138.32202060089696,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                69.16101030044848,
+                69.16101030044848
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.15837695100344718,
+              "evaluation_seconds": 0.19299477100139484,
+              "evaluations_per_second": 5.18148753363257,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.3774419549954473,
+              "end_to_end_evaluations_per_second": 2.6494140006562388
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "e4d6f2339b997557b145e1fc47e493558a6234032cee3d067196de7e1f2b300f",
+            "prefix_cache_startup_seconds": 1.5553407699990203,
+            "plan_reuse": {
+              "reused_bundles": 16,
+              "compiled_bundles": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "evaluation_index": 4,
+      "arm": "founder_evolution",
+      "step": 0,
+      "graph_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+      "cache_hit": false,
+      "seconds": 1.610325906003709,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 2.271259048509777,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 581.4423164185029,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              149.22141838571088,
+              139.8676588143583,
+              161.58178131929836,
+              130.77145789913536
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.1252661899998202,
+            "evaluation_seconds": 0.2914265459985472,
+            "evaluations_per_second": 3.431396397241674,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.4333299840000109,
+            "end_to_end_evaluations_per_second": 2.307710144516505
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+          "prefix_cache_startup_seconds": 1.7524764139961917,
+          "plan_reuse": {
+            "reused_bundles": 15,
+            "compiled_bundles": 10
+          },
+          "composite_bpb": 6.031976326996325,
+          "context_component": {
+            "fitness_bits_per_byte": 17.31412816245597,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 103.8847689747358,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                51.9423844873679,
+                51.9423844873679
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.12711431800562423,
+              "evaluation_seconds": 0.1664233100018464,
+              "evaluations_per_second": 6.0087736506917535,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.31642451300285757,
+              "end_to_end_evaluations_per_second": 3.1603114136450268
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+            "prefix_cache_startup_seconds": 1.5926310240029125,
+            "plan_reuse": {
+              "reused_bundles": 15,
+              "compiled_bundles": 10
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 1.6231644809118317,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 415.5301071134289,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              98.42277023491313,
+              100.6787966354421,
+              85.3801425752695,
+              131.04839766780427
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.13422295200143708,
+            "evaluation_seconds": 0.29476592499850085,
+            "evaluations_per_second": 3.392522388756726,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.4462915110052563,
+            "end_to_end_evaluations_per_second": 2.2406879255837384
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+          "prefix_cache_startup_seconds": 1.5624033779968158,
+          "plan_reuse": {
+            "reused_bundles": 15,
+            "compiled_bundles": 10
+          },
+          "composite_bpb": 5.5459054012978655,
+          "context_component": {
+            "fitness_bits_per_byte": 17.31412816245597,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 103.8847689747358,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                51.9423844873679,
+                51.9423844873679
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.22079022300022189,
+              "evaluation_seconds": 0.16420899399963673,
+              "evaluations_per_second": 6.089800416183125,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.4014270320039941,
+              "end_to_end_evaluations_per_second": 2.4911127559293273
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "ff362679ef2bc6c72d83827ba9dcf8b07ae9bdd19e98ac6766a15fe9964f1a9f",
+            "prefix_cache_startup_seconds": 1.623175484004605,
+            "plan_reuse": {
+              "reused_bundles": 15,
+              "compiled_bundles": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "evaluation_index": 5,
+      "arm": "fitted_evolution",
+      "step": 1,
+      "graph_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+      "cache_hit": false,
+      "seconds": 1.90683535199787,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 1.0792882236065928,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 276.29778524328776,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              73.5365010640254,
+              62.47437764318587,
+              86.94115425612236,
+              53.345752279954155
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.1430203670024639,
+            "evaluation_seconds": 0.3589775529981125,
+            "evaluations_per_second": 2.785689499658654,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.5357496090000495,
+            "end_to_end_evaluations_per_second": 1.8665435927549274
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+          "prefix_cache_startup_seconds": 1.746945669001434,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 1
+          },
+          "composite_bpb": 6.669877378931174,
+          "context_component": {
+            "fitness_bits_per_byte": 23.441644844904918,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 140.6498690694295,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                70.32493453471476,
+                70.32493453471476
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.14748068500193767,
+              "evaluation_seconds": 0.21533423999790102,
+              "evaluations_per_second": 4.643943294897029,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.39262379499996314,
+              "end_to_end_evaluations_per_second": 2.5469673838797617
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+            "prefix_cache_startup_seconds": 1.741500285002985,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 1
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 0.7037216633880377,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 180.15274582733764,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              47.96613983457985,
+              39.60903663570358,
+              32.34801713675317,
+              60.22955222030105
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.15981732499494683,
+            "evaluation_seconds": 0.39144375499745365,
+            "evaluations_per_second": 2.5546454304948742,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.5785131529992213,
+            "end_to_end_evaluations_per_second": 1.728569168765893
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+          "prefix_cache_startup_seconds": 1.7454584099978092,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 1
+          },
+          "composite_bpb": 6.388202458767258,
+          "context_component": {
+            "fitness_bits_per_byte": 23.441644844904918,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 140.6498690694295,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                70.32493453471476,
+                70.32493453471476
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.1485277350002434,
+              "evaluation_seconds": 0.20137659600004554,
+              "evaluations_per_second": 4.96582035779259,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.37784140699659474,
+              "end_to_end_evaluations_per_second": 2.6466130537382115
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+            "prefix_cache_startup_seconds": 1.5553407699990203,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "evaluation_index": 6,
+      "arm": "fitted_random",
+      "step": 1,
+      "graph_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+      "cache_hit": true,
+      "seconds": 2.5039989850483835e-06,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 1.0792882236065928,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 276.29778524328776,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              73.5365010640254,
+              62.47437764318587,
+              86.94115425612236,
+              53.345752279954155
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.1430203670024639,
+            "evaluation_seconds": 0.3589775529981125,
+            "evaluations_per_second": 2.785689499658654,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.5357496090000495,
+            "end_to_end_evaluations_per_second": 1.8665435927549274
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+          "prefix_cache_startup_seconds": 1.746945669001434,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 1
+          },
+          "composite_bpb": 6.669877378931174,
+          "context_component": {
+            "fitness_bits_per_byte": 23.441644844904918,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 140.6498690694295,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                70.32493453471476,
+                70.32493453471476
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.14748068500193767,
+              "evaluation_seconds": 0.21533423999790102,
+              "evaluations_per_second": 4.643943294897029,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.39262379499996314,
+              "end_to_end_evaluations_per_second": 2.5469673838797617
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+            "prefix_cache_startup_seconds": 1.741500285002985,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 1
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 0.7037216633880377,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 180.15274582733764,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              47.96613983457985,
+              39.60903663570358,
+              32.34801713675317,
+              60.22955222030105
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.15981732499494683,
+            "evaluation_seconds": 0.39144375499745365,
+            "evaluations_per_second": 2.5546454304948742,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.5785131529992213,
+            "end_to_end_evaluations_per_second": 1.728569168765893
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+          "prefix_cache_startup_seconds": 1.7454584099978092,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 1
+          },
+          "composite_bpb": 6.388202458767258,
+          "context_component": {
+            "fitness_bits_per_byte": 23.441644844904918,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 140.6498690694295,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                70.32493453471476,
+                70.32493453471476
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.1485277350002434,
+              "evaluation_seconds": 0.20137659600004554,
+              "evaluations_per_second": 4.96582035779259,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.37784140699659474,
+              "end_to_end_evaluations_per_second": 2.6466130537382115
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "bb9542627237e0ba1465c148d9619844f1eee642e19c6eeed7fd0d791bd914fb",
+            "prefix_cache_startup_seconds": 1.5553407699990203,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "evaluation_index": 7,
+      "arm": "founder_evolution",
+      "step": 1,
+      "graph_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+      "cache_hit": false,
+      "seconds": 1.6014593670042814,
+      "batches": [
+        {
+          "fitness_bits_per_byte": 2.271318357131137,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 581.4574994255711,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              149.56490198193688,
+              139.9316185966997,
+              161.7205526822304,
+              130.24042616470413
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.2208638570009498,
+            "evaluation_seconds": 0.30079476600076305,
+            "evaluations_per_second": 3.3245259327333616,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.5383732660047826,
+            "end_to_end_evaluations_per_second": 1.857447356962774
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+          "prefix_cache_startup_seconds": 1.7524764139961917,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 0
+          },
+          "composite_bpb": 6.032067734282508,
+          "context_component": {
+            "fitness_bits_per_byte": 17.31431586573662,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 103.88589519441973,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                51.942947597209866,
+                51.942947597209866
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.10534220800036564,
+              "evaluation_seconds": 0.167707540000265,
+              "evaluations_per_second": 5.962761125697866,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.29043250100221485,
+              "end_to_end_evaluations_per_second": 3.4431408211864483
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+            "prefix_cache_startup_seconds": 1.5926310240029125,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 0
+            }
+          }
+        },
+        {
+          "fitness_bits_per_byte": 1.621582690109331,
+          "eligible_for_selection": true,
+          "next_byte": {
+            "content_bits": 415.12516866798876,
+            "content_bytes": 256,
+            "failed_documents": 0,
+            "eos_excluded": true,
+            "per_document_content_bits": [
+              98.0547186230029,
+              101.11154906027953,
+              85.35869896494104,
+              130.60020201976528
+            ],
+            "selection_unit": "selected UTF8 content bytes",
+            "full_content_bytes": 256
+          },
+          "timing": {
+            "startup_seconds": 0.11364854400017066,
+            "evaluation_seconds": 0.3202669780002907,
+            "evaluations_per_second": 3.1223949663617594,
+            "evaluated_bytes": 260,
+            "end_to_end_seconds": 0.4506423869970604,
+            "end_to_end_evaluations_per_second": 2.219054462816262
+          },
+          "cache_mode": "state_ancestor_cache_cold",
+          "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+          "prefix_cache_startup_seconds": 1.5624033779968158,
+          "plan_reuse": {
+            "reused_bundles": 25,
+            "compiled_bundles": 0
+          },
+          "composite_bpb": 5.544765984016154,
+          "context_component": {
+            "fitness_bits_per_byte": 17.31431586573662,
+            "eligible_for_selection": true,
+            "next_byte": {
+              "content_bits": 103.88589519441973,
+              "content_bytes": 6,
+              "failed_documents": 0,
+              "eos_excluded": true,
+              "per_document_content_bits": [
+                51.942947597209866,
+                51.942947597209866
+              ],
+              "selection_unit": "selected UTF8 content bytes",
+              "full_content_bytes": 168
+            },
+            "timing": {
+              "startup_seconds": 0.10652709400164895,
+              "evaluation_seconds": 0.17878284799371613,
+              "evaluations_per_second": 5.593377727348588,
+              "evaluated_bytes": 170,
+              "end_to_end_seconds": 0.30936474399641156,
+              "end_to_end_evaluations_per_second": 3.2324303897137012
+            },
+            "cache_mode": "state_ancestor_cache_cold",
+            "model_hash": "886cf129c2aa0a6c18275846f69934b599f5946d1743b2c262ff61a661d6000a",
+            "prefix_cache_startup_seconds": 1.623175484004605,
+            "plan_reuse": {
+              "reused_bundles": 25,
+              "compiled_bundles": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "batch_evaluations": 24,
+  "evaluated_content_bytes": 5160,
+  "report_evaluations": 0,
+  "ledger_head": [
+    11,
+    "750bc9732e4c332db8cca170a056e6f8556ccfe17700b4875c30e898b94dce46"
+  ]
+}

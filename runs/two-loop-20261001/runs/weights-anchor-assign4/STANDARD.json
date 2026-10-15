@@ -1,0 +1,976 @@
+{
+  "arms": {
+    "llm": {},
+    "random": {}
+  },
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "seeds_declared_before_run": true,
+  "budget_per_arm": 9,
+  "charged_positions_per_arm": 1350,
+  "niches": [
+    "anchorassign"
+  ],
+  "founders": [
+    {
+      "hash": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "niche": "anchorassign",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "",
+      "weights_file": "llm-1701-1-0.json"
+    },
+    {
+      "hash": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "niche": "anchorassign",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "",
+      "weights_file": "llm-1702-1-2.json"
+    },
+    {
+      "hash": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "niche": "anchorassign",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "",
+      "weights_file": "llm-1703-1-4.json"
+    }
+  ],
+  "genomes": [
+    {
+      "hash": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "niche": "anchorassign",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1701-1-0.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "8b03ba1b7ecd60f462864511c7ff5d0a94a01cff1518ad977aeae724b437bf72",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-1-1.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "niche": "anchorassign",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1702-1-2.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "3b3e6a1d4eef73ccc755839a1874201186feb9a5c9beb43c82bee7340df75e91",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-1-3.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "niche": "anchorassign",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1703-1-4.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "5c2af52661a95aa59f33be32ce179e8433fa7739b1c0a9ccc2a58384d0f516b8",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-1-5.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "9cfee16ea31b149b593d2e403ac0b7376392d967e8f9f451a627ac25ceff5925",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-2-0.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "7dc7725e2557ce4f18a1b713861a27952a10e44622e92f40cdd3004712a45b73",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-2-1.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "9cfee16ea31b149b593d2e403ac0b7376392d967e8f9f451a627ac25ceff5925",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-2-2.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "5ce1c0496ada68c49c1288a957905a2b34d591cd17d7acf69ddf97ff9f37593c",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-2-3.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "9cfee16ea31b149b593d2e403ac0b7376392d967e8f9f451a627ac25ceff5925",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-2-4.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "3439d7a7a096739dd2bed411c00b8247cf21d1081d1de69e551ac05453c39578",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-2-5.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "01a07c1c1512c78b14ac426db4f7b446e06d72e69dc408a6eaf7321596dde0bf",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-3-0.json",
+      "accuracy": 0.0,
+      "generation": 3,
+      "arm": "llm"
+    },
+    {
+      "hash": "56eed53a0bfad367dd72e89c864febe8c2b6d84957daee316865e7a9d34c595f",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-3-1.json",
+      "accuracy": 0.0,
+      "generation": 3,
+      "arm": "random"
+    },
+    {
+      "hash": "0c5e078c06196f3cfc236f4d01f34940715a3a2a78b53dd2035cdd27da8e32e2",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-3-2.json",
+      "accuracy": 0.0,
+      "generation": 3,
+      "arm": "llm"
+    },
+    {
+      "hash": "9d27921866e04b28f878493bd04652a9cc3f9bf6fbf15e6a0e9869df046b84e4",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-3-3.json",
+      "accuracy": 0.0,
+      "generation": 3,
+      "arm": "random"
+    },
+    {
+      "hash": "6cf092c056641018225c259fb29e37aa64241b3dfe493549a93ccabf660edd69",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-3-4.json",
+      "accuracy": 0.0,
+      "generation": 3,
+      "arm": "llm"
+    },
+    {
+      "hash": "a2931922b83ab9a5a58d6f4425b283bdd448d55e4b8489ee7589feebf83962f9",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-3-5.json",
+      "accuracy": 0.0,
+      "generation": 3,
+      "arm": "random"
+    },
+    {
+      "hash": "d269f3eb7e07f9f9f6fa06094951530fad1083b1e671368e9201b1f4935f524b",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-4-0.json",
+      "accuracy": 0.0,
+      "generation": 4,
+      "arm": "llm"
+    },
+    {
+      "hash": "00e3ad2c6d8a81157133249cfea3b25e09fbb449138e97220d8e40fd3c2a9606",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-4-1.json",
+      "accuracy": 0.0,
+      "generation": 4,
+      "arm": "random"
+    },
+    {
+      "hash": "d269f3eb7e07f9f9f6fa06094951530fad1083b1e671368e9201b1f4935f524b",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-4-2.json",
+      "accuracy": 0.0,
+      "generation": 4,
+      "arm": "llm"
+    },
+    {
+      "hash": "a2a61b3b0510391ad2a4572e12297f3c194e78298d946631cede9f3d288dddb7",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-4-3.json",
+      "accuracy": 0.0,
+      "generation": 4,
+      "arm": "random"
+    },
+    {
+      "hash": "d269f3eb7e07f9f9f6fa06094951530fad1083b1e671368e9201b1f4935f524b",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-4-4.json",
+      "accuracy": 0.0,
+      "generation": 4,
+      "arm": "llm"
+    },
+    {
+      "hash": "bd0b35e7ad0fc4d61625db0b228aad159328e01ea9fdf5ddc50f962f698636cb",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-4-5.json",
+      "accuracy": 0.0,
+      "generation": 4,
+      "arm": "random"
+    },
+    {
+      "hash": "7b2a2f829679fe06748986faee3e40e43d33326a0ce96a0ebbeb0efdbc9931ea",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-5-0.json",
+      "accuracy": 0.0,
+      "generation": 5,
+      "arm": "llm"
+    },
+    {
+      "hash": "c10cced6bf5c5382ee0dce03419e90110d10e6885c594143159c92c20460ed47",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-5-1.json",
+      "accuracy": 0.0,
+      "generation": 5,
+      "arm": "random"
+    },
+    {
+      "hash": "7b2a2f829679fe06748986faee3e40e43d33326a0ce96a0ebbeb0efdbc9931ea",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-5-2.json",
+      "accuracy": 0.0,
+      "generation": 5,
+      "arm": "llm"
+    },
+    {
+      "hash": "15dcdbeb5bac65a94ebec5e28bbe08874fc4c9324076233812fe42b2bc3c4489",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-5-3.json",
+      "accuracy": 0.0,
+      "generation": 5,
+      "arm": "random"
+    },
+    {
+      "hash": "7b2a2f829679fe06748986faee3e40e43d33326a0ce96a0ebbeb0efdbc9931ea",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-5-4.json",
+      "accuracy": 0.0,
+      "generation": 5,
+      "arm": "llm"
+    },
+    {
+      "hash": "f23e861f8515c44d942f6ba540f3d810cf231aa4a9608acb19f69de4737297c6",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-5-5.json",
+      "accuracy": 0.0,
+      "generation": 5,
+      "arm": "random"
+    },
+    {
+      "hash": "c25e766f8c0cc0c4bed0abd1be9bc14be17cf9a4d432c118e289ba80ad5ea417",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-6-0.json",
+      "accuracy": 0.0,
+      "generation": 6,
+      "arm": "llm"
+    },
+    {
+      "hash": "28c1e19b5dd8d8143f0d5f84a2f3ee7bd54684aca542a710190b1789edef359b",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-6-1.json",
+      "accuracy": 0.0,
+      "generation": 6,
+      "arm": "random"
+    },
+    {
+      "hash": "c25e766f8c0cc0c4bed0abd1be9bc14be17cf9a4d432c118e289ba80ad5ea417",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-6-2.json",
+      "accuracy": 0.0,
+      "generation": 6,
+      "arm": "llm"
+    },
+    {
+      "hash": "9a87b5926356b242759282840fac879deb36f57183d68223d550619206b3ac90",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-6-3.json",
+      "accuracy": 0.0,
+      "generation": 6,
+      "arm": "random"
+    },
+    {
+      "hash": "c25e766f8c0cc0c4bed0abd1be9bc14be17cf9a4d432c118e289ba80ad5ea417",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-6-4.json",
+      "accuracy": 0.0,
+      "generation": 6,
+      "arm": "llm"
+    },
+    {
+      "hash": "13ce63e0150aea281ada1acde260dafa9f7532866f71fb43009c6169577393f3",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-6-5.json",
+      "accuracy": 0.0,
+      "generation": 6,
+      "arm": "random"
+    },
+    {
+      "hash": "51824680171776000888866d144ceee3c4ccb784c9fe9781baace95c1227f1d7",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-7-0.json",
+      "accuracy": 0.0,
+      "generation": 7,
+      "arm": "llm"
+    },
+    {
+      "hash": "f9b955de381ea362e65f0a408cf12673511ec9daef77e0650d57412bf55af81b",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-7-1.json",
+      "accuracy": 0.0,
+      "generation": 7,
+      "arm": "random"
+    },
+    {
+      "hash": "51824680171776000888866d144ceee3c4ccb784c9fe9781baace95c1227f1d7",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-7-2.json",
+      "accuracy": 0.0,
+      "generation": 7,
+      "arm": "llm"
+    },
+    {
+      "hash": "3338726281934ebca9b6b3a498b9f704a6607e8a243d30d0c90076b2b1bdd093",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-7-3.json",
+      "accuracy": 0.0,
+      "generation": 7,
+      "arm": "random"
+    },
+    {
+      "hash": "51824680171776000888866d144ceee3c4ccb784c9fe9781baace95c1227f1d7",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-7-4.json",
+      "accuracy": 0.0,
+      "generation": 7,
+      "arm": "llm"
+    },
+    {
+      "hash": "95f7dfa2b8fa89ba6bad2d4df27c45689e2df5c670fd297a1f00b54320717b47",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-7-5.json",
+      "accuracy": 0.0,
+      "generation": 7,
+      "arm": "random"
+    },
+    {
+      "hash": "b54a3d7d730a50200f98c7a159db4169cbd387b98ec0c2e7217125188f73d628",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-8-0.json",
+      "accuracy": 0.0,
+      "generation": 8,
+      "arm": "llm"
+    },
+    {
+      "hash": "6e8608523a9fc45193d0fad2926c9b33c7fffd2da47f83915089877ba78d19c9",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-8-1.json",
+      "accuracy": 0.0,
+      "generation": 8,
+      "arm": "random"
+    },
+    {
+      "hash": "b54a3d7d730a50200f98c7a159db4169cbd387b98ec0c2e7217125188f73d628",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-8-2.json",
+      "accuracy": 0.0,
+      "generation": 8,
+      "arm": "llm"
+    },
+    {
+      "hash": "271824d91d1f0707e89ad118a816391ee2186ae27e58bb9a38278bd716b48906",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-8-3.json",
+      "accuracy": 0.0,
+      "generation": 8,
+      "arm": "random"
+    },
+    {
+      "hash": "b54a3d7d730a50200f98c7a159db4169cbd387b98ec0c2e7217125188f73d628",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-8-4.json",
+      "accuracy": 0.0,
+      "generation": 8,
+      "arm": "llm"
+    },
+    {
+      "hash": "0dfa7bc021cbd090e4a2184686a12867d55eb3ac6ee89944a83094259cb9e16a",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-8-5.json",
+      "accuracy": 0.0,
+      "generation": 8,
+      "arm": "random"
+    },
+    {
+      "hash": "050af3b9bd2494cec8bfe1dac30595866256ab4d2339338bc6677e1e2641351d",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-9-0.json",
+      "accuracy": 1.0,
+      "generation": 9,
+      "arm": "llm"
+    },
+    {
+      "hash": "3c16c02681b8626bce44828faa65ee32d7a4ea6f29708e10091671568ebf9f00",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-9-1.json",
+      "accuracy": 0.0,
+      "generation": 9,
+      "arm": "random"
+    },
+    {
+      "hash": "050af3b9bd2494cec8bfe1dac30595866256ab4d2339338bc6677e1e2641351d",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-9-2.json",
+      "accuracy": 1.0,
+      "generation": 9,
+      "arm": "llm"
+    },
+    {
+      "hash": "5f8913bc9f62dec0cb275da98ee3e850da3e311ccbab58dfad735266ecac7177",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-9-3.json",
+      "accuracy": 0.0,
+      "generation": 9,
+      "arm": "random"
+    },
+    {
+      "hash": "050af3b9bd2494cec8bfe1dac30595866256ab4d2339338bc6677e1e2641351d",
+      "niche": "anchorassign",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-9-4.json",
+      "accuracy": 1.0,
+      "generation": 9,
+      "arm": "llm"
+    },
+    {
+      "hash": "6e752cf7dba686ad39737d5ca281e8d7734bc1927633aa66357436ce6e458010",
+      "niche": "anchorassign",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-9-5.json",
+      "accuracy": 0.0,
+      "generation": 9,
+      "arm": "random"
+    }
+  ],
+  "proposals": [
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "8b03ba1b7ecd60f462864511c7ff5d0a94a01cff1518ad977aeae724b437bf72",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "3b3e6a1d4eef73ccc755839a1874201186feb9a5c9beb43c82bee7340df75e91",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "a43afb9b187a0574a5c527d42cb4de22d897930cbc0356e74d0aad2a971f58a5",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "5c2af52661a95aa59f33be32ce179e8433fa7739b1c0a9ccc2a58384d0f516b8",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "9cfee16ea31b149b593d2e403ac0b7376392d967e8f9f451a627ac25ceff5925",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "7dc7725e2557ce4f18a1b713861a27952a10e44622e92f40cdd3004712a45b73",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "9cfee16ea31b149b593d2e403ac0b7376392d967e8f9f451a627ac25ceff5925",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "5ce1c0496ada68c49c1288a957905a2b34d591cd17d7acf69ddf97ff9f37593c",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "9cfee16ea31b149b593d2e403ac0b7376392d967e8f9f451a627ac25ceff5925",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "3439d7a7a096739dd2bed411c00b8247cf21d1081d1de69e551ac05453c39578",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "01a07c1c1512c78b14ac426db4f7b446e06d72e69dc408a6eaf7321596dde0bf",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "56eed53a0bfad367dd72e89c864febe8c2b6d84957daee316865e7a9d34c595f",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "0c5e078c06196f3cfc236f4d01f34940715a3a2a78b53dd2035cdd27da8e32e2",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "9d27921866e04b28f878493bd04652a9cc3f9bf6fbf15e6a0e9869df046b84e4",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "6cf092c056641018225c259fb29e37aa64241b3dfe493549a93ccabf660edd69",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "a2931922b83ab9a5a58d6f4425b283bdd448d55e4b8489ee7589feebf83962f9",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "d269f3eb7e07f9f9f6fa06094951530fad1083b1e671368e9201b1f4935f524b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "00e3ad2c6d8a81157133249cfea3b25e09fbb449138e97220d8e40fd3c2a9606",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "d269f3eb7e07f9f9f6fa06094951530fad1083b1e671368e9201b1f4935f524b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "a2a61b3b0510391ad2a4572e12297f3c194e78298d946631cede9f3d288dddb7",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "d269f3eb7e07f9f9f6fa06094951530fad1083b1e671368e9201b1f4935f524b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "bd0b35e7ad0fc4d61625db0b228aad159328e01ea9fdf5ddc50f962f698636cb",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "7b2a2f829679fe06748986faee3e40e43d33326a0ce96a0ebbeb0efdbc9931ea",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "c10cced6bf5c5382ee0dce03419e90110d10e6885c594143159c92c20460ed47",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "7b2a2f829679fe06748986faee3e40e43d33326a0ce96a0ebbeb0efdbc9931ea",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "15dcdbeb5bac65a94ebec5e28bbe08874fc4c9324076233812fe42b2bc3c4489",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "7b2a2f829679fe06748986faee3e40e43d33326a0ce96a0ebbeb0efdbc9931ea",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "f23e861f8515c44d942f6ba540f3d810cf231aa4a9608acb19f69de4737297c6",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "c25e766f8c0cc0c4bed0abd1be9bc14be17cf9a4d432c118e289ba80ad5ea417",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "28c1e19b5dd8d8143f0d5f84a2f3ee7bd54684aca542a710190b1789edef359b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "c25e766f8c0cc0c4bed0abd1be9bc14be17cf9a4d432c118e289ba80ad5ea417",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "9a87b5926356b242759282840fac879deb36f57183d68223d550619206b3ac90",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "c25e766f8c0cc0c4bed0abd1be9bc14be17cf9a4d432c118e289ba80ad5ea417",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "13ce63e0150aea281ada1acde260dafa9f7532866f71fb43009c6169577393f3",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "51824680171776000888866d144ceee3c4ccb784c9fe9781baace95c1227f1d7",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "f9b955de381ea362e65f0a408cf12673511ec9daef77e0650d57412bf55af81b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "51824680171776000888866d144ceee3c4ccb784c9fe9781baace95c1227f1d7",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "3338726281934ebca9b6b3a498b9f704a6607e8a243d30d0c90076b2b1bdd093",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "51824680171776000888866d144ceee3c4ccb784c9fe9781baace95c1227f1d7",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "95f7dfa2b8fa89ba6bad2d4df27c45689e2df5c670fd297a1f00b54320717b47",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "b54a3d7d730a50200f98c7a159db4169cbd387b98ec0c2e7217125188f73d628",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "6e8608523a9fc45193d0fad2926c9b33c7fffd2da47f83915089877ba78d19c9",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "b54a3d7d730a50200f98c7a159db4169cbd387b98ec0c2e7217125188f73d628",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "271824d91d1f0707e89ad118a816391ee2186ae27e58bb9a38278bd716b48906",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "b54a3d7d730a50200f98c7a159db4169cbd387b98ec0c2e7217125188f73d628",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "0dfa7bc021cbd090e4a2184686a12867d55eb3ac6ee89944a83094259cb9e16a",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "050af3b9bd2494cec8bfe1dac30595866256ab4d2339338bc6677e1e2641351d",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "3c16c02681b8626bce44828faa65ee32d7a4ea6f29708e10091671568ebf9f00",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "050af3b9bd2494cec8bfe1dac30595866256ab4d2339338bc6677e1e2641351d",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "5f8913bc9f62dec0cb275da98ee3e850da3e311ccbab58dfad735266ecac7177",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "050af3b9bd2494cec8bfe1dac30595866256ab4d2339338bc6677e1e2641351d",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "6e752cf7dba686ad39737d5ca281e8d7734bc1927633aa66357436ce6e458010",
+      "charged": true,
+      "outcome": "rejected"
+    }
+  ],
+  "scientific_acceptance": false,
+  "oracle": false,
+  "limitations": [
+    "BFCL-derived generated requests, not an official BFCL score",
+    "No ARC transfer or joint router/crossover result",
+    "Three maker seed entries share a prompt; not independent model draws"
+  ],
+  "module": "anchor_assign_skill",
+  "template": "anchor_assign4",
+  "positions": 50,
+  "proposal_counts_equal": true
+}

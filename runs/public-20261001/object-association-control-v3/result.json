@@ -1,0 +1,5148 @@
+{
+  "policy": {
+    "protocol": "context-memory-frozen-evidence/1",
+    "graph_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+    "stats": {
+      "unique_param_storage": 163,
+      "expanded_param_uses": 2973,
+      "nonzero_slots": 67,
+      "constant_slots_in_op_args": 41,
+      "cell_defs": 3,
+      "bundle_defs": 35,
+      "reachable_defs": 36,
+      "expanded_instances": 116,
+      "nesting_depth": 4,
+      "edges": 840,
+      "dispatch_nodes": 2,
+      "param_bytes_float64": 1304
+    },
+    "source_sha256": "dfdf79bc7e62c89511403bfed722fd267c910953d71d75c04106f99fbc34354c",
+    "native_manifest_sha256": "4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+    "family_sha256": "f6ff809b4a44bac7533b68c34d019527ecb466a7651c5ae48928b962b73b84df",
+    "synthetic_tasks": 300,
+    "synthetic_partition": "first200selection,last100validation;no selection or edits",
+    "audit_evaluations": 0,
+    "final_evaluations": 0,
+    "public_evaluation_loaded": false,
+    "model_edits": 0,
+    "gradients": false,
+    "limitations": "no explicit limitations metadata; frozen control graph"
+  },
+  "calibration": {
+    "tasks": 20,
+    "grid_shape": [
+      30,
+      30
+    ],
+    "demos_per_task": 3,
+    "wall_seconds": 0.2917097319950699,
+    "cpu_seconds": 0.291613121,
+    "tasks_per_second": 68.56130531955655
+  },
+  "rows": [
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 200,
+      "tasks_solved": 0,
+      "test_inputs": 200,
+      "test_inputs_correct": 0,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 0,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": null,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 2.958982052972715,
+      "inference_cpu_seconds": 2.9591687010000047,
+      "inference_cpu_seconds_per_task": 0.014795843505000024,
+      "tasks_per_second": 67.59081211698185,
+      "consistency_audit_wall_seconds": 8.827498137005023,
+      "consistency_audit_cpu_seconds": 8.827015021000001,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "task_records": [
+        {
+          "task_id": "0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "1",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "2",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "3",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "7",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "8",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "9",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "10",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "11",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "12",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "13",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "14",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "15",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "16",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "17",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "18",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "19",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "20",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "21",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "22",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "23",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "24",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "25",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "26",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "27",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "28",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "29",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "30",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "31",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "32",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "33",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "34",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "35",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "36",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "37",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "38",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "39",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "40",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "41",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "42",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "43",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "44",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "45",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "46",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "47",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "48",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "49",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "50",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "51",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "52",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "53",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "54",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "55",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "56",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "57",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "58",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "59",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "60",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "61",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "62",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "63",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "64",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "65",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "66",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "67",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "68",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "69",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "70",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "71",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "72",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "73",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "74",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "75",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "76",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "77",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "78",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "79",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "80",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "81",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "82",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "83",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "84",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "85",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "86",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "87",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "88",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "89",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "90",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "91",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "92",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "93",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "94",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "95",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "96",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "97",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "98",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "99",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "100",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "101",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "102",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "103",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "104",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "105",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "106",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "107",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "108",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "109",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "110",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "111",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "112",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "113",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "114",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "115",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "116",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "117",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "118",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "119",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "120",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "121",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "122",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "123",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "124",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "125",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "126",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "127",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "128",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "129",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "130",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "131",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "132",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "133",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "134",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "135",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "136",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "137",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "138",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "139",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "140",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "141",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "142",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "143",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "144",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "145",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "146",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "147",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "148",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "149",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "150",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "151",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "152",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "153",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "154",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "155",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "156",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "157",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "158",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "159",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "160",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "161",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "162",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "163",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "164",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "165",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "166",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "167",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "168",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "169",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "170",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "171",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "172",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "173",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "174",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "175",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "176",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "177",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "178",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "179",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "180",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "181",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "182",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "183",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "184",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "185",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "186",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "187",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "188",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "189",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "190",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "191",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "192",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "193",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "194",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "195",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "196",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "197",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "198",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "199",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        }
+      ],
+      "split": "original-synthetic-selection",
+      "peak_rss_bytes": 64245760
+    },
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 100,
+      "tasks_solved": 0,
+      "test_inputs": 100,
+      "test_inputs_correct": 0,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 0,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": null,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 1.3903921320161317,
+      "inference_cpu_seconds": 1.3904525609999983,
+      "inference_cpu_seconds_per_task": 0.013904525609999982,
+      "tasks_per_second": 71.9221561294334,
+      "consistency_audit_wall_seconds": 4.1468191730673425,
+      "consistency_audit_cpu_seconds": 4.146400422999998,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "task_records": [
+        {
+          "task_id": "200",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "201",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "202",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "203",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "204",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "205",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "206",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "207",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "208",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "209",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "210",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "211",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "212",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "213",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "214",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "215",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "216",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "217",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "218",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "219",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "220",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "221",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "222",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "223",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "224",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "225",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "226",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "227",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "228",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "229",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "230",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "231",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "232",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "233",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "234",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "235",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "236",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "237",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "238",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "239",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "240",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "241",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "242",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "243",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "244",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "245",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "246",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "247",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "248",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "249",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "250",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "251",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "252",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "253",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "254",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "255",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "256",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "257",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "258",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "259",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "260",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "261",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "262",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "263",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "264",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "265",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "266",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "267",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "268",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "269",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "270",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "271",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "272",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "273",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "274",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "275",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "276",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "277",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "278",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "279",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "280",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "281",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "282",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "283",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "284",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "285",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "286",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "287",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "288",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "289",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "290",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "291",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "292",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "293",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "294",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "295",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "296",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "297",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "298",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "299",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        }
+      ],
+      "split": "original-synthetic-validation",
+      "peak_rss_bytes": 64245760
+    },
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 200,
+      "tasks_solved": 3,
+      "test_inputs": 222,
+      "test_inputs_correct": 3,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 2,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": 0.0,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 3.426353370967263,
+      "inference_cpu_seconds": 3.426628493999992,
+      "inference_cpu_seconds_per_task": 0.01713314246999996,
+      "tasks_per_second": 58.37109554860064,
+      "consistency_audit_wall_seconds": 10.34781022703828,
+      "consistency_audit_cpu_seconds": 10.347070310999992,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "task_records": [
+        {
+          "task_id": "8b28cd80",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "cbded52d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "705a3229",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "7d18a6fb",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "0d3d703e",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "2bcee788",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "3428a4f5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "b527c5c6",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "67e8384a",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "b9b7f026",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "2281f1f4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "42a15761",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "320afe60",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "363442ee",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "48634b99",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f8be4b64",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "9a4bb226",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6d75e8bb",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "5ad8a7c0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "256b0a75",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "cf98881b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "eb281b96",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "543a7ed5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f9d67f8b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "56dc2b01",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ce4f8723",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "25d487eb",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "dae9d2b5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "c920a713",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "48f8583b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "36d67576",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "1190bc91",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e7639916",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d10ecb37",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "963e52fc",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "54dc2872",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "8fff9e47",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "007bbfb7",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d5d6de2d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "e133d23d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d631b094",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "b91ae062",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "b1986d4b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "9b2a60aa",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f8f52ecc",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "a1aa0c1e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "484b58aa",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "9f8de559",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f8ff0b80",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "80214e03",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "fc754716",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "996ec1f3",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "639f5a19",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e40b9e2f",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "9f5f939b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "63613498",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "8d510a79",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6430c8c4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "834ec97d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e681b708",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "97239e3d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e872b94a",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "212895b5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "cd3c21df",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d23f8c26",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "af726779",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "19bb5feb",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "9772c176",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "fcb5c309",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f18ec8cc",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "60a26a3e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "60b61512",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "dc1df850",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "73182012",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e345f17b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "45737921",
+          "solved": true,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "ac0c2ac3",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d2acf2cb",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "3d31c5b3",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "bd4472b8",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "5117e062",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "551d5bf1",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "0a1d4ef5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ac0a08a4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "dc433765",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "dc46ea44",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6d58a25d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "a8610ef7",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e21d9049",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "32e9702f",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "694f12f3",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "44d8ac46",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "bb43febb",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "b1fc8b8e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "1c0d0a4b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "178fcbfb",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "516b51b7",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ea32f347",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e7dd8335",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "868de0fa",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "8ba14f53",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "070dd51e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e21a174a",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "1f0c79e5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "14b8e18c",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d90796e8",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "2546ccf6",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f8cc533f",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "ce039d91",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "15113be4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "981add89",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "880c1354",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e45ef808",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "42f83767",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "fd02da9e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "baf41dbf",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "a834deea",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e729b7be",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e1d2900e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "1fad071e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "13f06aa5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "696d4842",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "84db8fc4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6ea4a07e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "4c5c2cf0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d43fd935",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "310f3251",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e4075551",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d492a647",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "31aa019c",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "4ff4c9da",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "4e45f183",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "3f7978a0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "1a07d186",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "760b3cac",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "11dc524f",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "5587a8d0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f341894c",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ac2e8ecf",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "82819916",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "bcb3040b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ded97339",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e74e1818",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "17829a00",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ad7e01d0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "aaef0977",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "7c8af763",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "c074846d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "e048c9ed",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "878187ab",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d4c90558",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e9614598",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "4938f0c2",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "4e469f39",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "bf699163",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "f0f8a26d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "12997ef3",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "508bd3b6",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "5b526a93",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "8efcae92",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "88207623",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "54d9e175",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e99362f0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "7d7772cc",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ad38a9d0",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "3ac3eb23",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "d5c634a2",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "2f767503",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "358ba94e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "538b439f",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "103eff5b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "b457fec5",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "292dd178",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6ecd11f4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "afe3afe9",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "e509e548",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "b1948b0a",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "dc2e9a9d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "642248e4",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "29700607",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "825aa9e9",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "55059096",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "8be77c9e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "5c0a986e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "a1570a43",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "9565186b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "396d80d7",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "58743b76",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "025d127b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "8618d23e",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "a61f2674",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "eb5a1d5d",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6ad5bdfd",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "00dbd492",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "6ffe8f07",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "1990f7a8",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "845d6e51",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "ff2825db",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false,
+            false
+          ]
+        },
+        {
+          "task_id": "b7256dcd",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "b15fca0b",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        }
+      ],
+      "split": "native-development",
+      "peak_rss_bytes": 64245760
+    }
+  ],
+  "ledger_verified": 6
+}

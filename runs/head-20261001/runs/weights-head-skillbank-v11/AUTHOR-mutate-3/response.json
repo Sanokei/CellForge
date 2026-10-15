@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. The transformation needs displacement distances and rotation, which no available key encodes. Even the nearest-colour key assigns identical keys to demonstration 1 cells (4,0) and (4,1), using zero-based coordinates, although their outputs differ. These tensors select the closest relevant key but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Use colour and enclosed-hole count together. The demonstrated 8-components with one hole become 7, those with three or four holes become 3, and those without holes become 2. Colour distinguishes the 1-components, which are erased."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No solution exists in this template; the tensors are retained as placeholders. Object recolouring cannot move the interior colours to previously empty exterior cells. Choosing another background cannot selectively recolour the connected exterior zeros into four isolated, differently coloured pixels."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No solution exists in this template; the tensors are retained as placeholders. In demonstration 2, zero-based cells (3,2) and (6,6) have identical own colours, four-neighbour colours, and neighbourhood colour counts and sets, but require outputs 8 and 0 respectively. Every available key therefore conflicts."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No solution exists in this template; the tensors are retained as placeholders. Recolouring follows paths beyond a local neighbourhood. Demonstration 3 contains differently labelled pixels with equal neighbourhood counts and sets, ruling out keys 0–4. Demonstration 1 cell (1,3) and demonstration 2 cell (1,2) have identical four-neighbour keys but require 9 and 8, ruling out key 5."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "Enable all nonzero source colours, including 8. However, no exact solution exists: the template has no intersection-colour rule. Source-colour painting cannot introduce absent colour 2, while fixed painting with 2 would incorrectly colour every ray cell."
+  }
+]

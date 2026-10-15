@@ -1,0 +1,99 @@
+{
+ "defs": {
+  "ng_cell": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ng.W1",
+    "b1": "ng.b1"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lg",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "ng_cell"
+    }
+   ],
+   "outputs": {
+    "logits": "lg",
+    "state": "$state"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "baseline": "2-gram counts add-k=0.1 on dev_train",
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "!",
+   "?",
+   "'",
+   "\"",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "ng.W1": {
+   "sha256": "45cda027b4e1a5c8876ab5be14110ceb57cc63abb44ab9924fab61cef4754a59",
+   "shape": [
+    36,
+    36
+   ]
+  },
+  "ng.b1": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  }
+ }
+}

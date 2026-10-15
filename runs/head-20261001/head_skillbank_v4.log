@@ -1,0 +1,30 @@
+{"stage": "baseline", "utc": "2026-10-01T21:12:06.599924+00:00", "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0}
+{"stage": "niche:gravity:gen1", "utc": "2026-10-01T21:12:23.233072+00:00", "submitted": 4, "eligible_total": 4, "patterns": 4, "fresh_transfer": 4, "charged_positions_per_arm": 56}
+{"stage": "niche:gravity", "utc": "2026-10-01T21:14:46.188855+00:00", "cells": 281, "depth2": 1, "arc_dev": 9, "arc_val": 15, "arc_report": 12, "arc_held_out": 27, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 4, "niche_patterns": 4, "charged_positions_per_arm": 56}
+{"stage": "niche:fillenc:gen1", "utc": "2026-10-01T21:14:53.370146+00:00", "submitted": 1, "pass_rate": 1.0, "fresh_pass_rate": 1.0, "charged_positions_per_arm": 12}
+{"stage": "niche:fillenc", "utc": "2026-10-01T21:14:54.565572+00:00", "cells": 282, "depth2": 1, "arc_dev": 9, "arc_val": 15, "arc_report": 12, "arc_held_out": 27, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 1, "best_pass_rate": 1.0, "charged_positions_per_arm": 12}
+{"stage": "niche:symmetry:gen1", "utc": "2026-10-01T21:15:28.226021+00:00", "submitted": 24, "eligible_total": 24, "patterns": 24, "fresh_transfer": 24, "charged_positions_per_arm": 336}
+{"stage": "niche:symmetry", "utc": "2026-10-01T21:15:33.182924+00:00", "cells": 306, "depth2": 1, "arc_dev": 9, "arc_val": 15, "arc_report": 14, "arc_held_out": 29, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 24, "niche_patterns": 24, "charged_positions_per_arm": 336}
+{"stage": "niche:scale:gen1", "utc": "2026-10-01T21:15:54.751748+00:00", "submitted": 8, "eligible_total": 8, "patterns": 8, "fresh_transfer": 8, "charged_positions_per_arm": 64}
+{"stage": "niche:scale", "utc": "2026-10-01T21:15:57.148970+00:00", "cells": 314, "depth2": 1, "arc_dev": 9, "arc_val": 16, "arc_report": 17, "arc_held_out": 33, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 8, "niche_patterns": 8, "charged_positions_per_arm": 64}
+{"stage": "niche:halfbool:gen1", "utc": "2026-10-01T21:16:43.981976+00:00", "submitted": 20, "eligible_total": 20, "patterns": 20, "fresh_transfer": 20, "charged_positions_per_arm": 560}
+{"stage": "niche:halfbool", "utc": "2026-10-01T21:16:46.829796+00:00", "cells": 334, "depth2": 1, "arc_dev": 9, "arc_val": 16, "arc_report": 17, "arc_held_out": 33, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 20, "niche_patterns": 20, "charged_positions_per_arm": 560}
+{"stage": "niche:denoise:gen1", "utc": "2026-10-01T21:17:10.167057+00:00", "submitted": 6, "eligible_total": 6, "patterns": 6, "fresh_transfer": 6, "charged_positions_per_arm": 96}
+{"stage": "niche:denoise", "utc": "2026-10-01T21:17:14.808272+00:00", "cells": 340, "depth2": 1, "arc_dev": 9, "arc_val": 16, "arc_report": 17, "arc_held_out": 33, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "niche_cells": 6, "niche_patterns": 6, "charged_positions_per_arm": 96}
+{"stage": "breed:round1", "utc": "2026-10-01T21:19:11.705136+00:00", "cells": 341, "depth2": 2, "arc_dev": 9, "arc_val": 17, "arc_report": 17, "arc_held_out": 34, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "pairs_evaluated": 98, "children_valid": 59, "children_admitted": 1, "children_rejected_no_arc_gain": 58, "random_chain_valid": 7}
+{"stage": "mutate:round1", "utc": "2026-10-01T21:20:17.253873+00:00", "cells": 341, "depth2": 2, "arc_dev": 9, "arc_val": 17, "arc_report": 17, "arc_held_out": 34, "baseline_dev": 0, "baseline_val": 1, "baseline_report": 0, "baseline_held_out": 1, "targets": 6, "mutations_tried": 1, "mutations_declined_structural": 5, "mutations_admitted": 0, "random_edits_that_would_gain": 0, "charged_positions_per_arm": 18}
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/head-20261001/head_driver.py", line 504, in <module>
+    main()
+  File "/srv/cellforge-inbox/head-20261001/head_driver.py", line 500, in main
+    d.run(a.rounds)
+  File "/srv/cellforge-inbox/head-20261001/head_driver.py", line 474, in run
+    rec = self.breed()
+          ^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/head-20261001/head_driver.py", line 345, in breed
+    tasks = self.composite_tasks(a, b, rng)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/head-20261001/head_driver.py", line 328, in composite_tasks
+    if max(len(y), len(y[0])) > 30 or y == mid or y == x:
+                       ~^^^
+IndexError: list index out of range

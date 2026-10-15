@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-08T04:51:17.681514+00:00",
+  "scope": "one no-tools infrastructure readiness test",
+  "model": "gpt-6.1-sol",
+  "reasoning": "low",
+  "sandbox": "read-only",
+  "auth": "existing ChatGPT login; API key variables stripped",
+  "prompt_sha256": "0e718815b3294584540160be7ca3a7c0403904564f5a1340b4925d219efe317c",
+  "cap_percent": 85,
+  "preflight_usage_percent": 13,
+  "command": [
+    "/root/.local/bin/codex",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "--json",
+    "-C",
+    "/srv/cellforge-inbox/readiness-20261008-0455",
+    "-o",
+    "/srv/cellforge-inbox/readiness-20261008-0455/response.txt",
+    "-"
+  ]
+}

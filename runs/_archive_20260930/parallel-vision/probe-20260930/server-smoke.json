@@ -1,0 +1,169 @@
+{
+  "protocol": "ocr-observation-development-smoke/1",
+  "final_data_accessed": false,
+  "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+  "font_sha256": "c805f9436dbc268644c1d9584f01a601a653e028e08fd74b9b949f6cf8304d88",
+  "probe_sha256": "94ab32e28d84f695b3151d8276d79e74bbe32438672bf70371d95efb2c748236",
+  "adapter_sha256": "c2abdd3e00dcbdbead367a1c1143b1700c843b86dd62a60e551e8c822d31f707",
+  "cases": [
+    {
+      "source_text": "0",
+      "prediction": {
+        "text": "0",
+        "token_ids": [
+          51
+        ],
+        "token_codec": "utf8-bytes/1",
+        "observation_kind": "image-conditioned-ocr-text",
+        "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+        "image_sha256": "04bd6064027cf85533d9469d625af77b785a4336ed9db03b6531358362e101c8",
+        "failure": null,
+        "exec": {
+          "node_execs": 101,
+          "macs": 659992,
+          "route_counts": {},
+          "peak_tensor_elements": 319488
+        }
+      },
+      "exact": true,
+      "scope": "in-vocabulary-digits"
+    },
+    {
+      "source_text": "7",
+      "prediction": {
+        "text": "7",
+        "token_ids": [
+          58
+        ],
+        "token_codec": "utf8-bytes/1",
+        "observation_kind": "image-conditioned-ocr-text",
+        "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+        "image_sha256": "49a36d02717272462be230a50cf18af370b4d53dbb7aa23b7e6d84e0e6c2da7c",
+        "failure": null,
+        "exec": {
+          "node_execs": 101,
+          "macs": 659992,
+          "route_counts": {},
+          "peak_tensor_elements": 319488
+        }
+      },
+      "exact": true,
+      "scope": "in-vocabulary-digits"
+    },
+    {
+      "source_text": "123",
+      "prediction": {
+        "text": "123",
+        "token_ids": [
+          52,
+          53,
+          54
+        ],
+        "token_codec": "utf8-bytes/1",
+        "observation_kind": "image-conditioned-ocr-text",
+        "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+        "image_sha256": "e2a7e40b428fb512cdbcec4a2473765f8947a04df33f61ad11925a36d8454d2a",
+        "failure": null,
+        "exec": {
+          "node_execs": 119,
+          "macs": 660304,
+          "route_counts": {},
+          "peak_tensor_elements": 319488
+        }
+      },
+      "exact": true,
+      "scope": "in-vocabulary-digits"
+    },
+    {
+      "source_text": "90817",
+      "prediction": {
+        "text": "90817",
+        "token_ids": [
+          60,
+          51,
+          59,
+          52,
+          58
+        ],
+        "token_codec": "utf8-bytes/1",
+        "observation_kind": "image-conditioned-ocr-text",
+        "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+        "image_sha256": "0f9120b98beca6386dcd5c900f31c39c4f90bcc873acee48ed92ab6cf8664a08",
+        "failure": null,
+        "exec": {
+          "node_execs": 137,
+          "macs": 660616,
+          "route_counts": {},
+          "peak_tensor_elements": 319488
+        }
+      },
+      "exact": true,
+      "scope": "in-vocabulary-digits"
+    },
+    {
+      "source_text": "42",
+      "prediction": {
+        "text": "42",
+        "token_ids": [
+          55,
+          53
+        ],
+        "token_codec": "utf8-bytes/1",
+        "observation_kind": "image-conditioned-ocr-text",
+        "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+        "image_sha256": "d9ba1f5eb5c96255a059f16229aae0662c77ff4449dcb68c0eb02f671e0acecd",
+        "failure": null,
+        "exec": {
+          "node_execs": 110,
+          "macs": 660148,
+          "route_counts": {},
+          "peak_tensor_elements": 319488
+        }
+      },
+      "exact": true,
+      "scope": "in-vocabulary-digits"
+    },
+    {
+      "source_text": "hello",
+      "prediction": {
+        "text": "50115",
+        "token_ids": [
+          56,
+          51,
+          52,
+          52,
+          56
+        ],
+        "token_codec": "utf8-bytes/1",
+        "observation_kind": "image-conditioned-ocr-text",
+        "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+        "image_sha256": "21e1c46aa57b93a025d33f57fba19286e7e7e2d24602dc19b2b8a96102d55bf4",
+        "failure": null,
+        "exec": {
+          "node_execs": 137,
+          "macs": 660616,
+          "route_counts": {},
+          "peak_tensor_elements": 319488
+        }
+      },
+      "exact": false,
+      "scope": "out-of-vocabulary-negative-control"
+    }
+  ],
+  "blank_negative_control": {
+    "text": "",
+    "token_ids": [],
+    "token_codec": "utf8-bytes/1",
+    "observation_kind": "image-conditioned-ocr-text",
+    "graph_hash": "54e3934a83b456c05dca697b72a1a14ec469536f5df5e3d1f1cd003b75c65c3a",
+    "image_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+    "failure": null,
+    "exec": {
+      "node_execs": 92,
+      "macs": 659836,
+      "route_counts": {},
+      "peak_tensor_elements": 319488
+    }
+  },
+  "limitation": "Frozen digit OCR; text observations are not learned image embeddings or evidence of general vision/LLM reasoning."
+}

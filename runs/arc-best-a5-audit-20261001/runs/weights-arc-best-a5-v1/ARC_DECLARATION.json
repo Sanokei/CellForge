@@ -1,0 +1,64 @@
+{
+  "schema": "arc-frozen-checkpoint-audit/1",
+  "checkpoints": [
+    {
+      "iteration": 1,
+      "weights_file": "iteration-1-weights.json",
+      "template": "template-1.json",
+      "weights_hash": "55520c00ee566e12c87c52f0adc56daaf2edafd417f2b3aa462e4c6e37fa11e0",
+      "graph_hash": "faf95f2c160173c9581e8e1055caa73248c3ab75423efb195ac4020228550210",
+      "file_sha256": "49143c8930505e65338c4e476df3449357f7582bfec1901e73750621c1254130",
+      "source_run": "runs/priority-a-batch01-v1"
+    },
+    {
+      "iteration": 2,
+      "weights_file": "iteration-2-weights.json",
+      "template": "template-2.json",
+      "weights_hash": "55520c00ee566e12c87c52f0adc56daaf2edafd417f2b3aa462e4c6e37fa11e0",
+      "graph_hash": "faf95f2c160173c9581e8e1055caa73248c3ab75423efb195ac4020228550210",
+      "file_sha256": "49143c8930505e65338c4e476df3449357f7582bfec1901e73750621c1254130",
+      "source_run": "runs/priority-a-batch02-v1"
+    },
+    {
+      "iteration": 3,
+      "weights_file": "iteration-3-weights.json",
+      "template": "template-3.json",
+      "weights_hash": "55520c00ee566e12c87c52f0adc56daaf2edafd417f2b3aa462e4c6e37fa11e0",
+      "graph_hash": "faf95f2c160173c9581e8e1055caa73248c3ab75423efb195ac4020228550210",
+      "file_sha256": "49143c8930505e65338c4e476df3449357f7582bfec1901e73750621c1254130",
+      "source_run": "runs/priority-a-batch03-v1"
+    },
+    {
+      "iteration": 4,
+      "weights_file": "iteration-4-weights.json",
+      "template": "template-4.json",
+      "weights_hash": "283ae1df91984d1cc5ec559d607fa4ead335c353023878e5e53fc81c3ac9ab99",
+      "graph_hash": "a7c98093cc44841663e1a05955ea0a2dd3d5b623d7cd529d082318eb38d5e6e2",
+      "file_sha256": "78093f296d112f0b20f3252fadf55fb18e1abd8ca72de5b0082f20470ce58069",
+      "source_run": "runs/priority-a-batch04-v1"
+    },
+    {
+      "iteration": 5,
+      "weights_file": "iteration-5-weights.json",
+      "template": "template-5.json",
+      "weights_hash": "283ae1df91984d1cc5ec559d607fa4ead335c353023878e5e53fc81c3ac9ab99",
+      "graph_hash": "a7c98093cc44841663e1a05955ea0a2dd3d5b623d7cd529d082318eb38d5e6e2",
+      "file_sha256": "78093f296d112f0b20f3252fadf55fb18e1abd8ca72de5b0082f20470ce58069",
+      "source_run": "runs/priority-a-batch05-v1"
+    }
+  ],
+  "task_cohort_sha256": "4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+  "random_seeds": [
+    730101,
+    730102,
+    730103
+  ],
+  "random_vocab": {
+    "low": -9,
+    "high": 9,
+    "positions": "every stored scalar, same topology and shapes"
+  },
+  "cohort": "same existing declared DEV200 as original admission; sorted SHA256(ID), modulo5 nonzero; no evaluation split",
+  "selection": "checkpoint selected before this score; lowest predeclared context 775101, no score-based selection",
+  "purpose": "measure existing weights and actual completed iteration history, not a new evolutionary generation"
+}

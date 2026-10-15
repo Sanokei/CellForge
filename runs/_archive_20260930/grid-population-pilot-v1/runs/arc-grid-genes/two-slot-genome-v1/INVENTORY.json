@@ -1,0 +1,267 @@
+{
+  "protocol": "two-slot-genome-inventory/1",
+  "artifacts": [
+    {
+      "name": "base",
+      "hash": "5d0d8ce9787ab85b3e9016835288af756d29d95644e160b4f1968d70992a47c4",
+      "genome": {
+        "protocol": "fixed-two-slot-genome/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "bbox.geometry",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "bf8d07585183fb77f6ca5b4311cfddea3aa39a9992f5d048f28ed15dcd2c85c2",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim"
+      },
+      "stats": {
+        "unique_param_storage": 195,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 70,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 5,
+        "bundle_defs": 37,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1560
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8",
+          "expert_9"
+        ]
+      }
+    },
+    {
+      "name": "parent-fill-identity",
+      "hash": "4c26393ad5b3aa468e25f0b4ccb4f3ccfac7062088220e86012365acfa8d1c5f",
+      "genome": {
+        "protocol": "fixed-two-slot-genome/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "bank_local_fill.gene",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "bf8d07585183fb77f6ca5b4311cfddea3aa39a9992f5d048f28ed15dcd2c85c2",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "parent_hashes": [
+          "5d0d8ce9787ab85b3e9016835288af756d29d95644e160b4f1968d70992a47c4"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate declared alleles"
+      },
+      "stats": {
+        "unique_param_storage": 195,
+        "expanded_param_uses": 2787,
+        "nonzero_slots": 70,
+        "constant_slots_in_op_args": 29,
+        "cell_defs": 5,
+        "bundle_defs": 37,
+        "reachable_defs": 36,
+        "expanded_instances": 110,
+        "nesting_depth": 4,
+        "edges": 765,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1560
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8",
+          "expert_9"
+        ]
+      }
+    },
+    {
+      "name": "parent-identity-adjacency",
+      "hash": "3c4f6e3c6010655cf4ea769fd393667b13d6108b4d3ae9b42c3ff5cdc6076e73",
+      "genome": {
+        "protocol": "fixed-two-slot-genome/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "geometry_0",
+          "bank_adjacency_recolor.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "bf8d07585183fb77f6ca5b4311cfddea3aa39a9992f5d048f28ed15dcd2c85c2",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "parent_hashes": [
+          "5d0d8ce9787ab85b3e9016835288af756d29d95644e160b4f1968d70992a47c4"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate declared alleles"
+      },
+      "stats": {
+        "unique_param_storage": 195,
+        "expanded_param_uses": 2850,
+        "nonzero_slots": 70,
+        "constant_slots_in_op_args": 29,
+        "cell_defs": 5,
+        "bundle_defs": 37,
+        "reachable_defs": 37,
+        "expanded_instances": 113,
+        "nesting_depth": 4,
+        "edges": 761,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1560
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8",
+          "expert_9"
+        ]
+      }
+    },
+    {
+      "name": "child-fill-adjacency",
+      "hash": "512fe48b836de2eb73ba1814d4da3f0d9b4b4736ab177a1427405fe033cecdb1",
+      "genome": {
+        "protocol": "fixed-two-slot-genome/1",
+        "slots": [
+          "slot8_geometry",
+          "slot9_geometry"
+        ],
+        "alleles": [
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene"
+        ],
+        "founder_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+        "recolor_donor_hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+        "import_def_lineage": [
+          "bank_adjacency_recolor.source",
+          "bank_adjacency_recolor.marker",
+          "bank_adjacency_recolor.gene"
+        ],
+        "builder_sha256": "bf8d07585183fb77f6ca5b4311cfddea3aa39a9992f5d048f28ed15dcd2c85c2",
+        "scope": "fixed shared authored bank; homologous-slot recombination only; no efficacy/LLM advantage claim",
+        "parent_hashes": [
+          "4c26393ad5b3aa468e25f0b4ccb4f3ccfac7062088220e86012365acfa8d1c5f",
+          "3c4f6e3c6010655cf4ea769fd393667b13d6108b4d3ae9b42c3ff5cdc6076e73"
+        ],
+        "operator_seed": null,
+        "operator": "explicit complementary homologous crossover",
+        "donor_per_slot": [
+          0,
+          1
+        ]
+      },
+      "stats": {
+        "unique_param_storage": 195,
+        "expanded_param_uses": 2883,
+        "nonzero_slots": 70,
+        "constant_slots_in_op_args": 30,
+        "cell_defs": 5,
+        "bundle_defs": 37,
+        "reachable_defs": 38,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 788,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1560
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8",
+          "expert_9"
+        ]
+      }
+    }
+  ],
+  "benchmark_tasks_read": 0,
+  "efficacy_measured": false
+}

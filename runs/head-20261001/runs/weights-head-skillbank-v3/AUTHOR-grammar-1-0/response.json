@@ -1,0 +1,12 @@
+[
+  {"task_id":"grammar-l1-12","params":{"lang":[0,1,0,0,0,0],"open":[0,0,0,0,0,0,0,0,0,0],"close":[0,0,0,0,0,0,0,0,0,0]},"rationale":"Palindrome: [6,1,2,1,6] is accepted; [6,5,1,5] is rejected."},
+  {"task_id":"grammar-l2-34","params":{"lang":[0,0,1,0,0,0],"open":[0,0,0,1,0,0,0,0,0,0],"close":[0,0,0,0,1,0,0,0,0,0]},"rationale":"Equal nonempty runs of 3 then 4: [3,4] and [3,3,4,4] are accepted; [3,4,4,3] is rejected."},
+  {"task_id":"grammar-l0-12","params":{"lang":[1,0,0,0,0,0],"open":[0,1,0,0,0,0,0,0,0,0],"close":[0,0,1,0,0,0,0,0,0,0]},"rationale":"Balanced brackets with open 1 and close 2: [1,1,2,2,1,2] is accepted; [1,2,2,2] is rejected."},
+  {"task_id":"grammar-l3-12","params":{"lang":[0,0,0,1,0,0],"open":[0,1,0,0,0,0,0,0,0,0],"close":[0,0,0,0,0,0,0,0,0,0]},"rationale":"Even count of 1: [6,6,2,5] has zero and is accepted; [5,1,2,6,6,1,2,1] has three and is rejected."},
+  {"task_id":"grammar-l5-12","params":{"lang":[0,0,0,0,0,1],"open":[0,0,0,0,0,0,0,0,0,0],"close":[0,0,0,0,0,0,0,0,0,0]},"rationale":"All tokens equal: [1,1] and [5,5,5,5,5] are accepted; [6,1,1,6] is rejected."},
+  {"task_id":"grammar-l2-12","params":{"lang":[0,0,1,0,0,0],"open":[0,1,0,0,0,0,0,0,0,0],"close":[0,0,1,0,0,0,0,0,0,0]},"rationale":"Equal nonempty runs of 1 then 2: [1,1,1,2,2,2] and [1,2] are accepted; [2,2,2,2] is rejected."},
+  {"task_id":"grammar-l0-34","params":{"lang":[1,0,0,0,0,0],"open":[0,0,0,1,0,0,0,0,0,0],"close":[0,0,0,0,1,0,0,0,0,0]},"rationale":"Balanced brackets with open 3 and close 4: [3,3,4,3,4,4] is accepted; [3,4,4,3,4,4] is rejected."},
+  {"task_id":"grammar-l1-34","params":{"lang":[0,1,0,0,0,0],"open":[0,0,0,0,0,0,0,0,0,0],"close":[0,0,0,0,0,0,0,0,0,0]},"rationale":"Palindrome: [3,6,5,4,5,6,3] and [5,6,6,5] are accepted; [5,3,6,5] is rejected."},
+  {"task_id":"grammar-l4-34","params":{"lang":[0,0,0,0,1,0],"open":[0,0,0,1,0,0,0,0,0,0],"close":[0,0,0,0,1,0,0,0,0,0]},"rationale":"Contains adjacent 3 then 4: [3,6,3,4] is accepted; [3,5,5,4,3,3,6,3] is rejected."},
+  {"task_id":"grammar-l5-34","params":{"lang":[0,0,0,0,0,1],"open":[0,0,0,0,0,0,0,0,0,0],"close":[0,0,0,0,0,0,0,0,0,0]},"rationale":"All tokens equal: [4,4,4,4,4,4] and [3,3,3,3] are accepted; [5,4,4,4,4,5] is rejected."}
+]

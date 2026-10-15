@@ -1,0 +1,8 @@
+[
+  {"task_id":"seqcrop-m0","params":{"mask":[9,0,0,0,0,0,0,0,0,0],"maxp":[0,0,9,0,0,0,0,0]},"rationale":"Colour 0 hides each rectangle. Demonstration 1 repeats every 2 rows and 3 columns; demonstrations 2 and 3 require row period 3. Completing and cropping the zeros gives the shown outputs."},
+  {"task_id":"seqcrop-m1","params":{"mask":[0,9,0,0,0,0,0,0,0,0],"maxp":[0,9,0,0,0,0,0,0]},"rationale":"Colour 1 hides each rectangle. Demonstrations 1 and 2 have periods 2 by 2; demonstration 3 has periods 1 by 2 and restores two rows of [5,4,5]."},
+  {"task_id":"seqcrop-m2","params":{"mask":[0,0,9,0,0,0,0,0,0,0],"maxp":[0,0,9,0,0,0,0,0]},"rationale":"Colour 2 hides each rectangle. Demonstration 1 has periods 3 by 3, demonstration 2 has periods 3 by 2, and demonstration 3 has periods 2 by 2; cropping the completed twos matches each output."},
+  {"task_id":"seqcrop-m3","params":{"mask":[0,0,0,9,0,0,0,0,0,0],"maxp":[0,0,9,0,0,0,0,0]},"rationale":"Colour 3 hides each rectangle. Demonstration 1 requires row period 3 and column period 2; demonstration 3 requires column period 3 and restores [6,1] above [4,4]."},
+  {"task_id":"seqcrop-m4","params":{"mask":[0,0,0,0,9,0,0,0,0,0],"maxp":[0,0,9,0,0,0,0,0]},"rationale":"Colour 4 hides each rectangle. Demonstrations 1 and 3 repeat every 3 rows and 3 columns; demonstration 2 repeats every 2 rows and 3 columns and restores two rows of [5,6]."},
+  {"task_id":"seqcrop-m5","params":{"mask":[0,0,0,0,0,9,0,0,0,0],"maxp":[0,0,9,0,0,0,0,0]},"rationale":"Colour 5 hides each rectangle. Demonstration 1 has periods 3 by 3, demonstration 2 has periods 2 by 2, and demonstration 3 has periods 2 by 3, restoring alternating [3,4,3,3] and [1,3,6,1]."}
+]

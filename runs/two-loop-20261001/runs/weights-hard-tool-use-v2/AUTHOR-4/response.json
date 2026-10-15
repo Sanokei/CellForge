@@ -1,0 +1,29 @@
+[
+  {
+    "task_id": "1701",
+    "params": {
+      "route": [2, 9, 0, 0],
+      "bind": [9, 8, -1, 9],
+      "type": [[7, 3, -7, -7], [3, 7, -7, -7], [-7, -7, 7, -7], [-7, -7, -7, 7]]
+    },
+    "rationale": "Increase name overlap to favor compound interest over future value. Prioritize binding descriptions and labels; penalize ordinal matches to resolve the observed reversed-order ties. Preserve type conversion."
+  },
+  {
+    "task_id": "1702",
+    "params": {
+      "route": [2, 9, 0, 0],
+      "bind": [9, 8, -1, 9],
+      "type": [[7, 3, -7, -7], [3, 7, -7, -7], [-7, -7, 7, -7], [-7, -7, -7, 7]]
+    },
+    "rationale": "Identical evidence supports stronger tool-name routing and a negative ordinal tie-break for shuffled arguments, while retaining label, description, and type preferences."
+  },
+  {
+    "task_id": "1703",
+    "params": {
+      "route": [2, 9, 0, 0],
+      "bind": [9, 8, -1, 9],
+      "type": [[7, 3, -7, -7], [3, 7, -7, -7], [-7, -7, 7, -7], [-7, -7, -7, 7]]
+    },
+    "rationale": "Favor discriminating tool names and remove the positive positional bias responsible for the location and paint swaps. Keep each required type as its conversion row's argmax."
+  }
+]

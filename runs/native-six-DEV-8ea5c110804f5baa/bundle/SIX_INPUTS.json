@@ -1,0 +1,434 @@
+[
+  {
+    "function": [
+      {
+        "description": "Calculate the final temperature when different quantities of the same gas at different temperatures are mixed.",
+        "name": "calculate_final_temperature",
+        "parameters": {
+          "properties": {
+            "quantity1": {
+              "description": "The quantity of the first sample of gas.",
+              "type": "integer"
+            },
+            "quantity2": {
+              "description": "The quantity of the second sample of gas.",
+              "type": "integer"
+            },
+            "temperature1": {
+              "description": "The temperature of the first sample of gas.",
+              "type": "integer"
+            },
+            "temperature2": {
+              "description": "The temperature of the second sample of gas.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "quantity1",
+            "temperature1",
+            "quantity2",
+            "temperature2"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "Calculate the mass of a gas given its quantity and molar mass.",
+        "name": "calculate_mass",
+        "parameters": {
+          "properties": {
+            "molar_mass": {
+              "description": "The molar mass of the gas.",
+              "type": "integer"
+            },
+            "quantity": {
+              "description": "The quantity of the gas.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "quantity",
+            "molar_mass"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "id": "multiple_42",
+    "question": [
+      [
+        {
+          "content": "Calculate the final temperature when 2 moles of gas at 300 K are mixed with 3 moles of the same gas at 400 K.",
+          "role": "user"
+        }
+      ]
+    ]
+  },
+  {
+    "function": [
+      {
+        "description": "Determines the best route between two points.",
+        "name": "route_planner.calculate_route",
+        "parameters": {
+          "properties": {
+            "destination": {
+              "description": "The destination of the journey.",
+              "type": "string"
+            },
+            "method": {
+              "default": "fastest",
+              "description": "The method to use when calculating the route (default is 'fastest').",
+              "enum": [
+                "fastest",
+                "shortest",
+                "balanced"
+              ],
+              "type": "string"
+            },
+            "start": {
+              "description": "The starting point of the journey.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "start",
+            "destination"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "Provides details about a chess club, including location.",
+        "name": "chess_club_details.find",
+        "parameters": {
+          "properties": {
+            "city": {
+              "description": "The city in which the chess club is located.",
+              "type": "string"
+            },
+            "event": {
+              "default": "null",
+              "description": "The event hosted by the club.",
+              "type": "string"
+            },
+            "name": {
+              "description": "The name of the chess club.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "city"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "id": "multiple_24",
+    "question": [
+      [
+        {
+          "content": "What is the fastest route from London to Edinburgh for playing a chess championship? Also provide an estimate of the distance.",
+          "role": "user"
+        }
+      ]
+    ]
+  },
+  {
+    "function": [
+      {
+        "description": "Retrieve case details using a specific case docket number and court location.",
+        "name": "get_case_info",
+        "parameters": {
+          "properties": {
+            "court": {
+              "description": "Court in which the case was heard.",
+              "type": "string"
+            },
+            "docket": {
+              "description": "Docket number for the specific court case.",
+              "type": "string"
+            },
+            "info_type": {
+              "description": "Specify the information type needed for the case. i.e., victim, accused, verdict etc.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "docket",
+            "court",
+            "info_type"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "Calculate the area of a triangle given its base and height.",
+        "name": "calculate_triangle_area",
+        "parameters": {
+          "properties": {
+            "base": {
+              "description": "The base of the triangle.",
+              "type": "float"
+            },
+            "height": {
+              "description": "The height of the triangle.",
+              "type": "float"
+            },
+            "unit": {
+              "description": "The unit of measure (defaults to 'units' if not specified)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base",
+            "height"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "id": "multiple_135",
+    "question": [
+      [
+        {
+          "content": "Who was the victim in the case docket numbered 2022/AL2562 in California?",
+          "role": "user"
+        }
+      ]
+    ]
+  },
+  {
+    "function": [
+      {
+        "description": "This function is for playing a sound wave file.",
+        "name": "play_sound_wave",
+        "parameters": {
+          "properties": {
+            "volume": {
+              "default": 1,
+              "description": "The volume level at which the sound is to be played (1 is 100%).",
+              "type": "float"
+            },
+            "wave_file": {
+              "description": "The filename of the sound wave file to be played.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "wave_file"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "This function is for generating a sinusoidal sound wave file of a certain frequency for a specific duration and save it to a WAV file.",
+        "name": "generate_sound_wave",
+        "parameters": {
+          "properties": {
+            "duration": {
+              "description": "The duration of the sound in seconds.",
+              "type": "integer"
+            },
+            "frequency": {
+              "description": "The frequency of the sound wave in Hz.",
+              "type": "integer"
+            },
+            "wave_type": {
+              "default": "sine",
+              "description": "The waveform to be used to generate the sound.",
+              "enum": [
+                "sine",
+                "square",
+                "sawtooth"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "frequency",
+            "duration"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "id": "multiple_21",
+    "question": [
+      [
+        {
+          "content": "I want to generate a sound of 440Hz frequency for 5 seconds. What is the function and how can I use it?",
+          "role": "user"
+        }
+      ]
+    ]
+  },
+  {
+    "function": [
+      {
+        "description": "Get the person or team who made a particular scientific discovery",
+        "name": "get_discoverer",
+        "parameters": {
+          "properties": {
+            "detail": {
+              "description": "Optional flag to get additional details about the discoverer, such as birth date and nationality. Defaults to false.",
+              "type": "boolean"
+            },
+            "discovery": {
+              "description": "The discovery for which the discoverer's information is needed.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "discovery",
+            "detail"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "Predict the likelihood of diabetes type 2 based on a person's weight and height.",
+        "name": "diabetes_prediction",
+        "parameters": {
+          "properties": {
+            "activity_level": {
+              "description": "Physical activity level of the person.",
+              "enum": [
+                "sedentary",
+                "lightly active",
+                "moderately active",
+                "very active",
+                "extra active"
+              ],
+              "type": "string"
+            },
+            "height": {
+              "description": "Height of the person in inches.",
+              "type": "float"
+            },
+            "weight": {
+              "description": "Weight of the person in lbs.",
+              "type": "float"
+            }
+          },
+          "required": [
+            "weight",
+            "height",
+            "activity_level"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "Get the working hours of a museum in a specific location.",
+        "name": "museum_working_hours.get",
+        "parameters": {
+          "properties": {
+            "day": {
+              "description": "Specific day of the week. Optional parameter. Default is 'today'.",
+              "type": "string"
+            },
+            "location": {
+              "description": "The location of the museum.",
+              "type": "string"
+            },
+            "museum": {
+              "description": "The name of the museum.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "museum",
+            "location"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "id": "multiple_155",
+    "question": [
+      [
+        {
+          "content": "Who discovered the neutron? Give me detail information.",
+          "role": "user"
+        }
+      ]
+    ]
+  },
+  {
+    "function": [
+      {
+        "description": "Calculate the area of a rectangle with given length and width",
+        "name": "rectangle.area",
+        "parameters": {
+          "properties": {
+            "length": {
+              "description": "Length of the rectangle",
+              "type": "integer"
+            },
+            "width": {
+              "description": "Width of the rectangle",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "length",
+            "width"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "Calculate the area of a circle with given radius",
+        "name": "circle.area",
+        "parameters": {
+          "properties": {
+            "isDiameter": {
+              "default": false,
+              "description": "Whether the given length is the diameter of the circle, default is false",
+              "type": "boolean"
+            },
+            "radius": {
+              "description": "Radius of the circle",
+              "type": "float"
+            }
+          },
+          "required": [
+            "radius"
+          ],
+          "type": "dict"
+        }
+      },
+      {
+        "description": "Calculate the area of a triangle with given base and height",
+        "name": "triangle.area",
+        "parameters": {
+          "properties": {
+            "base": {
+              "description": "Base of the triangle",
+              "type": "float"
+            },
+            "height": {
+              "description": "Height of the triangle",
+              "type": "float"
+            }
+          },
+          "required": [
+            "base",
+            "height"
+          ],
+          "type": "dict"
+        }
+      }
+    ],
+    "id": "multiple_30",
+    "question": [
+      [
+        {
+          "content": "What is the area of a rectangle with length 12 meters and width 5 meters?",
+          "role": "user"
+        }
+      ]
+    ]
+  }
+]

@@ -1,0 +1,160 @@
+{
+  "arms": {
+    "llm": {},
+    "random": {}
+  },
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "seeds_declared_before_run": true,
+  "budget_per_arm": 1,
+  "charged_positions_per_arm": 174,
+  "niches": [
+    "wall-pruned4"
+  ],
+  "founders": [
+    {
+      "hash": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "niche": "wall-pruned4",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "",
+      "weights_file": "llm-1701-1-0.json"
+    },
+    {
+      "hash": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "niche": "wall-pruned4",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "",
+      "weights_file": "llm-1702-1-2.json"
+    },
+    {
+      "hash": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "niche": "wall-pruned4",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "",
+      "weights_file": "llm-1703-1-4.json"
+    }
+  ],
+  "genomes": [
+    {
+      "hash": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "niche": "wall-pruned4",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1701-1-0.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "d3fd5b79629468ebb0b140fda9ecd502de04bfbd1312e50ab2b1f6b620dbb8fc",
+      "niche": "wall-pruned4",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-1-1.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "niche": "wall-pruned4",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1702-1-2.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "7bc7bc71832c1bd161ec4b2034af9fb3b8e98e08659af477bff305f7e91ce23a",
+      "niche": "wall-pruned4",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-1-3.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "niche": "wall-pruned4",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1703-1-4.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "29745c4698c9e8447d987b94e8cd7f49339644f3750847464b6693ac91e3dcf9",
+      "niche": "wall-pruned4",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-1-5.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    }
+  ],
+  "proposals": [
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "d3fd5b79629468ebb0b140fda9ecd502de04bfbd1312e50ab2b1f6b620dbb8fc",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "7bc7bc71832c1bd161ec4b2034af9fb3b8e98e08659af477bff305f7e91ce23a",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "41a0400d41425619ba739e9d202ccd866326e4fb10c574acab466fd87ce33b60",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "29745c4698c9e8447d987b94e8cd7f49339644f3750847464b6693ac91e3dcf9",
+      "charged": true,
+      "outcome": "rejected"
+    }
+  ],
+  "scientific_acceptance": false,
+  "oracle": false,
+  "limitations": [
+    "BFCL-derived generated requests, not an official BFCL score",
+    "No ARC transfer or joint router/crossover result",
+    "Three maker seed entries share a prompt; not independent model draws"
+  ],
+  "module": "wall_pruned_skill",
+  "template": "wall_pruned4",
+  "positions": 58,
+  "proposal_counts_equal": true
+}

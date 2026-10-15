@@ -1,0 +1,2112 @@
+{
+ "defs": {
+  "c_dD": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "c_dD.W1",
+    "b1": "c_dD.b1"
+   }
+  },
+  "c_dd": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "c_dd.W1",
+    "b1": "c_dd.b1"
+   }
+  },
+  "c_dv": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "c_dv.W1",
+    "b1": "c_dv.b1"
+   }
+  },
+  "c_feat": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "c_feat.W1",
+    "b1": "c_feat.b1"
+   }
+  },
+  "c_gate": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "c_gate.W1",
+    "b1": "c_gate.b1"
+   }
+  },
+  "c_gate2": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "c_gate2.W1",
+    "b1": "c_gate2.b1"
+   }
+  },
+  "c_log": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "c_log.W1",
+    "W2": "c_log.W2",
+    "b1": "c_log.b1",
+    "b2": "c_log.b2"
+   }
+  },
+  "c_route": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "c_route.W1",
+    "b1": "c_route.b1"
+   }
+  },
+  "c_stack": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "c_stack.W1",
+    "W2": "c_stack.W2",
+    "b1": "c_stack.b1",
+    "b2": "c_stack.b2"
+   }
+  },
+  "c_upd": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "c_upd.W1",
+    "W2": "c_upd.W2",
+    "b1": "c_upd.b1",
+    "b2": "c_upd.b2"
+   }
+  },
+  "c_wordcls": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "c_wordcls.W1",
+    "W2": "c_wordcls.W2",
+    "b1": "c_wordcls.b1",
+    "b2": "c_wordcls.b2"
+   }
+  },
+  "cl_ex_adjn_match": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$x"
+     },
+     "use": "ex_adjn_m"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_adjn_mix": {
+   "inputs": [
+    "m",
+    "w"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "u",
+     "in": {
+      "a": "$m",
+      "b": "$w"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "u"
+     },
+     "use": "ex_adjn_c"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_adjn_prior": {
+   "inputs": [
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "s",
+     "in": {
+      "x": "$phi"
+     },
+     "use": "ex_adjn_s"
+    },
+    {
+     "id": "p",
+     "in": {
+      "x": "s"
+     },
+     "use": "ex_adjn_p"
+    },
+    {
+     "id": "e",
+     "in": {
+      "x": "p"
+     },
+     "use": "op:exp"
+    }
+   ],
+   "outputs": {
+    "y": "e"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_adv_match": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$x"
+     },
+     "use": "ex_adv_m"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_adv_mix": {
+   "inputs": [
+    "m",
+    "w"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "u",
+     "in": {
+      "a": "$m",
+      "b": "$w"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "u"
+     },
+     "use": "ex_adv_c"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_adv_prior": {
+   "inputs": [
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "s",
+     "in": {
+      "x": "$phi"
+     },
+     "use": "ex_adv_s"
+    },
+    {
+     "id": "p",
+     "in": {
+      "x": "s"
+     },
+     "use": "ex_adv_p"
+    },
+    {
+     "id": "e",
+     "in": {
+      "x": "p"
+     },
+     "use": "op:exp"
+    }
+   ],
+   "outputs": {
+    "y": "e"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_det_match": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$x"
+     },
+     "use": "ex_det_m"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_det_mix": {
+   "inputs": [
+    "m",
+    "w"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "u",
+     "in": {
+      "a": "$m",
+      "b": "$w"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "u"
+     },
+     "use": "ex_det_c"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_det_prior": {
+   "inputs": [
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "s",
+     "in": {
+      "x": "$phi"
+     },
+     "use": "ex_det_s"
+    },
+    {
+     "id": "p",
+     "in": {
+      "x": "s"
+     },
+     "use": "ex_det_p"
+    },
+    {
+     "id": "e",
+     "in": {
+      "x": "p"
+     },
+     "use": "op:exp"
+    }
+   ],
+   "outputs": {
+    "y": "e"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_func_match": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$x"
+     },
+     "use": "ex_func_m"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_func_mix": {
+   "inputs": [
+    "m",
+    "w"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "u",
+     "in": {
+      "a": "$m",
+      "b": "$w"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "u"
+     },
+     "use": "ex_func_c"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_func_prior": {
+   "inputs": [
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "s",
+     "in": {
+      "x": "$phi"
+     },
+     "use": "ex_func_s"
+    },
+    {
+     "id": "p",
+     "in": {
+      "x": "s"
+     },
+     "use": "ex_func_p"
+    },
+    {
+     "id": "e",
+     "in": {
+      "x": "p"
+     },
+     "use": "op:exp"
+    }
+   ],
+   "outputs": {
+    "y": "e"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_post_match": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$x"
+     },
+     "use": "ex_post_m"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_post_mix": {
+   "inputs": [
+    "m",
+    "w"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "u",
+     "in": {
+      "a": "$m",
+      "b": "$w"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "u"
+     },
+     "use": "ex_post_c"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_post_prior": {
+   "inputs": [
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "s",
+     "in": {
+      "x": "$phi"
+     },
+     "use": "ex_post_s"
+    },
+    {
+     "id": "p",
+     "in": {
+      "x": "s"
+     },
+     "use": "ex_post_p"
+    },
+    {
+     "id": "e",
+     "in": {
+      "x": "p"
+     },
+     "use": "op:exp"
+    }
+   ],
+   "outputs": {
+    "y": "e"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_verb_match": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$x"
+     },
+     "use": "ex_verb_m"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_verb_mix": {
+   "inputs": [
+    "m",
+    "w"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "u",
+     "in": {
+      "a": "$m",
+      "b": "$w"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "u"
+     },
+     "use": "ex_verb_c"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_ex_verb_prior": {
+   "inputs": [
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "s",
+     "in": {
+      "x": "$phi"
+     },
+     "use": "ex_verb_s"
+    },
+    {
+     "id": "p",
+     "in": {
+      "x": "s"
+     },
+     "use": "ex_verb_p"
+    },
+    {
+     "id": "e",
+     "in": {
+      "x": "p"
+     },
+     "use": "op:exp"
+    }
+   ],
+   "outputs": {
+    "y": "e"
+   },
+   "role": "cluster"
+  },
+  "cl_feat": {
+   "inputs": [
+    "s",
+    "z",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "X",
+     "in": {
+      "x0": "$s",
+      "x1": "$z",
+      "x2": "$step"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "X"
+     },
+     "use": "c_feat"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_logout": {
+   "inputs": [
+    "p"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "s",
+     "in": {
+      "x": "$p"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "c": 1e-06
+     },
+     "id": "f",
+     "in": {
+      "x": "s"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "q",
+     "in": {
+      "a": "$p",
+      "b": "f"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       32,
+       1
+      ]
+     },
+     "id": "q2",
+     "in": {
+      "x": "q"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "l",
+     "in": {
+      "x": "q2"
+     },
+     "use": "c_log"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "l2",
+     "in": {
+      "x": "l"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "mk",
+     "use": "param:outmask"
+    },
+    {
+     "id": "o",
+     "in": {
+      "a": "l2",
+      "b": "mk"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "y": "o"
+   },
+   "role": "cluster"
+  },
+  "cl_route": {
+   "inputs": [
+    "s"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$s"
+     },
+     "use": "c_route"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_stack": {
+   "inputs": [
+    "s"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 14,
+      "stop": 17
+     },
+     "id": "vd",
+     "in": {
+      "x": "$s"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "c",
+     "in": {
+      "x": "vd"
+     },
+     "use": "c_stack"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "cl_update": {
+   "inputs": [
+    "cat",
+    "s",
+    "z"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "X",
+     "in": {
+      "x0": "$cat",
+      "x1": "$s",
+      "x2": "$z"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "disc0",
+     "in": {
+      "x": "X"
+     },
+     "use": "c_upd"
+    },
+    {
+     "id": "disc",
+     "in": {
+      "x": "disc0"
+     },
+     "use": "op:step"
+    },
+    {
+     "id": "G",
+     "in": {
+      "x": "X"
+     },
+     "use": "c_gate"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 14,
+      "stop": 15
+     },
+     "id": "v",
+     "in": {
+      "x": "$s"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 15,
+      "stop": 16
+     },
+     "id": "d",
+     "in": {
+      "x": "$s"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 2,
+      "stop": 3
+     },
+     "id": "tv",
+     "in": {
+      "x": "$z"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "vtd",
+     "in": {
+      "x0": "v",
+      "x1": "tv",
+      "x2": "d"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "Dv",
+     "in": {
+      "x": "vtd"
+     },
+     "use": "c_dv"
+    },
+    {
+     "id": "Dd",
+     "in": {
+      "x": "vtd"
+     },
+     "use": "c_dd"
+    },
+    {
+     "id": "gv",
+     "in": {
+      "a": "G",
+      "b": "Dv"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "gd",
+     "in": {
+      "a": "G",
+      "b": "Dd"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "sv",
+     "in": {
+      "x": "gv"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "sd",
+     "in": {
+      "x": "gd"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "v2",
+     "in": {
+      "a": "v",
+      "b": "sv"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "d2",
+     "in": {
+      "a": "d",
+      "b": "sd"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 16,
+      "stop": 17
+     },
+     "id": "D",
+     "in": {
+      "x": "$s"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "G2",
+     "in": {
+      "x": "X"
+     },
+     "use": "c_gate2"
+    },
+    {
+     "id": "DD",
+     "in": {
+      "x": "D"
+     },
+     "use": "c_dD"
+    },
+    {
+     "id": "gD",
+     "in": {
+      "a": "G2",
+      "b": "DD"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "sD",
+     "in": {
+      "x": "gD"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "D2",
+     "in": {
+      "a": "D",
+      "b": "sD"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "snew",
+     "in": {
+      "x0": "disc",
+      "x1": "v2",
+      "x2": "d2",
+      "x3": "D2"
+     },
+     "use": "op:concat"
+    }
+   ],
+   "outputs": {
+    "y": "snew"
+   },
+   "role": "cluster"
+  },
+  "cl_wordcls": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "x": "$x"
+     },
+     "use": "c_wordcls"
+    }
+   ],
+   "outputs": {
+    "y": "c"
+   },
+   "role": "cluster"
+  },
+  "ex_adjn": {
+   "inputs": [
+    "x",
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "x": "$x"
+     },
+     "use": "cl_ex_adjn_match"
+    },
+    {
+     "id": "w",
+     "in": {
+      "phi": "$phi"
+     },
+     "use": "cl_ex_adjn_prior"
+    },
+    {
+     "id": "p",
+     "in": {
+      "m": "m",
+      "w": "w"
+     },
+     "use": "cl_ex_adjn_mix"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "p": "p"
+     },
+     "use": "cl_logout"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   },
+   "role": "expert"
+  },
+  "ex_adjn_c": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adjn_c.W1",
+    "b1": "ex_adjn_c.b1"
+   }
+  },
+  "ex_adjn_m": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adjn_m.W1",
+    "b1": "ex_adjn_m.b1"
+   }
+  },
+  "ex_adjn_p": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adjn_p.W1",
+    "b1": "ex_adjn_p.b1"
+   }
+  },
+  "ex_adjn_s": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adjn_s.W1",
+    "b1": "ex_adjn_s.b1"
+   }
+  },
+  "ex_adv": {
+   "inputs": [
+    "x",
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "x": "$x"
+     },
+     "use": "cl_ex_adv_match"
+    },
+    {
+     "id": "w",
+     "in": {
+      "phi": "$phi"
+     },
+     "use": "cl_ex_adv_prior"
+    },
+    {
+     "id": "p",
+     "in": {
+      "m": "m",
+      "w": "w"
+     },
+     "use": "cl_ex_adv_mix"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "p": "p"
+     },
+     "use": "cl_logout"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   },
+   "role": "expert"
+  },
+  "ex_adv_c": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adv_c.W1",
+    "b1": "ex_adv_c.b1"
+   }
+  },
+  "ex_adv_m": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adv_m.W1",
+    "b1": "ex_adv_m.b1"
+   }
+  },
+  "ex_adv_p": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adv_p.W1",
+    "b1": "ex_adv_p.b1"
+   }
+  },
+  "ex_adv_s": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_adv_s.W1",
+    "b1": "ex_adv_s.b1"
+   }
+  },
+  "ex_det": {
+   "inputs": [
+    "x",
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "x": "$x"
+     },
+     "use": "cl_ex_det_match"
+    },
+    {
+     "id": "w",
+     "in": {
+      "phi": "$phi"
+     },
+     "use": "cl_ex_det_prior"
+    },
+    {
+     "id": "p",
+     "in": {
+      "m": "m",
+      "w": "w"
+     },
+     "use": "cl_ex_det_mix"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "p": "p"
+     },
+     "use": "cl_logout"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   },
+   "role": "expert"
+  },
+  "ex_det_c": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_det_c.W1",
+    "b1": "ex_det_c.b1"
+   }
+  },
+  "ex_det_m": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_det_m.W1",
+    "b1": "ex_det_m.b1"
+   }
+  },
+  "ex_det_p": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_det_p.W1",
+    "b1": "ex_det_p.b1"
+   }
+  },
+  "ex_det_s": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_det_s.W1",
+    "b1": "ex_det_s.b1"
+   }
+  },
+  "ex_func": {
+   "inputs": [
+    "x",
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "x": "$x"
+     },
+     "use": "cl_ex_func_match"
+    },
+    {
+     "id": "w",
+     "in": {
+      "phi": "$phi"
+     },
+     "use": "cl_ex_func_prior"
+    },
+    {
+     "id": "p",
+     "in": {
+      "m": "m",
+      "w": "w"
+     },
+     "use": "cl_ex_func_mix"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "p": "p"
+     },
+     "use": "cl_logout"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   },
+   "role": "expert"
+  },
+  "ex_func_c": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_func_c.W1",
+    "b1": "ex_func_c.b1"
+   }
+  },
+  "ex_func_m": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_func_m.W1",
+    "b1": "ex_func_m.b1"
+   }
+  },
+  "ex_func_p": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_func_p.W1",
+    "b1": "ex_func_p.b1"
+   }
+  },
+  "ex_func_s": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_func_s.W1",
+    "b1": "ex_func_s.b1"
+   }
+  },
+  "ex_post": {
+   "inputs": [
+    "x",
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "x": "$x"
+     },
+     "use": "cl_ex_post_match"
+    },
+    {
+     "id": "w",
+     "in": {
+      "phi": "$phi"
+     },
+     "use": "cl_ex_post_prior"
+    },
+    {
+     "id": "p",
+     "in": {
+      "m": "m",
+      "w": "w"
+     },
+     "use": "cl_ex_post_mix"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "p": "p"
+     },
+     "use": "cl_logout"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   },
+   "role": "expert"
+  },
+  "ex_post_c": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_post_c.W1",
+    "b1": "ex_post_c.b1"
+   }
+  },
+  "ex_post_m": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_post_m.W1",
+    "b1": "ex_post_m.b1"
+   }
+  },
+  "ex_post_p": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_post_p.W1",
+    "b1": "ex_post_p.b1"
+   }
+  },
+  "ex_post_s": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_post_s.W1",
+    "b1": "ex_post_s.b1"
+   }
+  },
+  "ex_verb": {
+   "inputs": [
+    "x",
+    "phi"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "m",
+     "in": {
+      "x": "$x"
+     },
+     "use": "cl_ex_verb_match"
+    },
+    {
+     "id": "w",
+     "in": {
+      "phi": "$phi"
+     },
+     "use": "cl_ex_verb_prior"
+    },
+    {
+     "id": "p",
+     "in": {
+      "m": "m",
+      "w": "w"
+     },
+     "use": "cl_ex_verb_mix"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "p": "p"
+     },
+     "use": "cl_logout"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   },
+   "role": "expert"
+  },
+  "ex_verb_c": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_verb_c.W1",
+    "b1": "ex_verb_c.b1"
+   }
+  },
+  "ex_verb_m": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_verb_m.W1",
+    "b1": "ex_verb_m.b1"
+   }
+  },
+  "ex_verb_p": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_verb_p.W1",
+    "b1": "ex_verb_p.b1"
+   }
+  },
+  "ex_verb_s": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "ex_verb_s.W1",
+    "b1": "ex_verb_s.b1"
+   }
+  },
+  "router": {
+   "inputs": [
+    "s"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "r",
+     "in": {
+      "s": "$s"
+     },
+     "use": "cl_route"
+    }
+   ],
+   "outputs": {
+    "scores": "r"
+   },
+   "role": "router"
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       256
+      ]
+     },
+     "id": "x",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "cat",
+     "in": {
+      "x": "x"
+     },
+     "use": "cl_wordcls"
+    },
+    {
+     "id": "z0",
+     "in": {
+      "s": "$state"
+     },
+     "use": "cl_stack"
+    },
+    {
+     "id": "s1",
+     "in": {
+      "cat": "cat",
+      "s": "$state",
+      "z": "z0"
+     },
+     "use": "cl_update"
+    },
+    {
+     "id": "z1",
+     "in": {
+      "s": "s1"
+     },
+     "use": "cl_stack"
+    },
+    {
+     "id": "phi",
+     "in": {
+      "s": "s1",
+      "step": "$step",
+      "z": "z1"
+     },
+     "use": "cl_feat"
+    },
+    {
+     "id": "r",
+     "in": {
+      "s": "s1"
+     },
+     "use": "router"
+    },
+    {
+     "args": {
+      "branches": [
+       "ex_det",
+       "ex_adjn",
+       "ex_post",
+       "ex_verb",
+       "ex_adv",
+       "ex_func"
+      ],
+      "k": 1
+     },
+     "id": "d",
+     "in": {
+      "phi": "phi",
+      "scores": "r.scores",
+      "x": "x"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "logits": "d.logits",
+    "state": "s1"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 17,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "c_dD.W1": {
+   "sha256": "8ec5efde4d77d3b6c034e8a58e0e791cb7a35a658a33a02165c48c09e1b77d29",
+   "shape": [
+    3,
+    1
+   ]
+  },
+  "c_dD.b1": {
+   "sha256": "e78e9d9a74abe696981f8ba84c87a08857a579f81c9b4101413135f5767f326a",
+   "shape": [
+    3
+   ]
+  },
+  "c_dd.W1": {
+   "sha256": "f411598a6b4ce25ecbee756ec44860bf33222a871b09de3aeabe946769f69689",
+   "shape": [
+    4,
+    3
+   ]
+  },
+  "c_dd.b1": {
+   "sha256": "db7803a7561fe45a9b5b363fe1d4f272b3bb3fef78c913df682b179936dc5a11",
+   "shape": [
+    4
+   ]
+  },
+  "c_dv.W1": {
+   "sha256": "23c0cda1c2f85f9d3e7d87857fa0fe274d5f38770fab8831227bd9c4f7375734",
+   "shape": [
+    4,
+    3
+   ]
+  },
+  "c_dv.b1": {
+   "sha256": "e9821082c22a278882966cf24d2acffc409e2529d98fe620ed274e062a206fd5",
+   "shape": [
+    4
+   ]
+  },
+  "c_feat.W1": {
+   "sha256": "7f9f43ade131c4d9240a4ceae5959d854edc1935eaee9f52fe0db0e6f1a27299",
+   "shape": [
+    21,
+    27
+   ]
+  },
+  "c_feat.b1": {
+   "sha256": "fe9b6c79619bb17165e62baf43dcd917158dc1376cd92af2ababbeb79e166957",
+   "shape": [
+    21
+   ]
+  },
+  "c_gate.W1": {
+   "sha256": "9201f90823b67311af8db1b7c2ae0e5d9bea63196fb8fca4086f41ee4e1de96c",
+   "shape": [
+    4,
+    41
+   ]
+  },
+  "c_gate.b1": {
+   "sha256": "3201b99627a44c23f1312b0b45967bb37aad2d71650d611c7416452a4b8efce4",
+   "shape": [
+    4
+   ]
+  },
+  "c_gate2.W1": {
+   "sha256": "afa7fe8f3a931d81ef176daf0d49a3496b7e627a07d16a924fe821f890f90eaf",
+   "shape": [
+    3,
+    41
+   ]
+  },
+  "c_gate2.b1": {
+   "sha256": "4e18f343291020c4f84f475d4324491a3e69b813fcad7b05e127be63dabc0271",
+   "shape": [
+    3
+   ]
+  },
+  "c_log.W1": {
+   "sha256": "b9e23205fdaac39f4f3a79844b7830a11871391de877e2957690a31d4db5e410",
+   "shape": [
+    73,
+    1
+   ]
+  },
+  "c_log.W2": {
+   "sha256": "95f3dd8dee0cd0a206f0201543449658970a0c3a8d7c4c231dd2f81863ed977c",
+   "shape": [
+    1,
+    73
+   ]
+  },
+  "c_log.b1": {
+   "sha256": "bf6e8109d2028eb6220e3286f2e965a7697b1700f1c1f70d5d26c07d5642594e",
+   "shape": [
+    73
+   ]
+  },
+  "c_log.b2": {
+   "sha256": "b66a0ea2d4f734f0714b1bf736bc146eb529a85c7552f2d624d90155e26803d5",
+   "shape": [
+    1
+   ]
+  },
+  "c_route.W1": {
+   "sha256": "4a588f3522a00764032e5e5ada140bd47b43e45f159e8b25fd72902cbf6ca6b3",
+   "shape": [
+    6,
+    17
+   ]
+  },
+  "c_route.b1": {
+   "sha256": "bdb356ef7f5a99ca0eeb8f42a69c6b5a7e31d7acc4061936f16aa78077160872",
+   "shape": [
+    6
+   ]
+  },
+  "c_stack.W1": {
+   "sha256": "01d4fb19cae7a2fbc8094185604ef084e260c17c8bb3294815b017e47c247f24",
+   "shape": [
+    6,
+    3
+   ]
+  },
+  "c_stack.W2": {
+   "sha256": "7a9b7c39852b88d5a80d075864108f4bdbb0ed9a5e95d5a6689021cdc4f7f0dc",
+   "shape": [
+    9,
+    6
+   ]
+  },
+  "c_stack.b1": {
+   "sha256": "2714612758033054459aa9b381345bd86aba792c6e55e34222bd1b27c1368a51",
+   "shape": [
+    6
+   ]
+  },
+  "c_stack.b2": {
+   "sha256": "b0090418925e0cbada8e05df1ee461d0bab80be4dfe3566715d626b2280fd401",
+   "shape": [
+    9
+   ]
+  },
+  "c_upd.W1": {
+   "sha256": "fc9b6a0a0292d440571f6bea62599acb73b0bb3e59261db19c885f87d249c622",
+   "shape": [
+    32,
+    41
+   ]
+  },
+  "c_upd.W2": {
+   "sha256": "b937bc014458c7d8d68132761cb8595c35f6f6491d941e1678b70dc035e1072b",
+   "shape": [
+    14,
+    32
+   ]
+  },
+  "c_upd.b1": {
+   "sha256": "a045996d006f005fdb277cd5fce1e1960e2fab25485c23470c4dbcacf2524e21",
+   "shape": [
+    32
+   ]
+  },
+  "c_upd.b2": {
+   "sha256": "2375b2a4e5673bae9d0610a64fa098224cab0975fc990290b40189675e6cb6d7",
+   "shape": [
+    14
+   ]
+  },
+  "c_wordcls.W1": {
+   "sha256": "6cd390933800e0ddb62c1f7221e8338c26581e26738455ad4a12b43fff51341a",
+   "shape": [
+    73,
+    256
+   ]
+  },
+  "c_wordcls.W2": {
+   "sha256": "42d69699bf87ba80c1a57c430059c22463744a187ac62d9e31a5fd56e2234f1a",
+   "shape": [
+    15,
+    73
+   ]
+  },
+  "c_wordcls.b1": {
+   "sha256": "9f22868288d0257ee443ca3feb65085830bf9b95da155d2dd258465455d02511",
+   "shape": [
+    73
+   ]
+  },
+  "c_wordcls.b2": {
+   "sha256": "510f2453338d88b0f52a0c502027f3920ba9359030f4c6a4190a4e049f1eff65",
+   "shape": [
+    15
+   ]
+  },
+  "ex_adjn_c.W1": {
+   "sha256": "748067627ce872f41098ae19762bb3031440d7f17df4bc5d89979cf07e6b0df5",
+   "shape": [
+    32,
+    249
+   ]
+  },
+  "ex_adjn_c.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ex_adjn_m.W1": {
+   "sha256": "8853a2c0a89b377915e529bb04129fefee69ee18d93b3394428307bff9f74291",
+   "shape": [
+    249,
+    256
+   ]
+  },
+  "ex_adjn_m.b1": {
+   "sha256": "b3383753c6f0fe4c3db11b57bd35464ba331ef2a81ca4c298851e368e05c1b60",
+   "shape": [
+    249
+   ]
+  },
+  "ex_adjn_p.W1": {
+   "sha256": "205d70e48a56a07febf07f6b7a2fa46e7dde3bccb7d9b580a110d389667a2516",
+   "shape": [
+    249,
+    42
+   ]
+  },
+  "ex_adjn_p.b1": {
+   "sha256": "35a6bdd68f33089b7a2fffd5fd7636e6aea7e2ee02377dfcb38456aacc3b0c98",
+   "shape": [
+    249
+   ]
+  },
+  "ex_adjn_s.W1": {
+   "sha256": "d9173d8069767166362b92dbe7d3a3c4f7b06bbaea7756a04a434f3a9c883900",
+   "shape": [
+    42,
+    21
+   ]
+  },
+  "ex_adjn_s.b1": {
+   "sha256": "ad45f80042dd00058f4b1625ba615f06a9b961612552566454d3cabe8aea4091",
+   "shape": [
+    42
+   ]
+  },
+  "ex_adv_c.W1": {
+   "sha256": "696a69901fbef1aba7652ce6fa4b2b85ac8ed73aaaf6441005e1a0d25b327ba4",
+   "shape": [
+    32,
+    43
+   ]
+  },
+  "ex_adv_c.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ex_adv_m.W1": {
+   "sha256": "ff31ef28774008bd4afad3b9d0bb4b23a0e5bb07dc5ce43acccf8150ebc0d726",
+   "shape": [
+    43,
+    256
+   ]
+  },
+  "ex_adv_m.b1": {
+   "sha256": "c772cd56be6f3fc430a3a6949a82ef86794b8633392819088d126d428d491b13",
+   "shape": [
+    43
+   ]
+  },
+  "ex_adv_p.W1": {
+   "sha256": "3072d57f101404b398944455a0d5e05cdde84a2018dcea316882ee5dbc21e992",
+   "shape": [
+    43,
+    2
+   ]
+  },
+  "ex_adv_p.b1": {
+   "sha256": "3b4e4a56642594b70f9d41984716ba47fc2924cf6ef23116e5473175baf068c2",
+   "shape": [
+    43
+   ]
+  },
+  "ex_adv_s.W1": {
+   "sha256": "dfee58bbb2821a83bea0f7c57eabeef243a7da37fd326c191e1f2d0afc19ef74",
+   "shape": [
+    2,
+    21
+   ]
+  },
+  "ex_adv_s.b1": {
+   "sha256": "cf48c5b9cc03c2f94531b44326871b3d7210299df13bbd787e22769f39ba41c9",
+   "shape": [
+    2
+   ]
+  },
+  "ex_det_c.W1": {
+   "sha256": "6353266c08db43e0404103dcaab9f5b68fdf81866ee49ee984878e3bf4424221",
+   "shape": [
+    32,
+    47
+   ]
+  },
+  "ex_det_c.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ex_det_m.W1": {
+   "sha256": "e2b6335c183d62779e099b241481c51c549cb5a4681ce527255b00df570c1799",
+   "shape": [
+    47,
+    256
+   ]
+  },
+  "ex_det_m.b1": {
+   "sha256": "2ac90f1a2dca04e18548c7e9cc84c0567266ee2e1a854666f4ced89509a08e26",
+   "shape": [
+    47
+   ]
+  },
+  "ex_det_p.W1": {
+   "sha256": "ef8ecdc0077860f401baf902c3861525999e5f50c7f52ba7c7c8a5acf560a58a",
+   "shape": [
+    47,
+    1
+   ]
+  },
+  "ex_det_p.b1": {
+   "sha256": "26bc94e0a0c871cf196f48bd9ea578634fa7df8c87668229a2f2f3e4dc8b6fb6",
+   "shape": [
+    47
+   ]
+  },
+  "ex_det_s.W1": {
+   "sha256": "0a82e24a51fc666a00d959bcc7530f2d48e500b2d320cfb2d784f22728445af6",
+   "shape": [
+    1,
+    21
+   ]
+  },
+  "ex_det_s.b1": {
+   "sha256": "cf0f5de304be4ef0889a8d0402c2d7ecbb1f63b37bd6e021f97c0b274d598134",
+   "shape": [
+    1
+   ]
+  },
+  "ex_func_c.W1": {
+   "sha256": "ab15256ffbd7027e59a0ff92e275b12b927e4063a820c175ad64029db319eb74",
+   "shape": [
+    32,
+    9
+   ]
+  },
+  "ex_func_c.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ex_func_m.W1": {
+   "sha256": "fe64c5ae636db23f40a8a2c9f2a513ba347372b339b364add477fade791c5cf7",
+   "shape": [
+    9,
+    256
+   ]
+  },
+  "ex_func_m.b1": {
+   "sha256": "c3504d24df316749ef96656877c4b15981f34df92533c2a117c9b6b4a8c0d667",
+   "shape": [
+    9
+   ]
+  },
+  "ex_func_p.W1": {
+   "sha256": "a88501c21b68a18943d80129a2b1567a50a76c511f7e8428d58aaffba8b2651b",
+   "shape": [
+    9,
+    5
+   ]
+  },
+  "ex_func_p.b1": {
+   "sha256": "208a6b63f1072f5793b002f1c4c7a1cfcb160b6d911cfda0f05ca9b812ebfe9e",
+   "shape": [
+    9
+   ]
+  },
+  "ex_func_s.W1": {
+   "sha256": "f5f72a25bbfd65c3ee16ef3f9910686fecf952581a4b66091cefbb11eea93bd8",
+   "shape": [
+    5,
+    21
+   ]
+  },
+  "ex_func_s.b1": {
+   "sha256": "b569bc0d00cf1d8751bca8517c409d6696be0444848804a74f8fa2351d2fd28a",
+   "shape": [
+    5
+   ]
+  },
+  "ex_post_c.W1": {
+   "sha256": "cc5008a1f0433346f0eafa873e6bb6556182d3780de603f10e8e0f09877e604c",
+   "shape": [
+    32,
+    267
+   ]
+  },
+  "ex_post_c.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ex_post_m.W1": {
+   "sha256": "63cce7ff9fb7fc4c1417bb23e3965d158ab9ee17a342526735c0e00f331bdce7",
+   "shape": [
+    267,
+    256
+   ]
+  },
+  "ex_post_m.b1": {
+   "sha256": "0bbbfade137345e4338cf52cda1c750511438878dd4ba3f4dfcca92d9bd095c5",
+   "shape": [
+    267
+   ]
+  },
+  "ex_post_p.W1": {
+   "sha256": "56cf0aeff6dcc5753becba47067347c263ce1abcb832e0abd838babbd861213d",
+   "shape": [
+    267,
+    30
+   ]
+  },
+  "ex_post_p.b1": {
+   "sha256": "8291272d365fa549535c3f2fee672d38aca8ca27014d8d1fb08de71158656f92",
+   "shape": [
+    267
+   ]
+  },
+  "ex_post_s.W1": {
+   "sha256": "1adeaae703ceacdda36a1727c3e0e3a4b992db049d14fc0ca64881378707fb93",
+   "shape": [
+    30,
+    21
+   ]
+  },
+  "ex_post_s.b1": {
+   "sha256": "1a83784af0ba90837ef4eaf0b4a83ed15a1cb25374ea55c0821e56f9f4005cf2",
+   "shape": [
+    30
+   ]
+  },
+  "ex_verb_c.W1": {
+   "sha256": "6cdfb98c43507cace80a8da8e46629ad8f1c4c13251cbd8623996e5352621f6a",
+   "shape": [
+    32,
+    186
+   ]
+  },
+  "ex_verb_c.b1": {
+   "sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+   "shape": [
+    32
+   ]
+  },
+  "ex_verb_m.W1": {
+   "sha256": "d693bce1546e10e9f8af810777c2273871311bf4e551177f92bf71f405a3bf05",
+   "shape": [
+    186,
+    256
+   ]
+  },
+  "ex_verb_m.b1": {
+   "sha256": "600d712521c474d311bf2a843efeef3566425463e581522c2d11a3963e0820ac",
+   "shape": [
+    186
+   ]
+  },
+  "ex_verb_p.W1": {
+   "sha256": "09ed0fa28b23c59eaea932fed47cbbfc9f1cc6c857bd52861467a79a74dd768b",
+   "shape": [
+    186,
+    10
+   ]
+  },
+  "ex_verb_p.b1": {
+   "sha256": "24b3b92f54daa59fc646562c2b07715fdbd6771e2fd043c177fe45439617c07b",
+   "shape": [
+    186
+   ]
+  },
+  "ex_verb_s.W1": {
+   "sha256": "3ea79b05df0bc1766ce3752a73cc0ef8b6f3d392a724a57fec2fcf3b020ee8e9",
+   "shape": [
+    10,
+    21
+   ]
+  },
+  "ex_verb_s.b1": {
+   "sha256": "f2768b6f0f746f3726b73b6fc5fe1a2e2740954d76d9a3b2cec88ffa27dcbaf3",
+   "shape": [
+    10
+   ]
+  },
+  "outmask": {
+   "sha256": "72a94801302c49badc6938566d4488561b79ea876d6c71b1b0f234463dd30a2a",
+   "shape": [
+    32
+   ]
+  }
+ }
+}

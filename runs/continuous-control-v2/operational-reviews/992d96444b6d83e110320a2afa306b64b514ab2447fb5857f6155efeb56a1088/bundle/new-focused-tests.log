@@ -1,0 +1,24 @@
+test_finite_expiry_is_read_only (test_resume_revision.ObserverRevision) ... ok
+test_invalid_durations_never_observe (test_resume_revision.ObserverRevision) ... ok
+test_marker_changes_during_resource_read (test_resume_revision.ObserverRevision) ... ok
+test_STOP_replaced_during_rename_is_restored_and_blocks (test_resume_revision.ResumeFixture) ... ok
+test_STOP_replacement_and_archive_collision_preserved (test_resume_revision.ResumeFixture) ... ok
+test_accounting_and_scope_drift_block (test_resume_revision.ResumeFixture) ... ok
+test_activation_crashes_recover_without_launch (test_resume_revision.ResumeFixture) ... ok
+test_activation_without_committed_rearm_blocks (test_resume_revision.ResumeFixture) ... ok
+test_foreign_archive_created_at_actual_rename_boundary_is_preserved (test_resume_revision.ResumeFixture) ... ok
+test_foreign_dispatch_created_at_actual_link_boundary_is_preserved (test_resume_revision.ResumeFixture) ... ok
+test_foreign_replacement_at_preempt_boundary_is_never_unlinked (test_resume_revision.ResumeFixture) ... ok
+test_global_lock_excludes_second_operator (test_resume_revision.ResumeFixture) ... skipped 'production requires POSIX locking'
+test_new_STOP_at_activation_preempts_without_marker_removal (test_resume_revision.ResumeFixture) ... ok
+test_preconditions_block_before_STOP_move (test_resume_revision.ResumeFixture) ... ok
+test_prepare_read_only_exact_eight (test_resume_revision.ResumeFixture) ... ok
+test_real_SIGKILL_resume_boundaries_recover_with_real_locks (test_resume_revision.ResumeFixture) ... skipped 'real SIGKILL and POSIX durability'
+test_stage_and_activation_are_separate_idempotent_no_launch (test_resume_revision.ResumeFixture) ... ok
+test_stage_crashes_recover_without_new_attempt (test_resume_revision.ResumeFixture) ... ok
+test_tampered_receipt_and_foreign_marker_block (test_resume_revision.ResumeFixture) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 203.254s
+
+OK (skipped=2)

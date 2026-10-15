@@ -1,0 +1,186 @@
+{
+  "accounting_and_handoff": {
+    "absolute_seconds": 600,
+    "control_pool": "/srv/cellforge-inbox/native-six-DEV-8ea5c110804f5baa",
+    "durable_before_RPC": "Exclusive fsynced founder/job/launch/worker claims; job consumed before RPC; packet intent before input preprocessing/inference. Uncertain launches and interrupted intents remain spent, never replayed.",
+    "evidence": [
+      "study_accounting.py:66",
+      "study_accounting.py:76",
+      "study_accounting.py:94",
+      "study_worker.py:27",
+      "study_worker.py:118",
+      "HANDOFF_PROTOCOL.md:9",
+      "HANDOFF_PROTOCOL.md:13",
+      "HANDOFF_PROTOCOL.md:23"
+    ],
+    "external_writers": 0,
+    "generation_independent_pool": true,
+    "handoff": "Repeat pinned preflight, normal stop of exact v2 owner, retain new STOP with captured identity, prove empty trees and same unlocked inode, then hold the existing lock through reservation and transfer it to the one matching worker. No old ARC3 resume or cap reset.",
+    "intake_cap": 1,
+    "job_cap": 1,
+    "packet_cap": 216,
+    "planned_packets": 84,
+    "resources": "One CPU affinity0;1GiB/no swap;64 tasks;RuntimeMax595s plus TimeoutStop5s;control-group kill and final SIGKILL;OOM kill;Restart=no;private network/tmp;strict filesystem and empty capabilities;only state and existing lock writable.",
+    "terminal": "Retain metadata, bind description/token/nonempty InvocationID, capture resources and consumed records, certify empty descendant cgroup.procs/populated0 before owned collection and terminal receipt. Unknown/foreign/populated trees cannot be certified."
+  },
+  "archive_sha256": "8b6a7e77f58389b816f76d8866c4977c434f595aae9d2381156fbcb99958f51f",
+  "canonical_study_id_matches": true,
+  "controls_and_scoring": {
+    "BFCL_matcher_parity": "NOT_ESTABLISHED",
+    "author_gate": "5/6 and at least+2 vs each valid scripted and matched-random control in BOTH orderings, one frozen genome",
+    "baseline_first_packets": 12,
+    "causal_controls": "Zero/permuted/binding-off must be valid and lose; route-off diagnostic. Errors retained in unchanged six-ID denominator.",
+    "cohort_role": "EXPOSED_PUBLIC_DEV",
+    "evidence": [
+      "study_worker.py:77",
+      "study_worker.py:94",
+      "study_accounting.py:121"
+    ],
+    "futility": "Baseline>=5 in either ordering, or invalid scripted control, terminates before authored/random inference",
+    "metric": "restricted_local_packet_accuracy",
+    "orderings": [
+      0,
+      3
+    ],
+    "orderings_are_new_tasks": false,
+    "qualified": false,
+    "random_control": "48-position same-ABI bounded uniform random control; it is not a claim of sparsity/norm matching or learned generalization.",
+    "unique_cases": 6
+  },
+  "created_utc": "2026-10-13T00:36:34.579217+00:00",
+  "critical_blockers": [],
+  "decision": "PASS_RESTRICTED_EXPOSED_DEV_PLAN",
+  "execution_authorized_by_this_read_only_review": false,
+  "execution_conditions": [
+    "No server action is authorized by this read-only task. An authorized operator must use the exact independent approval/report binding and sealed provisioning/handoff protocol.",
+    "Repeat every live ownership, STOP, preservation, root, disk and cgroup precondition immediately before its action; any drift/uncertainty means HOLD.",
+    "Preserve all historical STOPs and cancellation evidence, the newly generated v2 STOP, and both native STOP locations. Keep old9/9 closed and v2 stopped/disabled after handoff.",
+    "No coefficient replacement, case replacement, gate relaxation, root reset, retry/refill, held-out relabeling, or scientific promotion."
+  ],
+  "fresh_read_only_checkpoint": {
+    "actual_controller_stop_reason_confirmed": "explicit reviewed service stop, exclusive creation/fsync; controller lines157-172/365-373",
+    "archived_STOP_identity_match": true,
+    "cancelled_fingerprint_and_receipt_still_burned": true,
+    "lock_device": 25,
+    "lock_inode": 55879,
+    "lock_nlink": 1,
+    "lock_regular_nonsymlink": true,
+    "native_cohort_root_exists": false,
+    "old_attempted": 9,
+    "old_cap": 9,
+    "old_native_proposal_root_exists": false,
+    "old_root_STOP_present": false,
+    "old_watcher": "inactive/disabled",
+    "pinned_controller_unit_and_python_hashes_match": true,
+    "protected_hashes_matched": 25,
+    "registry_active": null,
+    "research_cgroup_exists": false,
+    "research_unit": "not-found/MainPID0",
+    "sole_lock_owner": 615713,
+    "status": "paused_exhausted",
+    "utc": "2026-10-13T00:27:27.603520+00:00",
+    "v2": "active/disabled; sole member of its cgroup",
+    "v2_invocation": "4cca260dc828429994b341596c63acfc",
+    "v2_pid": 615713
+  },
+  "frozen_genome": {
+    "ABI_and_genome_freeze_hash_bindings_match": true,
+    "canonical_sha256": "c67de8317e907d4d5b7a0b5b7a36feab42f4e38fb36ebe556d02e2ef133cca3f",
+    "differs_from_scripted_baseline": true,
+    "evidence": [
+      "GENOME_FREEZE.json:5",
+      "study_accounting.py:42",
+      "study_worker.py:111"
+    ],
+    "persistent_genome_substitution_rejected": true,
+    "same_genome_all_cases_and_orderings": true,
+    "sha256": "19873c1e284d9f394a02d112d70cbd11297cdee090e4608d88f922f36be721a7"
+  },
+  "genericity": {
+    "fixed_shape": [
+      16,
+      24,
+      8
+    ],
+    "function_execution": false,
+    "limits": "Bounded lexical/negation features and raw magnitude extraction; no full language-understanding or physical unit-conversion claim.",
+    "literal_positions": 48,
+    "named_case_or_unit_rules_found": false,
+    "supplied_defaults_used": false
+  },
+  "independent_tests": {
+    "limits": "Synthetic ownership/envelope tests do not launch a real unit. Linux accounting filesystem tests were not rerun because this request prohibits server mutation.",
+    "linux_pure_in_memory": {
+      "errors": 0,
+      "failures": 0,
+      "filesystem_writes": 0,
+      "passed": 28,
+      "runtime": "Python3.12.3",
+      "seconds": 0.019,
+      "tests": 28
+    },
+    "local_windows": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 65,
+      "runtime": "Python3.10.5",
+      "seconds": 8.169,
+      "tests": 65
+    }
+  },
+  "integrity": {
+    "archive_files_verified": 43,
+    "manifest_files_verified": 42,
+    "mismatches": [],
+    "preserved_current_cohort_and_verifier_hashes": true,
+    "previous_archive_sha256": "0fb6ad6617d8e51efb6e2fe0356c34d0e79ee45ced5f4a316381ecc29a99ba9b",
+    "previous_clause_manifest_files_verified_unchanged": 36,
+    "unsafe_entries": []
+  },
+  "launch_plan_exactly_matches_renderer": true,
+  "manifest_sha256": "c5111fc793f23cc85844049e6d2f5b497d267cdeea539f9b5b0993d0fdcbd045",
+  "nonblocking_metadata_cleanup": {
+    "current_source_ABI_sha256": "368d6ac9d20271c10cf07d876e1fe059d948ba5dfa1e17f3a777efde8be52775",
+    "finding": "STUDY.json retains obsolete ABI_sha256 from native3. Its effective source_ABI_sha256 and manifest bind the correct current ABI; the obsolete field is excluded from identity_fields and unused by the worker.",
+    "legacy_ABI_sha256": "5e7fdcba690020b99178b45e7bc0b4196b813daaa53b5174bdb4e082e0dbed24",
+    "recommendation": "Use source_ABI_sha256 in reports and remove/label the obsolete field on the next ordinary revision; no re-seal required for safety."
+  },
+  "outcome": "The exact repaired seal can proceed as one explicitly authorized restricted exposed-public-DEV pilot under the specified limits and handoff. No critical source, control, capacity or plan blocker remains; passing it would not confer scientific qualification.",
+  "primary_documentation_checked": [
+    "https://raw.githubusercontent.com/systemd/systemd/v255/man/systemd.service.xml",
+    "https://raw.githubusercontent.com/systemd/systemd/v255/man/systemd.kill.xml",
+    "https://raw.githubusercontent.com/systemd/systemd/v255/man/systemd.exec.xml"
+  ],
+  "production_approval_file_created": false,
+  "review_passed": true,
+  "scope": {
+    "credentials_or_session_files_read": 0,
+    "jobs_dispatched": 0,
+    "other_projects_touched": 0,
+    "selected_case_policy_predictions": 0,
+    "server_mutations": 0,
+    "services_changed": 0,
+    "writes": "Audit artifact in reviewer workspace and local disposable synthetic fixtures only"
+  },
+  "study_id": "5b3a2b8ebd8df5e0a1a746fa6222ec3cc4b95673ae9e8d3acb4138c886a54723",
+  "typed_capacity": {
+    "accuracy_measured": false,
+    "all_six_fixed_required_annotation_value_sets_represented": true,
+    "evidence": [
+      "template/native_slots4.py:20",
+      "template/native_slots4.py:26",
+      "template/native_slots4.py:66",
+      "template/native_slots4.py:113"
+    ],
+    "method": "Independent candidate-only oracle inspection, with solve/baseline/scorer patched to raise if called. All six inputs/answers/IDs remain unchanged.",
+    "policy_ranking_or_joint_achievability_proved": false,
+    "repaired_origins": {
+      "multiple_135_docket": "unquoted raw identifier",
+      "multiple_155_detail": "finite Boolean type domain, explicitly traced as nonliteral",
+      "multiple_21_frequency": "generic unit_magnitude integer"
+    },
+    "selected_baseline_calls": 0,
+    "selected_scorer_calls": 0,
+    "selected_solve_calls": 0
+  }
+}

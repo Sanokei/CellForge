@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. Even directional nearest-colour keys cannot distinguish the single required 7 from other background pixels along the same unobstructed row. The other key kinds also lack the required displacement information."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Use (colour, holes) to distinguish the erased blue objects from the cyan objects and learn cyan recolouring by enclosed-hole count."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Object recolouring cannot move the four interior colours to previously empty exterior cells. Changing the background cannot enable selective painting within a component."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists: demonstration 1 at zero-based (5,4) and demonstration 2 at (8,7) have identical complete neighbourhoods but require outputs 8 and 0. Every available neighbourhood key therefore conflicts."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. Each available local key merges cyan pixels requiring different outputs; the required recolouring depends on connectivity beyond the neighbourhood."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "Enable sources 8 and 9. No exact solution exists under the stated semantics: source-colour rays cannot produce colour 2 at intersections, while fixed paint colour 2 would also recolour every other ray cell."
+  }
+]

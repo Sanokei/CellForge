@@ -1,0 +1,88 @@
+{
+  "protocol": "priority-a-new-cells-three-arm/1",
+  "runs": [
+    {
+      "seed": 775101,
+      "starting_hash": "c39b358a72dc7a756d286a1591d11a24b0f1a90d1bc58cceae5ed3adab6449cc",
+      "commitments": {
+        "selection": "9a0f156bb0aca7472c2637e59732a81916f8bdcd4d118a3ffa57a62c2010d721",
+        "fresh": "c42abe5b8f511f732738622b2623207ea1de05f3173271be9d7446e2b2aefa7a",
+        "archive": "65036bdd0af1af2cbca0efdb8555e165c34a2361ba8c13f7fcdac0495cef99db",
+        "report": "b94d15f74ed39f7571c67a3d1657c74b63e61acb5b3abd50f7d1b637462d32f7"
+      },
+      "selection_tasks": 36,
+      "fresh_tasks": 36,
+      "archive_tasks": 36,
+      "report_tasks": 72
+    },
+    {
+      "seed": 775111,
+      "starting_hash": "3cb863d700061a92a198655528976cf63d32384ae1f40c034030931e092a17e5",
+      "commitments": {
+        "selection": "f3d6b77384828ce67f488feb6fdb59e89efecf22d59bf27d244701f55e6e1364",
+        "fresh": "a3266f3f32fef5e2670f72390d10f9d577daf22c32778d1406df76e21b19bcab",
+        "archive": "e7dd2d116258149e079e94280cc8c9b4d793253e93292f0c78186d2417367fb7",
+        "report": "66ac1db2d1726ca96bb69a8e3fe0eba2050e6bba212f9fbb8295b715ea566c54"
+      },
+      "selection_tasks": 36,
+      "fresh_tasks": 36,
+      "archive_tasks": 36,
+      "report_tasks": 72
+    },
+    {
+      "seed": 775121,
+      "starting_hash": "eb1e13fd51d3ada240d9f3e4805994635eb16d90e4ee61d73f9128a1c576fd1d",
+      "commitments": {
+        "selection": "1fc9600606eced12a600f55ad7b39bce736ae9b0551ddd74d8c322dc1999514a",
+        "fresh": "2a46b9a8f4b3820465cb83f3069adab4bb7de879e3d696ab1ac17d258a4dddf8",
+        "archive": "3e17b7616d3a340390f9173ed0ec46e06238e168b88040636f8cf53466871e28",
+        "report": "076d20831503c4b13536f7ea9a97faa46f5e05c06a58af34e25faebb6578696f"
+      },
+      "selection_tasks": 36,
+      "fresh_tasks": 36,
+      "archive_tasks": 36,
+      "report_tasks": 72
+    }
+  ],
+  "arms": [
+    "breeding_only",
+    "random_repair",
+    "maker_repair"
+  ],
+  "charged_proposals_per_arm_per_seed": 16,
+  "starting_parents": [
+    "d52514eb31e1dd1c0d677731ff3fbadc61291c10ced460ddac0d315d5fb5aaf7",
+    "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad"
+  ],
+  "gradients": false,
+  "api_calls": false,
+  "transaction_vocabulary": [
+    "set_param",
+    "put_def",
+    "import_def",
+    "import_slot_gene",
+    "set_slot_gene"
+  ],
+  "vocabulary_rule": "same bounds and cell/wiring grammar in both repair arms; each batch explicitly frozen before scoring",
+  "acceptance": "strict fresh niche gain; no earlier-family or DEV200 per-task losses; no FP increase; typed fixtures/caps",
+  "native_anchor": "200 public-training tasks ordered by SHA256(bare taskID), exclude modulo-five zero; fixed manifest4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+  "report_rule": "freeze winners before report; report once; never use report results to author repairs",
+  "cap": {
+    "parameters": 1024,
+    "rss_bytes": 4294967296,
+    "address_space_bytes": 3221225472
+  },
+  "execution": "sequential Hetzner2CPU4GB, nice15, numerical threads1",
+  "authoring_cost": "recorded edit count; session token cost not measurable, never label zero",
+  "decision": "maker must beat random in all3seed report outcomes; report paired differences and interval over3seeds with small-sample caveat",
+  "exposure": "all source families authored/exposed; periodic family motivated by cbded52d training diagnostics; no private ARC/generalization claim",
+  "freeze": [
+    "cache",
+    "memo",
+    "replay",
+    "receipts-tooling",
+    "paper reconciliation before result"
+  ],
+  "source_sha256": "b2fa6b2216d0c86f1eab6ac674d74e9e77f339f4534c9e8cad5d369fead2590d",
+  "status": "prepared before proposal; no scored arm or archive admission yet"
+}

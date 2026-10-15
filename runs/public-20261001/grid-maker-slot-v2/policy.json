@@ -1,0 +1,23 @@
+{
+  "protocol": "maker-grid-slot-pilot/1",
+  "parent_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+  "proposal_budget_per_arm": 1,
+  "control_seed": 662021,
+  "allowed_changes": "one put_def rewire of typed slot9; same shared authored bank, cells, parameters, state capacity",
+  "maker_choice": "bank_local_fill.gene",
+  "selection_tasks_per_family": 100,
+  "selection_seed_base": 731000,
+  "validation_seed_base": 1151000,
+  "validation_tasks_per_family": 100,
+  "selection_fitness": "macro exact reconstruction on all three demonstration pairs of each synthetic task; query targets excluded",
+  "acceptance": "strict macro improvement and no family regression against common founder",
+  "source_sha256": "8cf803ad525666bd0303df7a8a8aa76251a72b5baa521288142ed9e7179fcd12",
+  "maker_model": "existing Codex conversational assistant; exact serving model not recorded; no separate model calls",
+  "maker_cost": "not measured, not zero",
+  "proposal_timing": "manual maker wiring choice predeclared from prior published diagnostics; this is not a new adaptive model-service call after receiving this run diagnostics",
+  "prior_context_exposure": "assistant saw published synthetic baseline query aggregates and native DEV200 aggregates; those are not unexposed final data; fresh synthetic validation below is scored only after selection freeze",
+  "gene_authoring_scope": "the new fill gene is shared by both arms; this tests one wiring choice, not an isolated effect of LLM gene authoring",
+  "audit_evaluations": 0,
+  "final_evaluations": 0,
+  "gradient_steps": 0
+}

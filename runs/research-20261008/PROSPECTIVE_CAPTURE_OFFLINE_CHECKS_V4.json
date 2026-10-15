@@ -1,0 +1,28 @@
+{
+  "kind": "offline V4 contract checks only",
+  "checks": [
+    "documented exact reasoning summary allowed; final bytes from agent only",
+    "no-reasoning output still accepted",
+    "reasoning cannot be candidate",
+    "second agent message rejected",
+    "reasoning after final rejected",
+    "disguised command rejected",
+    "unknown reasoning key rejected",
+    "unknown event field rejected",
+    "actual command item rejected",
+    "bool usage rejected",
+    "new usage key rejected",
+    "malformed duplicate/nonfinite/unterminated bytes rejected",
+    "malformed duplicate/nonfinite/unterminated bytes rejected",
+    "malformed duplicate/nonfinite/unterminated bytes rejected",
+    "saved readiness remains valid",
+    "saved failure/tool-positive capture rejected",
+    "saved failure/tool-positive capture rejected",
+    "no dispatch without explicit authorization"
+  ],
+  "passed": 18,
+  "model_calls": 0,
+  "V3_unchanged": true,
+  "wrapper_sha256": "dc4713f665df07e010589c176c9b1ca3916a46c6a9298fc43b2c96e732ed6347",
+  "config_sha256": "258050033cd35522fd62dd10106ac8e6c1472a779e525e3521328a1b71fafb48"
+}

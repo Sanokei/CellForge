@@ -1,0 +1,2012 @@
+[
+  {
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "prompt": {
+      "base_params": {
+        "carry.W": [
+          [
+            -1.0
+          ]
+        ],
+        "carry.b": [
+          -9.5
+        ],
+        "readout.W": [
+          [
+            1.0,
+            10.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "readout.b": [
+          0.0,
+          0.0
+        ],
+        "sum.W": [
+          [
+            1.0,
+            -1.0,
+            1.0
+          ]
+        ],
+        "sum.b": [
+          0.0
+        ]
+      },
+      "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+      "contract": {
+        "input_bounds": {
+          "a": [
+            0,
+            9
+          ],
+          "b": [
+            0,
+            9
+          ],
+          "borrow": [
+            0,
+            1
+          ]
+        },
+        "input_order": [
+          "a",
+          "b",
+          "borrow"
+        ],
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "output_bounds": {
+          "borrow": [
+            0,
+            1
+          ],
+          "digit": [
+            0,
+            9
+          ]
+        },
+        "output_order": [
+          "digit",
+          "borrow"
+        ],
+        "positions": 12,
+        "readout_rebinding": "historical carry output explicitly named borrow",
+        "semantics": "d=a-b-borrow_in; digit=d%10; borrow_out=int(d<0)",
+        "shapes": {
+          "carry.W": [
+            1,
+            1
+          ],
+          "carry.b": [
+            1
+          ],
+          "readout.W": [
+            2,
+            2
+          ],
+          "readout.b": [
+            2
+          ],
+          "sum.W": [
+            1,
+            3
+          ],
+          "sum.b": [
+            1
+          ]
+        },
+        "structure": "affine-total/scalar-step/affine-readout",
+        "third_input_rebinding": "historical carry input explicitly receives borrow",
+        "weight_bounds": [
+          -10,
+          10
+        ]
+      },
+      "crossover": {
+        "authored_positions": 0,
+        "distinguishing_positions": [
+          1,
+          2,
+          4,
+          5,
+          7
+        ],
+        "inheritance": [
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "sum.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 0,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0,
+              1
+            ],
+            "parameter": "sum.W",
+            "parent": "left",
+            "parent_id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+            "position": 1,
+            "value": -1.0
+          },
+          {
+            "index": [
+              0,
+              2
+            ],
+            "parameter": "sum.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 2,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "sum.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 3,
+            "value": 0.0
+          },
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "carry.W",
+            "parent": "left",
+            "parent_id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+            "position": 4,
+            "value": -1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "carry.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 5,
+            "value": -9.5
+          },
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 6,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0,
+              1
+            ],
+            "parameter": "readout.W",
+            "parent": "left",
+            "parent_id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+            "position": 7,
+            "value": 10.0
+          },
+          {
+            "index": [
+              1,
+              0
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 8,
+            "value": 0.0
+          },
+          {
+            "index": [
+              1,
+              1
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 9,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "readout.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 10,
+            "value": 0.0
+          },
+          {
+            "index": [
+              1
+            ],
+            "parameter": "readout.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 11,
+            "value": 0.0
+          }
+        ],
+        "parent_params": {
+          "left": {
+            "carry.W": [
+              [
+                -1.0
+              ]
+            ],
+            "carry.b": [
+              -0.5
+            ],
+            "readout.W": [
+              [
+                1.0,
+                10.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "readout.b": [
+              0.0,
+              0.0
+            ],
+            "sum.W": [
+              [
+                1.0,
+                -1.0,
+                -1.0
+              ]
+            ],
+            "sum.b": [
+              0.0
+            ]
+          },
+          "right": {
+            "carry.W": [
+              [
+                1.0
+              ]
+            ],
+            "carry.b": [
+              -9.5
+            ],
+            "readout.W": [
+              [
+                1.0,
+                -10.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "readout.b": [
+              0.0,
+              0.0
+            ],
+            "sum.W": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "sum.b": [
+              0.0
+            ]
+          }
+        },
+        "parents": [
+          "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "positions": 12,
+        "status": "measured_compatible_crossover"
+      },
+      "development_evidence": {
+        "errors": [],
+        "outcomes": {
+          "dev-chain": true,
+          "dev-clear-borrow": true,
+          "dev-equal-incoming": true,
+          "dev-leading-zero": true,
+          "dev-new-borrow": true,
+          "dev-no-borrow": true,
+          "dev-propagate": true,
+          "dev-underflow": true,
+          "dev-zero": true
+        },
+        "partition": "development",
+        "solved": 9,
+        "total": 9,
+        "traces": [
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 0
+            },
+            "id": "dev-zero",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 0
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 5
+            },
+            "id": "dev-no-borrow",
+            "input": {
+              "a": 7,
+              "b": 2,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 5
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 5
+            },
+            "id": "dev-new-borrow",
+            "input": {
+              "a": 2,
+              "b": 7,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 5
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-propagate",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 9
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 4
+            },
+            "id": "dev-clear-borrow",
+            "input": {
+              "a": 8,
+              "b": 3,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 4
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-equal-incoming",
+            "input": {
+              "a": 4,
+              "b": 4,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 9
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 1,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 1,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0999"
+            },
+            "id": "dev-chain",
+            "input": {
+              "a": "1000",
+              "b": "1"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "0999"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 5,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 5
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 7,
+                  "b": 2,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 4
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0045"
+            },
+            "id": "dev-leading-zero",
+            "input": {
+              "a": "0070",
+              "b": "0025"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "0045"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 2,
+                  "b": 9,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 3
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 1,
+                  "b": 1,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digits": "93"
+            },
+            "id": "dev-underflow",
+            "input": {
+              "a": "12",
+              "b": "19"
+            },
+            "predicted": {
+              "borrow": 1,
+              "digits": "93"
+            }
+          }
+        ]
+      },
+      "edit_contract": "All12 literal finite positions [-10,10], nonzero numerical mutation from supplied base. No files/tools/network/reporting. When crossover supplied retain at least one numerically distinguishing inherited scalar unchanged from EACH parent. Remaining params are authored mutation. Never invent gains.",
+      "generation": 19,
+      "interface": "decimal-subtraction-borrow-cell/1",
+      "parent_id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+      "parent_params": {
+        "carry.W": [
+          [
+            -1.0
+          ]
+        ],
+        "carry.b": [
+          -0.5
+        ],
+        "readout.W": [
+          [
+            1.0,
+            10.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "readout.b": [
+          0.0,
+          0.0
+        ],
+        "sum.W": [
+          [
+            1.0,
+            -1.0,
+            -1.0
+          ]
+        ],
+        "sum.b": [
+          0.0
+        ]
+      },
+      "partition": "development",
+      "seed": 401
+    },
+    "prompt_sha256": "9e0cf638ae159b9258d23abdd57452d717dcde1f2197b5b4dcbc787d441f4e17",
+    "seed": 401
+  },
+  {
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "prompt": {
+      "base_params": {
+        "carry.W": [
+          [
+            -1.0
+          ]
+        ],
+        "carry.b": [
+          -9.5
+        ],
+        "readout.W": [
+          [
+            1.0,
+            10.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "readout.b": [
+          0.0,
+          0.0
+        ],
+        "sum.W": [
+          [
+            1.0,
+            -1.0,
+            1.0
+          ]
+        ],
+        "sum.b": [
+          0.0
+        ]
+      },
+      "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+      "contract": {
+        "input_bounds": {
+          "a": [
+            0,
+            9
+          ],
+          "b": [
+            0,
+            9
+          ],
+          "borrow": [
+            0,
+            1
+          ]
+        },
+        "input_order": [
+          "a",
+          "b",
+          "borrow"
+        ],
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "output_bounds": {
+          "borrow": [
+            0,
+            1
+          ],
+          "digit": [
+            0,
+            9
+          ]
+        },
+        "output_order": [
+          "digit",
+          "borrow"
+        ],
+        "positions": 12,
+        "readout_rebinding": "historical carry output explicitly named borrow",
+        "semantics": "d=a-b-borrow_in; digit=d%10; borrow_out=int(d<0)",
+        "shapes": {
+          "carry.W": [
+            1,
+            1
+          ],
+          "carry.b": [
+            1
+          ],
+          "readout.W": [
+            2,
+            2
+          ],
+          "readout.b": [
+            2
+          ],
+          "sum.W": [
+            1,
+            3
+          ],
+          "sum.b": [
+            1
+          ]
+        },
+        "structure": "affine-total/scalar-step/affine-readout",
+        "third_input_rebinding": "historical carry input explicitly receives borrow",
+        "weight_bounds": [
+          -10,
+          10
+        ]
+      },
+      "crossover": {
+        "authored_positions": 0,
+        "distinguishing_positions": [
+          1,
+          2,
+          4,
+          5,
+          7
+        ],
+        "inheritance": [
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "sum.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 0,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0,
+              1
+            ],
+            "parameter": "sum.W",
+            "parent": "left",
+            "parent_id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+            "position": 1,
+            "value": -1.0
+          },
+          {
+            "index": [
+              0,
+              2
+            ],
+            "parameter": "sum.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 2,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "sum.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 3,
+            "value": 0.0
+          },
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "carry.W",
+            "parent": "left",
+            "parent_id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+            "position": 4,
+            "value": -1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "carry.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 5,
+            "value": -9.5
+          },
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 6,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0,
+              1
+            ],
+            "parameter": "readout.W",
+            "parent": "left",
+            "parent_id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+            "position": 7,
+            "value": 10.0
+          },
+          {
+            "index": [
+              1,
+              0
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 8,
+            "value": 0.0
+          },
+          {
+            "index": [
+              1,
+              1
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 9,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "readout.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 10,
+            "value": 0.0
+          },
+          {
+            "index": [
+              1
+            ],
+            "parameter": "readout.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 11,
+            "value": 0.0
+          }
+        ],
+        "parent_params": {
+          "left": {
+            "carry.W": [
+              [
+                -1.0
+              ]
+            ],
+            "carry.b": [
+              -0.25
+            ],
+            "readout.W": [
+              [
+                1.0,
+                10.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "readout.b": [
+              0.0,
+              0.0
+            ],
+            "sum.W": [
+              [
+                1.0,
+                -1.0,
+                -1.0
+              ]
+            ],
+            "sum.b": [
+              0.0
+            ]
+          },
+          "right": {
+            "carry.W": [
+              [
+                1.0
+              ]
+            ],
+            "carry.b": [
+              -9.5
+            ],
+            "readout.W": [
+              [
+                1.0,
+                -10.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "readout.b": [
+              0.0,
+              0.0
+            ],
+            "sum.W": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "sum.b": [
+              0.0
+            ]
+          }
+        },
+        "parents": [
+          "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "positions": 12,
+        "status": "measured_compatible_crossover"
+      },
+      "development_evidence": {
+        "errors": [],
+        "outcomes": {
+          "dev-chain": true,
+          "dev-clear-borrow": true,
+          "dev-equal-incoming": true,
+          "dev-leading-zero": true,
+          "dev-new-borrow": true,
+          "dev-no-borrow": true,
+          "dev-propagate": true,
+          "dev-underflow": true,
+          "dev-zero": true
+        },
+        "partition": "development",
+        "solved": 9,
+        "total": 9,
+        "traces": [
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 0
+            },
+            "id": "dev-zero",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 0
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 5
+            },
+            "id": "dev-no-borrow",
+            "input": {
+              "a": 7,
+              "b": 2,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 5
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 5
+            },
+            "id": "dev-new-borrow",
+            "input": {
+              "a": 2,
+              "b": 7,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 5
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-propagate",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 9
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 4
+            },
+            "id": "dev-clear-borrow",
+            "input": {
+              "a": 8,
+              "b": 3,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 4
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-equal-incoming",
+            "input": {
+              "a": 4,
+              "b": 4,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 9
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 1,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 1,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0999"
+            },
+            "id": "dev-chain",
+            "input": {
+              "a": "1000",
+              "b": "1"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "0999"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 5,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 5
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 7,
+                  "b": 2,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 4
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0045"
+            },
+            "id": "dev-leading-zero",
+            "input": {
+              "a": "0070",
+              "b": "0025"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "0045"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 2,
+                  "b": 9,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 3
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 1,
+                  "b": 1,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digits": "93"
+            },
+            "id": "dev-underflow",
+            "input": {
+              "a": "12",
+              "b": "19"
+            },
+            "predicted": {
+              "borrow": 1,
+              "digits": "93"
+            }
+          }
+        ]
+      },
+      "edit_contract": "All12 literal finite positions [-10,10], nonzero numerical mutation from supplied base. No files/tools/network/reporting. When crossover supplied retain at least one numerically distinguishing inherited scalar unchanged from EACH parent. Remaining params are authored mutation. Never invent gains.",
+      "generation": 19,
+      "interface": "decimal-subtraction-borrow-cell/1",
+      "parent_id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+      "parent_params": {
+        "carry.W": [
+          [
+            -1.0
+          ]
+        ],
+        "carry.b": [
+          -0.25
+        ],
+        "readout.W": [
+          [
+            1.0,
+            10.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "readout.b": [
+          0.0,
+          0.0
+        ],
+        "sum.W": [
+          [
+            1.0,
+            -1.0,
+            -1.0
+          ]
+        ],
+        "sum.b": [
+          0.0
+        ]
+      },
+      "partition": "development",
+      "seed": 402
+    },
+    "prompt_sha256": "102eaf3ee6a4739853455683b311f20ea6a8ec6cb8cf3c741626b68935fe512b",
+    "seed": 402
+  },
+  {
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "prompt": {
+      "base_params": {
+        "carry.W": [
+          [
+            -1.0
+          ]
+        ],
+        "carry.b": [
+          -9.5
+        ],
+        "readout.W": [
+          [
+            1.0,
+            10.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "readout.b": [
+          0.0,
+          0.0
+        ],
+        "sum.W": [
+          [
+            1.0,
+            -1.0,
+            1.0
+          ]
+        ],
+        "sum.b": [
+          0.0
+        ]
+      },
+      "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+      "contract": {
+        "input_bounds": {
+          "a": [
+            0,
+            9
+          ],
+          "b": [
+            0,
+            9
+          ],
+          "borrow": [
+            0,
+            1
+          ]
+        },
+        "input_order": [
+          "a",
+          "b",
+          "borrow"
+        ],
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "output_bounds": {
+          "borrow": [
+            0,
+            1
+          ],
+          "digit": [
+            0,
+            9
+          ]
+        },
+        "output_order": [
+          "digit",
+          "borrow"
+        ],
+        "positions": 12,
+        "readout_rebinding": "historical carry output explicitly named borrow",
+        "semantics": "d=a-b-borrow_in; digit=d%10; borrow_out=int(d<0)",
+        "shapes": {
+          "carry.W": [
+            1,
+            1
+          ],
+          "carry.b": [
+            1
+          ],
+          "readout.W": [
+            2,
+            2
+          ],
+          "readout.b": [
+            2
+          ],
+          "sum.W": [
+            1,
+            3
+          ],
+          "sum.b": [
+            1
+          ]
+        },
+        "structure": "affine-total/scalar-step/affine-readout",
+        "third_input_rebinding": "historical carry input explicitly receives borrow",
+        "weight_bounds": [
+          -10,
+          10
+        ]
+      },
+      "crossover": {
+        "authored_positions": 0,
+        "distinguishing_positions": [
+          1,
+          2,
+          4,
+          5,
+          7
+        ],
+        "inheritance": [
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "sum.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 0,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0,
+              1
+            ],
+            "parameter": "sum.W",
+            "parent": "left",
+            "parent_id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+            "position": 1,
+            "value": -1.0
+          },
+          {
+            "index": [
+              0,
+              2
+            ],
+            "parameter": "sum.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 2,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "sum.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 3,
+            "value": 0.0
+          },
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "carry.W",
+            "parent": "left",
+            "parent_id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+            "position": 4,
+            "value": -1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "carry.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 5,
+            "value": -9.5
+          },
+          {
+            "index": [
+              0,
+              0
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 6,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0,
+              1
+            ],
+            "parameter": "readout.W",
+            "parent": "left",
+            "parent_id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+            "position": 7,
+            "value": 10.0
+          },
+          {
+            "index": [
+              1,
+              0
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 8,
+            "value": 0.0
+          },
+          {
+            "index": [
+              1,
+              1
+            ],
+            "parameter": "readout.W",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 9,
+            "value": 1.0
+          },
+          {
+            "index": [
+              0
+            ],
+            "parameter": "readout.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 10,
+            "value": 0.0
+          },
+          {
+            "index": [
+              1
+            ],
+            "parameter": "readout.b",
+            "parent": "right",
+            "parent_id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+            "position": 11,
+            "value": 0.0
+          }
+        ],
+        "parent_params": {
+          "left": {
+            "carry.W": [
+              [
+                -1.0
+              ]
+            ],
+            "carry.b": [
+              -0.75
+            ],
+            "readout.W": [
+              [
+                1.0,
+                10.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "readout.b": [
+              0.0,
+              0.0
+            ],
+            "sum.W": [
+              [
+                1.0,
+                -1.0,
+                -1.0
+              ]
+            ],
+            "sum.b": [
+              0.0
+            ]
+          },
+          "right": {
+            "carry.W": [
+              [
+                1.0
+              ]
+            ],
+            "carry.b": [
+              -9.5
+            ],
+            "readout.W": [
+              [
+                1.0,
+                -10.0
+              ],
+              [
+                0.0,
+                1.0
+              ]
+            ],
+            "readout.b": [
+              0.0,
+              0.0
+            ],
+            "sum.W": [
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "sum.b": [
+              0.0
+            ]
+          }
+        },
+        "parents": [
+          "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "positions": 12,
+        "status": "measured_compatible_crossover"
+      },
+      "development_evidence": {
+        "errors": [],
+        "outcomes": {
+          "dev-chain": true,
+          "dev-clear-borrow": true,
+          "dev-equal-incoming": true,
+          "dev-leading-zero": true,
+          "dev-new-borrow": true,
+          "dev-no-borrow": true,
+          "dev-propagate": true,
+          "dev-underflow": true,
+          "dev-zero": true
+        },
+        "partition": "development",
+        "solved": 9,
+        "total": 9,
+        "traces": [
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 0
+            },
+            "id": "dev-zero",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 0
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 5
+            },
+            "id": "dev-no-borrow",
+            "input": {
+              "a": 7,
+              "b": 2,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 5
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 5
+            },
+            "id": "dev-new-borrow",
+            "input": {
+              "a": 2,
+              "b": 7,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 5
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-propagate",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 9
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 4
+            },
+            "id": "dev-clear-borrow",
+            "input": {
+              "a": 8,
+              "b": 3,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 4
+            }
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-equal-incoming",
+            "input": {
+              "a": 4,
+              "b": 4,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 9
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 1,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 1,
+                  "b": 0,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0999"
+            },
+            "id": "dev-chain",
+            "input": {
+              "a": "1000",
+              "b": "1"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "0999"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 5,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 5
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 7,
+                  "b": 2,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 4
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0045"
+            },
+            "id": "dev-leading-zero",
+            "input": {
+              "a": "0070",
+              "b": "0025"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "0045"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 2,
+                  "b": 9,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 3
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 1,
+                  "b": 1,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 9
+                }
+              }
+            ],
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digits": "93"
+            },
+            "id": "dev-underflow",
+            "input": {
+              "a": "12",
+              "b": "19"
+            },
+            "predicted": {
+              "borrow": 1,
+              "digits": "93"
+            }
+          }
+        ]
+      },
+      "edit_contract": "All12 literal finite positions [-10,10], nonzero numerical mutation from supplied base. No files/tools/network/reporting. When crossover supplied retain at least one numerically distinguishing inherited scalar unchanged from EACH parent. Remaining params are authored mutation. Never invent gains.",
+      "generation": 19,
+      "interface": "decimal-subtraction-borrow-cell/1",
+      "parent_id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+      "parent_params": {
+        "carry.W": [
+          [
+            -1.0
+          ]
+        ],
+        "carry.b": [
+          -0.75
+        ],
+        "readout.W": [
+          [
+            1.0,
+            10.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "readout.b": [
+          0.0,
+          0.0
+        ],
+        "sum.W": [
+          [
+            1.0,
+            -1.0,
+            -1.0
+          ]
+        ],
+        "sum.b": [
+          0.0
+        ]
+      },
+      "partition": "development",
+      "seed": 403
+    },
+    "prompt_sha256": "06035fec70a2209aef342192c4f26f1702b9816f69783977927bbb23f0a24f77",
+    "seed": 403
+  }
+]

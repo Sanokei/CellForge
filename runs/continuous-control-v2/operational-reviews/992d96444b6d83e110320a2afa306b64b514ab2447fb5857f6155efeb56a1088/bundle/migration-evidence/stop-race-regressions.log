@@ -1,0 +1,47 @@
+test_dispatch_removed_during_gates_prevents_launch (__main__.StopDuringLaunch) ... FAIL
+test_sigterm_arriving_during_gates_prevents_launch (__main__.StopDuringLaunch) ... FAIL
+test_stop_arriving_during_launch_is_terminal_before_tick_returns (__main__.StopDuringLaunch) ... FAIL
+test_stop_marker_arriving_during_gates_prevents_launch (__main__.StopDuringLaunch) ... FAIL
+
+======================================================================
+FAIL: test_dispatch_removed_during_gates_prevents_launch (__main__.StopDuringLaunch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\migration-transition-20261011\test_stop_during_launch.py", line 22, in test_dispatch_removed_during_gates_prevents_launch
+    self.during_gate(lambda:(self.root/'DISPATCH_ENABLED').unlink())
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\migration-transition-20261011\test_stop_during_launch.py", line 17, in during_gate
+    self.assertEqual(self.backend.starts,0,'a stop/disable arriving during gates must be rechecked before launch')
+AssertionError: 1 != 0 : a stop/disable arriving during gates must be rechecked before launch
+
+======================================================================
+FAIL: test_sigterm_arriving_during_gates_prevents_launch (__main__.StopDuringLaunch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\migration-transition-20261011\test_stop_during_launch.py", line 24, in test_sigterm_arriving_during_gates_prevents_launch
+    self.during_gate(lambda:setattr(self.controller,'halt',True))
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\migration-transition-20261011\test_stop_during_launch.py", line 17, in during_gate
+    self.assertEqual(self.backend.starts,0,'a stop/disable arriving during gates must be rechecked before launch')
+AssertionError: 1 != 0 : a stop/disable arriving during gates must be rechecked before launch
+
+======================================================================
+FAIL: test_stop_arriving_during_launch_is_terminal_before_tick_returns (__main__.StopDuringLaunch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\migration-transition-20261011\test_stop_during_launch.py", line 34, in test_stop_arriving_during_launch_is_terminal_before_tick_returns
+    self.assertIsNone(state['active'],'the main loop exits after this tick when halt=True; an owned job must already be cancelled')
+AssertionError: '15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686' is not None : the main loop exits after this tick when halt=True; an owned job must already be cancelled
+
+======================================================================
+FAIL: test_stop_marker_arriving_during_gates_prevents_launch (__main__.StopDuringLaunch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\migration-transition-20261011\test_stop_during_launch.py", line 20, in test_stop_marker_arriving_during_gates_prevents_launch
+    self.during_gate(lambda:(self.root/'STOP').write_text('fixture STOP'))
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\migration-transition-20261011\test_stop_during_launch.py", line 17, in during_gate
+    self.assertEqual(self.backend.starts,0,'a stop/disable arriving during gates must be rechecked before launch')
+AssertionError: 1 != 0 : a stop/disable arriving during gates must be rechecked before launch
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.075s
+
+FAILED (failures=4)

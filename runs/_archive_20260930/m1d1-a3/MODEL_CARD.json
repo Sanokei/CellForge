@@ -1,0 +1,44 @@
+{
+ "model_hash": "e89e11b573c3146cdad6255c858a73f1d9492e5c596c02151cd3381d73f034f7",
+ "stats": {
+  "unique_param_storage": 150,
+  "expanded_param_uses": 140,
+  "nonzero_slots": 120,
+  "constant_slots_in_op_args": 12,
+  "cell_defs": 1,
+  "bundle_defs": 1,
+  "reachable_defs": 2,
+  "expanded_instances": 2,
+  "nesting_depth": 2,
+  "edges": 40,
+  "dispatch_nodes": 0,
+  "param_bytes_float64": 1200
+ },
+ "vocab": null,
+ "pixel_contract": null,
+ "task": "clf",
+ "primitive_version": "cellforge-ops/1",
+ "bootstrap": "bootstrap/zero-logits/1",
+ "run_protocol": "mnist1d/1",
+ "inference_dependencies": [
+  "numpy",
+  "cellforge.runtime (ops/interp/decoder)",
+  "cellforge.ir.graph"
+ ],
+ "not_included": [
+  "prompts",
+  "labels",
+  "development data",
+  "memory",
+  "author identities",
+  "keys"
+ ],
+ "anchor_result_development_feedback": {
+  "acc": 0.355,
+  "correct": 355,
+  "failures": 0,
+  "model_hash": "e89e11b573c3146cdad6255c858a73f1d9492e5c596c02151cd3381d73f034f7",
+  "n": 1000,
+  "protocol": "clf-acc/1"
+ }
+}

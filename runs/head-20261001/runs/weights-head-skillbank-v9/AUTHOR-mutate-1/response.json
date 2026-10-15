@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. Nearest-colour keys omit distances: demonstration 1 pixels (4,1) and (4,2), using zero-based coordinates, have identical keys but require outputs 7 and 8. The other key kinds also cannot distinguish all required changes."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes): colour-1 objects disappear; colour-8 objects with zero, one, or three enclosed holes become 2, 7, or 3 respectively."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist. This template only recolours existing components. It cannot move the four interior colours onto previously background pixels outside the frame."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist. The colour-9 pixels in demonstrations 1 and 2 have identical keys for every available neighbourhood kind, for any background choice, but require different outputs: 8 and 9."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Required recolouring depends on connectivity beyond the immediate neighbourhood. Even ordered four-neighbour keys collide: pixel (1,2) in demonstrations 1 and 2 has the same key but requires 9 and 8."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "Enable all nonzero source colours to draw their crosses. No exact solution exists: the template lacks intersection-specific painting, so it cannot preserve source colours along rays while colouring their crossings 2."
+  }
+]

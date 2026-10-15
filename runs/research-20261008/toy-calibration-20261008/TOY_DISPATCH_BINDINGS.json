@@ -1,0 +1,65 @@
+{
+  "approval": {
+    "accounting_limits": "One CLI invocation, backend request count and consumed cost unknown. No extra credits, retry, mutation or replacement authorized.",
+    "approval_reference": "parent-toy-approval-20261008T150622Z",
+    "capture_code_sha256": "5d822fff874cbd84856474ed275912a43936da3af881dff63c33e1d89539c43b",
+    "capture_config_sha256": "df26376e97f9f1d77cbab01927465b9a74b2490781d11d27e471f7ffe4b54ff3",
+    "evaluator_source_sha256": "855422902c1806896ae851c66024363ae81a4fbd169b18f1486b37794504b22b",
+    "isolation": "Only exact packet/schema scientific inputs; no hidden test, seed, oracle, control weights or results. Generic platform context remains; observed-zero-tools only, preventive isolation not claimed.",
+    "manifest_sha256": "1c3cdac68cf9801dc3acae6fca98e4201d4d2073ef031f08434e53b9c26fab6d",
+    "maximum_author_invocations": 1,
+    "packet_sha256": "c45264c2918f93c12d34b510e28f722f6cc331b49ab34176cbba9cff89b93ae4",
+    "parent_approved": true,
+    "parent_identity": "/root",
+    "positions_each_arm": 17,
+    "quota": {
+      "attestation_reference": "Parent /root verified server read at 2026-10-08T15:05:32.370234Z",
+      "extra_credit_balance": 0,
+      "observed_at": "2026-10-08T15:05:32.370234Z",
+      "ordinaryUsageAllowed": true,
+      "primary_reset_at": 1791998424,
+      "primary_used_percent": 16,
+      "primary_window_minutes": 10080,
+      "secondary": null,
+      "stop_percent": 85,
+      "unlimited_extra_credits": false
+    },
+    "quota_attestation_reference": "Parent /root verified server read at 2026-10-08T15:05:32.370234Z",
+    "response_schema_sha256": "1ccd60558f5e9e5752f588a9b0d69910dd934216e4224ab8b7a0e49aa2fa6905",
+    "route_attestation_reference": "../cellforge_route_review/PROSPECTIVE_V5_TOY_CALIBRATION.json#sha256=df26376e97f9f1d77cbab01927465b9a74b2490781d11d27e471f7ffe4b54ff3",
+    "schema": "toy-parent-approval/1"
+  },
+  "reservation": {
+    "approval_reference": "parent-toy-approval-20261008T150622Z",
+    "approval_sha256": "82554f56d9fd814c2b5d630c1d644732d95817bd25d2b1a2f1a0623a707ed388",
+    "attempt": 1,
+    "contract_sha256": "1c3cdac68cf9801dc3acae6fca98e4201d4d2073ef031f08434e53b9c26fab6d",
+    "packet_sha256": "c45264c2918f93c12d34b510e28f722f6cc331b49ab34176cbba9cff89b93ae4",
+    "parent_identity": "/root",
+    "quota_attestation_reference": "Parent /root verified server read at 2026-10-08T15:05:32.370234Z",
+    "reserved_author_positions": 17,
+    "reserved_paired_random_positions": 17,
+    "role": "founder",
+    "route_attestation_reference": "../cellforge_route_review/PROSPECTIVE_V5_TOY_CALIBRATION.json#sha256=df26376e97f9f1d77cbab01927465b9a74b2490781d11d27e471f7ffe4b54ff3",
+    "schema": "toy-host-reservation/1",
+    "submitted": false
+  },
+  "submission": {
+    "consumed_author_positions": 17,
+    "consumed_paired_random_positions": 17,
+    "host_reference": "cellforge-1:/srv/cellforge-inbox/research-20261008/toy-calibration-20261008/author-001",
+    "packet_sha256": "c45264c2918f93c12d34b510e28f722f6cc331b49ab34176cbba9cff89b93ae4",
+    "reservation_sha256": "d5f1b3bfcf1c91fe0b19ce2dc99340502c6c6127371d4f9a0eb65fbdccd9c028",
+    "schema": "toy-submission-intent/1",
+    "status": "consumed_unknown_until_complete_original_receipt"
+  },
+  "canonical_hashes_verified": true,
+  "submission_canonical_sha256": "2709644011765d0fab211155bce08110b2cdac58a66e09c6975cf7aaa17b391a",
+  "parent_file_hashes_supplied_not_reconstructed": {
+    "APPROVAL.json": "82554f56d9fd814c2b5d630c1d644732d95817bd25d2b1a2f1a0623a707ed388",
+    "RESERVATION.json": "beeae1aad150fbe3448ea2e205a6c6c47688567c882735c5b11d78a788d763da",
+    "SUBMISSION.json": "6e183b7d7af66fddb4eb6caa2187f251cd32105a663ddc890c2fdfd626734924"
+  },
+  "additional_author_calls_authorized": 0,
+  "second_reservation_created": false
+}

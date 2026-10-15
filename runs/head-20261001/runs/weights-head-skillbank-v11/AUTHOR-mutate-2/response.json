@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. The transformation depends on distances between 1 and 6. None of the available keys encodes those distances. Even the nearest-colour key assigns identical keys to demonstration-one pixels (4,0) and (4,1), although their required outputs differ."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Select pixel count. Demonstrations map object sizes 31 to 7, 14 and 16 to 3, 24 and 30 to 2, and marker sizes 5 and 6 to 0. This reproduces every demonstration and the counterexample; unseen sizes remain unchanged."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No solution exists in this template. Object recolouring cannot move the interior colours onto previously background pixels. Changing background cannot solve this: each single-colour component can receive only one uniform output colour."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No solution exists in this template. In demonstration two, pixels (1,1) and (8,7) have identical complete local neighbourhoods, but require outputs 8 and 0. Every available neighbourhood key therefore collides."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No solution exists in this template. In demonstration three, pixels (1,3) and (7,3) have identical complete local neighbourhoods, but require outputs 8 and 9. Every available neighbourhood key therefore collides."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "Enabling every nonzero source fixes omitted source colours, but no exact solution exists. The template cannot paint intersections 2 while preserving source colours along other ray cells: painting uses either source colour everywhere or one fixed colour everywhere."
+  }
+]

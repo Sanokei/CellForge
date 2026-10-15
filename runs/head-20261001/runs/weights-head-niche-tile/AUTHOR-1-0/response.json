@@ -1,0 +1,152 @@
+[
+  {
+    "task_id": "tile-23x-diag_transpose",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[0,0,0,0,1,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,1,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations form 2 by 3 tiles, with transpose at (0,0) and (1,1) and identity elsewhere; the first transposed tile begins [0,7,1] in demonstration 1."
+  },
+  {
+    "task_id": "tile-13x-rot_cycle",
+    "template": "tile_orient",
+    "params": {
+      "per": [1,0,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations place identity, clockwise 90-degree rotation, and 180-degree rotation across one tile row; demonstration 1 has tile first rows [3,7], [8,3], and [1,8]."
+  },
+  {
+    "task_id": "tile-32x-flip_odd_rows",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,1,0,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations have 3 by 2 tiles: identity in the first and third tile rows and vertical flip in the middle; demonstration 3 repeats [6,9] above [7,2] in both middle tiles."
+  },
+  {
+    "task_id": "tile-22x-flip_lr_odd_rows",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations have 2 by 2 tiles, identity above and horizontal flip below; demonstration 1 changes [3,0,8] to [8,0,3] in both lower tiles."
+  },
+  {
+    "task_id": "tile-44x-mirror4",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,0,1],
+      "pec": [0,0,0,1],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations form 4 by 4 tiles with horizontal flips in odd tile columns and vertical flips in odd tile rows. Demonstration 1 starts [2,7,7,2,2,7,7,2], and its second tile row starts [8,4,4,8,8,4,4,8]."
+  },
+  {
+    "task_id": "tile-32x-flip_ud_odd_cols",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations repeat three tile rows containing identity on the left and vertical flip on the right; demonstration 2 begins each tile row with [4,1,8,6]."
+  },
+  {
+    "task_id": "tile-24x-same",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,0,0,1],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Every demonstration repeats the unchanged input in 2 tile rows and 4 tile columns; demonstration 2 repeats [7,4,4] four times in output rows 1 and 3."
+  },
+  {
+    "task_id": "tile-41x-rot_cycle",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,0,1],
+      "pec": [1,0,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations stack identity, clockwise 90, 180, and counter-clockwise 90 rotations. Demonstration 3 has tile first rows [6,8], [9,6], [5,9], and [8,5]."
+  },
+  {
+    "task_id": "tile-41x-diag_transpose",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,0,1],
+      "pec": [1,0,0,0],
+      "orient": [
+        [[0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations stack a transpose followed by three unchanged inputs; demonstration 1 begins with transposed row [1,0,9], then each remaining tile begins [1,1,3]."
+  },
+  {
+    "task_id": "tile-41x-checker_rot180",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,0,1],
+      "pec": [1,0,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations stack four tiles alternating identity and 180-degree rotation; demonstration 2 alternates [[7,4],[8,1]] with [[1,8],[4,7]]."
+  }
+]

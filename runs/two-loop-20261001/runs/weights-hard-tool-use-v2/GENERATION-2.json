@@ -1,0 +1,329 @@
+{
+  "generation": 2,
+  "utc": "2026-10-01T23:12:13.220711+00:00",
+  "total": 48,
+  "tier": 1,
+  "next_tier": 1,
+  "decisions": [
+    {
+      "seed": 1701,
+      "niche": "bfcl-call2",
+      "arm": "llm",
+      "candidate": "f18ac2fb2727258a3a7b4609af08b4679c08f868c334644415562303acc4318b",
+      "solved": 44,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 45,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1701,
+      "niche": "bfcl-call2",
+      "arm": "random",
+      "candidate": "5e7f8500c791fed801c4ee40c7ed6228d9b9b829757fbdfa3aae9ff9dbeba27f",
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 33,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1702,
+      "niche": "bfcl-call2",
+      "arm": "llm",
+      "candidate": "f18ac2fb2727258a3a7b4609af08b4679c08f868c334644415562303acc4318b",
+      "solved": 44,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 45,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1702,
+      "niche": "bfcl-call2",
+      "arm": "random",
+      "candidate": "34b1afedb97047f3c99834f91d2e22f9411872727978dd94827495450a152db2",
+      "solved": 10,
+      "accepted": true,
+      "reasons": [
+        "accepted"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": true
+    },
+    {
+      "seed": 1703,
+      "niche": "bfcl-call2",
+      "arm": "llm",
+      "candidate": "f18ac2fb2727258a3a7b4609af08b4679c08f868c334644415562303acc4318b",
+      "solved": 44,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 45,
+      "no_regression": false,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1703,
+      "niche": "bfcl-call2",
+      "arm": "random",
+      "candidate": "4ab0214cf056b213925a0663f602c87b8a6144e58b1bfab22d91695f08adcb74",
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": false
+    }
+  ],
+  "parents": {
+    "1701": {
+      "kind": "cell",
+      "template": "bfcl_call2",
+      "params": {
+        "route": [
+          8,
+          2,
+          1,
+          0
+        ],
+        "bind": [
+          9,
+          6,
+          0.1,
+          8
+        ],
+        "type": [
+          [
+            7,
+            3,
+            -7,
+            -7
+          ],
+          [
+            3,
+            7,
+            -7,
+            -7
+          ],
+          [
+            -7,
+            -7,
+            7,
+            -7
+          ],
+          [
+            -7,
+            -7,
+            -7,
+            7
+          ]
+        ]
+      },
+      "id": "f009e2cc8e8495086aa49ab44aee1f1eafd85b58226a2a8f0f6e6417d94af37f"
+    },
+    "1702": {
+      "kind": "cell",
+      "template": "bfcl_call2",
+      "params": {
+        "route": [
+          8,
+          2,
+          1,
+          0
+        ],
+        "bind": [
+          9,
+          6,
+          0.1,
+          8
+        ],
+        "type": [
+          [
+            7,
+            3,
+            -7,
+            -7
+          ],
+          [
+            3,
+            7,
+            -7,
+            -7
+          ],
+          [
+            -7,
+            -7,
+            7,
+            -7
+          ],
+          [
+            -7,
+            -7,
+            -7,
+            7
+          ]
+        ]
+      },
+      "id": "f009e2cc8e8495086aa49ab44aee1f1eafd85b58226a2a8f0f6e6417d94af37f"
+    },
+    "1703": {
+      "kind": "cell",
+      "template": "bfcl_call2",
+      "params": {
+        "route": [
+          8,
+          2,
+          1,
+          0
+        ],
+        "bind": [
+          9,
+          6,
+          0.1,
+          8
+        ],
+        "type": [
+          [
+            7,
+            3,
+            -7,
+            -7
+          ],
+          [
+            3,
+            7,
+            -7,
+            -7
+          ],
+          [
+            -7,
+            -7,
+            7,
+            -7
+          ],
+          [
+            -7,
+            -7,
+            -7,
+            7
+          ]
+        ]
+      },
+      "id": "f009e2cc8e8495086aa49ab44aee1f1eafd85b58226a2a8f0f6e6417d94af37f"
+    }
+  },
+  "random_parents": {
+    "1701": {
+      "kind": "cell",
+      "template": "bfcl_call2",
+      "params": {
+        "route": [
+          6.315282115839231,
+          4.334482871242312,
+          -6.763143720095298,
+          4.957367758816822
+        ],
+        "bind": [
+          -0.13355093511049532,
+          -7.874966948094993,
+          8.987365125230376,
+          6.2160657495212455
+        ],
+        "type": [
+          [
+            1.5390010394526747,
+            -1.8155737510261893,
+            -7.323866219280869,
+            -0.2185532196811799
+          ],
+          [
+            1.4097922971837669,
+            -7.364681129956862,
+            0.6314188766638136,
+            -2.4179826658539625
+          ],
+          [
+            8.660306405608853,
+            -2.5278022488955756,
+            8.691478346385033,
+            6.505573877900744
+          ],
+          [
+            -0.5485702386661693,
+            1.8523527677849465,
+            3.2238449963297864,
+            7.1959878089230465
+          ]
+        ]
+      },
+      "id": "fe5cfdb6c873b4d6d46d757850286d75e60aeb927d2ec62772f322115a234eb7"
+    },
+    "1702": {
+      "kind": "cell",
+      "template": "bfcl_call2",
+      "params": {
+        "route": [
+          3.389743682707886,
+          -4.4288531037927505,
+          4.658225814210402,
+          6.078979597675605
+        ],
+        "bind": [
+          6.732584755480465,
+          5.011363435852491,
+          7.279527066040732,
+          7.126473252693341
+        ],
+        "type": [
+          [
+            -0.8639845000986046,
+            -6.315824284242375,
+            -6.691636847516719,
+            -1.184285469548139
+          ],
+          [
+            -3.363729825538093,
+            7.231100668591523,
+            -7.9412933843289535,
+            6.002549068463672
+          ],
+          [
+            7.643924896936138,
+            8.51232379626483,
+            3.025508020239048,
+            5.378060955846395
+          ],
+          [
+            -3.4716825300698195,
+            -2.5997624364866017,
+            5.089441289780579,
+            -4.059162353061613
+          ]
+        ]
+      },
+      "id": "34b1afedb97047f3c99834f91d2e22f9411872727978dd94827495450a152db2"
+    },
+    "1703": null
+  }
+}

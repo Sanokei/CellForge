@@ -1,0 +1,134 @@
+test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed) ... FAIL
+test_founders_are_llm_written_literal_weights (tests.test_one_standard.ContractOfEveryWeightsRun.test_founders_are_llm_written_literal_weights) ... ok
+test_genomes_are_weights_with_valid_lineage (tests.test_one_standard.ContractOfEveryWeightsRun.test_genomes_are_weights_with_valid_lineage) ... ok
+test_llm_arm_and_random_control_present (tests.test_one_standard.ContractOfEveryWeightsRun.test_llm_arm_and_random_control_present) ... ok
+test_mutation_origin_matches_arm (tests.test_one_standard.ContractOfEveryWeightsRun.test_mutation_origin_matches_arm) ... ok
+test_required_fields (tests.test_one_standard.ContractOfEveryWeightsRun.test_required_fields) ... ok
+test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough) ... FAIL
+test_accuracy_improves_over_generations (tests.test_one_standard.Milestone.test_accuracy_improves_over_generations) ... ok
+test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone.test_crossover_children_exist_and_are_new) ... ok
+test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone.test_enough_niches_and_llm_founders) ... ok
+test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone.test_llm_mutation_beats_random_control) ... ok
+test_many_distinct_weight_genomes (tests.test_one_standard.Milestone.test_many_distinct_weight_genomes) ... ok
+test_agents_md_exists_and_points_to_standard (tests.test_one_standard.RepoGuards.test_agents_md_exists_and_points_to_standard) ... C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_one_standard.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\wkeif\\Documents\\GitHub\\CellForge\\AGENTS.md' mode='r' encoding='utf-8'>
+  t = open(p, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards.test_no_new_gene_list_runs_after_cutoff)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*. ... ok
+test_standard_doc_exists (tests.test_one_standard.RepoGuards.test_standard_doc_exists) ... ok
+test_clean_run_llm_beats_random_recomputed (tests.test_standard_semantic.MetaTests.test_clean_run_llm_beats_random_recomputed) ... ok
+test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests.test_clean_run_passes_every_check) ... ok
+test_each_cheat_is_caught_by_its_check (tests.test_standard_semantic.MetaTests.test_each_cheat_is_caught_by_its_check) ... ok
+test_random_arm_cannot_win_by_inflated_claims (tests.test_standard_semantic.MetaTests.test_random_arm_cannot_win_by_inflated_claims)
+If random claims higher accuracy than its recomputed accuracy, the recompute check must flag it. ... ok
+test_unequal_budget_cheat_is_caught (tests.test_standard_semantic.MetaTests.test_unequal_budget_cheat_is_caught) ... ok
+test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns.test_every_semantic_check_passes_on_every_real_run) ... FAIL
+test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns.test_recomputed_llm_beats_random_on_a_real_run) ... ok
+test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns.test_router_exists_matters_and_was_llm_mutated_on_a_real_run) ... FAIL
+test_missing_router_weights_is_caught (tests.test_standard_semantic.RouterMeta.test_missing_router_weights_is_caught) ... ok
+test_useful_router_passes_and_useless_router_is_caught (tests.test_standard_semantic.RouterMeta.test_useful_router_passes_and_useless_router_is_caught) ... ok
+test_authored_patch_emits_snapshot_footprint_and_preserves_fallback (tests.test_cell_population_contract.PopulationContractTests.test_authored_patch_emits_snapshot_footprint_and_preserves_fallback) ... ok
+test_executed_child_predictions_and_numeric_parent_contributions (tests.test_cell_population_contract.PopulationContractTests.test_executed_child_predictions_and_numeric_parent_contributions) ... ok
+test_non_numeric_slots_and_unproven_structural_repairs_rejected (tests.test_cell_population_contract.PopulationContractTests.test_non_numeric_slots_and_unproven_structural_repairs_rejected) ... ok
+test_old_ensemble_and_slots_fail_architecture_gate (tests.test_cell_population_contract.PopulationContractTests.test_old_ensemble_and_slots_fail_architecture_gate) ... ok
+test_reporting_cannot_enter_archive (tests.test_cell_population_contract.PopulationContractTests.test_reporting_cannot_enter_archive) ... ok
+test_selection_changes_live_population_and_keeps_old_opponent (tests.test_cell_population_contract.PopulationContractTests.test_selection_changes_live_population_and_keeps_old_opponent) ... ok
+test_unearned_cell_cannot_assemble (tests.test_cell_population_contract.PopulationContractTests.test_unearned_cell_cannot_assemble) ... ok
+test_executor_has_no_intent_and_exact_effects (tests.test_action_attribution.TestActionAttribution.test_executor_has_no_intent_and_exact_effects) ... ok
+test_invalid_tensor_rejected (tests.test_action_attribution.TestActionAttribution.test_invalid_tensor_rejected) ... ok
+test_missing_arguments_and_escape_never_execute (tests.test_action_attribution.TestActionAttribution.test_missing_arguments_and_escape_never_execute) ... ok
+test_no_execution_of_generated_code (tests.test_action_attribution.TestActionAttribution.test_no_execution_of_generated_code) ... ok
+test_weights_control_action_and_every_argument (tests.test_action_attribution.TestActionAttribution.test_weights_control_action_and_every_argument) ... ok
+test_adapter_matches_worker_v2_and_no_host_fill (tests.test_action_attribution.TestJointActionAttribution.test_adapter_matches_worker_v2_and_no_host_fill) ... ok
+test_joint_cells_control_output_and_executor_cannot_fill (tests.test_action_attribution.TestJointActionAttribution.test_joint_cells_control_output_and_executor_cannot_fill) ... ok
+test_reporting_cannot_select_and_scope_is_not_arc (tests.test_action_attribution.TestJointActionAttribution.test_reporting_cannot_select_and_scope_is_not_arc) ... ok
+test_missing_evidence_fails_closed (tests.test_action_verification.TestActionVerification.test_missing_evidence_fails_closed) ... ok
+test_saved_trial_recomputes_and_never_grants_scientific_acceptance (tests.test_action_verification.TestActionVerification.test_saved_trial_recomputes_and_never_grants_scientific_acceptance) ... ok
+test_stale_weight_evidence_fails_closed (tests.test_action_verification.TestActionVerification.test_stale_weight_evidence_fails_closed) ... ok
+test_tampered_scores_fail_even_with_updated_self_declared_hash (tests.test_action_verification.TestActionVerification.test_tampered_scores_fail_even_with_updated_self_declared_hash) ... ok
+test_fabricated_live_membership_fails_even_after_rehash (tests.test_action_verification.TestPopulationVerification.test_fabricated_live_membership_fails_even_after_rehash) ... ok
+test_population_replay_reconstructs_selection_and_budgets (tests.test_action_verification.TestPopulationVerification.test_population_replay_reconstructs_selection_and_budgets) ... ok
+test_unmatched_budget_and_unexecuted_gate_fail_after_rehash (tests.test_action_verification.TestPopulationVerification.test_unmatched_budget_and_unexecuted_gate_fail_after_rehash) ... ok
+test_actual_numeric_contribution_not_cached_scores (tests.test_adhesion.TestAdhesionBehavior.test_actual_numeric_contribution_not_cached_scores) ... ok
+test_cycles_and_missing_inputs_cannot_execute (tests.test_adhesion.TestAdhesionBehavior.test_cycles_and_missing_inputs_cannot_execute) ... ok
+test_labels_callbacks_and_host_max_cannot_execute (tests.test_adhesion.TestAdhesionBehavior.test_labels_callbacks_and_host_max_cannot_execute) ... ok
+test_sharing_and_numeric_provenance (tests.test_adhesion.TestAdhesionBehavior.test_sharing_and_numeric_provenance) ... ok
+test_unused_donor_cannot_inflate_inheritance (tests.test_adhesion.TestAdhesionBehavior.test_unused_donor_cannot_inflate_inheritance) ... ok
+test_absent_contribution_cannot_earn_circuit_admission (tests.test_circuit_population.TestCircuitPopulation.test_absent_contribution_cannot_earn_circuit_admission) ... ok
+test_genome_identity_binds_inherited_numerical_weights (tests.test_circuit_population.TestCircuitPopulation.test_genome_identity_binds_inherited_numerical_weights) ... ok
+test_historical_regression_blocks_apparent_gain (tests.test_circuit_population.TestCircuitPopulation.test_historical_regression_blocks_apparent_gain) ... ok
+test_invalid_and_equivalent_proposals_are_charged_without_lineage_growth (tests.test_circuit_population.TestCircuitPopulation.test_invalid_and_equivalent_proposals_are_charged_without_lineage_growth) ... ok
+test_fabricated_parent_tensor_edge_and_history_rejected (tests.test_action_growth_integrity.TestGrowthIntegrity.test_fabricated_parent_tensor_edge_and_history_rejected) ... ok
+test_historical_growth_is_explicitly_untrusted (tests.test_action_growth_integrity.TestGrowthIntegrity.test_historical_growth_is_explicitly_untrusted) ... ok
+test_input_preflight_never_grants_runtime_acceptance (tests.test_action_growth_integrity.TestGrowthIntegrity.test_input_preflight_never_grants_runtime_acceptance) ... ok
+test_missing_and_partial_coverage_rejected_even_with_new_anchor (tests.test_action_growth_integrity.TestGrowthIntegrity.test_missing_and_partial_coverage_rejected_even_with_new_anchor) ... ok
+test_rehashed_forged_reporting_and_budget_cannot_replace_external_anchor (tests.test_action_growth_integrity.TestGrowthIntegrity.test_rehashed_forged_reporting_and_budget_cannot_replace_external_anchor) ... ok
+test_selected_router_uses_live_tensors_and_rejects_retired (tests.test_action_growth_integrity.TestGrowthIntegrity.test_selected_router_uses_live_tensors_and_rejects_retired) ... ok
+test_unbound_runtime_and_changed_parent_rejected (tests.test_action_growth_integrity.TestGrowthIntegrity.test_unbound_runtime_and_changed_parent_rejected) ... ok
+test_caps_and_fixture_rates_are_computed_not_boolean_labels (tests.test_action_phase_protocol.TestActionPhaseProtocol.test_caps_and_fixture_rates_are_computed_not_boolean_labels) ... ok
+test_dropped_rejected_charge_and_fabricated_transition_rejected (tests.test_action_phase_protocol.TestActionPhaseProtocol.test_dropped_rejected_charge_and_fabricated_transition_rejected) ... ok
+test_fabricated_outcomes_or_fixture_rate_rejected (tests.test_action_phase_protocol.TestActionPhaseProtocol.test_fabricated_outcomes_or_fixture_rate_rejected) ... ok
+test_invalid_authoring_is_charged_before_binding_rejection (tests.test_action_phase_protocol.TestActionPhaseProtocol.test_invalid_authoring_is_charged_before_binding_rejection) ... ok
+test_random_parent_is_independent_survivor_and_charges_precede_execution (tests.test_action_phase_protocol.TestActionPhaseProtocol.test_random_parent_is_independent_survivor_and_charges_precede_execution) ... ok
+test_raw_parent_prompt_tensor_shape_and_budget_binding (tests.test_action_phase_protocol.TestActionPhaseProtocol.test_raw_parent_prompt_tensor_shape_and_budget_binding) ... ok
+test_report_selection_rejected_without_admission (tests.test_action_phase_protocol.TestActionPhaseProtocol.test_report_selection_rejected_without_admission) ... ok
+test_dropped_rejected_charge_rejected_by_independent_replay (tests.test_action_cell_continuation.TestCellContinuationReplay.test_dropped_rejected_charge_rejected_by_independent_replay) ... ok
+test_rehashed_phase_parent_or_response_cannot_change_external_phase_anchor (tests.test_action_cell_continuation.TestCellContinuationReplay.test_rehashed_phase_parent_or_response_cannot_change_external_phase_anchor) ... ok
+test_substituted_router_author_is_not_consulted (tests.test_action_cell_continuation.TestCellContinuationReplay.test_substituted_router_author_is_not_consulted) ... ok
+test_two_sequential_phases_replay_real_literal_effects_and_independent_controls (tests.test_action_cell_continuation.TestCellContinuationReplay.test_two_sequential_phases_replay_real_literal_effects_and_independent_controls) ... ok
+test_development_report_overlap_rejected (tests.test_experiment_manifest.TestExperimentManifest.test_development_report_overlap_rejected) ... ok
+test_duplicate_keys_rejected (tests.test_experiment_manifest.TestExperimentManifest.test_duplicate_keys_rejected) ... ok
+test_label_or_partition_change_breaks_frozen_hash (tests.test_experiment_manifest.TestExperimentManifest.test_label_or_partition_change_breaks_frozen_hash) ... ok
+test_overwritten_case_list_and_wrong_filename_rejected (tests.test_experiment_manifest.TestExperimentManifest.test_overwritten_case_list_and_wrong_filename_rejected) ... ok
+
+======================================================================
+FAIL: test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_one_standard.py", line 117, in test_equal_charged_budget_every_arm_and_seed
+    self.assertEqual(n, s["budget_per_arm"], "%s arm=%s seed=%s charged %d" % (p, arm, seed, n))
+AssertionError: 3 != 2 : C:\Users\wkeif\Documents\GitHub\CellForge\runs\weights-cell-population-g1\STANDARD.json arm=random seed=20261001 charged 3
+
+======================================================================
+FAIL: test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_one_standard.py", line 110, in test_seeds_predeclared_and_enough
+    self.assertGreaterEqual(len(set(s["seeds"])), MIN_SEEDS, p)
+AssertionError: 1 not greater than or equal to 3 : C:\Users\wkeif\Documents\GitHub\CellForge\runs\weights-cell-population-g1\STANDARD.json
+
+======================================================================
+FAIL: test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns.test_every_semantic_check_passes_on_every_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_standard_semantic.py", line 305, in test_every_semantic_check_passes_on_every_real_run
+    self.assertEqual(chk(run), [], "%s on %s" % (chk.__name__, run))
+AssertionError: Lists differ: ['best genome in niche bbox_mask (0.000) d[734 chars]tor'] != []
+
+First list contains 7 additional elements.
+First extra element 0:
+'best genome in niche bbox_mask (0.000) does not beat zero-weights (0.000): trivial task or evaluator'
+
+Diff is 849 characters long. Set self.maxDiff to None to see it. : check_task_not_trivial on C:\Users\wkeif\Documents\GitHub\CellForge\runs\weights-cell-population-g1
+
+======================================================================
+FAIL: test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns.test_router_exists_matters_and_was_llm_mutated_on_a_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wkeif\Documents\GitHub\CellForge\tests\test_standard_semantic.py", line 309, in test_router_exists_matters_and_was_llm_mutated_on_a_real_run
+    self.assertEqual(C.check_router_present_and_matters(run), [], run)
+AssertionError: Lists differ: ['evaluator lacks predict_routed/make_mult[50 chars]run'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'evaluator lacks predict_routed/make_multi_tasks/uniform_router: no router in the standard run'
+
++ []
+- ['evaluator lacks predict_routed/make_multi_tasks/uniform_router: no router in '
+-  'the standard run'] : C:\Users\wkeif\Documents\GitHub\CellForge\runs\weights-cell-population-g1
+
+----------------------------------------------------------------------
+Ran 78 tests in 65.531s
+
+FAILED (failures=4)

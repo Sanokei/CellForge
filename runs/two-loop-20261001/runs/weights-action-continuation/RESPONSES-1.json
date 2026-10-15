@@ -1,0 +1,404 @@
+[
+  {
+    "seed": 401,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "1d55a9337c9eb31129d375ca1d4a197fb49de32ec515c9118ae7adf103809047",
+      "parent_params": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -9,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "tensors": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "feature_order": [
+        "q1",
+        "q2",
+        "prev_for",
+        "is_vocab",
+        "has_dot_evenquoted",
+        "prev_to",
+        "prev_in",
+        "prev_readverb",
+        "is_function_word",
+        "prev_write",
+        "prev_replace",
+        "prev_with"
+      ],
+      "role_order": [
+        "arg1",
+        "arg2",
+        "file"
+      ],
+      "prompt_sha256": "7ff52aae299088654feb62674633d6507519fb07ddacb14064716d5d5ab2a7ac",
+      "feedback_sha256": "b6a3fd67ac9acf7b2214e62939c48748044d2e5bfe286d888a8b29deb24b6f1b",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "rationale": "One common literal proposal authored for three separate seed requests with identical parent and development evidence. Change only file/is_function_word from -9 to -7.25; retain all other weights and all biases. Intended effect: a function-word token after to or in has file score 0.75 instead of -1, above the supplied 0.5 file bias while below an otherwise uncontextual dotted filename score of 1. This targets dev-known-functionpath, dev-function-the, and dev-edit-bare, while preserving the dotted filename preference in dev-stopword-prefix and archive-9. Retained quote, content-context, vocabulary, and path-context coefficients are intended to preserve the supplied successful content and file selections, including quoted paths and execution-denied safety cases. This is manual numerical authorship, not optimization, fitting, mutation, or an evaluation result. No network or model API was used. The existing safety-0 failure is not claimed repaired; its desired action is not specified by the supplied trace, and a global dotted-content promotion could interfere with archive-7. Generalization and end-to-end success remain unmeasured."
+    }
+  },
+  {
+    "seed": 402,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "1d55a9337c9eb31129d375ca1d4a197fb49de32ec515c9118ae7adf103809047",
+      "parent_params": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -9,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "tensors": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "feature_order": [
+        "q1",
+        "q2",
+        "prev_for",
+        "is_vocab",
+        "has_dot_evenquoted",
+        "prev_to",
+        "prev_in",
+        "prev_readverb",
+        "is_function_word",
+        "prev_write",
+        "prev_replace",
+        "prev_with"
+      ],
+      "role_order": [
+        "arg1",
+        "arg2",
+        "file"
+      ],
+      "prompt_sha256": "7ff52aae299088654feb62674633d6507519fb07ddacb14064716d5d5ab2a7ac",
+      "feedback_sha256": "b6a3fd67ac9acf7b2214e62939c48748044d2e5bfe286d888a8b29deb24b6f1b",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "rationale": "One common literal proposal authored for three separate seed requests with identical parent and development evidence. Change only file/is_function_word from -9 to -7.25; retain all other weights and all biases. Intended effect: a function-word token after to or in has file score 0.75 instead of -1, above the supplied 0.5 file bias while below an otherwise uncontextual dotted filename score of 1. This targets dev-known-functionpath, dev-function-the, and dev-edit-bare, while preserving the dotted filename preference in dev-stopword-prefix and archive-9. Retained quote, content-context, vocabulary, and path-context coefficients are intended to preserve the supplied successful content and file selections, including quoted paths and execution-denied safety cases. This is manual numerical authorship, not optimization, fitting, mutation, or an evaluation result. No network or model API was used. The existing safety-0 failure is not claimed repaired; its desired action is not specified by the supplied trace, and a global dotted-content promotion could interfere with archive-7. Generalization and end-to-end success remain unmeasured."
+    }
+  },
+  {
+    "seed": 403,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "1d55a9337c9eb31129d375ca1d4a197fb49de32ec515c9118ae7adf103809047",
+      "parent_params": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -9,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "tensors": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "feature_order": [
+        "q1",
+        "q2",
+        "prev_for",
+        "is_vocab",
+        "has_dot_evenquoted",
+        "prev_to",
+        "prev_in",
+        "prev_readverb",
+        "is_function_word",
+        "prev_write",
+        "prev_replace",
+        "prev_with"
+      ],
+      "role_order": [
+        "arg1",
+        "arg2",
+        "file"
+      ],
+      "prompt_sha256": "7ff52aae299088654feb62674633d6507519fb07ddacb14064716d5d5ab2a7ac",
+      "feedback_sha256": "b6a3fd67ac9acf7b2214e62939c48748044d2e5bfe286d888a8b29deb24b6f1b",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "rationale": "One common literal proposal authored for three separate seed requests with identical parent and development evidence. Change only file/is_function_word from -9 to -7.25; retain all other weights and all biases. Intended effect: a function-word token after to or in has file score 0.75 instead of -1, above the supplied 0.5 file bias while below an otherwise uncontextual dotted filename score of 1. This targets dev-known-functionpath, dev-function-the, and dev-edit-bare, while preserving the dotted filename preference in dev-stopword-prefix and archive-9. Retained quote, content-context, vocabulary, and path-context coefficients are intended to preserve the supplied successful content and file selections, including quoted paths and execution-denied safety cases. This is manual numerical authorship, not optimization, fitting, mutation, or an evaluation result. No network or model API was used. The existing safety-0 failure is not claimed repaired; its desired action is not specified by the supplied trace, and a global dotted-content promotion could interfere with archive-7. Generalization and end-to-end success remain unmeasured."
+    }
+  }
+]

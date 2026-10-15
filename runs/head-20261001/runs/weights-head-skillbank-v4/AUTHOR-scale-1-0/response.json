@@ -1,0 +1,10 @@
+[
+  {"task_id":"scale-0","params":{"mode":[1,0,0,0,0,0,0,0]},"rationale":"The first demonstration expands 2x4 to 4x8, repeating each pixel in a 2x2 block; all demonstrations follow this rule."},
+  {"task_id":"scale-1","params":{"mode":[0,1,0,0,0,0,0,0]},"rationale":"The first demonstration expands 2x4 to 6x12, repeating each pixel in a 3x3 block; all demonstrations follow this rule."},
+  {"task_id":"scale-2","params":{"mode":[0,0,1,0,0,0,0,0]},"rationale":"The first demonstration expands 3x4 to 12x16, repeating each pixel in a 4x4 block; all demonstrations follow this rule."},
+  {"task_id":"scale-3","params":{"mode":[0,0,0,1,0,0,0,0]},"rationale":"The first demonstration selects rows and columns 0,2,4,6, producing [[0,5,4,1],[3,4,1,4],[2,2,5,0],[4,0,5,5]]; all demonstrations sample every second pixel."},
+  {"task_id":"scale-4","params":{"mode":[0,0,0,0,1,0,0,0]},"rationale":"The first demonstration selects rows 0,3,6,9 and columns 0,3, producing [[1,0],[0,3],[4,4],[2,1]]; all demonstrations sample every third pixel."},
+  {"task_id":"scale-5","params":{"mode":[0,0,0,0,0,1,0,0]},"rationale":"The first demonstration expands 4x2 to 8x2 by repeating each row twice, including [5,3] and [5,0]; all demonstrations duplicate rows."},
+  {"task_id":"scale-6","params":{"mode":[0,0,0,0,0,0,1,0]},"rationale":"The first demonstration expands 3x3 to 3x6, turning [5,0,1] into [5,5,0,0,1,1]; all demonstrations duplicate columns."},
+  {"task_id":"scale-7","params":{"mode":[0,0,0,0,0,0,0,1]},"rationale":"The first demonstration expands 3x4 to 6x12, repeating each pixel three times horizontally and each row twice; all demonstrations use 2-high by 3-wide blocks."}
+]

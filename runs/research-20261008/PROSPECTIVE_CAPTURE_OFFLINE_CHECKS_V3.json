@@ -1,0 +1,34 @@
+{
+  "kind": "offline fixtures only; not exhaustive live certification",
+  "passed": 16,
+  "checks": [
+    "exact text whitespace preserved",
+    "reject invalid fields/item 0",
+    "reject invalid fields/item 1",
+    "reject invalid fields/item 2",
+    "reject invalid fields/item 3",
+    "reject invalid fields/item 4",
+    "reject invalid fields/item 5",
+    "reject malformed/duplicate/nonfinite native bytes",
+    "reject malformed/duplicate/nonfinite native bytes",
+    "reject malformed/duplicate/nonfinite native bytes",
+    "actual saved readiness full envelopes validated",
+    "actual failed healthcheck rejected",
+    "actual tool-positive review rejected",
+    "post-terminal event rejected",
+    "capture refuses missing separate dispatch authorization",
+    "executed deterministic byte-emitter capture: EOF/exit/raw line hashes/exact final bytes"
+  ],
+  "model_calls": 0,
+  "wrapper_path": "/srv/cellforge-inbox/research-20261008/prospective_native_capture_v3.py",
+  "wrapper_sha256": "b606a4cc8f657e06de4430c1030426722951b88a7ef048b79d4524e8311341fd",
+  "supported_usage_fields": [
+    "cache_write_input_tokens",
+    "cached_input_tokens",
+    "input_tokens",
+    "output_tokens",
+    "reasoning_output_tokens"
+  ],
+  "earlier_v2_issue": "three-field usage assumption rejected actual five-field saved native envelope; v2 retained, not approved",
+  "fixture_is_not_model_healthcheck": true
+}

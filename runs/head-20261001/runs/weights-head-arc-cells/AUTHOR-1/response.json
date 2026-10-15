@@ -1,0 +1,61 @@
+[
+  {
+    "task_id": "1b8318e3",
+    "template": "color_gate",
+    "params": {
+      "gate": [1, -1, -1, -1, -1, 1, -1, -1, -1, -1],
+      "fill": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "All demonstrations preserve the 2x2 blocks of 5 and move isolated other colours toward those blocks. No template expresses these movements; this approximation preserves the blocks and clears the original singleton positions."
+  },
+  {
+    "task_id": "9f27f097",
+    "template": "colormap",
+    "params": {
+      "map.W": [
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+      ]
+    },
+    "rationale": "Each output fills the zero rectangle with a horizontally reflected copy of the separate patterned rectangle while preserving the source. No template supports that copy. Mapping 0 to 3 preserves every nonzero pixel and correctly fills 24 demonstrated target pixels, more than any other constant fill."
+  },
+  {
+    "task_id": "5207a7b5",
+    "template": "conv3x3_detect",
+    "params": {
+      "conv.W": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [0, 0, 0, 0, 0, -9, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+      ],
+      "conv.b": [0.5],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+    },
+    "rationale": "The demonstrations preserve vertical 5 bars and add stepped regions of 8 on the left and 6 on the right. No template creates both new colours. This approximation paints 8 along the left boundary and immediately left of each bar, including one row below it, while preserving every 5."
+  },
+  {
+    "task_id": "c97c0139",
+    "template": "neighbor_count",
+    "params": {
+      "self.W": [[0, -9, -9, -9, -9, -9, -9, -9, -9, -9]],
+      "cnt.W": [[0, 0, 1, 0, 0, 0, 0, 0, 0, 0]],
+      "cnt.b": [-2.5],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+    },
+    "rationale": "The length-5 vertical bar and length-9 and length-14 horizontal bars gain symmetric diamonds of 8. No template reaches the distant diamond pixels. Requiring three neighbouring 2s exactly paints the first layer beside each bar's interior, excludes its endpoints, and preserves all 2s."
+  }
+]

@@ -1,0 +1,1923 @@
+{
+  "arms": {
+    "llm": {},
+    "random": {}
+  },
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "seeds_declared_before_run": true,
+  "budget_per_arm": 17,
+  "niches": [
+    "resource-lookahead3"
+  ],
+  "founders": [],
+  "genomes": [
+    {
+      "hash": "0762f4dc308c9f495086cc34d68955c63ec7b14bc7c6286c4a974aeea7e51f86",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-1-1.json",
+      "accuracy": 0.125,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-1-3.json",
+      "accuracy": 0.16666666666666666,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-1-5.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-2-0.json",
+      "accuracy": 0.8333333333333334,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "f6b1c365155ab8f964cb990fa4fd5b8fb16e58ab9fbc92f9498aa3c6db9056fd",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "0762f4dc308c9f495086cc34d68955c63ec7b14bc7c6286c4a974aeea7e51f86"
+      ],
+      "weights_file": "random-1701-2-1.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-2-2.json",
+      "accuracy": 0.8333333333333334,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "6fe673ced13c85e605cef7f30cef42565db6705020938cd28aca2078b2a77f7c",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-2-3.json",
+      "accuracy": 0.2708333333333333,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-2-4.json",
+      "accuracy": 0.8333333333333334,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "0a35dbadea7556aa581eccbe5bd7458839b30295aec85fcaa5dda171239c239f",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-2-5.json",
+      "accuracy": 0.3333333333333333,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "e8f106f888f37910714bd08e35ce5be6a5e1297498f86f33d8cf1d5e2e17e130",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-3-0.json",
+      "accuracy": 0.5,
+      "generation": 3,
+      "arm": "llm"
+    },
+    {
+      "hash": "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "0762f4dc308c9f495086cc34d68955c63ec7b14bc7c6286c4a974aeea7e51f86"
+      ],
+      "weights_file": "random-1701-3-1.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 3,
+      "arm": "random"
+    },
+    {
+      "hash": "a31731998f398695ebeb848ddd8ec1dc4e1e3576f7d1735b5065820cfcc9c6d0",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-3-2.json",
+      "accuracy": 0.5,
+      "generation": 3,
+      "arm": "llm"
+    },
+    {
+      "hash": "5ecd8fb59ce8532b4ee38e971ba2eac2dc7c60f9e778d284d4629d725ff15475",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-3-3.json",
+      "accuracy": 0.125,
+      "generation": 3,
+      "arm": "random"
+    },
+    {
+      "hash": "49b460325a5337f51a1aaedc561fe7f231c500cb8d1e40a678237bb090b9a067",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-3-4.json",
+      "accuracy": 0.5,
+      "generation": 3,
+      "arm": "llm"
+    },
+    {
+      "hash": "ef4f378b1b424e335916029d14d42896cf2c95560dd006ee70193c91f312c70c",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-3-5.json",
+      "accuracy": 0.0,
+      "generation": 3,
+      "arm": "random"
+    },
+    {
+      "hash": "b0d6648a981f74be7c36d49ed171d4228977d401c1b7356ddd434d14eb9d27c4",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-4-0.json",
+      "accuracy": 0.7291666666666666,
+      "generation": 4,
+      "arm": "llm"
+    },
+    {
+      "hash": "1ac1b379e7333ced738654d6f3b614740846bf2b1f14a0d622025852b07b4166",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-4-1.json",
+      "accuracy": 0.25,
+      "generation": 4,
+      "arm": "random"
+    },
+    {
+      "hash": "4c49b768c3c410c00a178dff307c267d8f4d9092756c25f61e21c50dfd110ec6",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-4-2.json",
+      "accuracy": 0.7291666666666666,
+      "generation": 4,
+      "arm": "llm"
+    },
+    {
+      "hash": "670d7b883a62429e9299d42242b69711e680952b3c06dc4c195c7de49637fdb2",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-4-3.json",
+      "accuracy": 0.6666666666666666,
+      "generation": 4,
+      "arm": "random"
+    },
+    {
+      "hash": "ca0bfb682719684c59e5e2740cb470e43fd53f13246c323c1d7419ca28ce0987",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-4-4.json",
+      "accuracy": 0.7291666666666666,
+      "generation": 4,
+      "arm": "llm"
+    },
+    {
+      "hash": "0d1638810e258cbf0b70678e53961918aeeebc3ba6070656bb74229eb4070552",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-4-5.json",
+      "accuracy": 0.20833333333333334,
+      "generation": 4,
+      "arm": "random"
+    },
+    {
+      "hash": "bafb53934caf97bfbe5b9b07c22e18e2f4564562db9b8aa0d8fc23e55e828bb0",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-5-0.json",
+      "accuracy": 0.6458333333333334,
+      "generation": 5,
+      "arm": "llm"
+    },
+    {
+      "hash": "f33c95fd31ce56b8adfaae015bb85157c91a87e0fab46a5e10ad742ea42b71c7",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-5-1.json",
+      "accuracy": 0.16666666666666666,
+      "generation": 5,
+      "arm": "random"
+    },
+    {
+      "hash": "5add51100d17246254fd2bc0ab84e215967a170873ff0f76b0d86c3477aebb3e",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-5-2.json",
+      "accuracy": 0.6458333333333334,
+      "generation": 5,
+      "arm": "llm"
+    },
+    {
+      "hash": "db0d4697eb28f09ce2cb1c2eb22cd36f249691482a0782a3a1ee54c16df2f25d",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-5-3.json",
+      "accuracy": 0.14583333333333334,
+      "generation": 5,
+      "arm": "random"
+    },
+    {
+      "hash": "4c90bdea8d41c3e43e503fa76554d22f36b3f55ce1f09142635f276405da65b1",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-5-4.json",
+      "accuracy": 0.6458333333333334,
+      "generation": 5,
+      "arm": "llm"
+    },
+    {
+      "hash": "11ab0ba42115641f714d7a80dd747e4ae59f5c2e0cb55da2c5e940cd4cb826cd",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-5-5.json",
+      "accuracy": 0.0,
+      "generation": 5,
+      "arm": "random"
+    },
+    {
+      "hash": "230fafce067e686e72512894fb2b1d53ed229270c177f018fec93427dff352cc",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-6-0.json",
+      "accuracy": 0.8125,
+      "generation": 6,
+      "arm": "llm"
+    },
+    {
+      "hash": "30ec257ff1adda8069f0f3d2c1ce71fc4c327981712ca955a0716b9d6a64b5b4",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-6-1.json",
+      "accuracy": 0.041666666666666664,
+      "generation": 6,
+      "arm": "random"
+    },
+    {
+      "hash": "cd72f89524d7fb2258a97ed3a300d6a03a798c3c40c1491be0d8ea7be22c4897",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-6-2.json",
+      "accuracy": 0.8125,
+      "generation": 6,
+      "arm": "llm"
+    },
+    {
+      "hash": "aac84b3d6b4d3f52a2145eb01b38b958076860a57408d4a233c6b18a47daecaa",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-6-3.json",
+      "accuracy": 0.22916666666666666,
+      "generation": 6,
+      "arm": "random"
+    },
+    {
+      "hash": "a768d5149f2643572e67aae57876594dcb880bcfb016ff813acf9d5439228863",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-6-4.json",
+      "accuracy": 0.8125,
+      "generation": 6,
+      "arm": "llm"
+    },
+    {
+      "hash": "4f56de2f54c7c59d1aeaefb3c0202e3d82b9e7254bb4cd3a26bd623397c97628",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-6-5.json",
+      "accuracy": 0.0,
+      "generation": 6,
+      "arm": "random"
+    },
+    {
+      "hash": "9b4c30a9fbb33fd254b93b05f1f2cec871be04f4fcdbe00eed5af6a2a774b91b",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-7-0.json",
+      "accuracy": 0.75,
+      "generation": 7,
+      "arm": "llm"
+    },
+    {
+      "hash": "eb36f09ddf948876237551dbe9d97030734c550c4d9e9114fb644db31d9922ab",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-7-1.json",
+      "accuracy": 0.2708333333333333,
+      "generation": 7,
+      "arm": "random"
+    },
+    {
+      "hash": "26c85432c4c4d2eb17e4160d4acd4f8740dfd87cc235bad642e6674d74368b69",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-7-2.json",
+      "accuracy": 0.75,
+      "generation": 7,
+      "arm": "llm"
+    },
+    {
+      "hash": "6c443b9350e2c978c6688e493a3fa3fc6903a25c5ec804a90a8ff261b83bb14a",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-7-3.json",
+      "accuracy": 0.0,
+      "generation": 7,
+      "arm": "random"
+    },
+    {
+      "hash": "2d744b043a571c2dd25753614fe55a66f54875e1fc8e0e19f211fabc283b0863",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-7-4.json",
+      "accuracy": 0.7708333333333334,
+      "generation": 7,
+      "arm": "llm"
+    },
+    {
+      "hash": "6c767a52a76669f2ef24849d59b4d6c37960b8a870c2d4a88e8d29356039087e",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-7-5.json",
+      "accuracy": 0.2708333333333333,
+      "generation": 7,
+      "arm": "random"
+    },
+    {
+      "hash": "4d340ba22ae5d6a706caecc9e17ba64ff444fb21b5b2cbf6cf16c39aabd931e4",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-8-0.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 8,
+      "arm": "llm"
+    },
+    {
+      "hash": "c19f748d9020271550d8c192d1c329760f7f90e50b890e4d97640a7c2912aec6",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-8-1.json",
+      "accuracy": 0.125,
+      "generation": 8,
+      "arm": "random"
+    },
+    {
+      "hash": "3a851605d939301168468ac34a796c629fd6df34d13bf451dcd46f9994123d3a",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-8-2.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 8,
+      "arm": "llm"
+    },
+    {
+      "hash": "885228cdf477b2326599d7d5badfa2c660fe685166a100ee4c5d1fa1854c5952",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-8-3.json",
+      "accuracy": 0.14583333333333334,
+      "generation": 8,
+      "arm": "random"
+    },
+    {
+      "hash": "197d92f4f998776541e9c03c8a84a8208d0dd2f91131f13e000ee82002ed020e",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-8-4.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 8,
+      "arm": "llm"
+    },
+    {
+      "hash": "50292d940c4e0ff72e1eb568b0fa2c87a57048110d33983efd94ee7666184f12",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-8-5.json",
+      "accuracy": 0.20833333333333334,
+      "generation": 8,
+      "arm": "random"
+    },
+    {
+      "hash": "b8fdc46b3a0dc267b2748ca65a1f4f5712fab8411d9eec97538f6cfa3d55a3ff",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-9-0.json",
+      "accuracy": 0.7083333333333334,
+      "generation": 9,
+      "arm": "llm"
+    },
+    {
+      "hash": "5d80e7b8da41269dcb29fa53b12ef91b17463a895fd9f8c0b156731f232a5416",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-9-1.json",
+      "accuracy": 0.3333333333333333,
+      "generation": 9,
+      "arm": "random"
+    },
+    {
+      "hash": "a2cc511540a1992f9560aec1f502436d1497ed5687267a374994737b07033a65",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-9-2.json",
+      "accuracy": 0.7083333333333334,
+      "generation": 9,
+      "arm": "llm"
+    },
+    {
+      "hash": "1eb52b6ce0178013aa37b536ca7f550320ad3c4f63741087e3eb16d2d9a5579b",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-9-3.json",
+      "accuracy": 0.0,
+      "generation": 9,
+      "arm": "random"
+    },
+    {
+      "hash": "5051d34bb9a8b0126da877d024cc8edb20fbbdc6c066c20c705d77c8a58f7703",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-9-4.json",
+      "accuracy": 0.7083333333333334,
+      "generation": 9,
+      "arm": "llm"
+    },
+    {
+      "hash": "a51b2ec5c17c5dbb551ca2ce13447c6b2cd8f47f4e97e94acec515e24f9af680",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-9-5.json",
+      "accuracy": 0.020833333333333332,
+      "generation": 9,
+      "arm": "random"
+    },
+    {
+      "hash": "045b504cca92eab4f54e109e15dd7b349ed6efc8d058cabe39e0232160102fd7",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-10-0.json",
+      "accuracy": 0.7083333333333334,
+      "generation": 10,
+      "arm": "llm"
+    },
+    {
+      "hash": "fa813a1b2e17e919581516fd80561b6a722468d4f3905c7bd93afbff3a30645b",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-10-1.json",
+      "accuracy": 0.020833333333333332,
+      "generation": 10,
+      "arm": "random"
+    },
+    {
+      "hash": "8f31fc6cb09915eefdc1444b7c9e2528bf1503cc437638d5c43b4a1cc6a48b43",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-10-2.json",
+      "accuracy": 0.7083333333333334,
+      "generation": 10,
+      "arm": "llm"
+    },
+    {
+      "hash": "522b8703faa533e587e21d4c5f8c2d10854472557107746a681583e3e718ef17",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-10-3.json",
+      "accuracy": 0.0,
+      "generation": 10,
+      "arm": "random"
+    },
+    {
+      "hash": "46c1b60961e982fa38a0b8bd2b9b65b311abcfb567cf901f9795479d7490e584",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-10-4.json",
+      "accuracy": 0.7083333333333334,
+      "generation": 10,
+      "arm": "llm"
+    },
+    {
+      "hash": "01983adda1af822bbaec5116fb1d33eb538e0ff9c481269780dcd9f154912919",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-10-5.json",
+      "accuracy": 0.0625,
+      "generation": 10,
+      "arm": "random"
+    },
+    {
+      "hash": "7b6a261abe3c6a7a0569b19e956830dd5e572dc4ebf6896c690ed7d39b643eeb",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-11-0.json",
+      "accuracy": 0.5,
+      "generation": 11,
+      "arm": "llm"
+    },
+    {
+      "hash": "968c2ed350aecb077b8fe4692b9339af245dba27efd536c78ec03a3cbedbf801",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-11-1.json",
+      "accuracy": 0.3958333333333333,
+      "generation": 11,
+      "arm": "random"
+    },
+    {
+      "hash": "cdcde22a87222303a3ee340d2986f116b71f6729adc2306cfaf0dcb743ba3ea4",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-11-2.json",
+      "accuracy": 0.5,
+      "generation": 11,
+      "arm": "llm"
+    },
+    {
+      "hash": "d32e93a7b00568d67c821631fdc80ce6362fac64f062250a92b21abdb95abdba",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-11-3.json",
+      "accuracy": 0.5,
+      "generation": 11,
+      "arm": "random"
+    },
+    {
+      "hash": "a25040ca17e1527790db86ab023f6c5db388cc9140345c661b71b77ce541385e",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-11-4.json",
+      "accuracy": 0.5,
+      "generation": 11,
+      "arm": "llm"
+    },
+    {
+      "hash": "c5670dbe743acfd1e7b4ef218692f296105584b5ead82549933570cffe753e60",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-11-5.json",
+      "accuracy": 0.0,
+      "generation": 11,
+      "arm": "random"
+    },
+    {
+      "hash": "082237c091bfc618bf8f4245fc1f3696255ba5685995e5b56fed5222f061ac20",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-12-0.json",
+      "accuracy": 0.5208333333333334,
+      "generation": 12,
+      "arm": "llm"
+    },
+    {
+      "hash": "bba91ed65ea3595d82345de90883decf56a828596c5fccb141c3f69c1897e774",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-12-1.json",
+      "accuracy": 0.25,
+      "generation": 12,
+      "arm": "random"
+    },
+    {
+      "hash": "d913316373e9590a5a5ba093ba5c5b8b13cf9b5f9e88393a1864f7aebf658017",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-12-2.json",
+      "accuracy": 0.5208333333333334,
+      "generation": 12,
+      "arm": "llm"
+    },
+    {
+      "hash": "51eb3bf4edbcd43db4516a8c9c4aef4b7fdd418c330eb91928437ad943e399c9",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-12-3.json",
+      "accuracy": 0.10416666666666667,
+      "generation": 12,
+      "arm": "random"
+    },
+    {
+      "hash": "c6739f044c5f2da72c08c494206a17da81b3aef4e7d18cbc859df0054a7e2eba",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-12-4.json",
+      "accuracy": 0.5208333333333334,
+      "generation": 12,
+      "arm": "llm"
+    },
+    {
+      "hash": "da2d21765c95a1437462c7f18616914b53bb0728af3011eb82fce24e8c2857ba",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-12-5.json",
+      "accuracy": 0.08333333333333333,
+      "generation": 12,
+      "arm": "random"
+    },
+    {
+      "hash": "e0ee6ab6afe001ad9b243c3e2d903e72e97430cbdaff7c0d2c71b26b2b26ecc1",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-13-0.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 13,
+      "arm": "llm"
+    },
+    {
+      "hash": "dd5bd6602a42dc8a42b17453dfaf65f0d20a8f7f383e9ec937450e0d81ea6444",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-13-1.json",
+      "accuracy": 0.020833333333333332,
+      "generation": 13,
+      "arm": "random"
+    },
+    {
+      "hash": "ec9b036270baf290607486896563e92b7de6949af88e0a478caa0ac5625fc983",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-13-2.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 13,
+      "arm": "llm"
+    },
+    {
+      "hash": "8e53c5339b8f77c9a61b6732d6596d738bc2b69449e92bb8b5e146f9c0bb62ee",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-13-3.json",
+      "accuracy": 0.041666666666666664,
+      "generation": 13,
+      "arm": "random"
+    },
+    {
+      "hash": "f224d8a17741cbc43e546b4ffb6985e0fda041effa1048b6f4ca012b13b17209",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-13-4.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 13,
+      "arm": "llm"
+    },
+    {
+      "hash": "a9e12a99719f90375921e87450a025199e14d2eea40cfa7da7abaaf080d653c9",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-13-5.json",
+      "accuracy": 0.6666666666666666,
+      "generation": 13,
+      "arm": "random"
+    },
+    {
+      "hash": "5f0ed8ab0414cdf97319ea42769307b8664e18365cc3b8c427d2711dc3d83b73",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-14-0.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 14,
+      "arm": "llm"
+    },
+    {
+      "hash": "1a4eacaf597e5bfe81eaafb32ce05e05fe45a78156fb037dc04a7e62291ed399",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-14-1.json",
+      "accuracy": 0.0625,
+      "generation": 14,
+      "arm": "random"
+    },
+    {
+      "hash": "efc92cbc295f6cdf4a516786305632ad7fde2c16dcb55cf26ec428e5b450fcc3",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-14-2.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 14,
+      "arm": "llm"
+    },
+    {
+      "hash": "51725333cb43754ff9ac572b57eea7a940e3018c6bd786ddf496aefee529d5ce",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-14-3.json",
+      "accuracy": 0.20833333333333334,
+      "generation": 14,
+      "arm": "random"
+    },
+    {
+      "hash": "e199673e67af1381b156985716b3172119a44d78108e7465a49f65ccf54fdfc8",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-14-4.json",
+      "accuracy": 0.8541666666666666,
+      "generation": 14,
+      "arm": "llm"
+    },
+    {
+      "hash": "40e28748efeb707dbd910ad689908c9e71cecf6f67b1c8e2bb4a58dcc98aedaa",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-14-5.json",
+      "accuracy": 0.020833333333333332,
+      "generation": 14,
+      "arm": "random"
+    },
+    {
+      "hash": "2c2a79de2ea684eb5822233d4a84bac39b85dc8e6c5f7102ead2c487acbc02de",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-15-0.json",
+      "accuracy": 0.6041666666666666,
+      "generation": 15,
+      "arm": "llm"
+    },
+    {
+      "hash": "04f3d3c28fd5d35fbce4dbdaec7f3dcea9e39c1c5d6d163defc678b7d77c5312",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-15-1.json",
+      "accuracy": 0.22916666666666666,
+      "generation": 15,
+      "arm": "random"
+    },
+    {
+      "hash": "16085fa4bff8acf1dcdc8576370276ce56b0e5771162ee105fe4360d339f28fc",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-15-2.json",
+      "accuracy": 0.6041666666666666,
+      "generation": 15,
+      "arm": "llm"
+    },
+    {
+      "hash": "1eb1bfc6b80a4b9034bccd65321ed8f931b4a7283ade69e0976fa524821b00c2",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-15-3.json",
+      "accuracy": 0.3333333333333333,
+      "generation": 15,
+      "arm": "random"
+    },
+    {
+      "hash": "e308abd3376de1b12042983904fe01e650ea1dcdee13cd5591018ac6d9357c9e",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-15-4.json",
+      "accuracy": 0.6041666666666666,
+      "generation": 15,
+      "arm": "llm"
+    },
+    {
+      "hash": "4516d0a7421ef70357bdefa0a2280b1eba45766b2a419a17e4bb479bba984a94",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-15-5.json",
+      "accuracy": 0.041666666666666664,
+      "generation": 15,
+      "arm": "random"
+    },
+    {
+      "hash": "8cd78e3b464965beb7a4d34ad8dbac5fbb641f3f462c223e57c8987aed7fd82b",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-16-0.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 16,
+      "arm": "llm"
+    },
+    {
+      "hash": "6d226ea35d854a5e3011fdeb08984579a1272ad1c63437c6ad5c2df6007a53fd",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-16-1.json",
+      "accuracy": 0.020833333333333332,
+      "generation": 16,
+      "arm": "random"
+    },
+    {
+      "hash": "2640560b55167463f1f39b3fe26ca6b3cc0326852f97a761bfd814ba4c6661f1",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-16-2.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 16,
+      "arm": "llm"
+    },
+    {
+      "hash": "a1d0f103185764ca3273215ce724473f0af09785e093bff4c39cc6076277260d",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-16-3.json",
+      "accuracy": 0.10416666666666667,
+      "generation": 16,
+      "arm": "random"
+    },
+    {
+      "hash": "f0c65e15c6e3126e0b7ec9c1bb52dbd37094b01ce4251eef5c927a370b27ada6",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-16-4.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 16,
+      "arm": "llm"
+    },
+    {
+      "hash": "22f72cff89f2acd37f56ffbaab97dfaf0e56485b387d9661878d68e5ba405eee",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-16-5.json",
+      "accuracy": 0.125,
+      "generation": 16,
+      "arm": "random"
+    },
+    {
+      "hash": "5ac46364d1d615fae339f7de207f32c19f0a2dfd068371b6c9a38f183528db5e",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294"
+      ],
+      "weights_file": "llm-1701-17-0.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 17,
+      "arm": "llm"
+    },
+    {
+      "hash": "2a94fbb3a3ebccbe552e27e04342f6b617e701a15bcd17d32fbee1d55d06000f",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c"
+      ],
+      "weights_file": "random-1701-17-1.json",
+      "accuracy": 0.2916666666666667,
+      "generation": 17,
+      "arm": "random"
+    },
+    {
+      "hash": "5d3d3736d3fa801be95650fc82e44d2c285bcc2edca358e5ec66e6d31ac183cc",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80"
+      ],
+      "weights_file": "llm-1702-17-2.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 17,
+      "arm": "llm"
+    },
+    {
+      "hash": "f50dd155f78c705759cbcaec5b19dd4fbfeb837842c0d2c8b57ed0968272bf7e",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+      ],
+      "weights_file": "random-1702-17-3.json",
+      "accuracy": 0.3125,
+      "generation": 17,
+      "arm": "random"
+    },
+    {
+      "hash": "d42ab3291dc0d660fa711ac69b05462c0609cfb4df57acd33a55e7b078c8af18",
+      "niche": "resource-lookahead3",
+      "origin": "llm_mutation",
+      "parents": [
+        "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1"
+      ],
+      "weights_file": "llm-1703-17-4.json",
+      "accuracy": 0.7916666666666666,
+      "generation": 17,
+      "arm": "llm"
+    },
+    {
+      "hash": "afcac7f686c32e5117e9bf8e9615ffcf120d2783d5341786989e422ad3c7b351",
+      "niche": "resource-lookahead3",
+      "origin": "random_mutation",
+      "parents": [
+        "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+      ],
+      "weights_file": "random-1703-17-5.json",
+      "accuracy": 0.020833333333333332,
+      "generation": 17,
+      "arm": "random"
+    }
+  ],
+  "proposals": [
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": null,
+      "charged": true,
+      "outcome": "invalid"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "0762f4dc308c9f495086cc34d68955c63ec7b14bc7c6286c4a974aeea7e51f86",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": null,
+      "charged": true,
+      "outcome": "invalid"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": null,
+      "charged": true,
+      "outcome": "invalid"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "d86a24aa82234d47873239b69cf866bd40714483ec5badf5ca00ebdb5abc4294",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "f6b1c365155ab8f964cb990fa4fd5b8fb16e58ab9fbc92f9498aa3c6db9056fd",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "00c4bcacd64a7ab3e847c7d0c4166993ed80222d4946082f694e6456834eba80",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "6fe673ced13c85e605cef7f30cef42565db6705020938cd28aca2078b2a77f7c",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "1ec1aee5507cb57f25fe4f71b9d5d31b1d539901e3fc400a12d684dfec80bcb1",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "0a35dbadea7556aa581eccbe5bd7458839b30295aec85fcaa5dda171239c239f",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "e8f106f888f37910714bd08e35ce5be6a5e1297498f86f33d8cf1d5e2e17e130",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "56147df2d06a0adf19933e599a6c867760ab1884ddd9bea02749a2869b64247c",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "a31731998f398695ebeb848ddd8ec1dc4e1e3576f7d1735b5065820cfcc9c6d0",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "5ecd8fb59ce8532b4ee38e971ba2eac2dc7c60f9e778d284d4629d725ff15475",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "49b460325a5337f51a1aaedc561fe7f231c500cb8d1e40a678237bb090b9a067",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "ef4f378b1b424e335916029d14d42896cf2c95560dd006ee70193c91f312c70c",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "b0d6648a981f74be7c36d49ed171d4228977d401c1b7356ddd434d14eb9d27c4",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "1ac1b379e7333ced738654d6f3b614740846bf2b1f14a0d622025852b07b4166",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "4c49b768c3c410c00a178dff307c267d8f4d9092756c25f61e21c50dfd110ec6",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "670d7b883a62429e9299d42242b69711e680952b3c06dc4c195c7de49637fdb2",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "ca0bfb682719684c59e5e2740cb470e43fd53f13246c323c1d7419ca28ce0987",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "0d1638810e258cbf0b70678e53961918aeeebc3ba6070656bb74229eb4070552",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "bafb53934caf97bfbe5b9b07c22e18e2f4564562db9b8aa0d8fc23e55e828bb0",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "f33c95fd31ce56b8adfaae015bb85157c91a87e0fab46a5e10ad742ea42b71c7",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "5add51100d17246254fd2bc0ab84e215967a170873ff0f76b0d86c3477aebb3e",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "db0d4697eb28f09ce2cb1c2eb22cd36f249691482a0782a3a1ee54c16df2f25d",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "4c90bdea8d41c3e43e503fa76554d22f36b3f55ce1f09142635f276405da65b1",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "11ab0ba42115641f714d7a80dd747e4ae59f5c2e0cb55da2c5e940cd4cb826cd",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "230fafce067e686e72512894fb2b1d53ed229270c177f018fec93427dff352cc",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "30ec257ff1adda8069f0f3d2c1ce71fc4c327981712ca955a0716b9d6a64b5b4",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "cd72f89524d7fb2258a97ed3a300d6a03a798c3c40c1491be0d8ea7be22c4897",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "aac84b3d6b4d3f52a2145eb01b38b958076860a57408d4a233c6b18a47daecaa",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "a768d5149f2643572e67aae57876594dcb880bcfb016ff813acf9d5439228863",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "4f56de2f54c7c59d1aeaefb3c0202e3d82b9e7254bb4cd3a26bd623397c97628",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "9b4c30a9fbb33fd254b93b05f1f2cec871be04f4fcdbe00eed5af6a2a774b91b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "eb36f09ddf948876237551dbe9d97030734c550c4d9e9114fb644db31d9922ab",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "26c85432c4c4d2eb17e4160d4acd4f8740dfd87cc235bad642e6674d74368b69",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "6c443b9350e2c978c6688e493a3fa3fc6903a25c5ec804a90a8ff261b83bb14a",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "2d744b043a571c2dd25753614fe55a66f54875e1fc8e0e19f211fabc283b0863",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "6c767a52a76669f2ef24849d59b4d6c37960b8a870c2d4a88e8d29356039087e",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "4d340ba22ae5d6a706caecc9e17ba64ff444fb21b5b2cbf6cf16c39aabd931e4",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "c19f748d9020271550d8c192d1c329760f7f90e50b890e4d97640a7c2912aec6",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "3a851605d939301168468ac34a796c629fd6df34d13bf451dcd46f9994123d3a",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "885228cdf477b2326599d7d5badfa2c660fe685166a100ee4c5d1fa1854c5952",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "197d92f4f998776541e9c03c8a84a8208d0dd2f91131f13e000ee82002ed020e",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "50292d940c4e0ff72e1eb568b0fa2c87a57048110d33983efd94ee7666184f12",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "b8fdc46b3a0dc267b2748ca65a1f4f5712fab8411d9eec97538f6cfa3d55a3ff",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "5d80e7b8da41269dcb29fa53b12ef91b17463a895fd9f8c0b156731f232a5416",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "a2cc511540a1992f9560aec1f502436d1497ed5687267a374994737b07033a65",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "1eb52b6ce0178013aa37b536ca7f550320ad3c4f63741087e3eb16d2d9a5579b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "5051d34bb9a8b0126da877d024cc8edb20fbbdc6c066c20c705d77c8a58f7703",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "a51b2ec5c17c5dbb551ca2ce13447c6b2cd8f47f4e97e94acec515e24f9af680",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "045b504cca92eab4f54e109e15dd7b349ed6efc8d058cabe39e0232160102fd7",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "fa813a1b2e17e919581516fd80561b6a722468d4f3905c7bd93afbff3a30645b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "8f31fc6cb09915eefdc1444b7c9e2528bf1503cc437638d5c43b4a1cc6a48b43",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "522b8703faa533e587e21d4c5f8c2d10854472557107746a681583e3e718ef17",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "46c1b60961e982fa38a0b8bd2b9b65b311abcfb567cf901f9795479d7490e584",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "01983adda1af822bbaec5116fb1d33eb538e0ff9c481269780dcd9f154912919",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "7b6a261abe3c6a7a0569b19e956830dd5e572dc4ebf6896c690ed7d39b643eeb",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "968c2ed350aecb077b8fe4692b9339af245dba27efd536c78ec03a3cbedbf801",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "cdcde22a87222303a3ee340d2986f116b71f6729adc2306cfaf0dcb743ba3ea4",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "d32e93a7b00568d67c821631fdc80ce6362fac64f062250a92b21abdb95abdba",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "a25040ca17e1527790db86ab023f6c5db388cc9140345c661b71b77ce541385e",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "c5670dbe743acfd1e7b4ef218692f296105584b5ead82549933570cffe753e60",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "082237c091bfc618bf8f4245fc1f3696255ba5685995e5b56fed5222f061ac20",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "bba91ed65ea3595d82345de90883decf56a828596c5fccb141c3f69c1897e774",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "d913316373e9590a5a5ba093ba5c5b8b13cf9b5f9e88393a1864f7aebf658017",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "51eb3bf4edbcd43db4516a8c9c4aef4b7fdd418c330eb91928437ad943e399c9",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "c6739f044c5f2da72c08c494206a17da81b3aef4e7d18cbc859df0054a7e2eba",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "da2d21765c95a1437462c7f18616914b53bb0728af3011eb82fce24e8c2857ba",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "e0ee6ab6afe001ad9b243c3e2d903e72e97430cbdaff7c0d2c71b26b2b26ecc1",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "dd5bd6602a42dc8a42b17453dfaf65f0d20a8f7f383e9ec937450e0d81ea6444",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "ec9b036270baf290607486896563e92b7de6949af88e0a478caa0ac5625fc983",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "8e53c5339b8f77c9a61b6732d6596d738bc2b69449e92bb8b5e146f9c0bb62ee",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "f224d8a17741cbc43e546b4ffb6985e0fda041effa1048b6f4ca012b13b17209",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "a9e12a99719f90375921e87450a025199e14d2eea40cfa7da7abaaf080d653c9",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "5f0ed8ab0414cdf97319ea42769307b8664e18365cc3b8c427d2711dc3d83b73",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "1a4eacaf597e5bfe81eaafb32ce05e05fe45a78156fb037dc04a7e62291ed399",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "efc92cbc295f6cdf4a516786305632ad7fde2c16dcb55cf26ec428e5b450fcc3",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "51725333cb43754ff9ac572b57eea7a940e3018c6bd786ddf496aefee529d5ce",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "e199673e67af1381b156985716b3172119a44d78108e7465a49f65ccf54fdfc8",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "40e28748efeb707dbd910ad689908c9e71cecf6f67b1c8e2bb4a58dcc98aedaa",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "2c2a79de2ea684eb5822233d4a84bac39b85dc8e6c5f7102ead2c487acbc02de",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "04f3d3c28fd5d35fbce4dbdaec7f3dcea9e39c1c5d6d163defc678b7d77c5312",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "16085fa4bff8acf1dcdc8576370276ce56b0e5771162ee105fe4360d339f28fc",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "1eb1bfc6b80a4b9034bccd65321ed8f931b4a7283ade69e0976fa524821b00c2",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "e308abd3376de1b12042983904fe01e650ea1dcdee13cd5591018ac6d9357c9e",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "4516d0a7421ef70357bdefa0a2280b1eba45766b2a419a17e4bb479bba984a94",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "8cd78e3b464965beb7a4d34ad8dbac5fbb641f3f462c223e57c8987aed7fd82b",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "6d226ea35d854a5e3011fdeb08984579a1272ad1c63437c6ad5c2df6007a53fd",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "2640560b55167463f1f39b3fe26ca6b3cc0326852f97a761bfd814ba4c6661f1",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "a1d0f103185764ca3273215ce724473f0af09785e093bff4c39cc6076277260d",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "f0c65e15c6e3126e0b7ec9c1bb52dbd37094b01ce4251eef5c927a370b27ada6",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "22f72cff89f2acd37f56ffbaab97dfaf0e56485b387d9661878d68e5ba405eee",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "5ac46364d1d615fae339f7de207f32c19f0a2dfd068371b6c9a38f183528db5e",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "2a94fbb3a3ebccbe552e27e04342f6b617e701a15bcd17d32fbee1d55d06000f",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "5d3d3736d3fa801be95650fc82e44d2c285bcc2edca358e5ec66e6d31ac183cc",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "f50dd155f78c705759cbcaec5b19dd4fbfeb837842c0d2c8b57ed0968272bf7e",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "d42ab3291dc0d660fa711ac69b05462c0609cfb4df57acd33a55e7b078c8af18",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "afcac7f686c32e5117e9bf8e9615ffcf120d2783d5341786989e422ad3c7b351",
+      "charged": true,
+      "outcome": "rejected"
+    }
+  ],
+  "scientific_acceptance": false,
+  "oracle": false,
+  "limitations": [
+    "BFCL-derived generated requests, not an official BFCL score",
+    "No ARC transfer or joint router/crossover result",
+    "Three maker seed entries share a prompt; not independent model draws"
+  ],
+  "module": "receding_skill",
+  "template": "resource_lookahead3",
+  "positions": 19,
+  "charged_positions_per_arm": 969,
+  "proposal_counts_equal": true
+}

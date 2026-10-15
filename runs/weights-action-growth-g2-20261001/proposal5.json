@@ -1,0 +1,52 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "generation":5,"continuation_generation":2,
+ "scope":"structural_action_argument_cell_mutation_only",
+ "parent_id":"19276f35980544d842dd52b2b2145ad880005026d7d7c49a5bb2d2456747da6a",
+ "role_order":["arg1","arg2","file"],
+ "feature_order":["q1","q2","prev_for","is_vocab","has_dot_evenquoted","prev_to","prev_in","prev_readverb","is_function_word","prev_write","prev_replace","prev_with"],
+ "rationale":"Second bounded continuation phase from the actual accepted live ten-feature child. Supplied development feedback reports correct one-token unquoted writes but null old/new arguments for replace milk with tea in notes.txt and replace north with south in MAP. Append exactly previous-replace-verb and previous-with lexical indicators. Arg1 gets +6 after replace/change/edit and -8 after with; arg2 gets -8 after replace/change/edit and +6 after with. File gets -8 for either argument context so dotted old/new strings cannot outrank the actual path solely through period evidence. Preserve all30 existing slot coefficients and all3 thresholds exactly. This repairs the measured null arguments through literal scores without host answer filling, target-derived features, router changes, or performance claims for this new candidate.",
+ "tensors":{
+  "slot.W":[
+   [6,-3,2,-5,0,-8,-8,-8,0,6,6,-8],
+   [-3,6,0,-5,0,-8,-8,-8,0,0,-8,6],
+   [-4,-4,0,-6,1,8,8,8,-9,-8,-8,-8]
+  ],
+  "null.b":[0.5,0.5,0.5]
+ },
+ "parent_tensors":{
+  "slot.W":[[6,-3,2,-5,0,-8,-8,-8,0,6],[-3,6,0,-5,0,-8,-8,-8,0,0],[-4,-4,0,-6,1,8,8,8,-9,-8]],
+  "null.b":[0.5,0.5,0.5]
+ },
+ "structural_feature_contract":{
+  "preserved":"First10 raw feature definitions and order, fixed tokenizer, quoted-span grouping and literal text copying stay unchanged.",
+  "prev_replace":"Feature index10 equals1 iff the immediately preceding token is unquoted and its lowercase text is exactly replace,change,or edit; otherwise0.",
+  "prev_with":"Feature index11 equals1 iff the immediately preceding token is unquoted and its lowercase text is exactly with; otherwise0.",
+  "prohibition":"Features may not depend on action predictions, intent labels, expected argument spans, expected_matches, execution outcomes, or query targets. No semantic parser or host correction is added."
+ },
+ "numeric_provenance":{
+  "inherited":"All30 parent slot.W coefficients in columns0..9 and all3 thresholds copied exactly from the accepted live parent",
+  "newly_authored":"Columns10/11 in role order: arg1[6,-8],arg2[-8,6],file[-8,-8]",
+  "full_charged_positions":39,"inherited_positions":33,"new_positions":6,"finite_range":[-9,9],
+  "lineage":"Accepted phase1 live child19276f35980544d842dd52b2b2145ad880005026d7d7c49a5bb2d2456747da6a is the actual parent. Prior rejected proposals are not breeding parents. Full matrix is directly authored literal serialization, not automatically fit or rewritten from performance data."
+ },
+ "executable_contract":{
+  "selection":"Per-role literal12-feature score for each token; select first highest score strictly above its null.b, otherwise null. Copy the selected fixed-tokenizer token text exactly. Preserve existing tie-breaking and role ordering.",
+  "unquoted_edit":"milk/north after replace gain arg1 score6 and arg2 score-8. tea/south after with gain arg2 score6 and arg1 score-8. Explicit paths after in retain parent file score8 without period or9 with period. No expected answer supplies these features.",
+  "preservation":"Quoted OLD after replace gains6 on existing q1 score6; quoted NEW after with gains6 on existing q2 score6, preserving correct heads. Existing write examples receive both new features0, so their scores and selections stay unchanged. Indirect in the file PATH retains the parent function-word penalty, and ordinary quoted/direct path contexts are unchanged.",
+  "execution":"Router tensors/actions remain untouched. Fixed expected_matches1 remains an executor policy guard, not an inferred answer or feature. Fixed executor independently rejects missing/unsafe paths and invalid replacement conditions; do not change it."
+ },
+ "raw_prompt":"Phase2 from verified accepted live gen4 child19276f35980544d842dd52b2b2145ad880005026d7d7c49a5bb2d2456747da6a. Preserve first10 features, append exactly prev_replace for previous unquoted replace/change/edit and prev_with for previous unquoted with. Author full W3x12/null.b3 within[-9,9], fix measured null unquoted edit args while preserving quoted edits/writes, indirect file and unquoted writes; untouched router/executor expected_matches1, no reporting/evaluation/paid API/automatic fitting. Full39position mutation charged with exact-shape matched random controls.",
+ "provenance":{
+  "development_source":"Supplied phase1 actual development feedback, reporting_evaluated=False; parent arrays previously authored in action_argument_generation4.json and supplied in context",
+  "source_file_not_read":"feedback-growth1.json results were supplied directly; no additional file inspection needed",
+  "author_evaluations":0,"reporting_reads":0,"paid_api_calls":0,"automatic_fitting":false
+ },
+ "limits":[
+  "Unquoted OLD/NEW remain single tokenizer tokens; multiword replacements require grouped quotes. No host span joining or answer filling is authorized.",
+  "Alternative edit grammar using to instead of with is not newly supported. Modifier words immediately after replace/change/edit may be selected as old content.",
+  "Paths immediately after replace/with without explicit in context are discouraged, and some literal function-word filenames remain unsupported.",
+  "This is bounded lexical argument selection, not general language understanding, automatic safety enforcement, or demonstrated phase2 gain."
+ ],
+ "assembly_decision":"Apply only explicit feature expansion and39 literal argument positions from the verified live parent, retaining router/tokenizer/executor/metric and nonregression gates. This is final phase2 of the declared continuation; evaluate separately against full-shape/range matched random candidates. No forced promotion, automatic replacement, or changed scores."
+}

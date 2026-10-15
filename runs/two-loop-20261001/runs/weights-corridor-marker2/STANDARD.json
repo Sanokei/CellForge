@@ -1,0 +1,160 @@
+{
+  "arms": {
+    "llm": {},
+    "random": {}
+  },
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "seeds_declared_before_run": true,
+  "budget_per_arm": 1,
+  "charged_positions_per_arm": 102,
+  "niches": [
+    "corridormarker"
+  ],
+  "founders": [
+    {
+      "hash": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "niche": "corridormarker",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "Flood four-connected zeros from colour 9, filling with 8 and replacing the marker.",
+      "weights_file": "llm-1701-1-0.json"
+    },
+    {
+      "hash": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "niche": "corridormarker",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "Flood four-connected zeros from colour 9, filling with 8 and replacing the marker.",
+      "weights_file": "llm-1702-1-2.json"
+    },
+    {
+      "hash": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "niche": "corridormarker",
+      "author": "llm",
+      "actor": "gpt-6.1-sol low",
+      "rationale": "Flood four-connected zeros from colour 9, filling with 8 and replacing the marker.",
+      "weights_file": "llm-1703-1-4.json"
+    }
+  ],
+  "genomes": [
+    {
+      "hash": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "niche": "corridormarker",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1701-1-0.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "33499007d39ce9aa7c27762d46da444e69e3bf026b4765b7e0a86b21230555d2",
+      "niche": "corridormarker",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-1-1.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "niche": "corridormarker",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1702-1-2.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "82bef122f429928dd9952c49f7a58beca8556d6aac5e91692a7122cf8bf689d2",
+      "niche": "corridormarker",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-1-3.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "niche": "corridormarker",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1703-1-4.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "db921a6cf13fcd2d63674bbf3a011b4b7df2c0dfd6455a39347e1dffffd60f1b",
+      "niche": "corridormarker",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-1-5.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    }
+  ],
+  "proposals": [
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "33499007d39ce9aa7c27762d46da444e69e3bf026b4765b7e0a86b21230555d2",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "82bef122f429928dd9952c49f7a58beca8556d6aac5e91692a7122cf8bf689d2",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "2ada150bd6676fd229de59f95c9b677fdeac134f7beeff35eaa424935a3233c5",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "db921a6cf13fcd2d63674bbf3a011b4b7df2c0dfd6455a39347e1dffffd60f1b",
+      "charged": true,
+      "outcome": "rejected"
+    }
+  ],
+  "scientific_acceptance": false,
+  "oracle": false,
+  "limitations": [
+    "BFCL-derived generated requests, not an official BFCL score",
+    "No ARC transfer or joint router/crossover result",
+    "Three maker seed entries share a prompt; not independent model draws"
+  ],
+  "module": "corridor_skill",
+  "template": "corridor_marker2",
+  "positions": 34,
+  "proposal_counts_equal": true
+}

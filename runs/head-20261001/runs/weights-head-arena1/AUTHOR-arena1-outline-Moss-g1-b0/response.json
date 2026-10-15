@@ -1,0 +1,62 @@
+[
+  {
+    "task_id": "outline-n0-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1, 2, and 3 fill their four orthogonal background neighbours with their own colour; demonstration 3 leaves colour 8 unchanged without a halo."
+  },
+  {
+    "task_id": "outline-n0-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 2 give colours 1 and 2 four orthogonal colour-4 neighbours while preserving source pixels and ignoring 8; infer the same source set 1, 2, 3 across this family."
+  },
+  {
+    "task_id": "outline-n0-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 2 surround 1 and 3 with orthogonal colour-6 halos; demonstration 3 also surrounds 2, while 8 never generates a halo."
+  },
+  {
+    "task_id": "outline-n1-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 2 expands 1, 2, and 3 into same-colour 3-by-3 neighbourhoods; demonstration 1 preserves the adjacent 8 and gives it no halo."
+  },
+  {
+    "task_id": "outline-n1-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 gives 1, 2, and 3 colour-4 halos including diagonals; demonstration 2 preserves 8 without expanding it."
+  },
+  {
+    "task_id": "outline-n1-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 gives 1 and 2 eight-neighbour colour-6 halos, and demonstration 3 confirms the same for 3; colour 8 remains unchanged without a halo."
+  }
+]

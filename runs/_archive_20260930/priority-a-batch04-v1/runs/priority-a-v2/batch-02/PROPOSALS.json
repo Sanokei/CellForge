@@ -1,0 +1,335 @@
+{
+  "protocol": "priority-a-repair-batch/1",
+  "proposal": 2,
+  "runs": [
+    {
+      "seed": 775101,
+      "repairs": {
+        "breeding_only": {
+          "champion_hash": "c39b358a72dc7a756d286a1591d11a24b0f1a90d1bc58cceae5ed3adab6449cc",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775101,
+          "bred_hash": "3467a714fe183912133ceeb1622fc066aa55fca00d97ef0d4a7316784ca672f5",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775101-breeding_only-diagnostics.json",
+          "diagnostics_sha256": "8568bfa0817739445299934f65e928b016f620b7818a36ba7c060764319ff66d",
+          "ops": [],
+          "actor": "breeding_only",
+          "model": "none",
+          "rationale": "Matched bounded new-cell grammar and slot-edit count; unchanged crossover for breeding-only."
+        },
+        "random_repair": {
+          "champion_hash": "c39b358a72dc7a756d286a1591d11a24b0f1a90d1bc58cceae5ed3adab6449cc",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775101,
+          "bred_hash": "3467a714fe183912133ceeb1622fc066aa55fca00d97ef0d4a7316784ca672f5",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775101-random_repair-diagnostics.json",
+          "donor_path": "runs/priority-a-v2/batch-02/775101-random_repair-donor",
+          "donor_hash": "0ca80aba7602176ff487b5039f8ed80a21f70b022117ef12124f8cc8725aed6f",
+          "materialized_hash": "052d88ce5ac3302eef9916924e09ebb8d55b087d79a052e35889edb8cb9c8aae",
+          "density_weights": [
+            0,
+            1
+          ],
+          "density_bias": 1.5,
+          "minimum": 4,
+          "new_stored_parameters": 423,
+          "diagnostics_sha256": "8568bfa0817739445299934f65e928b016f620b7818a36ba7c060764319ff66d",
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "0ca80aba7602176ff487b5039f8ed80a21f70b022117ef12124f8cc8725aed6f",
+              "name": "dense_crop_fill.gene",
+              "prefix": "a02_",
+              "slot": 9
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 9,
+              "gene": "bank_local_fill.gene"
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 11,
+              "gene": "bank_local_fill.gene"
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 14,
+              "gene": "bank_adjacency_recolor.gene"
+            }
+          ],
+          "actor": "random_repair",
+          "model": "none",
+          "rationale": "Matched bounded new-cell grammar and slot-edit count; unchanged crossover for breeding-only."
+        },
+        "maker_repair": {
+          "champion_hash": "faf95f2c160173c9581e8e1055caa73248c3ab75423efb195ac4020228550210",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775101,
+          "bred_hash": "2b37bdc2e3da5bbe49916c876a7a7e3f7f85e664af7a1c4006285e21aad3b631",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775101-maker_repair-diagnostics.json",
+          "donor_path": "runs/priority-a-v2/batch-02/775101-maker_repair-donor",
+          "donor_hash": "e43fb58aadaa46fae8942c2214b2d1b3deed6e7b46152bc9d3a8f17c85e45673",
+          "materialized_hash": "4d2b9122e7946dec6eb024ca010132ff1e7de0c65f71483c4740a287fbda5f1c",
+          "density_weights": [
+            1,
+            -1
+          ],
+          "density_bias": 0.5,
+          "minimum": 4,
+          "new_stored_parameters": 476,
+          "diagnostics_sha256": "d607049657e3111ddb89f8d58a48dc456260b076e5ab1adfe2ea49764b570e3f",
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "e43fb58aadaa46fae8942c2214b2d1b3deed6e7b46152bc9d3a8f17c85e45673",
+              "name": "dense_crop_fill.gene",
+              "prefix": "a02_",
+              "slot": 9
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 8,
+              "gene": "a01_periodic.gene"
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 11,
+              "gene": "bank_adjacency_recolor.gene"
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 10,
+              "gene": "joint_mirror_repeat.gene"
+            }
+          ],
+          "actor": "Codex root",
+          "model": "session model unspecified",
+          "rationale": "Traced crop/fill/adjacency failures after breeding. Author density gate[1,-1],bias.5 and size gate1,bias-3.5; fuse dense crop and sparse fill to retain earlier periodic capability within nine slots. Restore displaced earlier genes in freed slots. Hypothesis can misclassify dense fill inputs; full regression gates must decide."
+        }
+      }
+    },
+    {
+      "seed": 775111,
+      "repairs": {
+        "breeding_only": {
+          "champion_hash": "3cb863d700061a92a198655528976cf63d32384ae1f40c034030931e092a17e5",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775111,
+          "bred_hash": "0f4f30052784983cac9b2c01bf124d9b69562b105df2e824d1ac01d226dd6de4",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775111-breeding_only-diagnostics.json",
+          "diagnostics_sha256": "6fdf005438196cd4eef97c28e7a89d055c22b9f177450c4b84da66a5b461ec28",
+          "ops": [],
+          "actor": "breeding_only",
+          "model": "none",
+          "rationale": "Matched bounded new-cell grammar and slot-edit count; unchanged crossover for breeding-only."
+        },
+        "random_repair": {
+          "champion_hash": "3cb863d700061a92a198655528976cf63d32384ae1f40c034030931e092a17e5",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775111,
+          "bred_hash": "0f4f30052784983cac9b2c01bf124d9b69562b105df2e824d1ac01d226dd6de4",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775111-random_repair-diagnostics.json",
+          "donor_path": "runs/priority-a-v2/batch-02/775111-random_repair-donor",
+          "donor_hash": "0436d83d44e64b953176df17a0027fc9e5d11fbba876ca28f284ff2802b1f891",
+          "materialized_hash": "b9d1f1c79b86523579ca35200e427c290d68f3584259d30c4bb64f4a04de0aa3",
+          "density_weights": [
+            1,
+            -1
+          ],
+          "density_bias": 1.5,
+          "minimum": 8,
+          "new_stored_parameters": 423,
+          "diagnostics_sha256": "6fdf005438196cd4eef97c28e7a89d055c22b9f177450c4b84da66a5b461ec28",
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "0436d83d44e64b953176df17a0027fc9e5d11fbba876ca28f284ff2802b1f891",
+              "name": "dense_crop_fill.gene",
+              "prefix": "a02_",
+              "slot": 11
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 14,
+              "gene": "scaling_bank3_repeat.gene"
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 16,
+              "gene": "joint_mirror_repeat.gene"
+            }
+          ],
+          "actor": "random_repair",
+          "model": "none",
+          "rationale": "Matched bounded new-cell grammar and slot-edit count; unchanged crossover for breeding-only."
+        },
+        "maker_repair": {
+          "champion_hash": "6c0c1b7f2135d25fbab201acb5858786cfe857f5494dbc4b7fb66d047fce38d5",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775111,
+          "bred_hash": "e125f0d0f8d5c01f633ce59895c91fb21ab39a4ba8e51331a9c791c5be57d334",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775111-maker_repair-diagnostics.json",
+          "donor_path": "runs/priority-a-v2/batch-02/775111-maker_repair-donor",
+          "donor_hash": "9bddf31aae89d2e40f8ec49e573af752479beff5441e5ee4db976979c27a4969",
+          "materialized_hash": "96db827df25155486ec9141eb315de458bd6d1c98021242dfd6588625fc7c387",
+          "density_weights": [
+            1,
+            -1
+          ],
+          "density_bias": 0.5,
+          "minimum": 4,
+          "new_stored_parameters": 476,
+          "diagnostics_sha256": "38e885ffb4f068c29bfc528cf64a885a08ee2f08f373364c09a50a3ef80fbdfa",
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "9bddf31aae89d2e40f8ec49e573af752479beff5441e5ee4db976979c27a4969",
+              "name": "dense_crop_fill.gene",
+              "prefix": "a02_",
+              "slot": 9
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 10,
+              "gene": "a01_periodic.gene"
+            },
+            {
+              "op": "set_slot_gene",
+              "slot": 16,
+              "gene": "scaling_bank3_repeat.gene"
+            }
+          ],
+          "actor": "Codex root",
+          "model": "session model unspecified",
+          "rationale": "Traced crop/fill/adjacency failures after breeding. Author density gate[1,-1],bias.5 and size gate1,bias-3.5; fuse dense crop and sparse fill to retain earlier periodic capability within nine slots. Restore displaced earlier genes in freed slots. Hypothesis can misclassify dense fill inputs; full regression gates must decide."
+        }
+      }
+    },
+    {
+      "seed": 775121,
+      "repairs": {
+        "breeding_only": {
+          "champion_hash": "eb1e13fd51d3ada240d9f3e4805994635eb16d90e4ee61d73f9128a1c576fd1d",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775121,
+          "bred_hash": "7cba725528712160deaa34f2bd6d9add5ba323d65018d9fcbe6c2eb2b307a18c",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775121-breeding_only-diagnostics.json",
+          "diagnostics_sha256": "1439bfac6156e02bbe5c42c0dd1a5b7cb16aa230f0a6d7abd6e4bab7972251bf",
+          "ops": [],
+          "actor": "breeding_only",
+          "model": "none",
+          "rationale": "Matched bounded new-cell grammar and slot-edit count; unchanged crossover for breeding-only."
+        },
+        "random_repair": {
+          "champion_hash": "d39af18ab29ce99776c939cd31966fe17c6e761cc27eecc91f4109198363b325",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775121,
+          "bred_hash": "a1a1cca12506800858767af44e674ff8973646d5a510c8b73769c96a6515bd62",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775121-random_repair-diagnostics.json",
+          "donor_path": "runs/priority-a-v2/batch-02/775121-random_repair-donor",
+          "donor_hash": "5e4448625ff0b1ab75d475c2f93b733673b4a9fb89a8726b61dfa89ba79c424b",
+          "materialized_hash": "ae976533c9372e441995cddb0646bab24a270e68ace62f2eea074437aa6376d7",
+          "density_weights": [
+            1,
+            1
+          ],
+          "density_bias": -1.5,
+          "minimum": 1,
+          "new_stored_parameters": 476,
+          "diagnostics_sha256": "4e3afdd531536c5897957bbd6c13db65df07f6d26cc7e4c0696ecfc5a2ffdf14",
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "5e4448625ff0b1ab75d475c2f93b733673b4a9fb89a8726b61dfa89ba79c424b",
+              "name": "dense_crop_fill.gene",
+              "prefix": "a02_",
+              "slot": 15
+            }
+          ],
+          "actor": "random_repair",
+          "model": "none",
+          "rationale": "Matched bounded new-cell grammar and slot-edit count; unchanged crossover for breeding-only."
+        },
+        "maker_repair": {
+          "champion_hash": "d39af18ab29ce99776c939cd31966fe17c6e761cc27eecc91f4109198363b325",
+          "mate_path": "runs/priority-a-v2/right",
+          "mate_hash": "120107c16b0e092285e869c37e652960773b486f34202daa0bfdba5c53ba86ad",
+          "breeding_seed": 2775121,
+          "bred_hash": "a1a1cca12506800858767af44e674ff8973646d5a510c8b73769c96a6515bd62",
+          "diagnostics_path": "runs/priority-a-v2/batch-02/775121-maker_repair-diagnostics.json",
+          "donor_path": "runs/priority-a-v2/batch-02/775121-maker_repair-donor",
+          "donor_hash": "4925e608ab60872ea4fd0b398dae73736d6a9bcf3b45c4ac216e46c23a06612c",
+          "materialized_hash": "bf49f4709f78f10f3d53e4785dece2fcae2fa5af529584bf47bb76dbe1083389",
+          "density_weights": [
+            1,
+            -1
+          ],
+          "density_bias": 0.5,
+          "minimum": 4,
+          "new_stored_parameters": 476,
+          "diagnostics_sha256": "4e3afdd531536c5897957bbd6c13db65df07f6d26cc7e4c0696ecfc5a2ffdf14",
+          "ops": [
+            {
+              "op": "import_slot_gene",
+              "from": "4925e608ab60872ea4fd0b398dae73736d6a9bcf3b45c4ac216e46c23a06612c",
+              "name": "dense_crop_fill.gene",
+              "prefix": "a02_",
+              "slot": 10
+            }
+          ],
+          "actor": "Codex root",
+          "model": "session model unspecified",
+          "rationale": "Traced crop/fill/adjacency failures after breeding. Author density gate[1,-1],bias.5 and size gate1,bias-3.5; fuse dense crop and sparse fill to retain earlier periodic capability within nine slots. Restore displaced earlier genes in freed slots. Hypothesis can misclassify dense fill inputs; full regression gates must decide."
+        }
+      }
+    }
+  ],
+  "plan_sha256": "4f5d910f3fe1a84165a5518e98b75f048a3ea65abda2d7fbb026620685544653",
+  "vocabulary": {
+    "new_cell_grammar": "inline crop/fill plus numerical density and size gates",
+    "density_weights": [
+      -1,
+      0,
+      1,
+      2
+    ],
+    "density_bias": [
+      -1.5,
+      0.5,
+      1.5
+    ],
+    "minimum": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "slots": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "operation_counts_by_seed": {
+      "775101": 4,
+      "775111": 3,
+      "775121": 1
+    }
+  },
+  "gradients": false,
+  "scored": false
+}

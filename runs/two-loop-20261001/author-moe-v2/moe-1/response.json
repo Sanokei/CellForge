@@ -1,0 +1,146 @@
+[
+  {
+    "seed": 501,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_hash": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+      "pool_hash": "4f2e5c48d12f759ba437f8aae2b7b6afe98906580782704e710f3616708f3ce1",
+      "prompt_hash": "8de3cd693ff9a7b52ee56ffc2d16e7d1d1491121d69ebaddedae25064de85c42",
+      "cell_ids": [
+        "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+        "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea"
+      ],
+      "cells": [
+        {
+          "id": "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+          "structure": "bbox_mask",
+          "params": {
+            "pick": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "fill": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+          }
+        },
+        {
+          "id": "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea",
+          "structure": "colormap",
+          "params": {
+            "map.W": [
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+            ]
+          }
+        }
+      ],
+      "router": {
+        "route.W": [[0.75, -0.25], [-0.25, 0.75]],
+        "route.b": [0.05, -0.05]
+      },
+      "charged_positions": 6,
+      "rationale": "Copy the only two earned live cells, each passing all 12 supplied primitive demonstrations while its zero control fails. Author a new symmetric router with a small asymmetric bias as an exploratory candidate. Supplied development results are 0/100, including uniform and oracle diagnostics; they provide no evidence of improvement. This candidate is unevaluated and uses no oracle routing input."
+    }
+  },
+  {
+    "seed": 502,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_hash": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+      "pool_hash": "4f2e5c48d12f759ba437f8aae2b7b6afe98906580782704e710f3616708f3ce1",
+      "prompt_hash": "8de3cd693ff9a7b52ee56ffc2d16e7d1d1491121d69ebaddedae25064de85c42",
+      "cell_ids": [
+        "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+        "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea"
+      ],
+      "cells": [
+        {
+          "id": "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+          "structure": "bbox_mask",
+          "params": {
+            "pick": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "fill": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+          }
+        },
+        {
+          "id": "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea",
+          "structure": "colormap",
+          "params": {
+            "map.W": [
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+            ]
+          }
+        }
+      ],
+      "router": {
+        "route.W": [[0.4, -0.6], [-0.6, 0.4]],
+        "route.b": [-0.08, 0.08]
+      },
+      "charged_positions": 6,
+      "rationale": "Preserve the actual tensors of both earned live cells and exclude failed founders. Author a distinct literal router with the opposite bias direction for exploratory evaluation. Both cells have supplied primitive demonstration support, but the 0/100 development results and zero oracle diagnostic successes do not establish a beneficial routing direction. No improvement is claimed; oracle diagnostics are not routing inputs."
+    }
+  },
+  {
+    "seed": 503,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_hash": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+      "pool_hash": "4f2e5c48d12f759ba437f8aae2b7b6afe98906580782704e710f3616708f3ce1",
+      "prompt_hash": "8de3cd693ff9a7b52ee56ffc2d16e7d1d1491121d69ebaddedae25064de85c42",
+      "cell_ids": [
+        "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+        "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea"
+      ],
+      "cells": [
+        {
+          "id": "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+          "structure": "bbox_mask",
+          "params": {
+            "pick": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "fill": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+          }
+        },
+        {
+          "id": "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea",
+          "structure": "colormap",
+          "params": {
+            "map.W": [
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+            ]
+          }
+        }
+      ],
+      "router": {
+        "route.W": [[0.9, -0.35], [-0.45, 0.65]],
+        "route.b": [-0.03, 0.03]
+      },
+      "charged_positions": 6,
+      "rationale": "Copy both eligible earned live cells unchanged and author a third, asymmetric literal router. The supplied evidence supports these cells only as declared grid primitives; all supplied development task outcomes are false. This is an unevaluated exploratory candidate, with no claimed improvement and no oracle diagnostic used as routing input."
+    }
+  }
+]

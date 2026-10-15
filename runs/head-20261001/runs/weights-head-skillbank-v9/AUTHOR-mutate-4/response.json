@@ -1,0 +1,32 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {"bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0], "keysel": [0, 0, 0, 0, 0, 0, 9, 0]},
+    "rationale": "No exact solution exists in this template. The transformation depends on distances between markers. Even nearest-colour keys cannot distinguish demonstration-one cells (11,8) and (11,9), which require different outputs. These tensors select the relevant background and nearest-colour key but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {"bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], "prop": [0, 0, 0, 0, 0, 0, 0, 9]},
+    "rationale": "Use colour and enclosed-hole count together to distinguish the recolouring of the 8 objects while mapping the 1 objects to background."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {"bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], "prop": [0, 0, 0, 0, 0, 0, 0, 9]},
+    "rationale": "No exact solution exists in this template. Object recolouring cannot move pixels or paint background cells. Every possible background choice leaves at least one required destination outside all processed objects."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {"bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], "keysel": [0, 0, 9, 0, 0, 0]},
+    "rationale": "No exact solution exists in this template. Filling depends on connectivity along the corridor, and locally identical neighbourhoods require different outputs. These tensors select eight-neighbour counts but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {"bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0], "keysel": [0, 0, 0, 0, 0, 9]},
+    "rationale": "No exact solution exists in this template. Recolouring follows paths from the 9 markers; the available local keys cannot encode that connectivity. These tensors select directional neighbours but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {"dirs": [9, 0, 9, 0, 9, 0, 9, 0], "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "src": [0, 9, 9, 9, 9, 9, 9, 9, 9, 9], "stop": [9, 0, 0]},
+    "rationale": "No exact solution exists in this template. Enabling colour 8 fixes its missing rays, but intersections cannot become 2: source-colour painting only produces source colours, and fixed painting would make every painted ray cell the same colour."
+  }
+]

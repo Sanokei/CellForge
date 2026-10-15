@@ -1,0 +1,68 @@
+[
+  {
+    "task_id": "countout-w2-k2-f5-m1",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "what": [0, 0, 1, 0],
+      "color": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+      "fill": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+      "form": [0, 1]
+    },
+    "rationale": "Each demonstration contains exactly one colour-2 pixel and produces one colour-5 cell; count colour-2 pixels into a column."
+  },
+  {
+    "task_id": "countout-w1-k0-f5-m1",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "what": [0, 1, 0, 0],
+      "color": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "fill": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+      "form": [0, 1]
+    },
+    "rationale": "Non-background colour sets {2,3}, {1,2,3}, and {2} produce columns of two, three, and one colour-5 cells."
+  },
+  {
+    "task_id": "countout-w3-k1-f1-m0",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "what": [0, 0, 0, 1],
+      "color": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "fill": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "form": [1, 0]
+    },
+    "rationale": "The demonstrations contain one, two, and one separate colour-1 objects, producing rows of one, two, and one colour-1 cells."
+  },
+  {
+    "task_id": "countout-w2-k1-f1-m0",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "what": [0, 0, 1, 0],
+      "color": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "fill": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "form": [1, 0]
+    },
+    "rationale": "The inputs contain one, two, and one colour-1 pixels, matching output row lengths one, two, and one, filled with colour 1."
+  },
+  {
+    "task_id": "countout-w3-k1-f1-m1",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "what": [0, 0, 0, 1],
+      "color": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "fill": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "form": [0, 1]
+    },
+    "rationale": "One, one, and two separate colour-1 objects produce columns of one, one, and two colour-1 cells."
+  },
+  {
+    "task_id": "countout-w3-k2-f5-m0",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "what": [0, 0, 0, 1],
+      "color": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+      "fill": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+      "form": [1, 0]
+    },
+    "rationale": "One, one, and two separate colour-2 objects produce rows of one, one, and two colour-5 cells."
+  }
+]

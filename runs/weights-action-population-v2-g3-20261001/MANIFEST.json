@@ -1,0 +1,194 @@
+{
+  "schema": "action-population-manifest/1",
+  "scope": "non-grid lexical action arguments and action-classification cells; isolated fixtures, no ARC admission",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "generations": 3,
+  "fresh": [
+    {
+      "id": "quotedwrite",
+      "request": "write 'hello world' to 'report.txt'",
+      "initial": {},
+      "expected": {
+        "report.txt": "hello world"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "extensionless",
+      "request": "write 'version 1.2' to README",
+      "initial": {},
+      "expected": {
+        "README": "version 1.2"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "quotededit",
+      "request": "replace 'milk' with 'tea' in 'notes.txt'",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "tea"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "indirectedit",
+      "request": "replace 'cat' with 'dog' in the file notes.txt",
+      "initial": {
+        "notes.txt": "cat"
+      },
+      "expected": {
+        "notes.txt": "dog"
+      },
+      "action": "edit_in_place"
+    }
+  ],
+  "archive": [
+    {
+      "id": "oldwrite",
+      "request": "write 'plain' to old.txt",
+      "initial": {},
+      "expected": {
+        "old.txt": "plain"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "oldedit",
+      "request": "replace 'milk' with 'tea' in notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "tea"
+      },
+      "action": "edit_in_place"
+    }
+  ],
+  "safety": [
+    {
+      "id": "missing",
+      "request": "write 'v1.2'",
+      "initial": {},
+      "expected": {},
+      "action": "write_file"
+    },
+    {
+      "id": "escape",
+      "request": "write 'x' to ../outside.txt",
+      "initial": {},
+      "expected": {},
+      "action": "write_file"
+    },
+    {
+      "id": "oldabsent",
+      "request": "replace 'absent' with 'tea' in notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "milk"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "unsupported",
+      "request": "delete notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "milk"
+      },
+      "action": "none"
+    }
+  ],
+  "reporting": [
+    {
+      "id": "newwrite",
+      "request": "write 'quiet lake' to 'future.txt'",
+      "initial": {},
+      "expected": {
+        "future.txt": "quiet lake"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "newbare",
+      "request": "write 'revision 6.1' to LOG",
+      "initial": {},
+      "expected": {
+        "JOURNAL": "revision 6.1"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "newedit",
+      "request": "replace 'left' with 'right' in 'archive.txt'",
+      "initial": {
+        "archive.txt": "left"
+      },
+      "expected": {
+        "archive.txt": "right"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "newindirect",
+      "request": "replace 'high' with 'low' in the file next.txt",
+      "initial": {
+        "next.txt": "high"
+      },
+      "expected": {
+        "next.txt": "low"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "keyword",
+      "request": "write 'display copy' to output.txt",
+      "initial": {},
+      "expected": {
+        "output.txt": "display copy"
+      },
+      "action": "write_file"
+    }
+  ],
+  "joint_interface": "tool-action-joint/2",
+  "structural_proposals": [
+    {
+      "generation": 1,
+      "features": 8,
+      "positions": 27
+    },
+    {
+      "generation": 2,
+      "features": 8,
+      "positions": 27
+    },
+    {
+      "generation": 3,
+      "features": 9,
+      "positions": 30
+    }
+  ],
+  "budget": {
+    "argument": {
+      "llm": 3,
+      "random": 3
+    },
+    "router": {
+      "llm": 1,
+      "random": 1
+    }
+  },
+  "proposal_context": "one physical maker response per generation shared across three random-control contexts",
+  "reporting_note": "Frozen before this integrated evaluation, after author responses. Some grammar exposed; not blind or new task families.",
+  "assembly": "Measured eligible argument/router cells coupled through typed packet adapter. This is deliberate wiring, NOT evolved topology or circuit admission."
+}

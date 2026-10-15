@@ -1,0 +1,108 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 1, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Use the actual background and directional context to preserve blue anchors and erase magenta markers. The rule rotates each marker's displacement around its anchor; none of the available keys records the required distances."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "cannot_express": true,
+    "rationale": "Colour plus holes separates marker deletion from candidate object recolouring. The required output colour depends on the separate blue marker's shape, which no available object property represents."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Eight-neighbour counts provide a broader attempt at identifying corridor interiors and bends. Filling depends on connectivity along the corridor and the marker's position; identical local neighbourhoods can require different outputs."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Enable every nonzero source colour, including grey. This produces the required crosses, but the template cannot assign red specifically to ray intersections while retaining source colours elsewhere."
+  },
+  {
+    "task_id": "150deff5",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Local patterns offer an attempt at separating blocks from protruding lines. In the first demonstration, identical 3x3 patterns at top-row grey pixels require both red and azure; the other keys also lack the required shape decomposition."
+  },
+  {
+    "task_id": "8fbca751",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Joint row and column sets attempt to identify bounding-box interiors. They cannot associate those sets with a particular component, and the available keys cannot generally recover each object's bounding box."
+  },
+  {
+    "task_id": "d47aa2ff",
+    "params": {
+      "axis": [1, 0],
+      "op": [0, 1, 0, 0, 0],
+      "outc": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "sep": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Union retains all occupied comparison positions, with azure as the attempted output colour. The actual rule preserves matching colours and distinguishes left-only red from right-only blue; a single Boolean operation and output colour cannot express it."
+  },
+  {
+    "task_id": "05f2a901",
+    "params": {
+      "keep": [1.1],
+      "sim": [
+        [9, -9, -9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, 9, -9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, 9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, 9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, 9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, 9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, 9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, 9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, -9, 9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, -9, -9, 9]
+      ],
+      "temp": [9]
+    },
+    "cannot_express": true,
+    "rationale": "Increase retention to preserve the red object's shape instead of deleting it. The template outputs one colour per input colour and cannot translate an object or selectively turn background pixels red."
+  },
+  {
+    "task_id": "b7fb29bc",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 9]
+    },
+    "cannot_express": true,
+    "rationale": "Eight-connected enclosure filling preserves the closed-frame fill attempt. The desired interior contains both yellow and red in a marker-dependent spiral; this template supplies only one uniform fill colour."
+  },
+  {
+    "task_id": "84db8fc4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Use full local patterns to improve discrimination beyond the border flag. The rule colours whole zero components according to whether they reach the border; none of the available keys encodes that connectivity."
+  }
+]

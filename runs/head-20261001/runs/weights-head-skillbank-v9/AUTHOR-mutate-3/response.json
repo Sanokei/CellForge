@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 9, 0, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. The task moves each 6 by rotating its displacement around a 1. None of the available keys encodes that displacement. In the first demonstration, target (4,1) and unchanged background cells share keys under every selectable kind, forcing conflicting outputs."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes): colour-1 objects map to background, while colour-8 objects with one, three, or zero holes map to 7, 3, or 2 respectively."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist for this template. Object recolouring cannot move the interior markers or create the required exterior markers. Changing background cannot supply the required multiple output colours within a uniformly recoloured component."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 9, 0, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. Filling depends on corridor connectivity and the 9 marker. Identical local neighbourhoods require different outputs: zero pixels (5,4) in demonstration 1 and (6,6) in demonstration 2 have identical eight neighbours, but require 8 and 0 respectively."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist for this template. Recolouring follows connected routes between 9 markers, which local keys cannot identify. Demonstration 1 contains conflicting outputs for identical own-colour, neighbour-set, four-neighbour, and neighbour-count keys."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. Enabling colour 8 repairs its missing rays, but intersections cannot become 2: source-colour painting only produces source colours, while fixed colour-2 painting would also turn every nonintersection ray cell into 2."
+  }
+]

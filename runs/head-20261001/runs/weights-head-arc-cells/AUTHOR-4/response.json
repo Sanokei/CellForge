@@ -1,0 +1,71 @@
+[
+  {
+    "task_id": "1a244afd",
+    "template": "colormap",
+    "params": {
+      "map.W": [
+        [1,0,0,0,0,0,0,0,0,0],
+        [0,1,0,0,0,0,0,0,0,0],
+        [0,0,1,0,0,0,0,0,0,0],
+        [0,0,0,1,0,0,0,0,0,0],
+        [0,0,0,0,1,0,0,0,0,0],
+        [0,0,0,0,0,1,0,0,0,0],
+        [0,0,0,0,0,0,0,0,1,0],
+        [0,0,0,0,0,0,0,1,0,0],
+        [0,0,0,0,0,0,0,0,1,0],
+        [0,0,0,0,0,0,0,0,0,1]
+      ]
+    },
+    "rationale": "Every demonstration erases every 6 to 8 and preserves every 1. This fits those changes exactly. No template expresses the additional distance-dependent relocation to 7: in demonstration 1, the 7 at row 4, column 1 has an all-8 local window."
+  },
+  {
+    "task_id": "41ace6b5",
+    "template": "colormap",
+    "params": {
+      "map.W": [
+        [1,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,1],
+        [0,0,1,0,0,0,0,0,0,0],
+        [0,0,0,1,0,0,0,0,0,0],
+        [0,0,0,0,1,0,0,0,0,0],
+        [0,0,0,0,0,1,0,0,0,0],
+        [0,0,0,0,0,0,1,0,0,0],
+        [0,0,0,0,0,0,0,1,0,0],
+        [0,1,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,1]
+      ]
+    },
+    "rationale": "Best-fitting colour substitution: all 2 and 5 remain, most 8 become 1, and most 1 become 9. For example, demonstration 1 changes column 1's three 8s to 1 and its four 1s to 9. No template expresses the full column-dependent redistribution, which introduces multiple output colours from 7."
+  },
+  {
+    "task_id": "d07ae81c",
+    "template": "conv3x3_detect",
+    "params": {
+      "conv.W": [
+        [0,0,0,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [-9,-9,-9,-9,-9,-9,1,-9,-9,-9],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,1,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,1,0,0,0,0,0,0]
+      ],
+      "conv.b": [-1],
+      "paint": [0,0,0,1,0,0,0,0,0,0]
+    },
+    "rationale": "Best-fitting partial diagonal extension: in demonstration 3, the four diagonal 6 neighbours of each 3 seed become 3, matching eight additions exactly. Demonstrations 1 and 2 remain unchanged. No template expresses the full long-range diagonal propagation with different paint colours across background regions."
+  },
+  {
+    "task_id": "b7fb29bc",
+    "template": "neighbor_count",
+    "params": {
+      "self.W": [[0,-9,-9,-9,-9,-9,-9,-9,-9,-9]],
+      "cnt.W": [[0,0,0,1,0,0,0,0,0,0]],
+      "cnt.b": [-3.5],
+      "paint": [0,0,0,0,1,0,0,0,0,0]
+    },
+    "rationale": "Best-fitting local fill: paint a 0 with at least four neighbouring 3s to 4. The four interior corners become 4 in every demonstration; additional matching 4s appear beside the interior marker near the border in demonstrations 1 and 3. No template can produce both new colours 2 and 4 while preserving the 0 exterior and 3 frame."
+  }
+]

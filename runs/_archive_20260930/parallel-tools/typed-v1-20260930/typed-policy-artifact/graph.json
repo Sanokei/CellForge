@@ -1,0 +1,87 @@
+{
+ "defs": {
+  "policy": {
+   "inputs": [
+    "flags",
+    "observation"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "action",
+     "in": {
+      "x": "$flags"
+     },
+     "use": "route"
+    },
+    {
+     "id": "value",
+     "in": {
+      "x": "$observation"
+     },
+     "use": "project"
+    }
+   ],
+   "outputs": {
+    "action_logits": "action",
+    "response_values": "value"
+   }
+  },
+  "project": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "projection_W",
+    "b1": "projection_b"
+   }
+  },
+  "route": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "route_W",
+    "b1": "route_b"
+   }
+  }
+ },
+ "entries": {
+  "encode": "policy",
+  "step": "policy",
+  "typed_action": "policy"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "authorship": "directly authored finite-state control and identity projection; no fitted weights",
+  "observation_width": 7,
+  "policy_interface": "typed-observation-policy/1",
+  "task": "typed_specialist_policy"
+ },
+ "params": {
+  "projection_W": {
+   "sha256": "78ba4e9f00c7e88dbe83612e918fc6c3df86080c7a6144638344f46b31720e00",
+   "shape": [
+    7,
+    7
+   ]
+  },
+  "projection_b": {
+   "sha256": "f0fc96aa7cb14c9e331ecd9cf9a409d3990bae46fc7191a4fe5958e3909d4db6",
+   "shape": [
+    7
+   ]
+  },
+  "route_W": {
+   "sha256": "105698f66038d52c4c83e45f6b7e2404648735259f25ebe09cbcb65dd6ceb01f",
+   "shape": [
+    3,
+    3
+   ]
+  },
+  "route_b": {
+   "sha256": "80139916db3e4bfbe6985d3320ac081089bbf6197fee7aee0c062938c88ef18c",
+   "shape": [
+    3
+   ]
+  }
+ }
+}

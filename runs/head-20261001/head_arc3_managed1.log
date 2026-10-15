@@ -1,0 +1,27 @@
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/head-20261001/lab_manager.py", line 353, in <module>
+    main()
+  File "/srv/cellforge-inbox/head-20261001/lab_manager.py", line 339, in main
+    out = lab.cycle(a.slots)
+          ^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/head-20261001/lab_manager.py", line 277, in cycle
+    out.append(f.result())
+               ^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/head-20261001/lab_manager.py", line 184, in attempt
+    self.save()
+  File "/srv/cellforge-inbox/head-20261001/lab_manager.py", line 162, in save
+    jsave(self.root / "STATE.json", self.state)
+  File "/srv/cellforge-inbox/head-20261001/lab_manager.py", line 50, in jsave
+    tmp.replace(p)
+  File "/usr/lib/python3.12/pathlib.py", line 1378, in replace
+    os.replace(self, target)
+FileNotFoundError: [Errno 2] No such file or directory: 'runs/weights-arc3-managed1/STATE.json.tmp' -> 'runs/weights-arc3-managed1/STATE.json'

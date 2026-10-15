@@ -1,0 +1,45 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "scope":"action_argument_slots_only",
+ "rationale":"Fresh literal argument-slot mutation for the supplied eight-feature tokenizer. Quoted content should remain content even when it includes a period; filename selection should instead prioritize explicit to/in/read-verb context and penalize quote-position-only selection. Give arg1 first-quote weight6 and arg2 second-quote weight6, with negative file-context weights. File receives weight8 after to/in/read verbs, weak period weight1, and quote penalties-4. File null threshold1.5 rejects a period alone and prevents write 'v1.2' from treating content as a destination. This addresses the supplied failures without modifying action routing. No held-out evaluation, fitting, gradients, or gain claim occurs.",
+ "feature_order":["q1","q2","prev_for","is_router_vocab_word","has_dot_in_token_even_ifquoted","prev_to","prev_in","prev_readverb"],
+ "role_order":["arg1","arg2","file"],
+ "tensors":{
+  "slot.W":[
+   [6,-3,2,-5,0,-8,-8,-8],
+   [-3,6,0,-5,0,-8,-8,-8],
+   [-4,-4,0,-6,1,8,8,8]
+  ],
+  "null.b":[0.5,0.5,1.5]
+ },
+ "newly_authored_names":["slot.W","null.b"],
+ "scalar_positions":27,
+ "inherited_material":"Existing baseline action-router weights and biases, action vocabulary, argument matchers, tokenizer quote grouping, and fixed executor are unchanged. Baseline tensors originate in Claude Sonnet5.5; these27 slot coefficients are newly authored by this actor.",
+ "contract":{
+  "tokenizer":"Use the supplied fixed eight lexical features. prev_to/prev_in/prev_for/readverb depend on the preceding unquoted token. prev_readverb recognizes show/open/read/run/execute. Period presence is computed even for quoted tokens. No inferred action labels or hidden syntax features are appended.",
+  "selection":"For each role compute row dot feature vector for every token; select the first token attaining the highest score strictly above that role's null.b threshold, otherwise null. Preserve literal token text with grouped quoted spans. Slots are selected independently.",
+  "supported_grammar":"write quoted CONTENT to PATH; replace quoted OLD with quoted NEW in PATH; read/show/open PATH directly. Paths may be quoted or unquoted and need not contain a period. Other action grammars are not newly claimed supported. Existing router independently selects the action.",
+  "execution":"Fixed fixture executor must reject missing destination and unsafe paths independently of learned weights. A relative escape such as ../outside.txt may win the file slot under explicit to context, but must never execute because the fixed path validator denies it. No executor change or learned safety substitution is requested."
+ },
+ "development_reasoning":{
+  "write_quoted_content_quoted_file":"First quote content gets arg1 score6 regardless of periods. Second-quote path after to gets file score at least4, or5 with a period, above1.5.",
+  "write_version_to_README":"Quoted version1.2 gets arg1 score6, file score-3; README after to gets file score8. Content is not penalized for its period.",
+  "replace_milk_tea_quoted_notes":"First quote milk gets arg1 score6; second quote tea gets arg2 score6; quoted third path after in gets file score9 with a period.",
+  "missing_file":"For write 'v1.2', the sole quoted content gets file score-3; no token exceeds file threshold, so destination abstains.",
+  "read_direct":"A direct path after read/show/open gets file score8 unquoted without period, or4 if first-quoted without period. Thus direct read behavior remains supported."
+ },
+ "provenance":{
+  "raw_prompt":"Author only action-slot numeric mutation slot.W3x8 and null.b3 for roles arg1,arg2,file using the supplied eight raw lexical features and write/edit/read failures; keep router unchanged, reject missingfile via abstention, fixed executor denies unsafe relative paths; no paid API or heldout evaluation.",
+  "read_sources":["runs/baseline-logic-math-cells/tool_cells2.json","runs/baseline-logic-math-cells/test_tool_cells2.py"],
+  "development_source":"Supplied write 'hello world' to 'report.txt'; write 'version1.2' to README; replace 'milk' with 'tea' in 'notes.txt'; missing destination write 'v1.2'; direct read/show/open grammar.",
+  "source_exposure_note":"The authorized test source embeds a HELDOUT list, which appeared in the file read. It was not used for coefficient selection or evaluated. No separate heldout file or labels were requested/read.",
+  "author_evaluations":0,"paid_api_calls":0
+ },
+ "limits":[
+  "This is a bounded lexical grammar, not generic language understanding or general agentic reasoning.",
+  "Period-only file evidence deliberately abstains; indirect phrases such as open the file PATH are outside newly supported direct grammar and may require another authorized revision.",
+  "Quote-position conventions are assumed; unquoted multi-token content and alternative edit syntax are not newly supported.",
+  "No routing or fixture-execution gains are claimed before separately authorized evaluation."
+ ],
+ "assembly_decision":"Apply only the27 literal slot parameters with eight-feature tokenizer and per-role null thresholds; preserve router and fixed executor. Treat as one charged reviewable numerical proposal, not promotion or a claim that weights alone enforce path safety."
+}

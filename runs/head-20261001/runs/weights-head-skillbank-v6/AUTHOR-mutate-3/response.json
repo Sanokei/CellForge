@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. Even the directional nearest-colour key omits distance: demonstration 1 pixels (4,1) and (4,2), using zero-based coordinates, have identical keys with background 8 but require outputs 7 and 8. The other key kinds also cannot express the required distance-dependent rotation."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Select pixel count. The large objects have counts 31, 14, 24, 16, and 30, mapping respectively to 7, 3, 2, 3, and 2; the small objects have counts 5 or 6 and map to 0. This reproduces all supplied demonstrations and the counterexample; generalisation is limited to learned counts."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No solution exists in this template. Object recolouring cannot move pixels or create the required coloured pixels in the background. Choosing a different background does not help: the zero component has nonuniform target colours and is therefore ignored."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No solution exists in this template. Demonstration 1 pixel (1,6) and demonstration 2 pixel (8,7) have identical complete 3x3 neighbourhoods but require outputs 8 and 0. Consequently every available neighbourhood key collides."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No solution exists in this template. Demonstration 1 pixel (1,6) and demonstration 2 pixel (1,2) have identical complete 3x3 neighbourhoods but require outputs 9 and 8. All available neighbourhood keys therefore collide."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. Enabling sources 8 and 9 extends the crosses, but no parameter marks intersections with colour 2. Source-colour painting produces only source colours; fixed painting with colour 2 would incorrectly make every ray cell 2."
+  }
+]

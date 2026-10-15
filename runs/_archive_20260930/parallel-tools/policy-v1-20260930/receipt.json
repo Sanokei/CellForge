@@ -1,0 +1,30 @@
+{
+  "protocol": "synthetic-specialist-policy-probe/1",
+  "scope": "three authored synthetic prompts; not BFCL, ARC-AGI, reasoning benchmark or frontier comparison",
+  "policy": "actual language graph greedy generation; no action repair or scripted routing",
+  "language_model_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+  "specialist_hash": "4f0a5ab4070c289d1b9b8c3b192efa4fa7e30cef2e295e1e58356a304661987b",
+  "sources": {
+    "scripts/probe_specialist_loop.py": "5b4d69c9974c013d3757089982b6b3cb580743bd7e30b598ed1bb8054dad9da5",
+    "src/cellforge/runtime/specialists.py": "308d95449f13303d500328e10e44e127ea3f8977284f7411928bdf61d90be3bd"
+  },
+  "prompt_sha256": "eaa33ad1077e414c9c5242e7da55193cc4ec1d43d162b2344bfa159996991e4c",
+  "limits": {
+    "prompts": 3,
+    "steps_per_prompt": 1,
+    "tokens_per_action": 48,
+    "context_bytes": 4096
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.39"
+  },
+  "elapsed_seconds": 67.71959763799532,
+  "aggregate": {
+    "responded": 0,
+    "tool_calls": 0,
+    "invalid_actions": 3,
+    "generated_tokens": 144
+  },
+  "decision": "preserve protocol scaffolding; language policy competence requires independent evidence"
+}

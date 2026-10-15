@@ -1,0 +1,38 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "parent_hash":"18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+ "rationale":"One bounded proposal from hetzner-maker-request.json only. Baseline solves1/4 permitted development tasks through the existing row stencil. The shape-changing count demonstrations show outputs with four, two, and four leading color1 cells respectively; by inspection these correspond to four, two, and four filled2x2 color1 components, while isolated color1 cells and color2 squares are excluded. Existing five experts cannot produce the required1x5 output. Author a small typed component-count unary readout with explicit numeric selector and thresholds. Preserve all existing expert weights, including the row stencil and previous color map, and expand the identity router to six experts. This is a new typed capability proposal, not crossover, not a memorized task-ID program, and not a guaranteed gain. No reporting/archive data, evaluation, fitting, gradients, or paid API was used.",
+ "new_structure":"component_count_unary_v1",
+ "ops":[
+  {"op":"set_param","name":"5:target.W","value":[[0,1,0,0,0,0,0,0,0,0]]},
+  {"op":"set_param","name":"5:component.W","value":[[1,1,1,1]]},
+  {"op":"set_param","name":"5:component.b","value":[-3.5]},
+  {"op":"set_param","name":"5:readout.W","value":[[1]]},
+  {"op":"set_param","name":"5:readout.b","value":[[-0.5,-1.5,-2.5,-3.5,-4.5]]},
+  {"op":"set_param","name":"5:palette","value":[0,1]},
+  {"op":"set_param","name":"route.W","value":[[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]]},
+  {"op":"set_param","name":"route.b","value":[0,0,0,0,0,0]}
+ ],
+ "inherited_names":["0:pick","0:fill","1:map.W","2:conv.W","2:conv.b","2:paint","3:self.W","3:cnt.W","3:cnt.b","3:paint","4:stencil.W","4:foreground.W","4:activation.b"],
+ "inheritance":"Preserve every listed tensor exactly from the declared parent in hetzner-maker-request.json. Preserve router upper-left5x5 and bias entries0..4 exactly; add zero cross-couplings and sixth own-feature coefficient1 with bias0. Existing Claude founder material and earlier GPT-authored expansions remain inherited, not newly authored here.",
+ "newly_authored_names":["5:target.W","5:component.W","5:component.b","5:readout.W","5:readout.b","5:palette","route.W sixth row and column","route.b sixth entry"],
+ "numerical_accounting":{"new_cell_positions":23,"new_router_positions":12,"total_new_positions":35,"router_values_written":42,"all_literal_values_written":65,"finite_range":[-9,9]},
+ "executable_contract":{
+  "input":"Nonempty rectangular Grid[int0..9]. Reject malformed grids under the existing evaluator contract.",
+  "output":"Grid[int0..9] with1 row and width equal to readout.b column count, here5. This is a genuine shape-changing expert, not a shape-preserving fallback.",
+  "components":"Extract maximal four-connected monochromatic components of nonzero input cells. Diagonal adjacency does not merge components. Process each component once; no stored task identifier, example grid, or query label is used.",
+  "component_features":"For a component of color k, form four real features in order: target.W[0,k], indicator(bounding-box height==2), indicator(bounding-box width==2), indicator(component cardinality==4). Compute component.W[0] dot features + component.b[0]. Select iff strictly positive. With the authored values this selects exactly filled2x2 color1 components, because a connected four-cell component occupying a2x2 box fills that box.",
+  "count":"N is the number of selected components, obtained by summing their binary selections. No normalization, clipping, or counting of color2 components occurs.",
+  "readout":"For columns j=0..4 compute readout.W[0,0]*N+readout.b[0,j]. Write integer palette[1] if strictly positive, otherwise integer palette[0]. Validate palette entries are integer colors0..9. Counts above5 saturate the displayed five-cell unary capacity; N=0 yields five zeros.",
+  "router":"Compute six actual expert outputs on the same permitted demonstration pairs. A shape mismatch has mismatch fraction1, as in the parent protocol; otherwise mismatch fraction is mismatched pixels divided by target pixels. Feature e_i is negative mean mismatch fraction over those pairs. Scores=route.W@e+route.b; choose argmax using existing deterministic tie-breaking. Neither query expected outputs nor task IDs enter inference.",
+  "metric":"Use the existing exact whole-grid task metric, including shape and every pixel, for separately authorized evaluation. No partial-credit metric replaces exact success. Demonstration mismatch features are inference inputs, not claimed task success."
+ },
+ "assembly_decision":"Request admission and translation of exactly component_count_unary_v1 at new expert index5 with the literal ops above. Preserve all five previous expert structures and weights. Freeze the executable contract/caps before candidate evaluation. Treat this as one charged candidate; do not promote without the established admission/evaluation gate. Adding a typed component extractor and count readout is structural expansion, not crossover or socket manipulation.",
+ "limits":[
+  "Filled2x2 and target color1 are hypotheses grounded in the permitted demonstrations; other shapes, colors, connected larger objects, or different count encodings may require later authorized learning.",
+  "The output capacity is five unary positions and saturates larger counts. This capacity follows the observed demonstrations, not a general count-output theorem.",
+  "The new expert always produces a1x5 grid; wrong-family demonstrations incur shape mismatch and should discourage routing. No additional task-family guard or query-output inspection is added.",
+  "The marker-relative multicolor drawing and reflected-object completion gaps remain. No guaranteed development or held-out gains are claimed.",
+  "Translation/admission of this new typed contract is required before executing the candidate. Author accessed only the authorized maker request and wrote this proposal; no evaluation was run."
+ ]
+}

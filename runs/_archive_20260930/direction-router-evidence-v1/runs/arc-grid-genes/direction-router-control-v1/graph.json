@@ -1,0 +1,1674 @@
+{
+ "defs": {
+  "direction_0": {
+   "inputs": [
+    "input"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n3",
+     "in": {
+      "a": "$input",
+      "b": "n2"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n4",
+     "in": {
+      "a": "$input",
+      "b": "n3"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n5",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n6",
+     "in": {
+      "a": "n4",
+      "b": "n5"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n6"
+   },
+   "role": "cluster"
+  },
+  "direction_1": {
+   "inputs": [
+    "input"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n4",
+     "in": {
+      "a": "$input",
+      "b": "n3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n0",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n6",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n7"
+   },
+   "role": "cluster"
+  },
+  "direction_2": {
+   "inputs": [
+    "input"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n4",
+     "in": {
+      "a": "$input",
+      "b": "n3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n0",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n6",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n7"
+   },
+   "role": "cluster"
+  },
+  "direction_3": {
+   "inputs": [
+    "input"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n4",
+     "in": {
+      "a": "$input",
+      "b": "n3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n0",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n6",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n7"
+   },
+   "role": "cluster"
+  },
+  "direction_4": {
+   "inputs": [
+    "input"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n4",
+     "in": {
+      "a": "$input",
+      "b": "n3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n0",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n6",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n7"
+   },
+   "role": "cluster"
+  },
+  "expert_0": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_0"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n3",
+     "in": {
+      "x0": "n1",
+      "x1": "n2"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n4",
+     "in": {
+      "x0": "$input_height",
+      "x1": "$input_height"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n5",
+     "in": {
+      "x": "n4"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n6",
+     "in": {
+      "x0": "$input_width",
+      "x1": "$input_width"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n3",
+    "height_logits": "n5",
+    "width_logits": "n7"
+   },
+   "role": "expert"
+  },
+  "expert_1": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_1"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n3",
+     "in": {
+      "x0": "n1",
+      "x1": "n2"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n4",
+     "in": {
+      "x0": "$input_height",
+      "x1": "$input_height"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n5",
+     "in": {
+      "x": "n4"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n6",
+     "in": {
+      "x0": "$input_width",
+      "x1": "$input_width"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n3",
+    "height_logits": "n5",
+    "width_logits": "n7"
+   },
+   "role": "expert"
+  },
+  "expert_2": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_2"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n3",
+     "in": {
+      "x0": "n1",
+      "x1": "n2"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n4",
+     "in": {
+      "x0": "$input_height",
+      "x1": "$input_height"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n5",
+     "in": {
+      "x": "n4"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n6",
+     "in": {
+      "x0": "$input_width",
+      "x1": "$input_width"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n3",
+    "height_logits": "n5",
+    "width_logits": "n7"
+   },
+   "role": "expert"
+  },
+  "expert_3": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_3"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n3",
+     "in": {
+      "x0": "n1",
+      "x1": "n2"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n4",
+     "in": {
+      "x0": "$input_height",
+      "x1": "$input_height"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n5",
+     "in": {
+      "x": "n4"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n6",
+     "in": {
+      "x0": "$input_width",
+      "x1": "$input_width"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n3",
+    "height_logits": "n5",
+    "width_logits": "n7"
+   },
+   "role": "expert"
+  },
+  "expert_4": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_4"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n3",
+     "in": {
+      "x0": "n1",
+      "x1": "n2"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n4",
+     "in": {
+      "x0": "$input_height",
+      "x1": "$input_height"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n5",
+     "in": {
+      "x": "n4"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n6",
+     "in": {
+      "x0": "$input_width",
+      "x1": "$input_width"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "shape": [
+       2,
+       30
+      ]
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n3",
+    "height_logits": "n5",
+    "width_logits": "n7"
+   },
+   "role": "expert"
+  },
+  "rank": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "rank.W",
+    "b1": "rank.b"
+   }
+  },
+  "root": {
+   "inputs": [
+    "input",
+    "output",
+    "input_height",
+    "input_width",
+    "output_height",
+    "output_width",
+    "phase",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "x": "$phase"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "shape": [
+       1
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "n": 1,
+      "start": 0.0,
+      "step": 0.0
+     },
+     "id": "n3",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "id": "n4",
+     "in": {
+      "a": "n2",
+      "b": "n3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_0"
+    },
+    {
+     "id": "n6",
+     "in": {
+      "a": "n5.colors",
+      "b": "$output"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "shape": [
+       9000
+      ]
+     },
+     "id": "n8",
+     "in": {
+      "x": "n7"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 1
+     },
+     "id": "n10",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n11",
+     "in": {
+      "a": "n4",
+      "b": "n9"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n12",
+     "in": {
+      "a": "n10",
+      "b": "n11"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_1"
+    },
+    {
+     "id": "n14",
+     "in": {
+      "a": "n13.colors",
+      "b": "$output"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "shape": [
+       9000
+      ]
+     },
+     "id": "n16",
+     "in": {
+      "x": "n15"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n17",
+     "in": {
+      "x": "n16"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 1,
+      "stop": 2
+     },
+     "id": "n18",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n19",
+     "in": {
+      "a": "n4",
+      "b": "n17"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n20",
+     "in": {
+      "a": "n18",
+      "b": "n19"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n21",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_2"
+    },
+    {
+     "id": "n22",
+     "in": {
+      "a": "n21.colors",
+      "b": "$output"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n23",
+     "in": {
+      "x": "n22"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "shape": [
+       9000
+      ]
+     },
+     "id": "n24",
+     "in": {
+      "x": "n23"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n25",
+     "in": {
+      "x": "n24"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 2,
+      "stop": 3
+     },
+     "id": "n26",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n27",
+     "in": {
+      "a": "n4",
+      "b": "n25"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n28",
+     "in": {
+      "a": "n26",
+      "b": "n27"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n29",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_3"
+    },
+    {
+     "id": "n30",
+     "in": {
+      "a": "n29.colors",
+      "b": "$output"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n31",
+     "in": {
+      "x": "n30"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "shape": [
+       9000
+      ]
+     },
+     "id": "n32",
+     "in": {
+      "x": "n31"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n33",
+     "in": {
+      "x": "n32"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 3,
+      "stop": 4
+     },
+     "id": "n34",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n35",
+     "in": {
+      "a": "n4",
+      "b": "n33"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n36",
+     "in": {
+      "a": "n34",
+      "b": "n35"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n37",
+     "in": {
+      "input": "$input"
+     },
+     "use": "direction_4"
+    },
+    {
+     "id": "n38",
+     "in": {
+      "a": "n37.colors",
+      "b": "$output"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n39",
+     "in": {
+      "x": "n38"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "shape": [
+       9000
+      ]
+     },
+     "id": "n40",
+     "in": {
+      "x": "n39"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n41",
+     "in": {
+      "x": "n40"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 4,
+      "stop": 5
+     },
+     "id": "n42",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n43",
+     "in": {
+      "a": "n4",
+      "b": "n41"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n44",
+     "in": {
+      "a": "n42",
+      "b": "n43"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n45",
+     "in": {
+      "a": "$input_height",
+      "b": "$output_height"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n46",
+     "in": {
+      "x": "n45"
+     },
+     "use": "op:abs"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n47",
+     "in": {
+      "x": "n46"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n48",
+     "in": {
+      "a": "$input_width",
+      "b": "$output_width"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n49",
+     "in": {
+      "x": "n48"
+     },
+     "use": "op:abs"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n50",
+     "in": {
+      "x": "n49"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 5,
+      "stop": 6
+     },
+     "id": "n51",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n52",
+     "in": {
+      "a": "n47",
+      "b": "n50"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n53",
+     "in": {
+      "a": "n4",
+      "b": "n52"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n54",
+     "in": {
+      "a": "n51",
+      "b": "n53"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n55",
+     "in": {
+      "x": "n54"
+     },
+     "use": "op:step"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n56",
+     "in": {
+      "x0": "n12",
+      "x1": "n20",
+      "x2": "n28",
+      "x3": "n36",
+      "x4": "n44",
+      "x5": "n55"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "n": 5,
+      "start": 0.0,
+      "step": 1.0
+     },
+     "id": "n57",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "id": "n58",
+     "in": {
+      "x": "n57"
+     },
+     "use": "op:step"
+    },
+    {
+     "args": {
+      "c": 1000000.0
+     },
+     "id": "n59",
+     "in": {
+      "x": "n58"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n60",
+     "in": {
+      "x0": "n12",
+      "x1": "n20",
+      "x2": "n28",
+      "x3": "n36",
+      "x4": "n44"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n61",
+     "in": {
+      "a": "n59",
+      "b": "n55"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n62",
+     "in": {
+      "a": "n60",
+      "b": "n61"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       5,
+       1
+      ]
+     },
+     "id": "n63",
+     "in": {
+      "x": "n62"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n64",
+     "in": {
+      "x": "n63"
+     },
+     "use": "rank"
+    },
+    {
+     "args": {
+      "shape": [
+       5
+      ]
+     },
+     "id": "n65",
+     "in": {
+      "x": "n64"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "branches": [
+       "expert_0",
+       "expert_1",
+       "expert_2",
+       "expert_3",
+       "expert_4"
+      ],
+      "k": 1
+     },
+     "id": "n66",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width",
+      "scores": "n65"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n66.color_logits",
+    "height_logits": "n66.height_logits",
+    "state": "n56",
+    "width_logits": "n66.width_logits"
+   },
+   "role": "root"
+  }
+ },
+ "entries": {
+  "grid_step": "root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "adaptation": false,
+  "construction": "authored directional router/1",
+  "gradients": false,
+  "grid_attempts": 2,
+  "grid_interface": "grid-graph/1",
+  "limitations": "identity and four one-pixel neighbor copies only; second attempt identity; shape mismatch identity",
+  "provenance": "original authored primitive bank; demo squared-error state",
+  "state_dim": 6,
+  "task": "grid"
+ },
+ "params": {
+  "rank.W": {
+   "sha256": "2eedb7aa9cf7781586f5b909e86827cc999c6a0bd8bbd6fa195f015ce6e28f86",
+   "shape": [
+    1,
+    1
+   ]
+  },
+  "rank.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  }
+ }
+}

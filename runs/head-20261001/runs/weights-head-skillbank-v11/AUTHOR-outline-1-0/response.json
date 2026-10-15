@@ -1,0 +1,62 @@
+[
+  {
+    "task_id": "outline-n0-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 2 give colours 2 and 3 same-colour orthogonal halos on background 0; demonstration 3 leaves colour 8 unchanged."
+  },
+  {
+    "task_id": "outline-n0-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 2 surround colours 1, 2 and 3 with colour 4 in orthogonal background neighbours, preserving source pixels and leaving diagonals unfilled."
+  },
+  {
+    "task_id": "outline-n0-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Demonstration 2 gives colours 1, 2 and 3 orthogonal colour-6 halos; demonstration 3 preserves colour 8 without drawing a halo around it."
+  },
+  {
+    "task_id": "outline-n1-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 gives colours 1 and 2 same-colour halos including diagonals; demonstrations 2 and 3 do the same for colour 3 while leaving colour 8 inactive."
+  },
+  {
+    "task_id": "outline-n1-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 2 fill all eight background neighbours of colours 1 and 2 with colour 4; demonstration 3 leaves both colour-8 pixels and their surroundings unchanged."
+  },
+  {
+    "task_id": "outline-n1-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 3 give colours 1 and 3 colour-6 halos including diagonals; demonstrations 1 and 2 show that colour 8 remains inactive."
+  }
+]

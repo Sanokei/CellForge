@@ -1,0 +1,45 @@
+{
+  "hash": "6b2c6b9c4b5b855d4b4d5efb0ec29dfe7613322e27c3012ab6bbe8dd902c1082",
+  "stats": {
+    "unique_param_storage": 32,
+    "expanded_param_uses": 64,
+    "nonzero_slots": 3,
+    "constant_slots_in_op_args": 3,
+    "cell_defs": 2,
+    "bundle_defs": 5,
+    "reachable_defs": 7,
+    "expanded_instances": 10,
+    "nesting_depth": 4,
+    "edges": 47,
+    "dispatch_nodes": 1,
+    "param_bytes_float64": 256
+  },
+  "profile": {
+    "profile": "ladder-micro/1",
+    "dispatches": 1,
+    "experts": [
+      "recolor_expert0",
+      "recolor_expert1"
+    ]
+  },
+  "gene_contract": {
+    "cluster": "adjacency_recolor.gene",
+    "inputs": [
+      "input",
+      "input_height",
+      "input_width"
+    ],
+    "outputs": [
+      "colors",
+      "height",
+      "width"
+    ],
+    "source": 2,
+    "target": 3,
+    "marker": 4,
+    "rule": "simultaneously recolor source iff orthogonal valid neighbor is marker; all other pixels persist"
+  },
+  "builder_sha256": "404ecbaf0e51f08fe3a81b224c2957ef37bf6f6826cb0434633a77eacfea43ff",
+  "benchmark_tasks_read": 0,
+  "curriculum_scored": false
+}

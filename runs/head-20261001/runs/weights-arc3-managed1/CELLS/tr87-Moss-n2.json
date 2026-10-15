@@ -1,0 +1,215 @@
+{
+ "game": "tr87",
+ "house": "Moss",
+ "n": 2,
+ "source_lines": [
+  "def glyph(frame, y, x, n, colour):",
+  "    return tuple(int(frame[y+r, x+c] == colour) for r in range(n) for c in range(n))",
+  "",
+  "def search(graph, start, target, actions, counts):",
+  "    queue = [(start, [])]",
+  "    seen = {start}",
+  "    frontier = []",
+  "    for node, path in queue:",
+  "        if node == target:",
+  "            return path, True",
+  "        edges = graph.get(node, {})",
+  "        for action in actions:",
+  "            if action not in edges:",
+  "                frontier.append((counts.get((node, action), 0), len(path), actions.index(action), path+[action]))",
+  "            else:",
+  "                nxt = edges[action]",
+  "                if nxt not in seen:",
+  "                    seen.add(nxt)",
+  "                    queue.append((nxt, path+[action]))",
+  "    if frontier:",
+  "        frontier.sort(key=lambda item: item[:3])",
+  "        return frontier[0][3], False",
+  "    return [], False",
+  "",
+  "def act(params, mem, frame, avail, info):",
+  "    g = params['geometry']",
+  "    n = max(1, min(8, int(g[0])))",
+  "    count = max(1, min(7, int(g[1])))",
+  "    stride = max(1, int(g[2]))",
+  "    sx = max(0, min(63-n-(count-1)*stride, int(g[3])))",
+  "    sy = max(0, min(64-n, int(g[4])))",
+  "    oy = max(0, min(64-n, int(g[5])))",
+  "    low = max(0, min(63, int(g[6])))",
+  "    high = max(low+1, min(64, int(g[7])))",
+  "    ink = int(params['colours'][0])",
+  "    cursor_colour = int(params['colours'][1])",
+  "    actions = [int(a) for a in params['actions'] if int(a) in avail]",
+  "    cycles = actions[:2]",
+  "    moves = actions[2:]",
+  "    if not actions:",
+  "        return (avail[0], 0, 0)",
+  "    sources = [glyph(frame, sy, sx+i*stride, n, ink) for i in range(count)]",
+  "    outputs = [glyph(frame, oy, sx+i*stride, n, ink) for i in range(count)]",
+  "    pairs = []",
+  "    for row in params['rows']:",
+  "        y = max(0, min(64-n, int(row)))",
+  "        for columns in params['columns']:",
+  "            x = max(0, min(64-n, int(columns[0])))",
+  "            z = max(0, min(64-n, int(columns[1])))",
+  "            pairs.append((glyph(frame, y, x, n, ink), glyph(frame, y, z, n, ink)))",
+  "    signature = tuple(pairs)",
+  "    if mem.get('signature') != signature:",
+  "        mem.clear()",
+  "        mem['signature'] = signature",
+  "        mem['graphs'] = {}",
+  "        mem['counts'] = {}",
+  "        mem['directions'] = {}",
+  "    stamp = (info['levels'], info['resets'])",
+  "    if mem.get('stamp') != stamp:",
+  "        mem['stamp'] = stamp",
+  "        mem['previous'] = None",
+  "        mem['visits'] = {}",
+  "        mem['done'] = set()",
+  "    targets = []",
+  "    for source in sources:",
+  "        ranked = sorted(pairs, key=lambda pair: sum(int(a != b) for a, b in zip(source, pair[0])))",
+  "        targets.append(ranked[0][1])",
+  "    points = np.argwhere(frame[low:high, :] == cursor_colour)",
+  "    cursor = mem.get('cursor', 0)",
+  "    if len(points):",
+  "        center = float(np.sum(points[:, 1])) / len(points)",
+  "        cursor = max(0, min(count-1, int((center-sx-(n-1)/2)/stride+float(params['rounding'][0]))))",
+  "    previous = mem.get('previous')",
+  "    if previous is not None:",
+  "        old_cursor, old_output, old_source, action = previous",
+  "        if action in cycles and old_cursor == cursor:",
+  "            graph = mem['graphs'].setdefault(old_source, {})",
+  "            graph.setdefault(old_output, {})[action] = outputs[cursor]",
+  "            counts = mem['counts'].setdefault(old_source, {})",
+  "            edge = (old_output, action)",
+  "            counts[edge] = counts.get(edge, 0)+1",
+  "        elif action in moves and cursor != old_cursor:",
+  "            delta = cursor-old_cursor",
+  "            if abs(delta) == 1:",
+  "                mem['directions'][action] = 1 if delta > 0 else -1",
+  "            elif abs(delta) == count-1:",
+  "                mem['directions'][action] = -1 if delta > 0 else 1",
+  "    visits = mem['visits']",
+  "    state = (cursor, tuple(outputs))",
+  "    visits[state] = visits.get(state, 0)+1",
+  "    wrong = [i for i in range(count) if outputs[i] != targets[i]]",
+  "    action = None",
+  "    if cursor in wrong and cycles:",
+  "        graph = mem['graphs'].setdefault(sources[cursor], {})",
+  "        counts = mem['counts'].setdefault(sources[cursor], {})",
+  "        path, solved = search(graph, outputs[cursor], targets[cursor], cycles, counts)",
+  "        if path:",
+  "            action = path[0]",
+  "        else:",
+  "            mem['done'].add(cursor)",
+  "    pending = [i for i in wrong if i not in mem['done']]",
+  "    if action is None and moves and pending:",
+  "        scored = []",
+  "        for index, candidate in enumerate(moves):",
+  "            direction = mem['directions'].get(candidate, int(params['directions'][index]))",
+  "            direction = 1 if direction > 0 else -1",
+  "            distance = min(((i-cursor)*direction) % count for i in pending)",
+  "            scored.append((distance, index, candidate))",
+  "        scored.sort()",
+  "        action = scored[0][2]",
+  "    if action is None:",
+  "        if not pending:",
+  "            mem['done'] = set()",
+  "        options = cycles if cycles else actions",
+  "        action = options[(visits[state]-1) % len(options)]",
+  "    mem['cursor'] = cursor",
+  "    mem['previous'] = (cursor, outputs[cursor], sources[cursor], action)",
+  "    return (action, 0, 0)"
+ ],
+ "shapes": {
+  "geometry": [
+   8
+  ],
+  "colours": [
+   2
+  ],
+  "actions": [
+   4
+  ],
+  "rows": [
+   3
+  ],
+  "columns": [
+   2,
+   2
+  ],
+  "directions": [
+   2
+  ],
+  "rounding": [
+   1
+  ]
+ },
+ "params": {
+  "geometry": [
+   5,
+   5,
+   7,
+   15,
+   41,
+   52,
+   48,
+   62
+  ],
+  "colours": [
+   5,
+   0
+  ],
+  "actions": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "rows": [
+   5,
+   14,
+   23
+  ],
+  "columns": [
+   [
+    13,
+    22
+   ],
+   [
+    35,
+    44
+   ]
+  ],
+  "directions": [
+   -1,
+   1
+  ],
+  "rounding": [
+   0.5
+  ]
+ },
+ "rationale": "Reads the illustrated symbol pairs and cursor directly from each frame. Builds separate transition graphs conditioned on the source symbol, explores both editing actions through shortest paths to unexplored edges, and retains learned transitions across resets. Exhausted searches move to other slots instead of indefinitely repeating the first action. Tensor geometry, colours, action roles and direc",
+ "result": {
+  "game": "tr87",
+  "seed": 0,
+  "budget": 1500,
+  "n_levels": 6,
+  "levels": 0,
+  "used": 1500,
+  "resets": 11,
+  "noops": 0,
+  "error": null,
+  "level_steps": [],
+  "state": "NOT_FINISHED",
+  "distinct": 255,
+  "action_hist": {
+   "1": 312,
+   "2": 35,
+   "3": 1142
+  },
+  "final_frame": "2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n222222222222aaaaaaa2227777777222222aaaaaaa2227777777222222222222\n222222222222a55555a2227555577222222a5aaa5a2227555577222222222222\n222222222222a5aaa5a2227577557222222a55555a2227577577222222222222\n222222222222a55a55a3337577757222222aaa5aaa3337577557222222222222\n222222222222a5aaa5a2227557757222222a55555a2227577577222222222222\n222222222222a5aaa5a2227755557222222a5aaa5a2227555577222222222222\n222222222222aaaaaaa2227777777222222aaaaaaa2227777777222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n222222222222aaaaaaa2227777777222222aaaaaaa2227777777222222222222\n222222222222aaaaa5a2227555557222222aaa5aaa2227775557222222222222\n222222222222aaa5a5a2227577577222222a55555a2227775757222222222222\n222222222222a55555a3337577577222222a5a5a5a3337555557222222222222\n222222222222aaa5a5a2227555577222222a5a5a5a2227575777222222222222\n222222222222aaaaa5a2227577777222222aaa5aaa2227555777222222222222\n222222222222aaaaaaa2227777777222222aaaaaaa2227777777222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n222222222222aaaaaaa2227777777222222aaaaaaa2227777777222222222222\n222222222222aaaaa5a2227555557222222a55a55a2227775777222222222222\n222222222222aaa5a5a2227577757222222a5aaa5a2227555557222222222222\n222222222222a55555a3337575557222222a5aaa5a3337575757222222222222\n222222222222a5a5aaa2227575757222222a55555a2227555557222222222222\n222222222222a5aaaaa2227555557222222a5aaa5a2227775777222222222222\n222222222222aaaaaaa2227777777222222aaaaaaa2227777777222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n2222222222222222222222222222222222222222222222222222222222222222\n3333333333333333333333333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n33333333333333aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa333333333333333\n33333333333333aa555aaaaaaa5aa55555aa55a55aaaa5aaa333333333333333\n33333333333333aaaa5aaaaa5a5aaaa5a5aaa5a5aaaaa5aaa333333333333333\n33333333333333a55555aa55555aaaaaa5aaa555aaaa555aa333333333333333\n33333333333333aaaa5aaa5a5aaaaaa5a5aaa5a5aaaaa5aaa333333333333333\n33333333333333aa555aaa5aaaaaa55555aa55a55aa55555a333333333333333\n33333333333333aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n333333333333333.....33333333333333333333333333333333333333333333\n333333333333333.333.33333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n3333333333333377777777777777777777777777777777777333333333333333\n3333333333333377757777555777755557775555577775557333333333333333\n3333333333333375555577575777757755777577577775757333333333333333\n3333333333333375777577555557757775777577577555557333333333333333\n3333333333333375777577775757755775777555577575777333333333333333\n3333333333333375555577775557775555777777577555777333333333333333\n3333333333333377777777777777777777777777777777777333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n333333333333333.333.33333333333333333333333333333333333333333333\n333333333333333.....33333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n3333333333333333333333333333333333333333333333333333333333333333\n1111111111111111111111114444444444444444444444444444444444444444",
+  "score": 0.0
+ }
+}

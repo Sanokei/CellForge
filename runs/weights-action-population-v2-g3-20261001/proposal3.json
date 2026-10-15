@@ -1,0 +1,48 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "generation":3,
+ "scope":"structural_action_argument_cell_mutation",
+ "role_order":["arg1","arg2","file"],
+ "feature_order":["q1","q2","prev_for","is_router_vocab_word","has_dot_evenquoted","prev_to","prev_in","prev_readverb","is_function_word"],
+ "rationale":"Supplied actual Hetzner development feedback rejects both prior children: in replace 'cat' with 'dog' in the file notes.txt the file head chooses the because prev_in contributes8, while the actual filename has only period score1. A lower null threshold cannot repair that wrong argmax. Add one raw lexical feature for unquoted function words the/file/a/an and give the file head penalty-9. Then the after in scores8-9=-1, file alone scores-9, and notes.txt retains period score1 above threshold0.5. Preserve first eight feature order, quoted-content handling, explicit path contexts, and existing argument-head scores. All30 coefficients are freshly authored for a mutation from the original live Claude five-feature cell. The rejected eight-feature proposals supply development evidence only, not inherited breeding material. No routing fix is attempted for the extensionless-write request routed to none.",
+ "tensors":{
+  "slot.W":[
+   [6,-3,2,-5,0,-8,-8,-8,0],
+   [-3,6,0,-5,0,-8,-8,-8,0],
+   [-4,-4,0,-6,1,8,8,8,-9]
+  ],
+  "null.b":[0.5,0.5,0.5]
+ },
+ "structural_expansion":{
+  "old_live_feature_order":["q1","q2","prev_for","is_router_vocab_word","has_dot_unquoted"],
+  "new_feature_count":9,
+  "declared_changes":"Keep current proposed eight-feature order exactly; append is_function_word. Relative to the original live five-feature parent, period detection also applies to quoted tokens, three previous-token lexical features are added, and null thresholds become role-specific.",
+  "is_function_word_contract":"1 iff token is unquoted and its lowercase text is exactly one of the,file,a,an; otherwise0. This is a raw lexical indicator, not an action/intent label or semantic parser.",
+  "other_features_contract":"q1/q2 denote first/second quoted spans. prev_for,prev_to,prev_in and prev_readverb inspect the immediately preceding unquoted token. Read verbs are show/open/read/run/execute. is_router_vocab_word follows existing vocabulary. has_dot_evenquoted indicates period presence in token text regardless of quotation."
+ },
+ "parent_provenance":{
+  "parent":"Original live Claude Sonnet5.5 five-feature argument cell from tool_cells2.json slots",
+  "parent_rows":{"arg1":[4,0,2,-5,-3],"arg2":[0,4,0,-5,-3],"file":[0,0,0,-3,4]},
+  "parent_null_bias":0.5,
+  "rejected_feedback_only":["action_argument_author.json eight-feature child rejected","action_argument_generation2.json eight-feature child rejected"],
+  "inherited_tensor_names":[],
+  "newly_authored_tensor_names":["slot.W","null.b"],
+  "note":"Numerical overlap with rejected children is reauthored literal proposal material; rejected children are not breeding parents. Parent lineage is original live cell only."
+ },
+ "contract":{
+  "selection":"For each role compute its literal row dot each nine-feature token vector; select the first token with maximal score strictly greater than that role's null.b, otherwise null. Token texts and grouped quoted spans remain unchanged. No host argument correction or label-based dispatch is added.",
+  "development_reasoning":"For supplied indirect edit, the file score is-1 for the and-9 for file, while notes.txt scores1. First quoted cat gets arg1 score6 and second quoted dog gets arg2 score6. Explicit quoted paths after to/in retain scores at least4; quoted content v1.2 without destination has file score-3 and abstains. Direct read/show/open path remains supported; unquoted extensionless paths after explicit to/in retain8 unless their literal names are function words.",
+  "router":"All router weights, actions, vocabulary and biases unchanged; a router-selected none remains none. The extensionless-write router failure remains unresolved in this argument-cell scope.",
+  "executor":"Fixed fixture must independently reject missing or unsafe destinations before filesystem actions. ../outside.txt must never execute even if selected by scores. No executor alteration is requested."
+ },
+ "numerical_accounting":{"slot_positions":27,"threshold_positions":3,"full_charged_positions":30,"finite_range":[-9,9]},
+ "raw_prompt":"Author one bounded structural nine-feature argument mutation from original live Claude five-feature cell. Append unquoted lexical is_function_word for the/file/a/an to supplied eight-feature order, fix actual wrong file argmax on replace 'cat' with 'dog' in the file notes.txt through literal scores only, retain prior viable quoted/direct cases, do not edit router or inspect reporting/evaluate/pay API. Rejected prior children are development evidence only.",
+ "limits":[
+  "Literal extensionless filenames the,file,a,an after context may now abstain; this is an explicit lexical tradeoff.",
+  "Indirect quoted filenames without immediate path context remain penalized; unquoted dotted non-path tokens may still be selected.",
+  "A finite lexical grammar is not general language understanding, semantic parsing, or learned safety enforcement.",
+  "No performance, admission or promotion claim is made from authored arithmetic reasoning."
+ ],
+ "provenance":{"source":"Supplied actual development counterexample and original-live-parent coefficients; no file reads required this turn","author_evaluations":0,"paid_api_calls":0,"reporting_reads":0,"automatic_fitting":false},
+ "assembly_decision":"Admit/translate the explicit ninth raw feature and role-specific thresholds for this reviewable candidate, preserving router/executor and exact evaluation metric. Charge30 actual numeric positions. Validate through authorized development nonregression gates; do not force promotion or revise scores."
+}

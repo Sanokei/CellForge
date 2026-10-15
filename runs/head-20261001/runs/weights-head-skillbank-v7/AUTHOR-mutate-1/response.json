@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. With background 8, demonstration 1 pixels (4,1) and (4,2) have identical nearest-colour keys but require outputs 7 and 8. The other key kinds likewise cannot distinguish all required positions; choosing another background cannot supply the missing distance information."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Use (colour, holes) to distinguish the differently recoloured 8 objects while independently learning to erase the 1 objects."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Object recolouring cannot move the interior colours or create the required exterior pixels. In particular, input colour 0 pixels remain unchanged when background is 0; any other background leaves those exterior positions in a component that cannot receive the required multiple output colours."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Demonstration 2 pixels (3,2) and (6,6) both have own colour 0 and four-neighbour colours (7,0,7,0), but require outputs 8 and 0. Their eight-neighbour colour sets and neighbour counts also coincide, ruling out every available key kind regardless of background."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. Demonstration 1 pixels (3,2) and (5,2) require outputs 8 and 9 despite identical own colours, four-neighbour colours, eight-neighbour colour sets, and neighbour counts. Every available key kind therefore conflates them."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [9, 0, 9, 0, 9, 0, 9, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+      "stop": [9, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. Enabling all nonzero source colours fixes the missing colour-8 rays, but intersections cannot become 2: source-colour painting produces only source colours, while fixed painting with 2 would incorrectly colour every ray cell 2."
+  }
+]

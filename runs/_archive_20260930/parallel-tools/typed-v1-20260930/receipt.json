@@ -1,0 +1,23 @@
+{
+  "protocol": "typed-observation-transfer/1",
+  "policy_hash": "7f810c68caf7507420a4264ea147f5634bdc7255fcabfd61e156f7370d44d29a",
+  "scope": "finite-state typed graph baseline; generic unseen numeric payload transfer; not LLM reasoning or AGI",
+  "sources": {
+    "scripts/probe_specialist_loop.py": "9ac8ec61793358c703dc4310db56e3c717eefd614781e2ef030ff8f5690a5ae9",
+    "src/cellforge/runtime/specialists.py": "1add234e21bc8ec4d580155e3df28019cd466c92f4bccf5b009908516f22b750"
+  },
+  "seed": 90218,
+  "limits": {
+    "payloads": 128,
+    "width": 7,
+    "policy_evaluations": 640
+  },
+  "aggregate": {
+    "observation_transfer_exact": 128,
+    "zero_observation_exact": 0,
+    "no_request_abstentions": 128,
+    "invalid_observation_abstentions": 128,
+    "missing_observation_calls": 128
+  },
+  "interpretation": "typed component routes and projects observations as authored; actual text policy remains unproven"
+}

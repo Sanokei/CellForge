@@ -1,0 +1,2365 @@
+{
+  "author_seconds": 51.00006104199565,
+  "commitment": {
+    "anchor": "788e06dcd14491f3f470f1897d4667fd387315376428085d0c887b8b3cb1c1b8",
+    "exit_sha256": "186f57086786b572ad67556887875554dfd5080b036f012c24efad642de08bb0",
+    "generation": 1,
+    "parent_state_hash": "2d8c3de296beaf2bf95a5902afc94b57a32136f7b1c4a2f6cf384d35ee6da055",
+    "prompts_hash": "7e39b25c487f58a951ae910e46886d2b8a85ae68f4389a60683866e80e702bc6",
+    "raw_response_sha256": "2d5316ae84751073482dd3606add8e18edea946baa0476d0c785318c21ece3e2",
+    "start_sha256": "41a3c42de7efeefc1573fdbf33d2f64b85fcb040b58a56449f9fdd05ff1658cb"
+  },
+  "decisions": [
+    {
+      "accepted": true,
+      "arm": "llm",
+      "crossover_status": "missing_distinct_viable_donor",
+      "generation": 1,
+      "id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+      "parents": [
+        "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+      ],
+      "positions": 12,
+      "reasons": [],
+      "seed": 401,
+      "solved": 9
+    },
+    {
+      "accepted": false,
+      "arm": "random",
+      "crossover_status": "missing_distinct_viable_donor",
+      "generation": 1,
+      "id": "7c7dd0443db4799288b5f78a34321ec94778c606432940c0366c21201027c119",
+      "parents": [
+        "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+      ],
+      "positions": 12,
+      "reasons": [
+        "typed_output_viability",
+        "strict_development_gain",
+        "historical_success_regression"
+      ],
+      "seed": 401,
+      "solved": 0
+    },
+    {
+      "accepted": true,
+      "arm": "llm",
+      "crossover_status": "missing_distinct_viable_donor",
+      "generation": 1,
+      "id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+      "parents": [
+        "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+      ],
+      "positions": 12,
+      "reasons": [],
+      "seed": 402,
+      "solved": 9
+    },
+    {
+      "accepted": false,
+      "arm": "random",
+      "crossover_status": "missing_distinct_viable_donor",
+      "generation": 1,
+      "id": "a43b5500bbdce65e35d0fe86cd2c1b9b21cb4b82b65698858c2df675eec00577",
+      "parents": [
+        "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+      ],
+      "positions": 12,
+      "reasons": [
+        "typed_output_viability",
+        "strict_development_gain",
+        "historical_success_regression"
+      ],
+      "seed": 402,
+      "solved": 0
+    },
+    {
+      "accepted": true,
+      "arm": "llm",
+      "crossover_status": "missing_distinct_viable_donor",
+      "generation": 1,
+      "id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+      "parents": [
+        "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+      ],
+      "positions": 12,
+      "reasons": [],
+      "seed": 403,
+      "solved": 9
+    },
+    {
+      "accepted": false,
+      "arm": "random",
+      "crossover_status": "missing_distinct_viable_donor",
+      "generation": 1,
+      "id": "a4c650277d510bdafa75b119f6aa374fe1655e4b774ca8b136b33d2cfb3ac23d",
+      "parents": [
+        "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+      ],
+      "positions": 12,
+      "reasons": [
+        "typed_output_viability",
+        "strict_development_gain",
+        "historical_success_regression"
+      ],
+      "seed": 403,
+      "solved": 0
+    }
+  ],
+  "evaluation_seconds": 0.03609961099573411,
+  "learning_claim": false,
+  "state": {
+    "admitted": {
+      "llm": 3,
+      "random": 0
+    },
+    "anchor": "788e06dcd14491f3f470f1897d4667fd387315376428085d0c887b8b3cb1c1b8",
+    "author_seconds": 51.00006104199565,
+    "cells": {
+      "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4": {
+        "evidence": {
+          "errors": [],
+          "outcomes": {
+            "dev-chain": true,
+            "dev-clear-borrow": true,
+            "dev-equal-incoming": true,
+            "dev-leading-zero": true,
+            "dev-new-borrow": true,
+            "dev-no-borrow": true,
+            "dev-propagate": true,
+            "dev-underflow": true,
+            "dev-zero": true
+          },
+          "partition": "development",
+          "solved": 9,
+          "total": 9,
+          "traces": [
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 0
+              },
+              "id": "dev-zero",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 0
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 5
+              },
+              "id": "dev-no-borrow",
+              "input": {
+                "a": 7,
+                "b": 2,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 5
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 5
+              },
+              "id": "dev-new-borrow",
+              "input": {
+                "a": 2,
+                "b": 7,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 5
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-propagate",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 9
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 4
+              },
+              "id": "dev-clear-borrow",
+              "input": {
+                "a": 8,
+                "b": 3,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 4
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-equal-incoming",
+              "input": {
+                "a": 4,
+                "b": 4,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 9
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 1,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 1,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0999"
+              },
+              "id": "dev-chain",
+              "input": {
+                "a": "1000",
+                "b": "1"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "0999"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 5,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 5
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 7,
+                    "b": 2,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 4
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0045"
+              },
+              "id": "dev-leading-zero",
+              "input": {
+                "a": "0070",
+                "b": "0025"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "0045"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 2,
+                    "b": 9,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 3
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 1,
+                    "b": 1,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digits": "93"
+              },
+              "id": "dev-underflow",
+              "input": {
+                "a": "12",
+                "b": "19"
+              },
+              "predicted": {
+                "borrow": 1,
+                "digits": "93"
+              }
+            }
+          ]
+        },
+        "id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "params": {
+          "carry.W": [
+            [
+              -1.0
+            ]
+          ],
+          "carry.b": [
+            -0.25
+          ],
+          "readout.W": [
+            [
+              1.0,
+              10.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "readout.b": [
+            0.0,
+            0.0
+          ],
+          "sum.W": [
+            [
+              1.0,
+              -1.0,
+              -1.0
+            ]
+          ],
+          "sum.b": [
+            0.0
+          ]
+        },
+        "parents": [
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "provenance": {
+          "arm": "llm",
+          "charged_positions": 12,
+          "crossover": {
+            "parents": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "status": "missing_distinct_viable_donor"
+          },
+          "generation": 1,
+          "operator": "literal_mutation",
+          "raw_response_sha256": "2d5316ae84751073482dd3606add8e18edea946baa0476d0c785318c21ece3e2",
+          "seed": 402
+        }
+      },
+      "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac": {
+        "evidence": {
+          "errors": [],
+          "outcomes": {
+            "dev-chain": true,
+            "dev-clear-borrow": true,
+            "dev-equal-incoming": true,
+            "dev-leading-zero": true,
+            "dev-new-borrow": true,
+            "dev-no-borrow": true,
+            "dev-propagate": true,
+            "dev-underflow": true,
+            "dev-zero": true
+          },
+          "partition": "development",
+          "solved": 9,
+          "total": 9,
+          "traces": [
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 0
+              },
+              "id": "dev-zero",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 0
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 5
+              },
+              "id": "dev-no-borrow",
+              "input": {
+                "a": 7,
+                "b": 2,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 5
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 5
+              },
+              "id": "dev-new-borrow",
+              "input": {
+                "a": 2,
+                "b": 7,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 5
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-propagate",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 9
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 4
+              },
+              "id": "dev-clear-borrow",
+              "input": {
+                "a": 8,
+                "b": 3,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 4
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-equal-incoming",
+              "input": {
+                "a": 4,
+                "b": 4,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 9
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 1,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 1,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0999"
+              },
+              "id": "dev-chain",
+              "input": {
+                "a": "1000",
+                "b": "1"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "0999"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 5,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 5
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 7,
+                    "b": 2,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 4
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0045"
+              },
+              "id": "dev-leading-zero",
+              "input": {
+                "a": "0070",
+                "b": "0025"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "0045"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 2,
+                    "b": 9,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 3
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 1,
+                    "b": 1,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digits": "93"
+              },
+              "id": "dev-underflow",
+              "input": {
+                "a": "12",
+                "b": "19"
+              },
+              "predicted": {
+                "borrow": 1,
+                "digits": "93"
+              }
+            }
+          ]
+        },
+        "id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "params": {
+          "carry.W": [
+            [
+              -1.0
+            ]
+          ],
+          "carry.b": [
+            -0.5
+          ],
+          "readout.W": [
+            [
+              1.0,
+              10.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "readout.b": [
+            0.0,
+            0.0
+          ],
+          "sum.W": [
+            [
+              1.0,
+              -1.0,
+              -1.0
+            ]
+          ],
+          "sum.b": [
+            0.0
+          ]
+        },
+        "parents": [
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "provenance": {
+          "arm": "llm",
+          "charged_positions": 12,
+          "crossover": {
+            "parents": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "status": "missing_distinct_viable_donor"
+          },
+          "generation": 1,
+          "operator": "literal_mutation",
+          "raw_response_sha256": "2d5316ae84751073482dd3606add8e18edea946baa0476d0c785318c21ece3e2",
+          "seed": 401
+        }
+      },
+      "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17": {
+        "evidence": {
+          "errors": [],
+          "outcomes": {
+            "dev-chain": true,
+            "dev-clear-borrow": true,
+            "dev-equal-incoming": true,
+            "dev-leading-zero": true,
+            "dev-new-borrow": true,
+            "dev-no-borrow": true,
+            "dev-propagate": true,
+            "dev-underflow": true,
+            "dev-zero": true
+          },
+          "partition": "development",
+          "solved": 9,
+          "total": 9,
+          "traces": [
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 0
+              },
+              "id": "dev-zero",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 0
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 5
+              },
+              "id": "dev-no-borrow",
+              "input": {
+                "a": 7,
+                "b": 2,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 5
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 5
+              },
+              "id": "dev-new-borrow",
+              "input": {
+                "a": 2,
+                "b": 7,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 5
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-propagate",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 9
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 4
+              },
+              "id": "dev-clear-borrow",
+              "input": {
+                "a": 8,
+                "b": 3,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 4
+              }
+            },
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-equal-incoming",
+              "input": {
+                "a": 4,
+                "b": 4,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 9
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 1,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 1,
+                    "b": 0,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0999"
+              },
+              "id": "dev-chain",
+              "input": {
+                "a": "1000",
+                "b": "1"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "0999"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 5,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 5
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 7,
+                    "b": 2,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 4
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0045"
+              },
+              "id": "dev-leading-zero",
+              "input": {
+                "a": "0070",
+                "b": "0025"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "0045"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 2,
+                    "b": 9,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 3
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 1,
+                    "b": 1,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 9
+                  }
+                }
+              ],
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digits": "93"
+              },
+              "id": "dev-underflow",
+              "input": {
+                "a": "12",
+                "b": "19"
+              },
+              "predicted": {
+                "borrow": 1,
+                "digits": "93"
+              }
+            }
+          ]
+        },
+        "id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "params": {
+          "carry.W": [
+            [
+              -1.0
+            ]
+          ],
+          "carry.b": [
+            -0.75
+          ],
+          "readout.W": [
+            [
+              1.0,
+              10.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "readout.b": [
+            0.0,
+            0.0
+          ],
+          "sum.W": [
+            [
+              1.0,
+              -1.0,
+              -1.0
+            ]
+          ],
+          "sum.b": [
+            0.0
+          ]
+        },
+        "parents": [
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "provenance": {
+          "arm": "llm",
+          "charged_positions": 12,
+          "crossover": {
+            "parents": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "status": "missing_distinct_viable_donor"
+          },
+          "generation": 1,
+          "operator": "literal_mutation",
+          "raw_response_sha256": "2d5316ae84751073482dd3606add8e18edea946baa0476d0c785318c21ece3e2",
+          "seed": 403
+        }
+      },
+      "7c7dd0443db4799288b5f78a34321ec94778c606432940c0366c21201027c119": {
+        "evidence": {
+          "errors": [
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output"
+          ],
+          "outcomes": {
+            "dev-chain": false,
+            "dev-clear-borrow": false,
+            "dev-equal-incoming": false,
+            "dev-leading-zero": false,
+            "dev-new-borrow": false,
+            "dev-no-borrow": false,
+            "dev-propagate": false,
+            "dev-underflow": false,
+            "dev-zero": false
+          },
+          "partition": "development",
+          "solved": 0,
+          "total": 9,
+          "traces": [
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 0
+              },
+              "id": "dev-zero",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 5
+              },
+              "id": "dev-no-borrow",
+              "input": {
+                "a": 7,
+                "b": 2,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 5
+              },
+              "id": "dev-new-borrow",
+              "input": {
+                "a": 2,
+                "b": 7,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-propagate",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 4
+              },
+              "id": "dev-clear-borrow",
+              "input": {
+                "a": 8,
+                "b": 3,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-equal-incoming",
+              "input": {
+                "a": 4,
+                "b": 4,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digits": "0999"
+              },
+              "id": "dev-chain",
+              "input": {
+                "a": "1000",
+                "b": "1"
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digits": "0045"
+              },
+              "id": "dev-leading-zero",
+              "input": {
+                "a": "0070",
+                "b": "0025"
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digits": "93"
+              },
+              "id": "dev-underflow",
+              "input": {
+                "a": "12",
+                "b": "19"
+              },
+              "predicted": null
+            }
+          ]
+        },
+        "id": "7c7dd0443db4799288b5f78a34321ec94778c606432940c0366c21201027c119",
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "params": {
+          "carry.W": [
+            [
+              7.747888851017098
+            ]
+          ],
+          "carry.b": [
+            6.8802739178545345
+          ],
+          "readout.W": [
+            [
+              1.6117642972509536,
+              6.550113565286047
+            ],
+            [
+              6.393016292027234,
+              2.873532558192082
+            ]
+          ],
+          "readout.b": [
+            -5.854227683369519,
+            -6.6885009089262315
+          ],
+          "sum.W": [
+            [
+              -1.9981359317856402,
+              8.889410646160666,
+              -6.854893123888939
+            ]
+          ],
+          "sum.b": [
+            -0.26714916335080474
+          ]
+        },
+        "parents": [
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "provenance": {
+          "arm": "random",
+          "charged_positions": 12,
+          "crossover": {
+            "parents": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "status": "missing_distinct_viable_donor"
+          },
+          "generation": 1,
+          "operator": "literal_mutation",
+          "raw_response_sha256": null,
+          "seed": 401
+        }
+      },
+      "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b": {
+        "evidence": {
+          "errors": [],
+          "outcomes": {
+            "dev-chain": false,
+            "dev-clear-borrow": false,
+            "dev-equal-incoming": false,
+            "dev-leading-zero": false,
+            "dev-new-borrow": false,
+            "dev-no-borrow": false,
+            "dev-propagate": false,
+            "dev-underflow": false,
+            "dev-zero": true
+          },
+          "partition": "development",
+          "solved": 1,
+          "total": 9,
+          "traces": [
+            {
+              "correct": true,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 0
+              },
+              "id": "dev-zero",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 0
+              }
+            },
+            {
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 5
+              },
+              "id": "dev-no-borrow",
+              "input": {
+                "a": 7,
+                "b": 2,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 9
+              }
+            },
+            {
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 5
+              },
+              "id": "dev-new-borrow",
+              "input": {
+                "a": 2,
+                "b": 7,
+                "borrow": 0
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 9
+              }
+            },
+            {
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-propagate",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 1
+              }
+            },
+            {
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digit": 4
+              },
+              "id": "dev-clear-borrow",
+              "input": {
+                "a": 8,
+                "b": 3,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 1,
+                "digit": 2
+              }
+            },
+            {
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-equal-incoming",
+              "input": {
+                "a": 4,
+                "b": 4,
+                "borrow": 1
+              },
+              "predicted": {
+                "borrow": 0,
+                "digit": 9
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 1,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 1
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 1,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 1
+                  }
+                }
+              ],
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0999"
+              },
+              "id": "dev-chain",
+              "input": {
+                "a": "1000",
+                "b": "1"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "1001"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 0,
+                    "b": 5,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 5
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 7,
+                    "b": 2,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 9
+                  }
+                },
+                {
+                  "column": 2,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                },
+                {
+                  "column": 3,
+                  "input": {
+                    "a": 0,
+                    "b": 0,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 0
+                  }
+                }
+              ],
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 0,
+                "digits": "0045"
+              },
+              "id": "dev-leading-zero",
+              "input": {
+                "a": "0070",
+                "b": "0025"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "0095"
+              }
+            },
+            {
+              "columns": [
+                {
+                  "column": 0,
+                  "input": {
+                    "a": 2,
+                    "b": 9,
+                    "borrow": 0
+                  },
+                  "output": {
+                    "borrow": 1,
+                    "digit": 1
+                  }
+                },
+                {
+                  "column": 1,
+                  "input": {
+                    "a": 1,
+                    "b": 1,
+                    "borrow": 1
+                  },
+                  "output": {
+                    "borrow": 0,
+                    "digit": 3
+                  }
+                }
+              ],
+              "correct": false,
+              "error": null,
+              "expected": {
+                "borrow": 1,
+                "digits": "93"
+              },
+              "id": "dev-underflow",
+              "input": {
+                "a": "12",
+                "b": "19"
+              },
+              "predicted": {
+                "borrow": 0,
+                "digits": "31"
+              }
+            }
+          ]
+        },
+        "id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "params": {
+          "carry.W": [
+            [
+              1.0
+            ]
+          ],
+          "carry.b": [
+            -9.5
+          ],
+          "readout.W": [
+            [
+              1.0,
+              -10.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "readout.b": [
+            0.0,
+            0.0
+          ],
+          "sum.W": [
+            [
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "sum.b": [
+            0.0
+          ]
+        },
+        "provenance": {
+          "builder_sha256": "cdc1dbc511b0e800257b048beecbc56bb754fd1a1c9c047dd71ed1594088edce",
+          "builder_source": "/srv/cellforge-inbox/two-loop-20261001/continuous-arithmetic-runtime/scripts/build_arithmetic_specialist.py",
+          "kind": "historical-addition-baseline-on-incompatible-task",
+          "learning_claim": false,
+          "lift": "builder digit_W/digit_b -> first readout row; [0,1] second row passes historical carry",
+          "source": "/srv/cellforge-inbox/two-loop-20261001/continuous-arithmetic-runtime/src/cellforge/construction/arithmetic_cell.py",
+          "source_sha256": "4a83ed862e4afa8ab4751c8bfa79fe801a47c244da1bb996c46a5a26e0245b1e",
+          "training": "none"
+        }
+      },
+      "a43b5500bbdce65e35d0fe86cd2c1b9b21cb4b82b65698858c2df675eec00577": {
+        "evidence": {
+          "errors": [
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output"
+          ],
+          "outcomes": {
+            "dev-chain": false,
+            "dev-clear-borrow": false,
+            "dev-equal-incoming": false,
+            "dev-leading-zero": false,
+            "dev-new-borrow": false,
+            "dev-no-borrow": false,
+            "dev-propagate": false,
+            "dev-underflow": false,
+            "dev-zero": false
+          },
+          "partition": "development",
+          "solved": 0,
+          "total": 9,
+          "traces": [
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 0
+              },
+              "id": "dev-zero",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 5
+              },
+              "id": "dev-no-borrow",
+              "input": {
+                "a": 7,
+                "b": 2,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 5
+              },
+              "id": "dev-new-borrow",
+              "input": {
+                "a": 2,
+                "b": 7,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-propagate",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 4
+              },
+              "id": "dev-clear-borrow",
+              "input": {
+                "a": 8,
+                "b": 3,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-equal-incoming",
+              "input": {
+                "a": 4,
+                "b": 4,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digits": "0999"
+              },
+              "id": "dev-chain",
+              "input": {
+                "a": "1000",
+                "b": "1"
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digits": "0045"
+              },
+              "id": "dev-leading-zero",
+              "input": {
+                "a": "0070",
+                "b": "0025"
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digits": "93"
+              },
+              "id": "dev-underflow",
+              "input": {
+                "a": "12",
+                "b": "19"
+              },
+              "predicted": null
+            }
+          ]
+        },
+        "id": "a43b5500bbdce65e35d0fe86cd2c1b9b21cb4b82b65698858c2df675eec00577",
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "params": {
+          "carry.W": [
+            [
+              -9.586507162962272
+            ]
+          ],
+          "carry.b": [
+            -8.47454520408135
+          ],
+          "readout.W": [
+            [
+              3.7820278678759713,
+              8.919301293792905
+            ],
+            [
+              -0.17707458545586796,
+              -0.7482066159353273
+            ]
+          ],
+          "readout.b": [
+            -2.1463764402022782,
+            5.183408154622278
+          ],
+          "sum.W": [
+            [
+              -8.416238348347619,
+              -5.387749110693003,
+              6.163993034953204
+            ]
+          ],
+          "sum.b": [
+            -6.999766718758595
+          ]
+        },
+        "parents": [
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "provenance": {
+          "arm": "random",
+          "charged_positions": 12,
+          "crossover": {
+            "parents": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "status": "missing_distinct_viable_donor"
+          },
+          "generation": 1,
+          "operator": "literal_mutation",
+          "raw_response_sha256": null,
+          "seed": 402
+        }
+      },
+      "a4c650277d510bdafa75b119f6aa374fe1655e4b774ca8b136b33d2cfb3ac23d": {
+        "evidence": {
+          "errors": [
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output",
+            "ValueError:invalid digit/carry output"
+          ],
+          "outcomes": {
+            "dev-chain": false,
+            "dev-clear-borrow": false,
+            "dev-equal-incoming": false,
+            "dev-leading-zero": false,
+            "dev-new-borrow": false,
+            "dev-no-borrow": false,
+            "dev-propagate": false,
+            "dev-underflow": false,
+            "dev-zero": false
+          },
+          "partition": "development",
+          "solved": 0,
+          "total": 9,
+          "traces": [
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 0
+              },
+              "id": "dev-zero",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 5
+              },
+              "id": "dev-no-borrow",
+              "input": {
+                "a": 7,
+                "b": 2,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 5
+              },
+              "id": "dev-new-borrow",
+              "input": {
+                "a": 2,
+                "b": 7,
+                "borrow": 0
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-propagate",
+              "input": {
+                "a": 0,
+                "b": 0,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digit": 4
+              },
+              "id": "dev-clear-borrow",
+              "input": {
+                "a": 8,
+                "b": 3,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digit": 9
+              },
+              "id": "dev-equal-incoming",
+              "input": {
+                "a": 4,
+                "b": 4,
+                "borrow": 1
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digits": "0999"
+              },
+              "id": "dev-chain",
+              "input": {
+                "a": "1000",
+                "b": "1"
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 0,
+                "digits": "0045"
+              },
+              "id": "dev-leading-zero",
+              "input": {
+                "a": "0070",
+                "b": "0025"
+              },
+              "predicted": null
+            },
+            {
+              "columns": [],
+              "correct": false,
+              "error": "ValueError:invalid digit/carry output",
+              "expected": {
+                "borrow": 1,
+                "digits": "93"
+              },
+              "id": "dev-underflow",
+              "input": {
+                "a": "12",
+                "b": "19"
+              },
+              "predicted": null
+            }
+          ]
+        },
+        "id": "a4c650277d510bdafa75b119f6aa374fe1655e4b774ca8b136b33d2cfb3ac23d",
+        "interface": "decimal-subtraction-borrow-cell/1",
+        "params": {
+          "carry.W": [
+            [
+              0.7439270002200953
+            ]
+          ],
+          "carry.b": [
+            8.71339755225614
+          ],
+          "readout.W": [
+            [
+              -1.5981948154843284,
+              -8.837678574509972
+            ],
+            [
+              -7.585100842191852,
+              -0.25068024203046946
+            ]
+          ],
+          "readout.b": [
+            8.829125315771758,
+            -7.923404877338078
+          ],
+          "sum.W": [
+            [
+              -8.324860809503075,
+              -2.725149219269147,
+              8.672980174840493
+            ]
+          ],
+          "sum.b": [
+            -1.3069782843722066
+          ]
+        },
+        "parents": [
+          "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        ],
+        "provenance": {
+          "arm": "random",
+          "charged_positions": 12,
+          "crossover": {
+            "parents": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "status": "missing_distinct_viable_donor"
+          },
+          "generation": 1,
+          "operator": "literal_mutation",
+          "raw_response_sha256": null,
+          "seed": 403
+        }
+      }
+    },
+    "charged_positions": {
+      "llm": 36,
+      "random": 36
+    },
+    "contexts": [
+      {
+        "arms": {
+          "llm": {
+            "births": [
+              {
+                "accepted": true,
+                "generation": 1,
+                "id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+                "parents": [
+                  "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+                ],
+                "positions": 12,
+                "reasons": [],
+                "solved": 9
+              }
+            ],
+            "history": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+              "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac"
+            ],
+            "live": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac"
+          },
+          "random": {
+            "births": [
+              {
+                "accepted": false,
+                "generation": 1,
+                "id": "7c7dd0443db4799288b5f78a34321ec94778c606432940c0366c21201027c119",
+                "parents": [
+                  "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+                ],
+                "positions": 12,
+                "reasons": [
+                  "typed_output_viability",
+                  "strict_development_gain",
+                  "historical_success_regression"
+                ],
+                "solved": 0
+              }
+            ],
+            "history": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          }
+        },
+        "seed": 401
+      },
+      {
+        "arms": {
+          "llm": {
+            "births": [
+              {
+                "accepted": true,
+                "generation": 1,
+                "id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+                "parents": [
+                  "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+                ],
+                "positions": 12,
+                "reasons": [],
+                "solved": 9
+              }
+            ],
+            "history": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+              "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4"
+            ],
+            "live": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4"
+          },
+          "random": {
+            "births": [
+              {
+                "accepted": false,
+                "generation": 1,
+                "id": "a43b5500bbdce65e35d0fe86cd2c1b9b21cb4b82b65698858c2df675eec00577",
+                "parents": [
+                  "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+                ],
+                "positions": 12,
+                "reasons": [
+                  "typed_output_viability",
+                  "strict_development_gain",
+                  "historical_success_regression"
+                ],
+                "solved": 0
+              }
+            ],
+            "history": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          }
+        },
+        "seed": 402
+      },
+      {
+        "arms": {
+          "llm": {
+            "births": [
+              {
+                "accepted": true,
+                "generation": 1,
+                "id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+                "parents": [
+                  "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+                ],
+                "positions": 12,
+                "reasons": [],
+                "solved": 9
+              }
+            ],
+            "history": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+              "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17"
+            ],
+            "live": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17"
+          },
+          "random": {
+            "births": [
+              {
+                "accepted": false,
+                "generation": 1,
+                "id": "a4c650277d510bdafa75b119f6aa374fe1655e4b774ca8b136b33d2cfb3ac23d",
+                "parents": [
+                  "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+                ],
+                "positions": 12,
+                "reasons": [
+                  "typed_output_viability",
+                  "strict_development_gain",
+                  "historical_success_regression"
+                ],
+                "solved": 0
+              }
+            ],
+            "history": [
+              "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+            ],
+            "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          }
+        },
+        "seed": 403
+      }
+    ],
+    "evaluation_seconds": 0.03609961099573411,
+    "generation": 1,
+    "learning_claim": false,
+    "rejected": {
+      "llm": 0,
+      "random": 3
+    }
+  }
+}

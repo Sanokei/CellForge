@@ -1,0 +1,62 @@
+[
+  {
+    "task_id": "outline-n0-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1, 2, and 3 extend into orthogonally adjacent zeros using their own colour; the first demonstration leaves all 8s and their surroundings unchanged."
+  },
+  {
+    "task_id": "outline-n0-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "The isolated 1 and 3 receive orthogonal halos of 4. The third demonstration also outlines 2, while 8s remain unchanged and generate no halo."
+  },
+  {
+    "task_id": "outline-n0-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "The first demonstration adds 6 at the four orthogonal neighbours of 2 without outlining 8. The other demonstrations show the same halo around 1 and 3, preserving adjacent source pixels."
+  },
+  {
+    "task_id": "outline-n1-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1, 2, and 3 fill surrounding zeros including diagonals with their own colour. The third demonstration shows an eight-neighbour halo around 3 while the adjacent 8 is preserved and generates no halo."
+  },
+  {
+    "task_id": "outline-n1-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "The first demonstration outlines 2 and 3 with 4 in all eight directions. The second does the same for 1, preserving the nearby 8; 8s never generate halos."
+  },
+  {
+    "task_id": "outline-n1-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "The adjacent 3s receive a surrounding halo of 6 including diagonals, and isolated 1s receive eight-neighbour halos of 6. All 8s remain unchanged without halos; 2 is included consistently with the demonstrated source palette across this task family."
+  }
+]

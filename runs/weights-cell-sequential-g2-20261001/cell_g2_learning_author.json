@@ -1,0 +1,50 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "prompt":"CELL authoring only: author two bounded independent proposals from v3 public-training development failures and g1 actual development cell scores, one meaningful existing-structure numeric mutation and one justified structural growth; full literal weights, no router/glue edits, paid API, evaluation, or reporting labels.",
+ "read_sources":["hetzner-maker-request-v3.json","runs/weights-cell-population-g1/summary.json cells development scores"],
+ "numerical":{
+  "scope":"independent_cell_child","structure":"neighbor_count",
+  "parent":"live neighbor_count recipient e47cafc7fbdfdf9518cebe8916c27e457b4f07c7ff3ea725dbcd7a22ed21e1b8; rejected g1 detector is development evidence only, never a breeding parent",
+  "rationale":"Prior center-only detector solved no permitted development task. In a complete empty3x3 patch, corner and edge cells need not have nine zero positions in their own3x3 windows. Lower required zero occupancy from nine to six while keeping own-color0 eligibility and paint1. This is a meaningful threshold mutation, not positive scaling: qualifying near-empty windows previously inactive now paint1. It tests whether local zero-majority coverage can approximate the complete patch within the existing count structure. The examples justify seeking broader patch coverage but do not establish this relaxed threshold as correct. False positives outside patches are a concrete risk, and exact-grid success may remain zero. No gain is asserted.",
+  "params":{
+   "self.W":[[1,-9,-9,-9,-9,-9,-9,-9,-9,-9]],
+   "cnt.W":[[1,0,0,0,0,0,0,0,0,0]],
+   "cnt.b":[-5.5],
+   "paint":[0,1,0,0,0,0,0,0,0,0]
+  },
+  "inherited_names":[],
+  "newly_authored_names":["self.W","cnt.W","cnt.b","paint"],
+  "scalar_positions":31,
+  "contract":"Inherited neighbor_count: immutable input, self plus sum over present eight neighbors plus bias; positive preactivation paints argmax paint else copies input. Own nonzero colors cannot activate because maximum neighbor contribution8 is smaller than9+5.5. Own zero with at least five zero neighbors activates, yielding six total zero positions. Borders use absent-neighbor omission.",
+  "limits":"No exact spatial patch detector or emission. Lower threshold may spread into unrelated zeros or border regions. Preserve parent separately and charge this exploratory numerical child honestly; it cannot solve shape-changing or global object operations."
+ },
+ "structural":{
+  "scope":"independent_cell_child","structure":"guarded_count_patch_emit_v1",
+  "parent":"live neighbor_count recipient e47cafc7fbdfdf9518cebe8916c27e457b4f07c7ff3ea725dbcd7a22ed21e1b8; all42 full coefficients are a fresh authored mutation/growth proposal, not inherited from rejected detector",
+  "rationale":"Prior count child correctly represented an empty3x3 center test but could paint only the center. Independently mutate and grow the live recipient count cell using the rejected detector only as development evidence with a numerical3x3 footprint emitter and input-derived dense two-color guard. Prior g1 guarded-convolution child solved the noisy-grid development case, providing development evidence that footprint emission can address this representational gap; it was not admitted because false-positive checks were unavailable. This count-based growth is an independently instantiated structural child with count-anchor computation, not a new claim of unrelated family diversity or crossover. Freshly author all31 detector positions and11 guard/emission positions from the live recipient; numerical agreement with rejected detector values does not establish inheritance.",
+  "params":{
+   "self.W":[[1,-9,-9,-9,-9,-9,-9,-9,-9,-9]],
+   "cnt.W":[[1,0,0,0,0,0,0,0,0,0]],
+   "cnt.b":[-8.5],
+   "paint":[0,1,0,0,0,0,0,0,0,0],
+   "patch.emit.W":[[1,1,1],[1,1,1],[1,1,1]],
+   "patch.emit.b":[-0.5],
+   "patch.guard.density":[0.3]
+  },
+  "inherited_names":[],
+  "newly_authored_names":["self.W","cnt.W","cnt.b","paint","patch.emit.W","patch.emit.b","patch.guard.density"],
+  "numerical_accounting":{"full_positions":42,"inherited_positions":0,"authored_positions":42,"structural_extension_positions":11},
+  "executable_contract":{
+   "input":"Nonempty rectangular Grid[int0..9]",
+   "output":"Same-shaped Grid[int0..9]",
+   "guard":"Eligible iff input includes0, exactly one distinct nonzero color k, k!=1, and nonzero-cell fraction is greater than patch.guard.density[0]. If ineligible return input unchanged. This is not preservation of the count parent's behavior outside the guard; returning unchanged is a declared new structural behavior, not a hidden fallback.",
+   "anchors":"Compute freshly authored count preactivation at each input coordinate using immutable original input and absent-neighbor omission. Anchor=1 iff preactivation>0. The authored values require own zero and all eight present neighbors zero; therefore border positions cannot be anchors and no implicit zero padding is used.",
+   "emit":"At output(r,c), sum patch.emit.W[dr+1,dc+1]*anchor[r-dr,c-dc] for dr,dc=-1..1 with absent anchors omitted, then add patch.emit.b[0]. If positive paint argmax(paint), otherwise copy original input. This paints the union of all detected3x3 footprints.",
+   "implementation":"Reuse the existing patch_cell footprint-emission and guard primitives only if they implement these exact semantics. Anchor provider is neighbor_count, not a claimed convolution tensor. If patch_cell supports only conv anchors, a narrow typed adapter translating the authored count preactivation to its anchor interface is required before evaluation; do not change detector coefficients, invent donor tensors, or silently substitute a different structure.",
+   "metric":"Unchanged exact grid success including every pixel and shape. No partial-credit metric substitution. No expected query output or task identifier enters guard, anchors, emission, or cell inference."
+  },
+  "limits":"Larger zero regions emit unions of3x3 windows; dense two-color eligibility may admit unrelated inputs. This does not solve the other global/shape-changing failure families. Parent and prior guarded-convolution candidate remain separate; unavailable false-positive checks are not waived. Translation and admission gates precede promotion."
+ },
+ "provenance":"One physical cell-only author response for generation1 of the declared two-generation learning experiment. Live recipient lineage is e47cafc7fbdfdf9518cebe8916c27e457b4f07c7ff3ea725dbcd7a22ed21e1b8. All full proposal tensors are freshly authored, including values coinciding with rejected-child values; rejected children provide development evidence only and no inherited breeding material. No router or conv-to-count transfer-glue edits, paid calls, author evaluations, or fresh reporting reads occurred. All values finite within[-9,9]. No automatic coefficient generation was used.",
+ "assembly_decision":"Evaluate the two independent cells through the established development protocol and admission gates. Preserve parents, log their different structural/numerical scopes, and await bounded development feedback before the second author response. No forced promotion or fabricated family diversity."
+}

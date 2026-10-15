@@ -1,0 +1,68 @@
+{
+  "schema": "cellforge-reporting-declaration-recovery/1",
+  "source_sha256": "ab5411af29347e881443e1a9cbd0efd149c8f385677e3362e9dcba52d6b62bf5",
+  "source_equals_original_prephase_bundle": true,
+  "reason": "Duplicate reporting key in MANIFEST constructor overwrote case list with note. Original manifest and results retained. Cases recovered through literal-only AST inspection of prephase run.py, no artifact code execution or score relabeling.",
+  "cases": [
+    {
+      "id": "report-write",
+      "request": "write candle to report.txt",
+      "initial": {},
+      "expected": {
+        "report.txt": "candle"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "report-create",
+      "request": "create outline to JOURNAL",
+      "initial": {},
+      "expected": {
+        "JOURNAL": "outline"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "report-edit",
+      "request": "replace morning with evening in plan.txt",
+      "initial": {
+        "plan.txt": "morning"
+      },
+      "expected": {
+        "plan.txt": "evening"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "report-edit2",
+      "request": "replace hot with cold in CACHE",
+      "initial": {
+        "CACHE": "hot"
+      },
+      "expected": {
+        "CACHE": "cold"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "report-quoted",
+      "request": "write 'green field' to 'a.txt'",
+      "initial": {},
+      "expected": {
+        "a.txt": "green field"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "report-functionpath",
+      "request": "write done to file",
+      "initial": {},
+      "expected": {
+        "file": "done"
+      },
+      "action": "write_file"
+    }
+  ],
+  "original_manifest_reporting_type": "str",
+  "pristine_manifest": false
+}

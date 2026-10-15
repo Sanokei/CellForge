@@ -1,0 +1,58 @@
+{
+  "protocol": "nca-synthetic-cpu/1",
+  "hash": "65cd23be9356d3e23935c939b316044a6be7e6648515c33da854735a235db08d",
+  "recipe": {
+    "channels": 12,
+    "features": 108,
+    "hidden": 12,
+    "iterations": 2,
+    "seed": "identity"
+  },
+  "stats": {
+    "unique_param_storage": 1488,
+    "expanded_param_uses": 5952,
+    "nonzero_slots": 24,
+    "constant_slots_in_op_args": 0,
+    "cell_defs": 48,
+    "bundle_defs": 3,
+    "reachable_defs": 51,
+    "expanded_instances": 199,
+    "nesting_depth": 4,
+    "edges": 177,
+    "dispatch_nodes": 0,
+    "param_bytes_float64": 11904
+  },
+  "microcells": 48,
+  "shape": [
+    30,
+    30
+  ],
+  "canonical_calls": 5,
+  "phases_per_call": 2,
+  "seconds": [
+    0.011627740001131315,
+    0.0103309949990944,
+    0.01016123699810123,
+    0.010057033003249671,
+    0.011453052997239865
+  ],
+  "calls_per_second": 93.23129950950903,
+  "identity_calls": 5,
+  "peak_rss_bytes": 38268928,
+  "rss_scope": "whole probe process Linux ru_maxrss; unavailable on Windows",
+  "last_exec": {
+    "node_execs": 452,
+    "macs": 5184000,
+    "route_counts": {},
+    "peak_tensor_elements": 97200
+  },
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "source_sha256": "c2c4e43f165144fea7ba52ae820556ee4e43c085e68d9dc5049806b27b686ad2",
+  "benchmark_tasks": 0,
+  "gradient_steps": 0,
+  "limitations": "synthetic identity/CPU diagnostic only; no demonstration adaptation or ARC score"
+}

@@ -1,0 +1,137 @@
+{
+  "archive_sha256": "992d96444b6d83e110320a2afa306b64b514ab2447fb5857f6155efeb56a1088",
+  "blocking_findings": [],
+  "control_root": "/srv/cellforge-inbox/continuous-control-v2",
+  "decision": "permit_existing_study_archive_rearm",
+  "live_production_evidence": {
+    "active": null,
+    "all_protected_hashes_unchanged": true,
+    "attempted": 1,
+    "both_watchers_stopped_disabled": true,
+    "cancelled": 1,
+    "cancelled_artifacts": {
+      "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-transition-b409293e233bcd7d027b88b34506a867d32c0b68ffe043e95a5b62ed7bc54dfb/jobs/15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686/COLLECTION.json": "1f4b352aa0bc87736edbefd6d9eb0045cb68655b1d23fa6e4a7d41a4f1c3f8d5",
+      "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-transition-b409293e233bcd7d027b88b34506a867d32c0b68ffe043e95a5b62ed7bc54dfb/jobs/15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686/CONFIG.json": "7c04fc8618e53e0ce100844341c643ad516aa1521bef84278104fc51fddc1451",
+      "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-transition-b409293e233bcd7d027b88b34506a867d32c0b68ffe043e95a5b62ed7bc54dfb/jobs/15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686/RESULTS.json": "3837273120c17902598b093279de3ebb65ab8d0641955641e1504fd8c49cca7a",
+      "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-transition-b409293e233bcd7d027b88b34506a867d32c0b68ffe043e95a5b62ed7bc54dfb/jobs/15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686/TERMINAL.json": "6780ca9f1741c71a8b5cbd7c45224f5d2adb207f4c18fa0f00a7670de000b51f"
+    },
+    "cancelled_fingerprint": "15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686",
+    "cancelled_partial_results_excluded": true,
+    "cap": 9,
+    "consecutive_failures": 0,
+    "dispatch_present": false,
+    "fixed_job_absent_and_tree_empty": true,
+    "new_completed": 0,
+    "not_before": 0,
+    "observed_after_tests_utc": "2026-10-12T18:37:23.459080+00:00",
+    "operative_STOP_identity": {
+      "device": 2049,
+      "inode": 1041390,
+      "mtime_ns": 1791743382451895677,
+      "sha256": "fb8860d6f4e469a92092c2901f8450e5bcc1b05e0d1f8a8f52a063b6842c237b",
+      "size": 69
+    },
+    "partial_play_count": 13,
+    "partial_play_count_required_for_complete_comparison": 27,
+    "pending": 8,
+    "production_supervisor_sha256": "1863b422bba669d75936b7635bc90195d60cdd064be7ecbdfbb650e16b49bc35",
+    "protected_hash_count": 245,
+    "protected_hashes_digest": "4808612f68137d69f9c5bbefd8c4a79b87adef1fcfabcecdb0f4910dc3d569d8",
+    "protected_historical_STOP_count": 21,
+    "registry_sha256": "f0d60705bea7480f6a2fbfa1a0dec3ba8b5ac9f54e15da36a37cdc8188398661",
+    "registry_status": "paused_stop",
+    "reviewed_runtime_not_yet_installed": true,
+    "sequence": 1
+  },
+  "new_study_admissions_during_review": 0,
+  "operational_manifest_sha256": "c397d7897785cac6ac7285973edde445d627dbc8e789c3edda5bbd0d18183c01",
+  "outcome": "PASS",
+  "pending_fingerprints": [
+    "2b30f512abc60c4f343405c8e5cac414d653da86c317bf67966d8f051b3a26bf",
+    "36a28baef683d689d047bfd9142e428702ed5455ad631ccc6afdf96c4c9e54a9",
+    "500a11f59d230e33619c091bb7a4673ec48264ee8dfcef9cd44cec4f405bac2b",
+    "84651fde7b00115079f592e3cdf42bf282c2b2a34c0652df0ab71ee549c3bf89",
+    "9d7d0b2e6e3a8e48748405db34a36262dda58a172d5516287f70891c7b66da19",
+    "a0ae2ec3a58a9f384be75c235b42eba151567ef86783b7f1b7a770ac24def767",
+    "ccaef734562ed42ca8217d27b034663f08c307180dd9f8c7671cbe618f48b8a9",
+    "dee7e8cd18962bc1fadf94e41511d7684e5f3730cacaf89c748be37ce42add26"
+  ],
+  "permitted_sequence": [
+    "Bind this actual audit file hash, the exact operational manifest and request in the specific independent approval. User authorization and all runtime gates remain prerequisites.",
+    "With both watchers stopped/disabled, fixed job absent/empty and both existing global/registry locks held, durably back up and install only the eight request-bound runtime files under the same control root. Verify installed bytes and the unchanged existing unit template. Keep registry, STOP, dispatch and immutable admitted study unchanged.",
+    "Run reviewed stage with explicit --commit-reviewed and exact request/approval/audit after installed runtime and original science/evidence checks pass. Archive only the bound temporary rollback STOP using no-replace rename; retain its exact identity and all 21 historical STOPs; change only registry status to paused_dispatch_disabled.",
+    "Separately run reviewed activate while watchers remain stopped/disabled. Exclusive hard-link publication must preserve/refuse every foreign destination. Future STOP preempts: keep all markers untouched, record HOLD, and do not start a watcher. No preempted release is approved for start.",
+    "Only after a successful release receipt, no STOP or preemption hold, matching authorization/dispatch regular inode and bytes, empty job, unchanged runtime/accounting/budget/circuit/resource gates and global lock availability, explicitly start existing cellforge-continuous-v2.service. Keep old watcher disabled; no boot enabling, new study admission, cancelled-fingerprint replay or accounting reset.",
+    "Attempt at most the exact eight pending fingerprints under original cap9 including the consumed cancelled attempt, limits, backoff, failure circuit and authoritative future STOP. Use finite read-only observation; admit no scientific qualification or complete comparison from the 13 partial cancelled plays."
+  ],
+  "prior_held_seal_sha256": "9d658de47abd45555bb26cc2504f14014ff8526f041a1d445cb76b298648cd48",
+  "prior_seal_preserved": true,
+  "production_changes_during_review": 0,
+  "production_dispatches_during_review": 0,
+  "qualification_status": "RED/UNQUALIFIED",
+  "qualified": false,
+  "remote_model_calls": 0,
+  "request_runtime_sha256": {
+    "arc3_env.py": "958e922ed38e426f2004b1cb1afaf128e1d9b6c8a5046095afdb3d194e689ca0",
+    "arc3cell.py": "85b37c124e2d11f7d586fcd819f7753a5731eedaa716aabaeabd96e076f36de2",
+    "common.py": "eb6cbe00f8d02430003eecf915cf54c099ebb3ff6dd680583f121ca277caa0df",
+    "observe_dispatch.py": "07b1b7881effd17e7b58474df4233003e50d9ea08a3b3c279610d1779e631ca6",
+    "resume_operation.py": "72c431bed10f924901f1e06731e410f955aa87c1422d65f00fd830da9065367e",
+    "structcode.py": "8368e4c6b83351956f6220440dbe8fd4327b07ef0e39ec403f23924d5b400596",
+    "supervisor.py": "9493ef435131c7f504a87ac470c02902d40eb6390ed00fb3173e1e4889b5480e",
+    "worker.py": "2f1abc6b9da680362a65a41ec9543d6c7419dc6ea0b60d3e82e63b65542169ab"
+  },
+  "request_sha256": "d2157a1a528fc1ecf3ec60f81a150138091e65736c28925d7847157870928983",
+  "resume_review_passed": true,
+  "review_evidence_files_only_created_in_audit_workspace": true,
+  "reviewed_at_utc": "2026-10-12T18:44:34.149224+00:00",
+  "schema": "cellforge-independent-ownership-audit/1",
+  "science_plan_sha256": "b409293e233bcd7d027b88b34506a867d32c0b68ffe043e95a5b62ed7bc54dfb",
+  "unchanged_limits": {
+    "cpu_affinity": "0",
+    "cpu_quota": "100%",
+    "memory_max_bytes": 1073741824,
+    "memory_swap_max_bytes": 0,
+    "private_network": true,
+    "remote_model_calls": 0,
+    "runtime_max_seconds_per_job": 600,
+    "tasks_max": 64
+  },
+  "verification": {
+    "archive_and_all_258_manifest_files_match": true,
+    "cancelled_receipt_and_four_artifact_bindings": "PASS",
+    "cap9_including_cancelled_attempt_and_exact_eight_pending": "PASS",
+    "exact_20_file_linux_payload_matches_sealed_bytes": true,
+    "independent_linux_revision_tests": {
+      "includes_real_POSIX_lock_exclusion": true,
+      "includes_real_SIGKILL_recovery_boundaries": 7,
+      "invocations": 19,
+      "passed": 19,
+      "seconds": 15.075,
+      "skipped": 0
+    },
+    "independent_original_race_retries": {
+      "Linux_archive_destination_collision_preserved_by_RENAME_NOREPLACE": "PASS",
+      "foreign_dispatch_destination_preserved_bytes_inode_mtime": "PASS",
+      "foreign_dispatch_replacement_on_STOP_preemption_preserved_without_unlink": "PASS",
+      "research_jobs_launched": 0
+    },
+    "observer_finite_duration_and_marker_recheck": "PASS",
+    "specific_request_manifest_runtime_audit_bindings": "PASS",
+    "stopped_disabled_watchers_and_absent_empty_fixed_job": "PASS",
+    "unchanged_science_plan_and_all_nine_fingerprints": "PASS",
+    "unchanged_standard_contract_tests": {
+      "budget_reconciled": "PASS",
+      "full_semantic_qualification_claimed": false,
+      "hash_integrity": "PASS",
+      "ledger_chain": "PASS",
+      "passed": 7
+    },
+    "windows_revision_tests": {
+      "invocations": 19,
+      "passed": 17,
+      "seconds": 170.465,
+      "skipped": 2
+    }
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "task_id": "1a07d186",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. The outputs move isolated pixels into previously background positions; object_table only uniformly recolours existing components. Changing the background cannot produce the required nonuniform changes within the connected zero regions."
+  },
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. Every available key kind merges pixels requiring different outputs. For example, with background 8, nearest-colour keys are identical at demonstration 1 positions (4,1) and (4,2), using zero-based coordinates, but their required outputs are 7 and 8. The transformation requires distance-sensitive relocation."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes). The demonstrations map colour-8 objects with zero, one, and three holes to 2, 7, and 3 respectively, while colour-1 marker objects map to background. Including colour prevents marker and target objects with equal hole counts from conflicting."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist for this template. Filling the passage requires connectivity beyond the immediate neighbourhood. In demonstration 1, zero-based positions (1,4) and (2,6) have the same own colour, neighbour colour set, and five non-background 8-neighbours, but require 0 and 8. The other available key kinds also have conflicting demonstration outputs."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. Demonstration 1 position (5,2) and demonstration 2 position (1,2), using zero-based coordinates, have identical own colours, four-neighbour patterns, and neighbour colour counts and sets, but require outputs 9 and 8. Thus every available neighbourhood key has a conflict, regardless of background selection."
+  },
+  {
+    "task_id": "5ffb2104",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "dir": [0, 0, 0, 1]
+    },
+    "rationale": "No satisfying tensors exist for this template. The demonstrations move whole objects right while preserving their shapes. Pixel gravity independently packs each row, necessarily placing demonstration 1's top-row 3 in the last column instead of the required penultimate column. No direction or background selection resolves this."
+  }
+]

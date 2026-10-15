@@ -1,0 +1,2899 @@
+{
+ "defs": {
+  "left_association_update": {
+   "inputs": [
+    "colors",
+    "height",
+    "width",
+    "output",
+    "output_height",
+    "output_width",
+    "phase",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "x": "$phase"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "shape": [
+       900,
+       10
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "$colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "args": {
+      "shape": [
+       900,
+       10
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "$output"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n3",
+      "b": "n4"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       100
+      ]
+     },
+     "id": "n6",
+     "in": {
+      "x": "n5"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n6",
+      "b": "n1"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 100
+     },
+     "id": "n8",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "a": "n8",
+      "b": "n7"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n10",
+     "in": {
+      "a": "$height",
+      "b": "$output_height"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n12",
+     "in": {
+      "x": "n11"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "$width",
+      "b": "$output_width"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:square"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "n16",
+     "in": {
+      "a": "n12",
+      "b": "n15"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "n17",
+     "in": {
+      "a": "n16",
+      "b": "n1"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 100,
+      "stop": 101
+     },
+     "id": "n18",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n19",
+     "in": {
+      "a": "n18",
+      "b": "n17"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n20",
+     "in": {
+      "x0": "n9",
+      "x1": "n19"
+     },
+     "use": "op:concat"
+    }
+   ],
+   "outputs": {
+    "state": "n20"
+   },
+   "role": "cluster"
+  },
+  "left_dimension": {
+   "kind": "cell",
+   "params": {
+    "W1": "left_dimension.W",
+    "b1": "left_dimension.b"
+   }
+  },
+  "left_expert_0": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_0"
+    },
+    {
+     "id": "n1",
+     "in": {
+      "colors": "n0.colors",
+      "state": "$state"
+     },
+     "use": "left_mapping_0"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n2",
+    "height_logits": "n3",
+    "width_logits": "n4"
+   },
+   "role": "expert"
+  },
+  "left_geometry_0": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [],
+   "outputs": {
+    "colors": "$input",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  },
+  "left_geometry_1": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "x": "$input_height"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n2",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n3",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n6",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "x": "n7"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n10",
+     "in": {
+      "x": "n9"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n12",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "n11",
+      "b": "n12"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "colors": "n14",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  },
+  "left_geometry_2": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "id": "n1",
+     "in": {
+      "x": "$input_width"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n3",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "n3"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n5",
+     "in": {
+      "x": "n3"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n6",
+     "in": {
+      "a": "n4",
+      "b": "n5"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n7",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "a": "n6",
+      "b": "n7"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n10",
+     "in": {
+      "x": "n9"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n12",
+     "in": {
+      "x": "n11"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n13",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n14",
+     "in": {
+      "a": "n12",
+      "b": "n13"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n16",
+     "in": {
+      "x": "n15"
+     },
+     "use": "op:transpose"
+    }
+   ],
+   "outputs": {
+    "colors": "n16",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  },
+  "left_geometry_3": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "x": "$input_height"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n2",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n3",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n6",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "x": "n7"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n10",
+     "in": {
+      "x": "n9"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n12",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "n11",
+      "b": "n12"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "id": "n16",
+     "in": {
+      "x": "$input_width"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n17",
+     "in": {
+      "x": "n16"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n18",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n19",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n20",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n21",
+     "in": {
+      "a": "n19",
+      "b": "n20"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n22",
+     "in": {
+      "x": "n17"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n23",
+     "in": {
+      "a": "n21",
+      "b": "n22"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n24",
+     "in": {
+      "x": "n23"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n25",
+     "in": {
+      "x": "n24"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n26",
+     "in": {
+      "x": "n25"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n27",
+     "in": {
+      "x": "n26"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n28",
+     "in": {
+      "x": "n15"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n29",
+     "in": {
+      "a": "n27",
+      "b": "n28"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n30",
+     "in": {
+      "x": "n29"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n31",
+     "in": {
+      "x": "n30"
+     },
+     "use": "op:transpose"
+    }
+   ],
+   "outputs": {
+    "colors": "n31",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  },
+  "left_geometry_4": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:transpose"
+    }
+   ],
+   "outputs": {
+    "colors": "n0",
+    "height": "$input_width",
+    "width": "$input_height"
+   },
+   "role": "cluster"
+  },
+  "left_geometry_5": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "x": "$input_height"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n2",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n3",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n6",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "x": "n7"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n10",
+     "in": {
+      "x": "n9"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n12",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "n11",
+      "b": "n12"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:transpose"
+    }
+   ],
+   "outputs": {
+    "colors": "n15",
+    "height": "$input_width",
+    "width": "$input_height"
+   },
+   "role": "cluster"
+  },
+  "left_geometry_6": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "id": "n1",
+     "in": {
+      "x": "$input_width"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n3",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "n3"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n5",
+     "in": {
+      "x": "n3"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n6",
+     "in": {
+      "a": "n4",
+      "b": "n5"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n7",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "a": "n6",
+      "b": "n7"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n10",
+     "in": {
+      "x": "n9"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n12",
+     "in": {
+      "x": "n11"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n13",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n14",
+     "in": {
+      "a": "n12",
+      "b": "n13"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n16",
+     "in": {
+      "x": "n15"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n17",
+     "in": {
+      "x": "n16"
+     },
+     "use": "op:transpose"
+    }
+   ],
+   "outputs": {
+    "colors": "n17",
+    "height": "$input_width",
+    "width": "$input_height"
+   },
+   "role": "cluster"
+  },
+  "left_geometry_7": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "x": "$input_height"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n2",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n4",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n3",
+      "b": "n4"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n6",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "a": "n5",
+      "b": "n6"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "x": "n7"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n10",
+     "in": {
+      "x": "n9"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n11",
+     "in": {
+      "x": "n10"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n12",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "n11",
+      "b": "n12"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "id": "n16",
+     "in": {
+      "x": "$input_width"
+     },
+     "use": "left_dimension"
+    },
+    {
+     "args": {
+      "c": -1
+     },
+     "id": "n17",
+     "in": {
+      "x": "n16"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n18",
+     "in": {},
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1
+      ]
+     },
+     "id": "n19",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n20",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n21",
+     "in": {
+      "a": "n19",
+      "b": "n20"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1
+      ]
+     },
+     "id": "n22",
+     "in": {
+      "x": "n17"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n23",
+     "in": {
+      "a": "n21",
+      "b": "n22"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n24",
+     "in": {
+      "x": "n23"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n25",
+     "in": {
+      "x": "n24"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n26",
+     "in": {
+      "x": "n25"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n27",
+     "in": {
+      "x": "n26"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       300
+      ]
+     },
+     "id": "n28",
+     "in": {
+      "x": "n15"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n29",
+     "in": {
+      "a": "n27",
+      "b": "n28"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n30",
+     "in": {
+      "x": "n29"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n31",
+     "in": {
+      "x": "n30"
+     },
+     "use": "op:transpose"
+    },
+    {
+     "args": {
+      "perm": [
+       1,
+       0,
+       2
+      ]
+     },
+     "id": "n32",
+     "in": {
+      "x": "n31"
+     },
+     "use": "op:transpose"
+    }
+   ],
+   "outputs": {
+    "colors": "n32",
+    "height": "$input_width",
+    "width": "$input_height"
+   },
+   "role": "cluster"
+  },
+  "left_mapping_0": {
+   "inputs": [
+    "state",
+    "colors"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 100
+     },
+     "id": "n0",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "shape": [
+       10,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n2",
+     "in": {},
+     "use": "param:left_fallback_0"
+    },
+    {
+     "id": "n3",
+     "in": {},
+     "use": "param:left_fallback_1"
+    },
+    {
+     "id": "n4",
+     "in": {},
+     "use": "param:left_fallback_2"
+    },
+    {
+     "id": "n5",
+     "in": {},
+     "use": "param:left_fallback_3"
+    },
+    {
+     "id": "n6",
+     "in": {},
+     "use": "param:left_fallback_4"
+    },
+    {
+     "id": "n7",
+     "in": {},
+     "use": "param:left_fallback_5"
+    },
+    {
+     "id": "n8",
+     "in": {},
+     "use": "param:left_fallback_6"
+    },
+    {
+     "id": "n9",
+     "in": {},
+     "use": "param:left_fallback_7"
+    },
+    {
+     "id": "n10",
+     "in": {},
+     "use": "param:left_fallback_8"
+    },
+    {
+     "id": "n11",
+     "in": {},
+     "use": "param:left_fallback_9"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n12",
+     "in": {
+      "x0": "n2",
+      "x1": "n3",
+      "x2": "n4",
+      "x3": "n5",
+      "x4": "n6",
+      "x5": "n7",
+      "x6": "n8",
+      "x7": "n9",
+      "x8": "n10",
+      "x9": "n11"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "n1",
+      "b": "n12"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:onehot_argmax"
+    },
+    {
+     "id": "n15",
+     "in": {
+      "a": "$colors",
+      "b": "n14"
+     },
+     "use": "op:matmul"
+    }
+   ],
+   "outputs": {
+    "colors": "n15"
+   },
+   "role": "cluster"
+  },
+  "left_router": {
+   "inputs": [
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "c": 0
+     },
+     "id": "zero",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 2
+     },
+     "id": "two",
+     "in": {
+      "x": "zero"
+     },
+     "use": "op:slice"
+    }
+   ],
+   "outputs": {
+    "scores": "two"
+   },
+   "role": "router"
+  },
+  "right_color_0_0": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_0.W",
+    "b1": "right_color_0_0.b"
+   }
+  },
+  "right_color_0_1": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_1.W",
+    "b1": "right_color_0_1.b"
+   }
+  },
+  "right_color_0_2": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_2.W",
+    "b1": "right_color_0_2.b"
+   }
+  },
+  "right_color_0_3": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_3.W",
+    "b1": "right_color_0_3.b"
+   }
+  },
+  "right_color_0_4": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_4.W",
+    "b1": "right_color_0_4.b"
+   }
+  },
+  "right_color_0_5": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_5.W",
+    "b1": "right_color_0_5.b"
+   }
+  },
+  "right_color_0_6": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_6.W",
+    "b1": "right_color_0_6.b"
+   }
+  },
+  "right_color_0_7": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_7.W",
+    "b1": "right_color_0_7.b"
+   }
+  },
+  "right_color_0_8": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_8.W",
+    "b1": "right_color_0_8.b"
+   }
+  },
+  "right_color_0_9": {
+   "kind": "cell",
+   "params": {
+    "W1": "right_color_0_9.W",
+    "b1": "right_color_0_9.b"
+   }
+  },
+  "right_expert_0": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "transform",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "right_transform_0"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "c",
+     "in": {
+      "x": "transform.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "h",
+     "in": {
+      "x": "transform.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "w",
+     "in": {
+      "x": "transform.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "c",
+    "height_logits": "h",
+    "width_logits": "w"
+   },
+   "role": "expert"
+  },
+  "right_router": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width",
+    "output",
+    "output_height",
+    "output_width",
+    "phase",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "c": 0
+     },
+     "id": "zero",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 2
+     },
+     "id": "two",
+     "in": {
+      "x": "zero"
+     },
+     "use": "op:slice"
+    }
+   ],
+   "outputs": {
+    "scores": "two"
+   },
+   "role": "router"
+  },
+  "right_transform_0": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_0"
+    },
+    {
+     "id": "c1",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_1"
+    },
+    {
+     "id": "c2",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_2"
+    },
+    {
+     "id": "c3",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_3"
+    },
+    {
+     "id": "c4",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_4"
+    },
+    {
+     "id": "c5",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_5"
+    },
+    {
+     "id": "c6",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_6"
+    },
+    {
+     "id": "c7",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_7"
+    },
+    {
+     "id": "c8",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_8"
+    },
+    {
+     "id": "c9",
+     "in": {
+      "x": "$input"
+     },
+     "use": "right_color_0_9"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "join",
+     "in": {
+      "x0": "c0",
+      "x1": "c1",
+      "x2": "c2",
+      "x3": "c3",
+      "x4": "c4",
+      "x5": "c5",
+      "x6": "c6",
+      "x7": "c7",
+      "x8": "c8",
+      "x9": "c9"
+     },
+     "use": "op:concat"
+    }
+   ],
+   "outputs": {
+    "colors": "join",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  },
+  "root": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width",
+    "output",
+    "output_height",
+    "output_width",
+    "phase",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 808
+     },
+     "id": "left_state",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_0"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 101
+     },
+     "id": "left_n1",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n2",
+     "in": {
+      "colors": "left_n0.colors",
+      "height": "left_n0.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n1",
+      "width": "left_n0.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "id": "left_n3",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_1"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 101,
+      "stop": 202
+     },
+     "id": "left_n4",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n5",
+     "in": {
+      "colors": "left_n3.colors",
+      "height": "left_n3.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n4",
+      "width": "left_n3.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "id": "left_n6",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_2"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 202,
+      "stop": 303
+     },
+     "id": "left_n7",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n8",
+     "in": {
+      "colors": "left_n6.colors",
+      "height": "left_n6.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n7",
+      "width": "left_n6.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "id": "left_n9",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_3"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 303,
+      "stop": 404
+     },
+     "id": "left_n10",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n11",
+     "in": {
+      "colors": "left_n9.colors",
+      "height": "left_n9.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n10",
+      "width": "left_n9.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "id": "left_n12",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_4"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 404,
+      "stop": 505
+     },
+     "id": "left_n13",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n14",
+     "in": {
+      "colors": "left_n12.colors",
+      "height": "left_n12.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n13",
+      "width": "left_n12.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "id": "left_n15",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_5"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 505,
+      "stop": 606
+     },
+     "id": "left_n16",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n17",
+     "in": {
+      "colors": "left_n15.colors",
+      "height": "left_n15.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n16",
+      "width": "left_n15.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "id": "left_n18",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_6"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 606,
+      "stop": 707
+     },
+     "id": "left_n19",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n20",
+     "in": {
+      "colors": "left_n18.colors",
+      "height": "left_n18.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n19",
+      "width": "left_n18.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "id": "left_n21",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "left_geometry_7"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 707,
+      "stop": 808
+     },
+     "id": "left_n22",
+     "in": {
+      "x": "left_state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "left_n23",
+     "in": {
+      "colors": "left_n21.colors",
+      "height": "left_n21.height",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "left_n22",
+      "width": "left_n21.width"
+     },
+     "use": "left_association_update"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "left_n24",
+     "in": {
+      "x0": "left_n2",
+      "x1": "left_n5",
+      "x2": "left_n8",
+      "x3": "left_n11",
+      "x4": "left_n14",
+      "x5": "left_n17",
+      "x6": "left_n20",
+      "x7": "left_n23"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "left_n25",
+     "in": {
+      "state": "left_n24"
+     },
+     "use": "left_router"
+    },
+    {
+     "args": {
+      "branches": [
+       "left_expert_0",
+       "left_expert_0"
+      ]
+     },
+     "id": "left_n26",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width",
+      "scores": "left_n25.scores",
+      "state": "left_n24"
+     },
+     "use": "dispatch"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 808,
+      "stop": 828
+     },
+     "id": "right_state",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "right_router",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "state": "right_state"
+     },
+     "use": "right_router"
+    },
+    {
+     "args": {
+      "branches": [
+       "right_expert_0",
+       "right_expert_0"
+      ]
+     },
+     "id": "right_dispatch",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width",
+      "scores": "right_router.scores"
+     },
+     "use": "dispatch"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "pair_state",
+     "in": {
+      "x0": "left_n24",
+      "x1": "right_state"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "pair_height_logits",
+     "in": {
+      "x0": "left_n26.height_logits",
+      "x1": "right_dispatch.height_logits"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "pair_width_logits",
+     "in": {
+      "x0": "left_n26.width_logits",
+      "x1": "right_dispatch.width_logits"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "pair_color_logits",
+     "in": {
+      "x0": "left_n26.color_logits",
+      "x1": "right_dispatch.color_logits"
+     },
+     "use": "op:concat"
+    }
+   ],
+   "outputs": {
+    "color_logits": "pair_color_logits",
+    "height_logits": "pair_height_logits",
+    "state": "pair_state",
+    "width_logits": "pair_width_logits"
+   },
+   "role": "root"
+  }
+ },
+ "entries": {
+  "grid_step": "root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "construction": "fixed two-gene wiring crossover/1; no fitting",
+  "gene_pool": {
+   "donor_genes": [
+    "expert_0",
+    "expert_0"
+   ],
+   "parent_hashes": [
+    "fbb798c2a7acb76914737c5580d960d384154c390f8319cce626984e2e310a53",
+    "702c89dca9f9a667afb6a7efb46d96692f982b615af23c196282cc996628eceb"
+   ],
+   "ranking": "fixed left/right union coverage; no adaptive pair ranking"
+  },
+  "grid_attempts": 2,
+  "grid_interface": "grid-graph/1",
+  "profile": "ladder-micro/1",
+  "state_dim": 828,
+  "task": "grid"
+ },
+ "params": {
+  "left_dimension.W": {
+   "sha256": "ec590ff82e35ce05616db94edd23cc3442e16df145179066ddac081662638bee",
+   "shape": [
+    1,
+    30
+   ]
+  },
+  "left_dimension.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "left_fallback_0": {
+   "sha256": "66865b97ec7110deaa2ac7717d6325d529ce1dee846ca916a9b71869b165ea8f",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_1": {
+   "sha256": "9cc7e0e111c43bd3ca563f377aeaf606e75172612fff5781a494c54bee665e19",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_2": {
+   "sha256": "cacc2d346dc35390aade1d8fac7a6b3c9e89b47753c4b7d7ae26d55e9c6e23c2",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_3": {
+   "sha256": "1163ac584938d0b56b8b3d20da76f10a2430770c193b3489ef3eec3c207505ec",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_4": {
+   "sha256": "c647efbfffaee5903801e6899b563a789b39194b2ef867348e88c2823264dcae",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_5": {
+   "sha256": "31d99346180417adf510656a3dee5876d4009652ab6211686c8830f62c435dda",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_6": {
+   "sha256": "26f5be2d22ae12d1c22a386182885e01a980f15908c98644de602e190f080139",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_7": {
+   "sha256": "8fbd54d659588e22dfa710dedc9be08a310a8f79784fad144f6233c94d46c1d0",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_8": {
+   "sha256": "c71f822ed45ab4063252e08ed6f77896c9992e7ec033b2ec777c2512e8381e9d",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "left_fallback_9": {
+   "sha256": "f6ec46b60e8a2df4661758de29df9106ff035f0ab14d5258dee5d028a3742742",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_0.W": {
+   "sha256": "ff8167cff157e6584b3333d4f8c019774ea5146e0bc8ee1ef39aa7b228622b80",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_0.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_1.W": {
+   "sha256": "848421dada3cd5e16e09568bd41bf8c1f0c10b96d15092682a4c21bab0499470",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_1.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_2.W": {
+   "sha256": "d572bd29037444b9d188c036bd4cbb3f13fb387237731039ee7aa2bb7e1bc148",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_2.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_3.W": {
+   "sha256": "1bce38c0369e460d4a4eaa2e39234945d1458f66dfc65764f614497b5b713d42",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_3.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_4.W": {
+   "sha256": "820a7cfbfd37464be6c80d05c6ebda1c9982a60ae9a6ec6174bd17119e9abe6f",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_4.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_5.W": {
+   "sha256": "bf36eb3709f41e86326a6d5ac6941d1888d1ebe408fd78d2432d6d8c26ca2414",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_5.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_6.W": {
+   "sha256": "14c44023296d03ab130ba1ca8bbf92eb18ad7473a25f45560db6a4b715f6b8cf",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_6.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_7.W": {
+   "sha256": "584713015adcbc7cb6d0fbc9bc2af497380fba2c8a24fe28fdca66c67f0d2fce",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_7.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_8.W": {
+   "sha256": "25cb9c6aa8a4c36ecb787c53b92d64294f5b1f6cabcd1991ba5a64a42c0dd882",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_8.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "right_color_0_9.W": {
+   "sha256": "711f626dd644a469e00521211e41377d0aa71a4a6fd4d29cbaa49a0abcbe3cc4",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "right_color_0_9.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  }
+ }
+}

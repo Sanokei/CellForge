@@ -1,0 +1,1106 @@
+{
+ "defs": {
+  "filt": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "filt_W1",
+    "b1": "filt_b1"
+   }
+  },
+  "head": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "head_W1",
+    "b1": "head_b1"
+   }
+  },
+  "predict_root": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "after": 8,
+      "axis": 0,
+      "before": 8,
+      "value": 0.0
+     },
+     "id": "pd",
+     "in": {
+      "x": "$x"
+     },
+     "use": "op:pad"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "step": 1,
+      "stop": 16
+     },
+     "id": "w0",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e0",
+     "in": {
+      "x": "w0"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 1,
+      "step": 1,
+      "stop": 17
+     },
+     "id": "w1",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e1",
+     "in": {
+      "x": "w1"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 2,
+      "step": 1,
+      "stop": 18
+     },
+     "id": "w2",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e2",
+     "in": {
+      "x": "w2"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 3,
+      "step": 1,
+      "stop": 19
+     },
+     "id": "w3",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e3",
+     "in": {
+      "x": "w3"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 4,
+      "step": 1,
+      "stop": 20
+     },
+     "id": "w4",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e4",
+     "in": {
+      "x": "w4"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 5,
+      "step": 1,
+      "stop": 21
+     },
+     "id": "w5",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e5",
+     "in": {
+      "x": "w5"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 6,
+      "step": 1,
+      "stop": 22
+     },
+     "id": "w6",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e6",
+     "in": {
+      "x": "w6"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 7,
+      "step": 1,
+      "stop": 23
+     },
+     "id": "w7",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e7",
+     "in": {
+      "x": "w7"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 8,
+      "step": 1,
+      "stop": 24
+     },
+     "id": "w8",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e8",
+     "in": {
+      "x": "w8"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 9,
+      "step": 1,
+      "stop": 25
+     },
+     "id": "w9",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e9",
+     "in": {
+      "x": "w9"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 10,
+      "step": 1,
+      "stop": 26
+     },
+     "id": "w10",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e10",
+     "in": {
+      "x": "w10"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 11,
+      "step": 1,
+      "stop": 27
+     },
+     "id": "w11",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e11",
+     "in": {
+      "x": "w11"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 12,
+      "step": 1,
+      "stop": 28
+     },
+     "id": "w12",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e12",
+     "in": {
+      "x": "w12"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 13,
+      "step": 1,
+      "stop": 29
+     },
+     "id": "w13",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e13",
+     "in": {
+      "x": "w13"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 14,
+      "step": 1,
+      "stop": 30
+     },
+     "id": "w14",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e14",
+     "in": {
+      "x": "w14"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 15,
+      "step": 1,
+      "stop": 31
+     },
+     "id": "w15",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e15",
+     "in": {
+      "x": "w15"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 16,
+      "step": 1,
+      "stop": 32
+     },
+     "id": "w16",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e16",
+     "in": {
+      "x": "w16"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 17,
+      "step": 1,
+      "stop": 33
+     },
+     "id": "w17",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e17",
+     "in": {
+      "x": "w17"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 18,
+      "step": 1,
+      "stop": 34
+     },
+     "id": "w18",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e18",
+     "in": {
+      "x": "w18"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 19,
+      "step": 1,
+      "stop": 35
+     },
+     "id": "w19",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e19",
+     "in": {
+      "x": "w19"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 20,
+      "step": 1,
+      "stop": 36
+     },
+     "id": "w20",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e20",
+     "in": {
+      "x": "w20"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 21,
+      "step": 1,
+      "stop": 37
+     },
+     "id": "w21",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e21",
+     "in": {
+      "x": "w21"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 22,
+      "step": 1,
+      "stop": 38
+     },
+     "id": "w22",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e22",
+     "in": {
+      "x": "w22"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 23,
+      "step": 1,
+      "stop": 39
+     },
+     "id": "w23",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e23",
+     "in": {
+      "x": "w23"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 24,
+      "step": 1,
+      "stop": 40
+     },
+     "id": "w24",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e24",
+     "in": {
+      "x": "w24"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 25,
+      "step": 1,
+      "stop": 41
+     },
+     "id": "w25",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e25",
+     "in": {
+      "x": "w25"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 26,
+      "step": 1,
+      "stop": 42
+     },
+     "id": "w26",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e26",
+     "in": {
+      "x": "w26"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 27,
+      "step": 1,
+      "stop": 43
+     },
+     "id": "w27",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e27",
+     "in": {
+      "x": "w27"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 28,
+      "step": 1,
+      "stop": 44
+     },
+     "id": "w28",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e28",
+     "in": {
+      "x": "w28"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 29,
+      "step": 1,
+      "stop": 45
+     },
+     "id": "w29",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e29",
+     "in": {
+      "x": "w29"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 30,
+      "step": 1,
+      "stop": 46
+     },
+     "id": "w30",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e30",
+     "in": {
+      "x": "w30"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 31,
+      "step": 1,
+      "stop": 47
+     },
+     "id": "w31",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e31",
+     "in": {
+      "x": "w31"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 32,
+      "step": 1,
+      "stop": 48
+     },
+     "id": "w32",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e32",
+     "in": {
+      "x": "w32"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 33,
+      "step": 1,
+      "stop": 49
+     },
+     "id": "w33",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e33",
+     "in": {
+      "x": "w33"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 34,
+      "step": 1,
+      "stop": 50
+     },
+     "id": "w34",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e34",
+     "in": {
+      "x": "w34"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 35,
+      "step": 1,
+      "stop": 51
+     },
+     "id": "w35",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e35",
+     "in": {
+      "x": "w35"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 36,
+      "step": 1,
+      "stop": 52
+     },
+     "id": "w36",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e36",
+     "in": {
+      "x": "w36"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 37,
+      "step": 1,
+      "stop": 53
+     },
+     "id": "w37",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e37",
+     "in": {
+      "x": "w37"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 38,
+      "step": 1,
+      "stop": 54
+     },
+     "id": "w38",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e38",
+     "in": {
+      "x": "w38"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 39,
+      "step": 1,
+      "stop": 55
+     },
+     "id": "w39",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e39",
+     "in": {
+      "x": "w39"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 40,
+      "step": 1,
+      "stop": 56
+     },
+     "id": "w40",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "e40",
+     "in": {
+      "x": "w40"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "win",
+     "in": {
+      "x0": "e0",
+      "x1": "e1",
+      "x10": "e10",
+      "x11": "e11",
+      "x12": "e12",
+      "x13": "e13",
+      "x14": "e14",
+      "x15": "e15",
+      "x16": "e16",
+      "x17": "e17",
+      "x18": "e18",
+      "x19": "e19",
+      "x2": "e2",
+      "x20": "e20",
+      "x21": "e21",
+      "x22": "e22",
+      "x23": "e23",
+      "x24": "e24",
+      "x25": "e25",
+      "x26": "e26",
+      "x27": "e27",
+      "x28": "e28",
+      "x29": "e29",
+      "x3": "e3",
+      "x30": "e30",
+      "x31": "e31",
+      "x32": "e32",
+      "x33": "e33",
+      "x34": "e34",
+      "x35": "e35",
+      "x36": "e36",
+      "x37": "e37",
+      "x38": "e38",
+      "x39": "e39",
+      "x4": "e4",
+      "x40": "e40",
+      "x5": "e5",
+      "x6": "e6",
+      "x7": "e7",
+      "x8": "e8",
+      "x9": "e9"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "c1",
+     "in": {
+      "x": "win"
+     },
+     "use": "filt"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "mx",
+     "in": {
+      "x": "c1"
+     },
+     "use": "op:max"
+    },
+    {
+     "id": "c2",
+     "in": {
+      "x": "mx"
+     },
+     "use": "head"
+    }
+   ],
+   "outputs": {
+    "logits": "c2"
+   }
+  }
+ },
+ "entries": {
+  "predict": "predict_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/zero-logits/1",
+  "input_length": 40,
+  "n_classes": 10,
+  "primitive_version": "cellforge-ops/1",
+  "task": "clf"
+ },
+ "params": {
+  "boot_logits": {
+   "sha256": "479249c350f43b4cc1aed37a82ceca4e285e433c54db934bb52017c6804b4cdc",
+   "shape": [
+    10
+   ]
+  },
+  "filt_W1": {
+   "sha256": "ddaa952efbb9637e1f47a0a87300891330c44fc3ea7cfe60d71609a293d965ac",
+   "shape": [
+    10,
+    16
+   ]
+  },
+  "filt_b1": {
+   "sha256": "479249c350f43b4cc1aed37a82ceca4e285e433c54db934bb52017c6804b4cdc",
+   "shape": [
+    10
+   ]
+  },
+  "head_W1": {
+   "sha256": "5294707904e91c7950b86815bb420fb1b21d9a98d9e0211aa9b60fc9f742827e",
+   "shape": [
+    10,
+    10
+   ]
+  },
+  "head_b1": {
+   "sha256": "479249c350f43b4cc1aed37a82ceca4e285e433c54db934bb52017c6804b4cdc",
+   "shape": [
+    10
+   ]
+  }
+ }
+}

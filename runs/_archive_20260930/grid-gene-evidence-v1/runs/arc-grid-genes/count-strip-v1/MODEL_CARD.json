@@ -1,0 +1,42 @@
+{
+  "hash": "341225654fff95dc53c8c6734ece5b7c620c7b46acb096873c3e0a5823b5773d",
+  "stats": {
+    "unique_param_storage": 11,
+    "expanded_param_uses": 22,
+    "nonzero_slots": 10,
+    "constant_slots_in_op_args": 9,
+    "cell_defs": 1,
+    "bundle_defs": 5,
+    "reachable_defs": 6,
+    "expanded_instances": 8,
+    "nesting_depth": 4,
+    "edges": 69,
+    "dispatch_nodes": 1,
+    "param_bytes_float64": 88
+  },
+  "profile": {
+    "profile": "ladder-micro/1",
+    "dispatches": 1,
+    "experts": [
+      "count_expert0",
+      "count_expert1"
+    ]
+  },
+  "gene_contract": {
+    "cluster": "count_strip.gene",
+    "inputs": [
+      "input",
+      "input_height",
+      "input_width"
+    ],
+    "outputs": [
+      "colors",
+      "height",
+      "width"
+    ],
+    "rule": "most-frequent valid color is background; lowest-index tie; count all nonbackground pixels; dominant foreground color lowest-index tie; horizontal strip cap30; empty1x1background"
+  },
+  "builder_sha256": "f0ffac665d767afe42988101623dee65a60b3eb0ae4b484876fec8524d062776",
+  "benchmark_tasks_read": 0,
+  "curriculum_scored": false
+}

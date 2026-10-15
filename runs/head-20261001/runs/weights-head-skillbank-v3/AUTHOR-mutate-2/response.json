@@ -1,0 +1,32 @@
+[
+  {
+    "task_id": "1a07d186",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "prop": [9,0,0,0,0,0,0,0]},
+    "rationale": "No valid revision exists: object_table only recolours existing objects uniformly, whereas the expected output moves isolated pixels to previously empty positions."
+  },
+  {
+    "task_id": "1e81d6f9",
+    "params": {"axis": [0,1,0], "mask": [0,0,0,0,1,0,0,0,0,0], "maxp": [0,0,0,0,0,0,0,1]},
+    "rationale": "No valid revision exists: seq_continue changes only one fixed mask colour, but the demonstrations require changing colour 4, colour 2, and colour 3 respectively."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "prop": [9,0,0,0,0,0,0,0]},
+    "rationale": "Pixel count distinguishes the demonstrated objects: counts 31, 14, 24, 16, and 30 map to colours 7, 3, 2, 3, and 2; blue objects of counts 5 and 6 map to background. This reproduces the supplied pairs, though these examples do not establish generalisation to unseen counts."
+  },
+  {
+    "task_id": "11dc524f",
+    "params": {"axis": [0,9,0], "mask": [0,0,9,0,0,0,0,0,0,0], "maxp": [0,0,0,0,0,0,0,9]},
+    "rationale": "No valid revision exists: the expected output changes cells originally coloured 2, 5, and 7, while seq_continue can change only one mask colour."
+  },
+  {
+    "task_id": "63613498",
+    "params": {"axis": [0,9,0], "mask": [0,0,0,0,0,0,0,0,0,9], "maxp": [0,0,0,0,0,0,0,9]},
+    "rationale": "No valid revision exists: the demonstrations require recolouring 9, 6, and 1 respectively, but seq_continue has one fixed mask colour."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {"dirs": [1,0,1,0,1,0,1,0], "paint": [0,0,0,0,0,0,0,0,0,0], "src": [0,1,1,1,1,1,1,1,0,0], "stop": [1,0,0]},
+    "rationale": "No valid revision exists: ray_cast cannot assign colour 2 specifically to intersections. Source-colour painting produces only source colours; fixed painting would colour every ray identically."
+  }
+]

@@ -1,0 +1,15 @@
+/srv/arc3-claude/venv/bin/python: Error while finding module specification for '__main__' (ValueError: __main__.__spec__ is None)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/cellforge-inbox/two-loop-20261001/server_author_controller.py", line 123, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/srv/cellforge-inbox/two-loop-20261001/server_author_controller.py", line 122, in main
+    else:drive(a.root,a.kind,a.anchor,a.control,a.workspace,a.max_seconds)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/two-loop-20261001/server_author_controller.py", line 107, in drive
+    subprocess.run([os.sys.executable,'-m',__name__,'record',str(root),'--kind',kind,'--anchor',anchor,'--control',str(control),'--raw',str(path)],check=True,timeout=30)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/srv/arc3-claude/venv/bin/python', '-m', '__main__', 'record', '/srv/cellforge-inbox/two-loop-20261001/runs/weights-arc-moe-smallskill-v2', '--kind', 'moe', '--anchor', '99364caef0ae6e8e9283ed435cb4d398bbee80e455a1b3ea8503f2ed9f283f08', '--control', '/srv/cellforge-inbox/two-loop-20261001/control/moe-smallskill-v2.json', '--raw', '/srv/cellforge-inbox/two-loop-20261001/author-moe-v2/moe-1/response.json']' returned non-zero exit status 1.

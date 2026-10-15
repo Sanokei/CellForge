@@ -1,0 +1,52 @@
+{
+  "approval_sha256": "6981cd360a0733eec61b7b1b5da257647c0402e4659d7146926fd2b9be7f4060",
+  "dispatch_enabled": false,
+  "global_lock": [
+    {
+      "command": "python",
+      "path": "/run/cellforge-continuous.lock",
+      "pid": 590352
+    }
+  ],
+  "job": {
+    "ActiveState": "inactive",
+    "ControlGroup": "",
+    "Description": "cellforge-continuous-job.service",
+    "Id": "cellforge-continuous-job.service",
+    "InvocationID": "",
+    "LoadState": "not-found",
+    "MainPID": "0",
+    "SubState": "dead"
+  },
+  "new_service": {
+    "ActiveState": "active",
+    "ControlGroup": "/system.slice/cellforge-continuous-v2.service",
+    "Description": "CellForge reviewed sequential intake v2",
+    "Id": "cellforge-continuous-v2.service",
+    "InvocationID": "7a4d2dc1d92c42eb8b756de1eec85ccd",
+    "LoadState": "loaded",
+    "MainPID": "590352",
+    "SubState": "running"
+  },
+  "new_unit_sha256": "ef1147309efd8df084cc9defbcb7bd1b98516208c758e698c38fbf7958f04b22",
+  "old_STOP_sha256": "6d20f7a21219d86f8b32e2ffc3ddd22ebf8f0a02cd3bf7c3fd1676aacd7b0190",
+  "old_enabled": "enabled",
+  "old_receipts_results_preserved": 9,
+  "old_service": {
+    "ActiveState": "inactive",
+    "ControlGroup": "",
+    "Description": "CellForge bounded sequential public-development research queue",
+    "Id": "cellforge-continuous.service",
+    "InvocationID": "",
+    "LoadState": "loaded",
+    "MainPID": "0",
+    "SubState": "dead"
+  },
+  "old_unit_sha256": "4b8ee12672a1a611f9b823758a81acdd627fa3ccb0cb9b5a6a78176405301748",
+  "phase": "MIGRATED_PAUSED",
+  "protected_stops_preserved": 20,
+  "registry_status": "paused_dispatch_disabled",
+  "seal": "230e3c69490463f73f845c2ab11d40960f4ce4ffe8a52bffbf4ca6175da00052",
+  "utc_completed": "2026-10-11T18:28:24.766266+00:00",
+  "utc_started": "2026-10-11T18:28:19.650323+00:00"
+}

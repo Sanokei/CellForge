@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No valid tensors exist for this template. The transformation depends on distances and rotated offsets, which no available key encodes. Even nearest-colour keys give identical keys to background pixels requiring different outputs. These tensors select the closest relevant key but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes): blue objects disappear, while cyan objects with one, two, or zero enclosed holes become 7, 3, or 2 respectively."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No valid tensors exist for this template. Object recolouring cannot move the interior colours to exterior pixels. Choosing another background also cannot produce the required distinct colours within a single connected zero-colour object. Parameters are retained because no permitted revision solves the task."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No valid tensors exist. Using zero-based coordinates, demonstration 1 pixel (9,4) must become 8, while demonstration 2 pixel (9,7) must remain 0. Their complete 3x3 input neighbourhoods, including the grid boundary, are identical. Consequently every available neighbourhood key collides for every background choice."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No valid tensors exist. In demonstration 3, pixels (1,3) and (7,3), using zero-based coordinates, have identical complete 3x3 input neighbourhoods but require outputs 8 and 9 respectively. Every available key therefore collides regardless of background."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No valid tensors exist under the stated semantics. Enabling all source colours restores their crosses, but intersections cannot become 2: source-colour painting only produces colours present in the input, while fixed painting would make every painted ray cell the same colour. The template needs an intersection-colour rule."
+  }
+]

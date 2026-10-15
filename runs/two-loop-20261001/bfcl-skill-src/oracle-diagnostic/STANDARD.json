@@ -1,0 +1,257 @@
+{
+  "arms": {
+    "llm": {},
+    "random": {}
+  },
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "seeds_declared_before_run": true,
+  "budget_per_arm": 144,
+  "niches": [
+    "bfcl-call2"
+  ],
+  "founders": [
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "author": "llm",
+      "actor": "ORACLE",
+      "rationale": "ORACLE plumbing only",
+      "weights_file": "llm-1701-1-0.json"
+    },
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "author": "llm",
+      "actor": "ORACLE",
+      "rationale": "ORACLE plumbing only",
+      "weights_file": "llm-1702-1-2.json"
+    },
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "author": "llm",
+      "actor": "ORACLE",
+      "rationale": "ORACLE plumbing only",
+      "weights_file": "llm-1703-1-4.json"
+    }
+  ],
+  "genomes": [
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1701-1-0.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "fe5cfdb6c873b4d6d46d757850286d75e60aeb927d2ec62772f322115a234eb7",
+      "niche": "bfcl-call2",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-1-1.json",
+      "accuracy": 0.020833333333333332,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1702-1-2.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "6633be783f607c492a90a95c782002ad7fb8258c3579b2b49bdea06c45548097",
+      "niche": "bfcl-call2",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-1-3.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "origin": "llm_founder",
+      "parents": [],
+      "weights_file": "llm-1703-1-4.json",
+      "accuracy": 1.0,
+      "generation": 1,
+      "arm": "llm"
+    },
+    {
+      "hash": "963d67fcdf332975c694e69d30ea10284b67ef512ba4b93460d7530771bc68bc",
+      "niche": "bfcl-call2",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-1-5.json",
+      "accuracy": 0.0,
+      "generation": 1,
+      "arm": "random"
+    },
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1701-2-0.json",
+      "accuracy": 0.9375,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "5e7f8500c791fed801c4ee40c7ed6228d9b9b829757fbdfa3aae9ff9dbeba27f",
+      "niche": "bfcl-call2",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1701-2-1.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1702-2-2.json",
+      "accuracy": 0.9375,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "34b1afedb97047f3c99834f91d2e22f9411872727978dd94827495450a152db2",
+      "niche": "bfcl-call2",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1702-2-3.json",
+      "accuracy": 0.20833333333333334,
+      "generation": 2,
+      "arm": "random"
+    },
+    {
+      "hash": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "niche": "bfcl-call2",
+      "origin": "llm_mutation",
+      "parents": [],
+      "weights_file": "llm-1703-2-4.json",
+      "accuracy": 0.9375,
+      "generation": 2,
+      "arm": "llm"
+    },
+    {
+      "hash": "4ab0214cf056b213925a0663f602c87b8a6144e58b1bfab22d91695f08adcb74",
+      "niche": "bfcl-call2",
+      "origin": "random_mutation",
+      "parents": [],
+      "weights_file": "random-1703-2-5.json",
+      "accuracy": 0.0,
+      "generation": 2,
+      "arm": "random"
+    }
+  ],
+  "proposals": [
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "fe5cfdb6c873b4d6d46d757850286d75e60aeb927d2ec62772f322115a234eb7",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "6633be783f607c492a90a95c782002ad7fb8258c3579b2b49bdea06c45548097",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "charged": true,
+      "outcome": "accepted"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "963d67fcdf332975c694e69d30ea10284b67ef512ba4b93460d7530771bc68bc",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1701,
+      "hash_or_null": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "charged": true,
+      "outcome": "neutral"
+    },
+    {
+      "arm": "random",
+      "seed": 1701,
+      "hash_or_null": "5e7f8500c791fed801c4ee40c7ed6228d9b9b829757fbdfa3aae9ff9dbeba27f",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1702,
+      "hash_or_null": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "charged": true,
+      "outcome": "neutral"
+    },
+    {
+      "arm": "random",
+      "seed": 1702,
+      "hash_or_null": "34b1afedb97047f3c99834f91d2e22f9411872727978dd94827495450a152db2",
+      "charged": true,
+      "outcome": "rejected"
+    },
+    {
+      "arm": "llm",
+      "seed": 1703,
+      "hash_or_null": "f4fb117212638f99cd44cd3667e757b91a7aaffffef25297c71a04dff58b2d84",
+      "charged": true,
+      "outcome": "neutral"
+    },
+    {
+      "arm": "random",
+      "seed": 1703,
+      "hash_or_null": "4ab0214cf056b213925a0663f602c87b8a6144e58b1bfab22d91695f08adcb74",
+      "charged": true,
+      "outcome": "rejected"
+    }
+  ],
+  "scientific_acceptance": false,
+  "oracle": true,
+  "limitations": [
+    "BFCL-derived generated requests, not an official BFCL score",
+    "No ARC transfer or joint router/crossover result",
+    "24-parameter scalar-call structure"
+  ]
+}

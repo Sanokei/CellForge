@@ -1,0 +1,231 @@
+test_chain_of_tiling_then_association_solves_a_composite_task (tests.test_skill_niches.ChainsAreTheBreedingProduct.test_chain_of_tiling_then_association_solves_a_composite_task) ... ok
+test_tensor_roundtrip_preserves_chains_and_predictions (tests.test_skill_niches.ChainsAreTheBreedingProduct.test_tensor_roundtrip_preserves_chains_and_predictions) ... ok
+test_cache_makes_rescoring_free_and_equal (tests.test_skill_niches.RouterAndScorer.test_cache_makes_rescoring_free_and_equal) ... ok
+test_exact_ties_go_to_the_older_cell (tests.test_skill_niches.RouterAndScorer.test_exact_ties_go_to_the_older_cell) ... ok
+test_router_picks_the_cell_that_reproduces_the_demonstrations (tests.test_skill_niches.RouterAndScorer.test_router_picks_the_cell_that_reproduces_the_demonstrations) ... ok
+test_zero_tensors_solve_nothing (tests.test_skill_niches.RouterAndScorer.test_zero_tensors_solve_nothing) ... ok
+test_contender_prefilter_never_skips_a_cell_that_scoring_would_route_to (tests.test_skill_niches.SpeedPaths.test_contender_prefilter_never_skips_a_cell_that_scoring_would_route_to) ... ok
+test_key_cache_does_not_change_context_table_predictions (tests.test_skill_niches.SpeedPaths.test_key_cache_does_not_change_context_table_predictions) ... ok
+test_persistent_cache_roundtrip_makes_a_restart_warm (tests.test_skill_niches.SpeedPaths.test_persistent_cache_roundtrip_makes_a_restart_warm) ... ok
+test_association_uses_only_other_demonstrations (tests.test_skill_niches.TruthCellsSolveTheirOwnTasks.test_association_uses_only_other_demonstrations)
+Leave-one-out: an unseen mapping cannot be solved by peeking at the pair being scored. ... ok
+test_general_niches_one_cell_solves_every_pattern (tests.test_skill_niches.TruthCellsSolveTheirOwnTasks.test_general_niches_one_cell_solves_every_pattern) ... ok
+test_instance_cell_does_not_solve_other_patterns (tests.test_skill_niches.TruthCellsSolveTheirOwnTasks.test_instance_cell_does_not_solve_other_patterns) ... ok
+test_instance_niches (tests.test_skill_niches.TruthCellsSolveTheirOwnTasks.test_instance_niches) ... ok
+test_random_tensors_do_not_solve (tests.test_skill_niches.TruthCellsSolveTheirOwnTasks.test_random_tensors_do_not_solve) ... ok
+test_a_generation_with_no_valid_llm_candidate_earns_no_credit (tests.test_hard_lane_focus.MetaTests.test_a_generation_with_no_valid_llm_candidate_earns_no_credit) ... ok
+test_a_lane_that_earned_its_credit_may_finish (tests.test_hard_lane_focus.MetaTests.test_a_lane_that_earned_its_credit_may_finish) ... ok
+test_arc_credit_counts_only_changed_hashes_after_baseline (tests.test_hard_lane_focus.MetaTests.test_arc_credit_counts_only_changed_hashes_after_baseline) ... ok
+test_arc_iterations_with_unchanged_weights_are_caught_and_not_credited (tests.test_hard_lane_focus.MetaTests.test_arc_iterations_with_unchanged_weights_are_caught_and_not_credited) ... ok
+test_arc_router_only_iterations_with_zero_ceiling_are_caught (tests.test_hard_lane_focus.MetaTests.test_arc_router_only_iterations_with_zero_ceiling_are_caught)
+The real failure: the pool's best expert solves 0/100, so a router rewrite can never gain. ... ok
+test_breadth_counts_niches_the_registry_holds_even_in_a_seeded_run (tests.test_hard_lane_focus.MetaTests.test_breadth_counts_niches_the_registry_holds_even_in_a_seeded_run) ... ok
+test_breeding_without_arc_gain_is_the_bloat_pattern_and_is_caught (tests.test_hard_lane_focus.MetaTests.test_breeding_without_arc_gain_is_the_bloat_pattern_and_is_caught) ... ok
+test_closed_lane_grace_tolerates_only_the_declared_in_flight_generations (tests.test_hard_lane_focus.MetaTests.test_closed_lane_grace_tolerates_only_the_declared_in_flight_generations) ... ok
+test_closed_lane_must_stay_closed (tests.test_hard_lane_focus.MetaTests.test_closed_lane_must_stay_closed) ... ok
+test_forgiven_through_excuses_history_but_not_what_happens_later (tests.test_hard_lane_focus.MetaTests.test_forgiven_through_excuses_history_but_not_what_happens_later) ... ok
+test_generations_before_directive_are_not_policed_but_earn_nothing (tests.test_hard_lane_focus.MetaTests.test_generations_before_directive_are_not_policed_but_earn_nothing) ... ok
+test_honest_run_passes_every_check (tests.test_hard_lane_focus.MetaTests.test_honest_run_passes_every_check) ... ok
+test_manifest_requires_arc_reasoning_and_tool_use_as_hard_lanes (tests.test_hard_lane_focus.MetaTests.test_manifest_requires_arc_reasoning_and_tool_use_as_hard_lanes) ... ok
+test_missing_required_lane_and_stale_snapshot_are_caught (tests.test_hard_lane_focus.MetaTests.test_missing_required_lane_and_stale_snapshot_are_caught) ... ok
+test_neutral_regex_separates_real_neutral_rewrites_from_real_honest_rationales (tests.test_hard_lane_focus.MetaTests.test_neutral_regex_separates_real_neutral_rewrites_from_real_honest_rationales) ... ok
+test_neutral_rewrite_is_caught_and_not_credited (tests.test_hard_lane_focus.MetaTests.test_neutral_rewrite_is_caught_and_not_credited) ... ok
+test_opening_an_unregistered_lane_is_caught (tests.test_hard_lane_focus.MetaTests.test_opening_an_unregistered_lane_is_caught) ... ok
+test_optional_small_lane_is_policed_for_honesty_but_not_required (tests.test_hard_lane_focus.MetaTests.test_optional_small_lane_is_policed_for_honesty_but_not_required) ... ok
+test_parent_already_saturated_is_caught_even_in_first_generation (tests.test_hard_lane_focus.MetaTests.test_parent_already_saturated_is_caught_even_in_first_generation) ... ok
+test_plateau_needs_a_declared_strategy_change (tests.test_hard_lane_focus.MetaTests.test_plateau_needs_a_declared_strategy_change) ... ok
+test_quiet_dead_driver_is_caught_but_a_live_or_recent_one_is_not (tests.test_hard_lane_focus.MetaTests.test_quiet_dead_driver_is_caught_but_a_live_or_recent_one_is_not) ... ok
+test_repeating_one_niche_does_not_count_as_breadth (tests.test_hard_lane_focus.MetaTests.test_repeating_one_niche_does_not_count_as_breadth) ... ok
+test_report_split_must_beat_its_baseline (tests.test_hard_lane_focus.MetaTests.test_report_split_must_beat_its_baseline) ... ok
+test_resubmitted_candidate_is_caught (tests.test_hard_lane_focus.MetaTests.test_resubmitted_candidate_is_caught) ... ok
+test_saturated_lane_rerun_is_caught_and_not_credited (tests.test_hard_lane_focus.MetaTests.test_saturated_lane_rerun_is_caught_and_not_credited) ... ok
+test_skill_lane_with_too_few_distinct_niches_is_caught (tests.test_hard_lane_focus.MetaTests.test_skill_lane_with_too_few_distinct_niches_is_caught) ... ok
+test_slow_progress_is_fine_failing_forever_is_not_stopping (tests.test_hard_lane_focus.MetaTests.test_slow_progress_is_fine_failing_forever_is_not_stopping)
+Ten generations with no gain at all still earn credit: the owner wants persistence, not a promise of success. ... ok
+test_stall_by_status_stop_file_waiting_or_dead_process_is_caught (tests.test_hard_lane_focus.MetaTests.test_stall_by_status_stop_file_waiting_or_dead_process_is_caught) ... ok
+test_trivial_dev_set_is_caught (tests.test_hard_lane_focus.MetaTests.test_trivial_dev_set_is_caught) ... ok
+test_unequal_or_zero_charges_are_caught (tests.test_hard_lane_focus.MetaTests.test_unequal_or_zero_charges_are_caught) ... ok
+test_unreadable_lane_fails_instead_of_hiding (tests.test_hard_lane_focus.MetaTests.test_unreadable_lane_fails_instead_of_hiding) ... ok
+test_unregistered_candidate_field_names_are_read (tests.test_hard_lane_focus.MetaTests.test_unregistered_candidate_field_names_are_read) ... /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:235: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpeihe9525/runs/weights-y/GENERATION-1.json' mode='w' encoding='UTF-8'>
+  json.dump({"decisions": decisions}, open(os.path.join(run, "GENERATION-1.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_real_arc_edits_can_gain (tests.test_hard_lane_focus.RealRuns.test_real_arc_edits_can_gain) ... ok
+test_real_arc_weights_move (tests.test_hard_lane_focus.RealRuns.test_real_arc_weights_move) ... ok
+test_real_breeding_must_help_arc (tests.test_hard_lane_focus.RealRuns.test_real_breeding_must_help_arc) ... ok
+test_real_candidates_never_resubmitted (tests.test_hard_lane_focus.RealRuns.test_real_candidates_never_resubmitted) ... ok
+test_real_closed_lanes_stay_closed (tests.test_hard_lane_focus.RealRuns.test_real_closed_lanes_stay_closed) ... ok
+test_real_driver_alive_or_finished (tests.test_hard_lane_focus.RealRuns.test_real_driver_alive_or_finished) ... ok
+test_real_equal_nonzero_charges (tests.test_hard_lane_focus.RealRuns.test_real_equal_nonzero_charges) ... ok
+test_real_hard_lane_dev_set_not_trivial (tests.test_hard_lane_focus.RealRuns.test_real_hard_lane_dev_set_not_trivial) ... ok
+test_real_hard_lanes_earn_credit (tests.test_hard_lane_focus.RealRuns.test_real_hard_lanes_earn_credit) ... ok
+test_real_hard_lanes_not_stalled (tests.test_hard_lane_focus.RealRuns.test_real_hard_lanes_not_stalled) ... ok
+test_real_lanes_exist (tests.test_hard_lane_focus.RealRuns.test_real_lanes_exist) ... ok
+test_real_niche_breadth (tests.test_hard_lane_focus.RealRuns.test_real_niche_breadth) ... ok
+test_real_no_generation_without_headroom (tests.test_hard_lane_focus.RealRuns.test_real_no_generation_without_headroom) ... ok
+test_real_no_neutral_authoring (tests.test_hard_lane_focus.RealRuns.test_real_no_neutral_authoring) ... ok
+test_real_no_plateau (tests.test_hard_lane_focus.RealRuns.test_real_no_plateau) ... ok
+test_real_no_unregistered_lanes (tests.test_hard_lane_focus.RealRuns.test_real_no_unregistered_lanes) ... ok
+test_real_report_split_progress (tests.test_hard_lane_focus.RealRuns.test_real_report_split_progress) ... ok
+test_real_snapshot_complete (tests.test_hard_lane_focus.RealRuns.test_real_snapshot_complete) ... ok
+test_real_snapshot_fresh (tests.test_hard_lane_focus.RealRuns.test_real_snapshot_fresh) ... ok
+test_arc_lane_is_reduced_and_missing_lane_reported (tests.test_hard_lane_focus.ReducerContract.test_arc_lane_is_reduced_and_missing_lane_reported) ... /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:394: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpa2vcez9b/runs/weights-a/ARC_HISTORY.json' mode='w' encoding='UTF-8'>
+  json.dump([{"iteration": 0, "solved": 0, "weights_hash": "h"}], open(os.path.join(run, "ARC_HISTORY.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:395: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpa2vcez9b/runs/weights-a/ARC_SCORE.json' mode='w' encoding='UTF-8'>
+  json.dump({"claimed": {"solved": 0, "total": 100}, "controls": {}}, open(os.path.join(run, "ARC_SCORE.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:396: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpa2vcez9b/runs/weights-a/SERVICE_STATUS.json' mode='w' encoding='UTF-8'>
+  json.dump({"status": "x"}, open(os.path.join(run, "SERVICE_STATUS.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:397: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpa2vcez9b/runs/weights-a/STATE-2.json' mode='w' encoding='UTF-8'>
+  json.dump({"pool": {"cells": {"a": {}, "b": {}}}, "contexts": [{"arms": {"llm": {"oracle_solved_diagnostic_only": 0}},
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_driver_history_is_reduced_with_a_per_lane_base (tests.test_hard_lane_focus.ReducerContract.test_driver_history_is_reduced_with_a_per_lane_base) ... /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:384: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmphwy7ilbh/runs/weights-skills/HISTORY.jsonl' mode='w' encoding='UTF-8'>
+  open(os.path.join(run, "HISTORY.jsonl"), "w").write("\n".join(json.dumps(r) for r in rows) + "\n")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:385: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmphwy7ilbh/runs/weights-skills/STATUS.json' mode='w' encoding='UTF-8'>
+  json.dump({"state": "running", "utc": "2026-10-01T00:00:00+00:00"}, open(os.path.join(run, "STATUS.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/scripts/lane_snapshot.py:121: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmphwy7ilbh/runs/weights-skills/HISTORY.jsonl' mode='r' encoding='utf-8'>
+  for line in open(path, encoding="utf-8"):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_generation_lane_is_reduced_from_server_formats (tests.test_hard_lane_focus.ReducerContract.test_generation_lane_is_reduced_from_server_formats) ... /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:353: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxgkf1tmr/runs/weights-x/GENERATION-1.json' mode='w' encoding='UTF-8'>
+  json.dump({"state": {}, "decisions": decisions}, open(os.path.join(run, "GENERATION-1.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:354: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxgkf1tmr/runs/weights-x/CHARGES-1.jsonl' mode='w' encoding='UTF-8'>
+  open(os.path.join(run, "CHARGES-1.jsonl"), "w").write("\n".join(json.dumps({"arm": a, "positions": 5}) for a in ("llm", "random")))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:355: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxgkf1tmr/runs/weights-x/AUTHOR-1/response.json' mode='w' encoding='UTF-8'>
+  json.dump([{"seed": 1, "niche": "n", "rationale": "fix dev-3", "charged_positions": 5}], open(os.path.join(run, "AUTHOR-1", "response.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:356: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxgkf1tmr/runs/weights-x/STATUS.json' mode='w' encoding='UTF-8'>
+  json.dump({"status": "authoring", "pid": 1, "generation": 1}, open(os.path.join(run, "STATUS.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:357: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxgkf1tmr/runs/weights-x/STOP' mode='w' encoding='UTF-8'>
+  open(os.path.join(run, "STOP"), "w").write("pause")
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/scripts/lane_snapshot.py:151: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxgkf1tmr/runs/weights-x/STOP' mode='r' encoding='utf-8'>
+  stop = open(candidate, encoding="utf-8", errors="replace").read(400)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/scripts/lane_snapshot.py:57: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxgkf1tmr/runs/weights-x/CHARGES-1.jsonl' mode='r' encoding='utf-8'>
+  for line in open(path, encoding="utf-8"):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_odd_charge_rows_and_opaque_lanes_do_not_break_the_snapshot (tests.test_hard_lane_focus.ReducerContract.test_odd_charge_rows_and_opaque_lanes_do_not_break_the_snapshot) ... /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:370: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp67tlhmzf/runs/weights-odd/GENERATION-1.json' mode='w' encoding='UTF-8'>
+  json.dump({"decisions": []}, open(os.path.join(run, "GENERATION-1.json"), "w"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_hard_lane_focus.py:371: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp67tlhmzf/runs/weights-odd/CHARGES-1.jsonl' mode='w' encoding='UTF-8'>
+  open(os.path.join(run, "CHARGES-1.jsonl"), "w").write(json.dumps({"context": 401, "positions": 3}) + chr(10))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/scripts/lane_snapshot.py:57: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp67tlhmzf/runs/weights-odd/CHARGES-1.jsonl' mode='r' encoding='utf-8'>
+  for line in open(path, encoding="utf-8"):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed) ... FAIL
+test_founders_are_llm_written_literal_weights (tests.test_one_standard.ContractOfEveryWeightsRun.test_founders_are_llm_written_literal_weights) ... ok
+test_genomes_are_weights_with_valid_lineage (tests.test_one_standard.ContractOfEveryWeightsRun.test_genomes_are_weights_with_valid_lineage) ... ok
+test_llm_arm_and_random_control_present (tests.test_one_standard.ContractOfEveryWeightsRun.test_llm_arm_and_random_control_present) ... ok
+test_mutation_origin_matches_arm (tests.test_one_standard.ContractOfEveryWeightsRun.test_mutation_origin_matches_arm) ... ok
+test_required_fields (tests.test_one_standard.ContractOfEveryWeightsRun.test_required_fields) ... ok
+test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough) ... FAIL
+test_accuracy_improves_over_generations (tests.test_one_standard.Milestone.test_accuracy_improves_over_generations) ... ok
+test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone.test_crossover_children_exist_and_are_new) ... ok
+test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone.test_enough_niches_and_llm_founders) ... ok
+test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone.test_llm_mutation_beats_random_control) ... ok
+test_many_distinct_weight_genomes (tests.test_one_standard.Milestone.test_many_distinct_weight_genomes) ... ok
+test_agents_md_exists_and_points_to_standard (tests.test_one_standard.RepoGuards.test_agents_md_exists_and_points_to_standard) ... /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/AGENTS.md' mode='r' encoding='utf-8'>
+  t = open(p, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards.test_no_new_gene_list_runs_after_cutoff)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*. ... FAIL
+test_standard_doc_exists (tests.test_one_standard.RepoGuards.test_standard_doc_exists) ... ok
+test_clean_run_llm_beats_random_recomputed (tests.test_standard_semantic.MetaTests.test_clean_run_llm_beats_random_recomputed) ... ok
+test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests.test_clean_run_passes_every_check) ... ok
+test_each_cheat_is_caught_by_its_check (tests.test_standard_semantic.MetaTests.test_each_cheat_is_caught_by_its_check) ... ok
+test_random_arm_cannot_win_by_inflated_claims (tests.test_standard_semantic.MetaTests.test_random_arm_cannot_win_by_inflated_claims)
+If random claims higher accuracy than its recomputed accuracy, the recompute check must flag it. ... ok
+test_unequal_budget_cheat_is_caught (tests.test_standard_semantic.MetaTests.test_unequal_budget_cheat_is_caught) ... ok
+test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns.test_every_semantic_check_passes_on_every_real_run) ... ERROR
+test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns.test_recomputed_llm_beats_random_on_a_real_run) ... ERROR
+test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns.test_router_exists_matters_and_was_llm_mutated_on_a_real_run) ... ERROR
+test_missing_router_weights_is_caught (tests.test_standard_semantic.RouterMeta.test_missing_router_weights_is_caught) ... ok
+test_useful_router_passes_and_useless_router_is_caught (tests.test_standard_semantic.RouterMeta.test_useful_router_passes_and_useless_router_is_caught) ... ok
+
+======================================================================
+ERROR: test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns.test_every_semantic_check_passes_on_every_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_standard_semantic.py", line 305, in test_every_semantic_check_passes_on_every_real_run
+    self.assertEqual(chk(run), [], "%s on %s" % (chk.__name__, run))
+                     ^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 97, in check_accuracy_recomputed
+    ev = evaluator(s)
+         ^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+                                   ~^^^^^^^^^^^^^
+KeyError: 'evaluator'
+
+======================================================================
+ERROR: test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns.test_recomputed_llm_beats_random_on_a_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_standard_semantic.py", line 315, in test_recomputed_llm_beats_random_on_a_real_run
+    ok.append(C.check_llm_vs_random_recomputed(run) == [])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 281, in check_llm_vs_random_recomputed
+    ev = evaluator(s)
+         ^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+                                   ~^^^^^^^^^^^^^
+KeyError: 'evaluator'
+
+======================================================================
+ERROR: test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns.test_router_exists_matters_and_was_llm_mutated_on_a_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_standard_semantic.py", line 309, in test_router_exists_matters_and_was_llm_mutated_on_a_real_run
+    self.assertEqual(C.check_router_present_and_matters(run), [], run)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 304, in check_router_present_and_matters
+    ev = evaluator(s)
+         ^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+                                   ~^^^^^^^^^^^^^
+KeyError: 'evaluator'
+
+======================================================================
+FAIL: test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py", line 117, in test_equal_charged_budget_every_arm_and_seed
+    self.assertEqual(n, s["budget_per_arm"], "%s arm=%s seed=%s charged %d" % (p, arm, seed, n))
+AssertionError: 0 != 1 : /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-arc3-shared-probe-20261002/STANDARD.json arm=random seed=0 charged 0
+
+======================================================================
+FAIL: test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py", line 110, in test_seeds_predeclared_and_enough
+    self.assertGreaterEqual(len(set(s["seeds"])), MIN_SEEDS, p)
+AssertionError: 1 not greater than or equal to 3 : /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-arc3-shared-probe-20261002/STANDARD.json
+
+======================================================================
+FAIL: test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards.test_no_new_gene_list_runs_after_cutoff)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py", line 90, in test_no_new_gene_list_runs_after_cutoff
+    self.assertFalse(offenders, "new gene-list runs after the standard (rename to baseline-* or redo as weights-*): %s" % offenders)
+AssertionError: ['nine-slot-population-v2', 'grid-scaling-independent16-v1', 'grid-object-age8-772061', 'nine-slot-replication-773611', 'grid-population-pilot-v2', 'grid-population-matched-v1', 'grid-expanded-replication-772231', 'grid-object-replication-772041', 'nine-slot-replication-773631', 'grid-object-age8-772051', 'marker-population-matched-v1', 'grid-expanded-population-v1', 'marker-mirror-recombination-v1', 'repaired-gene-recombination-v1', 'grid-object-age8-772041', 'nine-slot-population-cache-v1', 'grid-scaling-population-matched-v1', 'grid-expanded-replication-772221', 'nine-slot-replication-773621', 'grid-object-replication-772051', 'grid-object-population-matched-v1', 'grid-expanded-replication-772211', 'grid-object-replication-772061'] is not false : new gene-list runs after the standard (rename to baseline-* or redo as weights-*): ['nine-slot-population-v2', 'grid-scaling-independent16-v1', 'grid-object-age8-772061', 'nine-slot-replication-773611', 'grid-population-pilot-v2', 'grid-population-matched-v1', 'grid-expanded-replication-772231', 'grid-object-replication-772041', 'nine-slot-replication-773631', 'grid-object-age8-772051', 'marker-population-matched-v1', 'grid-expanded-population-v1', 'marker-mirror-recombination-v1', 'repaired-gene-recombination-v1', 'grid-object-age8-772041', 'nine-slot-population-cache-v1', 'grid-scaling-population-matched-v1', 'grid-expanded-replication-772221', 'nine-slot-replication-773621', 'grid-object-replication-772051', 'grid-object-population-matched-v1', 'grid-expanded-replication-772211', 'grid-object-replication-772061']
+
+----------------------------------------------------------------------
+Ran 94 tests in 9.715s
+
+FAILED (failures=3, errors=3)

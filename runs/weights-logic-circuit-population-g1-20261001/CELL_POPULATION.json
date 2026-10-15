@@ -1,0 +1,449 @@
+{
+  "cells": {
+    "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b": {
+      "id": "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+      "structure": "threshold-cmp2",
+      "params": {
+        "layer0.W": [
+          [
+            1,
+            2,
+            -1,
+            -2
+          ],
+          [
+            1,
+            2,
+            -1,
+            -2
+          ],
+          [
+            -1,
+            -2,
+            1,
+            2
+          ],
+          [
+            -1,
+            -2,
+            1,
+            2
+          ]
+        ],
+        "layer0.b": [
+          -0.5,
+          0.5,
+          0.5,
+          -0.5
+        ],
+        "layer1.W": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "layer1.b": [
+          0,
+          -1.5,
+          0
+        ]
+      },
+      "parents": [],
+      "provenance": {
+        "source": "cells.json",
+        "model_metadata": "llm (Claude Sonnet 5.5), written by hand as literal tensors, 2026-09-30",
+        "ordered_ports": {
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "outputs": [
+            "gt",
+            "eq",
+            "lt"
+          ]
+        }
+      },
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "source": "exhaustive-primitive-logic-contract",
+          "manifest": "e6fa37e993681ecdbc882790312218706a5f6f7fc4e107fe6acb404164f650f9",
+          "outcomes": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": true,
+            "9": true,
+            "10": true,
+            "11": true,
+            "12": true,
+            "13": true,
+            "14": true,
+            "15": true
+          },
+          "false_positive_given_consistency": 0
+        },
+        "archive": {
+          "partition": "development",
+          "source": "exhaustive-primitive-logic-contract",
+          "manifest": "e6fa37e993681ecdbc882790312218706a5f6f7fc4e107fe6acb404164f650f9",
+          "outcomes": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": true,
+            "9": true,
+            "10": true,
+            "11": true,
+            "12": true,
+            "13": true,
+            "14": true,
+            "15": true
+          },
+          "false_positive_given_consistency": 0
+        },
+        "anchor": {
+          "partition": "development",
+          "source": "exhaustive-primitive-logic-contract",
+          "manifest": "e6fa37e993681ecdbc882790312218706a5f6f7fc4e107fe6acb404164f650f9",
+          "outcomes": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": true,
+            "9": true,
+            "10": true,
+            "11": true,
+            "12": true,
+            "13": true,
+            "14": true,
+            "15": true
+          },
+          "false_positive_given_consistency": 0
+        }
+      },
+      "state": "live"
+    },
+    "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733": {
+      "id": "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733",
+      "structure": "threshold-mux",
+      "params": {
+        "layer0.W": [
+          [
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "layer0.b": [
+          -0.5,
+          -1.5
+        ],
+        "layer1.W": [
+          [
+            1,
+            1
+          ]
+        ],
+        "layer1.b": [
+          0
+        ]
+      },
+      "parents": [],
+      "provenance": {
+        "source": "cells.json",
+        "model_metadata": "llm (Claude Sonnet 5.5), written by hand as literal tensors, 2026-09-30",
+        "ordered_ports": {
+          "inputs": [
+            "s",
+            "a",
+            "b"
+          ],
+          "outputs": [
+            "y"
+          ]
+        }
+      },
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "source": "exhaustive-primitive-logic-contract",
+          "manifest": "e71fc488eba6553cdb5ec05418a354e06d9b993a829006092508ec479846289c",
+          "outcomes": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true
+          },
+          "false_positive_given_consistency": 0
+        },
+        "archive": {
+          "partition": "development",
+          "source": "exhaustive-primitive-logic-contract",
+          "manifest": "e71fc488eba6553cdb5ec05418a354e06d9b993a829006092508ec479846289c",
+          "outcomes": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true
+          },
+          "false_positive_given_consistency": 0
+        },
+        "anchor": {
+          "partition": "development",
+          "source": "exhaustive-primitive-logic-contract",
+          "manifest": "e71fc488eba6553cdb5ec05418a354e06d9b993a829006092508ec479846289c",
+          "outcomes": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true
+          },
+          "false_positive_given_consistency": 0
+        }
+      },
+      "state": "live"
+    }
+  },
+  "live": {
+    "threshold-cmp2": [
+      "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b"
+    ],
+    "threshold-mux": [
+      "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+    ]
+  },
+  "events": [
+    {
+      "event": "seed",
+      "cell": "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+      "family": "threshold-cmp2"
+    },
+    {
+      "event": "seed",
+      "cell": "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733",
+      "family": "threshold-mux"
+    }
+  ],
+  "charges": [],
+  "histories": {
+    "threshold-cmp2": [
+      {
+        "graph_hash": "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+        "family": "threshold-cmp2",
+        "structure_hash": "8fb0017c60e6e5579269e19c73a6152f85e199ae79cc849c703b4054229e572b",
+        "provenance": {
+          "source": "cells.json",
+          "model_metadata": "llm (Claude Sonnet 5.5), written by hand as literal tensors, 2026-09-30",
+          "ordered_ports": {
+            "inputs": [
+              "a0",
+              "a1",
+              "b0",
+              "b1"
+            ],
+            "outputs": [
+              "gt",
+              "eq",
+              "lt"
+            ]
+          }
+        },
+        "scores": {
+          "fresh": {
+            "partition": "development",
+            "source": "exhaustive-primitive-logic-contract",
+            "manifest": "e6fa37e993681ecdbc882790312218706a5f6f7fc4e107fe6acb404164f650f9",
+            "outcomes": {
+              "0": true,
+              "1": true,
+              "2": true,
+              "3": true,
+              "4": true,
+              "5": true,
+              "6": true,
+              "7": true,
+              "8": true,
+              "9": true,
+              "10": true,
+              "11": true,
+              "12": true,
+              "13": true,
+              "14": true,
+              "15": true
+            },
+            "false_positive_given_consistency": 0
+          },
+          "archive": {
+            "partition": "development",
+            "source": "exhaustive-primitive-logic-contract",
+            "manifest": "e6fa37e993681ecdbc882790312218706a5f6f7fc4e107fe6acb404164f650f9",
+            "outcomes": {
+              "0": true,
+              "1": true,
+              "2": true,
+              "3": true,
+              "4": true,
+              "5": true,
+              "6": true,
+              "7": true,
+              "8": true,
+              "9": true,
+              "10": true,
+              "11": true,
+              "12": true,
+              "13": true,
+              "14": true,
+              "15": true
+            },
+            "false_positive_given_consistency": 0
+          },
+          "anchor": {
+            "partition": "development",
+            "source": "exhaustive-primitive-logic-contract",
+            "manifest": "e6fa37e993681ecdbc882790312218706a5f6f7fc4e107fe6acb404164f650f9",
+            "outcomes": {
+              "0": true,
+              "1": true,
+              "2": true,
+              "3": true,
+              "4": true,
+              "5": true,
+              "6": true,
+              "7": true,
+              "8": true,
+              "9": true,
+              "10": true,
+              "11": true,
+              "12": true,
+              "13": true,
+              "14": true,
+              "15": true
+            },
+            "false_positive_given_consistency": 0
+          }
+        }
+      }
+    ],
+    "threshold-mux": [
+      {
+        "graph_hash": "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733",
+        "family": "threshold-mux",
+        "structure_hash": "6cc24eb0b403b05b2f8c0af93102307852b6fc1789604823725a0c80ed9c4433",
+        "provenance": {
+          "source": "cells.json",
+          "model_metadata": "llm (Claude Sonnet 5.5), written by hand as literal tensors, 2026-09-30",
+          "ordered_ports": {
+            "inputs": [
+              "s",
+              "a",
+              "b"
+            ],
+            "outputs": [
+              "y"
+            ]
+          }
+        },
+        "scores": {
+          "fresh": {
+            "partition": "development",
+            "source": "exhaustive-primitive-logic-contract",
+            "manifest": "e71fc488eba6553cdb5ec05418a354e06d9b993a829006092508ec479846289c",
+            "outcomes": {
+              "0": true,
+              "1": true,
+              "2": true,
+              "3": true,
+              "4": true,
+              "5": true,
+              "6": true,
+              "7": true
+            },
+            "false_positive_given_consistency": 0
+          },
+          "archive": {
+            "partition": "development",
+            "source": "exhaustive-primitive-logic-contract",
+            "manifest": "e71fc488eba6553cdb5ec05418a354e06d9b993a829006092508ec479846289c",
+            "outcomes": {
+              "0": true,
+              "1": true,
+              "2": true,
+              "3": true,
+              "4": true,
+              "5": true,
+              "6": true,
+              "7": true
+            },
+            "false_positive_given_consistency": 0
+          },
+          "anchor": {
+            "partition": "development",
+            "source": "exhaustive-primitive-logic-contract",
+            "manifest": "e71fc488eba6553cdb5ec05418a354e06d9b993a829006092508ec479846289c",
+            "outcomes": {
+              "0": true,
+              "1": true,
+              "2": true,
+              "3": true,
+              "4": true,
+              "5": true,
+              "6": true,
+              "7": true
+            },
+            "false_positive_given_consistency": 0
+          }
+        }
+      }
+    ]
+  }
+}

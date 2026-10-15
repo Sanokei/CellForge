@@ -1,0 +1,186 @@
+{
+  "protocol": "grid-dense-curriculum/1",
+  "models": [
+    {
+      "family": "associative8",
+      "mode": "demo-selector",
+      "path": "associative8-demo-selector",
+      "hash": "e8be911cd846d3893d4429f27e7a7a447bb497004c57c07d0ec6695e36f79078",
+      "stats": {
+        "unique_param_storage": 139,
+        "expanded_param_uses": 2352,
+        "nonzero_slots": 47,
+        "constant_slots_in_op_args": 26,
+        "cell_defs": 1,
+        "bundle_defs": 28,
+        "reachable_defs": 29,
+        "expanded_instances": 91,
+        "nesting_depth": 4,
+        "edges": 632,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1112
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7"
+        ]
+      },
+      "state_dim": 808,
+      "name": "associative8/demo-selector"
+    },
+    {
+      "family": "associative8",
+      "mode": "constant-selector",
+      "path": "associative8-constant-selector",
+      "hash": "88f83f22b6afa43741b7063386ef6608004b80a1ab977cc20b059f254415edb7",
+      "stats": {
+        "unique_param_storage": 139,
+        "expanded_param_uses": 2352,
+        "nonzero_slots": 47,
+        "constant_slots_in_op_args": 28,
+        "cell_defs": 1,
+        "bundle_defs": 28,
+        "reachable_defs": 29,
+        "expanded_instances": 91,
+        "nesting_depth": 4,
+        "edges": 636,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1112
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7"
+        ]
+      },
+      "state_dim": 808,
+      "name": "associative8/constant-selector"
+    },
+    {
+      "family": "associative9-bbox",
+      "mode": "demo-selector",
+      "path": "associative9-bbox-demo-selector",
+      "hash": "72f3008d492d72f65fe34054f7b55afeb4c8a86fb08c0bbc76746f2b2b250a4b",
+      "stats": {
+        "unique_param_storage": 151,
+        "expanded_param_uses": 2772,
+        "nonzero_slots": 57,
+        "constant_slots_in_op_args": 40,
+        "cell_defs": 2,
+        "bundle_defs": 31,
+        "reachable_defs": 33,
+        "expanded_instances": 108,
+        "nesting_depth": 4,
+        "edges": 787,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1208
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8"
+        ]
+      },
+      "state_dim": 909,
+      "name": "associative9-bbox/demo-selector"
+    },
+    {
+      "family": "associative9-bbox",
+      "mode": "constant-selector",
+      "path": "associative9-bbox-constant-selector",
+      "hash": "5006e7ee04ff2c7b3a8ec1e190c5a3587197e284cd6db4d58e08a486369e6ade",
+      "stats": {
+        "unique_param_storage": 151,
+        "expanded_param_uses": 2772,
+        "nonzero_slots": 57,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 2,
+        "bundle_defs": 31,
+        "reachable_defs": 33,
+        "expanded_instances": 108,
+        "nesting_depth": 4,
+        "edges": 791,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1208
+      },
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8"
+        ]
+      },
+      "state_dim": 909,
+      "name": "associative9-bbox/constant-selector"
+    }
+  ],
+  "inventory_sha256": "d73d5970c6842d483669024f2123f70d129d8482588c74e8b3618632aa783403",
+  "source_hashes": {
+    "/srv/cellforge-inbox/grid-curriculum-baseline-v1/scripts/measure_grid_curriculum.py": "c181318c35c07c742f536d3ecd746168137b877e0450fd9ee0359cd1b5bf63ef",
+    "/srv/cellforge-inbox/grid-curriculum-baseline-v1/src/cellforge/reference/grid_curriculum.py": "9e0a03bf5e40a0172b5aa6caf22eb4f512db255d12c721fd95faff6bcf512c86"
+  },
+  "families": [
+    "identity",
+    "color_permutation",
+    "reflect_horizontal",
+    "reflect_vertical",
+    "transpose",
+    "bbox_crop_bg0",
+    "tiling2x",
+    "local_fill"
+  ],
+  "synthetic_counts": {
+    "selection": 200,
+    "validation": 100
+  },
+  "generator_seed_manifest_sha256": "91571771b8083504741c825815fde185b4a0171397cee3b8bfe90f259ca60897",
+  "native_tasks": 200,
+  "native_manifest_sha256": "4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+  "native_family_annotation_sha256": "ab3ce69050575cf693da7d1619e99114287881f1909822af6840aa517523edf5",
+  "native_annotation": "exact defined-generator membership on all TRAIN pairs only; overlapping families allowed, unclassified retained",
+  "synthetic_exposure": "original synthetic development selection/validation, disjoint seeds and exact I/O fingerprints; not sealed competition/final data",
+  "model_access": "only train demonstrations and query input; no family/target access",
+  "selector_scope": "authored reconstruction selector vs constant router, not learned amortized selector",
+  "audit_evaluations": 0,
+  "final_evaluations": 0,
+  "gradient_steps": 0,
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  }
+}

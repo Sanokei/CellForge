@@ -1,0 +1,146 @@
+[
+  {
+    "seed": 501,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_hash": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+      "pool_hash": "4f2e5c48d12f759ba437f8aae2b7b6afe98906580782704e710f3616708f3ce1",
+      "prompt_hash": "8de3cd693ff9a7b52ee56ffc2d16e7d1d1491121d69ebaddedae25064de85c42",
+      "cell_ids": [
+        "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+        "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea"
+      ],
+      "cells": [
+        {
+          "id": "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+          "structure": "bbox_mask",
+          "params": {
+            "pick": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "fill": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+          }
+        },
+        {
+          "id": "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea",
+          "structure": "colormap",
+          "params": {
+            "map.W": [
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+            ]
+          }
+        }
+      ],
+      "router": {
+        "route.W": [[0.75, -0.35], [-0.45, 0.85]],
+        "route.b": [0.05, -0.05]
+      },
+      "charged_positions": 6,
+      "rationale": "Copy both earned live cells with unchanged source tensors. Propose a new literal router with opposing weights and a small bbox bias. Both cells passed their 12 primitive demonstrations; supplied aggregate development results solved 0/100 and provide no evidence favoring this router. Unevaluated; no improvement claimed. Oracle diagnostics are not routing inputs."
+    }
+  },
+  {
+    "seed": 502,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_hash": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+      "pool_hash": "4f2e5c48d12f759ba437f8aae2b7b6afe98906580782704e710f3616708f3ce1",
+      "prompt_hash": "8de3cd693ff9a7b52ee56ffc2d16e7d1d1491121d69ebaddedae25064de85c42",
+      "cell_ids": [
+        "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+        "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea"
+      ],
+      "cells": [
+        {
+          "id": "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+          "structure": "bbox_mask",
+          "params": {
+            "pick": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "fill": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+          }
+        },
+        {
+          "id": "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea",
+          "structure": "colormap",
+          "params": {
+            "map.W": [
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+            ]
+          }
+        }
+      ],
+      "router": {
+        "route.W": [[0.55, -0.25], [-0.65, 0.95]],
+        "route.b": [-0.08, 0.08]
+      },
+      "charged_positions": 6,
+      "rationale": "Copy both earned live cells with unchanged source tensors. Propose a distinct literal router with opposing weights and a small colormap bias. Primitive demonstrations establish eligibility, while the supplied 0/100 aggregate development result does not identify preferred routing values. Unevaluated; no improvement claimed. Oracle diagnostics are not routing inputs."
+    }
+  },
+  {
+    "seed": 503,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_hash": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+      "pool_hash": "4f2e5c48d12f759ba437f8aae2b7b6afe98906580782704e710f3616708f3ce1",
+      "prompt_hash": "8de3cd693ff9a7b52ee56ffc2d16e7d1d1491121d69ebaddedae25064de85c42",
+      "cell_ids": [
+        "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+        "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea"
+      ],
+      "cells": [
+        {
+          "id": "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be",
+          "structure": "bbox_mask",
+          "params": {
+            "pick": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "fill": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+          }
+        },
+        {
+          "id": "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea",
+          "structure": "colormap",
+          "params": {
+            "map.W": [
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+              [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+              [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+            ]
+          }
+        }
+      ],
+      "router": {
+        "route.W": [[0.3, -0.3], [-0.3, 0.3]],
+        "route.b": [0.0, 0.0]
+      },
+      "charged_positions": 6,
+      "rationale": "Copy both earned live cells with unchanged source tensors. Propose a distinct symmetric literal router without a fixed cell bias. The supplied evidence establishes primitive eligibility but offers no successful aggregate development example for fitting routing preferences. Unevaluated; no improvement claimed. Oracle diagnostics are not routing inputs."
+    }
+  }
+]

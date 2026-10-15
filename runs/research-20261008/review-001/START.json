@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-08T05:00:39.950102+00:00",
+  "scope": "one read-only source-review worker",
+  "command": [
+    "/root/.local/bin/codex",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "-m",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "--json",
+    "-C",
+    "/srv/cellforge-inbox/research-20261008/source",
+    "-o",
+    "/srv/cellforge-inbox/research-20261008/review-001/RESULT.md",
+    "-"
+  ],
+  "prompt_sha256": "dfb58010f887201a1baff94365c1e8e9b9d558168fafd80f7ef0f5064585d43d",
+  "source_commit": "bfc928bf0c1f77922b4de00834412f986cd54bfa",
+  "partial_snapshot": true,
+  "worker_concurrency_limit": 2,
+  "workers_started": 1,
+  "limits": {
+    "wall_seconds": 240,
+    "cpu_seconds": 60,
+    "address_space_mib": 3072,
+    "nice": 5
+  },
+  "resources": {
+    "load": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "available_kib": 3380720
+  },
+  "auth": "existing ChatGPT; API variables stripped",
+  "quota_before": {
+    "usedPercent": 13,
+    "windowDurationMins": 10080,
+    "resetsAt": 1791998424
+  }
+}

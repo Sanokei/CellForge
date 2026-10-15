@@ -1,0 +1,151 @@
+--- approved/supervisor.py
++++ repair/supervisor.py
+@@ -154,6 +154,23 @@
+         self.owned(info,token)
+         return info
+ 
++def request_stop(root):
++    """Create a durable STOP once. Existing marker bytes are never replaced."""
++    root=pathlib.Path(root)
++    try: fd=os.open(root/"STOP",os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
++    except FileExistsError: return
++    try:
++        with os.fdopen(fd,"wb") as stream:
++            stream.write(canonical({"reason":"explicit reviewed service stop","epoch":time.time()})+b"\n")
++            stream.flush(); os.fsync(stream.fileno())
++        if os.name=="posix":
++            directory=os.open(root,os.O_DIRECTORY)
++            try: os.fsync(directory)
++            finally: os.close(directory)
++    except Exception:
++        # A partial marker still forbids launch. Never remove it to retry a stop.
++        raise
++
+ def tree_size(root):
+     return sum(p.stat().st_size for p in pathlib.Path(root).rglob("*") if p.is_file() and not p.is_symlink())
+ 
+@@ -163,6 +180,24 @@
+         self.halt=False
+     def persist(self,state):
+         atomic(self.root/"REGISTRY.json",state)
++    def stop_requested(self,run=None,fp=None):
++        return (self.halt or (self.root/"STOP").exists() or
++                not (self.root/"DISPATCH_ENABLED").exists() or
++                (run is not None and (run/"STOP").exists()) or
++                (fp is not None and (self.root/"cancel"/fp).exists()))
++    def pause(self,state,run=None):
++        state["status"]=("paused_stop" if self.halt or (self.root/"STOP").exists() or
++                         (run is not None and (run/"STOP").exists()) else "paused_dispatch_disabled")
++        self.persist(state)
++    def verify_stopped(self):
++        # Shares the registry lock with launch admission and --stop reconciliation.
++        with registry_lock(self.root):
++            state=read(self.root/"REGISTRY.json")
++            if state["active"] is not None: raise Blocked("stop still has a durable active entry")
++            info=self.backend.show()
++            if info["LoadState"]!="not-found" or not self.backend.empty(info):
++                raise Blocked("stop cannot certify fixed unit absence and an empty tree")
++        return True
+     def context(self,state,fp):
+         ph=state["conditions"][fp]["study"]
+         bundle=self.root/"studies"/ph
+@@ -282,8 +317,14 @@
+                 for fp,entry in state["conditions"].items():
+                     if entry["status"]!="pending": continue
+                     bundle,plan,config,run=self.context(state,fp)
++                    self.crash("before_gates")
+                     self.gates(bundle,plan)
+-                    # Cancellation also consumes the finite admission cap.
++                    self.crash("after_gates_before_admission")
++                    # Expensive gates cannot authorize a launch after STOP/disable/SIGTERM.
++                    # The check and reservation share the registry lock with --stop.
++                    if self.stop_requested(run):
++                        self.pause(state,run); return
++                    # A pending per-condition cancellation still consumes the finite cap.
+                     reserve(state,fp)
+                     run.mkdir(parents=True,exist_ok=True); (run/"scratch").mkdir(exist_ok=True)
+                     if (run/"CONFIG.json").exists() and read(run/"CONFIG.json")!=config:
+@@ -293,24 +334,48 @@
+                     entry["token"]=fp+":"+uuid.uuid4().hex
+                     self.persist(state)
+                     self.crash("after_launch_intent")
+-                    if (self.root/"cancel"/fp).exists():
+-                        self.terminal(state,fp,info,"cancelled")
+-                        return
++                    if self.stop_requested(run,fp):
++                        self.terminal(state,fp,self.backend.show(),"cancelled"); return
++                    self.crash("before_launch_rpc")
++                    # A signal or marker may arrive while the durable intent is written.
++                    if self.stop_requested(run,fp):
++                        self.terminal(state,fp,self.backend.show(),"cancelled"); return
+                     try:
+                         unit=self.backend.start(bundle,run,entry["token"])
+                     except Exception:
+                         # Never guess whether a failed launch RPC created a tree.
+                         fresh=self.backend.show()
+-                        if self.backend.owned(fresh,entry["token"]):
++                        owned=self.backend.owned(fresh,entry["token"])
++                        if owned:
+                             entry["invocation"]=fresh["InvocationID"]; self.persist(state)
+-                        else:
++                        if self.stop_requested(run,fp):
++                            self.terminal(state,fp,fresh,"cancelled")
++                        elif not owned:
+                             self.terminal(state,fp,fresh,"failed")
+                         return
+                     entry["invocation"]=unit["InvocationID"]
+                     self.persist(state); self.crash("after_launch")
++                    # The stop may race the RPC itself: persist identity before draining it.
++                    if self.stop_requested(run,fp):
++                        self.terminal(state,fp,self.backend.show(),"cancelled")
+                     return
+                 state["status"]="paused_exhausted"
+             self.persist(state)
++
++def run_loop(c,sleeper=time.sleep):
++    while True:
++        try:
++            if c.halt: request_stop(c.root)
++            c.tick()
++            if c.halt:
++                request_stop(c.root)
++                c.verify_stopped()
++                return
++        except Exception as exc:
++            atomic(c.root/"STATUS.json",{"status":"blocked_unknown","reason":str(exc)[:500],"utc_epoch":time.time()})
++            # Unknown ownership/transport/collection is never a successful stop.
++            # Keep the dispatcher lock and retry reconciliation instead of returning.
++        sleeper(2)
+ 
+ def main():
+     parser=argparse.ArgumentParser()
+@@ -319,10 +384,10 @@
+     args=parser.parse_args()
+     if args.stop:
+         if os.environ.get("SERVICE_RESULT","success")!="success" and not (args.root/"STOP").exists(): return
+-        atomic(args.root/"STOP",{"reason":"explicit reviewed service stop","epoch":time.time()})
+-        state=read(args.root/"REGISTRY.json")
+-        entry=state["conditions"].get(state["active"]) if state["active"] else None
+-        Systemd().stop(entry["token"] if entry else None,entry.get("invocation") if entry else None)
++        request_stop(args.root)
++        c=Controller(args.root); c.halt=True
++        # tick holds REGISTRY.lock; it cannot read an idle snapshot halfway through launch.
++        c.tick(); c.verify_stopped()
+         return
+     if os.name!="posix": raise Blocked("production requires Linux/systemd")
+     import fcntl
+@@ -332,13 +397,6 @@
+     c=Controller(args.root)
+     def halt(*_): c.halt=True
+     signal.signal(signal.SIGTERM,halt); signal.signal(signal.SIGINT,halt)
+-    try:
+-        while True:
+-            try: c.tick()
+-            except Exception as exc:
+-                atomic(args.root/"STATUS.json",{"status":"blocked_unknown","reason":str(exc)[:500],"utc_epoch":time.time()})
+-            if c.halt: return
+-            time.sleep(2)
++    try: run_loop(c)
+     finally: stream.close()
+ if __name__=="__main__": main()
+-

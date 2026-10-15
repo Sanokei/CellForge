@@ -1,0 +1,51 @@
+[
+  {
+    "task_id": "36d67576",
+    "template": "color_gate",
+    "params": {
+      "gate": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "fill": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Best-fitting preservation fallback: every existing nonzero pixel is preserved in all three demonstrations. Demonstration 1 additionally introduces both 1 and 3 into zero pixels while retaining other zeros. No template can express the required copying of multiple colours between separately oriented objects."
+  },
+  {
+    "task_id": "dc1df850",
+    "template": "neighbor_count",
+    "params": {
+      "self.W": [[0, -9, -9, -9, -9, -9, -9, -9, -9, -9]],
+      "cnt.W": [[0, 0, 1, 0, 0, 0, 0, 0, 0, 0]],
+      "cnt.b": [0],
+      "paint": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Exactly paints zero pixels 1 when any of their eight neighbours is 2. Demonstration 1 surrounds both red pixels, including the corner red pixel, and preserves 3 and 8; demonstration 2 combines overlapping neighbourhoods; demonstration 3 creates the shown 3x3 ring."
+  },
+  {
+    "task_id": "6f8cd79b",
+    "template": "conv3x3_detect",
+    "params": {
+      "conv.W": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      "conv.b": [3.5],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
+    },
+    "rationale": "Exactly paints the outer border 8 in all four demonstrations. Interior pixels have four cardinal neighbours and score -0.5; border pixels have fewer neighbours and score positively because outside positions contribute zero."
+  },
+  {
+    "task_id": "8f2ea7aa",
+    "template": "color_gate",
+    "params": {
+      "gate": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "fill": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Best-fitting preservation fallback: all original motif pixels remain in place in all three demonstrations. Outputs add copies in colour 7, 8, or 6 respectively. Fixed-colour painting cannot reproduce these varying colours, and top-left tiling loses the original motifs in demonstrations 1 and 3; no available template expresses the rule."
+  }
+]

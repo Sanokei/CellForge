@@ -1,0 +1,2863 @@
+{
+  "admitted": {
+    "llm": 0,
+    "random": 0
+  },
+  "anchor": "fa159c92d54e5ab5c21260e37db5c29a200577aa1171b763a73171c8855461b3",
+  "author_seconds": 0.0,
+  "cells": {
+    "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b": {
+      "evidence": {
+        "errors": [],
+        "learning_claim": false,
+        "outcomes": {
+          "dev-contradiction-no-explosion": false,
+          "dev-contradictory-query": false,
+          "dev-empty-premise-delayed": false,
+          "dev-mixed-conjunction": false,
+          "dev-negative-missing-chain": false,
+          "dev-positive-cycle-unknown": true,
+          "dev-positive-three-hop": true,
+          "dev-supported-delayed-negative": false
+        },
+        "partition": "development",
+        "solved": 2,
+        "total": 8,
+        "traces": [
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 3,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "goal",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                },
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ]
+            },
+            "id": "dev-positive-three-hop",
+            "input": {
+              "facts": [
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ],
+              "horizon": 6,
+              "query": "goal",
+              "rules": [
+                {
+                  "if": [
+                    {
+                      "atom": "start",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "ready",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "ready",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "gate",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "gate",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "goal",
+                    "polarity": 1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 3,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "goal",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                },
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ]
+            },
+            "steps": [
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 2,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 2
+              }
+            ]
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": null,
+                "status": "unknown"
+              },
+              "closure": [
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ]
+            },
+            "id": "dev-negative-missing-chain",
+            "input": {
+              "facts": [
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ],
+              "horizon": 6,
+              "query": "goal",
+              "rules": [
+                {
+                  "if": [
+                    {
+                      "atom": "revoked",
+                      "polarity": -1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "ready",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "ready",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "gate",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "gate",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "goal",
+                    "polarity": 1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 3,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "goal",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                },
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ]
+            },
+            "steps": [
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 2,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 2
+              }
+            ]
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": null,
+                "status": "unknown"
+              },
+              "closure": [
+                {
+                  "atom": "token",
+                  "polarity": 1
+                }
+              ]
+            },
+            "id": "dev-mixed-conjunction",
+            "input": {
+              "facts": [
+                {
+                  "atom": "token",
+                  "polarity": 1
+                }
+              ],
+              "horizon": 6,
+              "query": "goal",
+              "rules": [
+                {
+                  "if": [
+                    {
+                      "atom": "token",
+                      "polarity": 1
+                    },
+                    {
+                      "atom": "clearance",
+                      "polarity": -1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "ready",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "ready",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "gate",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "gate",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "goal",
+                    "polarity": 1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 3,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "goal",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                },
+                {
+                  "atom": "token",
+                  "polarity": 1
+                }
+              ]
+            },
+            "steps": [
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 2,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 2
+              }
+            ]
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 4,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "can_enter",
+                  "polarity": -1
+                },
+                {
+                  "atom": "denied",
+                  "polarity": -1
+                },
+                {
+                  "atom": "locked",
+                  "polarity": 1
+                },
+                {
+                  "atom": "unsafe",
+                  "polarity": 1
+                }
+              ]
+            },
+            "id": "dev-supported-delayed-negative",
+            "input": {
+              "facts": [
+                {
+                  "atom": "denied",
+                  "polarity": -1
+                }
+              ],
+              "horizon": 6,
+              "query": "unsafe",
+              "rules": [
+                {
+                  "if": [
+                    {
+                      "atom": "denied",
+                      "polarity": -1
+                    }
+                  ],
+                  "not_before": 2,
+                  "then": {
+                    "atom": "locked",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "locked",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 3,
+                  "then": {
+                    "atom": "can_enter",
+                    "polarity": -1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "can_enter",
+                      "polarity": -1
+                    }
+                  ],
+                  "not_before": 4,
+                  "then": {
+                    "atom": "unsafe",
+                    "polarity": 1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 1,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "can_enter",
+                  "polarity": -1
+                },
+                {
+                  "atom": "denied",
+                  "polarity": -1
+                },
+                {
+                  "atom": "locked",
+                  "polarity": 1
+                },
+                {
+                  "atom": "unsafe",
+                  "polarity": 1
+                }
+              ]
+            },
+            "steps": [
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 2
+              }
+            ]
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": 4,
+                "positive_round": 3,
+                "status": "both"
+              },
+              "closure": [
+                {
+                  "atom": "denied",
+                  "polarity": -1
+                },
+                {
+                  "atom": "gate",
+                  "polarity": -1
+                },
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                },
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ]
+            },
+            "id": "dev-contradictory-query",
+            "input": {
+              "facts": [
+                {
+                  "atom": "start",
+                  "polarity": 1
+                },
+                {
+                  "atom": "denied",
+                  "polarity": -1
+                }
+              ],
+              "horizon": 6,
+              "query": "gate",
+              "rules": [
+                {
+                  "if": [
+                    {
+                      "atom": "start",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "ready",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "ready",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 3,
+                  "then": {
+                    "atom": "gate",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "denied",
+                      "polarity": -1
+                    }
+                  ],
+                  "not_before": 4,
+                  "then": {
+                    "atom": "gate",
+                    "polarity": -1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": 1,
+                "positive_round": 2,
+                "status": "both"
+              },
+              "closure": [
+                {
+                  "atom": "denied",
+                  "polarity": -1
+                },
+                {
+                  "atom": "gate",
+                  "polarity": -1
+                },
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                },
+                {
+                  "atom": "start",
+                  "polarity": 1
+                }
+              ]
+            },
+            "steps": [
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 2
+              }
+            ]
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": null,
+                "status": "unknown"
+              },
+              "closure": [
+                {
+                  "atom": "a",
+                  "polarity": -1
+                },
+                {
+                  "atom": "a",
+                  "polarity": 1
+                }
+              ]
+            },
+            "id": "dev-contradiction-no-explosion",
+            "input": {
+              "facts": [
+                {
+                  "atom": "a",
+                  "polarity": 1
+                },
+                {
+                  "atom": "a",
+                  "polarity": -1
+                }
+              ],
+              "horizon": 6,
+              "query": "goal",
+              "rules": [
+                {
+                  "if": [
+                    {
+                      "atom": "missing",
+                      "polarity": -1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "b",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "b",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "goal",
+                    "polarity": 1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 2,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "a",
+                  "polarity": -1
+                },
+                {
+                  "atom": "a",
+                  "polarity": 1
+                },
+                {
+                  "atom": "b",
+                  "polarity": 1
+                },
+                {
+                  "atom": "goal",
+                  "polarity": 1
+                }
+              ]
+            },
+            "steps": [
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 1
+              }
+            ]
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 5,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "goal",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                }
+              ]
+            },
+            "id": "dev-empty-premise-delayed",
+            "input": {
+              "facts": [],
+              "horizon": 6,
+              "query": "goal",
+              "rules": [
+                {
+                  "if": [],
+                  "not_before": 3,
+                  "then": {
+                    "atom": "ready",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "ready",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "gate",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "gate",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "goal",
+                    "polarity": 1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": 3,
+                "status": "entailed"
+              },
+              "closure": [
+                {
+                  "atom": "gate",
+                  "polarity": 1
+                },
+                {
+                  "atom": "goal",
+                  "polarity": 1
+                },
+                {
+                  "atom": "ready",
+                  "polarity": 1
+                }
+              ]
+            },
+            "steps": [
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 2,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 3,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 4,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 5,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  1.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": true,
+                "preactivation": 0.5,
+                "round": 6,
+                "rule_index": 2
+              }
+            ]
+          },
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": null,
+                "status": "unknown"
+              },
+              "closure": []
+            },
+            "id": "dev-positive-cycle-unknown",
+            "input": {
+              "facts": [],
+              "horizon": 6,
+              "query": "goal",
+              "rules": [
+                {
+                  "if": [
+                    {
+                      "atom": "a",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "b",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "b",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "a",
+                    "polarity": 1
+                  }
+                },
+                {
+                  "if": [
+                    {
+                      "atom": "b",
+                      "polarity": 1
+                    }
+                  ],
+                  "not_before": 1,
+                  "then": {
+                    "atom": "goal",
+                    "polarity": 1
+                  }
+                }
+              ]
+            },
+            "predicted": {
+              "answer": {
+                "negative_round": null,
+                "positive_round": null,
+                "status": "unknown"
+              },
+              "closure": []
+            },
+            "steps": [
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 1,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 2,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 2,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 2,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 3,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 3,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 3,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 4,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 4,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 4,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 5,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 5,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 5,
+                "rule_index": 2
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 6,
+                "rule_index": 0
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 6,
+                "rule_index": 1
+              },
+              {
+                "features": [
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  1.0
+                ],
+                "fired": false,
+                "preactivation": -0.5,
+                "round": 6,
+                "rule_index": 2
+              }
+            ]
+          }
+        ]
+      },
+      "id": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b",
+      "interface": "signed-temporal-horn-cell/1",
+      "params": {
+        "any.W1": [
+          [
+            1.0
+          ]
+        ],
+        "any.b1": [
+          0.0
+        ],
+        "rule.W1": [
+          [
+            1.0,
+            -1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "rule.b1": [
+          0.5
+        ]
+      },
+      "provenance": {
+        "builder_sha256": null,
+        "builder_source": "/srv/cellforge-inbox/two-loop-20261001/hard-reasoning-runtime/scripts/build_deduction_specialist.py",
+        "inherited_positions": [
+          0,
+          1,
+          6,
+          7,
+          8
+        ],
+        "kind": "historical-positive-Horn-baseline-lifted-to-new-signed-temporal-interface",
+        "learning_claim": false,
+        "numeric_lift": "all_W[1,-1],all_b.5,any_W[1],any_b0 exactly inherited; new negative/time feature coordinates explicitly zero; not a trained or fabricated-degraded founder",
+        "source": "/srv/cellforge-inbox/two-loop-20261001/hard-reasoning-runtime/src/cellforge/runtime/deduction.py",
+        "source_sha256": "34e7c44361adb2e0651eb5a36a7f3e235694d047eb62c2ad417eaa84d37595e2",
+        "structural_added_positions": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "training": "none"
+      }
+    }
+  },
+  "charged_positions": {
+    "llm": 0,
+    "random": 0
+  },
+  "contexts": [
+    {
+      "arms": {
+        "llm": {
+          "births": [],
+          "history": [
+            "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+          ],
+          "live": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+        },
+        "random": {
+          "births": [],
+          "history": [
+            "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+          ],
+          "live": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+        }
+      },
+      "seed": 801
+    },
+    {
+      "arms": {
+        "llm": {
+          "births": [],
+          "history": [
+            "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+          ],
+          "live": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+        },
+        "random": {
+          "births": [],
+          "history": [
+            "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+          ],
+          "live": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+        }
+      },
+      "seed": 802
+    },
+    {
+      "arms": {
+        "llm": {
+          "births": [],
+          "history": [
+            "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+          ],
+          "live": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+        },
+        "random": {
+          "births": [],
+          "history": [
+            "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+          ],
+          "live": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b"
+        }
+      },
+      "seed": 803
+    }
+  ],
+  "evaluation_seconds": 0.0,
+  "generation": 0,
+  "learning_claim": false,
+  "rejected": {
+    "llm": 0,
+    "random": 0
+  }
+}

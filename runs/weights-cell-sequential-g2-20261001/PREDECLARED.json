@@ -1,0 +1,150 @@
+{
+  "protocol": "cell-only-sequential-g2/1",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "generations": 2,
+  "arms": [
+    "llm",
+    "random"
+  ],
+  "proposals_per_arm_per_seed_per_generation": 2,
+  "budget_per_arm_per_seed": 4,
+  "workers": 2,
+  "operators": [
+    "within-cell literal mutation",
+    "authored count-cell structural growth"
+  ],
+  "reporting": [
+    {
+      "id": "522fdd07",
+      "sha256": "d4edd50748f950d42a1be125be1d02dfee0e5b82e7557efec50fcb4f8e51ddd9"
+    },
+    {
+      "id": "662c240a",
+      "sha256": "36134e809bc3fbdd5f7919fc79fbc1d0c77bef4e0eb904f3fa59861bd42133b4"
+    },
+    {
+      "id": "1a244afd",
+      "sha256": "6ccbb8d873505b8bc5f47c7690c697983a713dd245f422abca62ee1e1719ac1b"
+    },
+    {
+      "id": "103eff5b",
+      "sha256": "b6bc54d9ba72eaa302110535eed7371b42b16079e5dba11c357424982cfb42b1"
+    },
+    {
+      "id": "0bb8deee",
+      "sha256": "ca612b0a77939921445228454881cc4924084e0d7f688f566016db572a9d4186"
+    },
+    {
+      "id": "a1aa0c1e",
+      "sha256": "8f4f0201c8757b4dd9d62315b587e44cc573ca5522aaa99128e8df82e46e661d"
+    },
+    {
+      "id": "9caba7c3",
+      "sha256": "5778e782bd3ff363c8de9ea7356db5c57851197fd3d31e059e295bdc5b0a7958"
+    },
+    {
+      "id": "496994bd",
+      "sha256": "ecc40bb943911e33cdfc1e668a5bb49b22ad55a662aa37d68ba57e884897dc25"
+    }
+  ],
+  "development": [
+    {
+      "id": "3f23242b",
+      "sha256": "8a58b0f45485bc46a8e462308a15319a7e549a9b6551ee2dd3d43ab308a17f59"
+    },
+    {
+      "id": "3ac3eb23",
+      "sha256": "6412cc40fe97ed70e80521acbbfc678f06d370a995886a9f29f506efc6be9db2"
+    },
+    {
+      "id": "1fad071e",
+      "sha256": "9107a8a82223d87413108fb62ab9a727ac28ae5aed1941e86e140f8cbd4eb18d"
+    },
+    {
+      "id": "9bebae7a",
+      "sha256": "c50f3e00833e95705b1d084676e4f2e9fbcab50efec582ad812a9321153535c2"
+    },
+    {
+      "id": "4b6b68e5",
+      "sha256": "e7b84f61b46ba80fac5b2bb8fb7506562d5cea119bb7324032c2a5e9c031c1ba"
+    },
+    {
+      "id": "a934301b",
+      "sha256": "5a7bb3906e5101c60aebf62d9c07660cbb12e5f77781a00431703436c85291c5"
+    },
+    {
+      "id": "c7d4e6ad",
+      "sha256": "15e75878814e0afed22df0cba041b1edbf2d5c7ccc7bbcce77834a3448d0dff0"
+    },
+    {
+      "id": "6cf79266",
+      "sha256": "e74e5a2d8fe5e6edbcd23720d6f45bbf73cf6490b321e0e586d391c6517136ac"
+    },
+    {
+      "id": "7d7772cc",
+      "sha256": "a4b7c17a7d885192ec336780bd8dd6a396aa41ee2f6e3ed3fb7fed65c3f937f6"
+    },
+    {
+      "id": "2013d3e2",
+      "sha256": "cbacaf76e768374f6fe1f8e9a1210562618c59179aabdd5b1acbd8f4bdcc5378"
+    },
+    {
+      "id": "f5aa3634",
+      "sha256": "fbeaaf221605339396b4c0dc71728c2e09887fa147b776b20c87c5beceb55f28"
+    },
+    {
+      "id": "25c199f5",
+      "sha256": "4343744b4777ba2ef6005173bbe9f5a7d95da0532a2c9c871295e0f3c1e35920"
+    }
+  ],
+  "excluded": [
+    "0becf7df",
+    "1fad071e",
+    "2013d3e2",
+    "2281f1f4",
+    "25c199f5",
+    "2c0b0aff",
+    "3ac3eb23",
+    "3f23242b",
+    "4b6b68e5",
+    "4c5c2cf0",
+    "60b61512",
+    "60c09cac",
+    "689c358e",
+    "68b16354",
+    "6cf79266",
+    "6df30ad6",
+    "6e19193c",
+    "705a3229",
+    "7c008303",
+    "7c9b52a0",
+    "7d18a6fb",
+    "7d7772cc",
+    "8b28cd80",
+    "8e301a54",
+    "9bebae7a",
+    "a09f6c25",
+    "a934301b",
+    "af24b4cc",
+    "ba9d41b8",
+    "c7d4e6ad",
+    "c920a713",
+    "cbded52d",
+    "dc2e9a9d",
+    "e8dc4411",
+    "f5aa3634",
+    "fc10701f"
+  ],
+  "selection": "fresh gain, all historical archive/anchor nonregression, original undefined-FP failclosed gates",
+  "cache": "same genotype and development manifest only; duplicate proposals still charged",
+  "authoring": "gpt-6.1-sol low configured task; one physical response per generation shared across seed contexts",
+  "parallelism": "two scoring worker processes only; sequential generations; no claim independent maker replications",
+  "start_utc": "2026-10-01T01:33:59.454375+00:00",
+  "cost": "existing CPU only, no paid API/provisioning",
+  "non_grid_track": "separate arithmetic founder/controlled tasks; not ARC transfer evidence",
+  "full_architecture_complete": false
+}

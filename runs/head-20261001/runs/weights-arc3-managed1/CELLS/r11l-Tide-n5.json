@@ -1,0 +1,414 @@
+{
+ "game": "r11l",
+ "house": "Tide",
+ "n": 5,
+ "source_lines": [
+  "def groups(frame, colour, radius):",
+  "    remaining = set((int(v[0]), int(v[1])) for v in np.argwhere(frame == colour))",
+  "    result = []",
+  "    while remaining:",
+  "        seed = remaining.pop()",
+  "        todo = [seed]",
+  "        cells = [seed]",
+  "        while todo:",
+  "            y, x = todo.pop()",
+  "            for dy in range(-radius, radius + 1):",
+  "                for dx in range(-radius, radius + 1):",
+  "                    q = (y + dy, x + dx)",
+  "                    if q in remaining:",
+  "                        remaining.remove(q)",
+  "                        todo.append(q)",
+  "                        cells.append(q)",
+  "        result.append(cells)",
+  "    return result",
+  "def centre(cells):",
+  "    return (sum(v[1] for v in cells) / len(cells), sum(v[0] for v in cells) / len(cells))",
+  "def dist(a, b):",
+  "    return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2",
+  "def act(params, mem, frame, avail, info):",
+  "    p = params['settings']",
+  "    dirs = params['directions']",
+  "    level = info.get('levels', 0)",
+  "    reset = info.get('resets', 0)",
+  "    if mem.get('level') != level:",
+  "        mem.clear()",
+  "        mem['level'] = level",
+  "        mem['models'] = {}",
+  "        mem['pairs'] = {}",
+  "        mem['edges'] = {}",
+  "        mem['visits'] = {}",
+  "        mem['failed'] = {}",
+  "    if mem.get('reset') != reset:",
+  "        mem['reset'] = reset",
+  "        mem.pop('last', None)",
+  "    endpoints = []",
+  "    for colour in [int(p[0]), int(p[1])]:",
+  "        for g in groups(frame, colour, int(p[6])):",
+  "            if abs(len(g) - p[7]) <= p[8]:",
+  "                q = centre(g)",
+  "                x, y = int(round(q[0])), int(round(q[1]))",
+  "                endpoints.append((q, colour, int(frame[y, x])))",
+  "    balls = [centre(g) for g in groups(frame, int(p[2]), int(p[6])) if len(g) <= p[9]]",
+  "    targets = []",
+  "    for colour in params['rope_colours']:",
+  "        colour = int(colour)",
+  "        for g in groups(frame, colour, int(p[10])):",
+  "            q = centre(g)",
+  "            if abs(len(g) - p[11]) <= p[12] and all(dist(q, b) > p[13] ** 2 for b in balls) and all(dist(q, e[0]) > p[14] ** 2 for e in endpoints):",
+  "                targets.append((q, colour))",
+  "    ropes = []",
+  "    for ball in balls:",
+  "        bx, by = int(round(ball[0])), int(round(ball[1]))",
+  "        sample = frame[max(0, by - int(p[15])):min(frame.shape[0], by + int(p[15]) + 1), max(0, bx - int(p[15])):min(frame.shape[1], bx + int(p[15]) + 1)]",
+  "        colour = max([int(c) for c in params['rope_colours']], key=lambda c: int(np.sum(sample == c)))",
+  "        matching = [e for e in endpoints if e[2] == colour]",
+  "        pair = None",
+  "        error = float('inf')",
+  "        for i in range(len(matching)):",
+  "            for j in range(i + 1, len(matching)):",
+  "                a, b = matching[i], matching[j]",
+  "                midpoint = ((a[0][0] + b[0][0]) / 2, (a[0][1] + b[0][1]) / 2)",
+  "                value = dist(midpoint, ball)",
+  "                if value < error:",
+  "                    error = value",
+  "                    pair = (a, b)",
+  "        goals = [t[0] for t in targets if t[1] == colour]",
+  "        if pair is not None and goals:",
+  "            target = min(goals, key=lambda t: dist(t, ball))",
+  "            ropes.append((ball, pair, target, colour))",
+  "    state = tuple(int(round(v)) for e in sorted(endpoints) for v in e[0]) + tuple(int(round(v)) for b in sorted(balls) for v in b)",
+  "    mem['visits'][state] = mem['visits'].get(state, 0) + 1",
+  "    if 'last' in mem:",
+  "        oldstate, olda, oldb, action, oldball, oldcolour = mem['last']",
+  "        mem['edges'][(oldstate, action)] = state",
+  "        if action < len(dirs):",
+  "            candidates = [e[0] for e in endpoints if e[1] == int(p[0]) and e[2] == oldcolour]",
+  "            if candidates:",
+  "                now = min(candidates, key=lambda q: dist(q, olda))",
+  "                dx, dy = now[0] - olda[0], now[1] - olda[1]",
+  "                motion = (dx * dx + dy * dy) ** 0.5",
+  "                mem['failed'][(oldstate, action)] = motion < p[16]",
+  "                ux, uy = dirs[action]",
+  "                norm = max((ux * ux + uy * uy) ** 0.5, p[17])",
+  "                along = (dx * ux + dy * uy) / norm",
+  "                if p[16] < along < p[18] and motion < p[18]:",
+  "                    model = mem['models'].setdefault(action, [0.0, 0.0])",
+  "                    model[0] += along",
+  "                    model[1] += 1",
+  "    active_rope = None",
+  "    for rope in ropes:",
+  "        if any(e[1] == int(p[0]) for e in rope[1]):",
+  "            active_rope = rope",
+  "            break",
+  "    unfinished = [r for r in ropes if dist(r[0], r[2]) > p[19] ** 2]",
+  "    if unfinished and (active_rope is None or dist(active_rope[0], active_rope[2]) <= p[19] ** 2):",
+  "        chosen = min(unfinished, key=lambda r: dist(r[0], r[2]))",
+  "        endpoint = min(chosen[1], key=lambda e: dist(e[0], chosen[2]))",
+  "        mem.pop('last', None)",
+  "        return (6 if 6 in avail else avail[0], int(round(endpoint[0][0])), int(round(endpoint[0][1])))",
+  "    if active_rope is None:",
+  "        options = endpoints + [(t[0], int(p[1]), t[1]) for t in targets]",
+  "        if options:",
+  "            key = info.get('key', '')",
+  "            counts = mem.setdefault('clicks', {})",
+  "            e = min(options, key=lambda e: counts.get((key, int(round(e[0][0])), int(round(e[0][1]))), 0))",
+  "            x, y = int(round(e[0][0])), int(round(e[0][1]))",
+  "            counts[(key, x, y)] = counts.get((key, x, y), 0) + 1",
+  "            return (avail[0], x, y)",
+  "        return (avail[0], int(p[20]), int(p[21]))",
+  "    ball, pair, target, colour = active_rope",
+  "    a = next(e[0] for e in pair if e[1] == int(p[0]))",
+  "    b = next(e[0] for e in pair if e[0] != a)",
+  "    residual = (ball[0] - (a[0] + b[0]) / 2, ball[1] - (a[1] + b[1]) / 2)",
+  "    original = dist(a, b) ** 0.5",
+  "    bound = int(p[22])",
+  "    blocked = (frame == int(p[3])) | (frame == int(p[4]))",
+  "    field = np.zeros(frame.shape) + p[23]",
+  "    tx, ty = int(round(target[0])), int(round(target[1]))",
+  "    field[ty, tx] = 0",
+  "    queue = [(tx, ty)]",
+  "    head = 0",
+  "    while head < len(queue):",
+  "        x, y = queue[head]",
+  "        head += 1",
+  "        for ux, uy in params['neighbours']:",
+  "            nx, ny = x + int(ux), y + int(uy)",
+  "            if 0 <= nx <= bound and 0 <= ny <= bound and not blocked[ny, nx] and field[ny, nx] > field[y, x] + 1:",
+  "                field[ny, nx] = field[y, x] + 1",
+  "                queue.append((nx, ny))",
+  "    def valid(q):",
+  "        x, y = int(round(q[0])), int(round(q[1]))",
+  "        return 0 <= x <= bound and 0 <= y <= bound and not blocked[y, x]",
+  "    def score(aa, bb):",
+  "        middle = ((aa[0] + bb[0]) / 2 + residual[0], (aa[1] + bb[1]) / 2 + residual[1])",
+  "        if not valid(middle):",
+  "            return p[23] * p[23]",
+  "        x, y = int(round(middle[0])), int(round(middle[1]))",
+  "        return p[24] * field[y, x] ** 2 + p[25] * dist(middle, target) + p[26] * (dist(aa, bb) ** 0.5 - original) ** 2 + p[27] * (dist(aa, target) + dist(bb, target))",
+  "    moves = []",
+  "    for i, direction in enumerate(dirs):",
+  "        ux, uy = direction",
+  "        norm = max((ux * ux + uy * uy) ** 0.5, p[17])",
+  "        model = mem['models'].get(i)",
+  "        step = model[0] / max(model[1], 1) if model is not None else p[28]",
+  "        moves.append((step * ux / norm, step * uy / norm))",
+  "    beam = [(a, b, None, 0.0)]",
+  "    reached = set()",
+  "    best = None",
+  "    bestvalue = float('inf')",
+  "    for depth in range(max(1, int(p[29]))):",
+  "        candidates = []",
+  "        for aa, bb, first, cost in beam:",
+  "            for action in range(len(dirs) + 1):",
+  "                penalty = p[30]",
+  "                if first is None:",
+  "                    penalty += p[31] * mem['pairs'].get((state, action), 0)",
+  "                    if mem['failed'].get((state, action), False):",
+  "                        penalty += p[32]",
+  "                    nxt = mem['edges'].get((state, action))",
+  "                    if nxt is not None:",
+  "                        penalty += p[33] * mem['visits'].get(nxt, 0)",
+  "                if action == len(dirs):",
+  "                    na, nb = bb, aa",
+  "                    penalty += p[34]",
+  "                else:",
+  "                    dx, dy = moves[action]",
+  "                    na, nb = (aa[0] + dx, aa[1] + dy), bb",
+  "                    safe = True",
+  "                    for fraction in params['fractions']:",
+  "                        q = (aa[0] + fraction * dx, aa[1] + fraction * dy)",
+  "                        mid = ((q[0] + bb[0]) / 2 + residual[0], (q[1] + bb[1]) / 2 + residual[1])",
+  "                        if not valid(q) or not valid(mid):",
+  "                            safe = False",
+  "                            break",
+  "                    if not safe:",
+  "                        continue",
+  "                initial = action if first is None else first",
+  "                signature = tuple(int(round(v / max(p[35], 1))) for v in (na[0], na[1], nb[0], nb[1])) + (initial,)",
+  "                if signature in reached:",
+  "                    continue",
+  "                reached.add(signature)",
+  "                totalcost = cost + penalty",
+  "                value = score(na, nb) + totalcost",
+  "                if value < bestvalue:",
+  "                    bestvalue, best = value, initial",
+  "                candidates.append((value, na, nb, initial, totalcost))",
+  "        if not candidates:",
+  "            break",
+  "        candidates.sort(key=lambda v: v[0])",
+  "        beam = [(v[1], v[2], v[3], v[4]) for v in candidates[:max(1, int(p[36]))]]",
+  "    if best is None:",
+  "        best = min(range(len(dirs) + 1), key=lambda i: p[31] * mem['pairs'].get((state, i), 0) + p[32] * float(mem['failed'].get((state, i), False)))",
+  "    if best == len(dirs):",
+  "        x, y = b",
+  "    else:",
+  "        ux, uy = dirs[best]",
+  "        norm = max((ux * ux + uy * uy) ** 0.5, p[17])",
+  "        x, y = a[0] + p[37] * ux / norm, a[1] + p[37] * uy / norm",
+  "    mem['pairs'][(state, best)] = mem['pairs'].get((state, best), 0) + 1",
+  "    mem['last'] = (state, a, b, best, ball, colour)",
+  "    return (6 if 6 in avail else avail[0], max(0, min(bound, int(round(x)))), max(0, min(bound, int(round(y)))))"
+ ],
+ "shapes": {
+  "settings": [
+   38
+  ],
+  "rope_colours": [
+   2
+  ],
+  "directions": [
+   16,
+   2
+  ],
+  "neighbours": [
+   8,
+   2
+  ],
+  "fractions": [
+   4
+  ]
+ },
+ "params": {
+  "settings": [
+   0,
+   3,
+   6,
+   2,
+   10,
+   5,
+   1,
+   12,
+   3,
+   2,
+   2,
+   12,
+   2,
+   6,
+   5,
+   2,
+   0.2,
+   0.01,
+   24,
+   2,
+   32,
+   32,
+   63,
+   200,
+   0.7,
+   0.3,
+   0.04,
+   0.04,
+   8,
+   8,
+   0.3,
+   22,
+   140,
+   18,
+   1,
+   2,
+   70,
+   14
+  ],
+  "rope_colours": [
+   15,
+   12
+  ],
+  "directions": [
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    -1,
+    2
+   ],
+   [
+    -1,
+    1
+   ],
+   [
+    -2,
+    1
+   ],
+   [
+    -1,
+    0
+   ],
+   [
+    -2,
+    -1
+   ],
+   [
+    -1,
+    -1
+   ],
+   [
+    -1,
+    -2
+   ],
+   [
+    0,
+    -1
+   ],
+   [
+    1,
+    -2
+   ],
+   [
+    1,
+    -1
+   ],
+   [
+    2,
+    -1
+   ]
+  ],
+  "neighbours": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    -1,
+    0
+   ],
+   [
+    0,
+    -1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    -1,
+    1
+   ],
+   [
+    1,
+    -1
+   ],
+   [
+    -1,
+    -1
+   ]
+  ],
+  "fractions": [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ },
+ "rationale": "Retains frame-driven directional control for the credited first level, but replaces the single-rope assumption with colour-specific ball, endpoint-pair and target identification. Later frames show multiple ropes, so endpoint pairs are inferred from each ball's midpoint and surrounding colour. Targets and models refresh on level transitions. Donor-style observed edges, state visits and failed-actio",
+ "result": {
+  "game": "r11l",
+  "seed": 0,
+  "budget": 1500,
+  "n_levels": 6,
+  "levels": 1,
+  "used": 1500,
+  "resets": 26,
+  "noops": 0,
+  "error": null,
+  "level_steps": [
+   8
+  ],
+  "state": "NOT_FINISHED",
+  "distinct": 1396,
+  "action_hist": {
+   "6": 1474
+  },
+  "final_frame": "5222222255222222222225555555555555222222255555555222222222222222\n5222222255222222222225555555555555555555555555555555222222222222\n5222222255555555555555555555555555555555555555555555552222222222\n5222222255555555555555555555555555555555555555555555555552222222\n5222222555555555555555555555555555555555555555555555555555222222\n5222222555555555555555555555555555555555555555555555555555222222\n5222225555555555555555555555555555555555555555555555555555555555\n5255555555555555555555555555555555555555555555555555555555555555\n5255555555555555555555555555555555555555555555555555555555555555\n5255555555555555555555555555555555555555555555555555555555555555\n5255555555555555555555555555555555555555555555555555555555555555\n5255555555555555555555555555555555555555555555555555555555555555\n5255555555555555555555555555555555555555555555555555555555555555\n5255555555555555555555555555555555555555555555555555555555553555\n5555555555555555555555555555555555555555555555555555555555533355\n55555555555555555555555555555555555555555555555555555555f533f335\n5555555555555555555555555555555555555555555555555555555f55533355\n555555555555555555555555555555555555555555555555555555f555133555\n.555555555555555555555555555555555555555555555555555555511333555\n.55555555555555555555555555555555555555555555555555555f1533c3355\n.55555555555555555555555555555555555555555555555555fff1f11333555\n.5555555555555555555555555555555555555555555555555fffff1f5f35555\n.555555555555555555555555aaaaaaaaaa555555555555555ff6ff555555555\n.55555555555555555555555aaaaaaaaaaaa.a555555555511fffff555555555\n.55555555555555555555aaaaaaaaaaaaaa...55ccc55111551fff5555555555\n.555555555555555555aaaaaaaaaaaaaaa..c..ccccc15555155555555555555\n.5555555555555555aaaaaaaaaaaaaaaaaa...5cc6cc55551555555555555555\n.5555555555555555aaaaaaaaaaaaaa55555.55ccccc53515555555555555555\n.5555555555555555aaaaaaaaaaaaaa555555115ccc533355555555555555555\n.5555555555555555aaaaaaaaaaaaaa55555155555533f335555555aaaa55555\n.555555555555555aaaaaaaaaaaaaaa55511555555553335555555aaaaa55555\n.5555555555555aaaaaaaaaaaaaaaaa5515555555555535555555aaaaaaaaaaa\n.a555555555555aaaaaaaaaa5555355115555555555555555555aaaaaaaaaaaa\n.a55555555555555555555555553331555555555555555555555aaaaaaaaaaaa\n.aa5555555555555555555555533c33555555555555555555555aaaaaaaaaaaa\n.aaaa5555555555555555555555333555555555555555555555555aaaaaaaaaa\n.aaaaa5555555555555555555555355555555555555555555555555aaaaaaaaa\n.aaaaaa555555555555555555555555555555555555555555555555aaaaaaaaa\n.aaaaaa555555555555aaaaa555555555555555555555555555555555aaaaaaa\n.aaaaaa555555555aaaaaaaaaa55555555555555555555555555555555aaaaaa\n.aaaaaa555555555aaaaaaaaaaaa555555555555555555555555555555aaaaaa\n.aaaaaa555555555aaaaaaaaaaaaa55555555555555555555555555555aaaaaa\n.aaaaaaaaaaaaaaaaaaaaaaaaaaaa555555555555555555555555555555aaaaa\n.aaaaaaaaaaaaaaaaaaaaaaaaaaaa555555555555555555555555555555aaaaa\n.222aaaaaaaaaaaaaaaaaaaaaaaaa555555555555555555555555555555aaaaa\n.222aaaaaaaaaaaaaaaaaaa555555555555555555555555555555555555aaaaa\n.222aaaaaaaaaaaaaaaaaaa555555555555555555555555555555555555aaaaa\n.222aaaaaaaaaaaaaaaaaaa5555555555555555555555555555555555555aaaa\n.222aaaaaaaaaaaaaaa55555555555555555555c5c5555555555555555552222\n.222aaaaaaaaaaaaaaa5555555555555555555c555c555555555555555552222\n.222222aaaaaaaaaaaa555555555555555555c55555c55555555555555552222\n.222222aaa2222222aa555555555555555555555555555555555555555552222\n.222222aa22222222aa555555555555555555c55555c55555555555555552222\n.222222aa22222222aa5555555555555555555c555c555555555555555552222\n.222222aa22222222aa55555555555555555555c5c5555555555555555552222\n.222222222222222255555555555555555555555555555555555555555522222\n.222222222222222222222555555555555555555555555555555552222222222\n.222222222222222222222555555555555555555555555555555552222222222\n.222222222222222222222555555555555555555555555555555552222222222\n.222222222222222222222555555555555555555555555555555552222222222\n.222222222222222222222555555555555555555555555555552222222222222\n.222222222222222222222555555555555555555555555522222222222222222\n.222222222222222222222555555555555555555555555522222222222222222\n.222222222222222555555555555555555555555555555522222222222222222",
+  "score": 4.761904761904762
+ },
+ "controls": {
+  "zero": 0,
+  "random": [
+   0,
+   0,
+   0
+  ],
+  "blind": 0
+ }
+}

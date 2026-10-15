@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 401,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "5e58e247f0e235980b4994e0c8cb74dbc62c51d49e122273cf6277ef52c312f1",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-10.0]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 correct with no errors. Author a subtraction borrow coefficient and rescale the step weight while retaining the right parent's distinguishing carry bias -9.5 and the left parent's distinguishing subtrahend coefficient -1.0 and digit correction 10.0. This is a nonzero mutation from the base; no improvement is claimed or evaluated."
+  },
+  {
+    "seed": 402,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.25],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "b2d5e54436969dda4d55d638b74e92820cc672649204ead7e4bde77e5b61a5d7",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-9.75]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 correct with no errors. Author a subtraction borrow coefficient and a step weight of -9.75 while retaining the right parent's distinguishing carry bias -9.5 and the left parent's distinguishing subtrahend coefficient -1.0 and digit correction 10.0. This is a nonzero mutation from the base; no improvement is claimed or evaluated."
+  },
+  {
+    "seed": 403,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.75],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "bcd0119be8d7c5b95ce54b8e145eb2dacb9b63915c047f91468293bf4b49f1ad",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-9.6]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 correct with no errors. Author a subtraction borrow coefficient and a step weight of -9.6 while retaining the right parent's distinguishing carry bias -9.5 and the left parent's distinguishing subtrahend coefficient -1.0 and digit correction 10.0. This is a nonzero mutation from the base; no improvement is claimed or evaluated."
+  }
+]

@@ -1,0 +1,2882 @@
+{
+  "policy": {
+    "hashes": {
+      "inactive-donor-control": "884025e304fc0b7f9ddb011c0c72b0da443320b500319947b0068fca6a6fe405",
+      "tile-repair": "e2a46bcd5561822d984a550a3e9e78175b302feac367b631c0d2e3aec6624b77"
+    },
+    "parent_hash": "2c81116777be7f61a0da7603ae84c71fe76f1df0d19249110f72d864d155d6a9",
+    "donor_hash": "8ef2f6c37a4554f2e183d7aa66410e2c7faba150a9bb4b9c472a686630afea77",
+    "seed": 3277000,
+    "tasks": 120,
+    "manifest": "65fedc70b919590567df511f722b02fdb634692331f6afb76753d5a10e83458c",
+    "source_sha256": "c93aceaa19e64cdba0ac1269af233f557cdf0d7c6bc70aa7b10b72fe7a08af5e",
+    "scope": "authored HGT slot repair, local synthetic utility; no population/evolution or native transfer claim",
+    "gradients": false,
+    "native_loaded": 0
+  },
+  "rows": [
+    {
+      "arm": "inactive-donor-control",
+      "stats": {
+        "unique_param_storage": 304,
+        "expanded_param_uses": 4074,
+        "nonzero_slots": 174,
+        "constant_slots_in_op_args": 51,
+        "cell_defs": 9,
+        "bundle_defs": 58,
+        "reachable_defs": 54,
+        "expanded_instances": 162,
+        "nesting_depth": 4,
+        "edges": 1136,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2432
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 120,
+        "tasks_solved": 80,
+        "test_inputs": 120,
+        "test_inputs_correct": 80,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 80,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 5.795924199948786,
+        "inference_cpu_seconds": 5.640625,
+        "inference_cpu_seconds_per_task": 0.04700520833333333,
+        "tasks_per_second": 20.704204516867275,
+        "consistency_audit_wall_seconds": 17.13602849986637,
+        "consistency_audit_cpu_seconds": 17.09375,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "10",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "11",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "12",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "13",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "14",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "15",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "16",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "17",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "18",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "19",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "20",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "21",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "22",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "23",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "24",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "25",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "26",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "27",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "28",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "29",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "30",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "31",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "32",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "33",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "34",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "35",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "36",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "37",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "38",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "39",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "40",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "41",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "42",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "43",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "44",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "45",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "46",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "47",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "48",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "49",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "50",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "51",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "52",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "53",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "54",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "55",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "56",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "57",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "58",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "59",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "60",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "61",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "62",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "63",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "64",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "65",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "66",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "67",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "68",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "69",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "70",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "71",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "72",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "73",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "74",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "75",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "76",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "77",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "78",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "79",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "80",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "81",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "82",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "83",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "84",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "85",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "86",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "87",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "88",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "89",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "90",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "91",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "92",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "93",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "94",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "95",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "96",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "97",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "98",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "99",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "100",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "101",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "102",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "103",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "104",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "105",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "106",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "107",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "108",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "109",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "110",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "111",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "112",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "113",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "114",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "115",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "116",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "117",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "118",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "119",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "arm": "tile-repair",
+      "stats": {
+        "unique_param_storage": 304,
+        "expanded_param_uses": 4446,
+        "nonzero_slots": 174,
+        "constant_slots_in_op_args": 68,
+        "cell_defs": 9,
+        "bundle_defs": 58,
+        "reachable_defs": 55,
+        "expanded_instances": 174,
+        "nesting_depth": 4,
+        "edges": 1235,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2432
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 120,
+        "tasks_solved": 90,
+        "test_inputs": 120,
+        "test_inputs_correct": 90,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 90,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 6.185498499602545,
+        "inference_cpu_seconds": 6.265625,
+        "inference_cpu_seconds_per_task": 0.05221354166666667,
+        "tasks_per_second": 19.40021487479315,
+        "consistency_audit_wall_seconds": 17.979217200074345,
+        "consistency_audit_cpu_seconds": 17.765625,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "10",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "11",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "12",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "13",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "14",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "15",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "16",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "17",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "18",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "19",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "20",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "21",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "22",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "23",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "24",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "25",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "26",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "27",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "28",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "29",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "30",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "31",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "32",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "33",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "34",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "35",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "36",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "37",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "38",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "39",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "40",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "41",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "42",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "43",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "44",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "45",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "46",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "47",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "48",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "49",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "50",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "51",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "52",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "53",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "54",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "55",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "56",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "57",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "58",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "59",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "60",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "61",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "62",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "63",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "64",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "65",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "66",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "67",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "68",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "69",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "70",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "71",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "72",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "73",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "74",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "75",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "76",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "77",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "78",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "79",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "80",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "81",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "82",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "83",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "84",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "85",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "86",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "87",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "88",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "89",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "90",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "91",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "92",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "93",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "94",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "95",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "96",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "97",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "98",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "99",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "100",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "101",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "102",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "103",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "104",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "105",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "106",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "107",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "108",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "109",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "110",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "111",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "112",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "113",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "114",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "115",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "116",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "117",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "118",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "119",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "wall_seconds": 47.93355309998151,
+  "peak_rss_bytes": 80461824,
+  "resource_scope": "local Windows whole-process high-water, not server performance"
+}

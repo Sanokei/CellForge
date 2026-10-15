@@ -1,0 +1,38 @@
+[
+  {
+    "task_id": "6e82a1ae",
+    "template": "color_gate",
+    "params": {
+      "gate": [1, 1, 1, 1, 1, -1, 1, 1, 1, 1],
+      "fill": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "The demonstrations recolour connected groups of four 5s to 1, three to 2, and two to 3. No template expresses this component-size rule. This approximation maps 5 to the most frequent demonstrated replacement, 1, matching 20 foreground pixels across the demonstrations."
+  },
+  {
+    "task_id": "447fd412",
+    "template": "color_gate",
+    "params": {
+      "gate": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "fill": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 copies the blue pattern between additional red markers; demonstration 2 enlarges it by two; demonstration 3 extends blue seven columns left of the red block. No template supports this nonlocal copying and scaling. This fallback preserves every existing pixel but omits the added blue pixels."
+  },
+  {
+    "task_id": "c8f0f002",
+    "template": "color_gate",
+    "params": {
+      "gate": [1, 1, 1, 1, 1, 1, 1, -1, 1, 1],
+      "fill": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+    },
+    "rationale": "Every 7 becomes 5 in all three demonstrations, while 1 and 8 remain unchanged. These tensors reproduce every demonstration exactly."
+  },
+  {
+    "task_id": "ded97339",
+    "template": "color_gate",
+    "params": {
+      "gate": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "fill": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "The outputs connect aligned 8s horizontally and vertically, including the five-pixel vertical gap in demonstration 2. No template can detect distant aligned endpoints and fill only the intervening pixels. This fallback preserves all original 8s and background but omits the connecting segments."
+  }
+]

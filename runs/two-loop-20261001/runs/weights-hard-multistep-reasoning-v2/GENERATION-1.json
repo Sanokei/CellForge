@@ -1,0 +1,208 @@
+{
+  "generation": 1,
+  "utc": "2026-10-01T23:26:43.233100+00:00",
+  "total": 48,
+  "tier": 1,
+  "next_tier": 1,
+  "decisions": [
+    {
+      "seed": 1701,
+      "niche": "resource-lookahead3",
+      "arm": "llm",
+      "candidate": null,
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "invalid"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1701,
+      "niche": "resource-lookahead3",
+      "arm": "random",
+      "candidate": "0762f4dc308c9f495086cc34d68955c63ec7b14bc7c6286c4a974aeea7e51f86",
+      "solved": 6,
+      "accepted": true,
+      "reasons": [
+        "accepted"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": true
+    },
+    {
+      "seed": 1702,
+      "niche": "resource-lookahead3",
+      "arm": "llm",
+      "candidate": null,
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "invalid"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1702,
+      "niche": "resource-lookahead3",
+      "arm": "random",
+      "candidate": "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75",
+      "solved": 8,
+      "accepted": true,
+      "reasons": [
+        "accepted"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": true
+    },
+    {
+      "seed": 1703,
+      "niche": "resource-lookahead3",
+      "arm": "llm",
+      "candidate": null,
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "invalid"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1703,
+      "niche": "resource-lookahead3",
+      "arm": "random",
+      "candidate": "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54",
+      "solved": 41,
+      "accepted": true,
+      "reasons": [
+        "accepted"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": true
+    }
+  ],
+  "parents": {
+    "1701": null,
+    "1702": null,
+    "1703": null
+  },
+  "random_parents": {
+    "1701": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          6.315282115839231,
+          4.334482871242312,
+          -6.763143720095298,
+          4.957367758816822,
+          -0.13355093511049532,
+          -7.874966948094993
+        ],
+        "action": [
+          8.987365125230376,
+          6.2160657495212455,
+          1.5390010394526747,
+          -1.8155737510261893
+        ],
+        "horizon": [
+          -7.323866219280869,
+          -0.2185532196811799,
+          1.4097922971837669
+        ],
+        "beam": [
+          -7.364681129956862,
+          0.6314188766638136,
+          -2.4179826658539625,
+          8.660306405608853,
+          -2.5278022488955756,
+          8.691478346385033
+        ]
+      },
+      "id": "0762f4dc308c9f495086cc34d68955c63ec7b14bc7c6286c4a974aeea7e51f86"
+    },
+    "1702": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          0.434257321456041,
+          -2.60829645225151,
+          -6.3136144586374705,
+          -5.246326255573626,
+          -8.38784619532928,
+          8.191029753931105
+        ],
+        "action": [
+          -1.119343465035671,
+          -2.92526975945973,
+          8.966423530566875,
+          -5.104908748149551
+        ],
+        "horizon": [
+          -6.1581057000286705,
+          0.7916936339527894,
+          -2.3973883511077094
+        ],
+        "beam": [
+          5.344692128515462,
+          -5.889972914630446,
+          -4.489496152486495,
+          6.122279645349444,
+          -1.976290321934706,
+          -5.533312524937276
+        ]
+      },
+      "id": "3c5830b296e2eb56774dc75c4b4628d4cf6bc3e695d69d4670ff1daaee344f75"
+    },
+    "1703": {
+      "kind": "cell",
+      "template": "resource_lookahead3",
+      "params": {
+        "reward": [
+          3.580681065096133,
+          -3.9120032591013896,
+          2.4965912369756538,
+          0.5539682126179013,
+          -1.9002990004778084,
+          -5.617678691942392
+        ],
+        "action": [
+          -0.4371053206569062,
+          0.5319231456069105,
+          4.77476477216211,
+          -1.0280662244362464
+        ],
+        "horizon": [
+          2.2623623839879308,
+          8.778437362203306,
+          3.551497489737816
+        ],
+        "beam": [
+          -0.39278996199103666,
+          -6.3293587380775636,
+          5.8432275661484105,
+          8.707426218884919,
+          -7.177752742978581,
+          0.21226536225951165
+        ]
+      },
+      "id": "7568ac2aee16edbe5368e54bb400ea08f92211bd91ca13b2bb3c280b2d375a54"
+    }
+  }
+}

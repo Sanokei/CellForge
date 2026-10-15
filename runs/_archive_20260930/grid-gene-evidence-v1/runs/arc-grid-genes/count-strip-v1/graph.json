@@ -1,0 +1,609 @@
+{
+ "defs": {
+  "count_expert0": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "count_strip.gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "count_expert1": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_width": "$input_width"
+     },
+     "use": "count_strip.gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "count_root": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "use": "count_router"
+    },
+    {
+     "args": {
+      "branches": [
+       "count_expert0",
+       "count_expert1"
+      ],
+      "k": 1
+     },
+     "id": "n1",
+     "in": {
+      "index": "$index",
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_mask": "$output_mask",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "scores": "n0.scores",
+      "state": "$state"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1.color_logits",
+    "height_logits": "n1.height_logits",
+    "state": "n1.state",
+    "width_logits": "n1.width_logits"
+   },
+   "role": "root"
+  },
+  "count_router": {
+   "inputs": [],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "n": 2,
+      "start": 0.0,
+      "step": 0.0
+     },
+     "id": "n0",
+     "use": "op:coords"
+    }
+   ],
+   "outputs": {
+    "scores": "n0"
+   },
+   "role": "router"
+  },
+  "count_strip.count": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "count_strip.count.W",
+    "b1": "count_strip.count.b"
+   }
+  },
+  "count_strip.gene": {
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n0",
+     "in": {
+      "x": "$input"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:onehot_argmax"
+    },
+    {
+     "id": "n3",
+     "in": {
+      "x": "n2"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n4",
+     "in": {
+      "x": "n3"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n5",
+     "in": {
+      "a": "n1",
+      "b": "n4"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n6",
+     "in": {
+      "x": "n5"
+     },
+     "use": "count_strip.count"
+    },
+    {
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:step"
+    },
+    {
+     "id": "n8",
+     "in": {
+      "x": "n7"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n9",
+     "in": {
+      "x": "n8"
+     },
+     "use": "op:bias"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "n10",
+     "in": {
+      "x": "n5"
+     },
+     "use": "op:onehot_argmax"
+    },
+    {
+     "id": "n11",
+     "in": {
+      "a": "n10",
+      "b": "n7"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n12",
+     "in": {
+      "a": "n2",
+      "b": "n9"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "n11",
+      "b": "n12"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": -30
+     },
+     "id": "n14",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n16",
+     "in": {
+      "a": "n6",
+      "b": "n15"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n17",
+     "in": {
+      "a": "n16",
+      "b": "n9"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "n": 30
+     },
+     "id": "n18",
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n19",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n20",
+     "in": {
+      "a": "n19",
+      "b": "n17"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n21",
+     "in": {
+      "x": "n20"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n22",
+     "in": {
+      "x": "n21"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n23",
+     "in": {
+      "x": "n22"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n24",
+     "in": {
+      "x": "n23"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n25",
+     "in": {
+      "x": "n18"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n26",
+     "in": {
+      "x": "n25"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n27",
+     "in": {
+      "x": "n26"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n28",
+     "in": {
+      "a": "n17",
+      "b": "n18"
+     },
+     "use": "op:sub"
+    },
+    {
+     "args": {
+      "c": -0.5
+     },
+     "id": "n29",
+     "in": {
+      "x": "n28"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n30",
+     "in": {
+      "x": "n29"
+     },
+     "use": "op:step"
+    },
+    {
+     "args": {
+      "shape": [
+       30,
+       1,
+       1
+      ]
+     },
+     "id": "n31",
+     "in": {
+      "x": "n27"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       1
+      ]
+     },
+     "id": "n32",
+     "in": {
+      "x": "n30"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1,
+       10
+      ]
+     },
+     "id": "n33",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n34",
+     "in": {
+      "a": "n31",
+      "b": "n32"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n35",
+     "in": {
+      "a": "n34",
+      "b": "n33"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n35",
+    "height": "n27",
+    "width": "n24"
+   },
+   "role": "cluster"
+  }
+ },
+ "entries": {
+  "grid_step": "count_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "construction": "authored count_nonbg_to_strip gene/1; no gradients/fitted data",
+  "gene_contract": {
+   "cluster": "count_strip.gene",
+   "inputs": [
+    "input",
+    "input_height",
+    "input_width"
+   ],
+   "outputs": [
+    "colors",
+    "height",
+    "width"
+   ],
+   "rule": "most-frequent valid color is background; lowest-index tie; count all nonbackground pixels; dominant foreground color lowest-index tie; horizontal strip cap30; empty1x1background"
+  },
+  "grid_attempts": 1,
+  "grid_interface": "grid-graph/1",
+  "limitations": "fixed counting rule, no object counting, no demonstration adaptation; duplicate profile expert wrappers are identical",
+  "profile": "ladder-micro/1",
+  "state_dim": 0,
+  "task": "grid"
+ },
+ "params": {
+  "count_strip.count.W": {
+   "sha256": "80c8c65f23467ae2bed7fef3d34d93a3a49d91d9e8998bed0d0c0a53e00d6e33",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "count_strip.count.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  }
+ }
+}

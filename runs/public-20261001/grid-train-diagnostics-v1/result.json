@@ -1,0 +1,47 @@
+{
+  "policy": {
+    "protocol": "train-only-grid-diagnostics/1",
+    "native_manifest": "4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+    "model_hashes": {
+      "associative9": "72f3008d492d72f65fe34054f7b55afeb4c8a86fb08c0bbc76746f2b2b250a4b",
+      "conditional_state": "1fb246d922964548d4964686a51186bf9f2fbb23cea3c2cd1c23ad4328832056"
+    },
+    "tasks": 200,
+    "evidence": "train-pairs",
+    "query_labels_used": false,
+    "source_sha256": "23ab54269f04a735df72d549a67dca0e488b9708d656e8f793e966be81ca41bd",
+    "public_evaluation_loaded": false,
+    "audit_evaluations": 0,
+    "final_evaluations": 0,
+    "selection_or_graph_edits": false,
+    "gradients": false
+  },
+  "summaries": {
+    "associative9": {
+      "classes": {
+        "observed-shape-mismatch": 57,
+        "pixel-rule-or-routing": 141,
+        "none": 2
+      },
+      "tasks": 200,
+      "exact_demonstration_consistent": 2,
+      "shape_changing_demo_tasks": 57,
+      "diagnostic_sha256": "e1a652d0ef38d63ef5df7449f6fa0145a29946efd9ba7d251aac3f8defb5db67"
+    },
+    "conditional_state": {
+      "classes": {
+        "observed-shape-mismatch": 57,
+        "pixel-rule-or-routing": 143
+      },
+      "tasks": 200,
+      "exact_demonstration_consistent": 0,
+      "shape_changing_demo_tasks": 57,
+      "diagnostic_sha256": "1006b30d43eb53d55520768185869b65d6e2867f3649dd94214d0c11a6bbf5be"
+    }
+  },
+  "wall_seconds": 17.014341838999826,
+  "cpu_seconds": 17.012100757,
+  "peak_rss_bytes": 63205376,
+  "limitations": "development diagnostics, not query/generalization score; observed failures may reflect routing rather than absent gene capability",
+  "ledger_verified": 4
+}

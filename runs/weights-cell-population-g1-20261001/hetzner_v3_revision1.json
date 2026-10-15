@@ -1,0 +1,35 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "rationale":"One bounded counterexample-backed proposal from hetzner-maker-request-v3.json only. Parent and oracle solve2/12. The noisy two-color demonstrations require painting every cell of complete empty3x3 patches color1 while preserving surrounding pixels. Existing one-pass local single-pixel painters cannot emit all nine cells from a center detection. Author a narrow typed repair of existing expert2, preserving its original convolution parameters and behavior outside an input-derived guard. The added branch detects all-zero3x3 input windows and emits their3x3 footprints. No seventh expert, task-ID dispatch, query-target inference, report-based tuning, or guaranteed gain is introduced. All newly added coefficients are literal authored values; existing Claude/GPT parent material remains inherited. This is branch assembly and structural repair, not crossover.",
+ "new_structure":"guarded_conv_patch_emit_v1",
+ "repaired_expert_index":2,
+ "ops":[
+  {"op":"set_param","name":"2:patch.zero.W","value":[[1,0,0,0,0,0,0,0,0,0]]},
+  {"op":"set_param","name":"2:patch.detect.b","value":[-8.5]},
+  {"op":"set_param","name":"2:patch.paint","value":[0,1,0,0,0,0,0,0,0,0]},
+  {"op":"set_param","name":"2:patch.emit.W","value":[[1,1,1],[1,1,1],[1,1,1]]},
+  {"op":"set_param","name":"2:patch.emit.b","value":[-0.5]},
+  {"op":"set_param","name":"2:patch.guard.density","value":[0.3]}
+ ],
+ "newly_authored_names":["2:patch.zero.W","2:patch.detect.b","2:patch.paint","2:patch.emit.W","2:patch.emit.b","2:patch.guard.density"],
+ "inherited_names":["0:pick","0:fill","1:map.W","2:conv.W","2:conv.b","2:paint","3:self.W","3:cnt.W","3:cnt.b","3:paint","4:stencil.W","4:foreground.W","4:activation.b","5:target.W","5:component.W","5:component.b","5:readout.W","5:readout.b","5:palette","route.W","route.b"],
+ "inheritance":"Every existing tensor and five other expert structures are preserved exactly from the334-position parent in the authorized maker request. Expert2 retains its inherited convolution branch. The six-expert router stays exactly inherited, with no new dimensions or biases. Only the32 patch-branch scalar positions are newly authored.",
+ "executable_contract":{
+  "input":"Nonempty rectangular Grid[int0..9]",
+  "output":"Same-shaped Grid[int0..9]",
+  "guard":"Let C be the set of distinct nonzero input colors. Enter the new branch iff0 occurs, C has exactly one member k, k is not1, and the number of nonzero input cells divided by total cells is strictly greater than patch.guard.density[0]. Otherwise run the original inherited expert2 convolution implementation exactly. This guard uses only input-derived palette and density, never task identity or expected outputs.",
+  "detect":"Snapshot input. For each coordinate with a complete in-bounds3x3 window, sum patch.zero.W[0,inputcolor] across all nine input cells and add patch.detect.b[0]. Mark an anchor iff this is strictly positive. With the literal values, precisely nine zero cells are required. Coordinates whose3x3 window crosses the border are never anchors; absent pixels do not count as zero. Compute every anchor from original input, never generated output.",
+  "emit":"For each output coordinate(r,c), sum patch.emit.W[dr+1,dc+1]*anchor[r-dr,c-dc] over dr,dc in{-1,0,1}, omitting invalid anchor coordinates, then add patch.emit.b[0]. If strictly positive, write argmax(patch.paint) with smallest-color tie-breaking; otherwise copy the original input pixel. This paints the union of detected3x3 footprints color1 and preserves all other input pixels.",
+  "router":"Keep six experts and the inherited literal six-by-six identity router and zero bias. Recompute existing negative mean permitted-demonstration mismatch features using the actual repaired expert2 outputs. Preserve shape-mismatch penalty1 and existing tie-breaking. No expected query grid or task ID enters inference.",
+  "metric":"Use unchanged exact whole-grid task correctness including dimensions. Fractional demo mismatch remains only an inference feature. Do not replace task success with pixel-level improvement."
+ },
+ "numerical_accounting":{"new_positions":32,"literal_values_written":32,"parent_positions":334,"candidate_positions":366,"finite_range":[-9,9]},
+ "assembly_decision":"One charged candidate requires explicit translation/admission of guarded_conv_patch_emit_v1 at existing expert2. Preserve all old tensors, retain inherited convolution fallback, and freeze guard/detection/emission semantics before evaluation. This is a numerical branch proposal plus narrowly typed structural repair, not an already executed gain or automatic promotion. No seventh expert or router resize. Author effort is separately recorded from evaluation calls.",
+ "observed_limits":[
+  "The dense two-color guard and3x3 patch hypothesis are inferred from permitted development examples. Larger empty regions emit the union of all qualifying3x3 windows; whether that generalizes is unverified.",
+  "Inside the new guard, inherited convolution behavior is replaced by patch emission; outside it the original family is preserved exactly. Existing other expert families and router coefficients are untouched.",
+  "Sparse marker drawing, reflected-object completion, row-color propagation, component filtering, panel movement, and shape-changing extraction failures remain unresolved by this branch.",
+  "The failure request contains duplicate cases for one task; no duplicates were treated as independent evidence or a gain.",
+  "No evaluation or reporting access was performed. Optional prior-child serialization is deferred; this file is the primary bounded proposal."
+ ]
+}

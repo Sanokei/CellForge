@@ -1,0 +1,152 @@
+[
+  {
+    "task_id": "tile-32x-rot_cycle",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,1,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations form three tile rows and two columns with rotations [[identity, clockwise90], [clockwise90, rot180], [rot180, counterclockwise90]]. For input [[6,2],[3,7]], the top-right tile is [[3,6],[7,2]] and bottom-right is [[2,7],[6,3]]."
+  },
+  {
+    "task_id": "tile-24x-flip_odd_cols",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,0,0,1],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Each demonstration repeats two identical tile rows, each containing identity, fliplr, identity, fliplr. The input row [3,9,1] becomes [3,9,1,1,9,3,3,9,1,1,9,3]."
+  },
+  {
+    "task_id": "tile-44x-flip_lr_odd_rows",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,0,1],
+      "pec": [0,0,0,1],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0]],
+        [[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0]],
+        [[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All outputs contain four tile rows and four columns. Tile rows 0 and 2 repeat the input; rows 1 and 3 repeat its horizontal reflection. In the rectangular demonstration, [7,4] becomes [4,7] in each tile of reflected rows while input row order stays intact."
+  },
+  {
+    "task_id": "tile-13x-flip_odd_cols",
+    "template": "tile_orient",
+    "params": {
+      "per": [1,0,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Every output is one tile row of identity, fliplr, identity. For example, [9,4,1] becomes [9,4,1,1,4,9,9,4,1], with output height equal to input height."
+  },
+  {
+    "task_id": "tile-33x-flip_odd_cols",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Each demonstration repeats three identical tile rows containing identity, fliplr, identity. The row [5,7,2] becomes [5,7,2,2,7,5,5,7,2], and the two-row input produces six output rows."
+  },
+  {
+    "task_id": "tile-22x-mirror4",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations form a 2x2 arrangement [[identity, fliplr], [flipud, rot180]]. For input [[5,6],[4,8]], the bottom-left tile is [[4,8],[5,6]] and bottom-right is [[8,4],[6,5]]."
+  },
+  {
+    "task_id": "tile-22x-same",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Every demonstration places four unchanged input copies in a 2x2 arrangement. The row [2,4,6] repeats horizontally as [2,4,6,2,4,6], and the entire input row sequence repeats vertically."
+  },
+  {
+    "task_id": "tile-23x-mirror4",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations use [[identity, fliplr, identity], [flipud, rot180, flipud]]. In the second demonstration, the first output row is [4,1,5,5,1,4,4,1,5], and the lower half reverses the upper half's row order."
+  },
+  {
+    "task_id": "tile-44x-rot_cycle",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,0,1],
+      "pec": [0,0,0,1],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,1,0]],
+        [[0,0,0,0,0,1,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,1,0],[1,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,1,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0]],
+        [[0,0,0,0,0,0,1,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0],[0,0,0,1,0,0,0,0]]
+      ]
+    },
+    "rationale": "Every demonstration has a 4x4 tile arrangement with clockwise rotation angle 90*(i+j) modulo 360. In the first demonstration, the top tile row begins with input, then a tile starting [7,2,3], then [9,1,7], then [4,6,9], establishing identity, clockwise90, rot180, counterclockwise90."
+  },
+  {
+    "task_id": "tile-21x-flip_lr_odd_rows",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [1,0,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Each output stacks the unchanged input above its horizontal reflection, with one tile column. In the second demonstration, the lower tile contains [6,5,4], [3,3,6], [6,0,5], preserving row order and reversing each row."
+  }
+]

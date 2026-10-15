@@ -1,0 +1,5 @@
+I couldn’t complete the source review: the local inspection tool failed before returning any file content (“host closed its stdout”; a subsequent tool-discovery attempt ended with SIGTRAP). No tests, experiments, model calls, agents, downloads, or file edits were performed.
+
+I have the AGENTS.md text supplied in your message, but could not read the on-disk AGENTS.md or full LAB.md. I therefore cannot provide verified file/line evidence, assess the requested runtime semantics or control validity, distinguish what the tests establish, or determine whether the published snapshot supports a bounded scientific hypothesis.
+
+Those findings remain **unassessed**. The inspection failure provides no evidence of scientific success or failure, and I make no claims of new training gains. A source-grounded review requires working read-only inspection access to this workspace.

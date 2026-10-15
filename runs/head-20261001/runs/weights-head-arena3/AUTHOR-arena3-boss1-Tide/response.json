@@ -1,0 +1,108 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 1, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses background 8 and directional nearest-colour context. The rule rotates each 6's displacement around its associated 1 to place a 7; none of the keys retains the required distances."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt distinguishes objects by colour and holes, allowing blue markers to disappear separately. The large object's output colour depends on the separate blue marker's shape, which no available property communicates."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses eight-neighbour counts to recognise corridor interiors and bends. Filling must follow the corridor from its opening and respond to the distant 9; identical local neighbourhoods can require different outputs."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt enables every nonzero source colour, fixing the omitted 8. The template cannot paint crossings 2 while preserving each ray's own colour elsewhere because it has no crossing-specific paint rule."
+  },
+  {
+    "task_id": "150deff5",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses full local patterns to distinguish square regions from thin extensions. General square-versus-line decomposition requires resolving connected geometry beyond a 3x3 window; the other keys discard that geometry."
+  },
+  {
+    "task_id": "8fbca751",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt learns local corner and edge completion patterns. Filling each object's bounding rectangle requires component membership and coordinate extrema, which none of the available keys encodes."
+  },
+  {
+    "task_id": "d47aa2ff",
+    "params": {
+      "axis": [1, 0],
+      "op": [0, 1, 0, 0, 0],
+      "outc": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "sep": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt selects the union to retain every occupied comparison position. The required output preserves shared colours and distinguishes right-only 1 from left-only 2; this template emits only one nonzero colour."
+  },
+  {
+    "task_id": "05f2a901",
+    "params": {
+      "keep": [1.1],
+      "sim": [
+        [9, -9, -9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, 9, -9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, 9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, 9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, 9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, 9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, 9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, 9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, -9, 9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, -9, -9, 9]
+      ],
+      "temp": [9]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt preserves the red object instead of deleting it. Every pixel of a given input colour receives the same output, so this template cannot translate the red object toward the cyan object or selectively create red at background positions."
+  },
+  {
+    "task_id": "b7fb29bc",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 9]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses eight-connected enclosure detection. The template supplies a single learned fill colour, whereas the enclosed region requires a spatial pattern containing both 2 and 4."
+  },
+  {
+    "task_id": "84db8fc4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses local patterns to distinguish enclosed zeros from exterior zeros. The rule depends on background connectivity to the border, which can differ between pixels with identical available keys."
+  }
+]

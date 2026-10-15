@@ -1,0 +1,36 @@
+{
+  "parent_hash": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+  "child_hash": "072d019c643ee12016a5f9c82f6c151e049f01679bc80484f4956a961018806d",
+  "inherited_tensors": [
+    "0:pick",
+    "0:fill",
+    "1:map.W",
+    "2:conv.W",
+    "2:conv.b",
+    "2:paint",
+    "3:self.W",
+    "3:cnt.W",
+    "3:cnt.b",
+    "3:paint",
+    "4:stencil.W",
+    "4:foreground.W",
+    "4:activation.b"
+  ],
+  "new_weights": [
+    "5:target.W",
+    "5:component.W",
+    "5:component.b",
+    "5:readout.W",
+    "5:readout.b",
+    "5:palette"
+  ],
+  "written_scalar_values": 65,
+  "new_parameter_positions": 35,
+  "preserved_router_block": [
+    5,
+    5
+  ],
+  "candidate_type": "LLM-authored structural/numerical mutation, not crossover",
+  "raw_proposal": "proposal.json",
+  "promoted": false
+}

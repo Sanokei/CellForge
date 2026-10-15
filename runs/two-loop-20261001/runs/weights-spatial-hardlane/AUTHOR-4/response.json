@@ -1,0 +1,74 @@
+[
+  {
+    "seed": 701,
+    "niche": "spatial_quorum",
+    "parent_id": "a18f1f4dbb1b50c7888bf13071807dc77136fba693b0411fc7630522089f7bd4",
+    "prompt_sha256": "fafd5370474a380f24c8d9edc54288c2426fc51b6e835799aa85d01b8a865ecb",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0
+      ]],
+      "b1": [-2.5]
+    },
+    "charged_positions": 91,
+    "rationale": "Fresh center penalty preserves the parent's Boolean function: an empty center requires at least three occupied cardinal neighbors; an occupied center always yields zero. Supplied parent evidence already solves 40/40 development cases, so no strict development gain is claimed."
+  },
+  {
+    "seed": 702,
+    "niche": "spatial_quorum",
+    "parent_id": "cce758cc351a2d3882d42ba8e491dab1eedaaa7c041d7c8d922785085d360f99",
+    "prompt_sha256": "ecf8f76844dd955ca60d0b2b45d56eeb488ccc30d559985776676296b5e19885",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,-4.5,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0
+      ]],
+      "b1": [-2.5]
+    },
+    "charged_positions": 91,
+    "rationale": "Positive rescaling by one half gives fresh literal parameters with exactly the parent's step output on every input. Supplied parent evidence already solves 40/40 development cases; this preserves performance without claiming strict development gain."
+  },
+  {
+    "seed": 703,
+    "niche": "spatial_quorum",
+    "parent_id": "cd668ddbea3fa76ebcd5dbb6f45983eca73176f53304ce387a162b6773fa18a2",
+    "prompt_sha256": "cb32de2e3bef684151a88a83cb49d39bfcf1739b3de6e05efe40f010daa6ccd6",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        4.5,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0,
+        0,1,1,1,1,1,1,1,1,1,
+        0,0,0,0,0,0,0,0,0,0
+      ]],
+      "b1": [-7]
+    },
+    "charged_positions": 91,
+    "rationale": "Reducing the empty-center coefficient and bias magnitude together preserves the three-neighbor threshold. An occupied center remains negative even with four occupied cardinal neighbors. This preserves the parent's function on the typed one-hot domain; its supplied 40/40 development result leaves no strict development gain available."
+  }
+]

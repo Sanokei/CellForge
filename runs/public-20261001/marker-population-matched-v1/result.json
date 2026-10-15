@@ -1,0 +1,2257 @@
+{
+  "policy": {
+    "protocol": "living-two-slot-matched/2",
+    "arms": [
+      "crossover",
+      "mutation_only",
+      "random_search"
+    ],
+    "proposals_per_arm": 4,
+    "founder_evaluations_per_arm": 2,
+    "physical_evaluations_per_arm": 6,
+    "random_streams": "sha256(seed_base,index,role) first64bits, parent/proposal separated",
+    "capacity": 4,
+    "max_age": 8,
+    "seed_base": 773001,
+    "selection_seed_base": 4507000,
+    "validation_seed_base": 4517000,
+    "native_query_scoring": false,
+    "object_bank": true,
+    "per_family": 1,
+    "scaling_bank": true,
+    "scaling_selection_seed": 4707000,
+    "expanded_bank": true,
+    "expanded_selection_seed": 4507000,
+    "marker_family": true,
+    "expanded_validation_seed": 4517000,
+    "scaling_validation_seed": 4717000,
+    "object_selection_seed": 4607000,
+    "object_validation_seed": 4617000,
+    "fitness": "one fixed output rank must reconstruct every complete demonstration after all demo adaptation; query answers excluded",
+    "genotype_identity": "validated shared base hash plus 7 functional alleles; full artifact hash separate lineage",
+    "mortality": "neutral contemporary genotype preserves age, including death boundary; no elite immortality",
+    "selection_cache": "none; independently execute two founders and every proposal in each arm",
+    "winner": "eligible archive maximum absolute demo solve count, canonical genotype then artifact hash tie; archive never parent pool",
+    "mate_rule": "same-hash draw replaced by lowest canonical-hash distinct contemporary when possible",
+    "random_control": "uniform two alleles from same bank; independent of parent fitness; same physical call budget",
+    "mortality_sharing": "same mechanics in crossover/mutation; no individual-mechanism efficacy isolation",
+    "report_cache": "identical canonical winner may reuse report only, explicitly not independent replicates",
+    "extinction": "remaining proposal budget executes failed baseline placeholders; no archive-parent fallback, no eligible birth/winner",
+    "audit_evaluations": 0,
+    "final_evaluations": 0,
+    "gradient_steps": 0,
+    "gradient_estimators": 0,
+    "source_sha256": "8bd7f2431474e9c7a87334caa41dd61b6f4de0e70da8f2f1089e2da530800f2d",
+    "shared_base_hash": "707aeb792474453584bbe6dab4d3c0bb6d37108f60c0b04cca503254b3474681",
+    "source_graphs": {
+      "base": "707aeb792474453584bbe6dab4d3c0bb6d37108f60c0b04cca503254b3474681",
+      "parent-crop-fill": "d2c41a65221a5fc4e64bed9f82159acbcde2bf64ca9de267942a99ad64dd6b58",
+      "parent-object-adjacency-scaling": "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35"
+    },
+    "selection_manifest": "fbd2ba617cf655049a6abd69f17038c25db91a10a0108a0f1dc355c36bc7ff8c",
+    "selection_full_io_manifest": "ae3fd7f90b66757a4d19e94617b4fa4f24813cd12fdb912133f2197d9dc1ab83",
+    "validation_full_io_manifest": "7db9c9272c7308f1ef2593c0ced0f8173091440517092214206e7cf5a3004c24",
+    "exact_io_duplicate_audit": "zero within/cross-split duplicates before policy freeze",
+    "native_content_manifest": null,
+    "selection_tasks": 13,
+    "selection_demo_pairs": 37,
+    "validation_tasks": 26,
+    "limitations": "4 proposals per arm, narrow synthetic curriculum; no independent efficacy/frontier claim",
+    "native_tasks_loaded": 0,
+    "scaling_overflow_cases": 0,
+    "rank_consistent_selection": true
+  },
+  "attempts": {
+    "crossover": [
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "d6a4d904644151d9a9c44495581e5e6c7a60adc2534f66639a5b59fce7d4038b",
+        "artifact_hash": "f53eb60a273503c83251d9397f9170a7350417996e7a9e1005ec1771366b9d8b",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "homologous uniform seven-slot crossover",
+          "operator_seed": 10203064169794628175,
+          "parent_hashes": [
+            "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35",
+            "d2c41a65221a5fc4e64bed9f82159acbcde2bf64ca9de267942a99ad64dd6b58"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "donor_per_slot": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 5,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.011003734,
+          "wall_seconds": 1.0112091720075114
+        },
+        "attempt": 1,
+        "random_seeds": {
+          "parent": 813999185294709408,
+          "proposal": 10203064169794628175
+        },
+        "sampling": {
+          "seed": 813999185294709408,
+          "generation": 0,
+          "parent_hashes": [
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26",
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26"
+          ],
+          "probabilities": {
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.5603318250377074,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.4396681749622926
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35",
+          "d2c41a65221a5fc4e64bed9f82159acbcde2bf64ca9de267942a99ad64dd6b58"
+        ]
+      },
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091",
+        "artifact_hash": "270dfb611612142ed21ec747f8d020248f51117d7bc77ad811d968723dca2332",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "homologous uniform seven-slot crossover",
+          "operator_seed": 17146443368458742320,
+          "parent_hashes": [
+            "d2c41a65221a5fc4e64bed9f82159acbcde2bf64ca9de267942a99ad64dd6b58",
+            "f53eb60a273503c83251d9397f9170a7350417996e7a9e1005ec1771366b9d8b"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "donor_per_slot": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 7,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.1260661900000004,
+          "wall_seconds": 1.1262438650010154
+        },
+        "attempt": 2,
+        "random_seeds": {
+          "parent": 15510196244048901397,
+          "proposal": 17146443368458742320
+        },
+        "sampling": {
+          "seed": 15510196244048901397,
+          "generation": 1,
+          "parent_hashes": [
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091",
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091"
+          ],
+          "probabilities": {
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.4546280138181559,
+            "d6a4d904644151d9a9c44495581e5e6c7a60adc2534f66639a5b59fce7d4038b": 0.2121870436981374,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.33318494248370667
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "d2c41a65221a5fc4e64bed9f82159acbcde2bf64ca9de267942a99ad64dd6b58",
+          "f53eb60a273503c83251d9397f9170a7350417996e7a9e1005ec1771366b9d8b"
+        ]
+      },
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091",
+        "artifact_hash": "d59c601ccd552e5c8b2488e7c768515e47b716c92a9d5b01989fce6dc843dcf4",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "homologous uniform seven-slot crossover",
+          "operator_seed": 12749238736945273382,
+          "parent_hashes": [
+            "270dfb611612142ed21ec747f8d020248f51117d7bc77ad811d968723dca2332",
+            "f53eb60a273503c83251d9397f9170a7350417996e7a9e1005ec1771366b9d8b"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "donor_per_slot": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 7,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.1290798309999994,
+          "wall_seconds": 1.129219385999022
+        },
+        "attempt": 3,
+        "random_seeds": {
+          "parent": 5945060809469333112,
+          "proposal": 12749238736945273382
+        },
+        "sampling": {
+          "seed": 5945060809469333112,
+          "generation": 2,
+          "parent_hashes": [
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091",
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091"
+          ],
+          "probabilities": {
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.4546280138181559,
+            "d6a4d904644151d9a9c44495581e5e6c7a60adc2534f66639a5b59fce7d4038b": 0.2121870436981374,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.33318494248370667
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "270dfb611612142ed21ec747f8d020248f51117d7bc77ad811d968723dca2332",
+          "f53eb60a273503c83251d9397f9170a7350417996e7a9e1005ec1771366b9d8b"
+        ]
+      },
+      {
+        "arm": "crossover",
+        "kind": "proposal",
+        "canonical_genotype": "055cca5749b9498e3b7f846fcd683baaba2b0a729dc333256ba9812bb2fd3d6b",
+        "artifact_hash": "1e81ee44d9c46592068b6c23cbf619bb6f92727efb43e8dd0e708f317b90d91c",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "geometry_0",
+            "bank_local_fill.gene",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "homologous uniform seven-slot crossover",
+          "operator_seed": 14176857026528548988,
+          "parent_hashes": [
+            "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35",
+            "d59c601ccd552e5c8b2488e7c768515e47b716c92a9d5b01989fce6dc843dcf4"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "donor_per_slot": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 6,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.0308073799999997,
+          "wall_seconds": 1.030992547995993
+        },
+        "attempt": 4,
+        "random_seeds": {
+          "parent": 16199257016426532819,
+          "proposal": 14176857026528548988
+        },
+        "sampling": {
+          "seed": 16199257016426532819,
+          "generation": 3,
+          "parent_hashes": [
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26",
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091"
+          ],
+          "probabilities": {
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.4546280138181559,
+            "d6a4d904644151d9a9c44495581e5e6c7a60adc2534f66639a5b59fce7d4038b": 0.2121870436981374,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.33318494248370667
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35",
+          "d59c601ccd552e5c8b2488e7c768515e47b716c92a9d5b01989fce6dc843dcf4"
+        ]
+      }
+    ],
+    "mutation_only": [
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4",
+        "artifact_hash": "8993821d4adb4fa95e5b588a766f4c6b83c11307f36e33d5f481241ced14f3ad",
+        "genome": {
+          "alleles": [
+            "marker_mirror_repeat.gene",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "bank_adjacency_recolor.gene",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "one-slot uniform 8-allele mutation",
+          "operator_seed": 10203064169794628175,
+          "parent_hashes": [
+            "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "mutated_slot": 5,
+          "old_allele": "geometry_0",
+          "new_allele": "bank_adjacency_recolor.gene",
+          "no_change": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true
+          ],
+          "solved": 7,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.1694282959999995,
+          "wall_seconds": 1.169622122994042
+        },
+        "attempt": 1,
+        "random_seeds": {
+          "parent": 813999185294709408,
+          "proposal": 10203064169794628175
+        },
+        "sampling": {
+          "seed": 813999185294709408,
+          "generation": 0,
+          "parent_hashes": [
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26",
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26"
+          ],
+          "probabilities": {
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.5603318250377074,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.4396681749622926
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35",
+          "7ed436f2a4509e31f5015f46f67f53247541e599ba12167a6c2cc57baa9b6b35"
+        ]
+      },
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "5143b5fdd2bcee863e641d1e508b55f6d4df723ff0b6a96a19a05c4b0704ceb0",
+        "artifact_hash": "a8429523452bf520d7b2928e463db0349f0b36ba1f8b663c8d0d9ea069e54a66",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bbox.geometry",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "one-slot uniform 8-allele mutation",
+          "operator_seed": 17146443368458742320,
+          "parent_hashes": [
+            "d2c41a65221a5fc4e64bed9f82159acbcde2bf64ca9de267942a99ad64dd6b58"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "mutated_slot": 3,
+          "old_allele": "geometry_0",
+          "new_allele": "bbox.geometry",
+          "no_change": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 7,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.1400055259999995,
+          "wall_seconds": 1.1401658169925213
+        },
+        "attempt": 2,
+        "random_seeds": {
+          "parent": 15510196244048901397,
+          "proposal": 17146443368458742320
+        },
+        "sampling": {
+          "seed": 15510196244048901397,
+          "generation": 1,
+          "parent_hashes": [
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091",
+            "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4"
+          ],
+          "probabilities": {
+            "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4": 0.3503597198305461,
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.40669469769800437,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.24294558247144954
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "d2c41a65221a5fc4e64bed9f82159acbcde2bf64ca9de267942a99ad64dd6b58",
+          "8993821d4adb4fa95e5b588a766f4c6b83c11307f36e33d5f481241ced14f3ad"
+        ]
+      },
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "f8f895ff0551dfc7910de7105dad293e55aebbb428e0b734603be659ea9708ad",
+        "artifact_hash": "5b3168d7da7db59c30d55c79024e9d21b5564c07d94891015f3d07a5dda8279d",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "bank_adjacency_recolor.gene",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "one-slot uniform 8-allele mutation",
+          "operator_seed": 12749238736945273382,
+          "parent_hashes": [
+            "8993821d4adb4fa95e5b588a766f4c6b83c11307f36e33d5f481241ced14f3ad"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "mutated_slot": 0,
+          "old_allele": "marker_mirror_repeat.gene",
+          "new_allele": "geometry_0",
+          "no_change": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 6,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.084636754,
+          "wall_seconds": 1.084842620010022
+        },
+        "attempt": 3,
+        "random_seeds": {
+          "parent": 5945060809469333112,
+          "proposal": 12749238736945273382
+        },
+        "sampling": {
+          "seed": 5945060809469333112,
+          "generation": 2,
+          "parent_hashes": [
+            "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4",
+            "5143b5fdd2bcee863e641d1e508b55f6d4df723ff0b6a96a19a05c4b0704ceb0"
+          ],
+          "probabilities": {
+            "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4": 0.30388456342187,
+            "5143b5fdd2bcee863e641d1e508b55f6d4df723ff0b6a96a19a05c4b0704ceb0": 0.24937323286488294,
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.24937323286488294,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.19736897084836413
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "8993821d4adb4fa95e5b588a766f4c6b83c11307f36e33d5f481241ced14f3ad",
+          "a8429523452bf520d7b2928e463db0349f0b36ba1f8b663c8d0d9ea069e54a66"
+        ]
+      },
+      {
+        "arm": "mutation_only",
+        "kind": "proposal",
+        "canonical_genotype": "4828a2f0a79d5db9e0e77473d0ae4139941e328563616956fd4f7a14e86f230f",
+        "artifact_hash": "c455c5248dbdf5b2af53628e6a349ee44ae5f1a6571f3223205631b462143980",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "geometry_0",
+            "bank_adjacency_recolor.gene",
+            "bank_adjacency_recolor.gene",
+            "geometry_0"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "one-slot uniform 8-allele mutation",
+          "operator_seed": 14176857026528548988,
+          "parent_hashes": [
+            "5b3168d7da7db59c30d55c79024e9d21b5564c07d94891015f3d07a5dda8279d"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "mutated_slot": 4,
+          "old_allele": "geometry_0",
+          "new_allele": "bank_adjacency_recolor.gene",
+          "no_change": false
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false
+          ],
+          "solved": 6,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.130652485999999,
+          "wall_seconds": 1.130893947003642
+        },
+        "attempt": 4,
+        "random_seeds": {
+          "parent": 16199257016426532819,
+          "proposal": 14176857026528548988
+        },
+        "sampling": {
+          "seed": 16199257016426532819,
+          "generation": 3,
+          "parent_hashes": [
+            "f8f895ff0551dfc7910de7105dad293e55aebbb428e0b734603be659ea9708ad",
+            "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4"
+          ],
+          "probabilities": {
+            "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4": 0.30388456342187,
+            "5143b5fdd2bcee863e641d1e508b55f6d4df723ff0b6a96a19a05c4b0704ceb0": 0.24937323286488294,
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.24937323286488294,
+            "f8f895ff0551dfc7910de7105dad293e55aebbb428e0b734603be659ea9708ad": 0.19736897084836413
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": [
+          "5b3168d7da7db59c30d55c79024e9d21b5564c07d94891015f3d07a5dda8279d",
+          "8993821d4adb4fa95e5b588a766f4c6b83c11307f36e33d5f481241ced14f3ad"
+        ]
+      }
+    ],
+    "random_search": [
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd",
+        "artifact_hash": "d55ed26aaad0b8ee974883c6840abfc20fe8571fcaf452de634db71c1955a2ca",
+        "genome": {
+          "alleles": [
+            "scaling_bank3_repeat.gene",
+            "bank_adjacency_recolor.gene",
+            "bank_local_fill.gene",
+            "bank_local_fill.gene",
+            "object_bank_largest4.gene",
+            "bank_adjacency_recolor.gene",
+            "scaling_bank3_repeat.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "instantiate seven alleles",
+          "parent_hashes": [
+            "707aeb792474453584bbe6dab4d3c0bb6d37108f60c0b04cca503254b3474681"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "operator_seed": 10203064169794628175
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ],
+          "solved": 9,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 3.3332418950000005,
+          "wall_seconds": 3.335025423002662
+        },
+        "attempt": 1,
+        "random_seeds": {
+          "parent": 813999185294709408,
+          "proposal": 10203064169794628175
+        },
+        "sampling": {
+          "seed": 813999185294709408,
+          "generation": 0,
+          "parent_hashes": [
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26",
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26"
+          ],
+          "probabilities": {
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.5603318250377074,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.4396681749622926
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      },
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "55e170763281ef4cf9cca5046b5dda84be3a2aec149a08853bf8ccd3a310e7b6",
+        "artifact_hash": "870d98b2a0473e0ff91c8212a0cae68675343ef2d2427a0cbb48e51446c21f11",
+        "genome": {
+          "alleles": [
+            "bank_adjacency_recolor.gene",
+            "bbox.geometry",
+            "bbox.geometry",
+            "scaling_bank3_repeat.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "instantiate seven alleles",
+          "parent_hashes": [
+            "707aeb792474453584bbe6dab4d3c0bb6d37108f60c0b04cca503254b3474681"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "operator_seed": 17146443368458742320
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true
+          ],
+          "solved": 10,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 1.5836788919999982,
+          "wall_seconds": 1.5839141260075849
+        },
+        "attempt": 2,
+        "random_seeds": {
+          "parent": 15510196244048901397,
+          "proposal": 17146443368458742320
+        },
+        "sampling": {
+          "seed": 15510196244048901397,
+          "generation": 1,
+          "parent_hashes": [
+            "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd",
+            "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd"
+          ],
+          "probabilities": {
+            "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd": 0.46466848319709353,
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.28891916439600357,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.2464123524069028
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      },
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "43f3215041e81637b271f35bc05f310fdd5b3147a11740c05aeec290cb90e1ae",
+        "artifact_hash": "1e4366ad8d1887649af03499e2cabec661b3e8005cd1f21c3c55758852bad517",
+        "genome": {
+          "alleles": [
+            "geometry_0",
+            "geometry_0",
+            "bank_local_fill.gene",
+            "geometry_0",
+            "object_bank_largest4.gene",
+            "geometry_0",
+            "bank_adjacency_recolor.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "instantiate seven alleles",
+          "parent_hashes": [
+            "707aeb792474453584bbe6dab4d3c0bb6d37108f60c0b04cca503254b3474681"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "operator_seed": 12749238736945273382
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false
+          ],
+          "solved": 8,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 3.189122372,
+          "wall_seconds": 3.1898969009926077
+        },
+        "attempt": 3,
+        "random_seeds": {
+          "parent": 5945060809469333112,
+          "proposal": 12749238736945273382
+        },
+        "sampling": {
+          "seed": 5945060809469333112,
+          "generation": 2,
+          "parent_hashes": [
+            "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd",
+            "55e170763281ef4cf9cca5046b5dda84be3a2aec149a08853bf8ccd3a310e7b6"
+          ],
+          "probabilities": {
+            "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd": 0.3096964544681702,
+            "55e170763281ef4cf9cca5046b5dda84be3a2aec149a08853bf8ccd3a310e7b6": 0.3490023503525529,
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.19030354553182977,
+            "d70f78aa01b64511d1cd257dbd091078de5caf4fc7487e6a9459c4fc28958d26": 0.1509976496474471
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      },
+      {
+        "arm": "random_search",
+        "kind": "proposal",
+        "canonical_genotype": "906355219e6ffca44981063ae03c7fe22cdd45270091ad53490bacde2de9ac24",
+        "artifact_hash": "1d7575080693d782d5324effb41f0b22528abe9b5fd58fabf117231857803e9d",
+        "genome": {
+          "alleles": [
+            "scaling_bank2_repeat.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "bank_adjacency_recolor.gene",
+            "geometry_0",
+            "geometry_0",
+            "scaling_bank3_repeat.gene"
+          ],
+          "available_genes": [
+            "geometry_0",
+            "bbox.geometry",
+            "bank_local_fill.gene",
+            "bank_adjacency_recolor.gene",
+            "object_bank_largest4.gene",
+            "scaling_bank2_repeat.gene",
+            "scaling_bank3_repeat.gene",
+            "marker_mirror_repeat.gene"
+          ],
+          "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+          "operator": "instantiate seven alleles",
+          "parent_hashes": [
+            "707aeb792474453584bbe6dab4d3c0bb6d37108f60c0b04cca503254b3474681"
+          ],
+          "slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "operator_seed": 14176857026528548988
+        },
+        "fitness": {
+          "solves": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false
+          ],
+          "solved": 9,
+          "tasks": 13,
+          "failed": false,
+          "errors": [],
+          "predictor_calls": 37,
+          "cpu_seconds": 3.337634691999998,
+          "wall_seconds": 3.3383149009896442
+        },
+        "attempt": 4,
+        "random_seeds": {
+          "parent": 16199257016426532819,
+          "proposal": 14176857026528548988
+        },
+        "sampling": {
+          "seed": 16199257016426532819,
+          "generation": 3,
+          "parent_hashes": [
+            "55e170763281ef4cf9cca5046b5dda84be3a2aec149a08853bf8ccd3a310e7b6",
+            "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd"
+          ],
+          "probabilities": {
+            "09edbc2a500218945cc193b3dbb65f64c8b6f84cbe6f31f1da0d9b72f1f940dd": 0.2421763559532021,
+            "43f3215041e81637b271f35bc05f310fdd5b3147a11740c05aeec290cb90e1ae": 0.20250731635447988,
+            "55e170763281ef4cf9cca5046b5dda84be3a2aec149a08853bf8ccd3a310e7b6": 0.37771475258332604,
+            "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091": 0.17760157510899194
+          },
+          "pool": "living contemporaries only; sampling with replacement"
+        },
+        "actual_parent_artifact_hashes": []
+      }
+    ]
+  },
+  "costs": {
+    "crossover": {
+      "physical_evaluations": 6,
+      "predictor_calls": 222,
+      "evaluation_cpu_seconds": 6.585532819999999,
+      "evaluation_wall_seconds": 6.586682209002902,
+      "arm_cpu_seconds": 7.119981785,
+      "arm_wall_seconds": 7.1215874509944115,
+      "failed_evaluations": 0
+    },
+    "mutation_only": {
+      "physical_evaluations": 6,
+      "predictor_calls": 222,
+      "evaluation_cpu_seconds": 6.646437811999997,
+      "evaluation_wall_seconds": 6.647610410989728,
+      "arm_cpu_seconds": 7.045377056,
+      "arm_wall_seconds": 7.046617053012596,
+      "failed_evaluations": 0
+    },
+    "random_search": {
+      "physical_evaluations": 6,
+      "predictor_calls": 222,
+      "evaluation_cpu_seconds": 13.835115720999994,
+      "evaluation_wall_seconds": 13.839110389002599,
+      "arm_cpu_seconds": 14.281012619,
+      "arm_wall_seconds": 14.28507774398895,
+      "failed_evaluations": 0
+    }
+  },
+  "physical_selection_evaluations": 18,
+  "expected_predictor_calls_per_arm": 222,
+  "equal_physical_calls": true,
+  "rows": [
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 26,
+      "tasks_solved": 14,
+      "test_inputs": 26,
+      "test_inputs_correct": 14,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 14,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": 0.0,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 0.6529287099692738,
+      "inference_cpu_seconds": 0.6528855769999851,
+      "inference_cpu_seconds_per_task": 0.025110983730768657,
+      "tasks_per_second": 39.82058010777859,
+      "consistency_audit_wall_seconds": 1.890734311993583,
+      "consistency_audit_cpu_seconds": 1.8904489330000018,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "task_records": [
+        {
+          "task_id": "0",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "1",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "2",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "3",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "4",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "5",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "6",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "7",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "8",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "9",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "10",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "11",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "12",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "13",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "14",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "15",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "16",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "17",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "18",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "19",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "20",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "21",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "22",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "23",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "24",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "25",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        }
+      ],
+      "split": "fresh-synthetic-validation",
+      "macro_family_exact_accuracy": 0.5384615384615384,
+      "macro_scope": "13 equal-size 2-task families; macro equals micro, not per-family measurements",
+      "family_task_counts": {
+        "identity": 2,
+        "color_permutation": 2,
+        "reflect_horizontal": 2,
+        "reflect_vertical": 2,
+        "transpose": 2,
+        "bbox_crop_bg0": 2,
+        "tiling2x": 2,
+        "local_fill": 2,
+        "conditional_adjacency_recolor": 2,
+        "object_recolor": 2,
+        "repeat2": 2,
+        "repeat3": 2,
+        "marker_mirror": 2
+      },
+      "arm": "crossover",
+      "artifact_hash": "270dfb611612142ed21ec747f8d020248f51117d7bc77ad811d968723dca2332",
+      "canonical_genotype": "a879ef8308370f77abed74526733bc57114ff312e9301a1323aa4db55a4c6091",
+      "report_reused": false,
+      "independent_replicate": false
+    },
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 26,
+      "tasks_solved": 14,
+      "test_inputs": 26,
+      "test_inputs_correct": 14,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 14,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": 0.0,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 0.7083044239552692,
+      "inference_cpu_seconds": 0.7083363190000256,
+      "inference_cpu_seconds_per_task": 0.02724370457692406,
+      "tasks_per_second": 36.70738050005735,
+      "consistency_audit_wall_seconds": 2.019241967034759,
+      "consistency_audit_cpu_seconds": 2.0186742579999972,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "task_records": [
+        {
+          "task_id": "0",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "1",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "2",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "3",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "4",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "5",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "6",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "7",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "8",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "9",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "10",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "11",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "12",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "13",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "14",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "15",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "16",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "17",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "18",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "19",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "20",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "21",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "22",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "23",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "24",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "25",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        }
+      ],
+      "split": "fresh-synthetic-validation",
+      "macro_family_exact_accuracy": 0.5384615384615384,
+      "macro_scope": "13 equal-size 2-task families; macro equals micro, not per-family measurements",
+      "family_task_counts": {
+        "identity": 2,
+        "color_permutation": 2,
+        "reflect_horizontal": 2,
+        "reflect_vertical": 2,
+        "transpose": 2,
+        "bbox_crop_bg0": 2,
+        "tiling2x": 2,
+        "local_fill": 2,
+        "conditional_adjacency_recolor": 2,
+        "object_recolor": 2,
+        "repeat2": 2,
+        "repeat3": 2,
+        "marker_mirror": 2
+      },
+      "arm": "mutation_only",
+      "artifact_hash": "8993821d4adb4fa95e5b588a766f4c6b83c11307f36e33d5f481241ced14f3ad",
+      "canonical_genotype": "3974d218c0a0b58e8c7b2a3d1bde1046add10626a087884511f425614c7e35a4",
+      "report_reused": false,
+      "independent_replicate": false
+    },
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 26,
+      "tasks_solved": 20,
+      "test_inputs": 26,
+      "test_inputs_correct": 20,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 20,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": 0.0,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 0.8328004159993725,
+      "inference_cpu_seconds": 0.8327658820000039,
+      "inference_cpu_seconds_per_task": 0.03202945700000015,
+      "tasks_per_second": 31.21996519274024,
+      "consistency_audit_wall_seconds": 2.384143944000243,
+      "consistency_audit_cpu_seconds": 2.3838875610000017,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "task_records": [
+        {
+          "task_id": "0",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "1",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "2",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "3",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "4",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "5",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "6",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "7",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "8",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "9",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "10",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "11",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "12",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "13",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "14",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "15",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "16",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "17",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "18",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "19",
+          "solved": false,
+          "demo_consistent": false,
+          "consistent_ranks": [],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            false
+          ]
+        },
+        {
+          "task_id": "20",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "21",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "22",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "23",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0,
+            1
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "24",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        },
+        {
+          "task_id": "25",
+          "solved": true,
+          "demo_consistent": true,
+          "consistent_ranks": [
+            0
+          ],
+          "demo_consistent_but_wrong": false,
+          "query_successes": [
+            true
+          ]
+        }
+      ],
+      "split": "fresh-synthetic-validation",
+      "macro_family_exact_accuracy": 0.7692307692307693,
+      "macro_scope": "13 equal-size 2-task families; macro equals micro, not per-family measurements",
+      "family_task_counts": {
+        "identity": 2,
+        "color_permutation": 2,
+        "reflect_horizontal": 2,
+        "reflect_vertical": 2,
+        "transpose": 2,
+        "bbox_crop_bg0": 2,
+        "tiling2x": 2,
+        "local_fill": 2,
+        "conditional_adjacency_recolor": 2,
+        "object_recolor": 2,
+        "repeat2": 2,
+        "repeat3": 2,
+        "marker_mirror": 2
+      },
+      "arm": "random_search",
+      "artifact_hash": "870d98b2a0473e0ff91c8212a0cae68675343ef2d2427a0cbb48e51446c21f11",
+      "canonical_genotype": "55e170763281ef4cf9cca5046b5dda84be3a2aec149a08853bf8ccd3a310e7b6",
+      "report_reused": false,
+      "independent_replicate": false
+    }
+  ],
+  "winners": {
+    "crossover": "270dfb611612142ed21ec747f8d020248f51117d7bc77ad811d968723dca2332",
+    "mutation_only": "8993821d4adb4fa95e5b588a766f4c6b83c11307f36e33d5f481241ced14f3ad",
+    "random_search": "870d98b2a0473e0ff91c8212a0cae68675343ef2d2427a0cbb48e51446c21f11"
+  },
+  "peak_rss_bytes": 152559616,
+  "limitations": "4 proposals per arm, narrow synthetic curriculum; no independent efficacy/frontier claim",
+  "ledger_verified": 36
+}

@@ -1,0 +1,176 @@
+{
+  "schema": "action-population-manifest/1",
+  "scope": "non-grid lexical action arguments and action-classification cells; isolated fixtures, no ARC admission",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "generations": 2,
+  "fresh": [
+    {
+      "id": "quotedwrite",
+      "request": "write 'hello world' to 'report.txt'",
+      "initial": {},
+      "expected": {
+        "report.txt": "hello world"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "extensionless",
+      "request": "write 'version 1.2' to README",
+      "initial": {},
+      "expected": {
+        "README": "version 1.2"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "quotededit",
+      "request": "replace 'milk' with 'tea' in 'notes.txt'",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "tea"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "indirectedit",
+      "request": "replace 'cat' with 'dog' in the file notes.txt",
+      "initial": {
+        "notes.txt": "cat"
+      },
+      "expected": {
+        "notes.txt": "dog"
+      },
+      "action": "edit_in_place"
+    }
+  ],
+  "archive": [
+    {
+      "id": "oldwrite",
+      "request": "write 'plain' to old.txt",
+      "initial": {},
+      "expected": {
+        "old.txt": "plain"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "oldedit",
+      "request": "replace 'milk' with 'tea' in notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "tea"
+      },
+      "action": "edit_in_place"
+    }
+  ],
+  "safety": [
+    {
+      "id": "missing",
+      "request": "write 'v1.2'",
+      "initial": {},
+      "expected": {},
+      "action": "write_file"
+    },
+    {
+      "id": "escape",
+      "request": "write 'x' to ../outside.txt",
+      "initial": {},
+      "expected": {},
+      "action": "write_file"
+    },
+    {
+      "id": "oldabsent",
+      "request": "replace 'absent' with 'tea' in notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "milk"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "unsupported",
+      "request": "delete notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "milk"
+      },
+      "action": "none"
+    }
+  ],
+  "reporting": [
+    {
+      "id": "newwrite",
+      "request": "write 'blue moon' to 'new.txt'",
+      "initial": {},
+      "expected": {
+        "new.txt": "blue moon"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "newbare",
+      "request": "write 'edition 8.3' to LOG",
+      "initial": {},
+      "expected": {
+        "LOG": "edition 8.3"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "newedit",
+      "request": "replace 'east' with 'west' in 'memo.txt'",
+      "initial": {
+        "memo.txt": "east"
+      },
+      "expected": {
+        "memo.txt": "west"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "newindirect",
+      "request": "replace 'up' with 'down' in the file changes.txt",
+      "initial": {
+        "changes.txt": "up"
+      },
+      "expected": {
+        "changes.txt": "down"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "keyword",
+      "request": "write 'open read' to msg.txt",
+      "initial": {},
+      "expected": {
+        "msg.txt": "open read"
+      },
+      "action": "write_file"
+    }
+  ],
+  "budget": {
+    "argument": {
+      "llm": 2,
+      "random": 2
+    },
+    "router": {
+      "llm": 1,
+      "random": 1
+    }
+  },
+  "proposal_context": "one physical maker response per generation shared across three random-control contexts",
+  "reporting_note": "Frozen before this integrated evaluation, after author responses. Some grammar exposed; not blind or new task families.",
+  "assembly": "Measured eligible argument/router cells coupled through typed packet adapter. This is deliberate wiring, NOT evolved topology or circuit admission."
+}

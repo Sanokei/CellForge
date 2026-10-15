@@ -1,0 +1,36 @@
+{
+  "protocol": "discrete-byte-parameter-minipilot/1",
+  "founder_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+  "generations": 3,
+  "islands": [
+    "router",
+    "experts"
+  ],
+  "proposals_per_island_generation": 1,
+  "mutation": "8 uniformly sampled nonzero coordinates of one uniformly sampled active parameter; Gaussian sigma .05*max(1,median abs active)",
+  "seed_rule": "20260930 + generation*100 + island index",
+  "selection": "strict lower development content bpb, otherwise retain parent",
+  "random_control": "same 6 seeds/scopes/evaluator, every proposal starts from founder; retain best for reporting only",
+  "scope": "parameter-only calibration; module crossover, zero activation, migration, curriculum selection are subsequent stages",
+  "partition_policy": {
+    "exposure": "source is public dev_train; report-only pilot split, not unexposed final data",
+    "founder_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+    "metric": "UTF8 content-only bits per byte; EOS excluded; not MC likelihood accuracy",
+    "partition": "first two lexicographic SHA256 whole-story families of288..350UTF8bytes; disjoint families",
+    "protocol": "evolution-pilot-partition/1",
+    "report_only_sha256": "3a4b80d56cd0f4f752f5ed0c6212f61b3caebab1184f6dd17622ba659e583d28",
+    "report_policy": "never loaded into fitness; curves released only after all generations/winner hashes frozen",
+    "selection_sha256": "83ca829b5a333f954cf086a37cacf75fa70056389a06238f0291e9f06fd33f14",
+    "source_script_sha256": "83ba4a24c473c93fd6a06d868b1218ad8217a1d40af0174d8a5521ba66762103",
+    "source_sha256": "8b2ba1b9d3b4a924dc5573659b3c68e961fccdd859f5b3ffab4b2078a5b3256c"
+  },
+  "source_sha256": "790b52fa2797c4b21fd4d4648200b2a8963622a3ff1de3ba750a9f939c08069b",
+  "limits": {
+    "address_space_bytes": 2147483648,
+    "threads": 1,
+    "nice": 15,
+    "external_timeout_seconds": 600
+  },
+  "report_rule": "open report-only split only after all selection and winner hashes frozen; never feed its scores into selection",
+  "claims": "tiny public-source development pilot; no independent final, QA, AGI or frontier evidence"
+}

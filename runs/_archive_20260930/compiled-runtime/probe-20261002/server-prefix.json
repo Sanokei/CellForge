@@ -1,0 +1,131 @@
+{
+  "protocol": "compiled-prefix-differential/1",
+  "model_hash": "7c19b2e498597783ee5788fc347ee03749215ed1cad064a8a75f7a5e582683de",
+  "prefix_bytes": 512,
+  "prefix_sha256": "b8ca19fa231a9ed0c0d23e561f461b5ab96874bea6255e4d608f212720d5468e",
+  "exact_numerical_and_token_equivalence": true,
+  "full_compiled_stats_exact": true,
+  "compilation": [
+    {
+      "mode": "reference",
+      "seconds": 1.05600047390908e-05
+    },
+    {
+      "mode": "compiled-full",
+      "seconds": 2.237120324993157
+    },
+    {
+      "mode": "compiled-state-prefill",
+      "seconds": 2.087432665997767
+    }
+  ],
+  "results": [
+    {
+      "mode": "reference",
+      "elapsed_seconds": 22.216515059000812,
+      "state_sequence_sha256": "e1e1845672991e5ee83e56e9dcfbf185ad484ecae8de229dd494088b91f3b365",
+      "final_prompt_logits_sha256": "b09905d8e10b890f85a2139ace3a700d221a9d2e6d05c3db85a9747139bcba92",
+      "generated_token_ids": [
+        35,
+        119,
+        114,
+        114,
+        35,
+        119,
+        114,
+        114
+      ],
+      "exec": {
+        "node_execs": 3148820,
+        "macs": 35983826,
+        "route_counts": {
+          "/gen/d": {
+            "ex_bos": 1,
+            "ex_wordstart": 47,
+            "ex_inword_short": 96,
+            "ex_inword_long": 297,
+            "ex_punct": 74,
+            "ex_quote": 0,
+            "ex_apos": 0,
+            "ex_after_period_space": 6
+          }
+        },
+        "peak_tensor_elements": 47397
+      },
+      "counter_scope": "full eager semantic ops (cached constants still counted)"
+    },
+    {
+      "mode": "compiled-full",
+      "elapsed_seconds": 13.517890372997499,
+      "state_sequence_sha256": "e1e1845672991e5ee83e56e9dcfbf185ad484ecae8de229dd494088b91f3b365",
+      "final_prompt_logits_sha256": "b09905d8e10b890f85a2139ace3a700d221a9d2e6d05c3db85a9747139bcba92",
+      "generated_token_ids": [
+        35,
+        119,
+        114,
+        114,
+        35,
+        119,
+        114,
+        114
+      ],
+      "exec": {
+        "node_execs": 3148820,
+        "macs": 35983826,
+        "route_counts": {
+          "/gen/d": {
+            "ex_bos": 1,
+            "ex_wordstart": 47,
+            "ex_inword_short": 96,
+            "ex_inword_long": 297,
+            "ex_punct": 74,
+            "ex_quote": 0,
+            "ex_apos": 0,
+            "ex_after_period_space": 6
+          }
+        },
+        "peak_tensor_elements": 47397
+      },
+      "counter_scope": "full eager semantic ops (cached constants still counted)"
+    },
+    {
+      "mode": "compiled-state-prefill",
+      "elapsed_seconds": 0.869101860000228,
+      "state_sequence_sha256": "e1e1845672991e5ee83e56e9dcfbf185ad484ecae8de229dd494088b91f3b365",
+      "final_prompt_logits_sha256": "b09905d8e10b890f85a2139ace3a700d221a9d2e6d05c3db85a9747139bcba92",
+      "generated_token_ids": [
+        35,
+        119,
+        114,
+        114,
+        35,
+        119,
+        114,
+        114
+      ],
+      "exec": {
+        "node_execs": 140778,
+        "macs": 624939,
+        "route_counts": {
+          "/gen/d": {
+            "ex_bos": 0,
+            "ex_wordstart": 2,
+            "ex_inword_short": 4,
+            "ex_inword_long": 3,
+            "ex_punct": 0,
+            "ex_quote": 0,
+            "ex_apos": 0,
+            "ex_after_period_space": 0
+          }
+        },
+        "peak_tensor_elements": 47397
+      },
+      "counter_scope": "executed demanded closure semantic ops (cached constants still counted)"
+    }
+  ],
+  "python": "3.12.3",
+  "numpy": "2.2.6",
+  "source_sha256": "944485b69c94bfaca453cc4ebc56bb6d143f4652d007c485904a978da2839b54",
+  "backend_sha256": "759a0c33eaad8b180f6e5f107bf759eef1514d5ea0c5ab9035a41274e8dbffae",
+  "limitations": "Single authored model/prefix performance; no benchmark ability gain; state-only demand drops unused prompt logits only."
+}

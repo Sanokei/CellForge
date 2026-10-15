@@ -1,0 +1,152 @@
+[
+  {
+    "task_id": "tile-23x-rot_cycle_rows",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,1,0,0],[0,0,0,0,0,1,0,0],[0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations use two tile rows and three columns: identity across the first row and clockwise rotation across the second; [[0,2],[4,7]] becomes [[4,0],[7,2]] in each lower tile."
+  },
+  {
+    "task_id": "tile-44x-flip_odd_cols",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,0,1],
+      "pec": [0,0,0,1],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Each demonstration repeats four tile rows with four columns alternating identity and fliplr; the first input row [0,1,4] yields [0,1,4,4,1,0,0,1,4,4,1,0]."
+  },
+  {
+    "task_id": "tile-13x-flip_ud_odd_cols",
+    "template": "tile_orient",
+    "params": {
+      "per": [1,0,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All outputs contain one row of three tiles: identity, flipud, identity. In the first demonstration the middle tile has [1,8] above [5,9]."
+  },
+  {
+    "task_id": "tile-23x-mirror4_rev",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[0,0,0,1,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "The two-by-three layout is [rot180,flipud,rot180] above [fliplr,identity,fliplr]. In the rectangular demonstration the top-left tile is [[0,4,4],[1,6,3]] and the bottom-middle tile equals the input."
+  },
+  {
+    "task_id": "tile-33x-same",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Every output is three-by-three identical copies of its input; the first demonstration repeats the unchanged two-row input three times vertically and horizontally."
+  },
+  {
+    "task_id": "tile-32x-flip_lr_odd_rows",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,1,0,0,0,0,0,0],[0,1,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All demonstrations have three tile rows and two columns, with identity in the first and third rows and fliplr in the middle; [[1,5],[9,8]] becomes [[5,1],[8,9]] in both middle tiles."
+  },
+  {
+    "task_id": "tile-22x-checker_rot180",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,1,0,0],
+      "pec": [0,1,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "The two-by-two outputs place identity on the diagonal and rot180 off the diagonal; the second demonstration's off-diagonal tiles are [[0,2,7],[3,4,4]]."
+  },
+  {
+    "task_id": "tile-31x-rot_cycle",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [1,0,0,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "Each output stacks identity, clockwise rotation, and rot180. The first input [[3,1],[6,2]] produces middle [[6,3],[2,1]] and bottom [[2,6],[1,3]]."
+  },
+  {
+    "task_id": "tile-13x-mirror4_rev",
+    "template": "tile_orient",
+    "params": {
+      "per": [1,0,0,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[0,0,0,1,0,0,0,0],[0,0,1,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "All outputs contain rot180, flipud, rot180 horizontally; the first demonstration starts with [[0,7,5],[2,5,4]], followed by [[5,7,0],[4,5,2]]."
+  },
+  {
+    "task_id": "tile-33x-rot_cycle_rows",
+    "template": "tile_orient",
+    "params": {
+      "per": [0,0,1,0],
+      "pec": [0,0,1,0],
+      "orient": [
+        [[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,1,0,0],[0,0,0,0,0,1,0,0],[0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,1,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0]],
+        [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+      ]
+    },
+    "rationale": "The three-by-three layout repeats identity across the top, clockwise rotation across the middle, and rot180 across the bottom; [[2,0],[2,4]] yields middle [[2,2],[4,0]] and bottom [[4,2],[0,2]]."
+  }
+]

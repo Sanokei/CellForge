@@ -1,0 +1,1 @@
+[{"task_id":"3c9b0459","source_lines":["def run(params, grid, demos):","    turns = int(round(params['turns'][0]))","    return np.rot90(grid, turns).copy()"],"shapes":{"turns":[1]},"params":{"turns":[2.0]},"rationale":"Every demonstration rotates the input by 180 degrees. The tensor specifies two quarter-turns."}]

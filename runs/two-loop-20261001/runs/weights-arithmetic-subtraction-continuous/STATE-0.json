@@ -1,0 +1,432 @@
+{
+  "admitted": {
+    "llm": 0,
+    "random": 0
+  },
+  "anchor": "788e06dcd14491f3f470f1897d4667fd387315376428085d0c887b8b3cb1c1b8",
+  "author_seconds": 0.0,
+  "cells": {
+    "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b": {
+      "evidence": {
+        "errors": [],
+        "outcomes": {
+          "dev-chain": false,
+          "dev-clear-borrow": false,
+          "dev-equal-incoming": false,
+          "dev-leading-zero": false,
+          "dev-new-borrow": false,
+          "dev-no-borrow": false,
+          "dev-propagate": false,
+          "dev-underflow": false,
+          "dev-zero": true
+        },
+        "partition": "development",
+        "solved": 1,
+        "total": 9,
+        "traces": [
+          {
+            "correct": true,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 0
+            },
+            "id": "dev-zero",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 0
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 5
+            },
+            "id": "dev-no-borrow",
+            "input": {
+              "a": 7,
+              "b": 2,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 9
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 5
+            },
+            "id": "dev-new-borrow",
+            "input": {
+              "a": 2,
+              "b": 7,
+              "borrow": 0
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 9
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-propagate",
+            "input": {
+              "a": 0,
+              "b": 0,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 1
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digit": 4
+            },
+            "id": "dev-clear-borrow",
+            "input": {
+              "a": 8,
+              "b": 3,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 1,
+              "digit": 2
+            }
+          },
+          {
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digit": 9
+            },
+            "id": "dev-equal-incoming",
+            "input": {
+              "a": 4,
+              "b": 4,
+              "borrow": 1
+            },
+            "predicted": {
+              "borrow": 0,
+              "digit": 9
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 1,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 1
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 1,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 1
+                }
+              }
+            ],
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0999"
+            },
+            "id": "dev-chain",
+            "input": {
+              "a": "1000",
+              "b": "1"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "1001"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 0,
+                  "b": 5,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 5
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 7,
+                  "b": 2,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 9
+                }
+              },
+              {
+                "column": 2,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              },
+              {
+                "column": 3,
+                "input": {
+                  "a": 0,
+                  "b": 0,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 0
+                }
+              }
+            ],
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 0,
+              "digits": "0045"
+            },
+            "id": "dev-leading-zero",
+            "input": {
+              "a": "0070",
+              "b": "0025"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "0095"
+            }
+          },
+          {
+            "columns": [
+              {
+                "column": 0,
+                "input": {
+                  "a": 2,
+                  "b": 9,
+                  "borrow": 0
+                },
+                "output": {
+                  "borrow": 1,
+                  "digit": 1
+                }
+              },
+              {
+                "column": 1,
+                "input": {
+                  "a": 1,
+                  "b": 1,
+                  "borrow": 1
+                },
+                "output": {
+                  "borrow": 0,
+                  "digit": 3
+                }
+              }
+            ],
+            "correct": false,
+            "error": null,
+            "expected": {
+              "borrow": 1,
+              "digits": "93"
+            },
+            "id": "dev-underflow",
+            "input": {
+              "a": "12",
+              "b": "19"
+            },
+            "predicted": {
+              "borrow": 0,
+              "digits": "31"
+            }
+          }
+        ]
+      },
+      "id": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b",
+      "interface": "decimal-subtraction-borrow-cell/1",
+      "params": {
+        "carry.W": [
+          [
+            1.0
+          ]
+        ],
+        "carry.b": [
+          -9.5
+        ],
+        "readout.W": [
+          [
+            1.0,
+            -10.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "readout.b": [
+          0.0,
+          0.0
+        ],
+        "sum.W": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "sum.b": [
+          0.0
+        ]
+      },
+      "provenance": {
+        "builder_sha256": "cdc1dbc511b0e800257b048beecbc56bb754fd1a1c9c047dd71ed1594088edce",
+        "builder_source": "/srv/cellforge-inbox/two-loop-20261001/continuous-arithmetic-runtime/scripts/build_arithmetic_specialist.py",
+        "kind": "historical-addition-baseline-on-incompatible-task",
+        "learning_claim": false,
+        "lift": "builder digit_W/digit_b -> first readout row; [0,1] second row passes historical carry",
+        "source": "/srv/cellforge-inbox/two-loop-20261001/continuous-arithmetic-runtime/src/cellforge/construction/arithmetic_cell.py",
+        "source_sha256": "4a83ed862e4afa8ab4751c8bfa79fe801a47c244da1bb996c46a5a26e0245b1e",
+        "training": "none"
+      }
+    }
+  },
+  "charged_positions": {
+    "llm": 0,
+    "random": 0
+  },
+  "contexts": [
+    {
+      "arms": {
+        "llm": {
+          "births": [],
+          "history": [
+            "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          ],
+          "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        },
+        "random": {
+          "births": [],
+          "history": [
+            "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          ],
+          "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        }
+      },
+      "seed": 401
+    },
+    {
+      "arms": {
+        "llm": {
+          "births": [],
+          "history": [
+            "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          ],
+          "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        },
+        "random": {
+          "births": [],
+          "history": [
+            "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          ],
+          "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        }
+      },
+      "seed": 402
+    },
+    {
+      "arms": {
+        "llm": {
+          "births": [],
+          "history": [
+            "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          ],
+          "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        },
+        "random": {
+          "births": [],
+          "history": [
+            "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+          ],
+          "live": "98976cee6916a954183fed5ccbe3c84d14ff5a2fcbb100ba9e00d913e338436b"
+        }
+      },
+      "seed": 403
+    }
+  ],
+  "evaluation_seconds": 0.0,
+  "generation": 0,
+  "learning_claim": false,
+  "rejected": {
+    "llm": 0,
+    "random": 0
+  }
+}

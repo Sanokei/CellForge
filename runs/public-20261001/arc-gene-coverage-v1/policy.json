@@ -1,0 +1,14 @@
+{
+  "protocol": "grid-gene-coverage/1",
+  "dataset": "ARC-AGI-2 public training",
+  "partition": "development",
+  "partition_method": "SHA256 task-ID mod5 nonzero, sorted hash first200",
+  "manifest_sha256": "4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+  "n": 200,
+  "gene_inventory_sha256": "3049639ad613b7e841e58b448b389c6a5ecd151cedf0ef11829b69280e32f1c7",
+  "top_pairs": 3,
+  "pair_selection": "exhaustive private per-input union upper bound; top pairs materialized and scored independently",
+  "attempts": "single-gene1; breeding pairs2 fixed donor-order outputs, not yet adaptive ranked-pair policy",
+  "audit_evaluations": 0,
+  "source_sha256": "f119177f1346469be4ae4cc39478b33049903408909cd90155df697db2d709f7"
+}

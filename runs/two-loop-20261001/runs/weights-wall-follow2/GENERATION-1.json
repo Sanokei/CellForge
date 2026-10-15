@@ -1,0 +1,265 @@
+{
+  "generation": 1,
+  "utc": "2026-10-01T23:44:28.662688+00:00",
+  "total": 48,
+  "tier": 1,
+  "next_tier": 1,
+  "decisions": [
+    {
+      "seed": 1701,
+      "niche": "wall-follow2",
+      "arm": "llm",
+      "candidate": "0274562e1c03fadb2f2f75c88852fc741051a2097423ca5b072f2fcf326ede2f",
+      "solved": 48,
+      "accepted": true,
+      "reasons": [
+        "accepted"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": true
+    },
+    {
+      "seed": 1701,
+      "niche": "wall-follow2",
+      "arm": "random",
+      "candidate": "bf37cd113e62cd3cc949cf1c2e39d1fb9acaf570c584aac3e4d61560171ef347",
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1702,
+      "niche": "wall-follow2",
+      "arm": "llm",
+      "candidate": "0274562e1c03fadb2f2f75c88852fc741051a2097423ca5b072f2fcf326ede2f",
+      "solved": 48,
+      "accepted": true,
+      "reasons": [
+        "accepted"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": true
+    },
+    {
+      "seed": 1702,
+      "niche": "wall-follow2",
+      "arm": "random",
+      "candidate": "b61e24761538456da66aee6f795ffeea63989b32781f9fe152e05cc3ae7e996e",
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": false
+    },
+    {
+      "seed": 1703,
+      "niche": "wall-follow2",
+      "arm": "llm",
+      "candidate": "0274562e1c03fadb2f2f75c88852fc741051a2097423ca5b072f2fcf326ede2f",
+      "solved": 48,
+      "accepted": true,
+      "reasons": [
+        "accepted"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": true
+    },
+    {
+      "seed": 1703,
+      "niche": "wall-follow2",
+      "arm": "random",
+      "candidate": "00b45d1828024009ae4c87844f3f67257484a0efa1068c0bc25e2fc88517f724",
+      "solved": 0,
+      "accepted": false,
+      "reasons": [
+        "rejected"
+      ],
+      "total": 48,
+      "baseline": 0,
+      "no_regression": true,
+      "fresh_gain": false
+    }
+  ],
+  "parents": {
+    "1701": {
+      "kind": "cell",
+      "template": "wall_follow2",
+      "params": {
+        "wall": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "marker": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "paint": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "turn": [
+          4,
+          2,
+          3,
+          1
+        ],
+        "start": [
+          1,
+          0
+        ]
+      },
+      "id": "0274562e1c03fadb2f2f75c88852fc741051a2097423ca5b072f2fcf326ede2f"
+    },
+    "1702": {
+      "kind": "cell",
+      "template": "wall_follow2",
+      "params": {
+        "wall": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "marker": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "paint": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "turn": [
+          4,
+          2,
+          3,
+          1
+        ],
+        "start": [
+          1,
+          0
+        ]
+      },
+      "id": "0274562e1c03fadb2f2f75c88852fc741051a2097423ca5b072f2fcf326ede2f"
+    },
+    "1703": {
+      "kind": "cell",
+      "template": "wall_follow2",
+      "params": {
+        "wall": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "marker": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "paint": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "turn": [
+          4,
+          2,
+          3,
+          1
+        ],
+        "start": [
+          1,
+          0
+        ]
+      },
+      "id": "0274562e1c03fadb2f2f75c88852fc741051a2097423ca5b072f2fcf326ede2f"
+    }
+  },
+  "random_parents": {
+    "1701": null,
+    "1702": null,
+    "1703": null
+  }
+}

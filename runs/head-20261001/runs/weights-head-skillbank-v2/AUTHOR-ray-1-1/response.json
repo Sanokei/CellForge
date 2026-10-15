@@ -1,0 +1,102 @@
+[
+  {
+    "task_id": "ray-up_right-s1-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 0, 1, 0, 0, 0, 0, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Sources extend upward and rightward in their own colours. In demonstration 1, 5 stops immediately to its right at 3; in demonstration 2, 4 extends upward only until the 3."
+  },
+  {
+    "task_id": "ray-vertical-s1-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 0, 0, 0, 1, 0, 0, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 extends 2, 7 and 3 vertically in their own colours. In demonstration 3, 1 paints downward but its upward ray is blocked immediately by 9."
+  },
+  {
+    "task_id": "ray-diagonal-s0-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 1, 0, 1, 0, 1, 0, 1],
+      "stop": [1, 0, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Sources paint all four diagonals in their own colours. In demonstration 1, the diagonal from 1 overwrites 8 at row 2, column 2, and diagonals from 7 overwrite both adjacent 9 pixels."
+  },
+  {
+    "task_id": "ray-orthogonal-s0-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "stop": [1, 0, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 2 extends 4 along its full row and column, overwriting the 9 pixels in its column. Demonstration 3 preserves source pixels 5 and 2 while their vertical rays cross."
+  },
+  {
+    "task_id": "ray-vertical-s1-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [1, 0, 0, 0, 1, 0, 0, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "The 5 sources in demonstration 1 paint vertical rays of 4, stopping before 8. In demonstration 3, the downward ray from 5 stops before the first 9, leaving cells below both 9 pixels unchanged."
+  },
+  {
+    "task_id": "ray-horizontal-s2-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 1, 0, 0, 0, 1, 0],
+      "stop": [0, 0, 1],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 fills background cells in the row containing 1 and 6 with 4. Demonstration 3 paints on both sides of the 9 in the bottom 6 source's row while preserving that 9."
+  },
+  {
+    "task_id": "ray-down-s0-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 0, 0, 1, 0, 0, 0],
+      "stop": [1, 0, 0],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 paints 4 downward from 2 and 3, preserving source 3 and overwriting 8 below it. Demonstration 2 extends downward from 1, 3 and 6 without painting above them."
+  },
+  {
+    "task_id": "ray-diagonal-s1-c4",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 1, 0, 1, 0, 1, 0, 1],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 2 produces diagonal rays of 4 from 3 and 6. Demonstration 3 stops the down-right ray from 6 before source 4 and the up-left ray from 7 before 9."
+  },
+  {
+    "task_id": "ray-left-s2-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 0, 0, 0, 0, 1, 0],
+      "stop": [0, 0, 1],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 extends 6 only to the left in colour 6; demonstration 2 similarly extends both 7 sources, and demonstration 3 extends 1. Colours 8 and 9 emit no rays."
+  },
+  {
+    "task_id": "ray-right_down-s1-same",
+    "params": {
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "dirs": [0, 0, 1, 0, 1, 0, 0, 0],
+      "stop": [0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 extends 4 rightward and downward in colour 4. In demonstration 3, the rightward ray from the lower 6 stops before 8 at the row's right edge."
+  }
+]

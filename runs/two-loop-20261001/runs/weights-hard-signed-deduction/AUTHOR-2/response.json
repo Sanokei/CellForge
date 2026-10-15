@@ -1,0 +1,74 @@
+[
+  {
+    "seed": 801,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "signed-temporal-horn-cell/1",
+    "parent_id": "6722bf432af2eb6294c6eee7bfc6825ffb662c8d3d63c0e11a5bb9c5518c1ba3",
+    "parent_params": {
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5],
+      "rule.W1": [[1.0, -1.0, 1.0, -1.0, 1.0, -1.0]],
+      "rule.b1": [0.5]
+    },
+    "base_sha256": "3d115e919ea0ff11387d5f1274ebed9b5c4d68b7c40e09f6e5df92d4e07efd30",
+    "prompt_sha256": "8b22d47856f35ca2e7cb2ac5b4a7cad6d35ce91242056ac065df5ad74cb17a52",
+    "feedback_sha256": "84ba9dc99a77f030ec25718aca74a55854eee983b53657312cfd21149a1ca0cf",
+    "params": {
+      "rule.W1": [[1.0, -1.0, 1.0, -1.0, 1.0, 0.0]],
+      "rule.b1": [-0.5],
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5]
+    },
+    "charged_positions": 9,
+    "rationale": "Supplied development feedback reports 8/8 with no errors. Author negative_required=-1.0 and rule bias=-0.5 to express signed-premise deficits and readiness through a negative baseline. Preserve distinguishing left contributions at positions 2, 4, and 8 and the distinguishing right contribution at position 5 unchanged. This is a nonzero mutation from the supplied base; no evaluation or improvement claim."
+  },
+  {
+    "seed": 802,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "signed-temporal-horn-cell/1",
+    "parent_id": "91578d6ac18f9f9c75afb0ed345780b0d82902a5d078ab6f054e9c3bdda3fcdb",
+    "parent_params": {
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5],
+      "rule.W1": [[2.0, -2.0, 2.0, -2.0, 2.0, -2.0]],
+      "rule.b1": [0.5]
+    },
+    "base_sha256": "4b197e9af3c4e4541c95dce3cd5eae30d3a3fa4428ef79a9987ea61cfc6d8e6b",
+    "prompt_sha256": "cac7021b0c2177249ff38e4556adf1995fe6efeb25b4c490c49937ae132b5c23",
+    "feedback_sha256": "9041b033f6eaf75a75591fbc1c7a01e9f49ac45d07e03e3a99f30420f5b05233",
+    "params": {
+      "rule.W1": [[1.0, -1.0, 2.0, -2.0, 2.0, 0.0]],
+      "rule.b1": [-1.5],
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5]
+    },
+    "charged_positions": 9,
+    "rationale": "Supplied development feedback reports 8/8 with no errors. Author positive_matches=1.0, negative_required=-2.0, and rule bias=-1.5 to pair signed match and requirement coefficients while gating readiness with a negative baseline. Preserve distinguishing left contributions at positions 2, 4, and 8 and distinguishing right contributions at positions 1 and 5 unchanged. This is a nonzero mutation from the supplied base; no evaluation or improvement claim."
+  },
+  {
+    "seed": 803,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "signed-temporal-horn-cell/1",
+    "parent_id": "5467ddd31f15356bea11cd8a90cc63ebdb6893d2784b30a5b53c29bff29a9487",
+    "parent_params": {
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5],
+      "rule.W1": [[1.5, -1.5, 1.5, -1.5, 1.5, -1.5]],
+      "rule.b1": [0.75]
+    },
+    "base_sha256": "3a7bbaf62542a4e6b57ce2e57899d2f785ed1c96df05c778d3359028da8c1aee",
+    "prompt_sha256": "c913ae64045f759b0bffca0ec11edc79f810e42b095ede7e605f6e4327ba7098",
+    "feedback_sha256": "5b8ac46880cc152e13f09df5b250f409df4e0a2c44bc50657f3a1ac2355ff589",
+    "params": {
+      "rule.W1": [[1.5, -1.5, 1.5, -1.5, 1.5, 0.0]],
+      "rule.b1": [-0.75],
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5]
+    },
+    "charged_positions": 9,
+    "rationale": "Supplied development feedback reports 8/8 with no errors. Author paired signed requirement coefficients, rule bias=-0.75, and any bias=-0.5, guided by the supplied missing-premise, delayed-rule, and unknown-cycle traces. Preserve distinguishing left contributions at positions 0, 2, and 4 and the distinguishing right contribution at position 5 unchanged. This is a nonzero mutation from the supplied base; no evaluation or improvement claim."
+  }
+]

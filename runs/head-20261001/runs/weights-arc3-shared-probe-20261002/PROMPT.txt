@@ -1,0 +1,28 @@
+You write ONE policy cell for an ARC-AGI-3 game: restricted Python plus literal weight tensors (no tools, no files, no network, no imports).
+
+def act(params, mem, frame, avail, info):
+    # params: dict tensor_name -> float numpy array, exactly the shapes you declare. Every task-specific number lives here: which colour is the agent / a wall /
+    #         a target, step sizes, the priority order of actions, thresholds, click targets, how many repeats before switching.
+    # mem:    a dict that persists across the steps of ONE game run. Use it to learn online: previous frame, what each action did, visited state keys, plans.
+    # frame:  2-D numpy int array 64x64 with colours 0..15 (the settled frame after the last action).
+    # avail:  list of legal action ids. 1..5 are simple actions; 6 is a click at (x, y) with x = column, y = row in 0..63.
+    # info:   dict(levels=int completed so far, resets=int, step=int actions used, key=str digest of this frame: equal keys = identical frames).
+    # return: (action_id, x, y); x and y only matter for action 6. The harness issues RESET itself after GAME_OVER (it costs one action).
+
+Rules checked by code:
+- Only `def` at top level (helper functions are fine), `np` is available. No imports, try/with/class/global/f-strings/decorators, no names or attributes that
+  start with an underscore, no open/exec/eval/getattr/print/hash. Numpy only through named functions (array, zeros, where, argwhere, nonzero, unique, bincount,
+  argmax, abs, sum, any, all, roll, flip, concatenate, ... and the usual list/dict/set methods incl. setdefault).
+- At most 256 tensor entries in total, finite numbers within [-1000, 1000]. The tensors are the genome: keep them small and meaningful.
+- Your cell is judged by levels completed within the step budget, against (a) the SAME code with zeroed tensors, (b) the same code with three random tensor draws,
+  and (c) the same cell run BLIND (the frame replaced by zeros and info["key"] held constant). It earns credit only if it beats all of them, so a stored/replayed action sequence earns nothing:
+  the policy must read the frame, and the tensors must matter.
+- Games differ and their rules are not given. Learn them online inside the policy: apply an action, compare the frame with the previous one (mem), find which
+  pixels/objects moved, infer goals from what changes when a level is completed (info['levels'] increases), avoid repeating states (info['key']), explore
+  systematically (BFS/DFS over keys), and use clicks on distinct objects when 6 is available. A level counts the moment info['levels'] goes up.
+Return ONLY one JSON array with ONE object, no markdown:
+[{"game": str, "source_lines": [one string per line of Python], "shapes": {"tensor_name": [dims]}, "params": {"tensor_name": nested lists}, "rationale": str,
+  "cannot_express": false}]
+If you believe no policy of this kind can win, still submit your best attempt (it is played and charged like any other) and set "cannot_express": true.
+
+OVERRIDE the single-game objective. Write ONE SHARED generic policy; set game=shared. No game facts, identities, screenshots or solutions are provided. Infer object roles and action effects online using frames and persistent mem. Literal tensors guide exploration and short planning. The SAME source and weights run unchanged with fresh memory for each environment. No game fingerprints or stored solutions. Public development pilot, not held-out.

@@ -1,0 +1,24 @@
+# CellForge migration checkpoint - held after stop race
+
+The exact reviewed seal 230e3c69490463f73f845c2ab11d40960f4ce4ffe8a52bffbf4ca6175da00052 was staged and admitted on the existing server. All 188 manifest files verified locally and remotely. The new controller was migrated in paused state at 18:28:24 UTC, with watcher PID 590352 and invocation 7a4d2dc1d92c42eb8b756de1eec85ccd. Old code, PLAN, nine receipts/results and 20 historical STOPs stayed unchanged. The old watcher stop added an additional persistent STOP, which is preserved.
+
+The first job actually launched at 18:29:55 UTC:
+- condition 15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686
+- invocation 076467f183564082b4521531b8fb3488
+- PID 590501
+- owner token 15daf18a8e92f551a4c04fee1d85fbe22ccba1f20b620219e1c751e8da18d686:03e5668a60dc45e589d9f56a3eeef74d
+- cycle_recovery, environment seed 3
+
+The operator's 15-second dispatch verification window was too short for the watcher CPU cap and triggered rollback at 18:29:41 UTC. This was an operator error; the scientific job did not fail. The rollback exposed a real controller race: ExecStop read active=None while the main tick held the registry lock in gates; it found no job to stop. STOP/SIGTERM arrived during that tick, but the tick did not recheck stop/dispatch state after gates, launched the job, persisted its invocation and returned. The main loop then exited on halt without a final drain. This permitted the job to start after service stopping began and continue after the watcher was dead.
+
+Recovery stopped only the verified owner/invocation at 18:30:58 UTC, then used the exact reviewed controller receipt/collection path. Its durable terminal outcome is cancelled, sequence 1, receipt ID 7393b8f22c3dd72dde08ae5a41f3c083ad610bb59b1342100d270229345d8ec0. COLLECTION.json proves absence and an empty tree, binding the original durable token/invocation. Because the manual ownership-verified stop preceded controller terminalization, the receipt's before-stop snapshot is already absent; the prior live status is retained separately in DISPATCH_BLOCKED.json and the journal records the original job identity. Do not reinterpret absence snapshots as proof there was never a launched process.
+
+Final checkpoint at 18:32:12 UTC: 0 completed new jobs, 1 cancelled, 8 pending, active=None, attempted=1 of cap9, consecutive_failures=0. Registry status paused_stop. DISPATCH_ENABLED is absent, both old/new watchers are disabled and stopped, fixed job unit/cgroup absent. New and old STOP markers remain. No retry, counter reset, cancellation deletion or changed-science admission occurred. Cancelled science identity stays globally consumed.
+
+The interrupted job saved 13 of 27 play records. Journal resource evidence: 63.524 CPU seconds, 108.6 MiB peak memory, zero swap. These are real development plays but not a completed paired comparison or held-out scientific evidence. The untouched frozen analyzer reports comparisons_complete=false and engineering_gate_passed=false for all three founders, qualified=false, no automatic promotion. No meaningful scientific follow-on should be selected from this incomplete study.
+
+Four new offline regressions against the exact sealed controller FAIL as expected, documenting the newly uncovered defect: STOP during gates, dispatch removal during gates, SIGTERM during gates, and halt during the launch RPC. Tests use only the existing Fake backend and temporary local fixtures; they launch no ARC games, services or external model calls. Existing qualified tests and all sealed code are untouched. See test_stop_during_launch.py and stop-race-regressions.log.
+
+A repair review should cover rechecking halt/STOP/dispatch state after expensive gates and before reservation/launch, reconciling a stop arriving during the launch RPC, serializing ExecStop with the registry, and draining a durable active entry before the main loop exits. A larger bounded observation window must replace the premature operator rollback; elapsed observation time alone must not mutate dispatch state while a tick is still launching. Production code is unchanged. Do not clear or bypass STOP, requeue the cancelled identity, fabricate a completion, or launch remaining jobs until the operational repair and explicit resume handling have been reviewed.
+
+Evidence is local under evidence/control and evidence/job. Root on server: /srv/cellforge-inbox/continuous-control-v2. Canonical study directory: /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-transition-b409293e233bcd7d027b88b34506a867d32c0b68ffe043e95a5b62ed7bc54dfb. The sealed archive and saved independent audit remain unchanged.

@@ -1,0 +1,68 @@
+[
+  {
+    "seed": 601,
+    "niche": "all_present",
+    "parent_id": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+    "prompt_sha256": "a033e0bff30415294405685aa369094b6556e844b9b79c8b03fed96c917e0787",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {"W1": [[2.0, -2.0]], "b1": [1.0]},
+    "charged_positions": 3,
+    "rationale": "Positive scaling by 2 preserves the parent's step output for every input. Supplied DEV evidence reports 24/24 for the parent; no gain is claimed."
+  },
+  {
+    "seed": 601,
+    "niche": "any_present",
+    "parent_id": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+    "prompt_sha256": "11cd1a37978efcb385637aa040208e121999e2a5baf096a0459420f58d4237f2",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {"W1": [[2.0]], "b1": [0.0]},
+    "charged_positions": 2,
+    "rationale": "Positive scaling by 2 preserves the parent's step output, including its zero boundary. Supplied DEV evidence reports 24/24 for the parent; no gain is claimed."
+  },
+  {
+    "seed": 602,
+    "niche": "all_present",
+    "parent_id": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+    "prompt_sha256": "26ab328dccefc5a7a6478581044faecbcf8399e6ad6ee9fff6e43fa102a3f434",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {"W1": [[3.0, -3.0]], "b1": [1.5]},
+    "charged_positions": 3,
+    "rationale": "Positive scaling by 3 preserves the parent's step output for every input. Supplied DEV evidence reports 24/24 for the parent; no gain is claimed."
+  },
+  {
+    "seed": 602,
+    "niche": "any_present",
+    "parent_id": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+    "prompt_sha256": "f1341d22472af5ec890dec04cac9051f1185b6f4043259a57d76fd6e8fbb1d90",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {"W1": [[3.0]], "b1": [0.0]},
+    "charged_positions": 2,
+    "rationale": "Positive scaling by 3 preserves the parent's step output, including its zero boundary. Supplied DEV evidence reports 24/24 for the parent; no gain is claimed."
+  },
+  {
+    "seed": 603,
+    "niche": "all_present",
+    "parent_id": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+    "prompt_sha256": "1f7d859c25111f3caf4985a466dee1c745c8ac414013d7e417b9af75846ba9a1",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {"W1": [[4.0, -4.0]], "b1": [2.0]},
+    "charged_positions": 3,
+    "rationale": "Positive scaling by 4 preserves the parent's step output for every input. Supplied DEV evidence reports 24/24 for the parent; no gain is claimed."
+  },
+  {
+    "seed": 603,
+    "niche": "any_present",
+    "parent_id": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+    "prompt_sha256": "7bf498e432c204a0c0591d7311802ccfbeb9d9012d705b4d00077a30d52e3c01",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {"W1": [[4.0]], "b1": [0.0]},
+    "charged_positions": 2,
+    "rationale": "Positive scaling by 4 preserves the parent's step output, including its zero boundary. Supplied DEV evidence reports 24/24 for the parent; no gain is claimed."
+  }
+]

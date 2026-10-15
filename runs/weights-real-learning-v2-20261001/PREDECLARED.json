@@ -1,0 +1,96 @@
+{
+  "started_utc": "2026-10-01T00:38:18.400669+00:00",
+  "pid": 95058,
+  "host": "cellforge-1",
+  "protocol": "existing-hetzner-real-weight-continuation/1",
+  "source": "arcprize/ARC-AGI-2 public training",
+  "partitions": {
+    "development": [
+      {
+        "id": "3f23242b",
+        "sha256": "8a58b0f45485bc46a8e462308a15319a7e549a9b6551ee2dd3d43ab308a17f59"
+      },
+      {
+        "id": "3ac3eb23",
+        "sha256": "6412cc40fe97ed70e80521acbbfc678f06d370a995886a9f29f506efc6be9db2"
+      },
+      {
+        "id": "1fad071e",
+        "sha256": "9107a8a82223d87413108fb62ab9a727ac28ae5aed1941e86e140f8cbd4eb18d"
+      },
+      {
+        "id": "9bebae7a",
+        "sha256": "c50f3e00833e95705b1d084676e4f2e9fbcab50efec582ad812a9321153535c2"
+      }
+    ],
+    "archive": [
+      {
+        "id": "c920a713",
+        "sha256": "f317632c728d20a0a71d1610574350660fd69bfa0b03be1f7d76c79205907e72"
+      },
+      {
+        "id": "ba9d41b8",
+        "sha256": "ed4e1c063694f9a637a015826650e8309f6f527b3bca82554cc0ffa88f3abdaa"
+      },
+      {
+        "id": "7c008303",
+        "sha256": "8e1864d520dbb4a7dfc0b510aa982db240f6c2af3d4f8ca53d954047eb68f6ba"
+      },
+      {
+        "id": "e8dc4411",
+        "sha256": "e476c34212c004854e353f2c38fa91719bff1abafadf03710c53ef2769a6c2ae"
+      }
+    ],
+    "reporting": [
+      {
+        "id": "0becf7df",
+        "sha256": "24983d27ad792b6a2efe3c696ec3503a3a3e44a0615474bc71fe8c4bc2c72c8d"
+      },
+      {
+        "id": "689c358e",
+        "sha256": "4b3eb6089343ce4eeb70925647f4ca8fae089f1e77d8ce2dc19ca288edf88212"
+      },
+      {
+        "id": "60b61512",
+        "sha256": "c533dd29113b515a6557cc26254cb516678d2ed33349256df37caf7facf2ec89"
+      },
+      {
+        "id": "2281f1f4",
+        "sha256": "a126499345aac6f8d408e858eec59ac6544999a20272bbef83206888300c8c7f"
+      }
+    ],
+    "anchor": [
+      {
+        "id": "8b28cd80",
+        "sha256": null
+      },
+      {
+        "id": "cbded52d",
+        "sha256": null
+      },
+      {
+        "id": "705a3229",
+        "sha256": null
+      },
+      {
+        "id": "7d18a6fb",
+        "sha256": null
+      }
+    ]
+  },
+  "parent": "18f6f05c273c68365a0dfad318678d8ac694b019d8cc56d7d8999d7dc21e7073",
+  "maker": "gpt-6.1-sol low /root/pop1_router_author, configured Codex task; no external paid API",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "charged_candidate_per_arm_per_seed": 1,
+  "maker_replicates": 1,
+  "random_seed_contexts": 3,
+  "caps": "same exact dev tasks on existing server, 3 parent repetitions, local max 4x baseline or .25s/16MiB floors",
+  "architecture_constants": "Four-connected components, geometric feature predicates height2,width2,cardinality4; authored structure uses these fixed priors. Not all structure information is trainable weights.",
+  "reporting": "new task IDs withheld from maker; public-training reporting, not official evaluation. No report-based selection.",
+  "budget_limitation": "same feature/structure vocabulary and 35 new numeric positions; author has 5 inherited expert templates, random uses same fixed extraction",
+  "spending": "existing server CPU only, no provisioning or paid training endpoint"
+}

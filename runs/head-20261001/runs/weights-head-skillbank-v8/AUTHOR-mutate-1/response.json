@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No satisfying tensors exist in this template. The required displacement depends on distances between markers, which none of the available keys encode. Nearest-colour keys omit distance and collide between cells requiring 7 and 8."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Pixel count can reproduce the supplied demonstrations: the large objects have counts 31, 15, 24, 16, and 30, mapping to 7, 3, 2, 3, and 2; the small objects map to 0. This memorises observed sizes but does not establish generalisation to unseen sizes or implement selection by the blue reference shape."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist in this template. Objects can only be recoloured at their existing pixels; the required output moves coloured pixels to previously empty positions."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist in this template. In demonstration two, cells (3,3) and (6,6), using zero-based coordinates, have identical full 3x3 neighbourhoods but require 8 and 0 respectively. Every available neighbourhood key therefore collides."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist in this template. In demonstration three, cells (1,3) and (7,3), using zero-based coordinates, have identical full 3x3 neighbourhoods but require 8 and 9 respectively. The transformation needs information beyond the available neighbourhood keys."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist in this template. Enabling colour 8 repairs its missing rays, but intersections must become 2. Source-colour painting cannot create 2, and fixed painting with 2 would incorrectly colour every ray cell."
+  }
+]

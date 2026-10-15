@@ -1,0 +1,78 @@
+{
+  "protocol": "language-memory-development/1",
+  "source_sha256": "5f996a2eb0bae9fa8c0ecf1da08bfe09daee42c03c804833c92d4f49df234c9d",
+  "selection": "first three development texts truncated to 128 characters",
+  "comparisons": {
+    "parent": {
+      "model_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+      "bits_per_byte": 2.4803442962579316,
+      "correct_tokens": 208,
+      "tokens": 387,
+      "failures": 0,
+      "reasoning_exact": 0,
+      "reasoning_cases": [
+        {
+          "prompt": "Remember: miv means red. What does miv mean? Answer:",
+          "expected": "red",
+          "output": " too too too",
+          "failure": "max_len"
+        },
+        {
+          "prompt": "Remember: zop means blue. What does zop mean? Answer:",
+          "expected": "blue",
+          "output": " too too too",
+          "failure": "max_len"
+        },
+        {
+          "prompt": "Remember: nel means green. What does nel mean? Answer:",
+          "expected": "green",
+          "output": " too too too",
+          "failure": "max_len"
+        },
+        {
+          "prompt": "Remember: tav means gold. What does tav mean? Answer:",
+          "expected": "gold",
+          "output": " too too too",
+          "failure": "max_len"
+        }
+      ]
+    },
+    "memory": {
+      "model_hash": "7c19b2e498597783ee5788fc347ee03749215ed1cad064a8a75f7a5e582683de",
+      "bits_per_byte": 2.512588697895003,
+      "correct_tokens": 208,
+      "tokens": 387,
+      "failures": 0,
+      "reasoning_exact": 0,
+      "reasoning_cases": [
+        {
+          "prompt": "Remember: miv means red. What does miv mean? Answer:",
+          "expected": "red",
+          "output": " too too to ",
+          "failure": "max_len"
+        },
+        {
+          "prompt": "Remember: zop means blue. What does zop mean? Answer:",
+          "expected": "blue",
+          "output": " too too to ",
+          "failure": "max_len"
+        },
+        {
+          "prompt": "Remember: nel means green. What does nel mean? Answer:",
+          "expected": "green",
+          "output": " too too to ",
+          "failure": "max_len"
+        },
+        {
+          "prompt": "Remember: tav means gold. What does tav mean? Answer:",
+          "expected": "gold",
+          "output": " too too to ",
+          "failure": "max_len"
+        }
+      ]
+    }
+  },
+  "scope": "author-visible bounded development; exact novel-binding probes are smoke evidence, not independent held-out benchmark",
+  "numeric_provenance": "single directly authored strength 2; no fitted weights or parameter sweep",
+  "decision": "retain mutation as experimental only; no understanding or frontier-superiority claim"
+}

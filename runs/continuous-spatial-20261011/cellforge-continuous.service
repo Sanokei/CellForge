@@ -1,0 +1,20 @@
+[Unit]
+Description=CellForge bounded sequential public-development research queue
+After=local-fs.target
+[Service]
+Type=simple
+WorkingDirectory=/srv/cellforge-inbox/continuous-spatial-20261011
+ExecStart=/usr/bin/python3 /srv/cellforge-inbox/continuous-spatial-20261011/supervisor.py --root /srv/cellforge-inbox/continuous-spatial-20261011
+ExecStop=/usr/bin/python3 /srv/cellforge-inbox/continuous-spatial-20261011/supervisor.py --root /srv/cellforge-inbox/continuous-spatial-20261011 --stop
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+KillMode=control-group
+Environment=PYTHONDONTWRITEBYTECODE=1
+MemoryMax=192M
+CPUQuota=10%
+StandardOutput=journal
+StandardError=journal
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,32 @@
+[
+  {
+    "task_id": "1a07d186",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "prop": [9,0,0,0,0,0,0,0]},
+    "rationale": "No valid revision exists: object_table only recolours existing object pixels, whereas the expected output moves pixels into previously background positions. These tensors are retained, not a solution."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "prop": [0,0,0,9,0,0,0,0]},
+    "rationale": "The existing width selector already reproduces all supplied demonstrations under the stated context semantics: widths 10, 7, and 9 map to 7, 3, and 2; width 3 maps to background. The reported counterexample prediction is inconsistent with those semantics when all supplied demonstrations are context."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "keysel": [0,0,0,0,0,9]},
+    "rationale": "No valid revision exists: the required path fill depends on connectivity and the marker, while every available key is local. Identical local keys require different output colours across the demonstrations. These tensors are retained, not a solution."
+  },
+  {
+    "task_id": "5ffb2104",
+    "params": {"dir": [0,0,0,1], "bg": [1,0,0,0,0,0,0,0,0,0]},
+    "rationale": "No valid revision exists: the expected output preserves object shapes during movement. Pixel gravity right necessarily places the first row's lone 3 at the right edge, contradicting the expected position. Other directions or backgrounds cannot reproduce the demonstrations."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {"dirs": [1,0,1,0,1,0,1,0], "paint": [0,0,0,0,0,0,0,0,0,0], "src": [0,1,1,1,1,1,1,1,1,1], "stop": [1,0,0]},
+    "rationale": "No valid revision exists: ray_cast can paint source colours or one fixed colour, but cannot assign colour 2 specifically to ray intersections while preserving differently coloured rays. Enabling all nonzero source colours addresses the omitted 8 source but cannot solve intersection colouring."
+  },
+  {
+    "task_id": "150deff5",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "keysel": [0,0,9,0,0,0]},
+    "rationale": "No valid revision exists: every available neighbourhood key conflates pixels requiring 2 and 8. For example, first-demonstration pixels at row 1, columns 2 and 3 (zero-indexed) have identical own colour and four-neighbour colours but require 8 and 2. These tensors are retained, not a solution."
+  }
+]

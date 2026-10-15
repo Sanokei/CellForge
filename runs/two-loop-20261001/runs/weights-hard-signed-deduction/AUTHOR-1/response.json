@@ -1,0 +1,74 @@
+[
+  {
+    "seed": 801,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "signed-temporal-horn-cell/1",
+    "parent_id": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b",
+    "parent_params": {
+      "any.W1": [[1.0]],
+      "any.b1": [0.0],
+      "rule.W1": [[1.0, -1.0, 0.0, 0.0, 0.0, 0.0]],
+      "rule.b1": [0.5]
+    },
+    "base_sha256": "44dc3f91b6d102ec2d39357bc2d246514fe8387f73660d02cc8fc5b3d89e656c",
+    "prompt_sha256": "220591671378ccb3a3dcc7c0441f4640897312b33f67235b91a084797e710066",
+    "feedback_sha256": "ef97ee3644fab5678ec9c5882da1af78f4cbfc9ade25a24d418f20bc6624662c",
+    "params": {
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5],
+      "rule.W1": [[1.0, -1.0, 1.0, -1.0, 1.0, -1.0]],
+      "rule.b1": [0.5]
+    },
+    "charged_positions": 9,
+    "rationale": "The supplied development traces show unsupported negative premises firing and temporal delays being ignored. Add matched-minus-required terms for negative evidence and readiness while retaining the positive-premise pair. The rule bias provides a positive margin when all requirements are met; each missing requirement subtracts one. Set the any bias to -0.5 to require a firing contribution. No distinct crossover donor was supplied. This is an unevaluated mutation; no improvement is claimed."
+  },
+  {
+    "seed": 802,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "signed-temporal-horn-cell/1",
+    "parent_id": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b",
+    "parent_params": {
+      "any.W1": [[1.0]],
+      "any.b1": [0.0],
+      "rule.W1": [[1.0, -1.0, 0.0, 0.0, 0.0, 0.0]],
+      "rule.b1": [0.5]
+    },
+    "base_sha256": "44dc3f91b6d102ec2d39357bc2d246514fe8387f73660d02cc8fc5b3d89e656c",
+    "prompt_sha256": "302e91cd62d6628822aeb013dcc7588e5252f243adf533a26097a081ad626fb2",
+    "feedback_sha256": "ef97ee3644fab5678ec9c5882da1af78f4cbfc9ade25a24d418f20bc6624662c",
+    "params": {
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5],
+      "rule.W1": [[2.0, -2.0, 2.0, -2.0, 2.0, -2.0]],
+      "rule.b1": [0.5]
+    },
+    "charged_positions": 9,
+    "rationale": "Author a stronger deficit penalty from the supplied missing-negative, mixed-conjunction, and premature-delay failures. Equal opposing coefficients cancel supported requirements, while an unsupported signed premise or unready time contributes a negative penalty of two against the 0.5 bias. The any threshold requires at least one firing contribution. No distinct crossover donor was supplied. This candidate has not been evaluated, and no gain is claimed."
+  },
+  {
+    "seed": 803,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "signed-temporal-horn-cell/1",
+    "parent_id": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b",
+    "parent_params": {
+      "any.W1": [[1.0]],
+      "any.b1": [0.0],
+      "rule.W1": [[1.0, -1.0, 0.0, 0.0, 0.0, 0.0]],
+      "rule.b1": [0.5]
+    },
+    "base_sha256": "44dc3f91b6d102ec2d39357bc2d246514fe8387f73660d02cc8fc5b3d89e656c",
+    "prompt_sha256": "d697fb417c0b4ce7c0ebaf50a08366db44738ed300abba97c35ed3f5ffb04633",
+    "feedback_sha256": "ef97ee3644fab5678ec9c5882da1af78f4cbfc9ade25a24d418f20bc6624662c",
+    "params": {
+      "any.W1": [[1.0]],
+      "any.b1": [-0.5],
+      "rule.W1": [[1.5, -1.5, 1.5, -1.5, 1.5, -1.5]],
+      "rule.b1": [0.75]
+    },
+    "charged_positions": 9,
+    "rationale": "Use balanced positive, negative, and temporal deficit terms motivated by the supplied development failures. The 0.75 bias lies halfway between complete support and a single 1.5 deficit, including an empty-premise rule whose time is not ready. The any bias requires a firing contribution. No distinct crossover donor was supplied. This is a numerical mutation proposal without evaluation or an improvement claim."
+  }
+]

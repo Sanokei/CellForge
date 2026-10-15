@@ -1,0 +1,11 @@
+Write literal numerical weights ONLY. Do not write code, programs, lookup tables, task IDs, sample IDs or explanations.
+Return a JSON array with exactly two candidates {"id":"A","params":{...}} and {"id":"B","params":{...}}.
+Fixed reusable model: two online transition cells and numeric action-selection router. This runtime is identical for every task.
+Features in order: bias, action's EMA changed-pixel fraction, action's EMA no-op fraction, action exposure/(1+exposure), repeated last action indicator, global change EMA, 1/sqrt(1+exposure), consecutive no-op bounded trace.
+Effect tensor shape[8] is sigmoid(dot(weights, features)) predicting useful observable action effect. Recovery tensor shape[8] predicts no-op probability the same way.
+Router shape[4] scores [effect_prediction, -noop_prediction, exposure_uncertainty, -noop_EMA]. Argmax among legal actions.
+Rates shape[2]: sigmoid(rate) controls action-conditioned EMA learning of changed-fraction/no-op outcomes. No gradient updates or hidden solver.
+Click shape[4] sets generic coordinates abs(w0*step+w1)%64 and abs(w2*step+w3)%64. No frame/task-specific pixel constants.
+All tensors finite numbers in [-20,20], exact keys effect,recovery,router,rates,click. 26 positions each. Propose two distinct meaningful hypotheses, not all-zero or duplicate.
+Prior shared generic policy often repeated ineffective actions and earned zero levels. No game observations or target labels are supplied.
+These cells must learn generic effects from observation/action/next-observation history and avoid ineffective actions while retaining exploration. Shape-8 effect/recovery must differ so swap ablation is meaningful.

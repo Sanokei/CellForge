@@ -1,0 +1,2929 @@
+{
+  "policy": {
+    "protocol": "maker-grid-slot-pilot/1",
+    "parent_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+    "proposal_budget_per_arm": 1,
+    "control_seed": 662021,
+    "allowed_changes": "one put_def rewire of typed slot9; same shared authored bank, cells, parameters, state capacity",
+    "maker_choice": "bank_local_fill.gene",
+    "selection_tasks_per_family": 100,
+    "selection_seed_base": 731000,
+    "validation_seed_base": 1151000,
+    "validation_tasks_per_family": 100,
+    "selection_fitness": "macro exact reconstruction on all three demonstration pairs of each synthetic task; query targets excluded",
+    "acceptance": "strict macro improvement and no family regression against common founder",
+    "source_sha256": "8cf803ad525666bd0303df7a8a8aa76251a72b5baa521288142ed9e7179fcd12",
+    "maker_model": "existing Codex conversational assistant; exact serving model not recorded; no separate model calls",
+    "maker_cost": "not measured, not zero",
+    "proposal_timing": "manual maker wiring choice predeclared from prior published diagnostics; this is not a new adaptive model-service call after receiving this run diagnostics",
+    "prior_context_exposure": "assistant saw published synthetic baseline query aggregates and native DEV200 aggregates; those are not unexposed final data; fresh synthetic validation below is scored only after selection freeze",
+    "gene_authoring_scope": "the new fill gene is shared by both arms; this tests one wiring choice, not an isolated effect of LLM gene authoring",
+    "audit_evaluations": 0,
+    "final_evaluations": 0,
+    "gradient_steps": 0
+  },
+  "baseline_train_fitness": {
+    "partition": "development",
+    "evidence": "train-pairs",
+    "families": {
+      "identity": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 300,
+        "pair_accuracy": 1.0,
+        "failures": 0
+      },
+      "color_permutation": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 300,
+        "pair_accuracy": 1.0,
+        "failures": 0
+      },
+      "reflect_horizontal": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 300,
+        "pair_accuracy": 1.0,
+        "failures": 0
+      },
+      "reflect_vertical": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 300,
+        "pair_accuracy": 1.0,
+        "failures": 0
+      },
+      "transpose": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 300,
+        "pair_accuracy": 1.0,
+        "failures": 0
+      },
+      "bbox_crop_bg0": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 300,
+        "pair_accuracy": 1.0,
+        "failures": 0
+      },
+      "tiling2x": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 0,
+        "pair_accuracy": 0.0,
+        "failures": 0
+      },
+      "local_fill": {
+        "tasks": 100,
+        "demonstration_pairs": 300,
+        "reconstructed_pairs": 0,
+        "pair_accuracy": 0.0,
+        "failures": 0
+      }
+    },
+    "macro_pair_accuracy": 0.75,
+    "wall_seconds": 36.11304146900511,
+    "cpu_seconds": 36.107116604,
+    "peak_rss_bytes": 60182528,
+    "rss_scope": "whole process high-water, not incremental model memory"
+  },
+  "proposal_receipts": {
+    "maker": {
+      "attempt": 1,
+      "diagnostics_shown": {
+        "baseline_demonstration_reconstruction": {
+          "cpu_seconds": 36.107116604,
+          "evidence": "train-pairs",
+          "families": {
+            "bbox_crop_bg0": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "color_permutation": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "identity": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "local_fill": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 0.0,
+              "reconstructed_pairs": 0,
+              "tasks": 100
+            },
+            "reflect_horizontal": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "reflect_vertical": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "tiling2x": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 0.0,
+              "reconstructed_pairs": 0,
+              "tasks": 100
+            },
+            "transpose": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            }
+          },
+          "macro_pair_accuracy": 0.75,
+          "partition": "development",
+          "peak_rss_bytes": 60182528,
+          "rss_scope": "whole process high-water, not incremental model memory",
+          "wall_seconds": 36.11304146900511
+        },
+        "context_exposure_policy_sha256": "adfee3542ed25419337faaff815850ab603d0b437471283568f533902076250b",
+        "evidence": "train-pairs",
+        "generator_source": "cellforge.reference.grid_curriculum; original synthetic examples",
+        "instruction": "use a shared authored gene for the simultaneous zero-only four-neighbor fill family; preserve existing supported families",
+        "partition": "development"
+      },
+      "kind": "attempt",
+      "ops": [
+        {
+          "def": {
+            "inputs": [
+              "input",
+              "input_height",
+              "input_width"
+            ],
+            "kind": "bundle",
+            "nodes": [
+              {
+                "args": {
+                  "axis": 2,
+                  "keepdims": true
+                },
+                "id": "valid_mask",
+                "in": {
+                  "x": "$input"
+                },
+                "use": "op:sum"
+              },
+              {
+                "id": "n0",
+                "in": {
+                  "a": "$input",
+                  "b": "valid_mask"
+                },
+                "use": "op:mul"
+              },
+              {
+                "id": "n1",
+                "in": {
+                  "x": "n0"
+                },
+                "use": "bank_local_fill.color"
+              },
+              {
+                "args": {
+                  "axis": 0,
+                  "k": -1
+                },
+                "id": "n2",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 0,
+                  "k": 1
+                },
+                "id": "n3",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 1,
+                  "k": -1
+                },
+                "id": "n4",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 1,
+                  "k": 1
+                },
+                "id": "n5",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 2
+                },
+                "id": "n6",
+                "in": {
+                  "x0": "n2",
+                  "x1": "n3",
+                  "x2": "n4",
+                  "x3": "n5"
+                },
+                "use": "op:concat"
+              },
+              {
+                "args": {
+                  "axis": 2,
+                  "keepdims": true
+                },
+                "id": "n7",
+                "in": {
+                  "x": "n6"
+                },
+                "use": "op:max"
+              },
+              {
+                "args": {
+                  "axis": 2,
+                  "start": 0,
+                  "stop": 1
+                },
+                "id": "n8",
+                "in": {
+                  "x": "n0"
+                },
+                "use": "op:slice"
+              },
+              {
+                "id": "n9",
+                "in": {
+                  "a": "n7",
+                  "b": "n8"
+                },
+                "use": "op:mul"
+              },
+              {
+                "id": "n10",
+                "in": {
+                  "a": "n1",
+                  "b": "n9"
+                },
+                "use": "op:add"
+              },
+              {
+                "args": {
+                  "n": 10
+                },
+                "id": "n11",
+                "in": {},
+                "use": "op:coords"
+              },
+              {
+                "args": {
+                  "shape": [
+                    1,
+                    1,
+                    10
+                  ]
+                },
+                "id": "n12",
+                "in": {
+                  "x": "n11"
+                },
+                "use": "op:reshape"
+              },
+              {
+                "id": "n13",
+                "in": {
+                  "a": "n10",
+                  "b": "n12"
+                },
+                "use": "op:sub"
+              },
+              {
+                "id": "n14",
+                "in": {
+                  "x": "n13"
+                },
+                "use": "op:abs"
+              },
+              {
+                "id": "n15",
+                "in": {
+                  "x": "n14"
+                },
+                "use": "op:neg"
+              },
+              {
+                "args": {
+                  "c": 1
+                },
+                "id": "n16",
+                "in": {
+                  "x": "n15"
+                },
+                "use": "op:bias"
+              },
+              {
+                "id": "n17",
+                "in": {
+                  "x": "n16"
+                },
+                "use": "op:relu"
+              },
+              {
+                "id": "n18",
+                "in": {
+                  "a": "n17",
+                  "b": "valid_mask"
+                },
+                "use": "op:mul"
+              }
+            ],
+            "outputs": {
+              "colors": "n18",
+              "height": "$input_height",
+              "width": "$input_width"
+            },
+            "role": "cluster"
+          },
+          "name": "slot9_geometry",
+          "op": "put_def"
+        }
+      ],
+      "parent_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "provenance": {
+        "actor": "Codex root",
+        "method": "manual-llm-maker",
+        "model": "existing Codex conversational assistant; exact serving model not recorded; no separate model calls",
+        "transaction": {
+          "author": "maker",
+          "base": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "ops": [
+            {
+              "def": {
+                "inputs": [
+                  "input",
+                  "input_height",
+                  "input_width"
+                ],
+                "kind": "bundle",
+                "nodes": [
+                  {
+                    "args": {
+                      "axis": 2,
+                      "keepdims": true
+                    },
+                    "id": "valid_mask",
+                    "in": {
+                      "x": "$input"
+                    },
+                    "use": "op:sum"
+                  },
+                  {
+                    "id": "n0",
+                    "in": {
+                      "a": "$input",
+                      "b": "valid_mask"
+                    },
+                    "use": "op:mul"
+                  },
+                  {
+                    "id": "n1",
+                    "in": {
+                      "x": "n0"
+                    },
+                    "use": "bank_local_fill.color"
+                  },
+                  {
+                    "args": {
+                      "axis": 0,
+                      "k": -1
+                    },
+                    "id": "n2",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 0,
+                      "k": 1
+                    },
+                    "id": "n3",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 1,
+                      "k": -1
+                    },
+                    "id": "n4",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 1,
+                      "k": 1
+                    },
+                    "id": "n5",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 2
+                    },
+                    "id": "n6",
+                    "in": {
+                      "x0": "n2",
+                      "x1": "n3",
+                      "x2": "n4",
+                      "x3": "n5"
+                    },
+                    "use": "op:concat"
+                  },
+                  {
+                    "args": {
+                      "axis": 2,
+                      "keepdims": true
+                    },
+                    "id": "n7",
+                    "in": {
+                      "x": "n6"
+                    },
+                    "use": "op:max"
+                  },
+                  {
+                    "args": {
+                      "axis": 2,
+                      "start": 0,
+                      "stop": 1
+                    },
+                    "id": "n8",
+                    "in": {
+                      "x": "n0"
+                    },
+                    "use": "op:slice"
+                  },
+                  {
+                    "id": "n9",
+                    "in": {
+                      "a": "n7",
+                      "b": "n8"
+                    },
+                    "use": "op:mul"
+                  },
+                  {
+                    "id": "n10",
+                    "in": {
+                      "a": "n1",
+                      "b": "n9"
+                    },
+                    "use": "op:add"
+                  },
+                  {
+                    "args": {
+                      "n": 10
+                    },
+                    "id": "n11",
+                    "in": {},
+                    "use": "op:coords"
+                  },
+                  {
+                    "args": {
+                      "shape": [
+                        1,
+                        1,
+                        10
+                      ]
+                    },
+                    "id": "n12",
+                    "in": {
+                      "x": "n11"
+                    },
+                    "use": "op:reshape"
+                  },
+                  {
+                    "id": "n13",
+                    "in": {
+                      "a": "n10",
+                      "b": "n12"
+                    },
+                    "use": "op:sub"
+                  },
+                  {
+                    "id": "n14",
+                    "in": {
+                      "x": "n13"
+                    },
+                    "use": "op:abs"
+                  },
+                  {
+                    "id": "n15",
+                    "in": {
+                      "x": "n14"
+                    },
+                    "use": "op:neg"
+                  },
+                  {
+                    "args": {
+                      "c": 1
+                    },
+                    "id": "n16",
+                    "in": {
+                      "x": "n15"
+                    },
+                    "use": "op:bias"
+                  },
+                  {
+                    "id": "n17",
+                    "in": {
+                      "x": "n16"
+                    },
+                    "use": "op:relu"
+                  },
+                  {
+                    "id": "n18",
+                    "in": {
+                      "a": "n17",
+                      "b": "valid_mask"
+                    },
+                    "use": "op:mul"
+                  }
+                ],
+                "outputs": {
+                  "colors": "n18",
+                  "height": "$input_height",
+                  "width": "$input_width"
+                },
+                "role": "cluster"
+              },
+              "name": "slot9_geometry",
+              "op": "put_def"
+            }
+          ],
+          "rationale": "rewire existing slot9 to bank_local_fill.gene from shared authored bank",
+          "selected_gene": "bank_local_fill.gene",
+          "task_id": "slot9-rewire"
+        }
+      },
+      "status": "accepted",
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8",
+          "expert_9"
+        ]
+      },
+      "candidate_hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "development_metrics": {
+        "partition": "development",
+        "evidence": "train-pairs",
+        "families": {
+          "identity": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "color_permutation": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "reflect_horizontal": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "reflect_vertical": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "transpose": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "bbox_crop_bg0": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "tiling2x": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 0,
+            "pair_accuracy": 0.0,
+            "failures": 0
+          },
+          "local_fill": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          }
+        },
+        "macro_pair_accuracy": 0.875,
+        "wall_seconds": 39.23160393899889,
+        "cpu_seconds": 39.225717386,
+        "peak_rss_bytes": 64290816,
+        "rss_scope": "whole process high-water, not incremental model memory"
+      },
+      "time": "2026-09-30T05:28:49.630806+00:00",
+      "previous_receipt": null,
+      "receipt_hash": "a8bb983ab5e2aca8f1e403b7e76e6454be4d12386047e940b34df7e2554793c5"
+    },
+    "random_control": {
+      "attempt": 1,
+      "diagnostics_shown": {
+        "baseline_demonstration_reconstruction": {
+          "cpu_seconds": 36.107116604,
+          "evidence": "train-pairs",
+          "families": {
+            "bbox_crop_bg0": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "color_permutation": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "identity": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "local_fill": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 0.0,
+              "reconstructed_pairs": 0,
+              "tasks": 100
+            },
+            "reflect_horizontal": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "reflect_vertical": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            },
+            "tiling2x": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 0.0,
+              "reconstructed_pairs": 0,
+              "tasks": 100
+            },
+            "transpose": {
+              "demonstration_pairs": 300,
+              "failures": 0,
+              "pair_accuracy": 1.0,
+              "reconstructed_pairs": 300,
+              "tasks": 100
+            }
+          },
+          "macro_pair_accuracy": 0.75,
+          "partition": "development",
+          "peak_rss_bytes": 60182528,
+          "rss_scope": "whole process high-water, not incremental model memory",
+          "wall_seconds": 36.11304146900511
+        },
+        "context_exposure_policy_sha256": "adfee3542ed25419337faaff815850ab603d0b437471283568f533902076250b",
+        "evidence": "train-pairs",
+        "generator_source": "cellforge.reference.grid_curriculum; original synthetic examples",
+        "instruction": "use a shared authored gene for the simultaneous zero-only four-neighbor fill family; preserve existing supported families",
+        "partition": "development"
+      },
+      "kind": "attempt",
+      "ops": [
+        {
+          "def": {
+            "inputs": [
+              "input",
+              "input_height",
+              "input_width"
+            ],
+            "kind": "bundle",
+            "nodes": [
+              {
+                "args": {
+                  "axis": 2,
+                  "keepdims": true
+                },
+                "id": "valid_mask",
+                "in": {
+                  "x": "$input"
+                },
+                "use": "op:sum"
+              },
+              {
+                "id": "n0",
+                "in": {
+                  "a": "$input",
+                  "b": "valid_mask"
+                },
+                "use": "op:mul"
+              },
+              {
+                "id": "n1",
+                "in": {
+                  "x": "n0"
+                },
+                "use": "bank_local_fill.color"
+              },
+              {
+                "args": {
+                  "axis": 0,
+                  "k": -1
+                },
+                "id": "n2",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 0,
+                  "k": 1
+                },
+                "id": "n3",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 1,
+                  "k": -1
+                },
+                "id": "n4",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 1,
+                  "k": 1
+                },
+                "id": "n5",
+                "in": {
+                  "x": "n1"
+                },
+                "use": "op:shift"
+              },
+              {
+                "args": {
+                  "axis": 2
+                },
+                "id": "n6",
+                "in": {
+                  "x0": "n2",
+                  "x1": "n3",
+                  "x2": "n4",
+                  "x3": "n5"
+                },
+                "use": "op:concat"
+              },
+              {
+                "args": {
+                  "axis": 2,
+                  "keepdims": true
+                },
+                "id": "n7",
+                "in": {
+                  "x": "n6"
+                },
+                "use": "op:max"
+              },
+              {
+                "args": {
+                  "axis": 2,
+                  "start": 0,
+                  "stop": 1
+                },
+                "id": "n8",
+                "in": {
+                  "x": "n0"
+                },
+                "use": "op:slice"
+              },
+              {
+                "id": "n9",
+                "in": {
+                  "a": "n7",
+                  "b": "n8"
+                },
+                "use": "op:mul"
+              },
+              {
+                "id": "n10",
+                "in": {
+                  "a": "n1",
+                  "b": "n9"
+                },
+                "use": "op:add"
+              },
+              {
+                "args": {
+                  "n": 10
+                },
+                "id": "n11",
+                "in": {},
+                "use": "op:coords"
+              },
+              {
+                "args": {
+                  "shape": [
+                    1,
+                    1,
+                    10
+                  ]
+                },
+                "id": "n12",
+                "in": {
+                  "x": "n11"
+                },
+                "use": "op:reshape"
+              },
+              {
+                "id": "n13",
+                "in": {
+                  "a": "n10",
+                  "b": "n12"
+                },
+                "use": "op:sub"
+              },
+              {
+                "id": "n14",
+                "in": {
+                  "x": "n13"
+                },
+                "use": "op:abs"
+              },
+              {
+                "id": "n15",
+                "in": {
+                  "x": "n14"
+                },
+                "use": "op:neg"
+              },
+              {
+                "args": {
+                  "c": 1
+                },
+                "id": "n16",
+                "in": {
+                  "x": "n15"
+                },
+                "use": "op:bias"
+              },
+              {
+                "id": "n17",
+                "in": {
+                  "x": "n16"
+                },
+                "use": "op:relu"
+              },
+              {
+                "id": "n18",
+                "in": {
+                  "a": "n17",
+                  "b": "valid_mask"
+                },
+                "use": "op:mul"
+              }
+            ],
+            "outputs": {
+              "colors": "n18",
+              "height": "$input_height",
+              "width": "$input_width"
+            },
+            "role": "cluster"
+          },
+          "name": "slot9_geometry",
+          "op": "put_def"
+        }
+      ],
+      "parent_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "provenance": {
+        "actor": "uniform typed-slot sampler",
+        "method": "non-llm-mutation-control",
+        "model": "none (NumPy RNG)",
+        "transaction": {
+          "author": "uniform-nonLLM-control",
+          "base": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+          "control_seed": 662021,
+          "ops": [
+            {
+              "def": {
+                "inputs": [
+                  "input",
+                  "input_height",
+                  "input_width"
+                ],
+                "kind": "bundle",
+                "nodes": [
+                  {
+                    "args": {
+                      "axis": 2,
+                      "keepdims": true
+                    },
+                    "id": "valid_mask",
+                    "in": {
+                      "x": "$input"
+                    },
+                    "use": "op:sum"
+                  },
+                  {
+                    "id": "n0",
+                    "in": {
+                      "a": "$input",
+                      "b": "valid_mask"
+                    },
+                    "use": "op:mul"
+                  },
+                  {
+                    "id": "n1",
+                    "in": {
+                      "x": "n0"
+                    },
+                    "use": "bank_local_fill.color"
+                  },
+                  {
+                    "args": {
+                      "axis": 0,
+                      "k": -1
+                    },
+                    "id": "n2",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 0,
+                      "k": 1
+                    },
+                    "id": "n3",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 1,
+                      "k": -1
+                    },
+                    "id": "n4",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 1,
+                      "k": 1
+                    },
+                    "id": "n5",
+                    "in": {
+                      "x": "n1"
+                    },
+                    "use": "op:shift"
+                  },
+                  {
+                    "args": {
+                      "axis": 2
+                    },
+                    "id": "n6",
+                    "in": {
+                      "x0": "n2",
+                      "x1": "n3",
+                      "x2": "n4",
+                      "x3": "n5"
+                    },
+                    "use": "op:concat"
+                  },
+                  {
+                    "args": {
+                      "axis": 2,
+                      "keepdims": true
+                    },
+                    "id": "n7",
+                    "in": {
+                      "x": "n6"
+                    },
+                    "use": "op:max"
+                  },
+                  {
+                    "args": {
+                      "axis": 2,
+                      "start": 0,
+                      "stop": 1
+                    },
+                    "id": "n8",
+                    "in": {
+                      "x": "n0"
+                    },
+                    "use": "op:slice"
+                  },
+                  {
+                    "id": "n9",
+                    "in": {
+                      "a": "n7",
+                      "b": "n8"
+                    },
+                    "use": "op:mul"
+                  },
+                  {
+                    "id": "n10",
+                    "in": {
+                      "a": "n1",
+                      "b": "n9"
+                    },
+                    "use": "op:add"
+                  },
+                  {
+                    "args": {
+                      "n": 10
+                    },
+                    "id": "n11",
+                    "in": {},
+                    "use": "op:coords"
+                  },
+                  {
+                    "args": {
+                      "shape": [
+                        1,
+                        1,
+                        10
+                      ]
+                    },
+                    "id": "n12",
+                    "in": {
+                      "x": "n11"
+                    },
+                    "use": "op:reshape"
+                  },
+                  {
+                    "id": "n13",
+                    "in": {
+                      "a": "n10",
+                      "b": "n12"
+                    },
+                    "use": "op:sub"
+                  },
+                  {
+                    "id": "n14",
+                    "in": {
+                      "x": "n13"
+                    },
+                    "use": "op:abs"
+                  },
+                  {
+                    "id": "n15",
+                    "in": {
+                      "x": "n14"
+                    },
+                    "use": "op:neg"
+                  },
+                  {
+                    "args": {
+                      "c": 1
+                    },
+                    "id": "n16",
+                    "in": {
+                      "x": "n15"
+                    },
+                    "use": "op:bias"
+                  },
+                  {
+                    "id": "n17",
+                    "in": {
+                      "x": "n16"
+                    },
+                    "use": "op:relu"
+                  },
+                  {
+                    "id": "n18",
+                    "in": {
+                      "a": "n17",
+                      "b": "valid_mask"
+                    },
+                    "use": "op:mul"
+                  }
+                ],
+                "outputs": {
+                  "colors": "n18",
+                  "height": "$input_height",
+                  "width": "$input_width"
+                },
+                "role": "cluster"
+              },
+              "name": "slot9_geometry",
+              "op": "put_def"
+            }
+          ],
+          "rationale": "rewire existing slot9 to bank_local_fill.gene from shared authored bank",
+          "sampling": "uniform nine available nonidentity genes; one slot rewire",
+          "selected_gene": "bank_local_fill.gene",
+          "task_id": "slot9-rewire"
+        }
+      },
+      "status": "accepted",
+      "profile": {
+        "profile": "ladder-micro/1",
+        "dispatches": 2,
+        "experts": [
+          "expert_0",
+          "expert_1",
+          "expert_2",
+          "expert_3",
+          "expert_4",
+          "expert_5",
+          "expert_6",
+          "expert_7",
+          "expert_8",
+          "expert_9"
+        ]
+      },
+      "candidate_hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "development_metrics": {
+        "partition": "development",
+        "evidence": "train-pairs",
+        "families": {
+          "identity": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "color_permutation": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "reflect_horizontal": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "reflect_vertical": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "transpose": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "bbox_crop_bg0": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          },
+          "tiling2x": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 0,
+            "pair_accuracy": 0.0,
+            "failures": 0
+          },
+          "local_fill": {
+            "tasks": 100,
+            "demonstration_pairs": 300,
+            "reconstructed_pairs": 300,
+            "pair_accuracy": 1.0,
+            "failures": 0
+          }
+        },
+        "macro_pair_accuracy": 0.875,
+        "wall_seconds": 38.16910793200077,
+        "cpu_seconds": 38.16416240000001,
+        "peak_rss_bytes": 66125824,
+        "rss_scope": "whole process high-water, not incremental model memory"
+      },
+      "time": "2026-09-30T05:29:27.935396+00:00",
+      "previous_receipt": null,
+      "receipt_hash": "c4f6c046b8690e3ddf9bf72978747023d82abf6426603baa9166e8daeb9561d2"
+    }
+  },
+  "frozen_winners": {
+    "founder": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+    "maker": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+    "random_control": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe"
+  },
+  "validation": [
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.4842016180045903,
+      "cpu_seconds": 1.4840761530000037,
+      "tasks_per_second": 67.37629092093519,
+      "cpu_seconds_per_task": 0.014840761530000038,
+      "node_execs": 285227,
+      "macs": 1733138760,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 1,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 395,
+          "expert_9": 4
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "identity",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.467134600999998,
+      "cpu_seconds": 1.4670038619999985,
+      "tasks_per_second": 68.16007197420065,
+      "cpu_seconds_per_task": 0.014670038619999985,
+      "node_execs": 285487,
+      "macs": 1735055970,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 1,
+          "expert_3": 1,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 398,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "color_permutation",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.482938107001246,
+      "cpu_seconds": 1.482842912999999,
+      "tasks_per_second": 67.43369768966087,
+      "cpu_seconds_per_task": 0.014828429129999989,
+      "node_execs": 265975,
+      "macs": 1725533310,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 1,
+          "expert_1": 0,
+          "expert_2": 399,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 164,
+          "expert_1": 71,
+          "expert_2": 0,
+          "expert_3": 143,
+          "expert_4": 1,
+          "expert_5": 14,
+          "expert_6": 7,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "reflect_horizontal",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.5153599949990166,
+      "cpu_seconds": 1.5151592969999967,
+      "tasks_per_second": 65.99091986723913,
+      "cpu_seconds_per_task": 0.015151592969999968,
+      "node_execs": 264957,
+      "macs": 1719322620,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 400,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 175,
+          "expert_1": 0,
+          "expert_2": 75,
+          "expert_3": 129,
+          "expert_4": 1,
+          "expert_5": 11,
+          "expert_6": 8,
+          "expert_7": 1,
+          "expert_8": 0,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "reflect_vertical",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.5079691930004628,
+      "cpu_seconds": 1.5078752109999982,
+      "tasks_per_second": 66.31435208634883,
+      "cpu_seconds_per_task": 0.015078752109999982,
+      "node_execs": 261255,
+      "macs": 1639663770,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 1,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 399,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 19,
+          "expert_1": 0,
+          "expert_2": 1,
+          "expert_3": 9,
+          "expert_4": 1,
+          "expert_5": 180,
+          "expert_6": 120,
+          "expert_7": 70,
+          "expert_8": 0,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "transpose",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.635577615998045,
+      "cpu_seconds": 1.635485261999989,
+      "tasks_per_second": 61.14047968245093,
+      "cpu_seconds_per_task": 0.016354852619999888,
+      "node_execs": 291253,
+      "macs": 1827964290,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 400,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 100,
+          "expert_1": 55,
+          "expert_2": 32,
+          "expert_3": 43,
+          "expert_4": 53,
+          "expert_5": 23,
+          "expert_6": 41,
+          "expert_7": 53,
+          "expert_8": 0,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "bbox_crop_bg0",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 0,
+      "solve_rate": 0.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 0,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.5547502510016784,
+      "cpu_seconds": 1.5546528229999979,
+      "tasks_per_second": 64.31901196708155,
+      "cpu_seconds_per_task": 0.015546528229999978,
+      "node_execs": 285388,
+      "macs": 1734236880,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 2,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 1,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 397,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "tiling2x",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 0,
+      "solve_rate": 0.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 0,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.456846196000697,
+      "cpu_seconds": 1.4567177150000106,
+      "tasks_per_second": 68.6414257555244,
+      "cpu_seconds_per_task": 0.014567177150000105,
+      "node_execs": 255372,
+      "macs": 1538555520,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 25,
+          "expert_2": 11,
+          "expert_3": 5,
+          "expert_4": 7,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 2,
+          "expert_8": 17,
+          "expert_9": 333
+        }
+      },
+      "peak_rss_bytes": 74342400,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "local_fill",
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.8452977869965252,
+      "cpu_seconds": 1.8451453429999845,
+      "tasks_per_second": 54.1917953322665,
+      "cpu_seconds_per_task": 0.018451453429999844,
+      "node_execs": 293302,
+      "macs": 1737035790,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 1,
+          "expert_2": 0,
+          "expert_3": 1,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 395,
+          "expert_9": 3
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "identity",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.695307658999809,
+      "cpu_seconds": 1.6951047430000017,
+      "tasks_per_second": 58.986343551941246,
+      "cpu_seconds_per_task": 0.01695104743000002,
+      "node_execs": 293487,
+      "macs": 1738655970,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 1,
+          "expert_3": 1,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 398,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "color_permutation",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.7933856419986114,
+      "cpu_seconds": 1.7932304499999816,
+      "tasks_per_second": 55.760455341081304,
+      "cpu_seconds_per_task": 0.017932304499999815,
+      "node_execs": 274275,
+      "macs": 1729268310,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 1,
+          "expert_1": 0,
+          "expert_2": 399,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 149,
+          "expert_1": 71,
+          "expert_2": 0,
+          "expert_3": 143,
+          "expert_4": 1,
+          "expert_5": 14,
+          "expert_6": 7,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 15
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "reflect_horizontal",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6344696379965171,
+      "cpu_seconds": 1.6342986280000105,
+      "tasks_per_second": 61.18192573009612,
+      "cpu_seconds_per_task": 0.016342986280000103,
+      "node_execs": 273173,
+      "macs": 1721968500,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 400,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 164,
+          "expert_1": 0,
+          "expert_2": 75,
+          "expert_3": 128,
+          "expert_4": 1,
+          "expert_5": 9,
+          "expert_6": 8,
+          "expert_7": 1,
+          "expert_8": 0,
+          "expert_9": 14
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "reflect_vertical",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.5954711200029124,
+      "cpu_seconds": 1.5953582189999906,
+      "tasks_per_second": 62.67741154714067,
+      "cpu_seconds_per_task": 0.015953582189999906,
+      "node_execs": 269295,
+      "macs": 1643281770,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 1,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 399,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 17,
+          "expert_1": 0,
+          "expert_2": 1,
+          "expert_3": 9,
+          "expert_4": 1,
+          "expert_5": 180,
+          "expert_6": 120,
+          "expert_7": 70,
+          "expert_8": 0,
+          "expert_9": 2
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "transpose",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6798217789983028,
+      "cpu_seconds": 1.679734652999997,
+      "tasks_per_second": 59.530124713367606,
+      "cpu_seconds_per_task": 0.01679734652999997,
+      "node_execs": 299619,
+      "macs": 1831204230,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 400,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 86,
+          "expert_1": 53,
+          "expert_2": 32,
+          "expert_3": 43,
+          "expert_4": 49,
+          "expert_5": 23,
+          "expert_6": 41,
+          "expert_7": 53,
+          "expert_8": 0,
+          "expert_9": 20
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "bbox_crop_bg0",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 0,
+      "solve_rate": 0.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 0,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6438722780003445,
+      "cpu_seconds": 1.6437706350000099,
+      "tasks_per_second": 60.83197663120337,
+      "cpu_seconds_per_task": 0.016437706350000098,
+      "node_execs": 293388,
+      "macs": 1737836880,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 2,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 1,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 397,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "tiling2x",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6310081499977969,
+      "cpu_seconds": 1.6308697659999893,
+      "tasks_per_second": 61.31177210864034,
+      "cpu_seconds_per_task": 0.016308697659999892,
+      "node_execs": 269200,
+      "macs": 1522920000,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 400
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "local_fill",
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.8452977869965252,
+      "cpu_seconds": 1.8451453429999845,
+      "tasks_per_second": 54.1917953322665,
+      "cpu_seconds_per_task": 0.018451453429999844,
+      "node_execs": 293302,
+      "macs": 1737035790,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 1,
+          "expert_2": 0,
+          "expert_3": 1,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 395,
+          "expert_9": 3
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "identity",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.695307658999809,
+      "cpu_seconds": 1.6951047430000017,
+      "tasks_per_second": 58.986343551941246,
+      "cpu_seconds_per_task": 0.01695104743000002,
+      "node_execs": 293487,
+      "macs": 1738655970,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 1,
+          "expert_3": 1,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 398,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "color_permutation",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.7933856419986114,
+      "cpu_seconds": 1.7932304499999816,
+      "tasks_per_second": 55.760455341081304,
+      "cpu_seconds_per_task": 0.017932304499999815,
+      "node_execs": 274275,
+      "macs": 1729268310,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 1,
+          "expert_1": 0,
+          "expert_2": 399,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 149,
+          "expert_1": 71,
+          "expert_2": 0,
+          "expert_3": 143,
+          "expert_4": 1,
+          "expert_5": 14,
+          "expert_6": 7,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 15
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "reflect_horizontal",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6344696379965171,
+      "cpu_seconds": 1.6342986280000105,
+      "tasks_per_second": 61.18192573009612,
+      "cpu_seconds_per_task": 0.016342986280000103,
+      "node_execs": 273173,
+      "macs": 1721968500,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 400,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 164,
+          "expert_1": 0,
+          "expert_2": 75,
+          "expert_3": 128,
+          "expert_4": 1,
+          "expert_5": 9,
+          "expert_6": 8,
+          "expert_7": 1,
+          "expert_8": 0,
+          "expert_9": 14
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "reflect_vertical",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.5954711200029124,
+      "cpu_seconds": 1.5953582189999906,
+      "tasks_per_second": 62.67741154714067,
+      "cpu_seconds_per_task": 0.015953582189999906,
+      "node_execs": 269295,
+      "macs": 1643281770,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 1,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 399,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 17,
+          "expert_1": 0,
+          "expert_2": 1,
+          "expert_3": 9,
+          "expert_4": 1,
+          "expert_5": 180,
+          "expert_6": 120,
+          "expert_7": 70,
+          "expert_8": 0,
+          "expert_9": 2
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "transpose",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6798217789983028,
+      "cpu_seconds": 1.679734652999997,
+      "tasks_per_second": 59.530124713367606,
+      "cpu_seconds_per_task": 0.01679734652999997,
+      "node_execs": 299619,
+      "macs": 1831204230,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 400,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 86,
+          "expert_1": 53,
+          "expert_2": 32,
+          "expert_3": 43,
+          "expert_4": 49,
+          "expert_5": 23,
+          "expert_6": 41,
+          "expert_7": 53,
+          "expert_8": 0,
+          "expert_9": 20
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "bbox_crop_bg0",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 0,
+      "solve_rate": 0.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 0,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6438722780003445,
+      "cpu_seconds": 1.6437706350000099,
+      "tasks_per_second": 60.83197663120337,
+      "cpu_seconds_per_task": 0.016437706350000098,
+      "node_execs": 293388,
+      "macs": 1737836880,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 0,
+          "expert_1": 2,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 1,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 397,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "tiling2x",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    },
+    {
+      "tasks": 100,
+      "tasks_solved": 100,
+      "solve_rate": 1.0,
+      "test_inputs": 100,
+      "test_inputs_correct": 100,
+      "invalid_outputs": 0,
+      "wall_seconds": 1.6310081499977969,
+      "cpu_seconds": 1.6308697659999893,
+      "tasks_per_second": 61.31177210864034,
+      "cpu_seconds_per_task": 0.016308697659999892,
+      "node_execs": 269200,
+      "macs": 1522920000,
+      "route_counts": {
+        "/grid/n32": {
+          "expert_0": 0,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 400
+        },
+        "/grid/rank_dispatch_second": {
+          "expert_0": 400,
+          "expert_1": 0,
+          "expert_2": 0,
+          "expert_3": 0,
+          "expert_4": 0,
+          "expert_5": 0,
+          "expert_6": 0,
+          "expert_7": 0,
+          "expert_8": 0,
+          "expert_9": 0
+        }
+      },
+      "peak_rss_bytes": 76832768,
+      "rss_scope": "whole operator-process high-water to date, not incremental model allocation",
+      "family": "local_fill",
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      },
+      "split": "fresh-synthetic-validation"
+    }
+  ],
+  "native": [
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 200,
+      "tasks_solved": 3,
+      "test_inputs": 222,
+      "test_inputs_correct": 3,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 2,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": 0.0,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 3.6639788799293456,
+      "inference_cpu_seconds": 3.662049185999905,
+      "inference_cpu_seconds_per_task": 0.018310245929999525,
+      "tasks_per_second": 54.585467480603135,
+      "consistency_audit_wall_seconds": 10.950495488956221,
+      "consistency_audit_cpu_seconds": 10.948840777999905,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "family_membership_denominators": {
+        "identity": 0,
+        "color_permutation": 2,
+        "reflect_horizontal": 0,
+        "reflect_vertical": 0,
+        "transpose": 0,
+        "bbox_crop_bg0": 0,
+        "tiling2x": 0,
+        "local_fill": 0
+      },
+      "peak_rss_bytes": 74342400,
+      "arm": "founder",
+      "hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      }
+    },
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 200,
+      "tasks_solved": 3,
+      "test_inputs": 222,
+      "test_inputs_correct": 3,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 2,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": 0.0,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 4.082934132027731,
+      "inference_cpu_seconds": 4.083425219999924,
+      "inference_cpu_seconds_per_task": 0.02041712609999962,
+      "tasks_per_second": 48.98438072540564,
+      "consistency_audit_wall_seconds": 12.324572582998371,
+      "consistency_audit_cpu_seconds": 12.324361530999937,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "family_membership_denominators": {
+        "identity": 0,
+        "color_permutation": 2,
+        "reflect_horizontal": 0,
+        "reflect_vertical": 0,
+        "transpose": 0,
+        "bbox_crop_bg0": 0,
+        "tiling2x": 0,
+        "local_fill": 0
+      },
+      "peak_rss_bytes": 76832768,
+      "arm": "maker",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      }
+    },
+    {
+      "protocol": "grid-exact-demo-consistency/1",
+      "tasks": 200,
+      "tasks_solved": 3,
+      "test_inputs": 222,
+      "test_inputs_correct": 3,
+      "invalid_outputs": 0,
+      "invalid_demo_reconstructions": 0,
+      "demo_consistent_tasks": 2,
+      "demo_consistent_but_wrong_tasks": 0,
+      "false_positive_given_consistency": 0.0,
+      "false_positive_fraction_all_tasks": 0.0,
+      "inference_wall_seconds": 4.082934132027731,
+      "inference_cpu_seconds": 4.083425219999924,
+      "inference_cpu_seconds_per_task": 0.02041712609999962,
+      "tasks_per_second": 48.98438072540564,
+      "consistency_audit_wall_seconds": 12.324572582998371,
+      "consistency_audit_cpu_seconds": 12.324361530999937,
+      "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+      "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+      "family_membership_denominators": {
+        "identity": 0,
+        "color_permutation": 2,
+        "reflect_horizontal": 0,
+        "reflect_vertical": 0,
+        "transpose": 0,
+        "bbox_crop_bg0": 0,
+        "tiling2x": 0,
+        "local_fill": 0
+      },
+      "peak_rss_bytes": 76832768,
+      "arm": "random_control",
+      "hash": "4a124b233e3acd40b9a184496a43c08d98efc8816bf3615d5b66c43b79b04dbe",
+      "stats": {
+        "unique_param_storage": 163,
+        "expanded_param_uses": 3006,
+        "nonzero_slots": 67,
+        "constant_slots_in_op_args": 42,
+        "cell_defs": 3,
+        "bundle_defs": 35,
+        "reachable_defs": 37,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 867,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1304
+      }
+    }
+  ],
+  "limitations": "one maker/control proposal only; shared gene authoring not isolated; earlier aggregate exposure disclosed; no statistical LLM advantage, population mechanism, synthetic-to-hidden transfer or frontier claim",
+  "ledger_entries_verified": 7
+}

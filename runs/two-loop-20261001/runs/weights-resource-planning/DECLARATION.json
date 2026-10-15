@@ -1,0 +1,285 @@
+{
+  "author": {
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "route": "verified ChatGPT subscription Codex CLI",
+    "timeout_seconds": 900
+  },
+  "baseline": {
+    "interface": "resource-production-planning-cell/1",
+    "params": {
+      "policy.W1": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "policy.b1": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "provenance": {
+      "formerly_working_founder": false,
+      "kind": "explicit-uninformed-zero-weight-control",
+      "learning_claim": false,
+      "purpose": "transparent initial control only; actual LLM must author fresh planning seed before learning claims",
+      "source": "/srv/cellforge-inbox/two-loop-20261001/planning-runtime/src/cellforge/runtime/interp.py",
+      "source_sha256": "ffe30d3c205ec0c341e1db4fcebb6ef5d6b5732bdf11ce5ec2cad6753e5df1fd",
+      "training": "none"
+    }
+  },
+  "contract": {
+    "action_order": [
+      "acquire",
+      "assemble",
+      "deliver",
+      "recharge"
+    ],
+    "activation": "identity",
+    "bounds": {
+      "capacity": 3,
+      "cost": 4,
+      "goal": 3,
+      "max_energy": 9,
+      "max_steps": 16
+    },
+    "feature_order": [
+      "material_after",
+      "goods_after",
+      "remaining_goal_after",
+      "energy_after",
+      "free_cargo_after",
+      "steps_left_after"
+    ],
+    "input": "{initial:{materials,goods,delivered,energy},goal,capacity,max_energy,costs:{acquire,assemble,deliver},max_steps}",
+    "interface": "resource-production-planning-cell/1",
+    "output": "{status,plan,steps,state,trace}",
+    "positions": 28,
+    "selection": "each role-specific projected state scores using its corresponding affine policy row; argmax ties lowest action index; no legality masking",
+    "semantics": "acquire adds1 material; assemble consumes1 material adds1 goods; deliver consumes1 goods incrementsdelivered; each consumes taskdeclared energy. recharge fills battery but cannot be chosen at fullenergy. Cargo materials+goods<=capacity. Illegal selected actions fail. Complete within deadline; task scored against independent shortest BFS length.",
+    "shapes": {
+      "policy.W1": [
+        4,
+        6
+      ],
+      "policy.b1": [
+        4
+      ]
+    },
+    "weight_bounds": [
+      -9,
+      9
+    ]
+  },
+  "dependencies": {
+    "actual_planning": "ffe30d3c205ec0c341e1db4fcebb6ef5d6b5732bdf11ce5ec2cad6753e5df1fd",
+    "adapter": "5c4d18b4b081002faf30444eb9dba8d405b9b7a2b425eb0770966dffeede3e92",
+    "service": "4c0fe6ecf61858dd1df5d8157e5c5aa4bf737d136b8136473b70c5d702ef5fbd"
+  },
+  "development": [
+    {
+      "id": "dev-single-cycle",
+      "input": {
+        "capacity": 1,
+        "costs": {
+          "acquire": 1,
+          "assemble": 2,
+          "deliver": 1
+        },
+        "goal": 1,
+        "initial": {
+          "delivered": 0,
+          "energy": 5,
+          "goods": 0,
+          "materials": 0
+        },
+        "max_energy": 5,
+        "max_steps": 12
+      }
+    },
+    {
+      "id": "dev-empty-battery",
+      "input": {
+        "capacity": 1,
+        "costs": {
+          "acquire": 1,
+          "assemble": 2,
+          "deliver": 1
+        },
+        "goal": 1,
+        "initial": {
+          "delivered": 0,
+          "energy": 0,
+          "goods": 0,
+          "materials": 0
+        },
+        "max_energy": 4,
+        "max_steps": 5
+      }
+    },
+    {
+      "id": "dev-initial-goods",
+      "input": {
+        "capacity": 1,
+        "costs": {
+          "acquire": 1,
+          "assemble": 2,
+          "deliver": 1
+        },
+        "goal": 1,
+        "initial": {
+          "delivered": 0,
+          "energy": 5,
+          "goods": 1,
+          "materials": 0
+        },
+        "max_energy": 5,
+        "max_steps": 3
+      }
+    },
+    {
+      "id": "dev-double-tight-energy",
+      "input": {
+        "capacity": 1,
+        "costs": {
+          "acquire": 1,
+          "assemble": 2,
+          "deliver": 1
+        },
+        "goal": 2,
+        "initial": {
+          "delivered": 0,
+          "energy": 1,
+          "goods": 0,
+          "materials": 0
+        },
+        "max_energy": 4,
+        "max_steps": 10
+      }
+    },
+    {
+      "id": "dev-initial-material",
+      "input": {
+        "capacity": 1,
+        "costs": {
+          "acquire": 1,
+          "assemble": 2,
+          "deliver": 1
+        },
+        "goal": 1,
+        "initial": {
+          "delivered": 0,
+          "energy": 3,
+          "goods": 0,
+          "materials": 1
+        },
+        "max_energy": 3,
+        "max_steps": 5
+      }
+    },
+    {
+      "id": "dev-asymmetric-costs",
+      "input": {
+        "capacity": 2,
+        "costs": {
+          "acquire": 2,
+          "assemble": 3,
+          "deliver": 1
+        },
+        "goal": 1,
+        "initial": {
+          "delivered": 0,
+          "energy": 2,
+          "goods": 0,
+          "materials": 0
+        },
+        "max_energy": 6,
+        "max_steps": 7
+      }
+    },
+    {
+      "id": "dev-batch-capacity",
+      "input": {
+        "capacity": 2,
+        "costs": {
+          "acquire": 1,
+          "assemble": 2,
+          "deliver": 1
+        },
+        "goal": 2,
+        "initial": {
+          "delivered": 0,
+          "energy": 7,
+          "goods": 0,
+          "materials": 0
+        },
+        "max_energy": 7,
+        "max_steps": 10
+      }
+    },
+    {
+      "id": "dev-three-deliveries",
+      "input": {
+        "capacity": 2,
+        "costs": {
+          "acquire": 1,
+          "assemble": 1,
+          "deliver": 2
+        },
+        "goal": 3,
+        "initial": {
+          "delivered": 0,
+          "energy": 2,
+          "goods": 0,
+          "materials": 0
+        },
+        "max_energy": 5,
+        "max_steps": 14
+      }
+    }
+  ],
+  "development_decimal": [],
+  "frozen_selection_access": false,
+  "interface": "resource-production-planning-cell/1",
+  "learning_claim": false,
+  "overall_generation_cap": null,
+  "random_operator": "all28 independent uniform[-9,9] literal values; no gradient",
+  "scope": "integrated independent sequential resource-constrained planning lane; shared circuit/registry integration owned externally",
+  "seeds": [
+    901,
+    902,
+    903
+  ],
+  "selection": "strict total development gain and no previously successful task regression; all typed outputs viable"
+}

@@ -1,0 +1,151 @@
+{
+  "accuracy_measured": false,
+  "all_six_required_value_sets_represented": true,
+  "baseline_calls": 0,
+  "cohort_role": "EXPOSED_PUBLIC_DEV",
+  "common_genome_joint_achievability_established": false,
+  "genome_frozen_before_inspection": true,
+  "method": "Only enumerate input/schema-derived typed candidates and inspect required public annotations. No ranking, solve, packet, baseline or scorer calls.",
+  "oracle_annotation_access": true,
+  "per_case": [
+    {
+      "all_required_annotation_values_represented": true,
+      "case_id": "multiple_42",
+      "missing_required_values": [],
+      "represented_origins": [
+        {
+          "origin_types": [
+            "number"
+          ],
+          "parameter": "quantity1"
+        },
+        {
+          "origin_types": [
+            "number"
+          ],
+          "parameter": "temperature1"
+        },
+        {
+          "origin_types": [
+            "number"
+          ],
+          "parameter": "quantity2"
+        },
+        {
+          "origin_types": [
+            "number"
+          ],
+          "parameter": "temperature2"
+        }
+      ]
+    },
+    {
+      "all_required_annotation_values_represented": true,
+      "case_id": "multiple_24",
+      "missing_required_values": [],
+      "represented_origins": [
+        {
+          "origin_types": [
+            "unquoted"
+          ],
+          "parameter": "start"
+        },
+        {
+          "origin_types": [
+            "unquoted"
+          ],
+          "parameter": "destination"
+        }
+      ]
+    },
+    {
+      "all_required_annotation_values_represented": true,
+      "case_id": "multiple_135",
+      "missing_required_values": [],
+      "represented_origins": [
+        {
+          "origin_types": [
+            "unquoted"
+          ],
+          "parameter": "docket"
+        },
+        {
+          "origin_types": [
+            "unquoted"
+          ],
+          "parameter": "court"
+        },
+        {
+          "origin_types": [
+            "unquoted"
+          ],
+          "parameter": "info_type"
+        }
+      ]
+    },
+    {
+      "all_required_annotation_values_represented": true,
+      "case_id": "multiple_21",
+      "missing_required_values": [],
+      "represented_origins": [
+        {
+          "origin_types": [
+            "unit_magnitude"
+          ],
+          "parameter": "frequency"
+        },
+        {
+          "origin_types": [
+            "number"
+          ],
+          "parameter": "duration"
+        }
+      ]
+    },
+    {
+      "all_required_annotation_values_represented": true,
+      "case_id": "multiple_155",
+      "missing_required_values": [],
+      "represented_origins": [
+        {
+          "origin_types": [
+            "unquoted"
+          ],
+          "parameter": "discovery"
+        },
+        {
+          "origin_types": [
+            "boolean_domain"
+          ],
+          "parameter": "detail"
+        }
+      ]
+    },
+    {
+      "all_required_annotation_values_represented": true,
+      "case_id": "multiple_30",
+      "missing_required_values": [],
+      "represented_origins": [
+        {
+          "origin_types": [
+            "number"
+          ],
+          "parameter": "length"
+        },
+        {
+          "origin_types": [
+            "number"
+          ],
+          "parameter": "width"
+        }
+      ]
+    }
+  ],
+  "qualified": false,
+  "schema": "exposed-DEV-capacity-only/4",
+  "scored_packets": 0,
+  "selected_policy_predictions": 0,
+  "solve_calls": 0,
+  "source_frozen_before_inspection": true,
+  "utc": "2026-10-12T23:47:07.757948+00:00"
+}

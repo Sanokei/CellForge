@@ -1,0 +1,25 @@
+test_dispatch_removed_during_gates_prevents_launch (test_stop_during_launch.StopDuringLaunch) ... ok
+test_sigterm_arriving_during_gates_prevents_launch (test_stop_during_launch.StopDuringLaunch) ... ok
+test_stop_arriving_during_launch_is_terminal_before_tick_returns (test_stop_during_launch.StopDuringLaunch) ... ok
+test_stop_marker_arriving_during_gates_prevents_launch (test_stop_during_launch.StopDuringLaunch) ... ok
+test_explicit_stop_ticks_serially_and_preserves_existing_stop_bytes (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_failed_service_guard_never_synthesizes_new_stop (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_global_stop_after_gates_keeps_condition_unattempted (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_rpc_error_after_spawn_then_stop_reconciles_owned_tree (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_rpc_error_and_unknown_ownership_keeps_durable_intent (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_rpc_error_without_spawn_and_stop_is_cancelled (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_run_loop_retries_unknown_stop_until_receipt_and_collection_verified (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_stop_after_intent_and_before_rpc_consumes_once_without_launch (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_stop_and_crash_recover_without_repeat_or_next_launch (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_stop_during_rpc_cancels_actual_invocation_before_return (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_verify_stop_unknown_or_unowned_never_returns_success (test_stop_lifecycle.LaunchStopBoundaries) ... ok
+test_actual_invocation_and_resources_required_for_running_claim (test_stop_lifecycle.ObservationSafety) ... ok
+test_changed_registry_never_claims_coherent_snapshot (test_stop_lifecycle.ObservationSafety) ... ok
+test_missing_invocation_is_only_reconciling (test_stop_lifecycle.ObservationSafety) ... ok
+test_observation_deadline_never_changes_markers_or_registry (test_stop_lifecycle.ObservationSafety) ... ok
+test_unknown_bus_and_replacement_invocation_never_claim_running_or_mutate (test_stop_lifecycle.ObservationSafety) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 100.067s
+
+OK

@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 901,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5315f647cac190533728fb03e39af588522e52f38ab0878e0a4c03db142e411d",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 2.0, 0.5]
+    },
+    "base_sha256": "b6a2382bb6b7b945e3aebfc6711f044f3e4fe48800aec54f05cdb68813e0def2",
+    "prompt_sha256": "5053f25d72e232870dce6629a2edc37d91c8d1ef1c38a3348ebd85470e34f8ad",
+    "feedback_sha256": "bde591261e30ec060d07b244032f14dd4641f446c17d7712972b48438758b7df",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 0.25, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 1.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 0.0, 0.5]
+    },
+    "charged_positions": 28,
+    "rationale": "Supplied development feedback reports completion in all eight cases, with three deliveries taking 12 steps against an 11-step optimum. Restore inventory-sensitive coefficients from the supplied successful traces, add a small remaining-goal incentive to acquire, and make delivery sensitive to freed cargo. Preserve distinguishing left inheritance at position 0 (-9.0) and right inheritance at position 26 (0.0). This is a nonzero mutation from the crossover base; no improvement is claimed."
+  },
+  {
+    "seed": 902,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5379ebd203597b17e4fc3be34e6f4e5af479e30c8056f226223d73631d7f4ed5",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 1.5, 0.75]
+    },
+    "base_sha256": "d47f5d04e386b9d9d55726595bfff216805f4afa0e9bb9c46be59e65dd600317",
+    "prompt_sha256": "ca072ca65d19cb5c01a39c6afa61ca8d1d2a19a79693acbb7f0a06681d85da07",
+    "feedback_sha256": "55f9fc75b718578bb68717cd054c049559589eed8cd98f11bac0feff0a90d695",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 0.25, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 1.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 0.0, 0.75]
+    },
+    "charged_positions": 28,
+    "rationale": "Supplied development feedback reports seven shortest-length successes and a completed three-delivery plan one step longer than optimal. Restore the inventory-sensitive coefficients represented in those traces, introduce a small remaining-goal acquisition incentive, and add freed-cargo sensitivity to delivery. Preserve distinguishing left inheritance at position 0 (-9.0) and right inheritance at position 26 (0.0). The crossover base changes numerically; the proposal is unevaluated and makes no gain claim."
+  },
+  {
+    "seed": 903,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "8957b7123013e72790665be4516954644c907e9195e33273b0a78eef6bbf66b3",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.25, 1.75, 0.9]
+    },
+    "base_sha256": "d3848c916287e2e177bb038ec28e89ee697f5dbc13fdd359cb85fc5f5fd8211f",
+    "prompt_sha256": "fc3601ce310f2080b62562854a7be6cbc2619bbf3130f80d515a5f6f5120edb0",
+    "feedback_sha256": "5573d4c75ef7cddf80642b2ffc5784be1562a0ed35038be93ae9890140fd6ba1",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 0.25, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 1.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.25, 0.0, 0.9]
+    },
+    "charged_positions": 28,
+    "rationale": "The supplied three-delivery trace completes in 12 steps rather than the supplied shortest 11, while the other seven development cases meet their length targets. Restore trace-supported inventory sensitivity, add a small remaining-goal acquisition incentive, and introduce freed-cargo sensitivity in delivery. Retain distinguishing left position 0 (-9.0) and right position 26 (0.0) unchanged. All 28 positions are literal and bounded, with a nonzero change from the base; no evaluation or improvement claim is made."
+  }
+]

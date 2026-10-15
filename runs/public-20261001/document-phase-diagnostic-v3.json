@@ -1,0 +1,35 @@
+{
+  "protocol": "document-phase-diagnostic/3",
+  "policy": {
+    "protocol": "document-phase-diagnostic/3",
+    "parent_policy_sha256": "b486314a45df043d81f7499bcb55e202e140de54cbaac2f7ef57aa96ceae21c3",
+    "same_item": true,
+    "same_model_contract": true,
+    "arm": "actual",
+    "worker_seconds": 120,
+    "source_sha256": {
+      "probe_document_phase.py": "c1bdcf624fff0befc1f2a529c5ec21038728d0d01b544b4a98ea49c460bc3b54",
+      "document_phase_observer.py": "cd3ff41fcafb921021d25c899e029adf62ecbd43dc6e72a593c64525af14002a"
+    },
+    "scope": "bottleneck diagnosis only; no model selection or score improvement claim"
+  },
+  "policy_sha256": "9bfa149dfb136862ab3db85b9a7b33f87838e5f2b58b88c4924c868ca82517f8",
+  "status": "worker_timeout",
+  "render_seconds": 1.659617673001776,
+  "worker_seconds": 120.10888166199584,
+  "numeric_checkpoint": {
+    "context_bytes": 783438,
+    "elapsed_seconds": 2.139567733000149,
+    "language_seconds": 0.0,
+    "ocr_batches": 133,
+    "ocr_crops": 2125,
+    "ocr_seconds": 1.7213173369964352,
+    "phase": "language",
+    "protocol": "document-phase-observer/1"
+  },
+  "same_rendered_pages_sha256": "00b020e04d2794740c05ed4bffb32f394015b129be1112757cd6e5be36fdcf87",
+  "heldout_inference": false,
+  "benchmark_score": null,
+  "custom_score": null,
+  "checkpoint_contains": "phase name and numeric counts/timing only; no document ID, question, image content or answer"
+}

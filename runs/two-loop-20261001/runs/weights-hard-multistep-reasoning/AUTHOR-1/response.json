@@ -1,0 +1,32 @@
+[
+  {
+    "task_id": "1701",
+    "params": {
+      "reward": [4, 9, 0.25, 0.03, 0.01, 0.02],
+      "action": [0, 0, 0, 0],
+      "horizon": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      "beam": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Use horizon 16 and beam 48. Favor completion and delivery progress; the negative-steps feature favors shorter completed paths, with resource features providing small tie-breakers."
+  },
+  {
+    "task_id": "1702",
+    "params": {
+      "reward": [4, 9, 0.25, 0.03, 0.01, 0.02],
+      "action": [0, 0, 0, 0],
+      "horizon": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      "beam": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Identical examples support the same priorities: maximum search horizon and beam, strong completion preference, and a step penalty that outweighs resource tie-breakers."
+  },
+  {
+    "task_id": "1703",
+    "params": {
+      "reward": [4, 9, 0.25, 0.03, 0.01, 0.02],
+      "action": [0, 0, 0, 0],
+      "horizon": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9],
+      "beam": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Search through all 16 depths with 48 retained paths. Neutral action weights avoid action-specific bias, while completion and shorter paths dominate final selection."
+  }
+]

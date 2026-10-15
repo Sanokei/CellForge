@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 901,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5315f647cac190533728fb03e39af588522e52f38ab0878e0a4c03db142e411d",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 2.0, 0.5]
+    },
+    "base_sha256": "b6a2382bb6b7b945e3aebfc6711f044f3e4fe48800aec54f05cdb68813e0def2",
+    "prompt_sha256": "cd4ed392da78c56358d14c9fdc95af448c1bcee877d7a828ea1754f9368c2e9e",
+    "feedback_sha256": "bde591261e30ec060d07b244032f14dd4641f446c17d7712972b48438758b7df",
+    "params": {
+      "policy.W1": [[-9.0, 0.0, 0.0, 2.0, 2.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 2.0, 0.5]
+    },
+    "charged_positions": 28,
+    "rationale": "Development feedback reports completion in 12 steps versus an 11-step shortest plan for dev-three-deliveries, with three recharges. Restore material and goods scoring from the supplied successful traces while retaining the right parent's distinguishing zero at position 1 and the left parent's -9 at position 0. Add a free-cargo coefficient of 2 to acquisition to encourage use of spare cargo and suppress projected overflow. This is an unevaluated mutation; no improvement is claimed."
+  },
+  {
+    "seed": 902,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5379ebd203597b17e4fc3be34e6f4e5af479e30c8056f226223d73631d7f4ed5",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 1.5, 0.75]
+    },
+    "base_sha256": "d47f5d04e386b9d9d55726595bfff216805f4afa0e9bb9c46be59e65dd600317",
+    "prompt_sha256": "f240f9312fba2bdda9457408c7f78fc9db4cbbb92d0d5a282ba04aa6c2c6b10d",
+    "feedback_sha256": "55f9fc75b718578bb68717cd054c049559589eed8cd98f11bac0feff0a90d695",
+    "params": {
+      "policy.W1": [[-9.0, 0.0, 0.0, 2.0, 2.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 1.5, 0.75]
+    },
+    "charged_positions": 28,
+    "rationale": "The supplied development traces complete dev-three-deliveries in 12 steps rather than the shortest 11, while the other seven cases are correct. Restore the traced material and goods coefficients and biases, retain the right parent's distinguishing zero at position 1 and the left parent's -9 at position 0, and author an acquisition free-cargo coefficient of 2. The mutation targets acquisition with spare cargo before costly delivery and penalizes projected overflow. Its performance has not been evaluated."
+  },
+  {
+    "seed": 903,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "8957b7123013e72790665be4516954644c907e9195e33273b0a78eef6bbf66b3",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.25, 1.75, 0.9]
+    },
+    "base_sha256": "d3848c916287e2e177bb038ec28e89ee697f5dbc13fdd359cb85fc5f5fd8211f",
+    "prompt_sha256": "a42f46039bce9e786370ea97e427ce36e4269dd8fd5431d5d27b0b16f464f77f",
+    "feedback_sha256": "5573d4c75ef7cddf80642b2ffc5784be1562a0ed35038be93ae9890140fd6ba1",
+    "params": {
+      "policy.W1": [[-9.0, 0.0, 0.0, 2.0, 2.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.25, 1.75, 0.9]
+    },
+    "charged_positions": 28,
+    "rationale": "Development evidence identifies excess plan length in dev-three-deliveries: completion takes 12 steps against a shortest length of 11. Restore the material and goods scoring used in the supplied traces, preserve the right parent's distinguishing zero at position 1 and the left parent's -9 at position 0, and add acquisition free-cargo weight 2. This proposes using spare capacity while discouraging projected overflow. No evaluation or improvement claim is made."
+  }
+]

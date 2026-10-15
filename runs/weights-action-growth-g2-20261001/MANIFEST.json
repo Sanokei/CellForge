@@ -1,0 +1,172 @@
+{
+  "schema": "bounded-action-growth/1",
+  "phases": 2,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "fresh": [
+    {
+      "id": "write-plain",
+      "request": "write hello to notes.txt",
+      "initial": {},
+      "expected": {
+        "notes.txt": "hello"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "create-plain",
+      "request": "create summary to LOG",
+      "initial": {},
+      "expected": {
+        "LOG": "summary"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "edit-plain",
+      "request": "replace milk with tea in notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "tea"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "edit-next",
+      "request": "replace north with south in MAP",
+      "initial": {
+        "MAP": "north"
+      },
+      "expected": {
+        "MAP": "south"
+      },
+      "action": "edit_in_place"
+    }
+  ],
+  "archive": [
+    {
+      "id": "oldwrite",
+      "request": "write 'plain' to old.txt",
+      "initial": {},
+      "expected": {
+        "old.txt": "plain"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "oldedit",
+      "request": "replace 'milk' with 'tea' in notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "tea"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "quotedwrite",
+      "request": "write 'hello world' to 'report.txt'",
+      "initial": {},
+      "expected": {
+        "report.txt": "hello world"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "extensionless",
+      "request": "write 'version 1.2' to README",
+      "initial": {},
+      "expected": {
+        "README": "version 1.2"
+      },
+      "action": "write_file"
+    },
+    {
+      "id": "quotededit",
+      "request": "replace 'milk' with 'tea' in 'notes.txt'",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "tea"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "indirectedit",
+      "request": "replace 'cat' with 'dog' in the file notes.txt",
+      "initial": {
+        "notes.txt": "cat"
+      },
+      "expected": {
+        "notes.txt": "dog"
+      },
+      "action": "edit_in_place"
+    }
+  ],
+  "safety": [
+    {
+      "id": "missing",
+      "request": "write 'v1.2'",
+      "initial": {},
+      "expected": {},
+      "action": "write_file"
+    },
+    {
+      "id": "escape",
+      "request": "write 'x' to ../outside.txt",
+      "initial": {},
+      "expected": {},
+      "action": "write_file"
+    },
+    {
+      "id": "oldabsent",
+      "request": "replace 'absent' with 'tea' in notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "milk"
+      },
+      "action": "edit_in_place"
+    },
+    {
+      "id": "unsupported",
+      "request": "delete notes.txt",
+      "initial": {
+        "notes.txt": "milk"
+      },
+      "expected": {
+        "notes.txt": "milk"
+      },
+      "action": "none"
+    }
+  ],
+  "reporting": "reserved before phase1; never evaluated until phase2 decisions freeze; samegrammar finite lexical challenge notARC",
+  "capacity": [
+    33,
+    39
+  ],
+  "edit_ranges": [
+    [
+      -9,
+      9
+    ],
+    [
+      -9,
+      9
+    ]
+  ],
+  "budgets": {
+    "llm": 2,
+    "random": 2
+  },
+  "scope": "literal full-matrix reauthoring permitted; matching full-capacity random edits, copied span grammar only",
+  "epoch_migration": "Re-evaluate all prior champions on declared new development pressure; preserve source checkpoint and exact archive expansion evidence. Original records remain in parent-result.json."
+}

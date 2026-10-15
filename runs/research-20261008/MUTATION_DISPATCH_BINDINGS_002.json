@@ -1,0 +1,61 @@
+{
+  "approval": {
+    "approval_reference": "parent-mutation-approval-20261008T070250Z",
+    "contract_sha256": "18f8b7c1be20991b3ea021aa43d7bfd4a821aab67bc547989c2a9f222535d7ee",
+    "packet_sha256": "b65e9d25b3987213f3248c9f56db8b281d9f6001a72c0cc143366a834857ad74",
+    "parent_approved": true,
+    "parent_identity": "/root",
+    "quota": {
+      "approved_max_attempts": 2,
+      "approved_positions_each_arm": 2976,
+      "attestation_reference": "runs/weights-nca-author-tranche-20261008/PARENT_QUOTA_ATTESTATION_002.json#sha256=91b6c426632a6ee80f390f3ad43a216423604518a43887bbd0f2bd90508c6e28",
+      "credit_accounting": "Final mutation invocation 2 of the two-invocation tranche only. No future author calls authorized. Full 1488 positions charged per consumed attempt in each arm, cumulative ceiling 2976; four diagnostic invocations separate. Backend requests and consumed monetary/credit cost unknown; no extra credits authorized."
+    },
+    "route": {
+      "attestation_reference": "runs/weights-nca-author-tranche-20261008/PARENT_ROUTE_ATTESTATION_002.json#sha256=84faeb9091f294ea5ede348e93ded2c1f86627edb10feb753462ede071f22719",
+      "audit_mode": "complete_event_stream_conservative_allowlist",
+      "identity": "cellforge-1 official OpenAI existing-ChatGPT-auth alias / capture V5",
+      "input_isolation_status": "verified_packet_only_no_repo_global_context",
+      "preventive_isolation_status": "not_claimed"
+    },
+    "schema": "nca-parent-approval/1"
+  },
+  "reservation": {
+    "approval_reference": "parent-mutation-approval-20261008T070250Z",
+    "approval_sha256": "13487cfb4c5f37e959af9df7cb41b47916f0129884389efeaf6dee1e93d41e1b",
+    "attempt": 2,
+    "contract_sha256": "18f8b7c1be20991b3ea021aa43d7bfd4a821aab67bc547989c2a9f222535d7ee",
+    "dispatch_implemented": false,
+    "packet_sha256": "b65e9d25b3987213f3248c9f56db8b281d9f6001a72c0cc143366a834857ad74",
+    "parent_identity": "/root",
+    "parent_tensor_sha256": "734f60cfe7cc14d074f7ceccb09b257c9209bd3965f0abd96bdea44f8ce81ec9",
+    "quota_attestation_reference": "runs/weights-nca-author-tranche-20261008/PARENT_QUOTA_ATTESTATION_002.json#sha256=91b6c426632a6ee80f390f3ad43a216423604518a43887bbd0f2bd90508c6e28",
+    "reserved_author_positions": 1488,
+    "reserved_paired_random_positions": 1488,
+    "role": "mutation",
+    "route_attestation_reference": "runs/weights-nca-author-tranche-20261008/PARENT_ROUTE_ATTESTATION_002.json#sha256=84faeb9091f294ea5ede348e93ded2c1f86627edb10feb753462ede071f22719",
+    "schema": "nca-host-reservation/1",
+    "submitted": false
+  },
+  "submission": {
+    "consumed_author_positions": 1488,
+    "consumed_paired_random_positions": 1488,
+    "host_reference": "cellforge-1:/srv/cellforge-inbox/research-20261008/author-attempt-002",
+    "packet_sha256": "b65e9d25b3987213f3248c9f56db8b281d9f6001a72c0cc143366a834857ad74",
+    "reservation_sha256": "63918863a246602432c74d38097f01c8cba2ae6e019a59a3d37302e869d64789",
+    "schema": "nca-submission-intent/1",
+    "status": "submitted_unknown_until_full_host_receipt"
+  },
+  "canonical_hashes_verified": true,
+  "parent_file_hashes_supplied_not_reconstructed": {
+    "approval": "13487cfb4c5f37e959af9df7cb41b47916f0129884389efeaf6dee1e93d41e1b",
+    "reservation": "f2b320e8252f414358dc2cf72cdc1caa42efdf922f4091d96c2c9a701a994938",
+    "submission": "24faa08d48d3b18f80b39d8f71b76d068ac198c135098b9626488512ed78d347"
+  },
+  "accounting": {
+    "author_charged_positions": 2976,
+    "consumed_attempts": 2,
+    "paired_random_charged_positions": 2976,
+    "reservations": 2
+  }
+}

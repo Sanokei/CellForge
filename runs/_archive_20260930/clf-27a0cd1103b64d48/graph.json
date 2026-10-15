@@ -1,0 +1,57 @@
+{
+ "defs": {
+  "mlp": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "lin.W1",
+    "b1": "lin.b1"
+   }
+  },
+  "predict_root": {
+   "inputs": [
+    "x"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "lg",
+     "in": {
+      "x": "$x"
+     },
+     "use": "mlp"
+    }
+   ],
+   "outputs": {
+    "logits": "lg"
+   }
+  }
+ },
+ "entries": {
+  "predict": "predict_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "baseline": "logistic H=100 epochs=100 seed=0 on dev_train (4000)",
+  "bootstrap": "bootstrap/zero-logits/1",
+  "input_length": 40,
+  "n_classes": 10,
+  "primitive_version": "cellforge-ops/1",
+  "task": "clf"
+ },
+ "params": {
+  "lin.W1": {
+   "sha256": "b28dc1d0e67977082c872ec83cf13918c1eb6387079e82d7b218e0bb18b03da4",
+   "shape": [
+    10,
+    40
+   ]
+  },
+  "lin.b1": {
+   "sha256": "8e56661a90d43b6db8fe89318473a884e2b79e3cab6a2bf37dc19e467a9112f8",
+   "shape": [
+    10
+   ]
+  }
+ }
+}

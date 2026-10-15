@@ -1,0 +1,2601 @@
+{
+  "phase": 2,
+  "contexts": [
+    {
+      "seed": 101,
+      "decision": {
+        "accepted": true,
+        "reasons": [],
+        "scope": "controlled lexical action niche only; no real ARC admission",
+        "opponent_count": 3,
+        "history_hash": "e37253f8efde939f1baf3d0332c13d0ebcd4ab8afdb40724ddeed2da17327ad7"
+      },
+      "selected": "1d55a9337c9eb31129d375ca1d4a197fb49de32ec515c9118ae7adf103809047",
+      "development": [
+        {
+          "id": "write-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "write_file",
+            "slots": {
+              "arg1": "hello",
+              "arg2": null,
+              "file": "notes.txt"
+            },
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "notes.txt",
+                "content": "hello"
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "write",
+                  "q": 0
+                },
+                {
+                  "text": "hello",
+                  "q": 0
+                },
+                {
+                  "text": "to",
+                  "q": 0
+                },
+                {
+                  "text": "notes.txt",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  0.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  9.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "write_file",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                2.0,
+                0.0
+              ],
+              "row": 7
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "notes.txt",
+                "content": "hello"
+              }
+            }
+          },
+          "files": {
+            "notes.txt": "hello"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "create-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "write_file",
+            "slots": {
+              "arg1": "summary",
+              "arg2": null,
+              "file": "LOG"
+            },
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "LOG",
+                "content": "summary"
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "create",
+                  "q": 0
+                },
+                {
+                  "text": "summary",
+                  "q": 0
+                },
+                {
+                  "text": "to",
+                  "q": 0
+                },
+                {
+                  "text": "LOG",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  0.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  8.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "write_file",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                2.0,
+                0.0
+              ],
+              "row": 7
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "LOG",
+                "content": "summary"
+              }
+            }
+          },
+          "files": {
+            "LOG": "summary"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "edit-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "edit_in_place",
+            "slots": {
+              "arg1": "milk",
+              "arg2": "tea",
+              "file": "notes.txt"
+            },
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "notes.txt",
+                "old": "milk",
+                "new": "tea",
+                "expected_matches": 1
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "replace",
+                  "q": 0
+                },
+                {
+                  "text": "milk",
+                  "q": 0
+                },
+                {
+                  "text": "with",
+                  "q": 0
+                },
+                {
+                  "text": "tea",
+                  "q": 0
+                },
+                {
+                  "text": "in",
+                  "q": 0
+                },
+                {
+                  "text": "notes.txt",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  -8.0,
+                  0.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  9.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "edit_in_place",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                -1.0,
+                2.0
+              ],
+              "row": 8
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "notes.txt",
+                "old": "milk",
+                "new": "tea",
+                "expected_matches": 1
+              }
+            }
+          },
+          "files": {
+            "notes.txt": "tea"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "edit-next",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "edit_in_place",
+            "slots": {
+              "arg1": "north",
+              "arg2": "south",
+              "file": "MAP"
+            },
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "MAP",
+                "old": "north",
+                "new": "south",
+                "expected_matches": 1
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "replace",
+                  "q": 0
+                },
+                {
+                  "text": "north",
+                  "q": 0
+                },
+                {
+                  "text": "with",
+                  "q": 0
+                },
+                {
+                  "text": "south",
+                  "q": 0
+                },
+                {
+                  "text": "in",
+                  "q": 0
+                },
+                {
+                  "text": "MAP",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  -8.0,
+                  0.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  8.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "edit_in_place",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                -1.0,
+                2.0
+              ],
+              "row": 8
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "MAP",
+                "old": "north",
+                "new": "south",
+                "expected_matches": 1
+              }
+            }
+          },
+          "files": {
+            "MAP": "south"
+          },
+          "correct": true,
+          "files_correct": true
+        }
+      ]
+    },
+    {
+      "seed": 202,
+      "decision": {
+        "accepted": true,
+        "reasons": [],
+        "scope": "controlled lexical action niche only; no real ARC admission",
+        "opponent_count": 3,
+        "history_hash": "e37253f8efde939f1baf3d0332c13d0ebcd4ab8afdb40724ddeed2da17327ad7"
+      },
+      "selected": "1d55a9337c9eb31129d375ca1d4a197fb49de32ec515c9118ae7adf103809047",
+      "development": [
+        {
+          "id": "write-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "write_file",
+            "slots": {
+              "arg1": "hello",
+              "arg2": null,
+              "file": "notes.txt"
+            },
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "notes.txt",
+                "content": "hello"
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "write",
+                  "q": 0
+                },
+                {
+                  "text": "hello",
+                  "q": 0
+                },
+                {
+                  "text": "to",
+                  "q": 0
+                },
+                {
+                  "text": "notes.txt",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  0.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  9.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "write_file",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                2.0,
+                0.0
+              ],
+              "row": 7
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "notes.txt",
+                "content": "hello"
+              }
+            }
+          },
+          "files": {
+            "notes.txt": "hello"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "create-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "write_file",
+            "slots": {
+              "arg1": "summary",
+              "arg2": null,
+              "file": "LOG"
+            },
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "LOG",
+                "content": "summary"
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "create",
+                  "q": 0
+                },
+                {
+                  "text": "summary",
+                  "q": 0
+                },
+                {
+                  "text": "to",
+                  "q": 0
+                },
+                {
+                  "text": "LOG",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  0.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  8.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "write_file",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                2.0,
+                0.0
+              ],
+              "row": 7
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "LOG",
+                "content": "summary"
+              }
+            }
+          },
+          "files": {
+            "LOG": "summary"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "edit-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "edit_in_place",
+            "slots": {
+              "arg1": "milk",
+              "arg2": "tea",
+              "file": "notes.txt"
+            },
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "notes.txt",
+                "old": "milk",
+                "new": "tea",
+                "expected_matches": 1
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "replace",
+                  "q": 0
+                },
+                {
+                  "text": "milk",
+                  "q": 0
+                },
+                {
+                  "text": "with",
+                  "q": 0
+                },
+                {
+                  "text": "tea",
+                  "q": 0
+                },
+                {
+                  "text": "in",
+                  "q": 0
+                },
+                {
+                  "text": "notes.txt",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  -8.0,
+                  0.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  9.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "edit_in_place",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                -1.0,
+                2.0
+              ],
+              "row": 8
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "notes.txt",
+                "old": "milk",
+                "new": "tea",
+                "expected_matches": 1
+              }
+            }
+          },
+          "files": {
+            "notes.txt": "tea"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "edit-next",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "edit_in_place",
+            "slots": {
+              "arg1": "north",
+              "arg2": "south",
+              "file": "MAP"
+            },
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "MAP",
+                "old": "north",
+                "new": "south",
+                "expected_matches": 1
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "replace",
+                  "q": 0
+                },
+                {
+                  "text": "north",
+                  "q": 0
+                },
+                {
+                  "text": "with",
+                  "q": 0
+                },
+                {
+                  "text": "south",
+                  "q": 0
+                },
+                {
+                  "text": "in",
+                  "q": 0
+                },
+                {
+                  "text": "MAP",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  -8.0,
+                  0.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  8.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "edit_in_place",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                -1.0,
+                2.0
+              ],
+              "row": 8
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "MAP",
+                "old": "north",
+                "new": "south",
+                "expected_matches": 1
+              }
+            }
+          },
+          "files": {
+            "MAP": "south"
+          },
+          "correct": true,
+          "files_correct": true
+        }
+      ]
+    },
+    {
+      "seed": 303,
+      "decision": {
+        "accepted": true,
+        "reasons": [],
+        "scope": "controlled lexical action niche only; no real ARC admission",
+        "opponent_count": 3,
+        "history_hash": "e37253f8efde939f1baf3d0332c13d0ebcd4ab8afdb40724ddeed2da17327ad7"
+      },
+      "selected": "1d55a9337c9eb31129d375ca1d4a197fb49de32ec515c9118ae7adf103809047",
+      "development": [
+        {
+          "id": "write-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "write_file",
+            "slots": {
+              "arg1": "hello",
+              "arg2": null,
+              "file": "notes.txt"
+            },
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "notes.txt",
+                "content": "hello"
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "write",
+                  "q": 0
+                },
+                {
+                  "text": "hello",
+                  "q": 0
+                },
+                {
+                  "text": "to",
+                  "q": 0
+                },
+                {
+                  "text": "notes.txt",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  0.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  9.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "write_file",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                2.0,
+                0.0
+              ],
+              "row": 7
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "notes.txt",
+                "content": "hello"
+              }
+            }
+          },
+          "files": {
+            "notes.txt": "hello"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "create-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "write_file",
+            "slots": {
+              "arg1": "summary",
+              "arg2": null,
+              "file": "LOG"
+            },
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "LOG",
+                "content": "summary"
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "create",
+                  "q": 0
+                },
+                {
+                  "text": "summary",
+                  "q": 0
+                },
+                {
+                  "text": "to",
+                  "q": 0
+                },
+                {
+                  "text": "LOG",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  0.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  8.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "write_file",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                2.0,
+                0.0
+              ],
+              "row": 7
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "write_file",
+              "arguments": {
+                "path": "LOG",
+                "content": "summary"
+              }
+            }
+          },
+          "files": {
+            "LOG": "summary"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "edit-plain",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "edit_in_place",
+            "slots": {
+              "arg1": "milk",
+              "arg2": "tea",
+              "file": "notes.txt"
+            },
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "notes.txt",
+                "old": "milk",
+                "new": "tea",
+                "expected_matches": 1
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "replace",
+                  "q": 0
+                },
+                {
+                  "text": "milk",
+                  "q": 0
+                },
+                {
+                  "text": "with",
+                  "q": 0
+                },
+                {
+                  "text": "tea",
+                  "q": 0
+                },
+                {
+                  "text": "in",
+                  "q": 0
+                },
+                {
+                  "text": "notes.txt",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  -8.0,
+                  0.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  9.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "edit_in_place",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                -1.0,
+                2.0
+              ],
+              "row": 8
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "notes.txt",
+                "old": "milk",
+                "new": "tea",
+                "expected_matches": 1
+              }
+            }
+          },
+          "files": {
+            "notes.txt": "tea"
+          },
+          "correct": true,
+          "files_correct": true
+        },
+        {
+          "id": "edit-next",
+          "prediction": {
+            "contract_version": "tool-action-joint/2",
+            "action": "edit_in_place",
+            "slots": {
+              "arg1": "north",
+              "arg2": "south",
+              "file": "MAP"
+            },
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "MAP",
+                "old": "north",
+                "new": "south",
+                "expected_matches": 1
+              }
+            },
+            "argument_trace": {
+              "tokens": [
+                {
+                  "text": "replace",
+                  "q": 0
+                },
+                {
+                  "text": "north",
+                  "q": 0
+                },
+                {
+                  "text": "with",
+                  "q": 0
+                },
+                {
+                  "text": "south",
+                  "q": 0
+                },
+                {
+                  "text": "in",
+                  "q": 0
+                },
+                {
+                  "text": "MAP",
+                  "q": 0
+                }
+              ],
+              "token_features": [
+                [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "slot_scores": {
+                "arg1": [
+                  -5.0,
+                  6.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  -8.0
+                ],
+                "arg2": [
+                  -5.0,
+                  -8.0,
+                  0.0,
+                  6.0,
+                  0.0,
+                  -8.0
+                ],
+                "file": [
+                  -6.0,
+                  -8.0,
+                  0.0,
+                  -8.0,
+                  0.0,
+                  8.0
+                ]
+              },
+              "router_logits": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5
+              ]
+            },
+            "router_trace": {
+              "action": "edit_in_place",
+              "features": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "scores": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.2,
+                0.5,
+                -1.0,
+                2.0
+              ],
+              "row": 8
+            }
+          },
+          "execution": {
+            "status": "executed",
+            "packet": {
+              "type": "call",
+              "name": "edit_in_place",
+              "arguments": {
+                "path": "MAP",
+                "old": "north",
+                "new": "south",
+                "expected_matches": 1
+              }
+            }
+          },
+          "files": {
+            "MAP": "south"
+          },
+          "correct": true,
+          "files_correct": true
+        }
+      ]
+    }
+  ],
+  "reporting_evaluated": false
+}

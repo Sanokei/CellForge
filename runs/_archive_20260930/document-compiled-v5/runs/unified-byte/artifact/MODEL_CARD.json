@@ -1,0 +1,27 @@
+{
+  "model_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+  "parent_hash": "8fd79f1ef3d93f7d90966dbaa7858fba49679c49fae241da4dcd73f547a08d6f",
+  "stats": {
+    "unique_param_storage": 30791,
+    "expanded_param_uses": 74778,
+    "nonzero_slots": 3481,
+    "constant_slots_in_op_args": 136,
+    "cell_defs": 96,
+    "bundle_defs": 25,
+    "reachable_defs": 116,
+    "expanded_instances": 612,
+    "nesting_depth": 4,
+    "edges": 13781,
+    "dispatch_nodes": 1,
+    "param_bytes_float64": 246328
+  },
+  "profile": "ladder-micro/1",
+  "input": "lossless UTF-8 bytes",
+  "output": "one shared 259-token logit head",
+  "state_dim": 225,
+  "context_tokens_received": 64,
+  "context_tokens_used_by_inherited_experts": 8,
+  "limitations": "inherited experts use only last eight projected bytes; unsupported-byte floor is not language knowledge",
+  "training": "none; parent weights retained",
+  "builder_sha256": "9f39e6d28622d3b294558d8e8e5c5d0f6d4e0cece9976d8c5a96fb13f96e4357"
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 401,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "2bb8291b03c47d1f31ef454e332c86b69c1e5ce0d6314198293cba58757ce9ac",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "072dd2a8706feaea199c27cbe7a58de10eb60b1ba6bc0480f440da2c19adc73c",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-10.0]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 successes and no errors. Author a subtraction-oriented candidate by changing the incoming-borrow coefficient to -1.0 and carry slope to -10.0. Preserve distinguishing left contributions sum.W[0][1]=-1.0 and readout.W[0][1]=10.0, and right contribution carry.b[0]=-9.5. This is an unevaluated mutation; no improvement is claimed."
+  },
+  {
+    "seed": 402,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "0c2d7e9b665ff90451819d14ccaa8058e2635f2f68856e032fbbd038b18ed7e4",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.25],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "24e1bede896b5f3a9580e461bcfb7767302061cebc76b28db0c31ba3985ba6cd",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-9.75]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 successes and no errors. Author a subtraction-oriented candidate by changing the incoming-borrow coefficient to -1.0 and carry slope to -9.75. Preserve distinguishing left contributions sum.W[0][1]=-1.0 and readout.W[0][1]=10.0, and right contribution carry.b[0]=-9.5. This is an unevaluated mutation; no improvement is claimed."
+  },
+  {
+    "seed": 403,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "decimal-subtraction-borrow-cell/1",
+    "parent_id": "4fd5739a2e11b1ba1bdcaa4ee7f14ea20fb229545c80511e37978957a0ec4a17",
+    "parent_params": {
+      "carry.W": [[-1.0]],
+      "carry.b": [-0.75],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0],
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0]
+    },
+    "base_sha256": "5e41cb246079cad7eb6534aca4c709c04391404214df6bf81e5c81e87f634715",
+    "prompt_sha256": "5bc6e3766db3bb5efa4e30db32c2ee9823baf808a28d72305850bc90ae62369a",
+    "feedback_sha256": "0b6ddb37fe9198751fb36e80545867b86fd3b1bc4cc4ede8437b73daf1873548",
+    "params": {
+      "sum.W": [[1.0, -1.0, -1.0]],
+      "sum.b": [0.0],
+      "carry.W": [[-9.6]],
+      "carry.b": [-9.5],
+      "readout.W": [[1.0, 10.0], [0.0, 1.0]],
+      "readout.b": [0.0, 0.0]
+    },
+    "charged_positions": 12,
+    "rationale": "Supplied development feedback reports 9/9 successes and no errors. Author a subtraction-oriented candidate by changing the incoming-borrow coefficient to -1.0 and carry slope to -9.6. Preserve distinguishing left contributions sum.W[0][1]=-1.0 and readout.W[0][1]=10.0, and right contribution carry.b[0]=-9.5. This is an unevaluated mutation; no improvement is claimed."
+  }
+]

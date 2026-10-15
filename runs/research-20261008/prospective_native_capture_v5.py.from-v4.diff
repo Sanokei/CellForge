@@ -1,0 +1,31 @@
+--- prospective_native_capture_v4.py
++++ prospective_native_capture_v5.py
+@@ -34,3 +34,3 @@
+ class Validator:
+-    def __init__(self): self.phase=0;self.final=None;self.indices=[];self.message_ids=set()
++    def __init__(self): self.phase=0;self.final=None;self.indices=[];self.message_ids=set();self.native_usage=None
+     def add(self,raw):
+@@ -48,3 +48,4 @@
+             elif self.final is not None:raise ValueError('reasoning after final agent_message rejected')
+-        elif self.phase==2 and kind=='turn.completed' and self.final is not None:self.phase=3
++        elif self.phase==2 and kind=='turn.completed' and self.final is not None:
++            self.phase=3;self.native_usage=dict(obj['usage'])
+         else:raise ValueError('invalid event order or event after terminal completion')
+@@ -85,3 +86,4 @@
+     start=time.monotonic();v=Validator();reject=None;buffer=b'';peak=0;eof=set();term_at=None;raw_line_audit=[]
+-    p=subprocess.Popen(argv,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=env,start_new_session=True)
++    with (out/'prompt.bin').open('rb') as prompt_source:
++        p=subprocess.Popen(argv,stdin=prompt_source,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=env,start_new_session=True)
+     (out/'start.json').write_text(json.dumps({'pid':p.pid,'attempt_charged':1,'wall_seconds':wall_seconds,'rss_limit_kib':rss_limit_kib,'virtual_address_space_cap':None})+'\n')
+@@ -89,3 +91,2 @@
+     try:
+-        p.stdin.write(prompt);p.stdin.close()
+         while streams:
+@@ -136,2 +137,7 @@
+     result={'accepted':reject is None,'rejection':reject,'exit_code':p.returncode,'stdout_EOF':'stdout' in eof,'stderr_EOF':'stderr' in eof,'wall_seconds':round(time.monotonic()-start,3),'peak_owned_RSS_KiB':peak,'raw_stdout_sha256':hashlib.sha256((out/'stdout.jsonl').read_bytes()).hexdigest(),'raw_stderr_sha256':hashlib.sha256((out/'stderr.bin').read_bytes()).hexdigest(),'raw_line_audit':raw_line_audit,'unterminated_tail_bytes':len(buffer),'validated_prefix_metadata':v.indices,'charged_attempts':1,'no_automatic_wrapper_retry':True}
++    if reject is None:
++        usage_receipt={'native_usage':v.native_usage,'raw_turn_completed_line_sha256':v.indices[-1]['raw_line_sha256'],'full_stdout_trace_sha256':result['raw_stdout_sha256'],'raw_turn_completed_line_index':v.indices[-1]['raw_line_index']}
++        (out/'NATIVE_USAGE.json').write_text(json.dumps(usage_receipt,indent=2)+'\n')
++        result['native_usage_receipt_sha256']=hashlib.sha256((out/'NATIVE_USAGE.json').read_bytes()).hexdigest()
++    result['stderr_classification']='empty required; no observed benign byte sequence approved'
+     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n');return result

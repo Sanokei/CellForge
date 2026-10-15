@@ -1,0 +1,2274 @@
+{
+ "defs": {
+  "cell_bd": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "bd.W1",
+    "b1": "bd.b1"
+   }
+  },
+  "cell_c0": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "c0.W1",
+    "W2": "c0.W2",
+    "b1": "c0.b1",
+    "b2": "c0.b2"
+   }
+  },
+  "cell_c1": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "c1.W1",
+    "W2": "c1.W2",
+    "b1": "c1.b1",
+    "b2": "c1.b2"
+   }
+  },
+  "cell_d0": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "d0.W1",
+    "W2": "d0.W2",
+    "b1": "d0.b1",
+    "b2": "d0.b2"
+   }
+  },
+  "cell_d1": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "d1.W1",
+    "W2": "d1.W2",
+    "b1": "d1.b1",
+    "b2": "d1.b2"
+   }
+  },
+  "cell_d2": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "d2.W1",
+    "W2": "d2.W2",
+    "b1": "d2.b1",
+    "b2": "d2.b2"
+   }
+  },
+  "cell_fb": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "fb.W1",
+    "b1": "fb.b1"
+   }
+  },
+  "cell_log": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "log.W1",
+    "W2": "log.W2",
+    "b1": "log.b1",
+    "b2": "log.b2"
+   }
+  },
+  "cell_phi": {
+   "act": "sigmoid",
+   "kind": "cell",
+   "params": {
+    "W1": "phi.W1",
+    "b1": "phi.b1"
+   }
+  },
+  "cell_seen": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "seen.W1",
+    "b1": "seen.b1"
+   }
+  },
+  "cell_t0": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "t0.W1",
+    "W2": "t0.W2",
+    "b1": "t0.b1",
+    "b2": "t0.b2"
+   }
+  },
+  "cell_t1": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "t1.W1",
+    "W2": "t1.W2",
+    "b1": "t1.b1",
+    "b2": "t1.b2"
+   }
+  },
+  "cell_t2": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "t2.W1",
+    "W2": "t2.W2",
+    "b1": "t2.b1",
+    "b2": "t2.b2"
+   }
+  },
+  "cell_wc": {
+   "act": "sigmoid",
+   "kind": "cell",
+   "params": {
+    "W1": "wc.W1",
+    "b1": "wc.b1"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       288
+      ]
+     },
+     "id": "cf",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "bd",
+     "in": {
+      "x": "cf"
+     },
+     "use": "cell_bd"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 261,
+      "stop": 262
+     },
+     "id": "iq",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 1
+     },
+     "id": "sq",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "qm",
+     "in": {
+      "a": "iq",
+      "b": "sq"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "c": -2.0
+     },
+     "id": "qs",
+     "in": {
+      "x": "qm"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "q1",
+     "in": {
+      "a": "iq",
+      "b": "sq"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "qn",
+     "in": {
+      "a": "q1",
+      "b": "qs"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "ph",
+     "in": {
+      "x": "$step"
+     },
+     "use": "cell_phi"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 69713,
+      "stop": 69714
+     },
+     "id": "wco",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 255,
+      "stop": 256
+     },
+     "id": "spw",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 257,
+      "stop": 260
+     },
+     "id": "ep1",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "ep2",
+     "in": {
+      "x": "ep1"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "wc1",
+     "in": {
+      "a": "wco",
+      "b": "spw"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "c": -1.0
+     },
+     "id": "epn",
+     "in": {
+      "x": "ep2"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "epb",
+     "in": {
+      "x": "epn"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "wcn",
+     "in": {
+      "a": "wc1",
+      "b": "epb"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "wph",
+     "in": {
+      "x": "wcn"
+     },
+     "use": "cell_wc"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "x",
+     "in": {
+      "x0": "cf",
+      "x1": "bd",
+      "x2": "qn",
+      "x3": "ph",
+      "x4": "wph"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 1,
+      "stop": 17
+     },
+     "id": "co",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "cy0",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_c0"
+    },
+    {
+     "id": "cy1",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_c1"
+    },
+    {
+     "id": "ca1",
+     "in": {
+      "a": "cy0",
+      "b": "cy1"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "ksum",
+     "in": {
+      "x": "ca1"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 255,
+      "stop": 256
+     },
+     "id": "spf",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "fk0",
+     "in": {
+      "a": "spf",
+      "b": "ksum"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "fk",
+     "in": {
+      "x": "fk0"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "unkp",
+     "use": "param:unkv"
+    },
+    {
+     "id": "yunk",
+     "in": {
+      "a": "fk",
+      "b": "unkp"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "ycl2",
+     "in": {
+      "a": "ca1",
+      "b": "yunk"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "fsum",
+     "in": {
+      "x": "ycl2"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "fco",
+     "in": {
+      "a": "fsum",
+      "b": "co"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "dcl",
+     "in": {
+      "a": "ycl2",
+      "b": "fco"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "cn",
+     "in": {
+      "a": "co",
+      "b": "dcl"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "cnr",
+     "in": {
+      "x": "cn"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "pip",
+     "use": "param:Pi"
+    },
+    {
+     "id": "pig",
+     "in": {
+      "a": "cnr",
+      "b": "pip"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "id": "ty0",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_t0"
+    },
+    {
+     "id": "ty1",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_t1"
+    },
+    {
+     "id": "ta1",
+     "in": {
+      "a": "ty0",
+      "b": "ty1"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "ty2",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_t2"
+    },
+    {
+     "id": "ta2",
+     "in": {
+      "a": "ta1",
+      "b": "ty2"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       14,
+       36
+      ]
+     },
+     "id": "mg",
+     "in": {
+      "x": "ta2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "qg",
+     "in": {
+      "a": "pig",
+      "b": "mg"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       36
+      ]
+     },
+     "id": "qv",
+     "in": {
+      "x": "qg"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "ss",
+     "in": {
+      "x": "qv"
+     },
+     "use": "op:sum"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 252,
+      "stop": 288
+     },
+     "id": "r7f",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "fbv",
+     "in": {
+      "x": "r7f"
+     },
+     "use": "cell_fb"
+    },
+    {
+     "id": "sf0",
+     "in": {
+      "a": "ss",
+      "b": "fbv"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "c": 0.03
+     },
+     "id": "sf",
+     "in": {
+      "x": "sf0"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": 1e-05
+     },
+     "id": "zb",
+     "in": {
+      "x": "fbv"
+     },
+     "use": "op:scale"
+    },
+    {
+     "id": "z1",
+     "in": {
+      "a": "qv",
+      "b": "sf"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "z2",
+     "in": {
+      "a": "z1",
+      "b": "zb"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       36,
+       1
+      ]
+     },
+     "id": "zr",
+     "in": {
+      "x": "z2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "lgr",
+     "in": {
+      "x": "zr"
+     },
+     "use": "cell_log"
+    },
+    {
+     "args": {
+      "shape": [
+       36
+      ]
+     },
+     "id": "lg",
+     "in": {
+      "x": "lgr"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "dy0",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_d0"
+    },
+    {
+     "id": "dy1",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_d1"
+    },
+    {
+     "id": "da1",
+     "in": {
+      "a": "dy0",
+      "b": "dy1"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "dy2",
+     "in": {
+      "x": "x"
+     },
+     "use": "cell_d2"
+    },
+    {
+     "id": "da2",
+     "in": {
+      "a": "da1",
+      "b": "dy2"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "pm",
+     "use": "param:padm"
+    },
+    {
+     "id": "l1",
+     "in": {
+      "a": "lg",
+      "b": "da2"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "l2",
+     "in": {
+      "a": "l1",
+      "b": "pm"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 17,
+      "stop": 46673
+     },
+     "id": "sv",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "shape": [
+       1296,
+       36
+      ]
+     },
+     "id": "svm",
+     "in": {
+      "x": "sv"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 180,
+      "stop": 216
+     },
+     "id": "r5",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 216,
+      "stop": 252
+     },
+     "id": "r6",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 252,
+      "stop": 288
+     },
+     "id": "r7",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "r5c",
+     "in": {
+      "x": "r5"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "r6r",
+     "in": {
+      "x": "r6"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "ks2",
+     "in": {
+      "a": "r5c",
+      "b": "r6r"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1296,
+       1
+      ]
+     },
+     "id": "ks",
+     "in": {
+      "x": "ks2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "r7r",
+     "in": {
+      "x": "r7"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "wr",
+     "in": {
+      "a": "ks",
+      "b": "r7r"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "nsm",
+     "in": {
+      "a": "svm",
+      "b": "wr"
+     },
+     "use": "op:maximum"
+    },
+    {
+     "args": {
+      "shape": [
+       46656
+      ]
+     },
+     "id": "nsf",
+     "in": {
+      "x": "nsm"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "r6c",
+     "in": {
+      "x": "r6"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "kp2",
+     "in": {
+      "a": "r6c",
+      "b": "r7r"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1296
+      ]
+     },
+     "id": "kp",
+     "in": {
+      "x": "kp2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "rd",
+     "in": {
+      "a": "kp",
+      "b": "nsm"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       36
+      ]
+     },
+     "id": "rdf",
+     "in": {
+      "x": "rd"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "seenc",
+     "in": {
+      "x": "rdf"
+     },
+     "use": "cell_seen"
+    },
+    {
+     "id": "l3",
+     "in": {
+      "a": "l2",
+      "b": "seenc"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "stn",
+     "in": {
+      "x0": "qn",
+      "x1": "cn",
+      "x2": "nsf"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 46673,
+      "stop": 69713
+     },
+     "id": "hs",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "shape": [
+       640,
+       36
+      ]
+     },
+     "id": "hm",
+     "in": {
+      "x": "hs"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "n": 640
+     },
+     "id": "pos",
+     "use": "op:coords"
+    },
+    {
+     "id": "pd",
+     "in": {
+      "a": "pos",
+      "b": "$step"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "pa",
+     "in": {
+      "x": "pd"
+     },
+     "use": "op:abs"
+    },
+    {
+     "args": {
+      "c": -1.0
+     },
+     "id": "pn",
+     "in": {
+      "x": "pa"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "pb",
+     "in": {
+      "x": "pn"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "oh",
+     "in": {
+      "x": "pb"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "ohc",
+     "in": {
+      "x": "oh"
+     },
+     "use": "op:expand"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "pvr",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "hw",
+     "in": {
+      "a": "ohc",
+      "b": "pvr"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "hn",
+     "in": {
+      "a": "hm",
+      "b": "hw"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "shape": [
+       23040
+      ]
+     },
+     "id": "hnf",
+     "in": {
+      "x": "hn"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 252,
+      "stop": 288
+     },
+     "id": "ck0",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke0",
+     "in": {
+      "x": "ck0"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk0",
+     "in": {
+      "a": "hn",
+      "b": "cke0"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr0",
+     "in": {
+      "x": "mk0"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 216,
+      "stop": 252
+     },
+     "id": "ck1",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke1",
+     "in": {
+      "x": "ck1"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk1",
+     "in": {
+      "a": "hn",
+      "b": "cke1"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr1",
+     "in": {
+      "x": "mk1"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1,
+      "value": 0.0
+     },
+     "id": "sk1",
+     "in": {
+      "x": "mkr1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 180,
+      "stop": 216
+     },
+     "id": "ck2",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke2",
+     "in": {
+      "x": "ck2"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk2",
+     "in": {
+      "a": "hn",
+      "b": "cke2"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr2",
+     "in": {
+      "x": "mk2"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 2,
+      "value": 0.0
+     },
+     "id": "sk2",
+     "in": {
+      "x": "mkr2"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 144,
+      "stop": 180
+     },
+     "id": "ck3",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke3",
+     "in": {
+      "x": "ck3"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk3",
+     "in": {
+      "a": "hn",
+      "b": "cke3"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr3",
+     "in": {
+      "x": "mk3"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 3,
+      "value": 0.0
+     },
+     "id": "sk3",
+     "in": {
+      "x": "mkr3"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 108,
+      "stop": 144
+     },
+     "id": "ck4",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke4",
+     "in": {
+      "x": "ck4"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk4",
+     "in": {
+      "a": "hn",
+      "b": "cke4"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr4",
+     "in": {
+      "x": "mk4"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 4,
+      "value": 0.0
+     },
+     "id": "sk4",
+     "in": {
+      "x": "mkr4"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 72,
+      "stop": 108
+     },
+     "id": "ck5",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke5",
+     "in": {
+      "x": "ck5"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk5",
+     "in": {
+      "a": "hn",
+      "b": "cke5"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr5",
+     "in": {
+      "x": "mk5"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 5,
+      "value": 0.0
+     },
+     "id": "sk5",
+     "in": {
+      "x": "mkr5"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 36,
+      "stop": 72
+     },
+     "id": "ck6",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke6",
+     "in": {
+      "x": "ck6"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk6",
+     "in": {
+      "a": "hn",
+      "b": "cke6"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr6",
+     "in": {
+      "x": "mk6"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 6,
+      "value": 0.0
+     },
+     "id": "sk6",
+     "in": {
+      "x": "mkr6"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 36
+     },
+     "id": "ck7",
+     "in": {
+      "x": "cf"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "cke7",
+     "in": {
+      "x": "ck7"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "mk7",
+     "in": {
+      "a": "hn",
+      "b": "cke7"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       640
+      ]
+     },
+     "id": "mkr7",
+     "in": {
+      "x": "mk7"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 7,
+      "value": 0.0
+     },
+     "id": "sk7",
+     "in": {
+      "x": "mkr7"
+     },
+     "use": "op:shift"
+    },
+    {
+     "id": "S1",
+     "in": {
+      "a": "mkr0",
+      "b": "sk1"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "S3",
+     "in": {
+      "a": "S1",
+      "b": "sk2"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "S4",
+     "in": {
+      "a": "S3",
+      "b": "sk3"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "S5",
+     "in": {
+      "a": "S4",
+      "b": "sk4"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "S6",
+     "in": {
+      "a": "S5",
+      "b": "sk5"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "S7",
+     "in": {
+      "a": "S6",
+      "b": "sk6"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "S8",
+     "in": {
+      "a": "S7",
+      "b": "sk7"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 7,
+      "stop": 8
+     },
+     "id": "bdl",
+     "in": {
+      "x": "bd"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "c": -2.0
+     },
+     "id": "eb3",
+     "in": {
+      "x": "S3"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "e3",
+     "in": {
+      "x": "eb3"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1,
+      "value": 0.0
+     },
+     "id": "ea3",
+     "in": {
+      "x": "e3"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "eae3",
+     "in": {
+      "x": "ea3"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "vt3",
+     "in": {
+      "a": "eae3",
+      "b": "hn"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       36
+      ]
+     },
+     "id": "vr3",
+     "in": {
+      "x": "vt3"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "vh3",
+     "in": {
+      "x": "vr3"
+     },
+     "use": "op:tanh"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "vs03",
+     "in": {
+      "x": "vh3"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": -1.0
+     },
+     "id": "gs3",
+     "in": {
+      "x": "bdl"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "gb3",
+     "in": {
+      "x": "gs3"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "vs3",
+     "in": {
+      "a": "vs03",
+      "b": "gb3"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "c": -4.0
+     },
+     "id": "eb5",
+     "in": {
+      "x": "S5"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "e5",
+     "in": {
+      "x": "eb5"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1,
+      "value": 0.0
+     },
+     "id": "ea5",
+     "in": {
+      "x": "e5"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "eae5",
+     "in": {
+      "x": "ea5"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "vt5",
+     "in": {
+      "a": "eae5",
+      "b": "hn"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       36
+      ]
+     },
+     "id": "vr5",
+     "in": {
+      "x": "vt5"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "vh5",
+     "in": {
+      "x": "vr5"
+     },
+     "use": "op:tanh"
+    },
+    {
+     "args": {
+      "c": 1.8
+     },
+     "id": "vs05",
+     "in": {
+      "x": "vh5"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": -0.5
+     },
+     "id": "gs5",
+     "in": {
+      "x": "bdl"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "gb5",
+     "in": {
+      "x": "gs5"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "vs5",
+     "in": {
+      "a": "vs05",
+      "b": "gb5"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "c": -7.0
+     },
+     "id": "eb8",
+     "in": {
+      "x": "S8"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "e8",
+     "in": {
+      "x": "eb8"
+     },
+     "use": "op:relu"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1,
+      "value": 0.0
+     },
+     "id": "ea8",
+     "in": {
+      "x": "e8"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "eae8",
+     "in": {
+      "x": "ea8"
+     },
+     "use": "op:expand"
+    },
+    {
+     "id": "vt8",
+     "in": {
+      "a": "eae8",
+      "b": "hn"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       36
+      ]
+     },
+     "id": "vr8",
+     "in": {
+      "x": "vt8"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "vh8",
+     "in": {
+      "x": "vr8"
+     },
+     "use": "op:tanh"
+    },
+    {
+     "args": {
+      "c": 1.6
+     },
+     "id": "vs08",
+     "in": {
+      "x": "vh8"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": -0.30000000000000004
+     },
+     "id": "gs8",
+     "in": {
+      "x": "bdl"
+     },
+     "use": "op:scale"
+    },
+    {
+     "args": {
+      "c": 1.0
+     },
+     "id": "gb8",
+     "in": {
+      "x": "gs8"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "vs8",
+     "in": {
+      "a": "vs08",
+      "b": "gb8"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "bo1",
+     "in": {
+      "a": "vs3",
+      "b": "vs5"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "bo2",
+     "in": {
+      "a": "bo1",
+      "b": "vs8"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "l4",
+     "in": {
+      "a": "l3",
+      "b": "bo2"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "stn2",
+     "in": {
+      "x0": "stn",
+      "x1": "hnf"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "stn3",
+     "in": {
+      "x0": "stn2",
+      "x1": "wcn"
+     },
+     "use": "op:concat"
+    }
+   ],
+   "outputs": {
+    "logits": "l4",
+    "state": "stn3"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 69714,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "!",
+   "?",
+   "'",
+   "\"",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "Pi": {
+   "sha256": "1f2506c3d70db087c658e1a17ded71141b216323496caddaa22dc4c99ac33221",
+   "shape": [
+    16,
+    14
+   ]
+  },
+  "bd.W1": {
+   "sha256": "b295c3af05feff6fc4d45be37ae3ad2c018bf7230adff25a72cd6a1a23297ef7",
+   "shape": [
+    8,
+    288
+   ]
+  },
+  "bd.b1": {
+   "sha256": "581d1eba02777aae73ca1447bfd9f1e7a63d6c0963f70b84bbf68e3ca266b530",
+   "shape": [
+    8
+   ]
+  },
+  "c0.W1": {
+   "sha256": "053da0046e541fe261941b3f2b137decc39554604beb5154459e175f726e92a0",
+   "shape": [
+    3000,
+    305
+   ]
+  },
+  "c0.W2": {
+   "sha256": "c345a0e8f749e2acd1e8c532189bec7070a4c5001babd77c299c88abc580a679",
+   "shape": [
+    16,
+    3000
+   ]
+  },
+  "c0.b1": {
+   "sha256": "9f1da56a34eeacd21c6e2599061469c846c467c8be7f5ac17d26b511434931e7",
+   "shape": [
+    3000
+   ]
+  },
+  "c0.b2": {
+   "sha256": "155434a95cc510c7459dedad3ed4d2363c8a9502dbb971344495268b482a3c2b",
+   "shape": [
+    16
+   ]
+  },
+  "c1.W1": {
+   "sha256": "b566e64c2fe6318b95d20f95f6d7ffaee5a0929f4cb94b02408f266a0d8b19c1",
+   "shape": [
+    464,
+    305
+   ]
+  },
+  "c1.W2": {
+   "sha256": "e91b7b30acba0fd86866ca5ee22d670cf8b29a39ff9ab363866fcbf1432d4511",
+   "shape": [
+    16,
+    464
+   ]
+  },
+  "c1.b1": {
+   "sha256": "246db3c4a9208e2d5667eaaeb390fd36c09a72e0340a63e5730958e06caa2304",
+   "shape": [
+    464
+   ]
+  },
+  "c1.b2": {
+   "sha256": "155434a95cc510c7459dedad3ed4d2363c8a9502dbb971344495268b482a3c2b",
+   "shape": [
+    16
+   ]
+  },
+  "d0.W1": {
+   "sha256": "4b2197c1419d2e0c985f61b3cc3485bc3f18fc449a4d3caa007d1895804f8a56",
+   "shape": [
+    3000,
+    305
+   ]
+  },
+  "d0.W2": {
+   "sha256": "228beed47c081d4a9498d184c2554c8b07460aaa634d3908071b2ff1f4c9c6a6",
+   "shape": [
+    36,
+    3000
+   ]
+  },
+  "d0.b1": {
+   "sha256": "76147ca52ace2ae99528a860015c8a090fd186a00dce16dd6b1d351d4fa52afe",
+   "shape": [
+    3000
+   ]
+  },
+  "d0.b2": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  },
+  "d1.W1": {
+   "sha256": "7848f814f236202f049b3eb7dcd5a0d74d25b6b2c219bbd408113a09d21d7eaf",
+   "shape": [
+    3000,
+    305
+   ]
+  },
+  "d1.W2": {
+   "sha256": "fbd0a167ac791a23adce950688b46d8500c0e406db7d700bd7f7059f4f7f0c85",
+   "shape": [
+    36,
+    3000
+   ]
+  },
+  "d1.b1": {
+   "sha256": "4a51ec82d610c874b348f70d4b1d54f673b781af03b811a77e0665a830650bfa",
+   "shape": [
+    3000
+   ]
+  },
+  "d1.b2": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  },
+  "d2.W1": {
+   "sha256": "1133feab3ca05e77dbba000cf08e19ea9f68d2edd9b551ab755ce0464a98f307",
+   "shape": [
+    1370,
+    305
+   ]
+  },
+  "d2.W2": {
+   "sha256": "261152a8df63296965f645f3e10bed867f755ca1bcfd7122ac00b7deca2ac737",
+   "shape": [
+    36,
+    1370
+   ]
+  },
+  "d2.b1": {
+   "sha256": "23a9cb42c5a1781f536e48e7236477f568a9ade493578f3403645cf8f2ce14e6",
+   "shape": [
+    1370
+   ]
+  },
+  "d2.b2": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  },
+  "fb.W1": {
+   "sha256": "21d8b8cd76bc3c20ae123e6a92e998cbf9393d1072ac3673f4d80bd43730e1be",
+   "shape": [
+    36,
+    36
+   ]
+  },
+  "fb.b1": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  },
+  "log.W1": {
+   "sha256": "35c21a6bb6c8be329c14b841d1061f3b5ee54b835fda9c5915bc41deb97e02ec",
+   "shape": [
+    32,
+    1
+   ]
+  },
+  "log.W2": {
+   "sha256": "cbc7a3276db08175d9798589a5356f4bf48f6034c89f3267038030d9f5ead739",
+   "shape": [
+    1,
+    32
+   ]
+  },
+  "log.b1": {
+   "sha256": "9c36b8997831b2833cf277587af67a070e96bca1eec77e8554df7b962e1f9be0",
+   "shape": [
+    32
+   ]
+  },
+  "log.b2": {
+   "sha256": "f3506b30c6e167085da33bf9b7ca8a140b8164eabf0d399328206e8ccd445a68",
+   "shape": [
+    1
+   ]
+  },
+  "padm": {
+   "sha256": "673df56e94eb0ee4d6ed48306b03397a1d0eb143b4e8cec258b174bb5831e4d1",
+   "shape": [
+    36
+   ]
+  },
+  "phi.W1": {
+   "sha256": "cc90c5bda40b1f8442573b28c10be591d889d35b31dd162192c8c59a0ab794ca",
+   "shape": [
+    4,
+    1
+   ]
+  },
+  "phi.b1": {
+   "sha256": "67fc5c25e3289d66ed781318cb4e17e56661156b72e937c4a052c2709bb6f2eb",
+   "shape": [
+    4
+   ]
+  },
+  "seen.W1": {
+   "sha256": "8fb8fefcbfb3ad3c88813a8bc576ade75c216907bc55e263fe0f0924dbac3482",
+   "shape": [
+    36,
+    36
+   ]
+  },
+  "seen.b1": {
+   "sha256": "f8e396215f1cc1583e9dd27c5d2e81ffc1bfb5a8add9ff6a1ca209564f17723c",
+   "shape": [
+    36
+   ]
+  },
+  "t0.W1": {
+   "sha256": "52c0258b5d4a01b108c64fb43c371e2371483668bce98e14a55daaeb9977f8ea",
+   "shape": [
+    3000,
+    305
+   ]
+  },
+  "t0.W2": {
+   "sha256": "960d92d54dfb47fc6d721cff524e79afbf208a7df17a423522c3045328527c42",
+   "shape": [
+    504,
+    3000
+   ]
+  },
+  "t0.b1": {
+   "sha256": "71852fe0801e93d6617a6b1aa000079b23a2e9d381273dd6311c699bdf386d8d",
+   "shape": [
+    3000
+   ]
+  },
+  "t0.b2": {
+   "sha256": "e6fd2399debf690f7d593daf9700ba3b9ef9c20c47e416bfbaffc711ee8231ec",
+   "shape": [
+    504
+   ]
+  },
+  "t1.W1": {
+   "sha256": "9156b22f3928c630e52f1e8fb0c4efeaa63dfde79d8f7187bd336d81ab02af59",
+   "shape": [
+    3000,
+    305
+   ]
+  },
+  "t1.W2": {
+   "sha256": "786e5b6991a4b6afd0ac5e2b0a2c51f870f23f627364d1a6832b361c23ef5d30",
+   "shape": [
+    504,
+    3000
+   ]
+  },
+  "t1.b1": {
+   "sha256": "5601d4168316d9a3dfa4596e63225f1ac909c4fe7964f2406e7a33c8d6d23f06",
+   "shape": [
+    3000
+   ]
+  },
+  "t1.b2": {
+   "sha256": "e6fd2399debf690f7d593daf9700ba3b9ef9c20c47e416bfbaffc711ee8231ec",
+   "shape": [
+    504
+   ]
+  },
+  "t2.W1": {
+   "sha256": "0ea45302c6885a1b64e8a4d601a3309d0e76445b18b3c4fbbc6ffed2ca3399de",
+   "shape": [
+    1134,
+    305
+   ]
+  },
+  "t2.W2": {
+   "sha256": "36a1a8f6cf24424bc875a66d8beae3d9235d619b350296b5c6159d587ec6a2ac",
+   "shape": [
+    504,
+    1134
+   ]
+  },
+  "t2.b1": {
+   "sha256": "bb958b47f9a2738754693da5ec611f89de754460a8aec5fea50e4b5d61fee198",
+   "shape": [
+    1134
+   ]
+  },
+  "t2.b2": {
+   "sha256": "e6fd2399debf690f7d593daf9700ba3b9ef9c20c47e416bfbaffc711ee8231ec",
+   "shape": [
+    504
+   ]
+  },
+  "unkv": {
+   "sha256": "ce43f1fa7083ffa5cf68ff4cb5f9fde0881e2fa6b6bf3b76bf222bb287aff565",
+   "shape": [
+    16
+   ]
+  },
+  "wc.W1": {
+   "sha256": "81a9df43c704150be5ac70f02a1f74c0992be3b1b10d9742b0d85aa2d5b60546",
+   "shape": [
+    4,
+    1
+   ]
+  },
+  "wc.b1": {
+   "sha256": "253b8e6349cae512824a2b89d8bcc445346de18059196d337db68235b6f34248",
+   "shape": [
+    4
+   ]
+  }
+ }
+}

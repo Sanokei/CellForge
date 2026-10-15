@@ -1,0 +1,25 @@
+test_equal_charged_budget_every_arm_and_seed (original_contract.ContractOfEveryWeightsRun) ... ok
+test_founders_are_llm_written_literal_weights (original_contract.ContractOfEveryWeightsRun) ... ok
+test_genomes_are_weights_with_valid_lineage (original_contract.ContractOfEveryWeightsRun) ... ok
+test_llm_arm_and_random_control_present (original_contract.ContractOfEveryWeightsRun) ... ok
+test_mutation_origin_matches_arm (original_contract.ContractOfEveryWeightsRun) ... ok
+test_required_fields (original_contract.ContractOfEveryWeightsRun) ... ok
+test_seeds_predeclared_and_enough (original_contract.ContractOfEveryWeightsRun) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.018s
+
+OK
+Traceback (most recent call last):
+check_hash_integrity: PASS
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\check_standard_contract.py", line 25, in <module>
+    if __name__=="__main__": raise SystemExit(main())
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\check_standard_contract.py", line 20, in main
+    findings=check(run)
+  File "C:\Users\wkeif\Documents\Codex\2026-10-10\task-8\transition-memory-review-20261011\contract-reference\standard_checks.py", line 241, in check_ledger_chain
+    rec = json.loads(line)
+  File "C:\Users\wkeif\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\wkeif\AppData\Local\Programs\Python\Python310\lib\json\decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 237 (char 236)

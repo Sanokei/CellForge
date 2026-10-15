@@ -1,0 +1,525 @@
+{
+  "cells": [
+    {
+      "arm": "llm_count",
+      "cell": "4cba6d80bcbf28b3d69a84a0a8c16171a24d657ddc6282b178de3d5f6f9bfeb4",
+      "structure": "neighbor_count",
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": false,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": false,
+            "1fad071e": false,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "admission": {
+        "accepted": false,
+        "reasons": [
+          {
+            "gate": "fresh_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "archive_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "anchor_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "strict_fresh_gain"
+          }
+        ],
+        "scope": "paired development admission; not final-data generalization",
+        "history_hash": "fc81d10991382dcae48fa1f9faadf0a0a1d45a74fae0315baf362767bce6a2fe",
+        "opponent_count": 1
+      },
+      "resources": {
+        "wall_seconds": 0.05961037700762972,
+        "traced_peak_bytes": 90384,
+        "scope": "local synchronous execution; traced allocation peak, not RSS"
+      }
+    },
+    {
+      "arm": "llm_patch",
+      "cell": "bbbf7d4ed02e84129279e3ec571c9aaaefb168e78931c3577afb2f3b6774d1e3",
+      "structure": "guarded_conv_patch_emit_v1",
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": true,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": false,
+            "1fad071e": false,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "admission": {
+        "accepted": false,
+        "reasons": [
+          {
+            "gate": "fresh_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "archive_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "anchor_false_positive",
+            "parent": null,
+            "candidate": null
+          }
+        ],
+        "scope": "paired development admission; not final-data generalization",
+        "history_hash": "6ff3c71c761d09aa11c1571ca2d16dda74732ce273d324334c32bfe7bba4a249",
+        "opponent_count": 1
+      },
+      "resources": {
+        "wall_seconds": 0.2067622470058268,
+        "traced_peak_bytes": 47592,
+        "scope": "local synchronous execution; traced allocation peak, not RSS"
+      }
+    },
+    {
+      "arm": "crossover",
+      "cell": "4114a2abce59bf779513b148c4763c565a198cda33cda0fb16821f04c9179bb6",
+      "structure": "conv3x3_detect",
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": false,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": false,
+            "1fad071e": false,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "admission": {
+        "accepted": false,
+        "reasons": [
+          {
+            "gate": "fresh_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "archive_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "anchor_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "strict_fresh_gain"
+          }
+        ],
+        "scope": "paired development admission; not final-data generalization",
+        "history_hash": "6ff3c71c761d09aa11c1571ca2d16dda74732ce273d324334c32bfe7bba4a249",
+        "opponent_count": 1
+      },
+      "resources": {
+        "wall_seconds": 0.022280178003711626,
+        "traced_peak_bytes": 40752,
+        "scope": "local synchronous execution; traced allocation peak, not RSS"
+      }
+    },
+    {
+      "arm": "random_llm_count",
+      "cell": "e8a7b5b428102cd15fe2921c9723cc3a9bbd5f54ee4eb02affab675d03bb3aff",
+      "structure": "neighbor_count",
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": false,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": false,
+            "1fad071e": false,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "admission": {
+        "accepted": false,
+        "reasons": [
+          {
+            "gate": "fresh_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "archive_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "anchor_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "strict_fresh_gain"
+          }
+        ],
+        "scope": "paired development admission; not final-data generalization",
+        "history_hash": "fc81d10991382dcae48fa1f9faadf0a0a1d45a74fae0315baf362767bce6a2fe",
+        "opponent_count": 1
+      },
+      "resources": {
+        "wall_seconds": 0.04853066000214312,
+        "traced_peak_bytes": 89664,
+        "scope": "local synchronous execution; traced allocation peak, not RSS"
+      }
+    },
+    {
+      "arm": "random_llm_patch",
+      "cell": "9ce1bfa727ca553d9a12b07247e8baba5058aa571b17392aa889bb25865080dd",
+      "structure": "guarded_conv_patch_emit_v1",
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": false,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": false,
+            "1fad071e": false,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "admission": {
+        "accepted": false,
+        "reasons": [
+          {
+            "gate": "fresh_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "archive_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "anchor_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "strict_fresh_gain"
+          }
+        ],
+        "scope": "paired development admission; not final-data generalization",
+        "history_hash": "6ff3c71c761d09aa11c1571ca2d16dda74732ce273d324334c32bfe7bba4a249",
+        "opponent_count": 1
+      },
+      "resources": {
+        "wall_seconds": 0.11674022501392756,
+        "traced_peak_bytes": 47312,
+        "scope": "local synchronous execution; traced allocation peak, not RSS"
+      }
+    },
+    {
+      "arm": "random_crossover",
+      "cell": "9d689e9797bc83bd97ddd685dd0e10f45b0552c3cc7dd17807455145d4bd2a84",
+      "structure": "conv3x3_detect",
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": false,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": false,
+            "1fad071e": false,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "admission": {
+        "accepted": false,
+        "reasons": [
+          {
+            "gate": "fresh_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "archive_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "anchor_false_positive",
+            "parent": null,
+            "candidate": null
+          },
+          {
+            "gate": "strict_fresh_gain"
+          }
+        ],
+        "scope": "paired development admission; not final-data generalization",
+        "history_hash": "6ff3c71c761d09aa11c1571ca2d16dda74732ce273d324334c32bfe7bba4a249",
+        "opponent_count": 1
+      },
+      "resources": {
+        "wall_seconds": 0.022630944004049525,
+        "traced_peak_bytes": 40872,
+        "scope": "local synchronous execution; traced allocation peak, not RSS"
+      }
+    }
+  ],
+  "live_count": 6,
+  "live_by_structure": {
+    "bbox_mask": 1,
+    "colormap": 1,
+    "conv3x3_detect": 1,
+    "neighbor_count": 1,
+    "parity_row_stencil_v1": 1,
+    "component_count_unary_v1": 1
+  },
+  "births": 6,
+  "admitted": 0,
+  "rejected": 6,
+  "retired": 0,
+  "charged": 6,
+  "eligible_assembly_cells": [
+    "93b4abc6fdf28622bd246ac63ce76a52f4392d0f2bad069298b86d55b94db13f",
+    "fd7e976867610e79e69d5b9b167d010b60961830f01ab3043bce2c3b80336f11"
+  ],
+  "ensembles": [
+    {
+      "id": "072d019c643ee12016a5f9c82f6c151e049f01679bc80484f4956a961018806d",
+      "kind": "historical_full_parent",
+      "development": {
+        "actual": 2,
+        "oracle": 2,
+        "uniform": 0,
+        "tasks": 12
+      },
+      "reporting": {
+        "actual": 0,
+        "oracle": 0,
+        "uniform": 0,
+        "tasks": 8
+      }
+    },
+    {
+      "id": "ae1f370dab49521ba272797484534ac4496cc51ba04b7c9e283011e8619a8a9c",
+      "kind": "evidence_earned_assembly",
+      "development": {
+        "actual": 2,
+        "oracle": 2,
+        "uniform": 1,
+        "tasks": 12
+      },
+      "reporting": {
+        "actual": 0,
+        "oracle": 0,
+        "uniform": 0,
+        "tasks": 8
+      }
+    }
+  ],
+  "two_level_complete": false,
+  "remaining": "whole-ensemble candidates compared but no separate ensemble lineage/admission archive yet; router numeric mutation not justified by current author; OCR/reasoning absent",
+  "runtime_seconds": 1.3362241350114346,
+  "running": false
+}

@@ -1,0 +1,987 @@
+{
+ "defs": {
+  "b_chartable": {
+   "inputs": [
+    "pos"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "t",
+     "in": {
+      "x": "$pos"
+     },
+     "use": "c_spell"
+    },
+    {
+     "args": {
+      "shape": [
+       177,
+       32
+      ]
+     },
+     "id": "r",
+     "in": {
+      "x": "t"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "table": "r"
+   }
+  },
+  "b_consume": {
+   "inputs": [
+    "state",
+    "prev"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 2292
+     },
+     "id": "g",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 2292,
+      "stop": 2469
+     },
+     "id": "al",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 2469,
+      "stop": 2480
+     },
+     "id": "ps",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "tab",
+     "in": {
+      "pos": "ps"
+     },
+     "use": "b_chartable"
+    },
+    {
+     "args": {
+      "shape": [
+       32,
+       1
+      ]
+     },
+     "id": "pc",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "m",
+     "in": {
+      "a": "tab.table",
+      "b": "pc"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       177
+      ]
+     },
+     "id": "m2",
+     "in": {
+      "x": "m"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "al1",
+     "in": {
+      "a": "al",
+      "b": "m2"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "ps1",
+     "in": {
+      "x": "ps"
+     },
+     "use": "op:shift"
+    },
+    {
+     "id": "lv",
+     "in": {
+      "x": "ps"
+     },
+     "use": "c_len"
+    },
+    {
+     "id": "dv",
+     "in": {
+      "a": "al1",
+      "b": "lv"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "done",
+     "in": {
+      "x": "dv"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "gr",
+     "in": {
+      "g": "g",
+      "tok": "al1"
+     },
+     "use": "b_grammar"
+    },
+    {
+     "id": "dg",
+     "in": {
+      "a": "gr.g",
+      "b": "g"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "dg2",
+     "in": {
+      "a": "dg",
+      "b": "done"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "g1",
+     "in": {
+      "a": "g",
+      "b": "dg2"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "tot",
+     "in": {
+      "x": "al1"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "any",
+     "in": {
+      "x": "tot"
+     },
+     "use": "op:step"
+    },
+    {
+     "id": "onep",
+     "use": "param:one"
+    },
+    {
+     "id": "na",
+     "in": {
+      "a": "onep",
+      "b": "any"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "sep",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "c_sep"
+    },
+    {
+     "id": "dsep",
+     "in": {
+      "a": "na",
+      "b": "sep"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "rs",
+     "in": {
+      "a": "done",
+      "b": "dsep"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "onesw",
+     "use": "param:ones_w"
+    },
+    {
+     "id": "da",
+     "in": {
+      "a": "onesw",
+      "b": "al1"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "da2",
+     "in": {
+      "a": "da",
+      "b": "rs"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "al2",
+     "in": {
+      "a": "al1",
+      "b": "da2"
+     },
+     "use": "op:add"
+    },
+    {
+     "id": "e0",
+     "use": "param:e0"
+    },
+    {
+     "id": "dp",
+     "in": {
+      "a": "e0",
+      "b": "ps1"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "dp2",
+     "in": {
+      "a": "dp",
+      "b": "rs"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "ps2",
+     "in": {
+      "a": "ps1",
+      "b": "dp2"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "axis": 0
+     },
+     "id": "new",
+     "in": {
+      "x0": "g1",
+      "x1": "al2",
+      "x2": "ps2"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 1,
+      "stop": 2
+     },
+     "id": "bos",
+     "in": {
+      "x": "$prev"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "ini",
+     "use": "param:init"
+    },
+    {
+     "id": "bi",
+     "in": {
+      "a": "ini",
+      "b": "bos"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "ns",
+     "in": {
+      "a": "new",
+      "b": "bi"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "state": "ns"
+   }
+  },
+  "b_emit": {
+   "inputs": [
+    "state",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "axis": 0,
+      "start": 0,
+      "stop": 2292
+     },
+     "id": "g",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 2292,
+      "stop": 2469
+     },
+     "id": "al",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "start": 2469,
+      "stop": 2480
+     },
+     "id": "ps",
+     "in": {
+      "x": "$state"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "tab",
+     "in": {
+      "pos": "ps"
+     },
+     "use": "b_chartable"
+    },
+    {
+     "id": "pw",
+     "in": {
+      "x": "g"
+     },
+     "use": "c_pw"
+    },
+    {
+     "id": "u",
+     "in": {
+      "a": "al",
+      "b": "pw"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       177
+      ]
+     },
+     "id": "u2",
+     "in": {
+      "x": "u"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "v",
+     "in": {
+      "a": "u2",
+      "b": "tab.table"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "v1",
+     "in": {
+      "x": "v"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "vg",
+     "in": {
+      "step": "$step",
+      "v": "v1"
+     },
+     "use": "b_eos"
+    },
+    {
+     "args": {
+      "shape": [
+       32,
+       1
+      ]
+     },
+     "id": "v2",
+     "in": {
+      "x": "vg.v"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "x": "v2"
+     },
+     "use": "c_log"
+    },
+    {
+     "args": {
+      "shape": [
+       32
+      ]
+     },
+     "id": "lg2",
+     "in": {
+      "x": "lg"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "logits": "lg2"
+   }
+  },
+  "b_eos": {
+   "inputs": [
+    "v",
+    "step"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "z",
+     "in": {
+      "x": "$step"
+     },
+     "use": "c_eosg"
+    },
+    {
+     "id": "r",
+     "in": {
+      "x": "z"
+     },
+     "use": "op:exp"
+    },
+    {
+     "id": "onep",
+     "use": "param:one"
+    },
+    {
+     "id": "rm",
+     "in": {
+      "a": "r",
+      "b": "onep"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "ev",
+     "use": "param:eosv"
+    },
+    {
+     "id": "ve0",
+     "in": {
+      "a": "$v",
+      "b": "ev"
+     },
+     "use": "op:mul"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "keepdims": true
+     },
+     "id": "ve",
+     "in": {
+      "x": "ve0"
+     },
+     "use": "op:sum"
+    },
+    {
+     "id": "k",
+     "in": {
+      "a": "ve",
+      "b": "rm"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "ad",
+     "in": {
+      "a": "ev",
+      "b": "k"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "v2",
+     "in": {
+      "a": "$v",
+      "b": "ad"
+     },
+     "use": "op:add"
+    }
+   ],
+   "outputs": {
+    "v": "v2"
+   }
+  },
+  "b_grammar": {
+   "inputs": [
+    "g",
+    "tok"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "cl",
+     "in": {
+      "x": "$tok"
+     },
+     "use": "c_cls"
+    },
+    {
+     "args": {
+      "shape": [
+       2292,
+       1
+      ]
+     },
+     "id": "gc",
+     "in": {
+      "x": "$g"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       29
+      ]
+     },
+     "id": "cc",
+     "in": {
+      "x": "cl"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "pr",
+     "in": {
+      "a": "gc",
+      "b": "cc"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "shape": [
+       66468
+      ]
+     },
+     "id": "pf",
+     "in": {
+      "x": "pr"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "code",
+     "in": {
+      "x": "pf"
+     },
+     "use": "c_trans"
+    },
+    {
+     "id": "gn",
+     "in": {
+      "x": "code"
+     },
+     "use": "c_dec"
+    }
+   ],
+   "outputs": {
+    "g": "gn"
+   }
+  },
+  "c_cls": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "cls.W",
+    "b1": "cls.b"
+   }
+  },
+  "c_dec": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "dec.W",
+    "b1": "dec.b"
+   }
+  },
+  "c_eosg": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "eosg.W1",
+    "W2": "eosg.W2",
+    "b1": "eosg.b1",
+    "b2": "eosg.b2"
+   }
+  },
+  "c_len": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "len.W",
+    "b1": "len.b"
+   }
+  },
+  "c_log": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "log.W1",
+    "W2": "log.W2",
+    "b1": "log.b1",
+    "b2": "log.b2"
+   }
+  },
+  "c_pw": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "pw.W",
+    "b1": "pw.b"
+   }
+  },
+  "c_sep": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "sep.W",
+    "b1": "sep.b"
+   }
+  },
+  "c_spell": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "spell.W",
+    "b1": "spell.b"
+   }
+  },
+  "c_trans": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "trans.W",
+    "b1": "trans.b"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "c",
+     "in": {
+      "prev": "$prev",
+      "state": "$state"
+     },
+     "use": "b_consume"
+    },
+    {
+     "id": "e",
+     "in": {
+      "state": "c.state",
+      "step": "$step"
+     },
+     "use": "b_emit"
+    }
+   ],
+   "outputs": {
+    "logits": "e.logits",
+    "state": "c.state"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 2480,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "cls.W": {
+   "sha256": "13ca742a9bd969d351811ad9e9b70290bcd15bf4174b5c0bf07ad5ada5c3c68f",
+   "shape": [
+    29,
+    177
+   ]
+  },
+  "cls.b": {
+   "sha256": "536161d97aad1b637b16ef62aa7216de574e3b11125e99cecfceefffcc0f24df",
+   "shape": [
+    29
+   ]
+  },
+  "dec.W": {
+   "sha256": "2db03c01c0fa8296bf06d0dc908238c73df41971a0d95cf7f83c835a6a578f0e",
+   "shape": [
+    2292,
+    12
+   ]
+  },
+  "dec.b": {
+   "sha256": "35dba446a5b991e64616e4dda75ba95a82f8edf52e81885c8a1e8b2d05b6a3aa",
+   "shape": [
+    2292
+   ]
+  },
+  "e0": {
+   "sha256": "023631c57152e929a53bc3a16ed12a424dad80e2cd8264e71e28fbda4c8fba8b",
+   "shape": [
+    11
+   ]
+  },
+  "eosg.W1": {
+   "sha256": "78b48dacba324817977ec687fca3aa1d57cbe6a2b158967f202374a68fdfbd00",
+   "shape": [
+    2,
+    1
+   ]
+  },
+  "eosg.W2": {
+   "sha256": "4024c635d5f2c25825cb70d4b81b1d1f0dc61efa942e160d04be81836d4f14bb",
+   "shape": [
+    1,
+    2
+   ]
+  },
+  "eosg.b1": {
+   "sha256": "e17a77a21e136471ce4023fa1e1f3581152ca2c24cd68bcf5aea29986b2a4fd1",
+   "shape": [
+    2
+   ]
+  },
+  "eosg.b2": {
+   "sha256": "b4097d95768ce3d4547e826a491c4b574312ba613470ccf00d3a87d698ac9c5e",
+   "shape": [
+    1
+   ]
+  },
+  "eosv": {
+   "sha256": "c27d9157aee7ba806bb66dfda977ceccf8e85a1cb343a2cda12405feddcbc613",
+   "shape": [
+    32
+   ]
+  },
+  "init": {
+   "sha256": "0fa3cca8c0b8db45571c8aa7bbfbecf54024f1ede1e89fa29a1e68fc160373c1",
+   "shape": [
+    2480
+   ]
+  },
+  "len.W": {
+   "sha256": "571b7c465aca336228e0d6f46b09082df734aa9265a51d96b5d73c75e710eef1",
+   "shape": [
+    177,
+    11
+   ]
+  },
+  "len.b": {
+   "sha256": "64bfdd2e2b7417cba98777e855a590f79e4afa284b8d3c0b16aaf7f32c20abaa",
+   "shape": [
+    177
+   ]
+  },
+  "log.W1": {
+   "sha256": "63c43a4ac9f4c55da621eaa9396bfeed6f4b7449fedeb3d9011c8f4f5f7c1384",
+   "shape": [
+    52,
+    1
+   ]
+  },
+  "log.W2": {
+   "sha256": "a3a43f6a3d151c2d4b4361fc3a2a7a022f066346ea6365ae80d6734f4d8ff027",
+   "shape": [
+    1,
+    52
+   ]
+  },
+  "log.b1": {
+   "sha256": "e20eeaf8ca4af49c97770708bdf28febcb8c568e1c334e169fcf9aa4bf7b512d",
+   "shape": [
+    52
+   ]
+  },
+  "log.b2": {
+   "sha256": "a5912a8547c29585ee8ae6eae2f7862fae59d6451f2ecb890d96862e075cfb0b",
+   "shape": [
+    1
+   ]
+  },
+  "one": {
+   "sha256": "b3fbb820fb37410966e299eddf0dbfa77ba6e3d150081e11641c5cbbeacf8e43",
+   "shape": [
+    1
+   ]
+  },
+  "ones_w": {
+   "sha256": "e5563568992a78c4c9538e070f9257f9cf0b983c0967e6c1ec0997a425adb139",
+   "shape": [
+    177
+   ]
+  },
+  "pw.W": {
+   "sha256": "17bcc4c9e53efe157aed607d7d40daad7a7f1eb65656867e5198dd50ba36e860",
+   "shape": [
+    177,
+    2292
+   ]
+  },
+  "pw.b": {
+   "sha256": "64bfdd2e2b7417cba98777e855a590f79e4afa284b8d3c0b16aaf7f32c20abaa",
+   "shape": [
+    177
+   ]
+  },
+  "sep.W": {
+   "sha256": "303251413303c56b97061a32e4113e2bca213884478ec722e71445bfeaff2658",
+   "shape": [
+    1,
+    32
+   ]
+  },
+  "sep.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  },
+  "spell.W": {
+   "sha256": "4f6f21e115847f56bd668e3f5d77597fc792a9e00268a437cc990be6b1a4a045",
+   "shape": [
+    5664,
+    11
+   ]
+  },
+  "spell.b": {
+   "sha256": "6e15c7a6bef06ccb70002175a434aff01cb77cd6b6deb1b325ae1fc91b891bc9",
+   "shape": [
+    5664
+   ]
+  },
+  "trans.W": {
+   "sha256": "e9de1b4a699667554a0c1701ea8901eff3d2a34333605636392d47116f1c7dec",
+   "shape": [
+    12,
+    66468
+   ]
+  },
+  "trans.b": {
+   "sha256": "de7e4fb4373591997cefa4c87a29dc58a7f24705990f15c16e2ca7470c094afc",
+   "shape": [
+    12
+   ]
+  }
+ }
+}

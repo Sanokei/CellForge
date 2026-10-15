@@ -1,0 +1,59 @@
+{
+  "policy": {
+    "protocol": "frozen-grid-fixture-caps/1",
+    "graph_hash": "b96a430e12254af09b2da4ec4b81df050c9301520b55d291c3f82e2d8bc01a2e",
+    "profile": "ladder-micro/1",
+    "address_space_limit_bytes": 3221225472,
+    "device_rss_limit_bytes": 4294967296,
+    "stored_parameter_limit": 1024,
+    "wall_limit_seconds": 60,
+    "source_sha256": "fa7441997ffccb800aa0aeeb0cb2a9dcce642e348f65fdd6dc803e1708471493",
+    "scope": "fixed boundary fixtures; not correctness on arbitrary tasks",
+    "gradients": false
+  },
+  "cases": [
+    {
+      "size": 1,
+      "phase": 0.0,
+      "finite": true,
+      "parity": true
+    },
+    {
+      "size": 1,
+      "phase": 1.0,
+      "finite": true,
+      "parity": true
+    },
+    {
+      "size": 30,
+      "phase": 0.0,
+      "finite": true,
+      "parity": true
+    },
+    {
+      "size": 30,
+      "phase": 1.0,
+      "finite": true,
+      "parity": true
+    }
+  ],
+  "fixtures_passed": true,
+  "caps_passed": true,
+  "wall_seconds": 0.3410568959952798,
+  "cpu_seconds": 0.341507121,
+  "peak_rss_bytes": 83288064,
+  "stats": {
+    "unique_param_storage": 304,
+    "expanded_param_uses": 4413,
+    "nonzero_slots": 174,
+    "constant_slots_in_op_args": 67,
+    "cell_defs": 9,
+    "bundle_defs": 58,
+    "reachable_defs": 54,
+    "expanded_instances": 171,
+    "nesting_depth": 4,
+    "edges": 1208,
+    "dispatch_nodes": 2,
+    "param_bytes_float64": 2432
+  }
+}

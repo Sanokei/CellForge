@@ -1,0 +1,82 @@
+[
+  {
+    "task_id": "nbr-k4-1",
+    "params": {
+      "keysel": [0, 0, 0, 0, 9, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, zero at row 2 column 3 has three same-colour orthogonal neighbours and becomes 1; the 3 at row 4 column 4 has one same-colour orthogonal neighbour and becomes 9."
+  },
+  {
+    "task_id": "nbr-k2-3",
+    "params": {
+      "keysel": [0, 0, 9, 0, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, zero at row 2 column 1 has three nonzero eight-neighbours and becomes 5; the 1 at row 4 column 1 has two and becomes 7."
+  },
+  {
+    "task_id": "nbr-k3-1",
+    "params": {
+      "keysel": [0, 0, 0, 9, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, zero at row 4 column 3 sees neighbour colours {0,1,2} and becomes 4; the 2 at row 4 column 4 sees {0,1,2,3} and becomes 5."
+  },
+  {
+    "task_id": "nbr-k3-0",
+    "params": {
+      "keysel": [0, 0, 0, 9, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, zero at row 2 column 1 sees neighbour colours {0,3} and becomes 4; the 3 at row 2 column 2 sees {0,1,2,3} and becomes 2."
+  },
+  {
+    "task_id": "nbr-k4-4",
+    "params": {
+      "keysel": [0, 0, 0, 0, 9, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, the 1 at row 1 column 2 has one same-colour orthogonal neighbour and becomes 0; the 1 at row 2 column 2 has two and remains 1. In demonstration 2, isolated 1s become 5."
+  },
+  {
+    "task_id": "nbr-k2-5",
+    "params": {
+      "keysel": [0, 0, 9, 0, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, the 2 at row 1 column 6 has four nonzero eight-neighbours and becomes 5; zero at row 5 column 3 has one and becomes 3."
+  },
+  {
+    "task_id": "nbr-k5-4",
+    "params": {
+      "keysel": [0, 0, 0, 0, 0, 9],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 changes the interior zero at row 5 column 3, whose four orthogonal neighbours are all zero, to 3. Demonstration 3 changes the top-right zero, with zero neighbours below and left, to 2, requiring the directional neighbour tuple."
+  },
+  {
+    "task_id": "nbr-k2-1",
+    "params": {
+      "keysel": [0, 0, 9, 0, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, zero at row 1 column 5 has one nonzero eight-neighbour and becomes 9; zero at row 1 column 4 has three and becomes 4."
+  },
+  {
+    "task_id": "nbr-k4-3",
+    "params": {
+      "keysel": [0, 0, 0, 0, 9, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, isolated 1 at row 1 column 4 becomes 3, isolated 2 at row 4 column 3 becomes 1, and the 3 at row 6 column 4 with one same-colour orthogonal neighbour becomes 7."
+  },
+  {
+    "task_id": "nbr-k1-0",
+    "params": {
+      "keysel": [0, 9, 0, 0, 0, 0],
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "In demonstration 1, zero at row 1 column 1 has one nonzero orthogonal neighbour and becomes 7; zero at row 4 column 3 has none and becomes 6; the 2 at row 1 column 2 has one and becomes 4."
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No valid revision exists within this template. The transformation depends on distances between markers; none of the available keys encodes those distances. These tensors are unchanged, not a successful repair."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes): colour-1 objects become background; colour-8 objects with zero, one, or four holes become 2, 7, or 3 respectively."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No valid revision exists within this template. Coarser keys cannot distinguish the differently treated colour-9 pixels; directional keys assign identical keys to some interior and exterior background pixels requiring different outputs. These tensors are unchanged."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No valid revision exists within the stated semantics. Source-colour painting cannot introduce colour 2, while fixed colour-2 painting would recolour every painted ray cell. The template lacks intersection-specific painting. These tensors are unchanged."
+  },
+  {
+    "task_id": "150deff5",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 0, 1]
+    },
+    "rationale": "No valid revision exists within this template. Even full 3x3 keys conflict: demonstration 1 pixels at zero-based (1,2) and (1,3) have identical neighbourhoods but require 8 and 2. The other available keys also lose necessary shape information. These tensors are unchanged."
+  },
+  {
+    "task_id": "8fbca751",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No valid revision exists within this template. Filling each object's bounding rectangle requires component membership and component extrema, which these pixel keys do not encode. Row and column sets also combine separate objects. These tensors are unchanged."
+  }
+]

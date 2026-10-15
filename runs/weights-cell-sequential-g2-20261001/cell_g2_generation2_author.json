@@ -1,0 +1,58 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "generation":2,
+ "contexts":{"seeds":[101,202,303],"physical_responses":1,"independent_author_replicates":false,"proposals_per_context":2,"matched_random_proposals_per_context":2},
+ "feedback_source":"cell-sequential-g2-results/feedback-1.json",
+ "prompt":"Fresh final generation2 cell-only revisions from actual generation1 development failures and current live parents; one numerical and one narrow structural proposal, no report labels/router/glue edits, preserve exact task metric, two proposals per shared context.",
+ "numerical":{
+  "scope":"independent_cell_child","structure":"neighbor_count",
+  "parent":"e47cafc7fbdfdf9518cebe8916c27e457b4f07c7ff3ea725dbcd7a22ed21e1b8",
+  "rationale":"Actual generation1 relaxed six-zero detector produced widespread unwanted color1 pixels in the enclosed-object and noisy-grid counterexamples and achieved no admission. Tighten zero occupancy to eight of nine positions: own zero contributes1, zero neighbors1, bias-7.5 requires at least seven zero neighbors. This meaningfully removes six/seven-zero activations responsible for flooding while allowing one nonzero neighbor, unlike the previously authored exact nine-zero center detector. It is a precision-versus-coverage numerical hypothesis, not scaling. A count-only local cell still cannot delimit complete patches or globally filter objects, so exact gain is not asserted. Rejected child is evidence only; all values are freshly authored from the live original count parent.",
+  "params":{
+   "self.W":[[1,-9,-9,-9,-9,-9,-9,-9,-9,-9]],
+   "cnt.W":[[1,0,0,0,0,0,0,0,0,0]],
+   "cnt.b":[-7.5],
+   "paint":[0,1,0,0,0,0,0,0,0,0]
+  },
+  "inherited_names":[],"newly_authored_names":["self.W","cnt.W","cnt.b","paint"],
+  "scalar_positions":31,
+  "contract":"Unchanged neighbor_count implementation on immutable input, present neighbors only, positive-threshold activation. Own nonzero colors never activate. Own0 with at least seven zero neighbors paints1, else input is copied. Border cells with fewer than seven present neighbors cannot activate.",
+  "limits":"Eight-zero windows may still be unrelated backgrounds; only qualifying individual cells paint. This does not reproduce complete3x3 patch emission or shape-changing/global tasks. No strict-fresh-gain claim."
+ },
+ "structural":{
+  "scope":"independent_cell_child",
+  "structure":"guarded_count_patch_emit_v2_component_filter",
+  "parent":"e47cafc7fbdfdf9518cebe8916c27e457b4f07c7ff3ea725dbcd7a22ed21e1b8",
+  "rationale":"Generation1 patch emitter handled the noisy-grid case but failed other examples and admission checks. Its rectangle-filter counterexamples contain separated filled rectangular objects of colors1/8: objects with at most one color8 marker remain, while objects with two or more are removed. Local single-pixel counts cannot condition an entire rectangle on its marker count. Add exactly one small typed connected-component filter branch to the prior patch-emitter hypothesis, requiring input-derived palette and filled-rectangle validation. Numeric selector weights count color8; component score3*filled_rectangle-marker_count-1.5 selects filled rectangles with zero or one marker. Preserve patch behavior in its original dense two-color guard and return unchanged outside both guards. This is a narrow global-component capability extension, not a seventh ensemble expert, task-ID dispatch, or fabricated family diversity. All full tensors are freshly authored from the live count recipient; rejected candidates supply evidence, never inherited breeding material.",
+  "params":{
+   "self.W":[[1,-9,-9,-9,-9,-9,-9,-9,-9,-9]],
+   "cnt.W":[[1,0,0,0,0,0,0,0,0,0]],
+   "cnt.b":[-8.5],
+   "paint":[0,1,0,0,0,0,0,0,0,0],
+   "patch.emit.W":[[1,1,1],[1,1,1],[1,1,1]],
+   "patch.emit.b":[-0.5],
+   "patch.guard.density":[0.3],
+   "filter.body.W":[[0,1,0,0,0,0,0,0,0,0]],
+   "filter.marker.W":[[0,0,0,0,0,0,0,0,1,0]],
+   "filter.component.W":[[3,-1]],
+   "filter.component.b":[-1.5]
+  },
+  "inherited_names":[],
+  "newly_authored_names":["self.W","cnt.W","cnt.b","paint","patch.emit.W","patch.emit.b","patch.guard.density","filter.body.W","filter.marker.W","filter.component.W","filter.component.b"],
+  "numerical_accounting":{"full_positions":65,"freshly_authored_positions":65,"existing_patch_structure_positions":42,"component_filter_extension_positions":23},
+  "executable_contract":{
+   "input":"Nonempty rectangular Grid[int0..9]",
+   "output":"Same-shaped Grid[int0..9]",
+   "filter_guard":"Derive body color as argmax(filter.body.W) and marker color as argmax(filter.marker.W), both must be distinct nonzero colors. Enter filter branch only if0 occurs, both selected colors occur, no other nonzero color occurs, and every maximal four-connected component of the union of these two colors fills its bounding rectangle exactly. Components containing either or both selected colors are extracted jointly, not separately by color. Rectangle area==component cell count supplies exact filledness.",
+   "filter_score":"For each guarded component, marker_count=sum filter.marker.W[0,inputcolor] over its cells. Features=[filled_rectangle_indicator,marker_count]. Select iff filter.component.W[0] dot features + filter.component.b[0]>0. Start a zero output and copy every original pixel of selected components. Nonselected components are erased to0. With literal weights, retain filled rectangles with marker_count0 or1, erase those with2 or more. No coordinate templates or task IDs are consulted.",
+   "patch_guard":"If filter guard is false, use the prior patch branch iff input has0 and exactly one nonzero color k!=argmax(paint) and nonzero fraction>patch.guard.density[0]. Otherwise return input unchanged.",
+   "patch_anchors":"For eligible patch branch compute self/count preactivation from original input and present eight neighbors. Bias-8.5 requires own0 plus eight zero neighbors; off-grid absent neighbors contribute nothing. Anchor only if positive.",
+   "patch_emit":"Sum patch.emit.W[dr+1,dc+1]*anchor[r-dr,c-dc] over the3x3 footprint, omitting invalid indices, add patch.emit.b. Positive score paints argmax(paint), otherwise copies original input. Never feed generated pixels into detection or filtering.",
+   "implementation":"Strictly needed small growth: add palette-validated union-color four-connected components, bounding-box filledness, marker counting, and masked copying before the existing guarded_count_patch_emit_v1 predictor. Existing patch guard/anchor/emission semantics stay intact. This is explicit executable translation work, not a silent structure rename. If translation is not admitted, record this candidate blocked rather than substitute another family.",
+   "metric":"Keep exact whole-grid task correctness and all existing admission/false-positive gates. No query expected outputs, task labels, or reporting values enter inference."
+  },
+  "limits":"The rectangle guard excludes nonrectangular or mixed-palette objects. Diagonal adjacency does not merge components. Patch guard still has unverified behavior outside observed noisy grids. Outside both guards return unchanged, not original live recipient behavior. Existing count parent remains separately live. Translation/admission of the23-position component branch is required; no success or promotion is claimed."
+ },
+ "provenance":"Only feedback-1.json read for this generation. Actual generation1 failures used as evidence, rejected children never listed as parents. Live recipient verified in feedback.live_cells. One physical literal response shared by three seed contexts, not independent maker replicates. All values finite[-9,9], no scripts generated coefficients, paid APIs, evaluations, router/glue changes or reporting reads.",
+ "assembly_decision":"Final bounded second generation in the declared two-generation experiment. Independently validate/evaluate these two candidates against matched random controls through unchanged development admission gates. Preserve all live parents and rejected evidence, do not change task scores or waive unavailable false-positive checks. Structural translation is an explicit prerequisite."
+}

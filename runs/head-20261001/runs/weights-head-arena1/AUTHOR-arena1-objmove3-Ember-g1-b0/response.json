@@ -1,0 +1,82 @@
+[
+  {
+    "task_id": "objmove3-d0-n1",
+    "params": {
+      "dir": [1, 0, 0, 0, 0, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide up while 8 stays fixed. In demonstration 1, diagonally connected 2s remain blocked by the 8 above their upper cell; the separate bottom 2 rises to just below them. This requires 8-connectivity."
+  },
+  {
+    "task_id": "objmove3-d0-n0",
+    "params": {
+      "dir": [1, 0, 0, 0, 0, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide up against fixed 8s or settled movers. Demonstration 1 places the 2 directly below an 8; demonstration 3 stacks the 2 at the top and the 1 immediately beneath it. Use 4-connectivity."
+  },
+  {
+    "task_id": "objmove3-d2-n0",
+    "params": {
+      "dir": [0, 0, 1, 0, 0, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide right while 8s remain fixed. Demonstration 1 settles the bottom 2 at the right edge and the 1 beside it; demonstration 3 stops each 1 immediately left of an 8. Use 4-connectivity."
+  },
+  {
+    "task_id": "objmove3-d4-n1",
+    "params": {
+      "dir": [0, 0, 0, 0, 1, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide down against fixed 8s and settled movers. In demonstration 3, the diagonal 2 pair moves together one row, stopping above the 8, and the 1 settles above that pair. This requires 8-connectivity."
+  },
+  {
+    "task_id": "objmove3-d2-n1",
+    "params": {
+      "dir": [0, 0, 1, 0, 0, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide right; 8s stay fixed. In demonstration 2, the diagonal lower 2 pair remains together, blocked by the 8 beside its upper cell, while the separate 2 and 1 reach the right edge. This requires 8-connectivity."
+  },
+  {
+    "task_id": "objmove3-d4-n0",
+    "params": {
+      "dir": [0, 0, 0, 0, 1, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide down while 8s stay fixed. Demonstration 1 sends the diagonally adjacent 1s independently to the bottom row, requiring 4-connectivity. Demonstration 2 stops one 1 above an 8 and stacks the 2 above another 1."
+  },
+  {
+    "task_id": "objmove3-d6-n0",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 1, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide left while 8s remain fixed. Demonstration 1 packs two separate 2s into the first two columns; demonstration 2 settles a 1 immediately right of the settled 2. Use 4-connectivity."
+  },
+  {
+    "task_id": "objmove3-d6-n1",
+    "params": {
+      "dir": [0, 0, 0, 0, 0, 0, 1, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "mover": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 2 slide left against fixed 8s and settled movers. Demonstration 2 preserves the diagonal 2 pair because its upper cell already touches the left edge, requiring 8-connectivity. Demonstration 3 stops the 2 immediately right of an 8."
+  }
+]

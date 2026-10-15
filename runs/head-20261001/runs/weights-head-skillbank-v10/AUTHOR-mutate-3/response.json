@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. The transformation rotates each 6's displacement around its paired 1, requiring distances that none of the available keys encode. These tensors select the relevant background and directional context, but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Use colour and enclosed-hole count to distinguish recolouring of the 8 objects from deletion of the 1 objects; bounding-box width does not capture the rule."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Object recolouring cannot move the interior colours to isolated exterior background pixels. These tensors cannot reproduce the required relocation."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Identical local neighbourhoods require different outputs depending on their position along the corridor relative to 9. No available key records that global relationship."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Recolouring depends on connectivity along paths from 9, and locally indistinguishable 8 pixels require different outputs. Changing the neighbourhood key cannot express path traversal."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. These tensors enable all nonzero source colours, but ray intersections cannot become 2: source-colour painting never introduces 2 here, while fixed painting with 2 would make every ray cell 2."
+  }
+]

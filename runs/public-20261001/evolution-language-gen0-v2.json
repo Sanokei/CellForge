@@ -1,0 +1,45 @@
+{
+  "protocol": "evolution-gen0-calibration/1",
+  "policy": {
+    "protocol": "evolution-pilot-partition/1",
+    "source_sha256": "8b2ba1b9d3b4a924dc5573659b3c68e961fccdd859f5b3ffab4b2078a5b3256c",
+    "selection_sha256": "83ca829b5a333f954cf086a37cacf75fa70056389a06238f0291e9f06fd33f14",
+    "report_only_sha256": "3a4b80d56cd0f4f752f5ed0c6212f61b3caebab1184f6dd17622ba659e583d28",
+    "partition": "first two lexicographic SHA256 whole-story families of288..350UTF8bytes; disjoint families",
+    "exposure": "source is public dev_train; report-only pilot split, not unexposed final data",
+    "report_policy": "never loaded into fitness; curves released only after all generations/winner hashes frozen",
+    "founder_hash": "f0b43dbe9c5f0582750e80589b7fa9c6cf55362bb3660b4a7a2db2f3cf8d7beb",
+    "metric": "UTF8 content-only bits per byte; EOS excluded; not MC likelihood accuracy",
+    "source_script_sha256": "83ba4a24c473c93fd6a06d868b1218ad8217a1d40af0174d8a5521ba66762103"
+  },
+  "model_stats": {
+    "unique_param_storage": 30791,
+    "expanded_param_uses": 74778,
+    "nonzero_slots": 3481,
+    "constant_slots_in_op_args": 136,
+    "cell_defs": 96,
+    "bundle_defs": 25,
+    "reachable_defs": 116,
+    "expanded_instances": 612,
+    "nesting_depth": 4,
+    "edges": 13781,
+    "dispatch_nodes": 1,
+    "param_bytes_float64": 246328
+  },
+  "generation": 0,
+  "fitness": {
+    "fitness_bits_per_byte": 2.042730829833363,
+    "eligible_for_selection": true,
+    "next_byte": {
+      "content_bits": 682.2720971643433,
+      "content_bytes": 334,
+      "failed_documents": 0,
+      "EOS": "excluded"
+    }
+  },
+  "elapsed_seconds": 9.819540288997814,
+  "mutations": 0,
+  "gradient_steps": 0,
+  "report_evaluations": 0,
+  "final_evaluations": 0
+}

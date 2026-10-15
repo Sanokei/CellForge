@@ -1,0 +1,126 @@
+{
+ "defs": {
+  "mlp": {
+   "act": "relu",
+   "kind": "cell",
+   "params": {
+    "W1": "mlp.W1",
+    "W2": "mlp.W2",
+    "b1": "mlp.b1",
+    "b2": "mlp.b2"
+   }
+  },
+  "step_root": {
+   "inputs": [
+    "ctx",
+    "prev",
+    "step",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "shape": [
+       288
+      ]
+     },
+     "id": "flat",
+     "in": {
+      "x": "$ctx"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "lg",
+     "in": {
+      "x": "flat"
+     },
+     "use": "mlp"
+    }
+   ],
+   "outputs": {
+    "logits": "lg",
+    "state": "$state"
+   }
+  }
+ },
+ "entries": {
+  "step": "step_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "baseline": "gradient MLP ctx8 H=512 epochs=10 seed=0 on dev_train",
+  "bootstrap": "bootstrap/uniform-logits/1",
+  "ctx_len": 8,
+  "primitive_version": "cellforge-ops/1",
+  "state_dim": 0,
+  "task": "lm",
+  "vocab": [
+   "<pad>",
+   "<bos>",
+   "<eos>",
+   " ",
+   ",",
+   ".",
+   "!",
+   "?",
+   "'",
+   "\"",
+   "a",
+   "b",
+   "c",
+   "d",
+   "e",
+   "f",
+   "g",
+   "h",
+   "i",
+   "j",
+   "k",
+   "l",
+   "m",
+   "n",
+   "o",
+   "p",
+   "q",
+   "r",
+   "s",
+   "t",
+   "u",
+   "v",
+   "w",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "params": {
+  "mlp.W1": {
+   "sha256": "68d8357a3038b7b89df221031a1e5ec9903dfb7b719a3677c9dae648dcd84bf6",
+   "shape": [
+    512,
+    288
+   ]
+  },
+  "mlp.W2": {
+   "sha256": "2bbe7ebe713b5f2f73709f9e657243891af1861066d1c14a46865d8ddfd2ce3c",
+   "shape": [
+    36,
+    512
+   ]
+  },
+  "mlp.b1": {
+   "sha256": "4e6cd2296a8a111ff00e8902acd7ed44a9baaa1c97ff0f0c7ee1f7933e5e803c",
+   "shape": [
+    512
+   ]
+  },
+  "mlp.b2": {
+   "sha256": "f9aa850aeba1bec0927fee0edf00093760bbfa91f8106c4c4a92dfb071c2773f",
+   "shape": [
+    36
+   ]
+  }
+ }
+}

@@ -1,0 +1,1543 @@
+{
+  "partition": "development",
+  "evidence": "train-pairs",
+  "counterexamples": [
+    {
+      "input": [
+        [
+          0,
+          4,
+          9,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9
+        ],
+        [
+          0,
+          9,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          4,
+          4,
+          9,
+          9,
+          2,
+          2,
+          0,
+          0,
+          9
+        ],
+        [
+          3,
+          9,
+          9,
+          0,
+          2,
+          7,
+          0,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          0,
+          7,
+          7,
+          7,
+          0,
+          9
+        ],
+        [
+          0,
+          9,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          6,
+          6,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            0,
+            4,
+            9,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            9,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4,
+            9,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            9,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-14",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          0,
+          9,
+          0
+        ],
+        [
+          0,
+          9,
+          9,
+          9
+        ],
+        [
+          0,
+          0,
+          9,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          2
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 11,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-15",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          2,
+          4,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          2,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          2,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          2
+        ]
+      ],
+      "expected": [
+        [
+          3,
+          4,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          2,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          9
+        ],
+        [
+          9,
+          2,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          2
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            2,
+            4,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            2,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            2,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            4,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            2,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            9
+          ],
+          [
+            9,
+            2,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            2
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-16",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          2,
+          4,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          2
+        ],
+        [
+          9,
+          2,
+          9,
+          2
+        ]
+      ],
+      "expected": [
+        [
+          3,
+          4,
+          9,
+          9
+        ],
+        [
+          9,
+          9,
+          9,
+          2
+        ],
+        [
+          9,
+          2,
+          9,
+          2
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            2,
+            4,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            2
+          ],
+          [
+            9,
+            2,
+            9,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            4,
+            9,
+            9
+          ],
+          [
+            9,
+            9,
+            9,
+            2
+          ],
+          [
+            9,
+            2,
+            9,
+            2
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-17",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          8,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          8,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          8,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            8,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            8,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 10,
+            "bbox.foreground": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2,
+            "scaling_bank3_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-24",
+      "family": null
+    }
+  ],
+  "graph_hash": "6a246c9a4597d2a1cb9cb5b7c9e9b159552c694e2b4c035864f5d8bf71ad173f",
+  "diagnostic_predictor_calls": 65,
+  "trace_scope": "reference cell-definition calls per adaptation/query step; not compiled physical-work or node-path trace"
+}

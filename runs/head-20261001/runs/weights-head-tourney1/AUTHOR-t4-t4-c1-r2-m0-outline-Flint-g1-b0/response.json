@@ -1,0 +1,62 @@
+[
+  {
+    "task_id": "outline-n0-same",
+    "params": {
+      "bg": [0,0,0,0,0,0,0,0,0,0],
+      "conn": [0,0],
+      "src": [0,1,1,1,0,0,0,0,0,0],
+      "ring": [0,0,0,0,0,0,0,0,0,0]
+    },
+    "rationale": "Colours 1, 2 and 3 extend into orthogonal zero neighbours in their own colours; diagonals stay zero and colour 8 remains unchanged."
+  },
+  {
+    "task_id": "outline-n0-c4",
+    "params": {
+      "bg": [0,0,0,0,0,0,0,0,0,0],
+      "conn": [0,0],
+      "src": [0,1,1,1,0,0,0,0,0,0],
+      "ring": [0,0,0,0,1,0,0,0,0,0]
+    },
+    "rationale": "Colours 1, 2 and 3 receive colour-4 halos only at orthogonal zero neighbours; the 8 pixels receive no halos."
+  },
+  {
+    "task_id": "outline-n0-c6",
+    "params": {
+      "bg": [0,0,0,0,0,0,0,0,0,0],
+      "conn": [0,0],
+      "src": [0,1,1,1,0,0,0,0,0,0],
+      "ring": [0,0,0,0,0,0,1,0,0,0]
+    },
+    "rationale": "Each demonstrated 1, 2 and 3 gains colour 6 above, below, left and right; diagonals and the isolated 8 remain unchanged."
+  },
+  {
+    "task_id": "outline-n1-same",
+    "params": {
+      "bg": [0,0,0,0,0,0,0,0,0,0],
+      "conn": [0,1],
+      "src": [0,1,1,1,0,0,0,0,0,0],
+      "ring": [0,0,0,0,0,0,0,0,0,0]
+    },
+    "rationale": "The 1 and 2 pixels fill all eight zero neighbours with their own colours, including diagonals; 8 remains unchanged. Colour 3 is included as the same source class inferred across this family."
+  },
+  {
+    "task_id": "outline-n1-c4",
+    "params": {
+      "bg": [0,0,0,0,0,0,0,0,0,0],
+      "conn": [0,1],
+      "src": [0,1,1,1,0,0,0,0,0,0],
+      "ring": [0,0,0,0,1,0,0,0,0,0]
+    },
+    "rationale": "Colours 1, 2 and 3 acquire colour-4 halos across all eight zero neighbours; existing source pixels and adjacent 8 pixels are preserved."
+  },
+  {
+    "task_id": "outline-n1-c6",
+    "params": {
+      "bg": [0,0,0,0,0,0,0,0,0,0],
+      "conn": [0,1],
+      "src": [0,1,1,1,0,0,0,0,0,0],
+      "ring": [0,0,0,0,0,0,1,0,0,0]
+    },
+    "rationale": "The demonstrated 2 and 3 pixels gain colour-6 halos including diagonals, while 8 pixels are preserved without producing halos. Colour 1 belongs to the source class evidenced elsewhere in this family."
+  }
+]

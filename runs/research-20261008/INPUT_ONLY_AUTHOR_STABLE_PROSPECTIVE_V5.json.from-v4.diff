@@ -1,0 +1,27 @@
+--- INPUT_ONLY_AUTHOR_STABLE_PROSPECTIVE_V4.json
++++ INPUT_ONLY_AUTHOR_STABLE_PROSPECTIVE_V5.json
+@@ -2,3 +2,3 @@
+   "timestamp": "2026-10-08T06:03:27.363191+00:00",
+-  "status": "prospective V4 only; no dispatch authorized",
++  "status": "prospective V5 only; no model dispatch authorized",
+   "argv": [
+@@ -196,4 +196,4 @@
+   "global_settings_changed": false,
+-  "capture_wrapper": "/srv/cellforge-inbox/research-20261008/prospective_native_capture_v4.py",
+-  "capture_wrapper_sha256": "dc4713f665df07e010589c176c9b1ca3916a46c6a9298fc43b2c96e732ed6347",
++  "capture_wrapper": "/srv/cellforge-inbox/research-20261008/prospective_native_capture_v5.py",
++  "capture_wrapper_sha256": "5d822fff874cbd84856474ed275912a43936da3af881dff63c33e1d89539c43b",
+   "native_contract": "validate full native objects before projection; exact reasoning id/type/text allowed as restricted nonexecution summary; exactly one final agent_message; five observed integer usage fields; reject extra/unknown keys/events",
+@@ -211,3 +211,11 @@
+     "report_reasoning_body": false
+-  }
++  },
++  "stdin_delivery": "exact saved prompt.bin opened as file-backed stdin; no synchronous pipe write before monitoring",
++  "stderr_allowlist": [],
++  "stderr_evidence": {
++    "route_healthcheck_001": "stderr.txt exists and is empty",
++    "readiness_and_review002": "no separate stderr receipt files retained; cannot infer historical empty stderr",
++    "policy": "empty required; all nonempty stderr rejected; no suppressed warnings"
++  },
++  "native_usage_receipt": "persist all five native counters only after accepted completion, bound to raw terminal line SHA256/index and full stdout trace SHA256"
+ }

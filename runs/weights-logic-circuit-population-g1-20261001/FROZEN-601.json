@@ -1,0 +1,2514 @@
+{
+  "llm": {
+    "live": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+    "records": {
+      "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    0,
+                    0
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": true,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": true,
+          "13": true,
+          "15": true
+        },
+        "state": "retired",
+        "parents": []
+      },
+      "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": true,
+          "5": true,
+          "7": true,
+          "9": true,
+          "11": true,
+          "12": true,
+          "13": true,
+          "15": true
+        },
+        "state": "admitted",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "59e666677ae50eeca8678a225f8a53e319bf83c6ceb67bf459dd33c8865d4938": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    1,
+                    0,
+                    0
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": true,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": true
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "92bedacd7c4e1b370aca22c1896305a5b67a90de2263260a3385bb4147635be9": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    1,
+                    0
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": true,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": true,
+          "13": true,
+          "15": true
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "cdc9d9aa0a369239858655d248c78f2ec2806d1b8d45cbd1622d89719aa54881": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    1,
+                    0,
+                    0
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "b0"
+                },
+                "b": {
+                  "external": "a0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "b1"
+                },
+                "b": {
+                  "external": "a1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": true,
+          "5": true,
+          "7": true,
+          "9": true,
+          "11": true,
+          "12": true,
+          "13": true,
+          "15": true
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "15b8efd16f4c9d315ab1a53a4c024737acf16bc49e2535d7f11928c7aa2004f4": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    -1,
+                    0,
+                    1
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "d34da1f17b9834debbab078241ce74f1194eac5fe4ec80411567a5fa6280c207": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 3
+      },
+      "f12c04b9a2522db0ef3b07875a9cbb2c757385847d5fd0e0b117b7ee21b8cc48": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "node": "low",
+                  "port": "y"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    0,
+                    1
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      }
+    },
+    "historical_opponents": [
+      "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+      "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d"
+    ],
+    "events": [
+      {
+        "event": "proposal",
+        "id": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": true,
+        "reasons": []
+      },
+      {
+        "event": "admitted",
+        "id": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "retired": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9"
+      },
+      {
+        "event": "proposal",
+        "id": "59e666677ae50eeca8678a225f8a53e319bf83c6ceb67bf459dd33c8865d4938",
+        "parent": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "accepted": false,
+        "reasons": [
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "92bedacd7c4e1b370aca22c1896305a5b67a90de2263260a3385bb4147635be9",
+        "parent": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "accepted": false,
+        "reasons": [
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "cdc9d9aa0a369239858655d248c78f2ec2806d1b8d45cbd1622d89719aa54881",
+        "parent": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "accepted": false,
+        "reasons": [
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "15b8efd16f4c9d315ab1a53a4c024737acf16bc49e2535d7f11928c7aa2004f4",
+        "parent": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "d34da1f17b9834debbab078241ce74f1194eac5fe4ec80411567a5fa6280c207",
+        "parent": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "f12c04b9a2522db0ef3b07875a9cbb2c757385847d5fd0e0b117b7ee21b8cc48",
+        "parent": "de35f49b8358e9edafbb07b73d30dc1f0a3a300d7f2cb82ce30215e42f22973d",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      }
+    ],
+    "charges": [
+      {
+        "arm": "llm",
+        "positions": 4,
+        "charged": true,
+        "proposal": "0dc327666b35f0af8782a340e20832a2e18689673f4801345cdc4ac15463b96f"
+      },
+      {
+        "arm": "llm",
+        "positions": 4,
+        "charged": true,
+        "proposal": "6b32536e73d44b0ca769eb6be78891ee2a739008214dfcbca3506d5ad21f0242"
+      },
+      {
+        "arm": "llm",
+        "positions": 4,
+        "charged": true,
+        "proposal": "2e936023b4a08c03eafaa6c4b4eaa82039fa3a31a7425304b6c7774044a9972c"
+      },
+      {
+        "arm": "llm",
+        "positions": 4,
+        "charged": true,
+        "proposal": "34d248875503c69ef4714781cf232c024a03c327a9de46a9fb095e5d1c3916d3"
+      },
+      {
+        "arm": "llm",
+        "positions": 4,
+        "charged": true,
+        "proposal": "9ce0b95803f805801c20b811a773e7d9a162f6e4a4b05cd545bbafe785d6b075"
+      },
+      {
+        "arm": "llm",
+        "positions": 3,
+        "charged": true,
+        "proposal": "0d14ee8374381d1c1fdb0b2905c9c13e6f8edba01e6d2fb4f97894a0d8039e19"
+      },
+      {
+        "arm": "llm",
+        "positions": 4,
+        "charged": true,
+        "proposal": "03af7ce7e951fb2d2f351698e3e037584bf6e7071cb97b760a720480464978a2"
+      }
+    ]
+  },
+  "random": {
+    "live": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+    "records": {
+      "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    0,
+                    0
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": true,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": true,
+          "13": true,
+          "15": true
+        },
+        "state": "bootstrap-control",
+        "parents": []
+      },
+      "116502bcd3fd3ae0fd77c98250b330e7f39ec1787207901393075b94c2fba741": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    -1,
+                    1,
+                    1
+                  ]
+                ],
+                "b": [
+                  -1
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "1d6684b66e7f72264e84bff29811eba74f572b7dd5e3da32e15c27ad2f011e37": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    1,
+                    1,
+                    0
+                  ]
+                ],
+                "b": [
+                  1
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "2a2b797da24b88a7898bc14982fa103aa47dde0613c0900a0589dbcefe03ce34": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    -1,
+                    1,
+                    0
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "b584130f26b7ce16f18e53ef82a9719aec70bae6d00a7614ab722ad9e1350240": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    0,
+                    0
+                  ]
+                ],
+                "b": [
+                  1
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "b0"
+                },
+                "b": {
+                  "external": "a0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "b1"
+                },
+                "b": {
+                  "external": "a1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": true,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": true,
+          "13": true,
+          "15": true
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "d9e0c3236a4a13e64706c8fcc594fbee6af7a05c26529b756a7e46f103a73090": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    -1,
+                    -1,
+                    1
+                  ]
+                ],
+                "b": [
+                  1
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      },
+      "a77480f17f6c4416818bdc146c2635200a1530d41021491b58dd72d6fcf47eab": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "external": "a0"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    1,
+                    0
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 3
+      },
+      "96537bcf0f9e4ff2104788815111a126c1f3764fe7c410d63b4dcf7dce984996": {
+        "spec": {
+          "format": "typed-bit-adhesion/1",
+          "inputs": [
+            "a0",
+            "a1",
+            "b0",
+            "b1"
+          ],
+          "parents": [
+            "cmp2",
+            "mux"
+          ],
+          "nodes": [
+            {
+              "id": "compare",
+              "kind": "cell",
+              "cell": "cmp2",
+              "inputs": {
+                "a0": {
+                  "node": "low",
+                  "port": "y"
+                },
+                "a1": {
+                  "external": "a1"
+                },
+                "b0": {
+                  "external": "b0"
+                },
+                "b1": {
+                  "external": "b1"
+                }
+              }
+            },
+            {
+              "id": "adhere",
+              "kind": "glue",
+              "input_ports": [
+                "gt",
+                "eq",
+                "lt"
+              ],
+              "output_ports": [
+                "s"
+              ],
+              "inputs": {
+                "gt": {
+                  "node": "compare",
+                  "port": "gt"
+                },
+                "eq": {
+                  "node": "compare",
+                  "port": "eq"
+                },
+                "lt": {
+                  "node": "compare",
+                  "port": "lt"
+                }
+              },
+              "params": {
+                "W": [
+                  [
+                    0,
+                    -1,
+                    1
+                  ]
+                ],
+                "b": [
+                  0
+                ]
+              }
+            },
+            {
+              "id": "low",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a0"
+                },
+                "b": {
+                  "external": "b0"
+                }
+              }
+            },
+            {
+              "id": "high",
+              "kind": "cell",
+              "cell": "mux",
+              "inputs": {
+                "s": {
+                  "node": "adhere",
+                  "port": "s"
+                },
+                "a": {
+                  "external": "a1"
+                },
+                "b": {
+                  "external": "b1"
+                }
+              }
+            }
+          ],
+          "outputs": {
+            "max0": {
+              "node": "low",
+              "port": "y"
+            },
+            "max1": {
+              "node": "high",
+              "port": "y"
+            }
+          },
+          "newly_authored": [
+            "adhere.W",
+            "adhere.b"
+          ]
+        },
+        "outcomes": {
+          "2": false,
+          "5": false,
+          "7": false,
+          "9": false,
+          "11": false,
+          "12": false,
+          "13": false,
+          "15": false
+        },
+        "state": "rejected",
+        "parents": {
+          "circuit": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+          "cells": [
+            "b4e3d9679fc027a4529969d17882c838551cb1a70c3e8bf139d55f549ab18e0b",
+            "b787761f178124ea80919144dbd40fa3407500dc93ea00c4721c2713bb105733"
+          ]
+        },
+        "new_weight_positions": 4
+      }
+    },
+    "historical_opponents": [
+      "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9"
+    ],
+    "events": [
+      {
+        "event": "proposal",
+        "id": "116502bcd3fd3ae0fd77c98250b330e7f39ec1787207901393075b94c2fba741",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "1d6684b66e7f72264e84bff29811eba74f572b7dd5e3da32e15c27ad2f011e37",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "2a2b797da24b88a7898bc14982fa103aa47dde0613c0900a0589dbcefe03ce34",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "b584130f26b7ce16f18e53ef82a9719aec70bae6d00a7614ab722ad9e1350240",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": false,
+        "reasons": [
+          "unproved_numeric_group_contribution",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "d9e0c3236a4a13e64706c8fcc594fbee6af7a05c26529b756a7e46f103a73090",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "a77480f17f6c4416818bdc146c2635200a1530d41021491b58dd72d6fcf47eab",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      },
+      {
+        "event": "proposal",
+        "id": "96537bcf0f9e4ff2104788815111a126c1f3764fe7c410d63b4dcf7dce984996",
+        "parent": "4b777f21655aa486920f4dd1efb12aa922af46af90b8e19b6d321e6a287c68e9",
+        "accepted": false,
+        "reasons": [
+          "invalid_typed_transfer",
+          "unproved_numeric_group_contribution",
+          "historical_development_regression",
+          "strict_development_gain"
+        ]
+      }
+    ],
+    "charges": [
+      {
+        "arm": "random",
+        "positions": 4,
+        "charged": true,
+        "proposal": "300529e209112980e124291d09cd4e00a52e86d81fbd87a3c97c9ce4016fa3b0"
+      },
+      {
+        "arm": "random",
+        "positions": 4,
+        "charged": true,
+        "proposal": "ea98583154f8c72a7920d4e28ee6cff20ad7dc96f9670dcad3cedaa53ef05df8"
+      },
+      {
+        "arm": "random",
+        "positions": 4,
+        "charged": true,
+        "proposal": "9aba1c300f3f6bdb4fcd2cf0caf3d747eee5d2cb6825221316bd17ab44b0fa77"
+      },
+      {
+        "arm": "random",
+        "positions": 4,
+        "charged": true,
+        "proposal": "a1e91264f1808d977afbca626109245f3a0dc4a2716678eb83de1a497c8703d6"
+      },
+      {
+        "arm": "random",
+        "positions": 4,
+        "charged": true,
+        "proposal": "007be9d8f2b60f256196f7c5d75ab9d1b0138094c5ae320abe85b03454dda2d7"
+      },
+      {
+        "arm": "random",
+        "positions": 3,
+        "charged": true,
+        "proposal": "926d3ab5ab82078e5a5a879b974323be7fa6ce439461b0a4d9e628dbdd35d4a4"
+      },
+      {
+        "arm": "random",
+        "positions": 4,
+        "charged": true,
+        "proposal": "af6fc52de3eacfd2d87bd1f4dd211b2ec9705c138f8bfad6619914592154ce13"
+      }
+    ]
+  }
+}

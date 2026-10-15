@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 901,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5315f647cac190533728fb03e39af588522e52f38ab0878e0a4c03db142e411d",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 2.0, 0.5]
+    },
+    "base_sha256": "b6a2382bb6b7b945e3aebfc6711f044f3e4fe48800aec54f05cdb68813e0def2",
+    "prompt_sha256": "64e45dea981871bd9ab6699e954ed3440da9f7b099bd639f9680d11ec553be9c",
+    "feedback_sha256": "bde591261e30ec060d07b244032f14dd4641f446c17d7712972b48438758b7df",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 3.5, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 1.25, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 0.0, 0.5]
+    },
+    "charged_positions": 28,
+    "rationale": "The supplied development trace completes three deliveries in 12 steps against an 11-step shortest plan with batching. Author remaining-goal acquisition pressure to encourage batching, restore inventory-sensitive coefficients, and add delivery free-cargo preference while retaining the right parent's distinguishing zero delivery bias at position 26 and the left parent's distinguishing -9 material coefficient at position 0. This is a nonzero mutation from the crossover base; no evaluation or improvement claim is made."
+  },
+  {
+    "seed": 902,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "5379ebd203597b17e4fc3be34e6f4e5af479e30c8056f226223d73631d7f4ed5",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 1.5, 0.75]
+    },
+    "base_sha256": "d47f5d04e386b9d9d55726595bfff216805f4afa0e9bb9c46be59e65dd600317",
+    "prompt_sha256": "0d8b35f8ed0e58e1dc34b02eb0f2f79a1ad70da7479f77789cfe960bf124eb2e",
+    "feedback_sha256": "55f9fc75b718578bb68717cd054c049559589eed8cd98f11bac0feff0a90d695",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 3.5, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 1.25, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 0.0, 0.75]
+    },
+    "charged_positions": 28,
+    "rationale": "Development reports seven shortest-length successes and a completed three-delivery plan requiring 12 steps rather than 11. Author remaining-goal acquisition pressure and delivery free-cargo preference, with inventory-sensitive coefficients restored from the supplied policy. Preserve distinguishing inherited position 0 at -9 from the left parent and position 26 at zero from the right parent. The crossover base changes numerically; the candidate remains unevaluated."
+  },
+  {
+    "seed": 903,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "8957b7123013e72790665be4516954644c907e9195e33273b0a78eef6bbf66b3",
+    "parent_params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.25, 1.75, 0.9]
+    },
+    "base_sha256": "d3848c916287e2e177bb038ec28e89ee697f5dbc13fdd359cb85fc5f5fd8211f",
+    "prompt_sha256": "96b90cb1f819533982a1875aae59ef3f53c6c0eb53aa244d482d457e55e75157",
+    "feedback_sha256": "5573d4c75ef7cddf80642b2ffc5784be1562a0ed35038be93ae9890140fd6ba1",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 3.5, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 1.25, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.25, 0.0, 0.9]
+    },
+    "charged_positions": 28,
+    "rationale": "Target the supplied three-delivery length discrepancy through remaining-goal acquisition pressure motivated by the expected batched plan. Restore inventory-sensitive coefficients and author a delivery free-cargo preference. Retain the left parent's distinguishing material coefficient at position 0 unchanged and the right parent's distinguishing zero delivery bias at position 26 unchanged. All 28 literals are within bounds and differ nontrivially from the base; no measured gain is claimed."
+  }
+]

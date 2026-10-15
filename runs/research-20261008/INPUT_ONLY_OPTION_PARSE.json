@@ -1,0 +1,28 @@
+{
+  "schema_parse_returncode": 1,
+  "stderr": "Error: `--strict-config` is not supported for `codex app-server generate-json-schema`\n",
+  "command": [
+    "/root/.local/bin/codex",
+    "--strict-config",
+    "app-server",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "features.memories=false",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "mcp_servers={}",
+    "-c",
+    "apps._default.enabled=false",
+    "generate-json-schema",
+    "--out",
+    "/srv/cellforge-inbox/research-20261008/input-only-options-schema"
+  ],
+  "dedicated_directory": "/srv/cellforge-inbox/research-20261008/input-only-author-prospective",
+  "directory_empty": true,
+  "ancestor_AGENTS_paths_present": [],
+  "no_model_call": true,
+  "global_config_unchanged": true,
+  "hard_tool_isolation_verified": false
+}

@@ -1,0 +1,91 @@
+{
+  "policy": {
+    "protocol": "posthoc-object-target-observer/1",
+    "task_id": "bf699163",
+    "task_sha256": "a3b2e2776f3c6cd076723a00e6997ac4023321346c3ec30c27e76367a4537836",
+    "model_edits": 0,
+    "rationale": "selected from training-only object census; not independent validation",
+    "audit_evaluations": 0,
+    "final_evaluations": 0,
+    "gradients": false
+  },
+  "rows": [
+    {
+      "arm": "child",
+      "graph_hash": "c4de78118856817f070d98e41d7154b8c3f51998cfff867cb2172e86b30c625e",
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 1,
+        "tasks_solved": 1,
+        "test_inputs": 1,
+        "test_inputs_correct": 1,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 1,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.10612107999622822,
+        "inference_cpu_seconds": 0.10610051900000006,
+        "inference_cpu_seconds_per_task": 0.10610051900000006,
+        "tasks_per_second": 9.423198482672268,
+        "consistency_audit_wall_seconds": 0.20691578300466063,
+        "consistency_audit_cpu_seconds": 0.2057735570000001,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "bf699163",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "arm": "control",
+      "graph_hash": "1ccbd3210096a3d8895037ebb8dce229eb8d367802773fc8f4a8f2622f6f0497",
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 1,
+        "tasks_solved": 0,
+        "test_inputs": 1,
+        "test_inputs_correct": 0,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 0,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": null,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.011062837998906616,
+        "inference_cpu_seconds": 0.011065859999999983,
+        "inference_cpu_seconds_per_task": 0.011065859999999983,
+        "tasks_per_second": 90.3927184054249,
+        "consistency_audit_wall_seconds": 0.02313229900028091,
+        "consistency_audit_cpu_seconds": 0.023132627000000072,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "bf699163",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "ledger_verified": 3
+}

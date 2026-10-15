@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. The required movement depends on distances and rotation, which none of the available keys encodes. These tensors select the actual background and directional context, but cannot reproduce every demonstration."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes): colour-1 objects disappear, while colour-8 objects with zero, one, or three enclosed holes become 2, 7, or 3 respectively."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No solution exists in this template. Uniform object recolouring cannot move the interior colours to previously empty exterior cells. Changing the background cannot resolve this limitation."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No solution exists in this template. In demonstration 2, zero-based pixels (1,1) and (8,7) have identical complete 3x3 neighbourhoods but require outputs 8 and 0. Every available key therefore collides, regardless of background."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No solution exists in this template. Required recolouring depends on connectivity beyond the neighbourhood. Demonstration 1 pixel (1,3) requires 9, while demonstration 2 pixel (1,1) requires 8 despite identical own colour and neighbour-colour multiplicities, defeating kinds 0–4 for every background. Demonstration 2 pixel (1,2) has the same four directional neighbours as demonstration 1 pixel (1,3), defeating kind 5."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. Enabling all nonzero source colours fixes the missing colour-8 rays, but crossings cannot become 2: the template supports only source-colour painting or one fixed paint colour, with no intersection rule."
+  }
+]

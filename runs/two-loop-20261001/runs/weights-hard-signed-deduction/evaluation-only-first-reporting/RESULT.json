@@ -1,0 +1,460 @@
+{
+  "ARC_transfer_claim": false,
+  "candidate_freeze_hash": "21a65ea0ba97fa8fdc0a20da482fd6e675baa944bb7a26250a3b500ce72aeef2",
+  "generalization_limit": "two same-interface signed temporal deduction cases; not broader benchmark",
+  "rows": [
+    {
+      "candidate": "5467ddd31f15356bea11cd8a90cc63ebdb6893d2784b30a5b53c29bff29a9487",
+      "outcomes": {
+        "frozen-conflict-unrelated": true,
+        "frozen-late-negative-mixed": true
+      },
+      "solved": 2,
+      "total": 2,
+      "traces": [
+        {
+          "correct": true,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 6,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          },
+          "id": "frozen-late-negative-mixed",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 6,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          }
+        },
+        {
+          "correct": true,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": null,
+              "status": "unknown"
+            },
+            "closure": [
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          },
+          "id": "frozen-conflict-unrelated",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": null,
+              "status": "unknown"
+            },
+            "closure": [
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "candidate": "6722bf432af2eb6294c6eee7bfc6825ffb662c8d3d63c0e11a5bb9c5518c1ba3",
+      "outcomes": {
+        "frozen-conflict-unrelated": true,
+        "frozen-late-negative-mixed": true
+      },
+      "solved": 2,
+      "total": 2,
+      "traces": [
+        {
+          "correct": true,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 6,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          },
+          "id": "frozen-late-negative-mixed",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 6,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          }
+        },
+        {
+          "correct": true,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": null,
+              "status": "unknown"
+            },
+            "closure": [
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          },
+          "id": "frozen-conflict-unrelated",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": null,
+              "status": "unknown"
+            },
+            "closure": [
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "candidate": "8b8ea777112c3a0837ff519570629cfc226d3f1f84f702591636b53a9cdbd26b",
+      "outcomes": {
+        "frozen-conflict-unrelated": false,
+        "frozen-late-negative-mixed": false
+      },
+      "solved": 0,
+      "total": 2,
+      "traces": [
+        {
+          "correct": false,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 6,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          },
+          "id": "frozen-late-negative-mixed",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 1,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          }
+        },
+        {
+          "correct": false,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": null,
+              "status": "unknown"
+            },
+            "closure": [
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          },
+          "id": "frozen-conflict-unrelated",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 2,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "next",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "candidate": "91578d6ac18f9f9c75afb0ed345780b0d82902a5d078ab6f054e9c3bdda3fcdb",
+      "outcomes": {
+        "frozen-conflict-unrelated": true,
+        "frozen-late-negative-mixed": true
+      },
+      "solved": 2,
+      "total": 2,
+      "traces": [
+        {
+          "correct": true,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 6,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          },
+          "id": "frozen-late-negative-mixed",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": 6,
+              "status": "entailed"
+            },
+            "closure": [
+              {
+                "atom": "a",
+                "polarity": 1
+              },
+              {
+                "atom": "b",
+                "polarity": -1
+              },
+              {
+                "atom": "permit",
+                "polarity": 1
+              },
+              {
+                "atom": "target",
+                "polarity": 1
+              },
+              {
+                "atom": "veto",
+                "polarity": -1
+              }
+            ]
+          }
+        },
+        {
+          "correct": true,
+          "expected": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": null,
+              "status": "unknown"
+            },
+            "closure": [
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          },
+          "id": "frozen-conflict-unrelated",
+          "predicted": {
+            "answer": {
+              "negative_round": null,
+              "positive_round": null,
+              "status": "unknown"
+            },
+            "closure": [
+              {
+                "atom": "x",
+                "polarity": -1
+              },
+              {
+                "atom": "x",
+                "polarity": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "selection_or_mutation_access": false
+}

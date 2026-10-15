@@ -1,0 +1,44 @@
+[
+  {
+    "task_id": "1701",
+    "params": {
+      "route": [8, 2, 1, 0],
+      "bind": [9, 6, 0.1, 8],
+      "type": [
+        [7, 3, -7, -7],
+        [3, 7, -7, -7],
+        [-7, -7, 7, -7],
+        [-7, -7, -7, 7]
+      ]
+    },
+    "rationale": "Prioritize description overlap for routing and binding; type compatibility outweighs positional preference for reordered arguments."
+  },
+  {
+    "task_id": "1702",
+    "params": {
+      "route": [8, 2, 1, 0],
+      "bind": [9, 6, 0.1, 8],
+      "type": [
+        [7, 3, -7, -7],
+        [3, 7, -7, -7],
+        [-7, -7, 7, -7],
+        [-7, -7, -7, 7]
+      ]
+    },
+    "rationale": "Identical examples support the same independently selected weights, emphasizing descriptions and matching scalar types."
+  },
+  {
+    "task_id": "1703",
+    "params": {
+      "route": [8, 2, 1, 0],
+      "bind": [9, 6, 0.1, 8],
+      "type": [
+        [7, 3, -7, -7],
+        [3, 7, -7, -7],
+        [-7, -7, 7, -7],
+        [-7, -7, -7, 7]
+      ]
+    },
+    "rationale": "Strong semantic binding handles reordered values; diagonal row maxima preserve each required output type."
+  }
+]

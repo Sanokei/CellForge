@@ -1,0 +1,145 @@
+--- held-seal/resume_operation.py
++++ ownership-revision/resume_operation.py
+@@ -3,7 +3,7 @@
+ its exact file as ACKNOWLEDGED_STOP, records the transaction and enables dispatch
+ only in a separate reviewed step. Historical protected STOPs are never moved.
+ """
+-import argparse,contextlib,copy,hashlib,json,os,pathlib,stat,time
++import argparse,contextlib,copy,hashlib,json,os,pathlib,stat,time,sys
+ import supervisor as V
+ from common import Blocked,read,atomic,canonical,digest,filehash,registry_lock
+ ROOT=pathlib.Path('/srv/cellforge-inbox/continuous-control-v2')
+@@ -48,6 +48,35 @@
+         if data.get('ActiveState')!='inactive' or data.get('MainPID')!='0':raise Blocked('watcher must be stopped before operator transition')
+         r=V.command(['systemctl','is-enabled',name])
+         if r.stdout.strip()!='disabled':raise Blocked('watcher must be disabled during operator transition')
++
++def rename_noreplace(source,destination):
++    """One atomic rename that cannot replace a concurrently created destination."""
++    if os.name=='nt':
++        # Windows os.rename fails if destination already exists.
++        os.rename(source,destination);return
++    if not sys.platform.startswith('linux'):raise Blocked('no supported no-clobber rename primitive')
++    import ctypes,errno
++    libc=ctypes.CDLL(None,use_errno=True)
++    try:fn=libc.renameat2
++    except AttributeError:raise Blocked('renameat2 unavailable; refuse archive transition')
++    fn.argtypes=(ctypes.c_int,ctypes.c_char_p,ctypes.c_int,ctypes.c_char_p,ctypes.c_uint);fn.restype=ctypes.c_int
++    if fn(-100,os.fsencode(source),-100,os.fsencode(destination),1)!=0:
++        number=ctypes.get_errno()
++        raise OSError(number,os.strerror(number),str(destination))
++
++def same_regular_entry(left,right):
++    try:
++        a=os.stat(left,follow_symlinks=False);b=os.stat(right,follow_symlinks=False)
++        return stat.S_ISREG(a.st_mode) and stat.S_ISREG(b.st_mode) and (a.st_dev,a.st_ino)==(b.st_dev,b.st_ino)
++    except FileNotFoundError:return False
++
++def publish_no_clobber(authorization,enabled):
++    """Publish the durable authorization inode; never replace an existing marker."""
++    try:os.link(authorization,enabled,follow_symlinks=False)
++    except FileExistsError:
++        if not same_regular_entry(authorization,enabled):raise Blocked('foreign dispatch marker at publication boundary')
++    sync_dir(pathlib.Path(enabled).parent)
++    if not same_regular_entry(authorization,enabled):raise Blocked('dispatch marker replaced during publication; left untouched')
+ 
+ class ResumeOperation:
+     # Dependency overrides are for isolated fixtures; production CLI uses defaults.
+@@ -134,7 +163,9 @@
+                 self.checkpoint('before_stop_archive')
+                 if marker(source)!=request['stop_identity']:raise Blocked('STOP changed at acknowledgement boundary')
+                 if archive.exists() or archive.is_symlink():raise Blocked('archive appeared at acknowledgement boundary')
+-                os.rename(source,archive);sync_dir(self.root);sync_dir(d)
++                try:rename_noreplace(source,archive)
++                except FileExistsError:raise Blocked('archive appeared at atomic acknowledgement boundary; preserved')
++                sync_dir(self.root);sync_dir(d)
+                 if marker(archive)!=request['stop_identity']:
+                     # A noncooperating STOP writer can race the identity check.
+                     # Restore the moved STOP with exclusive creation; never overwrite a newer STOP.
+@@ -160,14 +191,16 @@
+             if (self.root/'STOP').exists():raise Blocked('new STOP preempts release')
+             payload={'schema':'cellforge-reviewed-dispatch/1','request_id':digest(request),'science_plan':self.ph,'pending_conditions':request['pending_conditions'],'qualified':False,'remote_model_calls':0}
+             enabled=self.root/'DISPATCH_ENABLED'
+-            if enabled.exists() and read(enabled)!=payload:raise Blocked('foreign dispatch marker')
++            authorization=d/'DISPATCH_AUTHORIZATION.json';immutable(authorization,payload)
+             self.checkpoint('before_dispatch_marker')
+             if (self.root/'STOP').exists():raise Blocked('new STOP preempts release boundary')
+-            atomic(enabled,payload);self.checkpoint('after_dispatch_marker')
++            publish_no_clobber(authorization,enabled);self.checkpoint('after_dispatch_marker')
+             if (self.root/'STOP').exists():
+-                # Disable only our exact release marker. The STOP is never touched.
+-                if read(enabled)==payload:enabled.unlink();sync_dir(self.root)
+-                raise Blocked('new STOP preempted activation; release rolled back')
++                # There is no atomic compare-and-unlink for a replaceable pathname.
++                # Preserve every visible marker; STOP + disabled watcher retain the hold.
++                self.checkpoint('before_dispatch_preempt_hold')
++                immutable(d/'DISPATCH_PREEMPTED.json',{'schema':'cellforge-dispatch-preempted/1','request_id':digest(request),'reason':'new_STOP','dispatch_marker_action':'untouched','watcher_stopped_disabled':True})
++                raise Blocked('new STOP preempted activation; dispatch marker untouched; keep watcher stopped')
+             immutable(d/'DISPATCH_RECEIPT.json',payload)
+             return {'phase':'DISPATCH_AUTHORIZED_WATCHER_STILL_STOPPED','payload':payload}
+ 
+--- held-seal/test_resume_revision.py
++++ ownership-revision/test_resume_revision.py
+@@ -111,11 +111,11 @@
+                 f.accounting()
+             with self.subTest(kind=kind):self.case(run)
+     def test_STOP_replaced_during_rename_is_restored_and_blocks(self):
+-        original=R.os.rename
++        original=R.rename_noreplace
+         def raced(source,archive):
+             pathlib.Path(source).write_bytes(b'NEW STOP DURING RENAME')
+             original(source,archive)
+-        with patch.object(R.os,'rename',side_effect=raced),self.assertRaises(Blocked):self.stage()
++        with patch.object(R,'rename_noreplace',side_effect=raced),self.assertRaises(Blocked):self.stage()
+         self.assertEqual((self.root/'STOP').read_bytes(),b'NEW STOP DURING RENAME')
+         self.assertFalse((self.root/'DISPATCH_ENABLED').exists());self.accounting()
+     def test_stage_crashes_recover_without_new_attempt(self):
+@@ -132,12 +132,12 @@
+                 with self.assertRaises(F.Crash):f.activate()
+                 f.op.checkpoint=lambda _:None;f.activate();f.accounting()
+             with self.subTest(point=point):self.case(run)
+-    def test_new_STOP_at_activation_preempts_and_own_marker_is_removed(self):
++    def test_new_STOP_at_activation_preempts_without_marker_removal(self):
+         for point in ('before_dispatch_marker','after_dispatch_marker'):
+             def run(f):
+                 f.stage();f.op.checkpoint=lambda p:(f.root/'STOP').write_bytes(b'NEW STOP') if p==point else None
+                 with self.assertRaises(Blocked):f.activate()
+-                self.assertEqual((f.root/'STOP').read_bytes(),b'NEW STOP');self.assertFalse((f.root/'DISPATCH_ENABLED').exists());f.accounting()
++                self.assertEqual((f.root/'STOP').read_bytes(),b'NEW STOP');self.assertEqual((f.root/'DISPATCH_ENABLED').exists(),point=='after_dispatch_marker');f.accounting()
+             with self.subTest(point=point):self.case(run)
+     def test_tampered_receipt_and_foreign_marker_block(self):
+         self.stage();d=self.op.directory(self.request);v=read(d/'RESUME_RECEIPT.json');v['cap']=99;atomic(d/'RESUME_RECEIPT.json',v)
+@@ -145,6 +145,33 @@
+         atomic(d/'RESUME_RECEIPT.json',self.op.expected_receipt(self.request));atomic(self.root/'DISPATCH_ENABLED',{'foreign':True})
+         with self.assertRaises(Blocked):self.activate()
+         self.assertEqual(read(self.root/'DISPATCH_ENABLED'),{'foreign':True})
++    def test_foreign_dispatch_created_at_actual_link_boundary_is_preserved(self):
++        self.stage();enabled=self.root/'DISPATCH_ENABLED';original=R.os.link;foreign={}
++        def raced(source,destination,*args,**kwargs):
++            if pathlib.Path(destination)==enabled:
++                atomic(enabled,{'foreign':'at publication syscall'});foreign.update(R.marker(enabled))
++            return original(source,destination,*args,**kwargs)
++        with patch.object(R.os,'link',side_effect=raced),self.assertRaises(Blocked):self.activate()
++        self.assertEqual(R.marker(enabled),foreign);self.assertEqual(read(enabled),{'foreign':'at publication syscall'})
++        self.assertFalse((self.op.directory(self.request)/'DISPATCH_RECEIPT.json').exists());self.accounting()
++    def test_foreign_replacement_at_preempt_boundary_is_never_unlinked(self):
++        self.stage();enabled=self.root/'DISPATCH_ENABLED';foreign={}
++        def checkpoint(point):
++            if point=='after_dispatch_marker':(self.root/'STOP').write_bytes(b'NEW STOP')
++            elif point=='before_dispatch_preempt_hold':
++                atomic(enabled,{'foreign':'after release, before hold'});foreign.update(R.marker(enabled))
++        self.op.checkpoint=checkpoint
++        with patch.object(pathlib.Path,'unlink',side_effect=AssertionError('activation must never unlink visible markers')),self.assertRaises(Blocked):self.activate()
++        self.assertEqual(R.marker(enabled),foreign);self.assertEqual(read(enabled),{'foreign':'after release, before hold'})
++        self.assertEqual((self.root/'STOP').read_bytes(),b'NEW STOP');self.assertFalse((self.op.directory(self.request)/'DISPATCH_RECEIPT.json').exists());self.accounting()
++    def test_foreign_archive_created_at_actual_rename_boundary_is_preserved(self):
++        archive=self.op.directory(self.request)/'ACKNOWLEDGED_STOP';original=R.rename_noreplace;foreign={}
++        def raced(source,destination):
++            pathlib.Path(destination).write_bytes(b'FOREIGN ARCHIVE AT SYSCALL');foreign.update(R.marker(destination))
++            return original(source,destination)
++        with patch.object(R,'rename_noreplace',side_effect=raced),self.assertRaises(Blocked):self.stage()
++        self.assertEqual(R.marker(archive),foreign);self.assertEqual(R.marker(self.root/'STOP'),self.request['stop_identity'])
++        self.assertFalse((self.root/'DISPATCH_ENABLED').exists());self.accounting()
+     @unittest.skipUnless(os.name=='posix','real SIGKILL and POSIX durability')
+     def test_real_SIGKILL_resume_boundaries_recover_with_real_locks(self):
+         import signal

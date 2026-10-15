@@ -1,0 +1,1 @@
+Archived by the orchestrator on 2026-10-02T03:26:59Z: everything in /srv/cellforge-inbox older than 2026-10-01 except head-20261001 and two-loop-20261001. Nothing deleted. To restore an entry: mv _archive_20260930/<name> ../

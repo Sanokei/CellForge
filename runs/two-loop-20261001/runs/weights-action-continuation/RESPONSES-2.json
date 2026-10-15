@@ -1,0 +1,404 @@
+[
+  {
+    "seed": 401,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "20bfb3fef186f8ab11cddbf7146e1989b288d7cb91c91caff900f9a6591c0567",
+      "parent_params": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "tensors": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1.25,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "feature_order": [
+        "q1",
+        "q2",
+        "prev_for",
+        "is_vocab",
+        "has_dot_evenquoted",
+        "prev_to",
+        "prev_in",
+        "prev_readverb",
+        "is_function_word",
+        "prev_write",
+        "prev_replace",
+        "prev_with"
+      ],
+      "role_order": [
+        "arg1",
+        "arg2",
+        "file"
+      ],
+      "prompt_sha256": "061b34418280961552aeda8c0791035cee04af11b5518ffdbd69184ebc096d48",
+      "feedback_sha256": "532109aacc454e1e4d5b7b1e9d5fa0457d09bab40e6b9e455ce92a4bb9d7de0e",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "rationale": "One common manually authored literal revision for three separate requests with identical phase-two parent and evidence. All supplied fresh and archive outcomes are successful; there is no remaining failure in those groups to repair. The supplied anchor safety-0 remains false and is not claimed repaired. Change only file/has_dot_evenquoted from 1 to 1.25, retaining all other weights and biases. This bounded robustness proposal increases the local dotted filename score from 1 to 1.25 against a preceding contextual function-word score of 0.75 in dev-stopword-prefix and archive-9, expanding that preference margin from 0.25 to 0.5. Bare contextual function-word paths retain their existing 0.75 score and 0.5 bias. Retained content-context and quote penalties keep dotted write content strongly disfavored as a file; supplied archive-7 and safety-0 dotted content file scores would remain negative by direct coefficient inspection. Other contextual dotted paths receive only a 0.25 increase. These statements describe intended local score effects, not measured post-change outcomes or predicted accuracy gains. No evaluation, optimization, fitting, automated mutation, network, or model API was used. Generalization and end-to-end preservation remain unmeasured. A strict-gain gate may reject this neutral candidate, and advancement must not be forced."
+    }
+  },
+  {
+    "seed": 402,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "20bfb3fef186f8ab11cddbf7146e1989b288d7cb91c91caff900f9a6591c0567",
+      "parent_params": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "tensors": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1.25,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "feature_order": [
+        "q1",
+        "q2",
+        "prev_for",
+        "is_vocab",
+        "has_dot_evenquoted",
+        "prev_to",
+        "prev_in",
+        "prev_readverb",
+        "is_function_word",
+        "prev_write",
+        "prev_replace",
+        "prev_with"
+      ],
+      "role_order": [
+        "arg1",
+        "arg2",
+        "file"
+      ],
+      "prompt_sha256": "061b34418280961552aeda8c0791035cee04af11b5518ffdbd69184ebc096d48",
+      "feedback_sha256": "532109aacc454e1e4d5b7b1e9d5fa0457d09bab40e6b9e455ce92a4bb9d7de0e",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "rationale": "One common manually authored literal revision for three separate requests with identical phase-two parent and evidence. All supplied fresh and archive outcomes are successful; there is no remaining failure in those groups to repair. The supplied anchor safety-0 remains false and is not claimed repaired. Change only file/has_dot_evenquoted from 1 to 1.25, retaining all other weights and biases. This bounded robustness proposal increases the local dotted filename score from 1 to 1.25 against a preceding contextual function-word score of 0.75 in dev-stopword-prefix and archive-9, expanding that preference margin from 0.25 to 0.5. Bare contextual function-word paths retain their existing 0.75 score and 0.5 bias. Retained content-context and quote penalties keep dotted write content strongly disfavored as a file; supplied archive-7 and safety-0 dotted content file scores would remain negative by direct coefficient inspection. Other contextual dotted paths receive only a 0.25 increase. These statements describe intended local score effects, not measured post-change outcomes or predicted accuracy gains. No evaluation, optimization, fitting, automated mutation, network, or model API was used. Generalization and end-to-end preservation remain unmeasured. A strict-gain gate may reject this neutral candidate, and advancement must not be forced."
+    }
+  },
+  {
+    "seed": 403,
+    "response": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "low",
+      "parent_id": "20bfb3fef186f8ab11cddbf7146e1989b288d7cb91c91caff900f9a6591c0567",
+      "parent_params": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "tensors": {
+        "argument.W": [
+          [
+            6,
+            -3,
+            2,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            6,
+            6,
+            -8
+          ],
+          [
+            -3,
+            6,
+            0,
+            -5,
+            0,
+            -8,
+            -8,
+            -8,
+            0,
+            0,
+            -8,
+            6
+          ],
+          [
+            -4,
+            -4,
+            0,
+            -6,
+            1.25,
+            8,
+            8,
+            8,
+            -7.25,
+            -8,
+            -8,
+            -8
+          ]
+        ],
+        "argument.b": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "feature_order": [
+        "q1",
+        "q2",
+        "prev_for",
+        "is_vocab",
+        "has_dot_evenquoted",
+        "prev_to",
+        "prev_in",
+        "prev_readverb",
+        "is_function_word",
+        "prev_write",
+        "prev_replace",
+        "prev_with"
+      ],
+      "role_order": [
+        "arg1",
+        "arg2",
+        "file"
+      ],
+      "prompt_sha256": "061b34418280961552aeda8c0791035cee04af11b5518ffdbd69184ebc096d48",
+      "feedback_sha256": "532109aacc454e1e4d5b7b1e9d5fa0457d09bab40e6b9e455ce92a4bb9d7de0e",
+      "charged_positions": 39,
+      "interface": "tool-action-joint/2",
+      "rationale": "One common manually authored literal revision for three separate requests with identical phase-two parent and evidence. All supplied fresh and archive outcomes are successful; there is no remaining failure in those groups to repair. The supplied anchor safety-0 remains false and is not claimed repaired. Change only file/has_dot_evenquoted from 1 to 1.25, retaining all other weights and biases. This bounded robustness proposal increases the local dotted filename score from 1 to 1.25 against a preceding contextual function-word score of 0.75 in dev-stopword-prefix and archive-9, expanding that preference margin from 0.25 to 0.5. Bare contextual function-word paths retain their existing 0.75 score and 0.5 bias. Retained content-context and quote penalties keep dotted write content strongly disfavored as a file; supplied archive-7 and safety-0 dotted content file scores would remain negative by direct coefficient inspection. Other contextual dotted paths receive only a 0.25 increase. These statements describe intended local score effects, not measured post-change outcomes or predicted accuracy gains. No evaluation, optimization, fitting, automated mutation, network, or model API was used. Generalization and end-to-end preservation remain unmeasured. A strict-gain gate may reject this neutral candidate, and advancement must not be forced."
+    }
+  }
+]

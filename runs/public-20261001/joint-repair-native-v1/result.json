@@ -1,0 +1,4164 @@
+{
+  "policy": {
+    "protocol": "tiling-hgt-native-anchor/1",
+    "hashes": {
+      "inactive-repairs": "3caa9285c67cdea246fd98b0c8b72df0e244f641b8cdd58df97bd320842db4f6",
+      "joint-repairs": "cad017c9a0956ba2a12b068a64f08a321ca42581519b4f7ba156b6f8d9ae2bfd"
+    },
+    "manifest": "4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+    "tasks": 200,
+    "gradients": false,
+    "audit_evaluations": 0,
+    "final_evaluations": 0,
+    "public_evaluation_loaded": false,
+    "source_sha256": "f816e43be61c3cc94a455dfb97d9b93060edd7652ee129b16c153076fb44953f",
+    "scope": "exposed public-training development, authored repair not independent generalization"
+  },
+  "rows": [
+    {
+      "arm": "inactive-repairs",
+      "stats": {
+        "unique_param_storage": 363,
+        "expanded_param_uses": 4107,
+        "nonzero_slots": 190,
+        "constant_slots_in_op_args": 48,
+        "cell_defs": 14,
+        "bundle_defs": 60,
+        "reachable_defs": 54,
+        "expanded_instances": 165,
+        "nesting_depth": 4,
+        "edges": 1155,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2904
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 200,
+        "tasks_solved": 3,
+        "test_inputs": 222,
+        "test_inputs_correct": 3,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 2,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 5.745099256848334,
+        "inference_cpu_seconds": 5.744987380000033,
+        "inference_cpu_seconds_per_task": 0.028724936900000168,
+        "tasks_per_second": 34.81227931120492,
+        "consistency_audit_wall_seconds": 17.407075878159958,
+        "consistency_audit_cpu_seconds": 17.405106648,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "8b28cd80",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "cbded52d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "705a3229",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7d18a6fb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "0d3d703e",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2bcee788",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3428a4f5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "b527c5c6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "67e8384a",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b9b7f026",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "2281f1f4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "42a15761",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "320afe60",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "363442ee",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "48634b99",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8be4b64",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9a4bb226",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6d75e8bb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5ad8a7c0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "256b0a75",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "cf98881b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "eb281b96",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "543a7ed5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f9d67f8b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "56dc2b01",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ce4f8723",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "25d487eb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "dae9d2b5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "c920a713",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "48f8583b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "36d67576",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1190bc91",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e7639916",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d10ecb37",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "963e52fc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "54dc2872",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8fff9e47",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "007bbfb7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d5d6de2d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "e133d23d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d631b094",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b91ae062",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b1986d4b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9b2a60aa",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8f52ecc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "a1aa0c1e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "484b58aa",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9f8de559",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8ff0b80",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "80214e03",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "fc754716",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "996ec1f3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "639f5a19",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e40b9e2f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9f5f939b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "63613498",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8d510a79",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6430c8c4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "834ec97d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e681b708",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "97239e3d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e872b94a",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "212895b5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "cd3c21df",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d23f8c26",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "af726779",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "19bb5feb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9772c176",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "fcb5c309",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f18ec8cc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "60a26a3e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "60b61512",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "dc1df850",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "73182012",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e345f17b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "45737921",
+            "solved": true,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "ac0c2ac3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d2acf2cb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3d31c5b3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bd4472b8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5117e062",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "551d5bf1",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "0a1d4ef5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ac0a08a4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "dc433765",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "dc46ea44",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6d58a25d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a8610ef7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e21d9049",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "32e9702f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "694f12f3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "44d8ac46",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bb43febb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b1fc8b8e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "1c0d0a4b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "178fcbfb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "516b51b7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ea32f347",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e7dd8335",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "868de0fa",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8ba14f53",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "070dd51e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e21a174a",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "1f0c79e5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "14b8e18c",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d90796e8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "2546ccf6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8cc533f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "ce039d91",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "15113be4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "981add89",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "880c1354",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e45ef808",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "42f83767",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "fd02da9e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "baf41dbf",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a834deea",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e729b7be",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e1d2900e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1fad071e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "13f06aa5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "696d4842",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "84db8fc4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ea4a07e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "4c5c2cf0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d43fd935",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "310f3251",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e4075551",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d492a647",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "31aa019c",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4ff4c9da",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4e45f183",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3f7978a0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1a07d186",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "760b3cac",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "11dc524f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5587a8d0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f341894c",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ac2e8ecf",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "82819916",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bcb3040b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ded97339",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e74e1818",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "17829a00",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ad7e01d0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "aaef0977",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7c8af763",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "c074846d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "e048c9ed",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "878187ab",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d4c90558",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e9614598",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "4938f0c2",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4e469f39",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bf699163",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f0f8a26d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "12997ef3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "508bd3b6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5b526a93",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8efcae92",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "88207623",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "54d9e175",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e99362f0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7d7772cc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ad38a9d0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3ac3eb23",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d5c634a2",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "2f767503",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "358ba94e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "538b439f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "103eff5b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b457fec5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "292dd178",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ecd11f4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "afe3afe9",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e509e548",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b1948b0a",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "dc2e9a9d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "642248e4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "29700607",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "825aa9e9",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "55059096",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8be77c9e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5c0a986e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a1570a43",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9565186b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "396d80d7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "58743b76",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "025d127b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8618d23e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a61f2674",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "eb5a1d5d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ad5bdfd",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "00dbd492",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ffe8f07",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "1990f7a8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "845d6e51",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ff2825db",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "b7256dcd",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b15fca0b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "arm": "joint-repairs",
+      "stats": {
+        "unique_param_storage": 363,
+        "expanded_param_uses": 4656,
+        "nonzero_slots": 190,
+        "constant_slots_in_op_args": 87,
+        "cell_defs": 14,
+        "bundle_defs": 60,
+        "reachable_defs": 60,
+        "expanded_instances": 192,
+        "nesting_depth": 4,
+        "edges": 1452,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2904
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 200,
+        "tasks_solved": 4,
+        "test_inputs": 222,
+        "test_inputs_correct": 4,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 3,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 6.930973099137191,
+        "inference_cpu_seconds": 6.930868276000002,
+        "inference_cpu_seconds_per_task": 0.03465434138000001,
+        "tasks_per_second": 28.855976951475572,
+        "consistency_audit_wall_seconds": 20.86671380615735,
+        "consistency_audit_cpu_seconds": 20.864231376000074,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "8b28cd80",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "cbded52d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "705a3229",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7d18a6fb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "0d3d703e",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2bcee788",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3428a4f5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "b527c5c6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "67e8384a",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b9b7f026",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "2281f1f4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "42a15761",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "320afe60",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "363442ee",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "48634b99",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8be4b64",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9a4bb226",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6d75e8bb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5ad8a7c0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "256b0a75",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "cf98881b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "eb281b96",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "543a7ed5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f9d67f8b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "56dc2b01",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ce4f8723",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "25d487eb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "dae9d2b5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "c920a713",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "48f8583b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "36d67576",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1190bc91",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e7639916",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d10ecb37",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "963e52fc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "54dc2872",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8fff9e47",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "007bbfb7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d5d6de2d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "e133d23d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d631b094",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b91ae062",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b1986d4b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9b2a60aa",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8f52ecc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "a1aa0c1e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "484b58aa",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9f8de559",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8ff0b80",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "80214e03",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "fc754716",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "996ec1f3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "639f5a19",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e40b9e2f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9f5f939b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "63613498",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8d510a79",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6430c8c4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "834ec97d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e681b708",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "97239e3d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e872b94a",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "212895b5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "cd3c21df",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d23f8c26",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "af726779",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "19bb5feb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9772c176",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "fcb5c309",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f18ec8cc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "60a26a3e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "60b61512",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "dc1df850",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "73182012",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e345f17b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "45737921",
+            "solved": true,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "ac0c2ac3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d2acf2cb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3d31c5b3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bd4472b8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5117e062",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "551d5bf1",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "0a1d4ef5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ac0a08a4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "dc433765",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "dc46ea44",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6d58a25d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a8610ef7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e21d9049",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "32e9702f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "694f12f3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "44d8ac46",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bb43febb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b1fc8b8e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "1c0d0a4b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "178fcbfb",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "516b51b7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ea32f347",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e7dd8335",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "868de0fa",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8ba14f53",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "070dd51e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e21a174a",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "1f0c79e5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "14b8e18c",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d90796e8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "2546ccf6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f8cc533f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "ce039d91",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "15113be4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "981add89",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "880c1354",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e45ef808",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "42f83767",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "fd02da9e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "baf41dbf",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a834deea",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e729b7be",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e1d2900e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1fad071e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "13f06aa5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "696d4842",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "84db8fc4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ea4a07e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "4c5c2cf0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d43fd935",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "310f3251",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e4075551",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d492a647",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "31aa019c",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4ff4c9da",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4e45f183",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3f7978a0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1a07d186",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "760b3cac",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "11dc524f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5587a8d0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f341894c",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ac2e8ecf",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "82819916",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bcb3040b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ded97339",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e74e1818",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "17829a00",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ad7e01d0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "aaef0977",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7c8af763",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "c074846d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "e048c9ed",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "878187ab",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d4c90558",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e9614598",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "4938f0c2",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4e469f39",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "bf699163",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "f0f8a26d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "12997ef3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "508bd3b6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5b526a93",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8efcae92",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "88207623",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "54d9e175",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e99362f0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7d7772cc",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ad38a9d0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3ac3eb23",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "d5c634a2",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "2f767503",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "358ba94e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "538b439f",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "103eff5b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b457fec5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "292dd178",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ecd11f4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "afe3afe9",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "e509e548",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b1948b0a",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0,
+              1
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "dc2e9a9d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "642248e4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "29700607",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "825aa9e9",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "55059096",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8be77c9e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5c0a986e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a1570a43",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9565186b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "396d80d7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "58743b76",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "025d127b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8618d23e",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "a61f2674",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "eb5a1d5d",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ad5bdfd",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "00dbd492",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6ffe8f07",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "1990f7a8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "845d6e51",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "ff2825db",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false,
+              false
+            ]
+          },
+          {
+            "task_id": "b7256dcd",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "b15fca0b",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "gains": [
+    "2bcee788"
+  ],
+  "losses": [],
+  "wall_seconds": 51.709739206999075,
+  "peak_rss_bytes": 92827648,
+  "ledger_verified": 4
+}

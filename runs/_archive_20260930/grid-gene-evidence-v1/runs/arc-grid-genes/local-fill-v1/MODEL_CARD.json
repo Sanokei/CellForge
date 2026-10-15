@@ -1,0 +1,43 @@
+{
+  "hash": "e3cb296c45f3849e7c2676a04eb1f1bf15a34e9f4b719198f3db2fb37a578181",
+  "stats": {
+    "unique_param_storage": 11,
+    "expanded_param_uses": 22,
+    "nonzero_slots": 9,
+    "constant_slots_in_op_args": 3,
+    "cell_defs": 1,
+    "bundle_defs": 5,
+    "reachable_defs": 6,
+    "expanded_instances": 8,
+    "nesting_depth": 4,
+    "edges": 52,
+    "dispatch_nodes": 1,
+    "param_bytes_float64": 88
+  },
+  "profile": {
+    "profile": "ladder-micro/1",
+    "dispatches": 1,
+    "experts": [
+      "fill_expert0",
+      "fill_expert1"
+    ]
+  },
+  "builder_sha256": "0500195494785d5f9c0677d2164985b6542cee9298a42a1ac988b46e09cbf5ad",
+  "benchmark_tasks_read": 0,
+  "curriculum_scored": false,
+  "gene_contract": {
+    "cluster": "local_fill.gene",
+    "inputs": [
+      "input",
+      "input_mask",
+      "input_height",
+      "input_width"
+    ],
+    "outputs": [
+      "colors",
+      "height",
+      "width"
+    ],
+    "rule": "one simultaneous orthogonal dilation into zero; highest neighbor color wins; original nonzero persists"
+  }
+}

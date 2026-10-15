@@ -1,0 +1,212 @@
+{
+  "cell_ids": [
+    "93b4abc6fdf28622bd246ac63ce76a52f4392d0f2bad069298b86d55b94db13f",
+    "fd7e976867610e79e69d5b9b167d010b60961830f01ab3043bce2c3b80336f11"
+  ],
+  "cells": [
+    {
+      "id": "93b4abc6fdf28622bd246ac63ce76a52f4392d0f2bad069298b86d55b94db13f",
+      "structure": "parity_row_stencil_v1",
+      "params": {
+        "stencil.W": [
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "foreground.W": [
+          [
+            0.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "activation.b": [
+          -0.5
+        ]
+      },
+      "parents": [],
+      "provenance": {
+        "source": "weights-real-learning-v2/verified-parent",
+        "joint_hash": "072d019c643ee12016a5f9c82f6c151e049f01679bc80484f4956a961018806d",
+        "expert_index": "4",
+        "founder_status": "extracted historical LLM-authored cell, not new author call"
+      },
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": false,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": true,
+            "1fad071e": false,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": 0.0
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "state": "live"
+    },
+    {
+      "id": "fd7e976867610e79e69d5b9b167d010b60961830f01ab3043bce2c3b80336f11",
+      "structure": "component_count_unary_v1",
+      "params": {
+        "target.W": [
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "component.W": [
+          [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "component.b": [
+          -3.5
+        ],
+        "readout.W": [
+          [
+            1.0
+          ]
+        ],
+        "readout.b": [
+          [
+            -0.5,
+            -1.5,
+            -2.5,
+            -3.5,
+            -4.5
+          ]
+        ],
+        "palette": [
+          0.0,
+          1.0
+        ]
+      },
+      "parents": [],
+      "provenance": {
+        "source": "weights-real-learning-v2/verified-parent",
+        "joint_hash": "072d019c643ee12016a5f9c82f6c151e049f01679bc80484f4956a961018806d",
+        "expert_index": "5",
+        "founder_status": "extracted historical LLM-authored cell, not new author call"
+      },
+      "scores": {
+        "fresh": {
+          "partition": "development",
+          "manifest": "c6031277339eef221dfe454b9810ee3ebe6c9311c2e4daa2be3ac4090897b89f",
+          "source": "public-training-real",
+          "outcomes": {
+            "4b6b68e5": false,
+            "a934301b": false,
+            "c7d4e6ad": false,
+            "6cf79266": false,
+            "7d7772cc": false,
+            "2013d3e2": false,
+            "f5aa3634": false,
+            "25c199f5": false
+          },
+          "false_positive_given_consistency": null
+        },
+        "archive": {
+          "partition": "development",
+          "manifest": "dd79ae411ba1c27454254f06688f3782e326b56b3ebd380681ea13939830e80a",
+          "source": "public-training-real",
+          "outcomes": {
+            "3f23242b": false,
+            "3ac3eb23": false,
+            "1fad071e": true,
+            "9bebae7a": false
+          },
+          "false_positive_given_consistency": 0.0
+        },
+        "anchor": {
+          "partition": "development",
+          "manifest": "696a6be2c148b8a2da3182368aacbc93bc4c97fabb2aa683d34e941aa85ae691",
+          "source": "public-training-real",
+          "outcomes": {
+            "8b28cd80": false,
+            "cbded52d": false,
+            "705a3229": false,
+            "7d18a6fb": false
+          },
+          "false_positive_given_consistency": null
+        }
+      },
+      "state": "live"
+    }
+  ],
+  "router": {
+    "route.W": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "route.b": [
+      0.0,
+      0.0
+    ]
+  },
+  "router_cell_order": [
+    "93b4abc6fdf28622bd246ac63ce76a52f4392d0f2bad069298b86d55b94db13f",
+    "fd7e976867610e79e69d5b9b167d010b60961830f01ab3043bce2c3b80336f11"
+  ]
+}

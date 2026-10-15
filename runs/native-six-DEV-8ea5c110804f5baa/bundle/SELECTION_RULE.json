@@ -1,0 +1,22 @@
+{
+  "aliases": "casefolded bare IDs; canonical input/schema hash invariant to function order and standalone function-name renaming (names mechanically replaced by schema-rank tokens)",
+  "count": 6,
+  "eligibility": [
+    "one user turn",
+    "2-4 supplied functions",
+    "at most six scalar parameters per function",
+    "single-call multiple category",
+    "request <=8192 characters"
+  ],
+  "exposure_exclusions": "all historical DEV function names/families plus native multiple_0 triangle/circle families and bare-ID/input-schema duplicate aliases",
+  "minimum_family_components": 3,
+  "predictions_performed": false,
+  "revision_reason": "Initial additional two-per-component constraint caused HOLD despite29 records/27 components; removed only that extra constraint before any labels or predictions.",
+  "schema": "native-input-only-selection/2",
+  "seed": "native-slots3-input-only-20261012",
+  "selection": "Hash-rank eligible records; take the lowest-ranked record from each of the first three eligible unexposed family components, then the lowest-ranked remaining records globally until six. All decisions use inputs only. At least three components required; no outcomes, baseline or gold consulted.",
+  "source": "/srv/cellforge-private/bfcl-source/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multiple.json",
+  "source_commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "source_sha256": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+  "unsupported_after_freeze": "score errors/abstentions as zero and retain IDs; never drop or replace"
+}

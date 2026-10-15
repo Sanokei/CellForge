@@ -1,0 +1,816 @@
+{
+  "partition": "development",
+  "evidence": "train-pairs",
+  "counterexamples": [
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          6,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          7,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          9,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          1,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          5,
+          6,
+          5
+        ],
+        [
+          2,
+          7,
+          2
+        ],
+        [
+          6,
+          9,
+          9
+        ],
+        [
+          6,
+          1,
+          5
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            2,
+            7,
+            2,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            9,
+            9,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            1,
+            5,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ]
+        ],
+        [
+          [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            5,
+            6,
+            5,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            2,
+            7,
+            2,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            9,
+            9,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            1,
+            5,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 8,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-10",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          3
+        ],
+        [
+          0,
+          0,
+          5,
+          7
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            5,
+            7,
+            3,
+            3
+          ],
+          [
+            1,
+            2,
+            3,
+            3
+          ],
+          [
+            4,
+            4,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 9,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 10,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 10,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 4,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-11",
+      "family": null
+    },
+    {
+      "input": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          5,
+          8
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          4,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          7,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          7,
+          7,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          5,
+          8
+        ],
+        [
+          0,
+          0,
+          7,
+          7,
+          7,
+          5,
+          5,
+          8
+        ]
+      ],
+      "predicted": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            5,
+            8
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            0,
+            5,
+            8
+          ]
+        ]
+      ],
+      "cells_fired": [
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "demonstration",
+          "calls": {
+            "dimension": 8,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        },
+        {
+          "phase": "query",
+          "calls": {
+            "dimension": 8,
+            "joint_mirror_marker": 1,
+            "joint_mirror_color": 1,
+            "bank_adjacency_recolor.source": 1,
+            "bank_adjacency_recolor.marker": 1,
+            "object_bank_largest4.color": 2,
+            "joint_tile_dimension": 4,
+            "joint_numeric_adjacency_recolor.source": 1,
+            "joint_numeric_adjacency_recolor.marker": 1,
+            "joint_numeric_neighbor_gate": 1,
+            "scaling_bank2_dimension": 2
+          }
+        }
+      ],
+      "task_id": "selection-14",
+      "family": null
+    }
+  ],
+  "graph_hash": "0f4f30052784983cac9b2c01bf124d9b69562b105df2e824d1ac01d226dd6de4",
+  "diagnostic_predictor_calls": 39,
+  "trace_scope": "reference cell-definition calls per adaptation/query step; not compiled physical-work or node-path trace"
+}

@@ -1,0 +1,12 @@
+[
+  {"task_id":"selcopy-n2","params":{"noise":[0,0,1,0,0,0,0,0,0,0]},"rationale":"Removing 2 from [5,0,1,3,2,1] yields [5,0,1,3,1]; all demonstrations preserve the other tokens in order."},
+  {"task_id":"selcopy-n6","params":{"noise":[0,0,0,0,0,0,1,0,0,0]},"rationale":"Removing every 6 from [3,0,4,6,6,6,0] yields [3,0,4,0], consistent with all demonstrations."},
+  {"task_id":"selcopy-n0","params":{"noise":[1,0,0,0,0,0,0,0,0,0]},"rationale":"Removing every 0 from [3,0,0,0,0,5,2] yields [3,5,2], consistent with all demonstrations."},
+  {"task_id":"selcopy-n1","params":{"noise":[0,1,0,0,0,0,0,0,0,0]},"rationale":"Removing every 1 from [1,5,5,1,1,1] yields [5,5], consistent with all demonstrations."},
+  {"task_id":"selcopy-n5","params":{"noise":[0,0,0,0,0,1,0,0,0,0]},"rationale":"Removing every 5 from [5,0,3,0,2,5] yields [0,3,0,2], consistent with all demonstrations."},
+  {"task_id":"selcopy-n4","params":{"noise":[0,0,0,0,1,0,0,0,0,0]},"rationale":"Removing every 4 from [4,5,0,4,5,2,3,4] yields [5,0,5,2,3], consistent with all demonstrations."},
+  {"task_id":"selcopy-n3","params":{"noise":[0,0,0,1,0,0,0,0,0,0]},"rationale":"Removing every 3 from [5,3,4,3,4,3,3,5,3] yields [5,4,4,5], consistent with all demonstrations."},
+  {"task_id":"selcopy-n9","params":{"noise":[0,0,0,0,0,0,0,0,0,1]},"rationale":"Removing every 9 from [1,4,9,3,1,0,4,9] yields [1,4,3,1,0,4], consistent with all demonstrations."},
+  {"task_id":"selcopy-n8","params":{"noise":[0,0,0,0,0,0,0,0,1,0]},"rationale":"Removing every 8 from [8,8,3,8,3,8,8,3,3] yields [3,3,3,3], consistent with all demonstrations."},
+  {"task_id":"selcopy-n7","params":{"noise":[0,0,0,0,0,0,0,1,0,0]},"rationale":"Removing every 7 from [7,4,1,7,7,2] yields [4,1,2], consistent with all demonstrations."}
+]

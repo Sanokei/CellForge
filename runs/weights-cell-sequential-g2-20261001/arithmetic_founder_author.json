@@ -1,0 +1,30 @@
+{
+ "model":"gpt-6.1-sol","actor":"pop1_router_author",
+ "structure":"full_adder_numeric_v1",
+ "scope":"fresh_non_grid_founder",
+ "rationale":"Fresh literal numeric founder for basic decimal full addition. S=a+b+carry. The positive-threshold carry unit activates when S exceeds9.5, which exactly separates integer sums0..9 from10..19. Readout computes digit=S-10*C and output carry=C. All12 coefficients are explicitly authored without gradients, fitting, a deliberately damaged founder, task lookup, or held-out access. This implements basic arithmetic under a supplied typed contract; it is not evidence of learned general reasoning or deep cognition.",
+ "params":{
+  "sum.W":[[1,1,1]],
+  "sum.b":[0],
+  "carry.W":[[1]],
+  "carry.b":[-9.5],
+  "readout.W":[[1,-10],[0,1]],
+  "readout.b":[0,0]
+ },
+ "newly_authored_names":["sum.W","sum.b","carry.W","carry.b","readout.W","readout.b"],
+ "inherited_names":[],
+ "scalar_positions":12,
+ "typed_contract":{
+  "input":"{a:int0..9,b:int0..9,carry:int0..1}; reject out-of-domain or noninteger inputs",
+  "runtime":"S=sum.W@[a,b,carry]+sum.b. C=1 iff carry.W*S+carry.b>0, otherwise0. Compute [digit,carry]=readout.W@[S,C]+readout.b. Return typed integer fields without clipping; authored values yield integral outputs in the specified domain.",
+  "output":"{digit:int0..9,carry:int0..1}",
+  "metric":"Exact equality of both output fields; no tolerance or partial-credit substitution for integer correctness."
+ },
+ "coefficient_range_note":"The requested full-adder contract uses carry threshold-9.5 and digit carry correction-10. These are explicit necessary choices in this direct S=a+b+carry representation, not clipped to the earlier grid-cell[-9,9] range. If that grid-specific cap is applied to this new arithmetic type, this founder requires an explicit type-specific bound allowing at least magnitude10; do not silently change these coefficients.",
+ "provenance":{
+  "prompt":"Author fresh literal full_adder_numeric_v1 with12 specified coefficients for decimal addition; examples(2,3,0)->(5,0),(9,4,0)->(3,1),(8,8,1)->(7,1),(0,0,0)->(0,0); no gradients, damaged founder, reporting or task-heldout access.",
+  "sources":"Supplied typed runtime and four development examples only",
+  "author_evaluations":0,"paid_api_calls":0,"heldout_access":false
+ },
+ "assembly_decision":"Admit as a reviewable basic-arithmetic founder candidate under the precise typed contract and declared coefficient bounds. Preserve provenance and evaluate through the authorized arithmetic protocol; do not infer general reasoning or force promotion."
+}

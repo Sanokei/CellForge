@@ -1,0 +1,5 @@
+# Frozen new-gene fixture/resource receipt
+
+Candidateb96a430e12254af09b2da4ec4b81df050c9301520b55d291c3f82e2d8bc01a2e. Reference/compiled exact parity, finite outputs and typed state/dimension/color ports passed at1x1and30x30 for demo/query phases. Same graph hash and current source hash verified locally; external resource exit0. Frozen policy limits:1024stored parameters,3GiB address space,4GiB device RSS,60s fixture wall; nice15,threads1. Measured wall0.341s,peak RSS83288064bytes. Source archivebc76277877bddb7974d94174c799f599d6f974f4baaee90938073605a0e93510.
+
+Policy declared before this fixture run, after candidate authoring. Not a predeclared repair-effect experiment, not arbitrary-grid correctness or query throughput. Candidate still unadmitted pending fresh/archive/real-anchor evidence; do not alter prior rejection receipts. These graph-bound fixture/cap receipts can be referenced in a subsequent declared admission protocol. No benchmark labels, gradients, evaluation/audit/final data or paid calls.

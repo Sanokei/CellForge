@@ -1,0 +1,54 @@
+{
+  "hash": "6c7d700db1408e7889a7638c5763efd5d36bf415f667ba137cf4995de71f9097",
+  "stats": {
+    "unique_param_storage": 195,
+    "expanded_param_uses": 3102,
+    "nonzero_slots": 70,
+    "constant_slots_in_op_args": 43,
+    "cell_defs": 5,
+    "bundle_defs": 37,
+    "reachable_defs": 39,
+    "expanded_instances": 125,
+    "nesting_depth": 4,
+    "edges": 914,
+    "dispatch_nodes": 2,
+    "param_bytes_float64": 1560
+  },
+  "slot9_node_count": 57,
+  "expanded_ir_nodes_all_dispatch_branches": 1650,
+  "base_parameter_storage": 195,
+  "profile": {
+    "profile": "ladder-micro/1",
+    "dispatches": 2,
+    "experts": [
+      "expert_0",
+      "expert_1",
+      "expert_2",
+      "expert_3",
+      "expert_4",
+      "expert_5",
+      "expert_6",
+      "expert_7",
+      "expert_8",
+      "expert_9"
+    ]
+  },
+  "serial_gene": {
+    "protocol": "ordered-flat-serial-gene/1",
+    "slot": 9,
+    "alleles": [
+      "bank_adjacency_recolor.gene",
+      "bank_local_fill.gene"
+    ],
+    "parent_hash": "5d0d8ce9787ab85b3e9016835288af756d29d95644e160b4f1968d70992a47c4",
+    "source_definition_sha256": [
+      "7c0269273a700c96a678fc1f227fb12877096f6cf9a67f9706d778d262b8a0e2",
+      "d1a1974f06ae6ab3fc746c0acdc1e0620e69dceb2861d93710cd6677ada393ac"
+    ],
+    "builder_sha256": "ae004a4668fb2c9bbaa773be2c8448f9305d7091b34769db0a5612952d2d49b0",
+    "mask_policy": "graph reverse-cumsum output dimension onehots; sanitize intermediate and final colors",
+    "scope": "two ordered authored stages; no efficacy claim or host solver"
+  },
+  "benchmark_tasks_read": 0,
+  "efficacy_measured": false
+}

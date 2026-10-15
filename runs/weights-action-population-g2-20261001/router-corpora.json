@@ -1,0 +1,480 @@
+{
+  "development": [
+    {
+      "id": "dev-0",
+      "request": "find TODO comments",
+      "expected": "grep_todo"
+    },
+    {
+      "id": "dev-1",
+      "request": "which files import something",
+      "expected": "grep_import"
+    },
+    {
+      "id": "dev-2",
+      "request": "search where def is mentioned",
+      "expected": "grep_def"
+    },
+    {
+      "id": "dev-3",
+      "request": "list python files",
+      "expected": "glob_py"
+    },
+    {
+      "id": "dev-4",
+      "request": "how many lines are in notes.txt",
+      "expected": "script_count_lines"
+    },
+    {
+      "id": "dev-5",
+      "request": "show contents of data.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "dev-6",
+      "request": "print the file notes.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "dev-7",
+      "request": "what does b.py say",
+      "expected": "read_file"
+    },
+    {
+      "id": "dev-8",
+      "request": "print a greeting",
+      "expected": "none"
+    },
+    {
+      "id": "dev-9",
+      "request": "say hello",
+      "expected": "none"
+    },
+    {
+      "id": "dev-10",
+      "request": "fix the build",
+      "expected": "none"
+    },
+    {
+      "id": "dev-11",
+      "request": "delete notes.txt",
+      "expected": "none"
+    },
+    {
+      "id": "dev-12",
+      "request": "display notes.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "dev-13",
+      "request": "print TODO matches",
+      "expected": "grep_todo"
+    },
+    {
+      "id": "dev-14",
+      "request": "display all python files",
+      "expected": "glob_py"
+    },
+    {
+      "id": "dev-15",
+      "request": "print how many lines a.py contains",
+      "expected": "script_count_lines"
+    },
+    {
+      "id": "development-action-0",
+      "request": "write a file result.txt with hello",
+      "expected": "write_file"
+    },
+    {
+      "id": "development-action-1",
+      "request": "create file output.txt with the answer",
+      "expected": "write_file"
+    },
+    {
+      "id": "development-action-2",
+      "request": "edit notes.txt replace milk with tea",
+      "expected": "edit_in_place"
+    },
+    {
+      "id": "development-action-3",
+      "request": "replace milk with tea in notes.txt",
+      "expected": "edit_in_place"
+    },
+    {
+      "id": "development-action-4",
+      "request": "append a note to notes.txt",
+      "expected": "none"
+    },
+    {
+      "id": "development-action-5",
+      "request": "write a poem",
+      "expected": "none"
+    },
+    {
+      "id": "development-action-6",
+      "request": "edit my opinion",
+      "expected": "none"
+    },
+    {
+      "id": "development-action-7",
+      "request": "replace the battery",
+      "expected": "none"
+    }
+  ],
+  "fresh": [
+    {
+      "id": "fresh-0",
+      "request": "print b.py",
+      "expected": "read_file"
+    },
+    {
+      "id": "fresh-1",
+      "request": "what does notes.txt say",
+      "expected": "read_file"
+    },
+    {
+      "id": "fresh-2",
+      "request": "display data.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "fresh-3",
+      "request": "print the file a.py",
+      "expected": "read_file"
+    },
+    {
+      "id": "fresh-4",
+      "request": "please say what data.txt contains",
+      "expected": "read_file"
+    },
+    {
+      "id": "fresh-5",
+      "request": "display the file b.py",
+      "expected": "read_file"
+    },
+    {
+      "id": "fresh-6",
+      "request": "find TODO notes",
+      "expected": "grep_todo"
+    },
+    {
+      "id": "fresh-7",
+      "request": "search import statements",
+      "expected": "grep_import"
+    },
+    {
+      "id": "fresh-8",
+      "request": "find def declarations",
+      "expected": "grep_def"
+    },
+    {
+      "id": "fresh-9",
+      "request": "list all python files please",
+      "expected": "glob_py"
+    },
+    {
+      "id": "fresh-10",
+      "request": "count lines in data.txt",
+      "expected": "script_count_lines"
+    },
+    {
+      "id": "fresh-11",
+      "request": "open notes.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "fresh-12",
+      "request": "print hello",
+      "expected": "none"
+    },
+    {
+      "id": "fresh-13",
+      "request": "say good morning",
+      "expected": "none"
+    },
+    {
+      "id": "fresh-14",
+      "request": "delete data.txt",
+      "expected": "none"
+    },
+    {
+      "id": "fresh-15",
+      "request": "fix b.py",
+      "expected": "none"
+    },
+    {
+      "id": "fresh-16",
+      "request": "search def in a.py",
+      "expected": "grep_def"
+    },
+    {
+      "id": "fresh-17",
+      "request": "show import statements",
+      "expected": "grep_import"
+    },
+    {
+      "id": "fresh-18",
+      "request": "print TODO entries in a.py",
+      "expected": "grep_todo"
+    },
+    {
+      "id": "fresh-19",
+      "request": "print line count for notes.txt",
+      "expected": "script_count_lines"
+    },
+    {
+      "id": "fresh-action-0",
+      "request": "write file trial.txt with greetings",
+      "expected": "write_file"
+    },
+    {
+      "id": "fresh-action-1",
+      "request": "create new log.txt with a note",
+      "expected": "write_file"
+    },
+    {
+      "id": "fresh-action-2",
+      "request": "edit a.py replacing pass with return",
+      "expected": "edit_in_place"
+    },
+    {
+      "id": "fresh-action-3",
+      "request": "replace code with text in notes.txt",
+      "expected": "edit_in_place"
+    },
+    {
+      "id": "fresh-action-4",
+      "request": "write a story",
+      "expected": "none"
+    },
+    {
+      "id": "fresh-action-5",
+      "request": "create a greeting",
+      "expected": "none"
+    },
+    {
+      "id": "fresh-action-6",
+      "request": "edit the plan",
+      "expected": "none"
+    },
+    {
+      "id": "fresh-action-7",
+      "request": "replace a tire",
+      "expected": "none"
+    }
+  ],
+  "anchor": [
+    {
+      "id": "anchor-0",
+      "request": "find TODO comments",
+      "expected": "grep_todo"
+    },
+    {
+      "id": "anchor-1",
+      "request": "which files import something",
+      "expected": "grep_import"
+    },
+    {
+      "id": "anchor-2",
+      "request": "search where def is mentioned",
+      "expected": "grep_def"
+    },
+    {
+      "id": "anchor-3",
+      "request": "list python files",
+      "expected": "glob_py"
+    },
+    {
+      "id": "anchor-4",
+      "request": "how many lines are in notes.txt",
+      "expected": "script_count_lines"
+    },
+    {
+      "id": "anchor-5",
+      "request": "show contents of data.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "anchor-6",
+      "request": "fix the build",
+      "expected": "none"
+    },
+    {
+      "id": "anchor-7",
+      "request": "say hello",
+      "expected": "none"
+    },
+    {
+      "id": "anchor-8",
+      "request": "print a greeting",
+      "expected": "none"
+    },
+    {
+      "id": "anchor-9",
+      "request": "delete notes.txt",
+      "expected": "none"
+    },
+    {
+      "id": "anchor-action-0",
+      "request": "write a poem",
+      "expected": "none"
+    },
+    {
+      "id": "anchor-action-1",
+      "request": "create a drawing",
+      "expected": "none"
+    },
+    {
+      "id": "anchor-action-2",
+      "request": "edit my opinion",
+      "expected": "none"
+    },
+    {
+      "id": "anchor-action-3",
+      "request": "replace the battery",
+      "expected": "none"
+    }
+  ],
+  "report": [
+    {
+      "id": "report-0",
+      "request": "please print notes.txt for me",
+      "expected": "read_file"
+    },
+    {
+      "id": "report-1",
+      "request": "tell me what a.py says",
+      "expected": "read_file"
+    },
+    {
+      "id": "report-2",
+      "request": "display b.py now",
+      "expected": "read_file"
+    },
+    {
+      "id": "report-3",
+      "request": "can you print data.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "report-4",
+      "request": "say what is inside notes.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "report-5",
+      "request": "display a.py contents",
+      "expected": "read_file"
+    },
+    {
+      "id": "report-6",
+      "request": "search TODO comments in b.py",
+      "expected": "grep_todo"
+    },
+    {
+      "id": "report-7",
+      "request": "find import lines in a.py",
+      "expected": "grep_import"
+    },
+    {
+      "id": "report-8",
+      "request": "show def declarations",
+      "expected": "grep_def"
+    },
+    {
+      "id": "report-9",
+      "request": "please list python source files",
+      "expected": "glob_py"
+    },
+    {
+      "id": "report-10",
+      "request": "how many lines in b.py",
+      "expected": "script_count_lines"
+    },
+    {
+      "id": "report-11",
+      "request": "read data.txt",
+      "expected": "read_file"
+    },
+    {
+      "id": "report-12",
+      "request": "print a welcome message",
+      "expected": "none"
+    },
+    {
+      "id": "report-13",
+      "request": "say farewell",
+      "expected": "none"
+    },
+    {
+      "id": "report-14",
+      "request": "erase notes.txt",
+      "expected": "none"
+    },
+    {
+      "id": "report-15",
+      "request": "repair a.py",
+      "expected": "none"
+    },
+    {
+      "id": "report-16",
+      "request": "open TODO entries",
+      "expected": "grep_todo"
+    },
+    {
+      "id": "report-17",
+      "request": "display python files",
+      "expected": "glob_py"
+    },
+    {
+      "id": "report-18",
+      "request": "what does b.py say about import",
+      "expected": "grep_import"
+    },
+    {
+      "id": "report-19",
+      "request": "display the count of lines in data.txt",
+      "expected": "script_count_lines"
+    },
+    {
+      "id": "report-action-0",
+      "request": "please write the file memo.txt with hello",
+      "expected": "write_file"
+    },
+    {
+      "id": "report-action-1",
+      "request": "create summary.txt containing results",
+      "expected": "write_file"
+    },
+    {
+      "id": "report-action-2",
+      "request": "edit b.py replace return with pass",
+      "expected": "edit_in_place"
+    },
+    {
+      "id": "report-action-3",
+      "request": "replace TODO with DONE in a.py",
+      "expected": "edit_in_place"
+    },
+    {
+      "id": "report-action-4",
+      "request": "write a song",
+      "expected": "none"
+    },
+    {
+      "id": "report-action-5",
+      "request": "create a sculpture",
+      "expected": "none"
+    },
+    {
+      "id": "report-action-6",
+      "request": "edit the presentation",
+      "expected": "none"
+    },
+    {
+      "id": "report-action-7",
+      "request": "replace the window",
+      "expected": "none"
+    }
+  ]
+}

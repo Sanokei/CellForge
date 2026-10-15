@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "Best available directional context, but no exact solution exists in this template. In demonstration 1, pixels (4,1) and (4,2), indexed from zero, have identical nearest-colour keys but require different outputs. The other key kinds also cannot distinguish all required remote placements."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Use colour and enclosed-hole count to distinguish the recoloured 8 objects while independently learning removal of the 1 objects."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "rationale": "Eight-neighbour counts improve corridor recognition, but exact reproduction is impossible. Demonstration 1 pixel (6,4) and demonstration 2 pixel (8,7) have identical neighbourhoods under every available key kind, yet require outputs 8 and 0 respectively."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "Enable all nonzero source colours for the required crosses. No exact solution exists: source-colour painting cannot produce intersection colour 2 when the input contains no 2, while fixed painting would incorrectly make every ray the same colour."
+  },
+  {
+    "task_id": "150deff5",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use full 3x3 patterns to recolour 5 pixels belonging to a solid 2x2 block as 8 and the remaining 5 pixels as 2."
+  },
+  {
+    "task_id": "8fbca751",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0, 0, 0]
+    },
+    "rationale": "Combined row and column sets capture the single-object demonstration, but no exact solution exists for all demonstrations. In demonstration 1, pixels (0,5) and (0,8) share this key but require 2 and 0. The available alternatives likewise cannot encode separate component bounding boxes."
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 1, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses the true background and directional nearest markers. The rule rotates each 6's displacement around its aligned 1 into a 7's displacement; none of the keys encodes the required distances."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt distinguishes colour and hole count, including the erased blue marker. The large object's target colour depends on the separate blue marker's shape, which no available object property records."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt pools rotated corridor neighbourhoods through eight-neighbour counts. Correct filling requires following the corridor and its blocking marker; local keys cannot distinguish identical neighbourhoods on opposite sides of that marker."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt enables crosses for every nonzero source colour, fixing omitted colour 8. Crossings must become 2 while individual rays retain their source colours; the template has no intersection-dependent paint rule."
+  },
+  {
+    "task_id": "150deff5",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses local shape instead of absolute modulo coordinates. In the first demonstration, pixels (1,2) and (1,3), indexed from zero, have identical 3x3 patterns but require 8 and 2. The other keys also collapse required distinctions."
+  },
+  {
+    "task_id": "8fbca751",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt learns local boundary patterns. The rule fills each object's bounding rectangle; available keys lack component identity and component extrema, so they cannot consistently distinguish rectangle interiors from exterior zeros."
+  },
+  {
+    "task_id": "d47aa2ff",
+    "params": {
+      "axis": [1, 0],
+      "op": [0, 1, 0, 0, 0],
+      "outc": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "sep": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt includes both halves' occupied positions. The required output preserves matching colours and assigns distinct colours to first-only and second-only pixels; every supported operation emits only one nonzero colour."
+  },
+  {
+    "task_id": "05f2a901",
+    "params": {
+      "keep": [0.8],
+      "sim": [
+        [9, -9, -9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, 9, -9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, 9, -9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, 9, -9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, 9, -9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, 9, -9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, 9, -9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, 9, -9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, -9, 9, -9],
+        [-9, -9, -9, -9, -9, -9, -9, -9, -9, 9]
+      ],
+      "temp": [9]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt lowers retention while preserving sharp colour associations. Moving the red object toward the cyan square requires different outputs for different input-zero pixels; this template outputs the same colour for every pixel of a given input colour."
+  },
+  {
+    "task_id": "b7fb29bc",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 9]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses eight-connected enclosure. The required interior contains both 4 and 2 in a marker-dependent pattern, whereas this template fills every enclosed background pixel with one learned colour."
+  },
+  {
+    "task_id": "84db8fc4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "cannot_express": true,
+    "rationale": "Attempt uses local surroundings to improve on the border flag. Zero components reaching the border become 2 and enclosed components become 5; no available key encodes arbitrary background connectivity to the border."
+  }
+]

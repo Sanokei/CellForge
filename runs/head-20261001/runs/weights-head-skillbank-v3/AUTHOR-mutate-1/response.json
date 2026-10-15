@@ -1,0 +1,32 @@
+[
+  {
+    "task_id": "1a07d186",
+    "params": {"bg": [8,0,0,0,0,0,0,0,0,0], "prop": [8,0,0,0,0,0,0,0]},
+    "rationale": "No satisfying tensors exist: object_table can only recolour existing object pixels, but the expected output moves pixels into previously background locations."
+  },
+  {
+    "task_id": "1e81d6f9",
+    "params": {"axis": [0,8,0], "mask": [0,0,0,0,8,0,0,0,0,0], "maxp": [0,0,0,0,0,0,0,8]},
+    "rationale": "No satisfying tensors exist: seq_continue changes only one mask colour, whereas the demonstrations require changing colours 4, 2, and 3."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {"bg": [8,0,0,0,0,0,0,0,0,0], "prop": [0,0,0,8,0,0,0,0]},
+    "rationale": "Under the stated semantics, bounding-box width already reproduces every demonstration: widths 10, 7, and 9 map to colours 7, 3, and 2, respectively; width 3 maps to background. The supplied counterexample prediction contradicts those semantics."
+  },
+  {
+    "task_id": "11dc524f",
+    "params": {"axis": [0,8,0], "mask": [0,0,8,0,0,0,0,0,0,0], "maxp": [0,0,0,0,0,0,0,8]},
+    "rationale": "No satisfying tensors exist: the expected output changes existing pixels of colours 2, 5, and 7, but seq_continue can change only one mask colour."
+  },
+  {
+    "task_id": "63613498",
+    "params": {"axis": [0,8,0], "mask": [0,0,0,0,0,0,0,0,0,8], "maxp": [0,0,0,0,0,0,0,8]},
+    "rationale": "No satisfying tensors exist: the demonstrations require recolouring 9, 6, and 1, while seq_continue permits changing only one mask colour."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {"dirs": [1,0,1,0,1,0,1,0], "paint": [0,0,0,0,0,0,0,0,0,0], "src": [0,1,1,1,1,1,1,1,1,1], "stop": [1,0,0]},
+    "rationale": "No satisfying tensors exist: intersections require colour 2 while other ray pixels retain their source colours. The template supports only source-colour painting or one fixed paint colour, with no intersection-specific colour."
+  }
+]

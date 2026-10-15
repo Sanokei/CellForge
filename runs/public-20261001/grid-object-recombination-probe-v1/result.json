@@ -1,0 +1,636 @@
+{
+  "policy": {
+    "protocol": "authored-object-slot-recombination-probe/1",
+    "tasks": 10,
+    "family_counts": {
+      "object_recolor": 5,
+      "conditional_adjacency": 5
+    },
+    "task_fingerprints": [
+      "d299d2a7b42360402e8229bcf50abb11ece7388c8a9f17c5691e1de31e2d991c",
+      "afc065136a93cb3075cc817311b94f2e9fd0351591f3f0ca361ff59fb705a87d",
+      "c5739e51589f226d14bda52de071eb4349dd6fcdaf94c01487bb8a14733f330d",
+      "3e1f1df6d69e390b41a51dfee54bd94e43944b17e92c12d88730296d3a1bd7c2",
+      "9d5a9bffb0d68fcc8573de4334451af884bbc108a5253851ed44c078885eba29",
+      "7554080d9bf0ac85a9adcc69bdff43f838b35d6facc73014f3609582ed3f522e",
+      "9e0893ff7e5795417733a3c5b9cbb96e375b6308d116c558d0b41034c1d36f49",
+      "2471d1af40f6e5946e4031648ef2a8a7f1fcd19a32679f619f5c271e9a6a52b5",
+      "84c831ab41b763eaa8c7a6ace24b43aa6e9955802061ac7685a8d203b82ef7f5",
+      "fcff4f199b4bc0b5fb9ac1f81c9a3d3bee42a0083f4b0da9fdcd545297302980"
+    ],
+    "inventory_sha256": "d3654535ad66617ed80cf8cec90896fea804469cc423134688ac98948e951297",
+    "limitations": "explicit child, no population or matched random comparison; tiny exposed synthetic probe only",
+    "selection": false,
+    "gradients": false,
+    "benchmark_files_loaded": false,
+    "final_evaluations": 0
+  },
+  "rows": [
+    {
+      "name": "base",
+      "graph_hash": "940588432f9b3ec6b91e48cac771184e841f1aa09fff86f47b364e1f863eb265",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2973,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 41,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 36,
+        "expanded_instances": 116,
+        "nesting_depth": 4,
+        "edges": 840,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 10,
+        "tasks_solved": 0,
+        "test_inputs": 10,
+        "test_inputs_correct": 0,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 0,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": null,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.1458579279787955,
+        "inference_cpu_seconds": 0.14588633200000023,
+        "inference_cpu_seconds_per_task": 0.014588633200000024,
+        "tasks_per_second": 68.55986601875887,
+        "consistency_audit_wall_seconds": 0.3716469790088013,
+        "consistency_audit_cpu_seconds": 0.3715998479999999,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "parent-object-identity",
+      "graph_hash": "7dc34de9ec2de3a921b7a980273dc6738f403993591961cbf28342cb926527c1",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2820,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 192,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 36,
+        "expanded_instances": 113,
+        "nesting_depth": 4,
+        "edges": 1462,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 10,
+        "tasks_solved": 5,
+        "test_inputs": 10,
+        "test_inputs_correct": 5,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 5,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.6960922879952705,
+        "inference_cpu_seconds": 0.6960573360000004,
+        "inference_cpu_seconds_per_task": 0.06960573360000004,
+        "tasks_per_second": 14.36591120525091,
+        "consistency_audit_wall_seconds": 1.8392734349909006,
+        "consistency_audit_cpu_seconds": 1.8377893800000002,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "parent-identity-adjacency",
+      "graph_hash": "e479b64344d4b807a26107a8f2752d35c72fe42c86b8e90a69cb2edc93fed99d",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2850,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 29,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 37,
+        "expanded_instances": 113,
+        "nesting_depth": 4,
+        "edges": 761,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 10,
+        "tasks_solved": 5,
+        "test_inputs": 10,
+        "test_inputs_correct": 5,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 5,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.13623403800011147,
+        "inference_cpu_seconds": 0.13623257800000044,
+        "inference_cpu_seconds_per_task": 0.013623257800000043,
+        "tasks_per_second": 73.4030947536901,
+        "consistency_audit_wall_seconds": 0.349432382005034,
+        "consistency_audit_cpu_seconds": 0.3493926169999999,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": false,
+            "demo_consistent": false,
+            "consistent_ranks": [],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              false
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "child-object-adjacency",
+      "graph_hash": "47042f12b5815f213de8bd160effb17866e81dec566b8fe5b0bd99197f4740f1",
+      "stats": {
+        "unique_param_storage": 206,
+        "expanded_param_uses": 2916,
+        "nonzero_slots": 79,
+        "constant_slots_in_op_args": 193,
+        "cell_defs": 6,
+        "bundle_defs": 38,
+        "reachable_defs": 38,
+        "expanded_instances": 119,
+        "nesting_depth": 4,
+        "edges": 1485,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 1648
+      },
+      "score": {
+        "protocol": "grid-exact-demo-consistency/1",
+        "tasks": 10,
+        "tasks_solved": 10,
+        "test_inputs": 10,
+        "test_inputs_correct": 10,
+        "invalid_outputs": 0,
+        "invalid_demo_reconstructions": 0,
+        "demo_consistent_tasks": 10,
+        "demo_consistent_but_wrong_tasks": 0,
+        "false_positive_given_consistency": 0.0,
+        "false_positive_fraction_all_tasks": 0.0,
+        "inference_wall_seconds": 0.708394193003187,
+        "inference_cpu_seconds": 0.7083472550000005,
+        "inference_cpu_seconds_per_task": 0.07083472550000006,
+        "tasks_per_second": 14.11643418137818,
+        "consistency_audit_wall_seconds": 1.8998096129944315,
+        "consistency_audit_cpu_seconds": 1.8996605189999984,
+        "consistency_scope": "a fixed ranked output must reconstruct every complete demonstration after all demo adaptation; not the online routing proxy",
+        "limitation": "rank consistency assumes stable candidate semantics across inputs; runtime fixtures/route traces must establish this for an actual model",
+        "task_records": [
+          {
+            "task_id": "0",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "1",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "2",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "3",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "4",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "5",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "6",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "7",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "8",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          },
+          {
+            "task_id": "9",
+            "solved": true,
+            "demo_consistent": true,
+            "consistent_ranks": [
+              0
+            ],
+            "demo_consistent_but_wrong": false,
+            "query_successes": [
+              true
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "peak_rss_bytes": 115904512,
+  "ledger_verified": 5
+}

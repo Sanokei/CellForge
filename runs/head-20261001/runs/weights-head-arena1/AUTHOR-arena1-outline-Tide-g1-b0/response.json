@@ -1,0 +1,62 @@
+[
+  {
+    "task_id": "outline-n0-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "The isolated 3 gains four orthogonal neighbours of colour 3; demonstration 3 similarly expands 1 and 2 in their own colours. Colour 8 remains unchanged."
+  },
+  {
+    "task_id": "outline-n0-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 2 and 3 gain colour-4 halos only at orthogonal background neighbours, while adjacent 8 stays unchanged. Infer source colours 1, 2 and 3."
+  },
+  {
+    "task_id": "outline-n0-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Both 2 and 3 acquire orthogonal colour-6 halos, including around the adjacent pair in demonstration 1; 8 produces no halo. Infer source colours 1, 2 and 3."
+  },
+  {
+    "task_id": "outline-n1-same",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "The isolated 1 and 2 each become a same-colour 3-by-3 block, showing eight-neighbour halos; 8 remains unchanged. Infer source colours 1, 2 and 3."
+  },
+  {
+    "task_id": "outline-n1-c4",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1, 2 and 3 receive colour-4 halos covering orthogonal and diagonal background neighbours. The original sources and colour 8 are preserved."
+  },
+  {
+    "task_id": "outline-n1-c6",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Demonstration 2 surrounds each 1 with eight colour-6 neighbours; demonstration 3 also surrounds 3. The lone 8 in demonstration 1 is unchanged. Infer source colours 1, 2 and 3."
+  }
+]

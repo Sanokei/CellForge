@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. Nearest-colour keys discard distances: demonstration 1 pixels (4,1) and (4,2) have identical keys but require outputs 7 and 8. The other key kinds also cannot express the required distance-dependent rotation."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Pixel count separates the demonstrated objects: counts 31, 14, 24, 16, and 30 map to 7, 3, 2, 3, and 2 respectively; the small objects map to 0. This reproduces all demonstrations, with generalisation limited to learned counts."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. Eight-neighbour counts capture corridor geometry but give both demonstrated 9 pixels identical keys despite different required outputs. Four-neighbour colour keys distinguish those pixels but merge corridor corners with exterior pixels requiring different outputs."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "No exact solution exists under the stated ray semantics. Source-colour painting cannot create intersection colour 2 when no source is 2; fixed painting with colour 2 would also recolour every other ray cell. These tensors enable the missing colour-8 source but cannot implement intersection recolouring."
+  },
+  {
+    "task_id": "150deff5",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Use full 3×3 patterns to identify membership in a solid 2×2 block. Demonstrations map those 5 pixels to 8 and the remaining 5 pixels to 2, independently of absolute coordinates."
+  },
+  {
+    "task_id": "8fbca751",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 1, 0]
+    },
+    "rationale": "No exact solution exists in this template. Filling component bounding boxes requires component extent information. In demonstration 1, pixels (4,10) and (4,7) have identical nearest-colour keys but require 2 and 0 respectively; the remaining key kinds likewise cannot distinguish all required regions."
+  }
+]

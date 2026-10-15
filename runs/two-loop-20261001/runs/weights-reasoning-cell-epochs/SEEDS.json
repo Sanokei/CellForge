@@ -1,0 +1,37 @@
+[
+  {
+    "structure": "all_present",
+    "activation": "step",
+    "params": {
+      "W1": [
+        [
+          1.0,
+          -1.0
+        ]
+      ],
+      "b1": [
+        0.5
+      ]
+    },
+    "source_graph_hash": "3e9019e45acccc3b18118794b802774e76a839cfedbb89be69880183f9138b0c",
+    "typed_interface": "count-required->boolean/1",
+    "source": "runs/parallel-deduction/artifact-v1"
+  },
+  {
+    "structure": "any_present",
+    "activation": "step",
+    "params": {
+      "W1": [
+        [
+          1.0
+        ]
+      ],
+      "b1": [
+        0.0
+      ]
+    },
+    "source_graph_hash": "3e9019e45acccc3b18118794b802774e76a839cfedbb89be69880183f9138b0c",
+    "typed_interface": "vote-count->boolean/1",
+    "source": "runs/parallel-deduction/artifact-v1"
+  }
+]

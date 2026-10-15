@@ -1,0 +1,231 @@
+test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed) ... FAIL
+test_founders_are_llm_written_literal_weights (tests.test_one_standard.ContractOfEveryWeightsRun.test_founders_are_llm_written_literal_weights) ... ok
+test_genomes_are_weights_with_valid_lineage (tests.test_one_standard.ContractOfEveryWeightsRun.test_genomes_are_weights_with_valid_lineage) ... ok
+test_llm_arm_and_random_control_present (tests.test_one_standard.ContractOfEveryWeightsRun.test_llm_arm_and_random_control_present) ... ok
+test_mutation_origin_matches_arm (tests.test_one_standard.ContractOfEveryWeightsRun.test_mutation_origin_matches_arm) ... ok
+test_required_fields (tests.test_one_standard.ContractOfEveryWeightsRun.test_required_fields) ... ok
+test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough) ... FAIL
+test_accuracy_improves_over_generations (tests.test_one_standard.Milestone.test_accuracy_improves_over_generations) ... ok
+test_crossover_children_exist_and_are_new (tests.test_one_standard.Milestone.test_crossover_children_exist_and_are_new) ... ok
+test_enough_niches_and_llm_founders (tests.test_one_standard.Milestone.test_enough_niches_and_llm_founders) ... ok
+test_llm_mutation_beats_random_control (tests.test_one_standard.Milestone.test_llm_mutation_beats_random_control) ... ok
+test_many_distinct_weight_genomes (tests.test_one_standard.Milestone.test_many_distinct_weight_genomes) ... ok
+test_agents_md_exists_and_points_to_standard (tests.test_one_standard.RepoGuards.test_agents_md_exists_and_points_to_standard) ... /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py:69: ResourceWarning: unclosed file <_io.TextIOWrapper name='/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/AGENTS.md' mode='r' encoding='utf-8'>
+  t = open(p, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards.test_no_new_gene_list_runs_after_cutoff)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*. ... FAIL
+test_standard_doc_exists (tests.test_one_standard.RepoGuards.test_standard_doc_exists) ... ok
+test_clean_run_llm_beats_random_recomputed (tests.test_standard_semantic.MetaTests.test_clean_run_llm_beats_random_recomputed) ... ok
+test_clean_run_passes_every_check (tests.test_standard_semantic.MetaTests.test_clean_run_passes_every_check) ... ok
+test_each_cheat_is_caught_by_its_check (tests.test_standard_semantic.MetaTests.test_each_cheat_is_caught_by_its_check) ... ok
+test_random_arm_cannot_win_by_inflated_claims (tests.test_standard_semantic.MetaTests.test_random_arm_cannot_win_by_inflated_claims)
+If random claims higher accuracy than its recomputed accuracy, the recompute check must flag it. ... ok
+test_unequal_budget_cheat_is_caught (tests.test_standard_semantic.MetaTests.test_unequal_budget_cheat_is_caught) ... ok
+test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns.test_every_semantic_check_passes_on_every_real_run) ... ERROR
+test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns.test_recomputed_llm_beats_random_on_a_real_run) ... ERROR
+test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns.test_router_exists_matters_and_was_llm_mutated_on_a_real_run) ... ERROR
+test_missing_router_weights_is_caught (tests.test_standard_semantic.RouterMeta.test_missing_router_weights_is_caught) ... ok
+test_useful_router_passes_and_useless_router_is_caught (tests.test_standard_semantic.RouterMeta.test_useful_router_passes_and_useless_router_is_caught) ... ok
+test_cell_population_contract (unittest.loader._FailedTest.test_cell_population_contract) ... ERROR
+test_action_attribution (unittest.loader._FailedTest.test_action_attribution) ... ERROR
+test_action_verification (unittest.loader._FailedTest.test_action_verification) ... ERROR
+test_adhesion (unittest.loader._FailedTest.test_adhesion) ... ERROR
+test_circuit_population (unittest.loader._FailedTest.test_circuit_population) ... ERROR
+test_action_growth_integrity (unittest.loader._FailedTest.test_action_growth_integrity) ... ERROR
+test_action_phase_protocol (unittest.loader._FailedTest.test_action_phase_protocol) ... ERROR
+test_action_cell_continuation (unittest.loader._FailedTest.test_action_cell_continuation) ... ERROR
+test_experiment_manifest (unittest.loader._FailedTest.test_experiment_manifest) ... ERROR
+
+======================================================================
+ERROR: test_every_semantic_check_passes_on_every_real_run (tests.test_standard_semantic.RealRuns.test_every_semantic_check_passes_on_every_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_standard_semantic.py", line 305, in test_every_semantic_check_passes_on_every_real_run
+    self.assertEqual(chk(run), [], "%s on %s" % (chk.__name__, run))
+                     ^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 97, in check_accuracy_recomputed
+    ev = evaluator(s)
+         ^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+                                   ~^^^^^^^^^^^^^
+KeyError: 'evaluator'
+
+======================================================================
+ERROR: test_recomputed_llm_beats_random_on_a_real_run (tests.test_standard_semantic.RealRuns.test_recomputed_llm_beats_random_on_a_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_standard_semantic.py", line 315, in test_recomputed_llm_beats_random_on_a_real_run
+    ok.append(C.check_llm_vs_random_recomputed(run) == [])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 281, in check_llm_vs_random_recomputed
+    ev = evaluator(s)
+         ^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+                                   ~^^^^^^^^^^^^^
+KeyError: 'evaluator'
+
+======================================================================
+ERROR: test_router_exists_matters_and_was_llm_mutated_on_a_real_run (tests.test_standard_semantic.RealRuns.test_router_exists_matters_and_was_llm_mutated_on_a_real_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_standard_semantic.py", line 309, in test_router_exists_matters_and_was_llm_mutated_on_a_real_run
+    self.assertEqual(C.check_router_present_and_matters(run), [], run)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 304, in check_router_present_and_matters
+    ev = evaluator(s)
+         ^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/standard_checks.py", line 74, in evaluator
+    return importlib.import_module(s["evaluator"])
+                                   ~^^^^^^^^^^^^^
+KeyError: 'evaluator'
+
+======================================================================
+ERROR: test_cell_population_contract (unittest.loader._FailedTest.test_cell_population_contract)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_cell_population_contract
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_cell_population_contract.py", line 2, in <module>
+    from cellforge.construction.cell_population import CellPopulation
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_action_attribution (unittest.loader._FailedTest.test_action_attribution)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_attribution
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_action_attribution.py", line 2, in <module>
+    from cellforge.construction.action_argument_cell import infer,execute_packet
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_action_verification (unittest.loader._FailedTest.test_action_verification)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_verification
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_action_verification.py", line 2, in <module>
+    from cellforge.construction.action_verification import verify
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_adhesion (unittest.loader._FailedTest.test_adhesion)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_adhesion
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_adhesion.py", line 2, in <module>
+    from cellforge.construction.adhesion import AdhesionCandidate,validate_adhesion
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_circuit_population (unittest.loader._FailedTest.test_circuit_population)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_circuit_population
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_circuit_population.py", line 2, in <module>
+    from cellforge.construction.circuit_population import CircuitArchive
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_action_growth_integrity (unittest.loader._FailedTest.test_action_growth_integrity)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_growth_integrity
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_action_growth_integrity.py", line 2, in <module>
+    from cellforge.construction.anchored_action_protocol import verify_input_anchor,validate_snapshot,resolve_live_router,REQUIRED
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_action_phase_protocol (unittest.loader._FailedTest.test_action_phase_protocol)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_phase_protocol
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_action_phase_protocol.py", line 2, in <module>
+    from cellforge.construction.action_phase_protocol import *
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_action_cell_continuation (unittest.loader._FailedTest.test_action_cell_continuation)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_action_cell_continuation
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_action_cell_continuation.py", line 2, in <module>
+    from cellforge.construction.action_cell_continuation import initial_state,prompts_for,compute_phase,successor,atomic,append_charge,replay
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+ERROR: test_experiment_manifest (unittest.loader._FailedTest.test_experiment_manifest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_experiment_manifest
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_experiment_manifest.py", line 2, in <module>
+    from cellforge.construction.experiment_manifest import load_json_strict,validate_action_manifest,freeze_manifest,assert_manifest_unchanged
+ModuleNotFoundError: No module named 'cellforge'
+
+
+======================================================================
+FAIL: test_equal_charged_budget_every_arm_and_seed (tests.test_one_standard.ContractOfEveryWeightsRun.test_equal_charged_budget_every_arm_and_seed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py", line 117, in test_equal_charged_budget_every_arm_and_seed
+    self.assertEqual(n, s["budget_per_arm"], "%s arm=%s seed=%s charged %d" % (p, arm, seed, n))
+AssertionError: 0 != 1 : /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-arc3-shared-probe-20261002/STANDARD.json arm=random seed=0 charged 0
+
+======================================================================
+FAIL: test_seeds_predeclared_and_enough (tests.test_one_standard.ContractOfEveryWeightsRun.test_seeds_predeclared_and_enough)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py", line 110, in test_seeds_predeclared_and_enough
+    self.assertGreaterEqual(len(set(s["seeds"])), MIN_SEEDS, p)
+AssertionError: 1 not greater than or equal to 3 : /srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/runs/weights-arc3-shared-probe-20261002/STANDARD.json
+
+======================================================================
+FAIL: test_no_new_gene_list_runs_after_cutoff (tests.test_one_standard.RepoGuards.test_no_new_gene_list_runs_after_cutoff)
+Runs created after the standard (mtime >= cutoff) must not be gene-list/selection ledgers unless under runs/baseline-*.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/cellforge-inbox/windows-migration-20261002/snapshot/repo/tests/test_one_standard.py", line 90, in test_no_new_gene_list_runs_after_cutoff
+    self.assertFalse(offenders, "new gene-list runs after the standard (rename to baseline-* or redo as weights-*): %s" % offenders)
+AssertionError: ['nine-slot-population-v2', 'grid-scaling-independent16-v1', 'grid-object-age8-772061', 'nine-slot-replication-773611', 'grid-population-pilot-v2', 'grid-population-matched-v1', 'grid-expanded-replication-772231', 'grid-object-replication-772041', 'nine-slot-replication-773631', 'grid-object-age8-772051', 'marker-population-matched-v1', 'grid-expanded-population-v1', 'marker-mirror-recombination-v1', 'repaired-gene-recombination-v1', 'grid-object-age8-772041', 'nine-slot-population-cache-v1', 'grid-scaling-population-matched-v1', 'grid-expanded-replication-772221', 'nine-slot-replication-773621', 'grid-object-replication-772051', 'grid-object-population-matched-v1', 'grid-expanded-replication-772211', 'grid-object-replication-772061'] is not false : new gene-list runs after the standard (rename to baseline-* or redo as weights-*): ['nine-slot-population-v2', 'grid-scaling-independent16-v1', 'grid-object-age8-772061', 'nine-slot-replication-773611', 'grid-population-pilot-v2', 'grid-population-matched-v1', 'grid-expanded-replication-772231', 'grid-object-replication-772041', 'nine-slot-replication-773631', 'grid-object-age8-772051', 'marker-population-matched-v1', 'grid-expanded-population-v1', 'marker-mirror-recombination-v1', 'repaired-gene-recombination-v1', 'grid-object-age8-772041', 'nine-slot-population-cache-v1', 'grid-scaling-population-matched-v1', 'grid-expanded-replication-772221', 'nine-slot-replication-773621', 'grid-object-replication-772051', 'grid-object-population-matched-v1', 'grid-expanded-replication-772211', 'grid-object-replication-772061']
+
+----------------------------------------------------------------------
+Ran 34 tests in 2.657s
+
+FAILED (failures=3, errors=12)

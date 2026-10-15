@@ -1,0 +1,433 @@
+{
+  "policy": {
+    "protocol": "expanded-seven-slot-parents/1",
+    "base_hash": "d81ae03a97a15f138c866e922d53b588318e12e4578b7c91c82a9246b8027bb3",
+    "offspring_seeds": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "gradients": false,
+    "benchmark_tasks_read": 0,
+    "efficacy_measured": false,
+    "builder_sha256": "1ef4d4d882aa6a22b2c0d0e7c136436bca05782e97a604ae10054c2db6c3be0c",
+    "operator_sha256": "d7ea67924c7ae44b07c120b072709300625223f3d6b490876e181cf9d157c056"
+  },
+  "artifacts": [
+    {
+      "name": "base",
+      "hash": "d81ae03a97a15f138c866e922d53b588318e12e4578b7c91c82a9246b8027bb3",
+      "canonical_genotype": "4ac49a3398d227a94d1bf2bc0997673c1e0a470671377d6e9a9916237ade2789",
+      "stats": {
+        "unique_param_storage": 273,
+        "expanded_param_uses": 4545,
+        "nonzero_slots": 144,
+        "constant_slots_in_op_args": 242,
+        "cell_defs": 8,
+        "bundle_defs": 57,
+        "reachable_defs": 57,
+        "expanded_instances": 183,
+        "nesting_depth": 4,
+        "edges": 2036,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2184
+      },
+      "genome": {
+        "alleles": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+        "slots": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      }
+    },
+    {
+      "name": "parent-crop-fill",
+      "hash": "457826479d56a0d29ced282768d1c13c3ad3b0b0b7c39b86c6b847334cf9b755",
+      "canonical_genotype": "b5cf23b1549e5fa07bc9616feeb2d985aa2d5c35b833bc95603349b315137863",
+      "stats": {
+        "unique_param_storage": 273,
+        "expanded_param_uses": 4011,
+        "nonzero_slots": 144,
+        "constant_slots_in_op_args": 47,
+        "cell_defs": 8,
+        "bundle_defs": 57,
+        "reachable_defs": 52,
+        "expanded_instances": 159,
+        "nesting_depth": 4,
+        "edges": 1132,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2184
+      },
+      "genome": {
+        "alleles": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "geometry_0",
+          "geometry_0",
+          "geometry_0",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+        "slots": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "parent_hashes": [
+          "d81ae03a97a15f138c866e922d53b588318e12e4578b7c91c82a9246b8027bb3"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate seven alleles"
+      }
+    },
+    {
+      "name": "parent-object-adjacency-scaling",
+      "hash": "5795d37ce7de9c3791f0b67829ee9e6ff8478ecb149b311f130b0cecf8d10071",
+      "canonical_genotype": "9f56c3b60fa3bbaa4d5367fbbb77e5e96b40d65653dae4e7de2355073be1837c",
+      "stats": {
+        "unique_param_storage": 273,
+        "expanded_param_uses": 4293,
+        "nonzero_slots": 144,
+        "constant_slots_in_op_args": 228,
+        "cell_defs": 8,
+        "bundle_defs": 57,
+        "reachable_defs": 55,
+        "expanded_instances": 171,
+        "nesting_depth": 4,
+        "edges": 1907,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2184
+      },
+      "genome": {
+        "alleles": [
+          "geometry_0",
+          "geometry_0",
+          "geometry_0",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+        "slots": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "parent_hashes": [
+          "d81ae03a97a15f138c866e922d53b588318e12e4578b7c91c82a9246b8027bb3"
+        ],
+        "operator_seed": null,
+        "operator": "instantiate seven alleles"
+      }
+    },
+    {
+      "name": "crossover-0",
+      "hash": "2f86d4955f3701d5c465f08b43305a227607d3831e31b7b02785da43523cd5b8",
+      "canonical_genotype": "c3956688e7c128e2b0210be4e8c7f603394d6aad6ed9175bebb028237f16d6a7",
+      "stats": {
+        "unique_param_storage": 273,
+        "expanded_param_uses": 3759,
+        "nonzero_slots": 144,
+        "constant_slots_in_op_args": 33,
+        "cell_defs": 8,
+        "bundle_defs": 57,
+        "reachable_defs": 50,
+        "expanded_instances": 147,
+        "nesting_depth": 4,
+        "edges": 1003,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2184
+      },
+      "genome": {
+        "alleles": [
+          "geometry_0",
+          "geometry_0",
+          "geometry_0",
+          "geometry_0",
+          "geometry_0",
+          "geometry_0",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+        "slots": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "parent_hashes": [
+          "457826479d56a0d29ced282768d1c13c3ad3b0b0b7c39b86c6b847334cf9b755",
+          "5795d37ce7de9c3791f0b67829ee9e6ff8478ecb149b311f130b0cecf8d10071"
+        ],
+        "operator_seed": 0,
+        "operator": "homologous uniform seven-slot crossover",
+        "donor_per_slot": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "crossover-1",
+      "hash": "9a670bfcd71e12322dd5d0dc511a011c73473f57f7fd5d1a93824f44c6669d25",
+      "canonical_genotype": "a635ad348cef2a918266922460b65766c1cb92dc0e625fbdb15037209c425ba1",
+      "stats": {
+        "unique_param_storage": 273,
+        "expanded_param_uses": 4041,
+        "nonzero_slots": 144,
+        "constant_slots_in_op_args": 50,
+        "cell_defs": 8,
+        "bundle_defs": 57,
+        "reachable_defs": 53,
+        "expanded_instances": 159,
+        "nesting_depth": 4,
+        "edges": 1109,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2184
+      },
+      "genome": {
+        "alleles": [
+          "geometry_0",
+          "geometry_0",
+          "geometry_0",
+          "bank_adjacency_recolor.gene",
+          "geometry_0",
+          "geometry_0",
+          "scaling_bank3_repeat.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+        "slots": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "parent_hashes": [
+          "457826479d56a0d29ced282768d1c13c3ad3b0b0b7c39b86c6b847334cf9b755",
+          "5795d37ce7de9c3791f0b67829ee9e6ff8478ecb149b311f130b0cecf8d10071"
+        ],
+        "operator_seed": 1,
+        "operator": "homologous uniform seven-slot crossover",
+        "donor_per_slot": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "crossover-2",
+      "hash": "f53ccf70baef9e6c75f6802e788fc1277bed867f70694959a222de545f8d5b86",
+      "canonical_genotype": "d2c0523790b60ec7095c81c4769d8c0daf25e832f44511f95419d71af28b2d9a",
+      "stats": {
+        "unique_param_storage": 273,
+        "expanded_param_uses": 4197,
+        "nonzero_slots": 144,
+        "constant_slots_in_op_args": 61,
+        "cell_defs": 8,
+        "bundle_defs": 57,
+        "reachable_defs": 53,
+        "expanded_instances": 165,
+        "nesting_depth": 4,
+        "edges": 1206,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2184
+      },
+      "genome": {
+        "alleles": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "geometry_0",
+          "geometry_0",
+          "scaling_bank2_repeat.gene",
+          "geometry_0"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+        "slots": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "parent_hashes": [
+          "457826479d56a0d29ced282768d1c13c3ad3b0b0b7c39b86c6b847334cf9b755",
+          "5795d37ce7de9c3791f0b67829ee9e6ff8478ecb149b311f130b0cecf8d10071"
+        ],
+        "operator_seed": 2,
+        "operator": "homologous uniform seven-slot crossover",
+        "donor_per_slot": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "name": "crossover-3",
+      "hash": "e7647fb1828f99ed398381985e57b7011934cd506007c4056287b6e677425175",
+      "canonical_genotype": "07b3e66a60928f90b69d617db31497485dcb6f66eb572c04546bbe3d75159299",
+      "stats": {
+        "unique_param_storage": 273,
+        "expanded_param_uses": 4383,
+        "nonzero_slots": 144,
+        "constant_slots_in_op_args": 77,
+        "cell_defs": 8,
+        "bundle_defs": 57,
+        "reachable_defs": 54,
+        "expanded_instances": 171,
+        "nesting_depth": 4,
+        "edges": 1289,
+        "dispatch_nodes": 2,
+        "param_bytes_float64": 2184
+      },
+      "genome": {
+        "alleles": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "geometry_0",
+          "geometry_0",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "available_genes": [
+          "geometry_0",
+          "bbox.geometry",
+          "bank_local_fill.gene",
+          "bank_adjacency_recolor.gene",
+          "object_bank_largest4.gene",
+          "scaling_bank2_repeat.gene",
+          "scaling_bank3_repeat.gene"
+        ],
+        "donor_hash": "ac3016d171f35f43bbdd398edc374b6e5e919d66c84bfc06d997574b61c63057",
+        "slots": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "parent_hashes": [
+          "457826479d56a0d29ced282768d1c13c3ad3b0b0b7c39b86c6b847334cf9b755",
+          "5795d37ce7de9c3791f0b67829ee9e6ff8478ecb149b311f130b0cecf8d10071"
+        ],
+        "operator_seed": 3,
+        "operator": "homologous uniform seven-slot crossover",
+        "donor_per_slot": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "ledger_verified": 8
+}

@@ -1,0 +1,460 @@
+{
+ "game": "ft09",
+ "house": "Flint",
+ "n": 2,
+ "source_lines": [
+  "def act(params, mem, frame, avail, info):",
+  "    p = params['p']",
+  "    level = info['levels']",
+  "    reset = info['resets']",
+  "    if mem.get('level') != level:",
+  "        mem.clear()",
+  "        mem['level'] = level",
+  "        mem['graph'] = {}",
+  "        mem['tried'] = {}",
+  "        mem['visits'] = {}",
+  "        mem['effects'] = {}",
+  "        mem['values'] = {}",
+  "        mem['actions'] = []",
+  "        allowed = [int(v) for v in params['colors']]",
+  "        for center in params['centers']:",
+  "            cx, cy = int(center[0]), int(center[1])",
+  "            for offset in params['micro']:",
+  "                x = max(0, min(63, cx + int(offset[0])))",
+  "                y = max(0, min(63, cy + int(offset[1])))",
+  "                action = (int(p[0]), x, y)",
+  "                if int(frame[y, x]) in allowed and action not in mem['actions']:",
+  "                    mem['actions'].append(action)",
+  "        for point in params['extra']:",
+  "            x = max(0, min(63, int(point[0])))",
+  "            y = max(0, min(63, int(point[1])))",
+  "            action = (int(p[0]), x, y)",
+  "            if int(frame[y, x]) in allowed and action not in mem['actions']:",
+  "                mem['actions'].append(action)",
+  "    if mem.get('reset') != reset:",
+  "        mem.pop('last', None)",
+  "        mem['reset'] = reset",
+  "    actions = [a for a in mem['actions'] if a[0] in avail]",
+  "    if not actions:",
+  "        return (avail[0], 0, 0)",
+  "    state = info['key']",
+  "    graph = mem['graph']",
+  "    tried = mem['tried']",
+  "    visits = mem['visits']",
+  "    effects = mem['effects']",
+  "    values = mem['values']",
+  "    graph.setdefault(state, {})",
+  "    tried.setdefault(state, set())",
+  "    visits[state] = visits.get(state, 0) + 1",
+  "    rings = []",
+  "    active = -1",
+  "    for i, center in enumerate(params['centers']):",
+  "        cx, cy = int(center[0]), int(center[1])",
+  "        ring = []",
+  "        for offset in params['ring']:",
+  "            x = max(0, min(63, cx + int(offset[0])))",
+  "            y = max(0, min(63, cy + int(offset[1])))",
+  "            ring.append(int(frame[y, x]))",
+  "        rings.append(ring)",
+  "        x = max(0, min(63, cx + int(p[1])))",
+  "        y = max(0, min(63, cy + int(p[2])))",
+  "        if int(frame[y, x]) == int(p[3]):",
+  "            active = i",
+  "    quality = 0.0",
+  "    if active >= 0:",
+  "        ring = rings[active]",
+  "        blue = sum(1 for v in ring if v == int(p[4]))",
+  "        other = sum(1 for v in ring if v == int(p[5]))",
+  "        quality = p[6] * blue / max(1, len(ring))",
+  "        quality += p[7] * max(blue, other) / max(1, len(ring))",
+  "        for i in range(len(rings)):",
+  "            if i != active:",
+  "                matches = sum(1 for j in range(len(ring)) if ring[j] == rings[i][j])",
+  "                quality = max(quality, p[8] * matches / max(1, len(ring)))",
+  "    values[state] = quality",
+  "    if 'last' in mem:",
+  "        previous, action, before = mem['last']",
+  "        graph.setdefault(previous, {})[action] = state",
+  "        tried.setdefault(previous, set()).add(action)",
+  "        effect = effects.setdefault(action, [0, 0, 0.0])",
+  "        effect[0] += 1",
+  "        effect[1] += int(previous != state)",
+  "        effect[2] += quality - before",
+  "    frontier = [(state, [])]",
+  "    reached = {state}",
+  "    index = 0",
+  "    best = None",
+  "    bestscore = -1000000.0",
+  "    while index < len(frontier) and index < max(1, int(p[9])):",
+  "        node, path = frontier[index]",
+  "        index += 1",
+  "        used = tried.setdefault(node, set())",
+  "        for rank, action in enumerate(actions):",
+  "            if action in used:",
+  "                continue",
+  "            effect = effects.get(action, [0, 0, 0.0])",
+  "            activity = effect[1] / max(1, effect[0])",
+  "            failures = effect[0] - effect[1]",
+  "            score = p[10] * activity - p[11] * min(failures, p[12])",
+  "            score += p[13] * values.get(node, quality)",
+  "            score -= p[14] * len(path) + p[15] * rank",
+  "            score -= p[16] * visits.get(node, 0)",
+  "            if effect[0] == 0:",
+  "                score += p[17]",
+  "            if not path:",
+  "                x, y = action[1], action[2]",
+  "                if int(frame[y, x]) == int(p[4]):",
+  "                    score += p[18]",
+  "                if int(frame[y, x]) == int(p[19]):",
+  "                    score += p[20]",
+  "            if score > bestscore:",
+  "                bestscore = score",
+  "                best = path[0] if path else action",
+  "        for action, destination in graph.get(node, {}).items():",
+  "            if destination not in reached and action in actions:",
+  "                reached.add(destination)",
+  "                frontier.append((destination, path + [action]))",
+  "    if best is None:",
+  "        for rank, action in enumerate(actions):",
+  "            destination = graph[state].get(action)",
+  "            score = p[13] * values.get(destination, quality)",
+  "            score -= p[21] * visits.get(destination, 0) + p[15] * rank",
+  "            if destination == state:",
+  "                score -= p[22]",
+  "            if score > bestscore:",
+  "                bestscore = score",
+  "                best = action",
+  "    mem['last'] = (state, best, quality)",
+  "    return best"
+ ],
+ "shapes": {
+  "p": [
+   23
+  ],
+  "colors": [
+   5
+  ],
+  "centers": [
+   4,
+   2
+  ],
+  "micro": [
+   9,
+   2
+  ],
+  "ring": [
+   8,
+   2
+  ],
+  "extra": [
+   40,
+   2
+  ]
+ },
+ "params": {
+  "p": [
+   6,
+   -12,
+   -12,
+   4,
+   8,
+   9,
+   0.7,
+   0.2,
+   0.6,
+   700,
+   3,
+   1.2,
+   5,
+   0.4,
+   0.16,
+   0.004,
+   0.025,
+   0.8,
+   0.35,
+   2,
+   0.05,
+   0.4,
+   8
+  ],
+  "colors": [
+   8,
+   9,
+   2,
+   0,
+   4
+  ],
+  "centers": [
+   [
+    14,
+    12
+   ],
+   [
+    48,
+    12
+   ],
+   [
+    14,
+    46
+   ],
+   [
+    48,
+    46
+   ]
+  ],
+  "micro": [
+   [
+    0,
+    0
+   ],
+   [
+    -2,
+    -2
+   ],
+   [
+    2,
+    -2
+   ],
+   [
+    -2,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    -2,
+    2
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    0,
+    -2
+   ]
+  ],
+  "ring": [
+   [
+    -8,
+    -8
+   ],
+   [
+    0,
+    -8
+   ],
+   [
+    8,
+    -8
+   ],
+   [
+    -8,
+    0
+   ],
+   [
+    8,
+    0
+   ],
+   [
+    -8,
+    8
+   ],
+   [
+    0,
+    8
+   ],
+   [
+    8,
+    8
+   ]
+  ],
+  "extra": [
+   [
+    6,
+    4
+   ],
+   [
+    14,
+    4
+   ],
+   [
+    22,
+    4
+   ],
+   [
+    6,
+    12
+   ],
+   [
+    22,
+    12
+   ],
+   [
+    6,
+    20
+   ],
+   [
+    14,
+    20
+   ],
+   [
+    22,
+    20
+   ],
+   [
+    40,
+    4
+   ],
+   [
+    48,
+    4
+   ],
+   [
+    56,
+    4
+   ],
+   [
+    40,
+    12
+   ],
+   [
+    56,
+    12
+   ],
+   [
+    40,
+    20
+   ],
+   [
+    48,
+    20
+   ],
+   [
+    56,
+    20
+   ],
+   [
+    6,
+    38
+   ],
+   [
+    14,
+    38
+   ],
+   [
+    22,
+    38
+   ],
+   [
+    6,
+    46
+   ],
+   [
+    22,
+    46
+   ],
+   [
+    6,
+    54
+   ],
+   [
+    14,
+    54
+   ],
+   [
+    22,
+    54
+   ],
+   [
+    40,
+    38
+   ],
+   [
+    48,
+    38
+   ],
+   [
+    56,
+    38
+   ],
+   [
+    40,
+    46
+   ],
+   [
+    56,
+    46
+   ],
+   [
+    40,
+    54
+   ],
+   [
+    48,
+    54
+   ],
+   [
+    56,
+    54
+   ],
+   [
+    32,
+    33
+   ],
+   [
+    58,
+    33
+   ],
+   [
+    32,
+    59
+   ],
+   [
+    58,
+    59
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    36,
+    0
+   ],
+   [
+    2,
+    34
+   ],
+   [
+    36,
+    34
+   ]
+  ]
+ },
+ "rationale": "Transfers the donor's learned transition graph and reachable-frontier search to distinct click targets. Tests central glyph subcells before mostly inert outer tiles, learns action activity and suppresses repeated no-ops, and preserves discovered transitions across resets. Uses complete frame keys rather than assuming XOR dynamics; visible highlighted-board ring patterns provide a weak exploration ",
+ "result": {
+  "game": "ft09",
+  "seed": 0,
+  "budget": 1500,
+  "n_levels": 6,
+  "levels": 0,
+  "used": 1500,
+  "resets": 43,
+  "noops": 63,
+  "error": null,
+  "level_steps": [],
+  "state": "NOT_FINISHED",
+  "distinct": 356,
+  "action_hist": {
+   "6": 1457
+  },
+  "final_frame": "5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555999999558888885599999955555555555599999955888888559999995555\n5555999999558888885599999955555555555599999955888888559999995555\n5555999999558888885599999955555555555599999955888888559999995555\n5555999999558888885599999955555555555599999955888888559999995555\n5555999999558888885599999955555555555599999955888888559999995555\n5555999999558888885599999955555555555599999955888888559999995555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n55558888885522..22559999995555555555558888885522..22558888885555\n55558888885522..22559999995555555555558888885522..22558888885555\n555588888855..88225599999955555555555588888855..88..558888885555\n555588888855..88225599999955555555555588888855..88..558888885555\n55558888885522....559999995555555555558888885522..22558888885555\n55558888885522....559999995555555555558888885522..22558888885555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555999999558888885588888855555555555599999955888888559999995555\n5555999999558888885588888855555555555599999955888888559999995555\n5555999999558888885588888855555555555599999955888888559999995555\n5555999999558888885588888855555555555599999955888888559999995555\n5555999999558888885588888855555555555599999955888888559999995555\n5555999999558888885588888855555555555599999955888888559999995555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555522222244444444444444444422222255\n5555555555555555555555555555555522222244444444444444444422222255\n5555555555555555555555555555555522444444444444444444444444442255\n5555555555555555555555555555555522444444444444444444444444442255\n5555888888559999995599999955555522449999994499999944888888442255\n5555888888559999995599999955555522449999994499999944888888442255\n5555888888559999995599999955555544449999994499999944888888444455\n5555888888559999995599999955555544449999994499999944888888444455\n5555888888559999995599999955555544449999994499999944888888444455\n5555888888559999995599999955555544449999994499999944888888444455\n5555555555555555555555555555555544444444444444444444444444444455\n5555555555555555555555555555555544444444444444444444444444444455\n555588888855..222255888888555555444499999944..222244888888444455\n555588888855..222255888888555555444499999944..222244888888444455\n555588888855..88..55888888555555444499999944..88..44888888444455\n555588888855..88..55888888555555444499999944..88..44888888444455\n5555888888552222..55888888555555444499999944..222244888888444455\n5555888888552222..55888888555555444499999944..222244888888444455\n5555555555555555555555555555555544444444444444444444444444444455\n5555555555555555555555555555555544444444444444444444444444444455\n5555999999559999995588888855555544449999994499999944999999444455\n5555999999559999995588888855555544449999994499999944999999444455\n5555999999559999995588888855555544449999994499999944999999444455\n5555999999559999995588888855555544449999994499999944999999444455\n5555999999559999995588888855555522449999994499999944999999442255\n5555999999559999995588888855555522449999994499999944999999442255\n5555555555555555555555555555555522444444444444444444444444442255\n5555555555555555555555555555555522444444444444444444444444442255\n5555555555555555555555555555555522222244444444444444444422222255\n5555555555555555555555555555555522222244444444444444444422222255\n5555555555555555555555555555555555555555555555555555555555555555\nccccccccccccccccccccccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "score": 0.0
+ }
+}

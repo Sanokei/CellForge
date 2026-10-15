@@ -1,0 +1,476 @@
+{
+ "defs": {
+  "fill_expert0": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width"
+     },
+     "use": "local_fill.gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "fill_expert1": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width"
+     },
+     "use": "local_fill.gene"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30,
+       30,
+       10
+      ]
+     },
+     "id": "n1",
+     "in": {
+      "x": "n0.colors"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n2",
+     "in": {
+      "x": "n0.height"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       30
+      ]
+     },
+     "id": "n3",
+     "in": {
+      "x": "n0.width"
+     },
+     "use": "op:reshape"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1",
+    "height_logits": "n2",
+    "state": "$state",
+    "width_logits": "n3"
+   },
+   "role": "expert"
+  },
+  "fill_root": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width",
+    "output",
+    "output_mask",
+    "output_height",
+    "output_width",
+    "phase",
+    "index",
+    "state"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "use": "fill_router"
+    },
+    {
+     "args": {
+      "branches": [
+       "fill_expert0",
+       "fill_expert1"
+      ],
+      "k": 1
+     },
+     "id": "n1",
+     "in": {
+      "index": "$index",
+      "input": "$input",
+      "input_height": "$input_height",
+      "input_mask": "$input_mask",
+      "input_width": "$input_width",
+      "output": "$output",
+      "output_height": "$output_height",
+      "output_mask": "$output_mask",
+      "output_width": "$output_width",
+      "phase": "$phase",
+      "scores": "n0.scores",
+      "state": "$state"
+     },
+     "use": "dispatch"
+    }
+   ],
+   "outputs": {
+    "color_logits": "n1.color_logits",
+    "height_logits": "n1.height_logits",
+    "state": "n1.state",
+    "width_logits": "n1.width_logits"
+   },
+   "role": "root"
+  },
+  "fill_router": {
+   "inputs": [],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "args": {
+      "n": 2,
+      "start": 0.0,
+      "step": 0.0
+     },
+     "id": "n0",
+     "use": "op:coords"
+    }
+   ],
+   "outputs": {
+    "scores": "n0"
+   },
+   "role": "router"
+  },
+  "local_fill.color": {
+   "act": "identity",
+   "kind": "cell",
+   "params": {
+    "W1": "local_fill.color.W",
+    "b1": "local_fill.color.b"
+   }
+  },
+  "local_fill.gene": {
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "n0",
+     "in": {
+      "a": "$input",
+      "b": "$input_mask"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n1",
+     "in": {
+      "x": "n0"
+     },
+     "use": "local_fill.color"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": -1
+     },
+     "id": "n2",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 0,
+      "k": 1
+     },
+     "id": "n3",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": -1
+     },
+     "id": "n4",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 1,
+      "k": 1
+     },
+     "id": "n5",
+     "in": {
+      "x": "n1"
+     },
+     "use": "op:shift"
+    },
+    {
+     "args": {
+      "axis": 2
+     },
+     "id": "n6",
+     "in": {
+      "x0": "n2",
+      "x1": "n3",
+      "x2": "n4",
+      "x3": "n5"
+     },
+     "use": "op:concat"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "keepdims": true
+     },
+     "id": "n7",
+     "in": {
+      "x": "n6"
+     },
+     "use": "op:max"
+    },
+    {
+     "args": {
+      "axis": 2,
+      "start": 0,
+      "stop": 1
+     },
+     "id": "n8",
+     "in": {
+      "x": "n0"
+     },
+     "use": "op:slice"
+    },
+    {
+     "id": "n9",
+     "in": {
+      "a": "n7",
+      "b": "n8"
+     },
+     "use": "op:mul"
+    },
+    {
+     "id": "n10",
+     "in": {
+      "a": "n1",
+      "b": "n9"
+     },
+     "use": "op:add"
+    },
+    {
+     "args": {
+      "n": 10
+     },
+     "id": "n11",
+     "use": "op:coords"
+    },
+    {
+     "args": {
+      "shape": [
+       1,
+       1,
+       10
+      ]
+     },
+     "id": "n12",
+     "in": {
+      "x": "n11"
+     },
+     "use": "op:reshape"
+    },
+    {
+     "id": "n13",
+     "in": {
+      "a": "n10",
+      "b": "n12"
+     },
+     "use": "op:sub"
+    },
+    {
+     "id": "n14",
+     "in": {
+      "x": "n13"
+     },
+     "use": "op:abs"
+    },
+    {
+     "id": "n15",
+     "in": {
+      "x": "n14"
+     },
+     "use": "op:neg"
+    },
+    {
+     "args": {
+      "c": 1
+     },
+     "id": "n16",
+     "in": {
+      "x": "n15"
+     },
+     "use": "op:bias"
+    },
+    {
+     "id": "n17",
+     "in": {
+      "x": "n16"
+     },
+     "use": "op:relu"
+    },
+    {
+     "id": "n18",
+     "in": {
+      "a": "n17",
+      "b": "$input_mask"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "colors": "n18",
+    "height": "$input_height",
+    "width": "$input_width"
+   },
+   "role": "cluster"
+  }
+ },
+ "entries": {
+  "grid_step": "fill_root"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "construction": "authored local_fill gene/1; no fitted data",
+  "gene_contract": {
+   "cluster": "local_fill.gene",
+   "inputs": [
+    "input",
+    "input_mask",
+    "input_height",
+    "input_width"
+   ],
+   "outputs": [
+    "colors",
+    "height",
+    "width"
+   ],
+   "rule": "one simultaneous orthogonal dilation into zero; highest neighbor color wins; original nonzero persists"
+  },
+  "grid_attempts": 1,
+  "grid_interface": "grid-graph/1",
+  "limitations": "same dimensions, fixed color priority and one step; no demonstration adaptation; duplicate expert wrappers solely for profile compatibility",
+  "profile": "ladder-micro/1",
+  "state_dim": 0,
+  "task": "grid"
+ },
+ "params": {
+  "local_fill.color.W": {
+   "sha256": "7ae89606c874da5786f912fe64ff3c65677c41f9d89ba47d39677e737cd34af3",
+   "shape": [
+    1,
+    10
+   ]
+  },
+  "local_fill.color.b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  }
+ }
+}

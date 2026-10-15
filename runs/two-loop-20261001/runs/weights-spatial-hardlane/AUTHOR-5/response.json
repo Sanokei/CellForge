@@ -1,0 +1,74 @@
+[
+  {
+    "seed": 701,
+    "niche": "spatial_quorum",
+    "parent_id": "a18f1f4dbb1b50c7888bf13071807dc77136fba693b0411fc7630522089f7bd4",
+    "prompt_sha256": "21d0f253f6a41f89678a89e50f1cd12d230cac0f210359312285519dfe18ace4",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, -6, -6, -6, -6, -6, -6, -6, -6, -6,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      ]],
+      "b1": [-2.5]
+    },
+    "charged_positions": 91,
+    "rationale": "Strengthen the occupied-center veto while preserving the parent's Boolean function: an empty center requires at least three occupied cardinal neighbors; an occupied center always yields zero. Supplied parent evidence already solves 40/40 development cases, so no strict development gain is possible or claimed."
+  },
+  {
+    "seed": 702,
+    "niche": "spatial_quorum",
+    "parent_id": "cce758cc351a2d3882d42ba8e491dab1eedaaa7c041d7c8d922785085d360f99",
+    "prompt_sha256": "374eb43ed9a8abd95fd98139698c0684cc46ec98cf944721f002c9b5fa5ea724",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        0, -8, -8, -8, -8, -8, -8, -8, -8, -8,
+        0, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      ]],
+      "b1": [-5]
+    },
+    "charged_positions": 91,
+    "rationale": "Reduce the center penalty magnitude while preserving the parent's Boolean function. An occupied center has maximum preactivation -5; an empty center crosses the threshold at three occupied cardinal neighbors. Supplied parent evidence already solves 40/40 development cases, so no strict development gain is possible or claimed."
+  },
+  {
+    "seed": 703,
+    "niche": "spatial_quorum",
+    "parent_id": "cd668ddbea3fa76ebcd5dbb6f45983eca73176f53304ce387a162b6773fa18a2",
+    "prompt_sha256": "63cf34b6c5f9a964bc5f2863801c65cb82a7a5d96e831942a52db7d9251b0bdb",
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "params": {
+      "W1": [[
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        6, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      ]],
+      "b1": [-8.5]
+    },
+    "charged_positions": 91,
+    "rationale": "Increase the empty-center weight and offset the bias equally, preserving the parent's empty-center quorum threshold while strengthening rejection of occupied centers. Supplied parent evidence already solves 40/40 development cases, so no strict development gain is possible or claimed. Hidden structure is unnecessary."
+  }
+]

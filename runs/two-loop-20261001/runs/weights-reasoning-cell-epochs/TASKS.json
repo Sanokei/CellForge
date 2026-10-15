@@ -1,0 +1,832 @@
+{
+  "schema": "reasoning-cell-tasks/1",
+  "scope": "individual numeric Horn operators; synthetic semantic validation, no new reasoning benchmark learning claim",
+  "development": {
+    "all_present": [
+      {
+        "id": "development-all_present-0",
+        "input": [
+          1,
+          2
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-1",
+        "input": [
+          0,
+          1
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-2",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-3",
+        "input": [
+          3,
+          3
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-4",
+        "input": [
+          2,
+          2
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-5",
+        "input": [
+          0,
+          1
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-6",
+        "input": [
+          1,
+          2
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-7",
+        "input": [
+          3,
+          3
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-8",
+        "input": [
+          1,
+          1
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-9",
+        "input": [
+          1,
+          1
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-10",
+        "input": [
+          0,
+          2
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-11",
+        "input": [
+          1,
+          2
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-12",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-13",
+        "input": [
+          3,
+          3
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-14",
+        "input": [
+          1,
+          1
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-15",
+        "input": [
+          0,
+          3
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-16",
+        "input": [
+          0,
+          3
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-17",
+        "input": [
+          3,
+          4
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-18",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-19",
+        "input": [
+          2,
+          3
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-20",
+        "input": [
+          2,
+          4
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-21",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-22",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-all_present-23",
+        "input": [
+          0,
+          3
+        ],
+        "expected": 0,
+        "partition": "development"
+      }
+    ],
+    "any_present": [
+      {
+        "id": "development-any_present-0",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-1",
+        "input": [
+          32
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-2",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-3",
+        "input": [
+          56
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-4",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-5",
+        "input": [
+          11
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-6",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-7",
+        "input": [
+          59
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-8",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-9",
+        "input": [
+          2
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-10",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-11",
+        "input": [
+          43
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-12",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-13",
+        "input": [
+          21
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-14",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-15",
+        "input": [
+          2
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-16",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-17",
+        "input": [
+          19
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-18",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-19",
+        "input": [
+          63
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-20",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-21",
+        "input": [
+          18
+        ],
+        "expected": 1,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-22",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "development"
+      },
+      {
+        "id": "development-any_present-23",
+        "input": [
+          53
+        ],
+        "expected": 1,
+        "partition": "development"
+      }
+    ]
+  },
+  "frozen_reporting": {
+    "all_present": [
+      {
+        "id": "frozen_reporting-all_present-0",
+        "input": [
+          1,
+          2
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-1",
+        "input": [
+          1,
+          1
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-2",
+        "input": [
+          0,
+          2
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-3",
+        "input": [
+          1,
+          1
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-4",
+        "input": [
+          2,
+          3
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-5",
+        "input": [
+          3,
+          4
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-6",
+        "input": [
+          0,
+          2
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-7",
+        "input": [
+          4,
+          4
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-8",
+        "input": [
+          1,
+          2
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-9",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-10",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-11",
+        "input": [
+          2,
+          4
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-12",
+        "input": [
+          1,
+          4
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-13",
+        "input": [
+          1,
+          2
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-14",
+        "input": [
+          0,
+          2
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-15",
+        "input": [
+          1,
+          3
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-16",
+        "input": [
+          0,
+          3
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-17",
+        "input": [
+          0,
+          1
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-18",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-19",
+        "input": [
+          0,
+          4
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-20",
+        "input": [
+          0,
+          1
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-21",
+        "input": [
+          0,
+          2
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-22",
+        "input": [
+          0,
+          0
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-all_present-23",
+        "input": [
+          1,
+          1
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      }
+    ],
+    "any_present": [
+      {
+        "id": "frozen_reporting-any_present-0",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-1",
+        "input": [
+          59
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-2",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-3",
+        "input": [
+          21
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-4",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-5",
+        "input": [
+          3
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-6",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-7",
+        "input": [
+          17
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-8",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-9",
+        "input": [
+          44
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-10",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-11",
+        "input": [
+          37
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-12",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-13",
+        "input": [
+          49
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-14",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-15",
+        "input": [
+          38
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-16",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-17",
+        "input": [
+          60
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-18",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-19",
+        "input": [
+          64
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-20",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-21",
+        "input": [
+          24
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-22",
+        "input": [
+          0
+        ],
+        "expected": 0,
+        "partition": "frozen_reporting"
+      },
+      {
+        "id": "frozen_reporting-any_present-23",
+        "input": [
+          38
+        ],
+        "expected": 1,
+        "partition": "frozen_reporting"
+      }
+    ]
+  }
+}

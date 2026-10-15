@@ -1,0 +1,171 @@
+{
+ "defs": {
+  "all_present": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "all_W",
+    "b1": "all_b"
+   }
+  },
+  "any_present": {
+   "act": "step",
+   "kind": "cell",
+   "params": {
+    "W1": "any_W",
+    "b1": "any_b"
+   }
+  },
+  "closure_step": {
+   "inputs": [
+    "facts",
+    "antecedents",
+    "required",
+    "active",
+    "conclusions",
+    "query"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "rules",
+     "in": {
+      "active": "$active",
+      "antecedents": "$antecedents",
+      "facts": "$facts",
+      "required": "$required"
+     },
+     "use": "rule_firing"
+    },
+    {
+     "id": "votes",
+     "in": {
+      "a": "$conclusions",
+      "b": "rules.fired"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "id": "derived",
+     "in": {
+      "x": "votes"
+     },
+     "use": "any_present"
+    },
+    {
+     "id": "closure",
+     "in": {
+      "a": "$facts",
+      "b": "derived"
+     },
+     "use": "op:maximum"
+    },
+    {
+     "id": "answer",
+     "in": {
+      "a": "$query",
+      "b": "closure"
+     },
+     "use": "op:matmul"
+    }
+   ],
+   "outputs": {
+    "entailed": "answer",
+    "facts": "closure",
+    "fired": "rules.fired"
+   },
+   "role": "cluster"
+  },
+  "rule_firing": {
+   "inputs": [
+    "facts",
+    "antecedents",
+    "required",
+    "active"
+   ],
+   "kind": "bundle",
+   "nodes": [
+    {
+     "id": "counts",
+     "in": {
+      "a": "$antecedents",
+      "b": "$facts"
+     },
+     "use": "op:matmul"
+    },
+    {
+     "args": {
+      "axis": 1
+     },
+     "id": "pair",
+     "in": {
+      "x0": "counts",
+      "x1": "$required"
+     },
+     "use": "op:concat"
+    },
+    {
+     "id": "ready",
+     "in": {
+      "x": "pair"
+     },
+     "use": "all_present"
+    },
+    {
+     "id": "fire",
+     "in": {
+      "a": "ready",
+      "b": "$active"
+     },
+     "use": "op:mul"
+    }
+   ],
+   "outputs": {
+    "fired": "fire"
+   },
+   "role": "cluster"
+  }
+ },
+ "entries": {
+  "step": "closure_step"
+ },
+ "format": "cellforge-graph/1",
+ "meta": {
+  "construction": "authored positive propositional Horn fixed point; no fitting",
+  "deduction_interface": "horn-closure-graph/1",
+  "limitations": "bounded supplied Horn rules only; no natural-language understanding or rule induction",
+  "max_antecedents": 4,
+  "max_atoms": 32,
+  "max_rules": 64,
+  "policy": "positive ASCII identifiers only; negation unsupported; not_proven does not mean false",
+  "task": "deduction"
+ },
+ "params": {
+  "all_W": {
+   "sha256": "4024c635d5f2c25825cb70d4b81b1d1f0dc61efa942e160d04be81836d4f14bb",
+   "shape": [
+    1,
+    2
+   ]
+  },
+  "all_b": {
+   "sha256": "cf0f5de304be4ef0889a8d0402c2d7ecbb1f63b37bd6e021f97c0b274d598134",
+   "shape": [
+    1
+   ]
+  },
+  "any_W": {
+   "sha256": "bd7c08eabc431ddc9b985e7722ca8cc3afb6f617d5190d5895c45a3242309aa0",
+   "shape": [
+    1,
+    1
+   ]
+  },
+  "any_b": {
+   "sha256": "47802c026e0be1656e9b0049f1b4dc36d308f1493f6aaa4689ceeb48cc7f2d71",
+   "shape": [
+    1
+   ]
+  }
+ }
+}

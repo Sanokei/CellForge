@@ -1,0 +1,50 @@
+[
+  {
+    "task_id": "1a07d186",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [9, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. The outputs move isolated pixels to previously empty positions; object_table only uniformly recolours existing components. The parameters are retained because changing the property cannot implement movement."
+  },
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "keysel": [1, 0, 0, 0, 0, 0, 0, 0],
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. The transformation rotates each 6 around its paired 1 while preserving distance. None of the available keys encodes that displacement, and each key choice gives identical keys to pixels requiring different outputs. The parameters are retained."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes). The demonstrations map colour-8 objects with 1, 3, and 0 enclosed holes to 7, 3, and 2 respectively, while colour-1 marker objects map to background. Including colour distinguishes markers from objects with the same hole count."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No satisfying tensors exist for this template. Corridor filling depends on connectivity beyond the immediate neighbourhood. The demonstrations contain locally identical pixels requiring different outputs under every available key. The parameters are retained."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 9, 0, 0]
+    },
+    "rationale": "No satisfying tensors exist for this template. Recolouring follows paths from remote 9 markers and depends on branches and 7 markers. Immediate neighbourhood keys cannot distinguish all pixels that must remain 8 from those that must become 9. The parameters are retained."
+  },
+  {
+    "task_id": "5ffb2104",
+    "params": {
+      "bg": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "dir": [0, 0, 0, 1]
+    },
+    "rationale": "No satisfying tensors exist for this template. The expected outputs preserve object shapes while sliding them right. Pixel gravity compacts each row independently: the lone 3 in the counterexample's first row must reach the last column, whereas the expected output places it in the penultimate column. The parameters are retained."
+  }
+]

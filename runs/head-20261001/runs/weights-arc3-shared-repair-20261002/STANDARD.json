@@ -1,0 +1,46 @@
+{
+  "arms": {
+    "llm": {
+      "kind": "founder_probe"
+    },
+    "random": {
+      "kind": "tensor_ablation_only"
+    }
+  },
+  "seeds": [
+    0
+  ],
+  "seeds_declared_before_run": true,
+  "budget_per_arm": 1,
+  "niches": [
+    "arc3_shared_development"
+  ],
+  "founders": [
+    {
+      "hash": "f2a646096cb4df239fda6abd69f8fc8b7e3bc5d8639e9894d445c65792b69f42",
+      "niche": "arc3_shared_development",
+      "author": "llm",
+      "actor": "metered_maker",
+      "rationale": "Runtime repair replaces unavailable str conversions with a tuple of the level integer and existing frame digest. The generic online mechanism and tensors are retained: frame segmentation supplies object clicks, frame differences teach action effects and colour activity, level gains credit recent actions, and bounded graph search routes toward unexplored actions. No game identities or stored solutions are used.",
+      "weights_file": "WEIGHTS.json"
+    }
+  ],
+  "genomes": [],
+  "proposals": [
+    {
+      "arm": "llm",
+      "seed": 0,
+      "hash_or_null": "f2a646096cb4df239fda6abd69f8fc8b7e3bc5d8639e9894d445c65792b69f42",
+      "charged": true,
+      "outcome": "neutral"
+    }
+  ],
+  "scientific_acceptance": false,
+  "limitations": [
+    "One seed and founder; no mutations/crossover",
+    "Public development games, not held-out",
+    "Random ablations are not an equally charged random-evolution arm",
+    "No matched explorer or joint ARC-1/2/3 model",
+    "Expected standard contract/scientific failures; no waiver"
+  ]
+}

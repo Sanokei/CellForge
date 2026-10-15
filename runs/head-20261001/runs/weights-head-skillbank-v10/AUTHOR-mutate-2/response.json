@@ -1,0 +1,32 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {"bg": [1,0,0,0,0,0,0,0,0,0], "keysel": [1,0,0,0,0,0,0,0]},
+    "rationale": "No valid tensors exist for this template. In the first demonstration, background pixels at (4,1) and (4,3), using zero-based coordinates, require different outputs but share keys for kinds 0,1,2,3,4,5,6. Pixels (4,1) and (4,7) also collide for kind 7. Changing the background cannot resolve these collisions."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "prop": [0,0,0,0,0,0,0,9]},
+    "rationale": "Select (colour, holes): blue objects map to background, while azure objects map to their demonstrated output colour according to their enclosed-hole count."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "prop": [9,0,0,0,0,0,0,0]},
+    "rationale": "No valid tensors exist for this template. Object recolouring cannot move the interior colours onto previously background pixels. Choosing a different background makes the connected zero region an object with nonuniform required outputs, which is ignored."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "keysel": [0,0,0,0,0,9]},
+    "rationale": "No valid tensors exist for this template. In demonstration two, pixels (1,1) and (8,7) have identical complete 3x3 neighbourhoods but require outputs 8 and 0. Every available neighbourhood key therefore collides, regardless of background."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {"bg": [9,0,0,0,0,0,0,0,0,0], "keysel": [0,0,0,9,0,0]},
+    "rationale": "No valid tensors exist for this template. Recolouring depends on connectivity beyond the neighbourhood. Demonstrated retained and recoloured azure pixels collide under every available key, including neighbour counts, colour sets, and directional four-neighbour colours."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {"dirs": [1,0,1,0,1,0,1,0], "paint": [0,0,0,0,0,0,0,0,0,0], "src": [0,1,1,1,1,1,1,1,1,1], "stop": [1,0,0]},
+    "rationale": "Enabling colour 8 fixes its missing rays, but no valid tensors can reproduce all demonstrations. The template cannot paint intersections colour 2 while painting other ray cells their source colours; it provides no intersection-specific paint rule."
+  }
+]

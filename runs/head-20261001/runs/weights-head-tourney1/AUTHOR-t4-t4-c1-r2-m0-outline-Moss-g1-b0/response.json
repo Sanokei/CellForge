@@ -1,0 +1,62 @@
+[
+  {
+    "task_id": "outline-n0-same",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Colours 1, 2, and 3 expand into their four orthogonal zero neighbours using their own colour; demonstration 3 leaves colour 8 unchanged."
+  },
+  {
+    "task_id": "outline-n0-c4",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 0],
+      "src": [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 2 give colours 1 and 2 four orthogonal neighbours of colour 4; all colour 8 pixels remain without halos."
+  },
+  {
+    "task_id": "outline-n0-c6",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 0],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Colours 1 and 3 receive orthogonal colour 6 halos in demonstration 1; colour 2 does likewise in demonstration 3, while colour 8 stays unchanged."
+  },
+  {
+    "task_id": "outline-n1-same",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 2 expands colours 1, 2, and 3 into all eight surrounding zero cells using their own colour; demonstration 1 preserves the adjacent 8."
+  },
+  {
+    "task_id": "outline-n1-c4",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Demonstration 1 surrounds colours 1, 2, and 3 with colour 4 in all eight directions; demonstration 2 leaves colour 8 without a halo."
+  },
+  {
+    "task_id": "outline-n1-c6",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "src": [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      "ring": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+    },
+    "rationale": "Demonstrations 1 and 2 give colours 1 and 2 eight-neighbour colour 6 halos, excluding colour 8; demonstration 3 also gives both colour 3 pixels these halos."
+  }
+]

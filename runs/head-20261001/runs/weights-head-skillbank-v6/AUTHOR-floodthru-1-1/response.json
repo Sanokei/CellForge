@@ -1,0 +1,82 @@
+[
+  {
+    "task_id": "floodthru-m1-t8-n0",
+    "params": {
+      "marker": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "through": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "conn": [1, 0],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 1 through colour 8 using four neighbours. In demonstration 3, the adjacent upper component becomes 1 while the diagonally separated lower-left 8s remain unchanged."
+  },
+  {
+    "task_id": "floodthru-m1-t8-n1",
+    "params": {
+      "marker": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "through": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "conn": [0, 1],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 1 through colour 8 using eight neighbours. Demonstration 2 recolours the component reached diagonally from the 1 at row 4, column 6; disconnected 8s remain unchanged."
+  },
+  {
+    "task_id": "floodthru-m2-t8-n1",
+    "params": {
+      "marker": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+      "through": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "conn": [0, 1],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 2 through colour 8 using eight neighbours. Demonstration 1 recolours the upper-right component connected diagonally to the marker, leaving the left component unchanged."
+  },
+  {
+    "task_id": "floodthru-m9-t0-n1",
+    "params": {
+      "marker": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      "through": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 9 through background using eight neighbours, with 8s blocking passage. Demonstration 1 fills only the two-column compartment containing 9; demonstration 3 fills only the marker's horizontal strip."
+  },
+  {
+    "task_id": "floodthru-m2-t8-n0",
+    "params": {
+      "marker": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+      "through": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "conn": [1, 0],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 2 through colour 8 using four neighbours. Demonstration 2 recolours the left component touching 2 while preserving the separate right component and all background."
+  },
+  {
+    "task_id": "floodthru-m9-t5-n0",
+    "params": {
+      "marker": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      "through": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+      "conn": [1, 0],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 9 through colour 5 using four neighbours. Demonstration 1 recolours the touching upper-left component; demonstration 3 recolours the lower component while preserving the isolated top component."
+  },
+  {
+    "task_id": "floodthru-m9-t5-n1",
+    "params": {
+      "marker": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      "through": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+      "conn": [0, 1],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 9 through colour 5 using eight neighbours. Demonstration 2 recolours both components above and below the marker; demonstrations 1 and 3 preserve distant components."
+  },
+  {
+    "task_id": "floodthru-m9-t8-n0",
+    "params": {
+      "marker": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      "through": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "conn": [1, 0],
+      "fill": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    "rationale": "Flood from colour 9 through colour 8 using four neighbours. Demonstration 1 recolours the component directly below 9 while preserving the lower component separated by a diagonal gap and the distant left component."
+  }
+]

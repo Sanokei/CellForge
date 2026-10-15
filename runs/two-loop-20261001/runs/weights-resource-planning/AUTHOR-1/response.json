@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 901,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d",
+    "parent_params": {
+      "policy.W1": [[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [0.0, 0.0, 0.0, 0.0]
+    },
+    "base_sha256": "787436267b0664a9055103bf705d72c4a69c36e0d3e657163ed812b33761a58e",
+    "prompt_sha256": "627cffb874722fdb59a0652d2c3bdfe31e99335b0d897c7b33e2ae47f2593378",
+    "feedback_sha256": "7f5c119f1cc5aa77ab837d2cf0f9140b3b56c1cb05e2e51c9c843027532bc666",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 2.0, 0.5]
+    },
+    "charged_positions": 28,
+    "rationale": "Development traces show repeated acquisition causing capacity and energy failures, including states with initial materials or goods. This mutation penalizes acquisition with existing cargo, supports assembly from materials and delivery from goods, and uses projected energy against a fixed recharge score. No distinct crossover donor was supplied. Unevaluated; no improvement claimed."
+  },
+  {
+    "seed": 902,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d",
+    "parent_params": {
+      "policy.W1": [[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [0.0, 0.0, 0.0, 0.0]
+    },
+    "base_sha256": "787436267b0664a9055103bf705d72c4a69c36e0d3e657163ed812b33761a58e",
+    "prompt_sha256": "7c5e4e824f2a4d5816fad8e97abb95787e769395b41aacfc1b700183d9dae662",
+    "feedback_sha256": "7f5c119f1cc5aa77ab837d2cf0f9140b3b56c1cb05e2e51c9c843027532bc666",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.0, 1.5, 0.75]
+    },
+    "charged_positions": 28,
+    "rationale": "The supplied development failures motivate cargo-sensitive acquisition, material-sensitive assembly, goods-sensitive delivery, and projected-energy scoring. This variant uses a smaller delivery bias and a recharge baseline of 0.75 to author a different energy tradeoff. No distinct crossover donor was supplied. Unevaluated; no improvement claimed."
+  },
+  {
+    "seed": 903,
+    "model": "gpt-6.1-sol",
+    "reasoning": "low",
+    "interface": "resource-production-planning-cell/1",
+    "parent_id": "33fee6c96398741bcc1ae1459bf9a013038170245e1c66c2942f59df9227865d",
+    "parent_params": {
+      "policy.W1": [[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [0.0, 0.0, 0.0, 0.0]
+    },
+    "base_sha256": "787436267b0664a9055103bf705d72c4a69c36e0d3e657163ed812b33761a58e",
+    "prompt_sha256": "832ad77ab1663dc809526acc8682ee2ecebce618699d62ce517b0c73c9782270",
+    "feedback_sha256": "7f5c119f1cc5aa77ab837d2cf0f9140b3b56c1cb05e2e51c9c843027532bc666",
+    "params": {
+      "policy.W1": [[-9.0, -9.0, 0.0, 2.0, 0.0, 0.0], [9.0, 0.0, 0.0, 2.0, 0.0, 0.0], [0.0, 9.0, 0.0, 2.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]],
+      "policy.b1": [9.0, 1.25, 1.75, 0.9]
+    },
+    "charged_positions": 28,
+    "rationale": "Development feedback identifies acquisition despite occupied cargo or insufficient energy. This mutation introduces cargo penalties, resource-dependent assembly and delivery scores, and projected-energy terms with a recharge baseline of 0.9. Assembly and delivery biases provide a distinct numerical variant. No distinct crossover donor was supplied. Unevaluated; no improvement claimed."
+  }
+]

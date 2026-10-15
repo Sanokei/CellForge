@@ -1,0 +1,52 @@
+[
+  {
+    "task_id": "1a244afd",
+    "params": {
+      "bg": [0, 0, 0, 0, 0, 0, 0, 0, 9, 0],
+      "keysel": [0, 0, 0, 0, 0, 0, 9, 0]
+    },
+    "rationale": "No exact solution exists in this template. The nearest-colour key cannot distinguish different distances along an empty row, although only one such pixel becomes 7. The other available keys also merge pixels requiring different outputs."
+  },
+  {
+    "task_id": "009d5c81",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "Select (colour, holes). Hole counts determine the recolouring of the 8 objects; including colour distinguishes those objects from the 1 objects that must disappear."
+  },
+  {
+    "task_id": "952a094c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "prop": [0, 0, 0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Object recolouring cannot move interior pixels or create coloured pixels at previously empty exterior corners. Changing the background cannot supply the required nonuniform recolouring."
+  },
+  {
+    "task_id": "f1bcbc2c",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 9, 0, 0, 0]
+    },
+    "rationale": "No exact solution exists in this template. In demonstration 2, pixels (3,2) and (6,6), using zero-based coordinates, have identical keys under every available kind, but their required outputs are 8 and 0."
+  },
+  {
+    "task_id": "cc9053aa",
+    "params": {
+      "bg": [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "keysel": [0, 0, 0, 0, 0, 9]
+    },
+    "rationale": "No exact solution exists in this template. Every available neighbourhood kind merges pixels requiring 8 and 9. For example, the four-neighbour key is identical at demonstration 1 pixel (1,3) and demonstration 2 pixel (1,2), whose required outputs differ."
+  },
+  {
+    "task_id": "45bbe264",
+    "params": {
+      "dirs": [1, 0, 1, 0, 1, 0, 1, 0],
+      "paint": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "src": [0, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      "stop": [1, 0, 0]
+    },
+    "rationale": "Enable all nonzero source colours, but no exact solution exists under the stated semantics. Rays must retain source colours while intersections become 2; the template provides no intersection-dependent paint rule."
+  }
+]

@@ -1,0 +1,249 @@
+{
+ "game": "re86",
+ "house": "Moss",
+ "n": 1,
+ "source_lines": [
+  "def act(params, mem, frame, avail, info):",
+  "    cfg = params['config']",
+  "    colours = params['colours']",
+  "    level = info['levels']",
+  "    if mem.get('level', -1) != level or mem.get('reset', -1) != info['resets']:",
+  "        mem['level'] = level",
+  "        mem['reset'] = info['resets']",
+  "        mem['targets'] = {}",
+  "        mem['visits'] = {}",
+  "        mem['previous'] = None",
+  "    border = frame == int(cfg[0])",
+  "    surrounding = np.roll(border, 1, axis=0).astype(int) + np.roll(border, -1, axis=0).astype(int) + np.roll(border, 1, axis=1).astype(int) + np.roll(border, -1, axis=1).astype(int)",
+  "    for colour in colours:",
+  "        colour = int(colour)",
+  "        points = np.argwhere((frame == colour) & (surrounding >= cfg[1]))",
+  "        remembered = mem['targets'].setdefault(colour, [])",
+  "        for point in points:",
+  "            p = (int(point[0]), int(point[1]))",
+  "            if p not in remembered:",
+  "                remembered.append(p)",
+  "    centers = np.argwhere(frame[:int(cfg[2])] == int(cfg[3]))",
+  "    if len(centers) == 0:",
+  "        count = mem.get('fallback', 0)",
+  "        mem['fallback'] = count + 1",
+  "        order = params['order']",
+  "        action = int(order[count % len(order)])",
+  "        if action not in avail:",
+  "            action = avail[count % len(avail)]",
+  "        return (action, int(cfg[4]), int(cfg[4]))",
+  "    row = int(centers[0][0])",
+  "    col = int(centers[0][1])",
+  "    best_colour = int(colours[0])",
+  "    best_count = -1",
+  "    for colour in colours:",
+  "        colour = int(colour)",
+  "        count = 0",
+  "        for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1)):",
+  "            rr = row + dr",
+  "            cc = col + dc",
+  "            if 0 <= rr < frame.shape[0] and 0 <= cc < frame.shape[1] and frame[rr, cc] == colour:",
+  "                count += 1",
+  "        if count > best_count:",
+  "            best_count = count",
+  "            best_colour = colour",
+  "    colour = best_colour",
+  "    effects = mem.setdefault('effects', {})",
+  "    previous = mem.get('previous')",
+  "    if previous is not None:",
+  "        pr, pc, previous_colour, action, signature = previous",
+  "        if previous_colour == colour and (pr != row or pc != col):",
+  "            effects[action] = (row - pr, col - pc)",
+  "        elif previous_colour != colour:",
+  "            mem['switch'] = action",
+  "        elif pr == row and pc == col:",
+  "            blocked = mem.setdefault('blocked', {})",
+  "            blocked[(signature, action)] = blocked.get((signature, action), 0) + 1",
+  "    points = mem['targets'].get(colour, [])",
+  "    target_row = row",
+  "    target_col = col",
+  "    best_score = -1000000",
+  "    rows = [row]",
+  "    cols = [col]",
+  "    for rr, cc in points:",
+  "        if rr not in rows:",
+  "            rows.append(rr)",
+  "        if cc not in cols:",
+  "            cols.append(cc)",
+  "    for rr in rows:",
+  "        for cc in cols:",
+  "            covered = 0",
+  "            for tr, tc in points:",
+  "                if (tr == rr and abs(tc - cc) <= cfg[5]) or (tc == cc and abs(tr - rr) <= cfg[5]):",
+  "                    covered += 1",
+  "            distance = abs(rr - row) + abs(cc - col)",
+  "            score = cfg[6] * covered - cfg[7] * distance",
+  "            if score > best_score:",
+  "                best_score = score",
+  "                target_row = rr",
+  "                target_col = cc",
+  "    signature = (level, colour, row, col, tuple(points))",
+  "    visits = mem['visits'].setdefault(signature, {})",
+  "    tested = mem.setdefault('tested', [])",
+  "    action = None",
+  "    for candidate in params['order']:",
+  "        candidate = int(candidate)",
+  "        if candidate in avail and candidate not in tested:",
+  "            action = candidate",
+  "            tested.append(candidate)",
+  "            break",
+  "    if action is None:",
+  "        best_score = -1000000",
+  "        for index in range(len(params['order'])):",
+  "            candidate = int(params['order'][index])",
+  "            if candidate not in avail:",
+  "                continue",
+  "            dr = params['directions'][candidate - 1][0]",
+  "            dc = params['directions'][candidate - 1][1]",
+  "            if candidate in effects:",
+  "                dr, dc = effects[candidate]",
+  "            before = abs(target_row - row) + abs(target_col - col)",
+  "            after = abs(target_row - row - dr) + abs(target_col - col - dc)",
+  "            score = cfg[8] * (before - after)",
+  "            switch = mem.get('switch', int(cfg[9]))",
+  "            if candidate == switch:",
+  "                score = cfg[10] if before == 0 else -cfg[11]",
+  "            score -= cfg[12] * visits.get(candidate, 0)",
+  "            score -= cfg[13] * mem.get('blocked', {}).get((signature, candidate), 0)",
+  "            score -= params['priority'][index]",
+  "            if score > best_score:",
+  "                best_score = score",
+  "                action = candidate",
+  "        if action is None:",
+  "            action = avail[0]",
+  "    visits[action] = visits.get(action, 0) + 1",
+  "    mem['previous'] = (row, col, colour, action, signature)",
+  "    if action == 6:",
+  "        clicks = mem.setdefault('clicks', {})",
+  "        candidates = []",
+  "        for group in mem['targets'].values():",
+  "            candidates.extend(group)",
+  "        if len(candidates) > 0:",
+  "            chosen = candidates[0]",
+  "            minimum = 1000000",
+  "            for point in candidates:",
+  "                count = clicks.get(point, 0)",
+  "                if count < minimum:",
+  "                    minimum = count",
+  "                    chosen = point",
+  "            clicks[chosen] = minimum + 1",
+  "            return (action, chosen[1], chosen[0])",
+  "    return (action, int(cfg[4]), int(cfg[4]))"
+ ],
+ "shapes": {
+  "config": [
+   14
+  ],
+  "colours": [
+   2
+  ],
+  "order": [
+   5
+  ],
+  "directions": [
+   5,
+   2
+  ],
+  "priority": [
+   5
+  ]
+ },
+ "params": {
+  "config": [
+   4,
+   3,
+   63,
+   0,
+   32,
+   13,
+   100,
+   1,
+   10,
+   5,
+   20,
+   15,
+   12,
+   50
+  ],
+  "colours": [
+   9,
+   11
+  ],
+  "order": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "directions": [
+   [
+    -3,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    0,
+    -3
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    0,
+    0
+   ]
+  ],
+  "priority": [
+   0,
+   0.1,
+   0.2,
+   0.3,
+   0.4
+  ]
+ },
+ "rationale": "Probe each available keyboard control once and learn displacement or cross selection from the visible center and neighbouring colours. Detect target cores enclosed by colour 4, retain their positions, and choose cross intersections that cover the most matching targets. Move toward those intersections, switch crosses when aligned, and penalize repeated state/action pairs and actions that leave the ",
+ "result": {
+  "game": "re86",
+  "seed": 0,
+  "budget": 1500,
+  "n_levels": 8,
+  "levels": 1,
+  "used": 1500,
+  "resets": 14,
+  "noops": 15,
+  "error": null,
+  "level_steps": [
+   25
+  ],
+  "state": "NOT_FINISHED",
+  "distinct": 386,
+  "action_hist": {
+   "1": 243,
+   "2": 501,
+   "3": 355,
+   "4": 181,
+   "5": 206
+  },
+  "final_frame": "5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555544455555555555555555555555555555555555555555\n555555555555555555554d455555555555555555555555555555555555555555\n5555555555555555555544455555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555544455555555555555555555555555555555555\n555555555555555555555555554d455555555555555555555555555555555555\n5555555555555555555555555544455555555555555555555555555555555555\n5555555555544455555555555555555555555555555555555555555555555555\n555555555554d455555555555555555555555555555555555555555555555555\n5555555555544455555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\n5555555555555555555555555549455555555555555555555555555555555555\n5555555555555555555555555549455555555555555555555555555555555555\n5555555555555555555c555555d9d555555555555c5555555555555555555555\n55555555444555555555c5555d595d5555555555c55555555555555555555555\n555555554c45555555555c55d55955d55555555c555555555555555555555555\n5555555544455555555555cd5559555d555555c5555555555555555555555555\n5555555555555555555555dc44595555d5555c55555555555555555555555555\n555555555555555555555d54c45955555d55c555555555555555555555555555\n55555555555555555555d5544c59555555dc5555555555555555555555555555\n5555555555555555555d555555c9555555cd5555555555555555555555555555\n555555555555555555d55555555955555c55d555555555555555555555555555\n5555555555555555555d55555559c555c55d5555555555555555555555555555\n55555555555555444555d55555595c5c44d55555555555555555555555555555\n5555555555555599999999999999999999999999955555555555555555555555\n5555555555555544455555d555595c5cd4455555555555555555555555555555\n55555555555555555555555d5559c55dc5555555555555555555555555555555\n555555555555555555555555d55955d55c555555555555555555555555555555\n5555555555555555555555555dc95d5555c55555555555555555555555555555\n5555555555555555555555555cd9d555555c5555555555555555555555555555\n555555555555555555555555c55955555555c555555555555555555555555555\n55555555555555555555555c5559555555555c55555555555555555555555555\n5555555544455555555555c555595555555555c5555555555555555555555555\n555555554c45555555555c55555955555555555c555555555555555555555555\n55555555444555555555c5555559555555555555c55555555555555555555555\n5555555555555555555c555555494555555555555c5555555555555555555555\n5555555555555555555555555549455555555555555555555555555555555555\n5555555555555555555555555549455555555555555555555555555555555555\n5555555555555555555555555555555555555555555555555555555555555555\nfffffffffffffffffffffffff111111111111111111111111111111111111111",
+  "score": 2.7777777777777777
+ },
+ "controls": {
+  "zero": 0,
+  "random": [
+   0,
+   0,
+   0
+  ],
+  "blind": 0
+ }
+}

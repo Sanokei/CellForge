@@ -1,0 +1,12 @@
+[
+  {"task_id":"seq-m5-rows","params":{"mask":[0,0,0,0,0,1,0,0,0,0],"axis":[1,0,0],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Replace colour 5 by horizontal repetition: demonstrations restore alternating 7,8 and 1,4, and the period-three sequence 8,9,6."},
+  {"task_id":"seq-m6-rows","params":{"mask":[0,0,0,0,0,0,1,0,0,0],"axis":[1,0,0],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 6 masks horizontal sequences: demonstrations restore periods 5,7; 7,8; and 8,1,7."},
+  {"task_id":"seq-m8-cols","params":{"mask":[0,0,0,0,0,0,0,0,1,0],"axis":[0,1,0],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 8 is replaced using vertical period two, restoring alternating rows of 1,6; 2,4; and 2,5."},
+  {"task_id":"seq-m6-cols","params":{"mask":[0,0,0,0,0,0,1,0,0,0],"axis":[0,1,0],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 6 masks vertical sequences: outputs repeat 8,4; 5,4,3; and 2,3,9 down each column."},
+  {"task_id":"seq-m5-grid","params":{"mask":[0,0,0,0,0,1,0,0,0,0],"axis":[0,0,1],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 5 masks two-dimensional tiles: the first output repeats three row types with horizontal period two, and the second repeats a 3-by-3 tile."},
+  {"task_id":"seq-m9-grid","params":{"mask":[0,0,0,0,0,0,0,0,0,1],"axis":[0,0,1],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 9 is filled from two-dimensional periodic classes: demonstrations restore tiles with dimensions 2-by-3, 3-by-3, and 2-by-2."},
+  {"task_id":"seq-m4-grid","params":{"mask":[0,0,0,0,1,0,0,0,0,0],"axis":[0,0,1],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 4 masks periodic tiles: the first two outputs have vertical period three and horizontal period two; the third repeats a 3-by-3 tile."},
+  {"task_id":"seq-m7-cols","params":{"mask":[0,0,0,0,0,0,0,1,0,0],"axis":[0,1,0],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 7 is replaced by vertical period-two sequences, yielding alternating rows of 9,4; 9,5; and 8,0."},
+  {"task_id":"seq-m7-grid","params":{"mask":[0,0,0,0,0,0,0,1,0,0],"axis":[0,0,1],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 7 masks two-dimensional patterns: outputs repeat a 3-by-2 tile, a 3-by-3 tile, and a 2-by-2 tile respectively."},
+  {"task_id":"seq-m4-cols","params":{"mask":[0,0,0,0,1,0,0,0,0,0],"axis":[0,1,0],"maxp":[0,0,0,0,0,0,0,1]},"rationale":"Colour 4 masks vertical repetition: demonstrations restore column sequences 2,5,6,7; 7,8,9; and 6,5,6,0, requiring periods four, three, and four."}
+]

@@ -1,0 +1,12 @@
+[
+  {"task_id":"seqop-2","params":{"op":[0,0,9,0,0,0,0,0,0,0]},"rationale":"Sort descending: [2,1,3,0,2] becomes [3,2,2,1,0], preserving duplicates."},
+  {"task_id":"seqop-6","params":{"op":[0,0,0,0,0,0,9,0,0,0]},"rationale":"Rotate right by one: [5,1,3,4,0,2] becomes [2,5,1,3,4,0]."},
+  {"task_id":"seqop-0","params":{"op":[9,0,0,0,0,0,0,0,0,0]},"rationale":"Reverse: [5,3,5,5,2,2,4] becomes [4,2,2,5,5,3,5]."},
+  {"task_id":"seqop-1","params":{"op":[0,9,0,0,0,0,0,0,0,0]},"rationale":"Sort ascending: [2,5,1,4,4] becomes [1,2,4,4,5]."},
+  {"task_id":"seqop-5","params":{"op":[0,0,0,0,0,9,0,0,0,0]},"rationale":"Rotate left by one: [1,5,3,0,1] becomes [5,3,0,1,1]."},
+  {"task_id":"seqop-4","params":{"op":[0,0,0,0,9,0,0,0,0,0]},"rationale":"Keep each token's first occurrence: [1,5,3,5,0,5,5,4,4] becomes [1,5,3,0,4]."},
+  {"task_id":"seqop-3","params":{"op":[0,0,0,9,0,0,0,0,0,0]},"rationale":"Collapse consecutive duplicates: [2,2,5,1,3,2,4,1] becomes [2,5,1,3,2,4,1], retaining separated repeats."},
+  {"task_id":"seqop-9","params":{"op":[0,0,0,0,0,0,0,0,0,9]},"rationale":"Remove zeros: [4,4,1,0,0,3,4,0] becomes [4,4,1,3,4], preserving other tokens' order."},
+  {"task_id":"seqop-8","params":{"op":[0,0,0,0,0,0,0,0,9,0]},"rationale":"Sort by decreasing frequency, ties by ascending token: [0,0,1,0,3,2,4,4] becomes [0,0,0,4,4,1,2,3]."},
+  {"task_id":"seqop-7","params":{"op":[0,0,0,0,0,0,0,9,0,0]},"rationale":"Replace every token with the most common token: [4,5,5,2,2,0,5] becomes seven 5s; tied modes select 2 in the first demonstration and 1 in the second."}
+]

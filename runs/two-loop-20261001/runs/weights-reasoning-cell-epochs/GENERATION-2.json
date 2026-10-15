@@ -1,0 +1,1782 @@
+{
+  "state": {
+    "initial_anchor": "18bff7985ec2306bea9b816bbcd4359c2c57235586129f56dd12465ce5ccf164",
+    "generation": 2,
+    "cells": {
+      "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60": {
+        "structure": "all_present",
+        "activation": "step",
+        "params": {
+          "W1": [
+            [
+              1.0,
+              -1.0
+            ]
+          ],
+          "b1": [
+            0.5
+          ]
+        },
+        "source_graph_hash": "3e9019e45acccc3b18118794b802774e76a839cfedbb89be69880183f9138b0c",
+        "typed_interface": "count-required->boolean/1",
+        "source": "runs/parallel-deduction/artifact-v1",
+        "niche": "all_present",
+        "id": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+        "parents": [],
+        "provenance": {
+          "source": "verified historical literal graph cell",
+          "source_graph_hash": "3e9019e45acccc3b18118794b802774e76a839cfedbb89be69880183f9138b0c"
+        },
+        "state": "live",
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": true,
+            "development-all_present-3": true,
+            "development-all_present-4": true,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": true,
+            "development-all_present-8": true,
+            "development-all_present-9": true,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": true,
+            "development-all_present-13": true,
+            "development-all_present-14": true,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": true,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": true,
+            "development-all_present-22": true,
+            "development-all_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        }
+      },
+      "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862": {
+        "structure": "any_present",
+        "activation": "step",
+        "params": {
+          "W1": [
+            [
+              1.0
+            ]
+          ],
+          "b1": [
+            0.0
+          ]
+        },
+        "source_graph_hash": "3e9019e45acccc3b18118794b802774e76a839cfedbb89be69880183f9138b0c",
+        "typed_interface": "vote-count->boolean/1",
+        "source": "runs/parallel-deduction/artifact-v1",
+        "niche": "any_present",
+        "id": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+        "parents": [],
+        "provenance": {
+          "source": "verified historical literal graph cell",
+          "source_graph_hash": "3e9019e45acccc3b18118794b802774e76a839cfedbb89be69880183f9138b0c"
+        },
+        "state": "live",
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": true,
+            "development-any_present-1": true,
+            "development-any_present-2": true,
+            "development-any_present-3": true,
+            "development-any_present-4": true,
+            "development-any_present-5": true,
+            "development-any_present-6": true,
+            "development-any_present-7": true,
+            "development-any_present-8": true,
+            "development-any_present-9": true,
+            "development-any_present-10": true,
+            "development-any_present-11": true,
+            "development-any_present-12": true,
+            "development-any_present-13": true,
+            "development-any_present-14": true,
+            "development-any_present-15": true,
+            "development-any_present-16": true,
+            "development-any_present-17": true,
+            "development-any_present-18": true,
+            "development-any_present-19": true,
+            "development-any_present-20": true,
+            "development-any_present-21": true,
+            "development-any_present-22": true,
+            "development-any_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        }
+      },
+      "4e36d5413a621c6f8eea63e0690b85e8c74bc2f4eba37d5354ccd2c573d902a3": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              2.0,
+              -2.0
+            ]
+          ],
+          "b1": [
+            1.0
+          ]
+        },
+        "id": "4e36d5413a621c6f8eea63e0690b85e8c74bc2f4eba37d5354ccd2c573d902a3",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": true,
+            "development-all_present-3": true,
+            "development-all_present-4": true,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": true,
+            "development-all_present-8": true,
+            "development-all_present-9": true,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": true,
+            "development-all_present-13": true,
+            "development-all_present-14": true,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": true,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": true,
+            "development-all_present-22": true,
+            "development-all_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "LLM numerical/structural mutation",
+          "raw_response_sha256": "e49f499262bbc94fb6148680b72a2ddc6483afe5edbff69d3c615e9f1c411dfb",
+          "generation": 1,
+          "seed": 601,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "720b72d9d539d023962fe33290a48f89050fe6d2302f878f0230051019fa0671": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              -3.58806033616371,
+              -3.894670087587288
+            ]
+          ],
+          "b1": [
+            -8.963725438873915
+          ]
+        },
+        "id": "720b72d9d539d023962fe33290a48f89050fe6d2302f878f0230051019fa0671",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": false,
+            "development-all_present-3": false,
+            "development-all_present-4": false,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": false,
+            "development-all_present-8": false,
+            "development-all_present-9": false,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": false,
+            "development-all_present-13": false,
+            "development-all_present-14": false,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": false,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": false,
+            "development-all_present-22": false,
+            "development-all_present-23": true
+          },
+          "solved": 12,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "e49f499262bbc94fb6148680b72a2ddc6483afe5edbff69d3c615e9f1c411dfb",
+          "generation": 1,
+          "seed": 601,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "7f06db73e76c8180868fef1d73b843b9ab8c48ba10161055a2da4fff4aa64dcc": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              2.0
+            ]
+          ],
+          "b1": [
+            0.0
+          ]
+        },
+        "id": "7f06db73e76c8180868fef1d73b843b9ab8c48ba10161055a2da4fff4aa64dcc",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": true,
+            "development-any_present-1": true,
+            "development-any_present-2": true,
+            "development-any_present-3": true,
+            "development-any_present-4": true,
+            "development-any_present-5": true,
+            "development-any_present-6": true,
+            "development-any_present-7": true,
+            "development-any_present-8": true,
+            "development-any_present-9": true,
+            "development-any_present-10": true,
+            "development-any_present-11": true,
+            "development-any_present-12": true,
+            "development-any_present-13": true,
+            "development-any_present-14": true,
+            "development-any_present-15": true,
+            "development-any_present-16": true,
+            "development-any_present-17": true,
+            "development-any_present-18": true,
+            "development-any_present-19": true,
+            "development-any_present-20": true,
+            "development-any_present-21": true,
+            "development-any_present-22": true,
+            "development-any_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "LLM numerical/structural mutation",
+          "raw_response_sha256": "69f18f1d5eb70508e5e46dea70e4c7ae2924bfd06cb64a16e4d3421bbbc9bd8b",
+          "generation": 1,
+          "seed": 601,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "39eb7a39e6f7d732c24974ac82265e2efca4ed00d5ad7ded6aa299ce7dd8ea34": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              6.006809993503998
+            ]
+          ],
+          "b1": [
+            -8.944833798680232
+          ]
+        },
+        "id": "39eb7a39e6f7d732c24974ac82265e2efca4ed00d5ad7ded6aa299ce7dd8ea34",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": true,
+            "development-any_present-1": true,
+            "development-any_present-2": true,
+            "development-any_present-3": true,
+            "development-any_present-4": true,
+            "development-any_present-5": true,
+            "development-any_present-6": true,
+            "development-any_present-7": true,
+            "development-any_present-8": true,
+            "development-any_present-9": true,
+            "development-any_present-10": true,
+            "development-any_present-11": true,
+            "development-any_present-12": true,
+            "development-any_present-13": true,
+            "development-any_present-14": true,
+            "development-any_present-15": true,
+            "development-any_present-16": true,
+            "development-any_present-17": true,
+            "development-any_present-18": true,
+            "development-any_present-19": true,
+            "development-any_present-20": true,
+            "development-any_present-21": true,
+            "development-any_present-22": true,
+            "development-any_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "69f18f1d5eb70508e5e46dea70e4c7ae2924bfd06cb64a16e4d3421bbbc9bd8b",
+          "generation": 1,
+          "seed": 601,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "980717bd854bd4b83db9171815d6cec809545ddd32ef26847716469712a99abb": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              3.0,
+              -3.0
+            ]
+          ],
+          "b1": [
+            1.5
+          ]
+        },
+        "id": "980717bd854bd4b83db9171815d6cec809545ddd32ef26847716469712a99abb",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": true,
+            "development-all_present-3": true,
+            "development-all_present-4": true,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": true,
+            "development-all_present-8": true,
+            "development-all_present-9": true,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": true,
+            "development-all_present-13": true,
+            "development-all_present-14": true,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": true,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": true,
+            "development-all_present-22": true,
+            "development-all_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "LLM numerical/structural mutation",
+          "raw_response_sha256": "33e854a4606f2f2a917492f13a3b1554920e74e296d25895671a0f9f7d21ec05",
+          "generation": 1,
+          "seed": 602,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "80c9d5545f6539c83fe4185cb4e00ee51cbe25ea9d283211dd08ae3269362d6a": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              2.7382289914878086,
+              -6.771405958096467
+            ]
+          ],
+          "b1": [
+            4.9343804955101795
+          ]
+        },
+        "id": "80c9d5545f6539c83fe4185cb4e00ee51cbe25ea9d283211dd08ae3269362d6a",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": true,
+            "development-all_present-3": false,
+            "development-all_present-4": false,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": false,
+            "development-all_present-8": true,
+            "development-all_present-9": true,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": true,
+            "development-all_present-13": false,
+            "development-all_present-14": true,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": true,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": true,
+            "development-all_present-22": true,
+            "development-all_present-23": true
+          },
+          "solved": 20,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "33e854a4606f2f2a917492f13a3b1554920e74e296d25895671a0f9f7d21ec05",
+          "generation": 1,
+          "seed": 602,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "473da0dccf884be5554cebeefc6a0c7344227233aef0c86c95ef9db76ab53975": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              3.0
+            ]
+          ],
+          "b1": [
+            0.0
+          ]
+        },
+        "id": "473da0dccf884be5554cebeefc6a0c7344227233aef0c86c95ef9db76ab53975",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": true,
+            "development-any_present-1": true,
+            "development-any_present-2": true,
+            "development-any_present-3": true,
+            "development-any_present-4": true,
+            "development-any_present-5": true,
+            "development-any_present-6": true,
+            "development-any_present-7": true,
+            "development-any_present-8": true,
+            "development-any_present-9": true,
+            "development-any_present-10": true,
+            "development-any_present-11": true,
+            "development-any_present-12": true,
+            "development-any_present-13": true,
+            "development-any_present-14": true,
+            "development-any_present-15": true,
+            "development-any_present-16": true,
+            "development-any_present-17": true,
+            "development-any_present-18": true,
+            "development-any_present-19": true,
+            "development-any_present-20": true,
+            "development-any_present-21": true,
+            "development-any_present-22": true,
+            "development-any_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "LLM numerical/structural mutation",
+          "raw_response_sha256": "e9057ff6c1727d67f7fd1b1d9fd327cc434e0d776ed5f5caf162f1fc6d0b4627",
+          "generation": 1,
+          "seed": 602,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "8e80c98f4883cde8f107e7352ba190069774ba81239c1995514f9bb308b11a95": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              8.14732576417579
+            ]
+          ],
+          "b1": [
+            -2.2052076470496758
+          ]
+        },
+        "id": "8e80c98f4883cde8f107e7352ba190069774ba81239c1995514f9bb308b11a95",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": true,
+            "development-any_present-1": true,
+            "development-any_present-2": true,
+            "development-any_present-3": true,
+            "development-any_present-4": true,
+            "development-any_present-5": true,
+            "development-any_present-6": true,
+            "development-any_present-7": true,
+            "development-any_present-8": true,
+            "development-any_present-9": true,
+            "development-any_present-10": true,
+            "development-any_present-11": true,
+            "development-any_present-12": true,
+            "development-any_present-13": true,
+            "development-any_present-14": true,
+            "development-any_present-15": true,
+            "development-any_present-16": true,
+            "development-any_present-17": true,
+            "development-any_present-18": true,
+            "development-any_present-19": true,
+            "development-any_present-20": true,
+            "development-any_present-21": true,
+            "development-any_present-22": true,
+            "development-any_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "e9057ff6c1727d67f7fd1b1d9fd327cc434e0d776ed5f5caf162f1fc6d0b4627",
+          "generation": 1,
+          "seed": 602,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "ae80dccc542d767286adb98a63a0edf63ddaca3e445da0f3dc8e34552c5640a8": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              4.0,
+              -4.0
+            ]
+          ],
+          "b1": [
+            2.0
+          ]
+        },
+        "id": "ae80dccc542d767286adb98a63a0edf63ddaca3e445da0f3dc8e34552c5640a8",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": true,
+            "development-all_present-3": true,
+            "development-all_present-4": true,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": true,
+            "development-all_present-8": true,
+            "development-all_present-9": true,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": true,
+            "development-all_present-13": true,
+            "development-all_present-14": true,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": true,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": true,
+            "development-all_present-22": true,
+            "development-all_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "LLM numerical/structural mutation",
+          "raw_response_sha256": "9ac8a2b97b6f8fb4b45c513094c1fdbeabb6d4a1ef43b0bdbc33b50b41a7a321",
+          "generation": 1,
+          "seed": 603,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "7a56f33607ad8747b59fe7da42ff575f3e03e3a97097fb06004232dfb6794736": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              -3.1263625658746808,
+              -7.124172785361503
+            ]
+          ],
+          "b1": [
+            -6.924460241919518
+          ]
+        },
+        "id": "7a56f33607ad8747b59fe7da42ff575f3e03e3a97097fb06004232dfb6794736",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": false,
+            "development-all_present-3": false,
+            "development-all_present-4": false,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": false,
+            "development-all_present-8": false,
+            "development-all_present-9": false,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": false,
+            "development-all_present-13": false,
+            "development-all_present-14": false,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": false,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": false,
+            "development-all_present-22": false,
+            "development-all_present-23": true
+          },
+          "solved": 12,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "9ac8a2b97b6f8fb4b45c513094c1fdbeabb6d4a1ef43b0bdbc33b50b41a7a321",
+          "generation": 1,
+          "seed": 603,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "321c1c8b9f1941ded13617eac319a5b24f8c60411c0170a4cdf18e3ae33aa4b3": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              4.0
+            ]
+          ],
+          "b1": [
+            0.0
+          ]
+        },
+        "id": "321c1c8b9f1941ded13617eac319a5b24f8c60411c0170a4cdf18e3ae33aa4b3",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": true,
+            "development-any_present-1": true,
+            "development-any_present-2": true,
+            "development-any_present-3": true,
+            "development-any_present-4": true,
+            "development-any_present-5": true,
+            "development-any_present-6": true,
+            "development-any_present-7": true,
+            "development-any_present-8": true,
+            "development-any_present-9": true,
+            "development-any_present-10": true,
+            "development-any_present-11": true,
+            "development-any_present-12": true,
+            "development-any_present-13": true,
+            "development-any_present-14": true,
+            "development-any_present-15": true,
+            "development-any_present-16": true,
+            "development-any_present-17": true,
+            "development-any_present-18": true,
+            "development-any_present-19": true,
+            "development-any_present-20": true,
+            "development-any_present-21": true,
+            "development-any_present-22": true,
+            "development-any_present-23": true
+          },
+          "solved": 24,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "LLM numerical/structural mutation",
+          "raw_response_sha256": "6e866cb34a20f98ae8ced169d531322c0eccc9c35eb69e8356838cba79eb6d5c",
+          "generation": 1,
+          "seed": 603,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "5dcbe88cc57104fe2e194e05f1c6ab49a82d14792320ba052429d9cd62cab6c5": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              -3.057709646856112
+            ]
+          ],
+          "b1": [
+            7.197286436696004
+          ]
+        },
+        "id": "5dcbe88cc57104fe2e194e05f1c6ab49a82d14792320ba052429d9cd62cab6c5",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": false,
+            "development-any_present-1": false,
+            "development-any_present-2": false,
+            "development-any_present-3": false,
+            "development-any_present-4": false,
+            "development-any_present-5": false,
+            "development-any_present-6": false,
+            "development-any_present-7": false,
+            "development-any_present-8": false,
+            "development-any_present-9": true,
+            "development-any_present-10": false,
+            "development-any_present-11": false,
+            "development-any_present-12": false,
+            "development-any_present-13": false,
+            "development-any_present-14": false,
+            "development-any_present-15": true,
+            "development-any_present-16": false,
+            "development-any_present-17": false,
+            "development-any_present-18": false,
+            "development-any_present-19": false,
+            "development-any_present-20": false,
+            "development-any_present-21": false,
+            "development-any_present-22": false,
+            "development-any_present-23": false
+          },
+          "solved": 2,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "6e866cb34a20f98ae8ced169d531322c0eccc9c35eb69e8356838cba79eb6d5c",
+          "generation": 1,
+          "seed": 603,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "a879dd4052fa4f40463c8f567fe4c92b12da98bcb1a31903a320143ced118a6d": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              -1.8424917394012255,
+              -5.74049046520568
+            ]
+          ],
+          "b1": [
+            -8.826574169156139
+          ]
+        },
+        "id": "a879dd4052fa4f40463c8f567fe4c92b12da98bcb1a31903a320143ced118a6d",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": false,
+            "development-all_present-3": false,
+            "development-all_present-4": false,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": false,
+            "development-all_present-8": false,
+            "development-all_present-9": false,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": false,
+            "development-all_present-13": false,
+            "development-all_present-14": false,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": false,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": false,
+            "development-all_present-22": false,
+            "development-all_present-23": true
+          },
+          "solved": 12,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "769be3cb058732317e82c7a661512d886a289b9cc37892a3ca0d26648c4aee4c",
+          "generation": 2,
+          "seed": 601,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "da17c05d6f1a6fceb3d1bfdfa03ff5cc1bb8cf36bd68afeb139ba9c3e7897d07": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              8.70587459846692
+            ]
+          ],
+          "b1": [
+            5.868311691523749
+          ]
+        },
+        "id": "da17c05d6f1a6fceb3d1bfdfa03ff5cc1bb8cf36bd68afeb139ba9c3e7897d07",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": false,
+            "development-any_present-1": true,
+            "development-any_present-2": false,
+            "development-any_present-3": true,
+            "development-any_present-4": false,
+            "development-any_present-5": true,
+            "development-any_present-6": false,
+            "development-any_present-7": true,
+            "development-any_present-8": false,
+            "development-any_present-9": true,
+            "development-any_present-10": false,
+            "development-any_present-11": true,
+            "development-any_present-12": false,
+            "development-any_present-13": true,
+            "development-any_present-14": false,
+            "development-any_present-15": true,
+            "development-any_present-16": false,
+            "development-any_present-17": true,
+            "development-any_present-18": false,
+            "development-any_present-19": true,
+            "development-any_present-20": false,
+            "development-any_present-21": true,
+            "development-any_present-22": false,
+            "development-any_present-23": true
+          },
+          "solved": 12,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "d4f97d22cc1e1c976efb2b6ba8ffec2832d6b59c80510507cb0b935ca575b9e7",
+          "generation": 2,
+          "seed": 601,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "23fedb58c5bbe966187643ab2740b8556553305c0c7562a39038c2e273430f9c": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              -0.9222263023644182,
+              1.2620911244808966
+            ]
+          ],
+          "b1": [
+            0.5991393771605082
+          ]
+        },
+        "id": "23fedb58c5bbe966187643ab2740b8556553305c0c7562a39038c2e273430f9c",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": false,
+            "development-all_present-1": false,
+            "development-all_present-2": true,
+            "development-all_present-3": true,
+            "development-all_present-4": true,
+            "development-all_present-5": false,
+            "development-all_present-6": false,
+            "development-all_present-7": true,
+            "development-all_present-8": true,
+            "development-all_present-9": true,
+            "development-all_present-10": false,
+            "development-all_present-11": false,
+            "development-all_present-12": true,
+            "development-all_present-13": true,
+            "development-all_present-14": true,
+            "development-all_present-15": false,
+            "development-all_present-16": false,
+            "development-all_present-17": false,
+            "development-all_present-18": true,
+            "development-all_present-19": false,
+            "development-all_present-20": false,
+            "development-all_present-21": true,
+            "development-all_present-22": true,
+            "development-all_present-23": false
+          },
+          "solved": 12,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "d6ef11723436fc2e9dd75ef36984c329ae84666307b22aa092fd65ab3cf5d4b7",
+          "generation": 2,
+          "seed": 602,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "571eac54d6dcd29df37e404aee780e13d72de87c386cf639f82f73c3c72cd757": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              0.01138833133194872
+            ]
+          ],
+          "b1": [
+            2.5260545285192393
+          ]
+        },
+        "id": "571eac54d6dcd29df37e404aee780e13d72de87c386cf639f82f73c3c72cd757",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": false,
+            "development-any_present-1": true,
+            "development-any_present-2": false,
+            "development-any_present-3": true,
+            "development-any_present-4": false,
+            "development-any_present-5": true,
+            "development-any_present-6": false,
+            "development-any_present-7": true,
+            "development-any_present-8": false,
+            "development-any_present-9": true,
+            "development-any_present-10": false,
+            "development-any_present-11": true,
+            "development-any_present-12": false,
+            "development-any_present-13": true,
+            "development-any_present-14": false,
+            "development-any_present-15": true,
+            "development-any_present-16": false,
+            "development-any_present-17": true,
+            "development-any_present-18": false,
+            "development-any_present-19": true,
+            "development-any_present-20": false,
+            "development-any_present-21": true,
+            "development-any_present-22": false,
+            "development-any_present-23": true
+          },
+          "solved": 12,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "4ee0fa3a0d2c385ae4c9c61cd024aec9ea248b154506bd4c9549052fffe8b35a",
+          "generation": 2,
+          "seed": 602,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      },
+      "1465166b51569d61a79523c3910c97341db95ed037a99959bff4cc4dcdf1745d": {
+        "niche": "all_present",
+        "activation": "step",
+        "typed_interface": "count-required->boolean/1",
+        "params": {
+          "W1": [
+            [
+              -0.05906216832824818,
+              -6.8639061137184205
+            ]
+          ],
+          "b1": [
+            3.7247075806953447
+          ]
+        },
+        "id": "1465166b51569d61a79523c3910c97341db95ed037a99959bff4cc4dcdf1745d",
+        "parents": [
+          "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-all_present-0": true,
+            "development-all_present-1": true,
+            "development-all_present-2": true,
+            "development-all_present-3": false,
+            "development-all_present-4": false,
+            "development-all_present-5": true,
+            "development-all_present-6": true,
+            "development-all_present-7": false,
+            "development-all_present-8": false,
+            "development-all_present-9": false,
+            "development-all_present-10": true,
+            "development-all_present-11": true,
+            "development-all_present-12": true,
+            "development-all_present-13": false,
+            "development-all_present-14": false,
+            "development-all_present-15": true,
+            "development-all_present-16": true,
+            "development-all_present-17": true,
+            "development-all_present-18": true,
+            "development-all_present-19": true,
+            "development-all_present-20": true,
+            "development-all_present-21": true,
+            "development-all_present-22": true,
+            "development-all_present-23": true
+          },
+          "solved": 17,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "47b1a918a685f14593f9e20e5a227ba3d6c50d9cafd08ce654429e7510f0e4f2",
+          "generation": 2,
+          "seed": 603,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 3
+        }
+      },
+      "9e3be6c0c7fc1e3b4e25f56cd0456049b8f9cc79dabe9b43655c57495a6639b7": {
+        "niche": "any_present",
+        "activation": "step",
+        "typed_interface": "vote-count->boolean/1",
+        "params": {
+          "W1": [
+            [
+              -0.5829021650355042
+            ]
+          ],
+          "b1": [
+            6.10743635594573
+          ]
+        },
+        "id": "9e3be6c0c7fc1e3b4e25f56cd0456049b8f9cc79dabe9b43655c57495a6639b7",
+        "parents": [
+          "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+        ],
+        "evidence": {
+          "outcomes": {
+            "development-any_present-0": false,
+            "development-any_present-1": false,
+            "development-any_present-2": false,
+            "development-any_present-3": false,
+            "development-any_present-4": false,
+            "development-any_present-5": false,
+            "development-any_present-6": false,
+            "development-any_present-7": false,
+            "development-any_present-8": false,
+            "development-any_present-9": true,
+            "development-any_present-10": false,
+            "development-any_present-11": false,
+            "development-any_present-12": false,
+            "development-any_present-13": false,
+            "development-any_present-14": false,
+            "development-any_present-15": true,
+            "development-any_present-16": false,
+            "development-any_present-17": false,
+            "development-any_present-18": false,
+            "development-any_present-19": false,
+            "development-any_present-20": false,
+            "development-any_present-21": false,
+            "development-any_present-22": false,
+            "development-any_present-23": false
+          },
+          "solved": 2,
+          "total": 24,
+          "errors": [],
+          "partition": "development"
+        },
+        "state": "rejected",
+        "provenance": {
+          "operator": "matched complete random weights",
+          "raw_response_sha256": "019e68cc8943e1c9d5df026656eb676669c6de38db83d46d94ab5fb012334ddf",
+          "generation": 2,
+          "seed": 603,
+          "inherited_template": "step",
+          "new_structure": false,
+          "charged_positions": 2
+        }
+      }
+    },
+    "contexts": [
+      {
+        "seed": 601,
+        "arms": {
+          "llm": {
+            "live": {
+              "all_present": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+              "any_present": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+            },
+            "history": {
+              "all_present": [
+                "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+              ],
+              "any_present": [
+                "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+              ]
+            },
+            "births": [
+              {
+                "id": "4e36d5413a621c6f8eea63e0690b85e8c74bc2f4eba37d5354ccd2c573d902a3",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "7f06db73e76c8180868fef1d73b843b9ab8c48ba10161055a2da4fff4aa64dcc",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              },
+              {
+                "id": "4e36d5413a621c6f8eea63e0690b85e8c74bc2f4eba37d5354ccd2c573d902a3",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "7f06db73e76c8180868fef1d73b843b9ab8c48ba10161055a2da4fff4aa64dcc",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              }
+            ]
+          },
+          "random": {
+            "live": {
+              "all_present": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+              "any_present": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+            },
+            "history": {
+              "all_present": [
+                "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+              ],
+              "any_present": [
+                "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+              ]
+            },
+            "births": [
+              {
+                "id": "720b72d9d539d023962fe33290a48f89050fe6d2302f878f0230051019fa0671",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "39eb7a39e6f7d732c24974ac82265e2efca4ed00d5ad7ded6aa299ce7dd8ea34",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              },
+              {
+                "id": "a879dd4052fa4f40463c8f567fe4c92b12da98bcb1a31903a320143ced118a6d",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "da17c05d6f1a6fceb3d1bfdfa03ff5cc1bb8cf36bd68afeb139ba9c3e7897d07",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 2
+              }
+            ]
+          }
+        }
+      },
+      {
+        "seed": 602,
+        "arms": {
+          "llm": {
+            "live": {
+              "all_present": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+              "any_present": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+            },
+            "history": {
+              "all_present": [
+                "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+              ],
+              "any_present": [
+                "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+              ]
+            },
+            "births": [
+              {
+                "id": "980717bd854bd4b83db9171815d6cec809545ddd32ef26847716469712a99abb",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "473da0dccf884be5554cebeefc6a0c7344227233aef0c86c95ef9db76ab53975",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              },
+              {
+                "id": "980717bd854bd4b83db9171815d6cec809545ddd32ef26847716469712a99abb",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "473da0dccf884be5554cebeefc6a0c7344227233aef0c86c95ef9db76ab53975",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              }
+            ]
+          },
+          "random": {
+            "live": {
+              "all_present": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+              "any_present": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+            },
+            "history": {
+              "all_present": [
+                "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+              ],
+              "any_present": [
+                "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+              ]
+            },
+            "births": [
+              {
+                "id": "80c9d5545f6539c83fe4185cb4e00ee51cbe25ea9d283211dd08ae3269362d6a",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "8e80c98f4883cde8f107e7352ba190069774ba81239c1995514f9bb308b11a95",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              },
+              {
+                "id": "23fedb58c5bbe966187643ab2740b8556553305c0c7562a39038c2e273430f9c",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "571eac54d6dcd29df37e404aee780e13d72de87c386cf639f82f73c3c72cd757",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 2
+              }
+            ]
+          }
+        }
+      },
+      {
+        "seed": 603,
+        "arms": {
+          "llm": {
+            "live": {
+              "all_present": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+              "any_present": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+            },
+            "history": {
+              "all_present": [
+                "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+              ],
+              "any_present": [
+                "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+              ]
+            },
+            "births": [
+              {
+                "id": "ae80dccc542d767286adb98a63a0edf63ddaca3e445da0f3dc8e34552c5640a8",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "321c1c8b9f1941ded13617eac319a5b24f8c60411c0170a4cdf18e3ae33aa4b3",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              },
+              {
+                "id": "ae80dccc542d767286adb98a63a0edf63ddaca3e445da0f3dc8e34552c5640a8",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "321c1c8b9f1941ded13617eac319a5b24f8c60411c0170a4cdf18e3ae33aa4b3",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain"
+                  ]
+                },
+                "positions": 2
+              }
+            ]
+          },
+          "random": {
+            "live": {
+              "all_present": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+              "any_present": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+            },
+            "history": {
+              "all_present": [
+                "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60"
+              ],
+              "any_present": [
+                "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862"
+              ]
+            },
+            "births": [
+              {
+                "id": "7a56f33607ad8747b59fe7da42ff575f3e03e3a97097fb06004232dfb6794736",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "5dcbe88cc57104fe2e194e05f1c6ab49a82d14792320ba052429d9cd62cab6c5",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 1,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 2
+              },
+              {
+                "id": "1465166b51569d61a79523c3910c97341db95ed037a99959bff4cc4dcdf1745d",
+                "parent": "c8c1071eb89063509a76c6994cb102d8c85c2915668ddfaa5500b7e3d0375c60",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 3
+              },
+              {
+                "id": "9e3be6c0c7fc1e3b4e25f56cd0456049b8f9cc79dabe9b43655c57495a6639b7",
+                "parent": "d71c6f3d237f69b9c9ebf84bfb2fc786d65d2997af0994ad7ef502f84bdee862",
+                "generation": 2,
+                "decision": {
+                  "accepted": false,
+                  "reasons": [
+                    "strict_development_gain",
+                    "historical_champion_regression"
+                  ]
+                },
+                "positions": 2
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "scientific_learning_claim": false
+  },
+  "decisions": [
+    {
+      "seed": 601,
+      "niche": "all_present",
+      "arm": "llm",
+      "candidate": "4e36d5413a621c6f8eea63e0690b85e8c74bc2f4eba37d5354ccd2c573d902a3",
+      "solved": 24,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain"
+      ]
+    },
+    {
+      "seed": 601,
+      "niche": "all_present",
+      "arm": "random",
+      "candidate": "a879dd4052fa4f40463c8f567fe4c92b12da98bcb1a31903a320143ced118a6d",
+      "solved": 12,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain",
+        "historical_champion_regression"
+      ]
+    },
+    {
+      "seed": 601,
+      "niche": "any_present",
+      "arm": "llm",
+      "candidate": "7f06db73e76c8180868fef1d73b843b9ab8c48ba10161055a2da4fff4aa64dcc",
+      "solved": 24,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain"
+      ]
+    },
+    {
+      "seed": 601,
+      "niche": "any_present",
+      "arm": "random",
+      "candidate": "da17c05d6f1a6fceb3d1bfdfa03ff5cc1bb8cf36bd68afeb139ba9c3e7897d07",
+      "solved": 12,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain",
+        "historical_champion_regression"
+      ]
+    },
+    {
+      "seed": 602,
+      "niche": "all_present",
+      "arm": "llm",
+      "candidate": "980717bd854bd4b83db9171815d6cec809545ddd32ef26847716469712a99abb",
+      "solved": 24,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain"
+      ]
+    },
+    {
+      "seed": 602,
+      "niche": "all_present",
+      "arm": "random",
+      "candidate": "23fedb58c5bbe966187643ab2740b8556553305c0c7562a39038c2e273430f9c",
+      "solved": 12,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain",
+        "historical_champion_regression"
+      ]
+    },
+    {
+      "seed": 602,
+      "niche": "any_present",
+      "arm": "llm",
+      "candidate": "473da0dccf884be5554cebeefc6a0c7344227233aef0c86c95ef9db76ab53975",
+      "solved": 24,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain"
+      ]
+    },
+    {
+      "seed": 602,
+      "niche": "any_present",
+      "arm": "random",
+      "candidate": "571eac54d6dcd29df37e404aee780e13d72de87c386cf639f82f73c3c72cd757",
+      "solved": 12,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain",
+        "historical_champion_regression"
+      ]
+    },
+    {
+      "seed": 603,
+      "niche": "all_present",
+      "arm": "llm",
+      "candidate": "ae80dccc542d767286adb98a63a0edf63ddaca3e445da0f3dc8e34552c5640a8",
+      "solved": 24,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain"
+      ]
+    },
+    {
+      "seed": 603,
+      "niche": "all_present",
+      "arm": "random",
+      "candidate": "1465166b51569d61a79523c3910c97341db95ed037a99959bff4cc4dcdf1745d",
+      "solved": 17,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain",
+        "historical_champion_regression"
+      ]
+    },
+    {
+      "seed": 603,
+      "niche": "any_present",
+      "arm": "llm",
+      "candidate": "321c1c8b9f1941ded13617eac319a5b24f8c60411c0170a4cdf18e3ae33aa4b3",
+      "solved": 24,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain"
+      ]
+    },
+    {
+      "seed": 603,
+      "niche": "any_present",
+      "arm": "random",
+      "candidate": "9e3be6c0c7fc1e3b4e25f56cd0456049b8f9cc79dabe9b43655c57495a6639b7",
+      "solved": 2,
+      "accepted": false,
+      "reasons": [
+        "strict_development_gain",
+        "historical_champion_regression"
+      ]
+    }
+  ]
+}

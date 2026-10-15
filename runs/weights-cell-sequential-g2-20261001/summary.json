@@ -1,0 +1,319 @@
+{
+  "generations": 2,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "arms": [
+    "llm",
+    "random"
+  ],
+  "equal_budget": true,
+  "charged_per_arm_per_seed": 4,
+  "charged_total": 24,
+  "physical_author_responses": 2,
+  "maker_replicates": 1,
+  "genotypes_evaluated_current": 22,
+  "new_unique_candidate_evaluations": 16,
+  "live_per_context": {
+    "101/llm": 6,
+    "101/random": 6,
+    "202/llm": 6,
+    "202/random": 6,
+    "303/llm": 6,
+    "303/random": 6
+  },
+  "distinct_live_genotypes": 6,
+  "live_ancestry_max_depth": 0,
+  "new_children_admitted": 0,
+  "lineage_stalled": true,
+  "trajectory": [
+    {
+      "generation": 1,
+      "arms": {
+        "llm": {
+          "development_candidate_mean": 0.0625,
+          "reporting_candidate_mean": 0.0,
+          "charged": 6,
+          "admitted": 0
+        },
+        "random": {
+          "development_candidate_mean": 0.0,
+          "reporting_candidate_mean": 0.0,
+          "charged": 6,
+          "admitted": 0
+        }
+      },
+      "timing": {
+        "parallel_batch_seconds": 0.31053081300342456,
+        "serial_verification_seconds": 0.5709283519972814,
+        "server_stage_seconds": 1.070580573999905,
+        "worker_count": 2,
+        "new_unique_evaluations": 8,
+        "charged_candidates": 12,
+        "cache_entries": 8,
+        "maxrss_kib": 42064
+      }
+    },
+    {
+      "generation": 2,
+      "arms": {
+        "llm": {
+          "development_candidate_mean": 0.125,
+          "reporting_candidate_mean": 0.0,
+          "charged": 6,
+          "admitted": 0
+        },
+        "random": {
+          "development_candidate_mean": 0.0,
+          "reporting_candidate_mean": 0.0,
+          "charged": 6,
+          "admitted": 0
+        }
+      },
+      "timing": {
+        "parallel_batch_seconds": 0.3369991619983921,
+        "serial_verification_seconds": null,
+        "server_stage_seconds": 0.3729027869994752,
+        "worker_count": 2,
+        "new_unique_evaluations": 8,
+        "charged_candidates": 12,
+        "cache_entries": 16,
+        "maxrss_kib": 42848
+      }
+    }
+  ],
+  "reporting_outcomes": {
+    "adc080358381be0011ed98e07787558b2e7103643e3b75212fb108e1da5055be": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "7f09f3b5c9509d74e0d04b535bae1e7b47297768abdf0daefeb642826a663fea": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "0afbcbe920a0dfe4d3f8542eb4ab8c7813b8ad3ef04dd47b96ca01842eb826e3": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "e47cafc7fbdfdf9518cebe8916c27e457b4f07c7ff3ea725dbcd7a22ed21e1b8": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "93b4abc6fdf28622bd246ac63ce76a52f4392d0f2bad069298b86d55b94db13f": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "fd7e976867610e79e69d5b9b167d010b60961830f01ab3043bce2c3b80336f11": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "07023afd43494171d36fcb80b4de2b3fde146b6c7e9477ff84320e6acfa883a0": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "8aa0ad9e4bc9e1e02c11963134d2cb69a1be5a203575f12443cca38bd021216d": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "a6d221097d5348f67a1946c353504058e56b581f859d9e1c14f063d2bfc48183": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "7e7c26a7ed17206a293159400da17a74ff0e2cee0cc8e98e6c86de84a737c0da": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "a43824cf9413b15ba9d2f496b32878710538aba3a17a777a4242e6fcefe5c2a8": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "e85a658c9714de3f006b830cd46c637abe419c68af5af59d8aaf74dff94017f9": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "8ab6836cd89c59633c0a71c3e5907dd3ea2362ecc96d84d064c4b18ba5247275": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "9904d46981e131be503b15038ee4c3b707f304ca861866b692b663801701eac6": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "b4473c0abe6be97b81865faede9098b7f9a2c5af1b0d63b697f6fed7b6cb7ff0": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "92013d247ea45e4fa6395dc43b5de7335dcf5f63bac68a842dba4080c4196d54": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "36eb498022b0af0d7edbfc5665e9acc8a5857a1f8a8968aabaeb9ef4df603e3a": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "791f5652aaebca1ec9368a3e4e8c30958782a09c24a134827bf2f0bb54bce2f1": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "82dd777b5de84296543e4b3ce1f3f6c64fe754fcddc9fd49af8acc17e0e3795b": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "44a4595ad46f17f604992d218c3c87c69f74acee97cacc886291ccc2bcfe152e": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "b6d37be265816de41438c5fa1bffc231608388d48932d27ee5c355116c95051c": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    },
+    "10cb2189129967ae7709783919010c1285f810ab88feca6fab1d181c125da8b7": {
+      "522fdd07": false,
+      "662c240a": false,
+      "1a244afd": false,
+      "103eff5b": false,
+      "0bb8deee": false,
+      "a1aa0c1e": false,
+      "9caba7c3": false,
+      "496994bd": false
+    }
+  },
+  "reporting_tasks": 8,
+  "parallel_scoring_only": true,
+  "sequential_generations": true,
+  "full_architecture_complete": false,
+  "limitations": [
+    "grid cell track only; independent router/glue tracks not integrated here",
+    "no real reporting improvement forced; frozen once after both generations",
+    "same author responses across random-seed contexts, not independent maker replications"
+  ],
+  "running": false
+}

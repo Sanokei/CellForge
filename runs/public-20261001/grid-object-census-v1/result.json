@@ -1,0 +1,9431 @@
+{
+  "policy": {
+    "protocol": "training-structure-census/1",
+    "rules": [
+      "tile2",
+      "tile3",
+      "repeat2",
+      "repeat3",
+      "crop_zero",
+      "crop_majority",
+      "identity",
+      "object_largest_mono",
+      "object_smallest_mono",
+      "object_largest_any",
+      "object_smallest_any"
+    ],
+    "native_manifest": "4e779267abe74bb4f493268fc49dea3bb5bab8bdd40ac1017676a0ddedcb98f4",
+    "source_sha256": "768e4c1fadc15178e681553fa2a6c35d654d07d0d6d1268e1441afe54447ab88",
+    "scope": "diagnostic hypotheses only; not CellForge graph coverage or query score",
+    "query_fields_discarded": true,
+    "public_evaluation_loaded": false,
+    "audit_evaluations": 0,
+    "final_evaluations": 0,
+    "gradients": false
+  },
+  "tasks": 200,
+  "shape_changes": 57,
+  "common_exact_rule_counts": {
+    "tile2": 0,
+    "tile3": 0,
+    "repeat2": 0,
+    "repeat3": 0,
+    "crop_zero": 0,
+    "crop_majority": 0,
+    "identity": 0,
+    "object_largest_mono": 0,
+    "object_smallest_mono": 0,
+    "object_largest_any": 0,
+    "object_smallest_any": 0
+  },
+  "common_color_association_rule_counts": {
+    "tile2": 0,
+    "tile3": 0,
+    "repeat2": 0,
+    "repeat3": 0,
+    "crop_zero": 2,
+    "crop_majority": 1,
+    "identity": 2,
+    "object_largest_mono": 1,
+    "object_smallest_mono": 0,
+    "object_largest_any": 0,
+    "object_smallest_any": 0
+  },
+  "unclassified": 200,
+  "rows": [
+    {
+      "task_id": "8b28cd80",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "cbded52d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "705a3229",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            10
+          ],
+          "output_shape": [
+            12,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            14,
+            15
+          ],
+          "output_shape": [
+            14,
+            15
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            8
+          ],
+          "output_shape": [
+            11,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "7d18a6fb",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            17,
+            17
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 7,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            17,
+            13
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            18,
+            17
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 8,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "0d3d703e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [
+        "crop_zero",
+        "identity"
+      ],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "2bcee788",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "3428a4f5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            13,
+            5
+          ],
+          "output_shape": [
+            6,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            13,
+            5
+          ],
+          "output_shape": [
+            6,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            13,
+            5
+          ],
+          "output_shape": [
+            6,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            13,
+            5
+          ],
+          "output_shape": [
+            6,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "b527c5c6",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "67e8384a",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "b9b7f026",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            17
+          ],
+          "output_shape": [
+            1,
+            1
+          ],
+          "input_colors": 6,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            15,
+            13
+          ],
+          "output_shape": [
+            1,
+            1
+          ],
+          "input_colors": 8,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            16,
+            17
+          ],
+          "output_shape": [
+            1,
+            1
+          ],
+          "input_colors": 5,
+          "output_colors": 1
+        }
+      ]
+    },
+    {
+      "task_id": "2281f1f4",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "42a15761",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            15
+          ],
+          "output_shape": [
+            9,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            7,
+            11
+          ],
+          "output_shape": [
+            7,
+            11
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            15
+          ],
+          "output_shape": [
+            9,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "320afe60",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            22,
+            22
+          ],
+          "output_shape": [
+            22,
+            22
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            22,
+            21
+          ],
+          "output_shape": [
+            22,
+            21
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            22,
+            19
+          ],
+          "output_shape": [
+            22,
+            19
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "363442ee",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            13
+          ],
+          "output_shape": [
+            9,
+            13
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            9,
+            13
+          ],
+          "output_shape": [
+            9,
+            13
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            9,
+            13
+          ],
+          "output_shape": [
+            9,
+            13
+          ],
+          "input_colors": 8,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "48634b99",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "f8be4b64",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            18,
+            18
+          ],
+          "output_shape": [
+            18,
+            18
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "9a4bb226",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 10,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 9,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 10,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "6d75e8bb",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            7,
+            8
+          ],
+          "output_shape": [
+            7,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            14,
+            10
+          ],
+          "output_shape": [
+            14,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            8
+          ],
+          "output_shape": [
+            9,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "5ad8a7c0",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            6
+          ],
+          "output_shape": [
+            4,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            4,
+            6
+          ],
+          "output_shape": [
+            4,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            4,
+            6
+          ],
+          "output_shape": [
+            4,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            4,
+            6
+          ],
+          "output_shape": [
+            4,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            4,
+            6
+          ],
+          "output_shape": [
+            4,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "256b0a75",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            22,
+            24
+          ],
+          "output_shape": [
+            22,
+            24
+          ],
+          "input_colors": 10,
+          "output_colors": 10
+        },
+        {
+          "input_shape": [
+            23,
+            21
+          ],
+          "output_shape": [
+            23,
+            21
+          ],
+          "input_colors": 9,
+          "output_colors": 9
+        },
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            23,
+            23
+          ],
+          "input_colors": 9,
+          "output_colors": 9
+        }
+      ]
+    },
+    {
+      "task_id": "cf98881b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            14
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            4,
+            14
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            4,
+            14
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            4,
+            14
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            14
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "eb281b96",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            17
+          ],
+          "output_shape": [
+            13,
+            17
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            17
+          ],
+          "output_shape": [
+            9,
+            17
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "543a7ed5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "f9d67f8b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 9,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 9,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 9,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 9,
+          "output_colors": 8
+        }
+      ]
+    },
+    {
+      "task_id": "56dc2b01",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            17,
+            5
+          ],
+          "output_shape": [
+            17,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            4,
+            16
+          ],
+          "output_shape": [
+            4,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            17,
+            5
+          ],
+          "output_shape": [
+            17,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "ce4f8723",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "25d487eb",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            15
+          ],
+          "output_shape": [
+            10,
+            15
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            12
+          ],
+          "output_shape": [
+            15,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "dae9d2b5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            6
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            6
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            6
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            6
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            6
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "c920a713",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            25,
+            25
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 7,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "48f8583b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "36d67576",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "1190bc91",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 10,
+          "output_colors": 10
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 9,
+          "output_colors": 9
+        },
+        {
+          "input_shape": [
+            4,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "e7639916",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            12
+          ],
+          "output_shape": [
+            8,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            20
+          ],
+          "output_shape": [
+            10,
+            20
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            13
+          ],
+          "output_shape": [
+            11,
+            13
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "d10ecb37",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            6
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "963e52fc",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            5,
+            7
+          ],
+          "output_shape": [
+            5,
+            14
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            5,
+            6
+          ],
+          "output_shape": [
+            5,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            5,
+            8
+          ],
+          "output_shape": [
+            5,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "54dc2872",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            13
+          ],
+          "output_shape": [
+            12,
+            13
+          ],
+          "input_colors": 10,
+          "output_colors": 10
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "8fff9e47",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            4
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 9,
+          "output_colors": 9
+        },
+        {
+          "input_shape": [
+            4,
+            6
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 8,
+          "output_colors": 8
+        }
+      ]
+    },
+    {
+      "task_id": "007bbfb7",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "d5d6de2d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "e133d23d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            7
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            7
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            7
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            7
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            7
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "d631b094",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            1,
+            1
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            1,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            1,
+            4
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            1,
+            2
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        }
+      ]
+    },
+    {
+      "task_id": "b91ae062",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "b1986d4b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            28,
+            28
+          ],
+          "output_shape": [
+            5,
+            16
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            28,
+            28
+          ],
+          "output_shape": [
+            5,
+            18
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            28,
+            28
+          ],
+          "output_shape": [
+            5,
+            30
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "9b2a60aa",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            23,
+            17
+          ],
+          "output_shape": [
+            23,
+            17
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            16,
+            22
+          ],
+          "output_shape": [
+            16,
+            22
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            23,
+            14
+          ],
+          "output_shape": [
+            23,
+            14
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "f8f52ecc",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 9,
+          "output_colors": 9
+        }
+      ]
+    },
+    {
+      "task_id": "a1aa0c1e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            21,
+            21
+          ],
+          "output_shape": [
+            3,
+            5
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            21,
+            21
+          ],
+          "output_shape": [
+            3,
+            5
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            21,
+            21
+          ],
+          "output_shape": [
+            3,
+            5
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "484b58aa",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            29,
+            29
+          ],
+          "output_shape": [
+            29,
+            29
+          ],
+          "input_colors": 8,
+          "output_colors": 7
+        },
+        {
+          "input_shape": [
+            29,
+            29
+          ],
+          "output_shape": [
+            29,
+            29
+          ],
+          "input_colors": 7,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            29,
+            29
+          ],
+          "output_shape": [
+            29,
+            29
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "9f8de559",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            14,
+            14
+          ],
+          "output_shape": [
+            14,
+            14
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            14,
+            14
+          ],
+          "output_shape": [
+            14,
+            14
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            14,
+            14
+          ],
+          "output_shape": [
+            14,
+            14
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            14,
+            14
+          ],
+          "output_shape": [
+            14,
+            14
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "f8ff0b80",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            3,
+            1
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            3,
+            1
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            3,
+            1
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "80214e03",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            14
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 7,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            22,
+            11
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            18,
+            19
+          ],
+          "output_shape": [
+            2,
+            3
+          ],
+          "input_colors": 7,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "fc754716",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            5,
+            7
+          ],
+          "output_shape": [
+            5,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            5,
+            3
+          ],
+          "output_shape": [
+            5,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "996ec1f3",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 9,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 9,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 10,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "639f5a19",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            23,
+            23
+          ],
+          "input_colors": 2,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            23,
+            23
+          ],
+          "input_colors": 2,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "e40b9e2f",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "9f5f939b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "63613498",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 7,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "8d510a79",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "6430c8c4",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            4
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "834ec97d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "e681b708",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            22,
+            24
+          ],
+          "output_shape": [
+            22,
+            24
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            27,
+            23
+          ],
+          "output_shape": [
+            27,
+            23
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            20,
+            22
+          ],
+          "output_shape": [
+            20,
+            22
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "97239e3d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            17,
+            17
+          ],
+          "output_shape": [
+            17,
+            17
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            17,
+            17
+          ],
+          "output_shape": [
+            17,
+            17
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            17,
+            17
+          ],
+          "output_shape": [
+            17,
+            17
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "e872b94a",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            3,
+            1
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            2,
+            1
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            9,
+            12
+          ],
+          "output_shape": [
+            5,
+            1
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            4,
+            1
+          ],
+          "input_colors": 2,
+          "output_colors": 1
+        }
+      ]
+    },
+    {
+      "task_id": "212895b5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            18,
+            17
+          ],
+          "output_shape": [
+            18,
+            17
+          ],
+          "input_colors": 3,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            16,
+            19
+          ],
+          "output_shape": [
+            16,
+            19
+          ],
+          "input_colors": 3,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "cd3c21df",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 5,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            4,
+            1
+          ],
+          "input_colors": 4,
+          "output_colors": 1
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            2,
+            3
+          ],
+          "input_colors": 5,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "d23f8c26",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 6,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 6,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 7,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "af726779",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            11,
+            16
+          ],
+          "output_shape": [
+            11,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            13,
+            16
+          ],
+          "output_shape": [
+            13,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            16
+          ],
+          "output_shape": [
+            9,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "19bb5feb",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            15
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            13,
+            15
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            14,
+            16
+          ],
+          "output_shape": [
+            2,
+            2
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "9772c176",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            22,
+            21
+          ],
+          "output_shape": [
+            22,
+            21
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            26,
+            29
+          ],
+          "output_shape": [
+            26,
+            29
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "fcb5c309",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            13,
+            16
+          ],
+          "output_shape": [
+            6,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            15,
+            16
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "f18ec8cc",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            14
+          ],
+          "output_shape": [
+            9,
+            14
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            7,
+            12
+          ],
+          "output_shape": [
+            7,
+            12
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            8,
+            13
+          ],
+          "output_shape": [
+            8,
+            13
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            8,
+            10
+          ],
+          "output_shape": [
+            8,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "60a26a3e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            14,
+            16
+          ],
+          "output_shape": [
+            14,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            15
+          ],
+          "output_shape": [
+            10,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            15
+          ],
+          "output_shape": [
+            12,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "60b61512",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "dc1df850",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            4,
+            5
+          ],
+          "output_shape": [
+            4,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "73182012",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "e345f17b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            8
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            4,
+            8
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            4,
+            8
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            4,
+            8
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "45737921",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            13,
+            10
+          ],
+          "output_shape": [
+            13,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 8,
+          "output_colors": 8
+        }
+      ]
+    },
+    {
+      "task_id": "ac0c2ac3",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 7,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "d2acf2cb",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 5,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            7,
+            9
+          ],
+          "output_shape": [
+            7,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            6,
+            9
+          ],
+          "output_shape": [
+            6,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "3d31c5b3",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            6
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            6
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            12,
+            6
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            6
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            12,
+            6
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            6
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "bd4472b8",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            4
+          ],
+          "output_shape": [
+            10,
+            4
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            8,
+            3
+          ],
+          "output_shape": [
+            8,
+            3
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            6,
+            2
+          ],
+          "output_shape": [
+            6,
+            2
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "5117e062",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 5,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 6,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 5,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "551d5bf1",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            24,
+            25
+          ],
+          "output_shape": [
+            24,
+            25
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            24,
+            28
+          ],
+          "output_shape": [
+            24,
+            28
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "0a1d4ef5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            2,
+            3
+          ],
+          "input_colors": 8,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 8,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 8,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "ac0a08a4",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "dc433765",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            5,
+            3
+          ],
+          "output_shape": [
+            5,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "dc46ea44",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "6d58a25d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "a8610ef7",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "e21d9049",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            14
+          ],
+          "output_shape": [
+            15,
+            14
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            12,
+            11
+          ],
+          "output_shape": [
+            12,
+            11
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "32e9702f",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "694f12f3",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "44d8ac46",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "bb43febb",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "b1fc8b8e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "1c0d0a4b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            13
+          ],
+          "output_shape": [
+            9,
+            13
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            5,
+            13
+          ],
+          "output_shape": [
+            5,
+            13
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "178fcbfb",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            8
+          ],
+          "output_shape": [
+            10,
+            8
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            11
+          ],
+          "output_shape": [
+            10,
+            11
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "516b51b7",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            13
+          ],
+          "output_shape": [
+            12,
+            13
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            11
+          ],
+          "output_shape": [
+            12,
+            11
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            15,
+            14
+          ],
+          "output_shape": [
+            15,
+            14
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "ea32f347",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "e7dd8335",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            9
+          ],
+          "output_shape": [
+            8,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "868de0fa",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "8ba14f53",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            9
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            9
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            9
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            9
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            9
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            9
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "070dd51e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            10
+          ],
+          "output_shape": [
+            20,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            30,
+            20
+          ],
+          "output_shape": [
+            30,
+            20
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "e21a174a",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "1f0c79e5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "14b8e18c",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "d90796e8",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            7,
+            6
+          ],
+          "output_shape": [
+            7,
+            6
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "2546ccf6",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            19,
+            18
+          ],
+          "output_shape": [
+            19,
+            18
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            17,
+            19
+          ],
+          "output_shape": [
+            17,
+            19
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "f8cc533f",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            19,
+            19
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            11,
+            19
+          ],
+          "output_shape": [
+            11,
+            19
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            19
+          ],
+          "output_shape": [
+            11,
+            19
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "ce039d91",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "15113be4",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            23,
+            23
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            23,
+            23
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            23,
+            23
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "981add89",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 7,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "880c1354",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "e45ef808",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "42f83767",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            20
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            15,
+            17
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            17
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "fd02da9e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "baf41dbf",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            11,
+            15
+          ],
+          "output_shape": [
+            11,
+            15
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            8,
+            17
+          ],
+          "output_shape": [
+            8,
+            17
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "a834deea",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 10
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 2,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "e729b7be",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            17,
+            17
+          ],
+          "output_shape": [
+            17,
+            17
+          ],
+          "input_colors": 7,
+          "output_colors": 7
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            17,
+            17
+          ],
+          "output_shape": [
+            17,
+            17
+          ],
+          "input_colors": 7,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "e1d2900e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            13
+          ],
+          "output_shape": [
+            10,
+            13
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "1fad071e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            1,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            1,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            1,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "13f06aa5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            14
+          ],
+          "output_shape": [
+            12,
+            14
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            11,
+            13
+          ],
+          "output_shape": [
+            11,
+            13
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            15,
+            12
+          ],
+          "output_shape": [
+            15,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "696d4842",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            30,
+            30
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "84db8fc4",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "6ea4a07e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "4c5c2cf0",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            14,
+            14
+          ],
+          "output_shape": [
+            14,
+            14
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            14,
+            14
+          ],
+          "output_shape": [
+            14,
+            14
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "d43fd935",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "310f3251",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            4
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            4
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            2,
+            2
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "e4075551",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            14
+          ],
+          "output_shape": [
+            15,
+            14
+          ],
+          "input_colors": 6,
+          "output_colors": 7
+        },
+        {
+          "input_shape": [
+            14,
+            15
+          ],
+          "output_shape": [
+            14,
+            15
+          ],
+          "input_colors": 6,
+          "output_colors": 7
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 6,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "d492a647",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            13,
+            16
+          ],
+          "output_shape": [
+            13,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "31aa019c",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 9,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 7,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 9,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "4ff4c9da",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            23,
+            23
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            21,
+            21
+          ],
+          "output_shape": [
+            21,
+            21
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            17,
+            17
+          ],
+          "output_shape": [
+            17,
+            17
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "4e45f183",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            19,
+            19
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            19,
+            19
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            19,
+            19
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "3f7978a0",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            11
+          ],
+          "output_shape": [
+            5,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            13
+          ],
+          "output_shape": [
+            6,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "1a07d186",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            14
+          ],
+          "output_shape": [
+            15,
+            14
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            18,
+            19
+          ],
+          "output_shape": [
+            18,
+            19
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            16
+          ],
+          "output_shape": [
+            15,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "760b3cac",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            9
+          ],
+          "output_shape": [
+            6,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            9
+          ],
+          "output_shape": [
+            6,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            9
+          ],
+          "output_shape": [
+            6,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "11dc524f",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "5587a8d0",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "f341894c",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            14,
+            14
+          ],
+          "output_shape": [
+            14,
+            14
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "ac2e8ecf",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            13,
+            16
+          ],
+          "output_shape": [
+            13,
+            16
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            16,
+            17
+          ],
+          "output_shape": [
+            16,
+            17
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "82819916",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            8
+          ],
+          "output_shape": [
+            12,
+            8
+          ],
+          "input_colors": 8,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            10,
+            8
+          ],
+          "output_shape": [
+            10,
+            8
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            6,
+            8
+          ],
+          "output_shape": [
+            6,
+            8
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            10,
+            8
+          ],
+          "output_shape": [
+            10,
+            8
+          ],
+          "input_colors": 7,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "bcb3040b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "ded97339",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "e74e1818",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "17829a00",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "ad7e01d0",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            4
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            4,
+            4
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "aaef0977",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 9
+        },
+        {
+          "input_shape": [
+            8,
+            8
+          ],
+          "output_shape": [
+            8,
+            8
+          ],
+          "input_colors": 2,
+          "output_colors": 9
+        }
+      ]
+    },
+    {
+      "task_id": "7c8af763",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "c074846d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            7
+          ],
+          "output_shape": [
+            6,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            5,
+            7
+          ],
+          "output_shape": [
+            5,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "e048c9ed",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            3
+          ],
+          "output_shape": [
+            4,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            8,
+            11
+          ],
+          "output_shape": [
+            8,
+            11
+          ],
+          "input_colors": 6,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "878187ab",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "d4c90558",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            2,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            25,
+            25
+          ],
+          "output_shape": [
+            3,
+            8
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            4,
+            6
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "e9614598",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "4938f0c2",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            20,
+            30
+          ],
+          "output_shape": [
+            20,
+            30
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            14
+          ],
+          "output_shape": [
+            12,
+            14
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "4e469f39",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "bf699163",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [
+        "object_largest_mono"
+      ],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            17,
+            18
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 7,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            17,
+            16
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 7,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "f0f8a26d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "12997ef3",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            6,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            9,
+            3
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            11,
+            10
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            14
+          ],
+          "output_shape": [
+            3,
+            9
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "508bd3b6",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "5b526a93",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            22,
+            16
+          ],
+          "output_shape": [
+            22,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            19,
+            17
+          ],
+          "output_shape": [
+            19,
+            17
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "8efcae92",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            5,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            5,
+            17
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "88207623",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            14,
+            16
+          ],
+          "output_shape": [
+            14,
+            16
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "54d9e175",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            11
+          ],
+          "output_shape": [
+            3,
+            11
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            3,
+            11
+          ],
+          "output_shape": [
+            3,
+            11
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            7,
+            11
+          ],
+          "output_shape": [
+            7,
+            11
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            3,
+            11
+          ],
+          "output_shape": [
+            3,
+            11
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "e99362f0",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            5,
+            4
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            5,
+            4
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            5,
+            4
+          ],
+          "input_colors": 6,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            5,
+            4
+          ],
+          "input_colors": 6,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            5,
+            4
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            5,
+            4
+          ],
+          "input_colors": 6,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "7d7772cc",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 5,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 7,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "ad38a9d0",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 7
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "3ac3eb23",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            7
+          ],
+          "output_shape": [
+            6,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            6,
+            10
+          ],
+          "output_shape": [
+            6,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "d5c634a2",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            7
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            8,
+            7
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            8,
+            7
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            5,
+            4
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            5
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            8,
+            7
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "2f767503",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            14,
+            12
+          ],
+          "output_shape": [
+            14,
+            12
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            13
+          ],
+          "output_shape": [
+            10,
+            13
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "358ba94e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            19
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            15,
+            19
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            16,
+            19
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            14,
+            18
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "538b439f",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            20,
+            20
+          ],
+          "output_shape": [
+            20,
+            20
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            21,
+            18
+          ],
+          "output_shape": [
+            21,
+            18
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "103eff5b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            22,
+            12
+          ],
+          "output_shape": [
+            22,
+            12
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            24,
+            13
+          ],
+          "output_shape": [
+            24,
+            13
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "b457fec5",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            17,
+            18
+          ],
+          "output_shape": [
+            17,
+            18
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            23,
+            19
+          ],
+          "output_shape": [
+            23,
+            19
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            14,
+            18
+          ],
+          "output_shape": [
+            14,
+            18
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "292dd178",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            7,
+            9
+          ],
+          "output_shape": [
+            7,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            10
+          ],
+          "output_shape": [
+            11,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            11,
+            9
+          ],
+          "output_shape": [
+            11,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "6ecd11f4",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            27,
+            25
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 9,
+          "output_colors": 7
+        },
+        {
+          "input_shape": [
+            27,
+            21
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 9,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            22,
+            22
+          ],
+          "output_shape": [
+            4,
+            4
+          ],
+          "input_colors": 10,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "afe3afe9",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            7,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            6,
+            7
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            30,
+            30
+          ],
+          "output_shape": [
+            7,
+            6
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "e509e548",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            11
+          ],
+          "output_shape": [
+            10,
+            11
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            19,
+            21
+          ],
+          "output_shape": [
+            19,
+            21
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            14,
+            12
+          ],
+          "output_shape": [
+            14,
+            12
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "b1948b0a",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [
+        "crop_zero",
+        "crop_majority",
+        "identity"
+      ],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            4
+          ],
+          "output_shape": [
+            6,
+            4
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            4
+          ],
+          "output_shape": [
+            3,
+            4
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            6
+          ],
+          "output_shape": [
+            3,
+            6
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "dc2e9a9d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            23,
+            19
+          ],
+          "output_shape": [
+            23,
+            19
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            22,
+            17
+          ],
+          "output_shape": [
+            22,
+            17
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            22,
+            21
+          ],
+          "output_shape": [
+            22,
+            21
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "642248e4",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            14,
+            10
+          ],
+          "output_shape": [
+            14,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            13
+          ],
+          "output_shape": [
+            12,
+            13
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            12,
+            10
+          ],
+          "output_shape": [
+            12,
+            10
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "29700607",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            11,
+            11
+          ],
+          "output_shape": [
+            11,
+            11
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "825aa9e9",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            10
+          ],
+          "output_shape": [
+            6,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            4,
+            9
+          ],
+          "output_shape": [
+            4,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            10
+          ],
+          "output_shape": [
+            9,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            7
+          ],
+          "output_shape": [
+            6,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "55059096",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            14,
+            16
+          ],
+          "output_shape": [
+            14,
+            16
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            14,
+            10
+          ],
+          "output_shape": [
+            14,
+            10
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            12,
+            13
+          ],
+          "output_shape": [
+            12,
+            13
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "8be77c9e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            6,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "5c0a986e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "a1570a43",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            10
+          ],
+          "output_shape": [
+            9,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            8
+          ],
+          "output_shape": [
+            9,
+            8
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "9565186b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            3,
+            3
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 3,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "396d80d7",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "58743b76",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            12,
+            12
+          ],
+          "output_shape": [
+            12,
+            12
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "025d127b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            8,
+            9
+          ],
+          "output_shape": [
+            8,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            14,
+            9
+          ],
+          "output_shape": [
+            14,
+            9
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "8618d23e",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            4,
+            2
+          ],
+          "output_shape": [
+            5,
+            3
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            2,
+            1
+          ],
+          "output_shape": [
+            3,
+            2
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            3
+          ],
+          "output_shape": [
+            7,
+            4
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "a61f2674",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "eb5a1d5d",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            22,
+            25
+          ],
+          "output_shape": [
+            3,
+            3
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            23,
+            27
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            21,
+            22
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 4,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "6ad5bdfd",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            5,
+            11
+          ],
+          "output_shape": [
+            5,
+            11
+          ],
+          "input_colors": 8,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            10,
+            6
+          ],
+          "output_shape": [
+            10,
+            6
+          ],
+          "input_colors": 8,
+          "output_colors": 8
+        },
+        {
+          "input_shape": [
+            5,
+            10
+          ],
+          "output_shape": [
+            5,
+            10
+          ],
+          "input_colors": 7,
+          "output_colors": 7
+        }
+      ]
+    },
+    {
+      "task_id": "00dbd492",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            15,
+            15
+          ],
+          "output_shape": [
+            15,
+            15
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            9,
+            9
+          ],
+          "output_shape": [
+            9,
+            9
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            13,
+            13
+          ],
+          "output_shape": [
+            13,
+            13
+          ],
+          "input_colors": 2,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            7,
+            7
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "6ffe8f07",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            19,
+            19
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            19,
+            19
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            19,
+            19
+          ],
+          "output_shape": [
+            19,
+            19
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            19,
+            18
+          ],
+          "output_shape": [
+            19,
+            18
+          ],
+          "input_colors": 4,
+          "output_colors": 5
+        }
+      ]
+    },
+    {
+      "task_id": "1990f7a8",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": true,
+      "demonstrations": [
+        {
+          "input_shape": [
+            17,
+            19
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            23,
+            23
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        },
+        {
+          "input_shape": [
+            17,
+            16
+          ],
+          "output_shape": [
+            7,
+            7
+          ],
+          "input_colors": 2,
+          "output_colors": 2
+        }
+      ]
+    },
+    {
+      "task_id": "845d6e51",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 6,
+          "output_colors": 5
+        },
+        {
+          "input_shape": [
+            16,
+            16
+          ],
+          "output_shape": [
+            16,
+            16
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 5,
+          "output_colors": 4
+        }
+      ]
+    },
+    {
+      "task_id": "ff2825db",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 6,
+          "output_colors": 6
+        }
+      ]
+    },
+    {
+      "task_id": "b7256dcd",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        },
+        {
+          "input_shape": [
+            6,
+            4
+          ],
+          "output_shape": [
+            6,
+            4
+          ],
+          "input_colors": 4,
+          "output_colors": 3
+        }
+      ]
+    },
+    {
+      "task_id": "b15fca0b",
+      "common_exact_rules": [],
+      "common_rules_with_color_association": [],
+      "shape_changes": false,
+      "demonstrations": [
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            6,
+            6
+          ],
+          "output_shape": [
+            6,
+            6
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            10,
+            10
+          ],
+          "output_shape": [
+            10,
+            10
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        },
+        {
+          "input_shape": [
+            5,
+            5
+          ],
+          "output_shape": [
+            5,
+            5
+          ],
+          "input_colors": 3,
+          "output_colors": 4
+        }
+      ]
+    }
+  ],
+  "ledger_verified": 2
+}

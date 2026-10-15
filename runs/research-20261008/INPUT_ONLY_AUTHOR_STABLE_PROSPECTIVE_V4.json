@@ -1,0 +1,213 @@
+{
+  "timestamp": "2026-10-08T06:03:27.363191+00:00",
+  "status": "prospective V4 only; no dispatch authorized",
+  "argv": [
+    "/root/.local/bin/codex",
+    "exec",
+    "--color",
+    "never",
+    "-c",
+    "model_provider=\"cellforge-no-retry\"",
+    "-c",
+    "model_providers.cellforge-no-retry.name=\"OpenAI\"",
+    "-c",
+    "model_providers.cellforge-no-retry.requires_openai_auth=true",
+    "-c",
+    "model_providers.cellforge-no-retry.request_max_retries=0",
+    "-c",
+    "model_providers.cellforge-no-retry.stream_max_retries=0",
+    "-c",
+    "model_providers.cellforge-no-retry.supports_websockets=false",
+    "--ignore-user-config",
+    "--strict-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "-m",
+    "gpt-6.1-sol",
+    "-C",
+    "/srv/cellforge-inbox/research-20261008/input-only-author-stable-v2",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "project_doc_fallback_filenames=[]",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "mcp_servers={}",
+    "-c",
+    "apps._default.enabled=false",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "unified_exec",
+    "--disable",
+    "apps",
+    "--disable",
+    "plugins",
+    "--disable",
+    "remote_plugin",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "browser_use",
+    "--disable",
+    "browser_use_external",
+    "--disable",
+    "browser_use_full_cdp_access",
+    "--disable",
+    "computer_use",
+    "--disable",
+    "in_app_browser",
+    "--disable",
+    "in_app_local_automation",
+    "--disable",
+    "view_image",
+    "--disable",
+    "image_generation",
+    "--disable",
+    "sleep_tool",
+    "--disable",
+    "tool_suggest",
+    "--disable",
+    "hooks",
+    "--disable",
+    "memories",
+    "--disable",
+    "skill_mcp_dependency_install",
+    "--output-schema",
+    "/srv/cellforge-inbox/research-20261008/input-only-author-prospective/schema.json",
+    "--json",
+    "-o",
+    "/srv/cellforge-inbox/research-20261008/author-attempt-001/response.json",
+    "-"
+  ],
+  "cwd": "/srv/cellforge-inbox/research-20261008/input-only-author-stable-v2",
+  "empty_cwd": true,
+  "schema_file_outside_cwd": "/srv/cellforge-inbox/research-20261008/input-only-author-prospective/schema.json",
+  "changes": [
+    "remove experimental skip_host_skill_discovery enable",
+    "remove code_mode_host/code_mode disable; retain standard defaults",
+    "same-service auth alias with retries zero and websockets false"
+  ],
+  "features": {
+    "apps": {
+      "status": "stable",
+      "enabled": false
+    },
+    "browser_use": {
+      "status": "stable",
+      "enabled": false
+    },
+    "code_mode": {
+      "status": "under development",
+      "enabled": false
+    },
+    "code_mode_host": {
+      "status": "stable",
+      "enabled": true
+    },
+    "hooks": {
+      "status": "stable",
+      "enabled": false
+    },
+    "memories": {
+      "status": "stable",
+      "enabled": false
+    },
+    "multi_agent": {
+      "status": "stable",
+      "enabled": false
+    },
+    "plugins": {
+      "status": "stable",
+      "enabled": false
+    },
+    "shell_tool": {
+      "status": "stable",
+      "enabled": false
+    },
+    "skip_host_skill_discovery": {
+      "status": "under development",
+      "enabled": false
+    },
+    "unified_exec": {
+      "status": "stable",
+      "enabled": true
+    }
+  },
+  "feature_check_exit": 0,
+  "host_executable_metadata": {
+    "on_PATH": null,
+    "sibling_exists": true,
+    "sibling_path": "/root/.codex/packages/standalone/releases/0.159.3-x86_64-unknown-linux-musl/bin/codex-code-mode-host",
+    "host_runtime_started": false
+  },
+  "skill_inventory": [
+    {
+      "path": "/root/.codex/skills/.system/imagegen/SKILL.md",
+      "metadata": [
+        "name: \"imagegen\"",
+        "description: \"Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas.\""
+      ]
+    },
+    {
+      "path": "/root/.codex/skills/.system/review-agent/SKILL.md",
+      "metadata": [
+        "name: review-agent",
+        "description: Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions."
+      ]
+    },
+    {
+      "path": "/root/.codex/skills/.system/skill-installer/SKILL.md",
+      "metadata": [
+        "name: skill-installer",
+        "description: Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos)."
+      ]
+    },
+    {
+      "path": "/root/.codex/skills/.system/skill-creator/SKILL.md",
+      "metadata": [
+        "name: skill-creator",
+        "description: Create or update a Codex skill with appropriately scoped instructions and any needed supporting resources."
+      ]
+    },
+    {
+      "path": "/root/.codex/skills/.system/openai-docs/SKILL.md",
+      "metadata": [
+        "name: \"openai-docs\"",
+        "description: \"Use for Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, customization, automations, and self-knowledge\u2014including 'you,' 'your,' 'this app,' or 'this coding agent' when they refer to Codex\u2014and for OpenAI APIs/products and ChatGPT Work. Also use for model choice/migration, prompting, SDKs, Responses, Realtime, agents, evals, and Chat/Work/Codex comparisons. Do not use for generic app/software tasks that merely mention Codex.\""
+      ]
+    }
+  ],
+  "metadata_research_answers_observed": false,
+  "remaining_context": [
+    "five generic system skill names/descriptions may be exposed",
+    "platform/model/managed instructions and pretrained knowledge remain",
+    "full discovery/tool exposure not verified without separately approved invocation"
+  ],
+  "observed_zero_tool_contract_not_hard_prevention": true,
+  "scientific_packet_hashes_unchanged": true,
+  "prior_healthcheck_preserved": true,
+  "no_new_model_call": true,
+  "global_settings_changed": false,
+  "capture_wrapper": "/srv/cellforge-inbox/research-20261008/prospective_native_capture_v4.py",
+  "capture_wrapper_sha256": "dc4713f665df07e010589c176c9b1ca3916a46c6a9298fc43b2c96e732ed6347",
+  "native_contract": "validate full native objects before projection; exact reasoning id/type/text allowed as restricted nonexecution summary; exactly one final agent_message; five observed integer usage fields; reject extra/unknown keys/events",
+  "controller_gates_remaining": [
+    "fresh supported quota below85 in every reported relevant window",
+    "separate parent dispatch approval",
+    "exact prompt/schema hash and strict numerical response validation",
+    "auth-recovery/resubmission audit remains unverified"
+  ],
+  "reasoning_allowance_provenance": {
+    "source": "https://github.com/openai/codex/blob/main/codex-rs/exec/src/exec_events.rs",
+    "observed_in_installed_review002": false,
+    "installed_version_pinned_certification": false,
+    "parent_approved_prospectively": true,
+    "report_reasoning_body": false
+  }
+}

@@ -1,0 +1,593 @@
+{
+  "protocol": "wb6-fast-fitness-qualification/1",
+  "seed_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+  "mutation_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+  "manifest_sha256": [
+    "c9bd97f25dfa301c10df85f095637d999685ecf8db970701a56d3955d71240f1",
+    "6b1eac26b008f79d8815dd537fe4161c00720f80f38f4e0afd9c839cb385daf6",
+    "1742fee2ddebd01589083787ad722e35a2f16ca346243a6823485685a19c6d29",
+    "5b449f298e21db7b0f12e3f09c0b0f94127def7bb443a039a39e83c3aca46618"
+  ],
+  "qualified": true,
+  "cases": [
+    {
+      "batch": "corpus_a",
+      "candidate": "seed",
+      "hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+      "prefix_startup_seconds": 1.7093596839986276,
+      "fast": {
+        "fitness_bits_per_byte": 1.081929543951148,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 276.9739632514939,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            72.94269135997396,
+            63.39912798490105,
+            86.7892445532523,
+            53.842899353366576
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 0.13975095999921905,
+          "evaluation_seconds": 0.3694704270019429,
+          "evaluations_per_second": 2.7065765672085615,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 0.5346746399955009,
+          "end_to_end_evaluations_per_second": 1.8702962983402667
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+        "prefix_cache_startup_seconds": 1.6698080100031802,
+        "plan_reuse": {
+          "reused_bundles": 26,
+          "compiled_bundles": 0
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 1.081929543951148,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 276.9739632514939,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            72.94269135997396,
+            63.39912798490105,
+            86.7892445532523,
+            53.842899353366576
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 1.4448441619970254,
+          "evaluation_seconds": 2.4720354879973456,
+          "evaluations_per_second": 0.4045249369822452,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 3.9401429330027895,
+          "end_to_end_evaluations_per_second": 0.25379789946805265
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9"
+      },
+      "cold_total_seconds": 0.5346940469971742,
+      "cold_evals_per_second": 1.870228414952383,
+      "full_compiled_seconds": 3.940182779006136,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    },
+    {
+      "batch": "corpus_a",
+      "candidate": "residual_mutation",
+      "hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+      "prefix_startup_seconds": 1.7093596839986276,
+      "fast": {
+        "fitness_bits_per_byte": 1.081087761558373,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 276.7584669589435,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            73.04368882204368,
+            63.19150476023638,
+            86.79561980356479,
+            53.727653573098614
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 0.16544762599369278,
+          "evaluation_seconds": 0.3270098310022149,
+          "evaluations_per_second": 3.0580120387671976,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 0.5179450680006994,
+          "end_to_end_evaluations_per_second": 1.93070667486045
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+        "prefix_cache_startup_seconds": 1.6698080100031802,
+        "plan_reuse": {
+          "reused_bundles": 25,
+          "compiled_bundles": 1
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 1.081087761558373,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 276.7584669589435,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            73.04368882204368,
+            63.19150476023638,
+            86.79561980356479,
+            53.727653573098614
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 1.4466257889944245,
+          "evaluation_seconds": 2.528321378995315,
+          "evaluations_per_second": 0.3955193387627693,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 3.9981591159958043,
+          "end_to_end_evaluations_per_second": 0.250115108225485
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547"
+      },
+      "cold_total_seconds": 0.5179671189980581,
+      "cold_evals_per_second": 1.9306244804387844,
+      "full_compiled_seconds": 3.998194854000758,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    },
+    {
+      "batch": "corpus_b",
+      "candidate": "seed",
+      "hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+      "prefix_startup_seconds": 1.8452212030024384,
+      "fast": {
+        "fitness_bits_per_byte": 0.7147697769022873,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 182.98106288698554,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            48.89090027490192,
+            40.20645105504305,
+            33.47848676129037,
+            60.40522479575021
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 0.15804576800292125,
+          "evaluation_seconds": 0.40277735300333006,
+          "evaluations_per_second": 2.4827612390404985,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 0.5877103499951772,
+          "end_to_end_evaluations_per_second": 1.7015184435805937
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+        "prefix_cache_startup_seconds": 1.7995439340011217,
+        "plan_reuse": {
+          "reused_bundles": 26,
+          "compiled_bundles": 0
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 0.7147697769022873,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 182.98106288698554,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            48.89090027490192,
+            40.20645105504305,
+            33.47848676129037,
+            60.40522479575021
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 1.460188338001899,
+          "evaluation_seconds": 1.9297442929964745,
+          "evaluations_per_second": 0.5182033721406771,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 3.4131188910032506,
+          "end_to_end_evaluations_per_second": 0.29298715688924054
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9"
+      },
+      "cold_total_seconds": 0.5877344440013985,
+      "cold_evals_per_second": 1.701448690316371,
+      "full_compiled_seconds": 3.4131673829979263,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    },
+    {
+      "batch": "corpus_b",
+      "candidate": "residual_mutation",
+      "hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+      "prefix_startup_seconds": 1.8452212030024384,
+      "fast": {
+        "fitness_bits_per_byte": 0.7123335544452358,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 182.35738993798037,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            48.691774956898065,
+            40.07099374170246,
+            33.23680734293188,
+            60.35781389644797
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 0.17712913599825697,
+          "evaluation_seconds": 0.3394890459967428,
+          "evaluations_per_second": 2.945603140342839,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 0.5451515300010215,
+          "end_to_end_evaluations_per_second": 1.8343523680436635
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+        "prefix_cache_startup_seconds": 1.7995439340011217,
+        "plan_reuse": {
+          "reused_bundles": 25,
+          "compiled_bundles": 1
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 0.7123335544452358,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 182.35738993798037,
+          "content_bytes": 256,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            48.691774956898065,
+            40.07099374170246,
+            33.23680734293188,
+            60.35781389644797
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 256
+        },
+        "timing": {
+          "startup_seconds": 1.4273689449983067,
+          "evaluation_seconds": 2.053355952994025,
+          "evaluations_per_second": 0.48700762210365284,
+          "evaluated_bytes": 260,
+          "end_to_end_seconds": 3.5084529390005628,
+          "end_to_end_evaluations_per_second": 0.28502591238543606
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547"
+      },
+      "cold_total_seconds": 0.5451741029974073,
+      "cold_evals_per_second": 1.8342764164730614,
+      "full_compiled_seconds": 3.5084903800016036,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    },
+    {
+      "batch": "context_a",
+      "candidate": "seed",
+      "hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+      "prefix_startup_seconds": 1.6077245850028703,
+      "fast": {
+        "fitness_bits_per_byte": 23.053670100149493,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.32202060089696,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.16101030044848,
+            69.16101030044848
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 0.13668827599758515,
+          "evaluation_seconds": 0.21046321500034537,
+          "evaluations_per_second": 4.751424138409931,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 0.37293805700028315,
+          "end_to_end_evaluations_per_second": 2.6814104413035023
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+        "prefix_cache_startup_seconds": 1.5606668059990625,
+        "plan_reuse": {
+          "reused_bundles": 26,
+          "compiled_bundles": 0
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 23.053670100149493,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.32202060089696,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.16101030044848,
+            69.16101030044848
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 1.4918996400010656,
+          "evaluation_seconds": 2.146932248993835,
+          "evaluations_per_second": 0.4657808836159839,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 3.6612098250043346,
+          "end_to_end_evaluations_per_second": 0.27313375845614535
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9"
+      },
+      "cold_total_seconds": 0.37296118200174533,
+      "cold_evals_per_second": 2.681244183732023,
+      "full_compiled_seconds": 3.6612436790019274,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    },
+    {
+      "batch": "context_a",
+      "candidate": "residual_mutation",
+      "hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+      "prefix_startup_seconds": 1.6077245850028703,
+      "fast": {
+        "fitness_bits_per_byte": 23.128040178033444,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.76824106820067,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.38412053410033,
+            69.38412053410033
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 0.1940837639995152,
+          "evaluation_seconds": 0.18579306699393783,
+          "evaluations_per_second": 5.382332162225562,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 0.4057001239998499,
+          "end_to_end_evaluations_per_second": 2.464874770411384
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+        "prefix_cache_startup_seconds": 1.5606668059990625,
+        "plan_reuse": {
+          "reused_bundles": 25,
+          "compiled_bundles": 1
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 23.128040178033444,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.76824106820067,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.38412053410033,
+            69.38412053410033
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 1.350871028000256,
+          "evaluation_seconds": 2.1202114629995776,
+          "evaluations_per_second": 0.47165106757098935,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 3.4933844029947068,
+          "end_to_end_evaluations_per_second": 0.286255357166749
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547"
+      },
+      "cold_total_seconds": 0.4057221449984354,
+      "cold_evals_per_second": 2.4647409867259187,
+      "full_compiled_seconds": 3.493416213997989,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    },
+    {
+      "batch": "context_b",
+      "candidate": "seed",
+      "hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+      "prefix_startup_seconds": 1.6458275039985892,
+      "fast": {
+        "fitness_bits_per_byte": 23.053670100149493,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.32202060089696,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.16101030044848,
+            69.16101030044848
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 0.13931938600580906,
+          "evaluation_seconds": 0.2188690309994854,
+          "evaluations_per_second": 4.56894241927882,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 0.38376337500085356,
+          "end_to_end_evaluations_per_second": 2.605772372097196
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9",
+        "prefix_cache_startup_seconds": 1.5727095990005182,
+        "plan_reuse": {
+          "reused_bundles": 26,
+          "compiled_bundles": 0
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 23.053670100149493,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.32202060089696,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.16101030044848,
+            69.16101030044848
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 1.3358932759947493,
+          "evaluation_seconds": 2.063472859998001,
+          "evaluations_per_second": 0.48461989463770744,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 3.423049283999717,
+          "end_to_end_evaluations_per_second": 0.2921371902748458
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "26530e219cb775ba6d62403323b51a26b00d5fee04a89411e6b24c06124828d9"
+      },
+      "cold_total_seconds": 0.3837841149943415,
+      "cold_evals_per_second": 2.6056315541218895,
+      "full_compiled_seconds": 3.423081363995152,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    },
+    {
+      "batch": "context_b",
+      "candidate": "residual_mutation",
+      "hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+      "prefix_startup_seconds": 1.6458275039985892,
+      "fast": {
+        "fitness_bits_per_byte": 23.128040178033444,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.76824106820067,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.38412053410033,
+            69.38412053410033
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 0.1899851350026438,
+          "evaluation_seconds": 0.18758953200449469,
+          "evaluations_per_second": 5.33078786067892,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 0.40384798200102523,
+          "end_to_end_evaluations_per_second": 2.476179266874389
+        },
+        "cache_mode": "state_ancestor_cache_cold",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547",
+        "prefix_cache_startup_seconds": 1.5727095990005182,
+        "plan_reuse": {
+          "reused_bundles": 25,
+          "compiled_bundles": 1
+        }
+      },
+      "full_compiled": {
+        "fitness_bits_per_byte": 23.128040178033444,
+        "eligible_for_selection": true,
+        "next_byte": {
+          "content_bits": 138.76824106820067,
+          "content_bytes": 6,
+          "failed_documents": 0,
+          "eos_excluded": true,
+          "per_document_content_bits": [
+            69.38412053410033,
+            69.38412053410033
+          ],
+          "selection_unit": "selected UTF8 content bytes",
+          "full_content_bytes": 168
+        },
+        "timing": {
+          "startup_seconds": 1.3979686120001134,
+          "evaluation_seconds": 2.112799433998589,
+          "evaluations_per_second": 0.473305692868085,
+          "evaluated_bytes": 170,
+          "end_to_end_seconds": 3.533595480999793,
+          "end_to_end_evaluations_per_second": 0.282997871538216
+        },
+        "cache_mode": "compiled_full",
+        "model_hash": "423a1a0dea16fd161c6047ac0cf0b419441c55aa4d265c8f6f6fa2e42c6cb547"
+      },
+      "cold_total_seconds": 0.4038871449956787,
+      "cold_evals_per_second": 2.475939163675782,
+      "full_compiled_seconds": 3.5372274499968626,
+      "max_document_bit_delta": 0.0,
+      "parity_passed": true
+    }
+  ],
+  "total_seconds": 39.98646014499536,
+  "source_hashes": {
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/scripts/qualify_wb_evolution_fitness.py": "7b136570aad68afb282bbf13aaed22146402ae47a85c0c946c85dee214c1cbe6",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/src/cellforge/reference/evolution_fitness.py": "66c89e7f5a2e223d93c4ab2dc0a72059c2f3ba2f62c11511fcccd422c2e789d7",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/src/cellforge/runtime/compiled.py": "1a6d925c502da1ea5b16a610ce0ebd91d4e95dc95cb25b93e917da7506293eb0",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/src/cellforge/runtime/ops.py": "b9ba357094d94132b29d08e2a559ae2a04b1170cd8ec790b34d4f0b6aa709180",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/scripts/evolve_language_islands.py": "98fc4cd54e3e44a79f6fff735667c4ee82484ba70aefd1862af270d975c48f10"
+  },
+  "source_hashes_after": {
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/scripts/qualify_wb_evolution_fitness.py": "7b136570aad68afb282bbf13aaed22146402ae47a85c0c946c85dee214c1cbe6",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/src/cellforge/reference/evolution_fitness.py": "66c89e7f5a2e223d93c4ab2dc0a72059c2f3ba2f62c11511fcccd422c2e789d7",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/src/cellforge/runtime/compiled.py": "1a6d925c502da1ea5b16a610ce0ebd91d4e95dc95cb25b93e917da7506293eb0",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/src/cellforge/runtime/ops.py": "b9ba357094d94132b29d08e2a559ae2a04b1170cd8ec790b34d4f0b6aa709180",
+    "/srv/cellforge-inbox/wb6-four-arm-static-v1/scripts/evolve_language_islands.py": "98fc4cd54e3e44a79f6fff735667c4ee82484ba70aefd1862af270d975c48f10"
+  },
+  "sources_unchanged": true,
+  "selection_proposals": 0,
+  "report_evaluations": 0,
+  "scope": "seed + fixed residual mutation on both existing DEV corpus/context batches; no evolution, report access or scale qualification"
+}
