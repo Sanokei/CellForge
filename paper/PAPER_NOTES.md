@@ -55,6 +55,17 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 - **Judging:** all three transfer 0.00 (24 official measurements at zero), dev 0.766/0.7024/0.7660. 3-way tie → stakes returned, no payouts/breeding. Bankrolls: γ2311 / α1627 / β1312 (beta warning persists). Sano +200 effort awards to all three.
 - Full report: arena/gen2/GEN6_REPORT.md.
 
+## Gen-7: CONVERSION + the red-team (2026-10-17, Sano's standing directives)
+
+- Theme: does exploration turn into levels? Answer: no. Transfer 0.00 × 27 official measurements (3-way tie, stakes returned). Dev 0.766 all three (alpha recovered from 0.7024).
+- **Red-team instituted as a parallel track every generation** (Sano): adversarial verification of claims, not researchers. First HOLES.md delivered 10 ranked holes mid-generation: (1) exploratory_rate was INVERTED — measured stuckness (0.94 stuck at 0.98 "exploratory"), every claim on it void; (2) Hebbian gate behavior-neutral (0/3 flips, KL 0.002–0.006); (3) explore_map emits into the void (3rd instance of discarded-returns class); (4) discovery intake 44–80% OOV; (5) transfer = two memorized click triples + 52–58% parse fails, 0 probes/120; (6) ledger log stale, funds correct; (7) researcher Python outside submission hash; (8) surprise gate permanently open; (9) TTMM never executed; (10) hist[-2:] leaks across level-ups. Verified clean: seed freshness, artifact integrity, zero contamination. Standing rules adopted: no cell counts as working until its bytes appear in a live prompt; modules hash-pinned at submission; behavioral measures replace exploratory_rate. Holes #4 and #10 closed same generation.
+- **Standing literature pipeline** (Sano): every generation opens with a scout on the bottleneck; briefs go to researchers as build targets AND red-team as checklists. Gen-7: 12 papers (conversion) + 7 Duck-harness briefs (Tufa Labs winner) + 6 Tycho briefs (NIMI-research) + 6 mission-C papers.
+- **Beta — <unk>-soup kill (verified, merged):** in-vocab 0.5131→0.9944, coordinator-verified 0% OOV, dev-neutral (0.766), merged to shared cells.py. Honest verdict: readable ≠ followed — bottleneck moved can't-read → won't-follow (0/20 unforced target emissions; 20/20 with DISCIPL mask).
+- **Alpha — harness-side conversion (honest negative):** TTMM switching, ε-deviation, MPC search all REJECTED with live falsifiers (diversity w/o conversion = noise; search theater). Verdict: harness amplifies understanding, cannot create it.
+- **Gamma — template collapse (diagnostic):** MI margins negative everywhere (repair gate ≥0 not cleared); steering vector exists (4%→73% flips) but breaks solves; coverage-gated G2 (Tycho 6): open rate 65.5%→3.4%, 3× more action-relevant firings. perceive.predict registered (library: 19 cells).
+- Bankrolls: γ2261 / α1627 / β1312 (beta warning persists). Sano: +200 effort awards to all three.
+- The wall now has a name: TEMPLATE COLLAPSE. Next: directive-following (DISCIPL mask / HSL traces), steering hook, RPD-curated 1PNS corpus + MI gate.
+
 ## Methods / anti-cheat (structural, not trust-based)
 
 - Weights-only submissions: pure tensors, hashed, versioned. No custom per-submission Python (bench-hacking impossible by construction). Python allowed only for authoring generic cells; new cells are shared library infrastructure, generic-only, no per-game logic.
@@ -67,7 +78,7 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 
 - Our lane is the community leaderboard (harness research), not the official no-harness board. The paper must say so plainly.
 - Efficiency story, not a size category: there is NO "tiny prize" category this year. The story is score-per-parameter and $/task, reported honestly.
-- Transfer is 0.00% as of 2026-10-17 (24 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
+- Transfer is 0.00% as of 2026-10-17 (27 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
 - Blackboard anecdote (Hearsay-II → Global Workspace → bidding cells): `/srv/arc3-claude/v6run/model/notes/blackboard_anecdote.md` — include in rewrite.
 
 ## Deadlines
