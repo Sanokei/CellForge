@@ -1,0 +1,263 @@
+{
+ "agent": "ckpt:router_beta_g2f.pt+rmt",
+ "runs": 6,
+ "mean_rhae": 0.463,
+ "levels": 1,
+ "evaluator": "arc3-ref-eval/1",
+ "model_hash": "03742fc0bf55625c",
+ "wallclock_s_total": 238.9,
+ "results": [
+  {
+   "game": "lf52",
+   "seed": 0,
+   "baselines": [
+    32,
+    81,
+    60,
+    71,
+    205,
+    148,
+    244,
+    109,
+    164,
+    225
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0,
+    "10": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 40,
+   "failure_reasons": {
+    "parse_fail": 21
+   },
+   "rmt": true,
+   "zero_mem_at": null,
+   "latency_s_total": 41.091,
+   "latency_ms_per_decision": 684.9,
+   "agent": "ckpt:router_beta_g2f.pt+rmt",
+   "params": 1380864,
+   "model_hash": "03742fc0bf55625c",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "41287c4ced9324da"
+  },
+  {
+   "game": "s5i5",
+   "seed": 0,
+   "baselines": [
+    20,
+    89,
+    106,
+    54,
+    162,
+    38,
+    86,
+    83
+   ],
+   "per_level_actions": {
+    "1": 13
+   },
+   "level_scores": {
+    "1": 1.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "rhae_pct": 2.7778,
+   "levels_completed": 1,
+   "steps_used": 98,
+   "failure_reasons": {
+    "parse_fail": 40
+   },
+   "rmt": true,
+   "zero_mem_at": null,
+   "latency_s_total": 39.283,
+   "latency_ms_per_decision": 654.7,
+   "agent": "ckpt:router_beta_g2f.pt+rmt",
+   "params": 1380864,
+   "model_hash": "03742fc0bf55625c",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "41287c4ced9324da"
+  },
+  {
+   "game": "ls20",
+   "seed": 0,
+   "baselines": [
+    22,
+    123,
+    73,
+    84,
+    96,
+    192,
+    186
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 8,
+   "failure_reasons": {
+    "parse_fail": 52
+   },
+   "rmt": true,
+   "zero_mem_at": null,
+   "latency_s_total": 39.215,
+   "latency_ms_per_decision": 653.6,
+   "agent": "ckpt:router_beta_g2f.pt+rmt",
+   "params": 1380864,
+   "model_hash": "03742fc0bf55625c",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "41287c4ced9324da"
+  },
+  {
+   "game": "g50t",
+   "seed": 0,
+   "baselines": [
+    78,
+    175,
+    179,
+    230,
+    96,
+    54,
+    67
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 67,
+   "failure_reasons": {
+    "parse_fail": 19
+   },
+   "rmt": true,
+   "zero_mem_at": null,
+   "latency_s_total": 39.608,
+   "latency_ms_per_decision": 660.1,
+   "agent": "ckpt:router_beta_g2f.pt+rmt",
+   "params": 1380864,
+   "model_hash": "03742fc0bf55625c",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "41287c4ced9324da"
+  },
+  {
+   "game": "tu93",
+   "seed": 0,
+   "baselines": [
+    19,
+    16,
+    34,
+    42,
+    123,
+    80,
+    14,
+    23,
+    111
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 8,
+   "failure_reasons": {
+    "parse_fail": 52
+   },
+   "rmt": true,
+   "zero_mem_at": null,
+   "latency_s_total": 40.036,
+   "latency_ms_per_decision": 667.3,
+   "agent": "ckpt:router_beta_g2f.pt+rmt",
+   "params": 1380864,
+   "model_hash": "03742fc0bf55625c",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "41287c4ced9324da"
+  },
+  {
+   "game": "bp35",
+   "seed": 0,
+   "baselines": [
+    21,
+    48,
+    44,
+    38,
+    33,
+    87,
+    86,
+    131,
+    163
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 32,
+   "failure_reasons": {
+    "parse_fail": 51
+   },
+   "rmt": true,
+   "zero_mem_at": null,
+   "latency_s_total": 39.675,
+   "latency_ms_per_decision": 661.3,
+   "agent": "ckpt:router_beta_g2f.pt+rmt",
+   "params": 1380864,
+   "model_hash": "03742fc0bf55625c",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "41287c4ced9324da"
+  }
+ ]
+}

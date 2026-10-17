@@ -1,0 +1,43 @@
+{
+ "researcher": "beta",
+ "scores": {
+  "fill": {
+   "correct": 5,
+   "total": 5
+  },
+  "denoise": {
+   "correct": 5,
+   "total": 5
+  },
+  "recolor": {
+   "correct": 5,
+   "total": 5
+  }
+ },
+ "checks": {
+  "submission": "OK",
+  "answer_scan": "PASS",
+  "determinism_fill": "PASS",
+  "determinism_denoise": "PASS",
+  "determinism_recolor": "PASS",
+  "weights_load_bearing_detail": {
+   "load_bearing": [
+    "background",
+    "color_identity",
+    "swap_order"
+   ],
+   "dead": [
+    "denoise_bias",
+    "denoise_gain",
+    "fill_bias",
+    "fill_gain"
+   ]
+  },
+  "weights_global_zero": "PASS (15/15 outputs changed)",
+  "weights_load_bearing": "PASS (15/15 outputs changed)"
+ },
+ "total": 15,
+ "possible": 15,
+ "verdict": "SCORE",
+ "accuracy": 1.0
+}

@@ -1,0 +1,26 @@
+{
+  "router": {
+    "mirror_zero_thresh": 0.99,
+    "rect_sol_hi": 0.99,
+    "rect_area_lo": 4,
+    "rect_sol_lo": 0.8,
+    "rect_area_hi": 6,
+    "size_thresh": 10.0
+  },
+  "compose": {
+    "remap": [0, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    "vote": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "wipe_sol_thresh": 1.0
+  },
+  "denoise": {
+    "solid_thresh": 0.99,
+    "min_side": 3,
+    "colormap": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  },
+  "mirror": {
+    "half_gain": 1.0,
+    "half_bias": 0.0,
+    "axis_gain": 1.0,
+    "axis_bias": 0.0
+  }
+}

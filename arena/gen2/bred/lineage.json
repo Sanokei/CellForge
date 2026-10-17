@@ -1,0 +1,76 @@
+{
+ "ts": "2026-10-16T10:22:02Z",
+ "gen": "gen2-gen1",
+ "children": [
+  {
+   "child": "bred_g1_a50",
+   "parents": [
+    "alpha.pt",
+    "gamma.pt"
+   ],
+   "weights": {
+    "alpha": 0.5,
+    "gamma": 0.5
+   },
+   "sha16": "6a1d49c80fa6713d",
+   "fitness_parents": {
+    "alpha": [
+     0.0,
+     0.766
+    ],
+    "gamma": [
+     0.0,
+     0.77
+    ]
+   },
+   "note": "Sakana-style tensor interpolation; transfer 0.00 for both parents"
+  },
+  {
+   "child": "bred_g1_a25",
+   "parents": [
+    "alpha.pt",
+    "gamma.pt"
+   ],
+   "weights": {
+    "alpha": 0.25,
+    "gamma": 0.75
+   },
+   "sha16": "7a042e6e10befee3",
+   "fitness_parents": {
+    "alpha": [
+     0.0,
+     0.766
+    ],
+    "gamma": [
+     0.0,
+     0.77
+    ]
+   },
+   "note": "Sakana-style tensor interpolation; transfer 0.00 for both parents"
+  }
+ ],
+ "eval_ts": "2026-10-16T15:18:52Z",
+ "eval_protocol": "fixed_runner.py, dev-6 (lf52,s5i5,ls20,g50t,tu93,bp35), seed 0, maxdec 60, budget 3000",
+ "children_eval": [
+  {
+   "child": "bred_g1_a50",
+   "dev6_rhae": 0.463,
+   "levels": 1,
+   "detail": "s5i5 L1 only; lost lf52 L1",
+   "verdict": "REGRESSED below both parents (gamma-g2 0.77 / alpha-g2 0.766). EXCLUDED from elitism."
+  },
+  {
+   "child": "bred_g1_a25",
+   "dev6_rhae": 0.766,
+   "levels": 2,
+   "detail": "lf52 L1 (1.82) + s5i5 L1 (2.78); both parental levels preserved; 0.004 gap to gamma is action-efficiency noise",
+   "verdict": "ACCEPTED. Preserved all parental level completions; not below both parents (== alpha-g2)."
+  }
+ ],
+ "elitism_root": {
+  "weights": "bred_g1_a25.pt",
+  "reason": "Only bred child that preserved parental capabilities. a50 regressed and is excluded.",
+  "fallback": "pure gamma-g2 weights (0.77%) if a25 degrades in generation 2.",
+  "ts": "2026-10-16T15:18:52Z"
+ }
+}

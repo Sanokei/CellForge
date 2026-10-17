@@ -1,0 +1,12 @@
+{
+  "round": 1,
+  "date": "2026-10-15",
+  "tasks": ["fill", "denoise", "recolor"],
+  "test_pairs_per_task": 5,
+  "results": {
+    "alpha": {"verdict": "SCORE", "accuracy": 1.0, "correct": 15, "possible": 15, "dead_weight_groups": 0},
+    "beta": {"verdict": "SCORE", "accuracy": 1.0, "correct": 15, "possible": 15, "dead_weight_groups": 5}
+  },
+  "winner": "tie",
+  "notes": "Both researchers solved all held-out pairs. Alpha's weights fully load-bearing (8/8 groups). Beta's weights load-bearing in aggregate (global zero test 15/15) with 5/7 groups individually dead - parametric but not output-sensitive on these inputs. Judge false-positive on beta investigated and test refined mid-round; audit in ledger."
+}

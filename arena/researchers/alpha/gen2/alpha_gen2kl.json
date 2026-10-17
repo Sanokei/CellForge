@@ -1,0 +1,14 @@
+{
+ "init": "/srv/cellforge-arena/researchers/alpha/gen2/base_dnd1.pt",
+ "lr": 0.0001,
+ "steps": 300,
+ "kl": 5.0,
+ "fc_frac": 0.35,
+ "frozen": [
+  "blocks.2.attn.c_attn.weight",
+  "blocks.3.attn.c_attn.weight",
+  "blocks.3.mlp.c_proj.weight",
+  "lm_head.weight"
+ ],
+ "final_loss": 15.16897964477539
+}

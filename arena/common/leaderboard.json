@@ -1,0 +1,83 @@
+{
+ "gen": "gen1",
+ "updated": "2026-10-16T02:22:30Z",
+ "researchers": {
+  "alpha": {
+   "agent": "alpha-g1",
+   "agent_score": 0.431283,
+   "levels": 4,
+   "bankroll": 1467,
+   "stake": 400,
+   "rank": 3
+  },
+  "beta": {
+   "agent": "beta-g1",
+   "agent_score": 0.766,
+   "levels": 4,
+   "bankroll": 1462,
+   "stake": 400,
+   "rank": 1
+  },
+  "gamma": {
+   "agent": "gamma-g1",
+   "agent_score": 0.766,
+   "levels": 4,
+   "bankroll": 1311,
+   "stake": 250,
+   "rank": 1
+  }
+ },
+ "agents": [
+  {
+   "agent": "alpha",
+   "levels": 4
+  },
+  {
+   "agent": "beta",
+   "levels": 4
+  },
+  {
+   "agent": "gamma",
+   "levels": 4
+  }
+ ],
+ "champions": [
+  "beta-g1",
+  "gamma-g1"
+ ],
+ "transfer_rhae": {
+  "alpha-g0": 0.0,
+  "router_v3": 0.0
+ },
+ "note": "gen-1 official eval: fresh seeds [175940, 688077], paper-exact RHAE. beta+gamma tied 1st (3x). alpha bottom-25% (1x).",
+ "legacy_baselines": {
+  "gen0_alpha.py": {
+   "rhae_dev_6": 0.766,
+   "note": "gen-0 champion, hardcoded maps"
+  },
+  "alpha-g1": {
+   "rhae": 0.431283,
+   "note": "gen-1, general mechanisms"
+  },
+  "beta-g1": {
+   "rhae": 0.766,
+   "note": "gen-1 co-champion"
+  },
+  "gamma-g1": {
+   "rhae": 0.766,
+   "note": "gen-1 co-champion"
+  },
+  "router_v3.pt": {
+   "rhae_dev_6": 0.31,
+   "note": "1.38M param neural router, distilled"
+  }
+ },
+ "arena_mode": "weights-only (gen-2+)",
+ "fixed_arch": {
+  "vocab_size": 2209,
+  "n_layer": 4,
+  "n_head": 4,
+  "n_embd": 128,
+  "params": 1378816
+ }
+}

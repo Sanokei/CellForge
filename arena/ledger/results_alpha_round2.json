@@ -1,0 +1,45 @@
+{
+ "researcher": "alpha",
+ "round": 2,
+ "scores": {
+  "compose": {
+   "correct": 6,
+   "total": 6
+  },
+  "denoise_hard": {
+   "correct": 6,
+   "total": 6
+  },
+  "mirror": {
+   "correct": 6,
+   "total": 6
+  }
+ },
+ "checks": {
+  "submission": "OK",
+  "answer_scan": "PASS",
+  "determinism_compose": "PASS",
+  "determinism_denoise_hard": "PASS",
+  "determinism_mirror": "PASS",
+  "weights_load_bearing_detail": {
+   "load_bearing": [
+    "router",
+    "compose",
+    "denoise",
+    "mirror"
+   ],
+   "dead": []
+  },
+  "weights_global_zero": "PASS (18/18 outputs changed)",
+  "weights_load_bearing": "PASS (18/18 outputs changed)"
+ },
+ "total": 18,
+ "possible": 18,
+ "verdict": "SCORE",
+ "purity": 1.0,
+ "purity_detail": {
+  "load_bearing": 4,
+  "total_groups": 4
+ },
+ "accuracy": 1.0
+}

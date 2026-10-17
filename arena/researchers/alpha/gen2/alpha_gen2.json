@@ -1,0 +1,20 @@
+{
+ "init": "/srv/cellforge-arena/researchers/alpha/gen2/base_dnd1.pt",
+ "lr": 0.0001,
+ "steps": 300,
+ "mix": {
+  "fc": {
+   "path": "traces_fc.jsonl",
+   "probs": 0.6041085997645753
+  },
+  "w2": {
+   "path": "traces_w2.jsonl",
+   "probs": 0.24959663234518123
+  },
+  "grammar": {
+   "path": "traces_grammar_x100.jsonl",
+   "probs": 0.1462947678902434
+  }
+ },
+ "final_loss": 0.3244746923446655
+}

@@ -1,0 +1,14 @@
+{
+ "recipe": "beta-g2 v6: transformer frozen, mem_init + probe only",
+ "steps": 200,
+ "lr": 0.0001,
+ "force_w": 0.5,
+ "mreg_w": 0.05,
+ "text_w": 0.2,
+ "warm_start": "router_v3+dnd1.pt",
+ "seed": 7,
+ "params": 1380864,
+ "mem_init_drift": 0.287783682346344,
+ "final_train_text": 3.9963504564762116,
+ "final_train_force": 6.021544020175934
+}

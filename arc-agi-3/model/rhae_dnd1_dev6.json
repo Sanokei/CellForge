@@ -1,0 +1,204 @@
+{
+ "agent": "router_v3+dnd1.pt",
+ "protocol": "rhae_run_router.py (canonical environment_score), seed 0, maxdec 60, budget 3000",
+ "baseline": "router_v3.pt, same protocol (model/rhae_lm6.json, model/rhae_transfer_lm.json)",
+ "results": [
+  {
+   "agent": "router_v3+dnd1.pt",
+   "game": "lf52",
+   "seed": 0,
+   "baselines": [
+    32,
+    81,
+    60,
+    71,
+    205,
+    148,
+    244,
+    109,
+    164,
+    225
+   ],
+   "per_level_actions": {
+    "1": 37
+   },
+   "level_scores": {
+    "1": 0.748,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0,
+    "10": 0.0
+   },
+   "rhae_pct": 1.36,
+   "levels_completed": 1,
+   "steps_used": 41,
+   "parse_fails": 19,
+   "secs": 898.4
+  },
+  {
+   "agent": "router_v3+dnd1.pt",
+   "game": "s5i5",
+   "seed": 0,
+   "baselines": [
+    20,
+    89,
+    106,
+    54,
+    162,
+    38,
+    86,
+    83
+   ],
+   "per_level_actions": {
+    "1": 13
+   },
+   "level_scores": {
+    "1": 1.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "rhae_pct": 2.78,
+   "levels_completed": 1,
+   "steps_used": 232,
+   "parse_fails": 24,
+   "secs": 704.7
+  },
+  {
+   "agent": "router_v3+dnd1.pt",
+   "game": "ls20",
+   "seed": 0,
+   "baselines": [
+    22,
+    123,
+    73,
+    84,
+    96,
+    192,
+    186
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 36,
+   "parse_fails": 24,
+   "secs": 598.4
+  },
+  {
+   "agent": "router_v3+dnd1.pt",
+   "game": "g50t",
+   "seed": 0,
+   "baselines": [
+    78,
+    175,
+    179,
+    230,
+    96,
+    54,
+    67
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 56,
+   "parse_fails": 10,
+   "secs": 574.2
+  },
+  {
+   "agent": "router_v3+dnd1.pt",
+   "game": "tu93",
+   "seed": 0,
+   "baselines": [
+    19,
+    16,
+    34,
+    42,
+    123,
+    80,
+    14,
+    23,
+    111
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 16,
+   "parse_fails": 50,
+   "secs": 483.1
+  },
+  {
+   "agent": "router_v3+dnd1.pt",
+   "game": "bp35",
+   "seed": 0,
+   "baselines": [
+    21,
+    48,
+    44,
+    38,
+    33,
+    87,
+    86,
+    131,
+    163
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 52,
+   "parse_fails": 42,
+   "secs": 702.6
+  }
+ ],
+ "mean_rhae": 0.69,
+ "levels": 2,
+ "parse_fails": 169
+}

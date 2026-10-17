@@ -1,0 +1,43 @@
+{
+ "checkpoint": "beta_g5_s025.pt",
+ "force": 0,
+ "games": [
+  "lf52",
+  "s5i5"
+ ],
+ "seeds": [
+  0
+ ],
+ "mean_rhae": 1.3889,
+ "emit": 9,
+ "decisions": 120,
+ "explore": 1,
+ "results": [
+  {
+   "game": "lf52",
+   "seed": 0,
+   "rhae_pct": 0.0,
+   "levels": 0,
+   "steps": 49,
+   "ndec": 60,
+   "emit": 2,
+   "explore": 0,
+   "failures": {
+    "parse_fail": 9
+   }
+  },
+  {
+   "game": "s5i5",
+   "seed": 0,
+   "rhae_pct": 2.7778,
+   "levels": 1,
+   "steps": 157,
+   "ndec": 60,
+   "emit": 7,
+   "explore": 1,
+   "failures": {
+    "parse_fail": 24
+   }
+  }
+ ]
+}

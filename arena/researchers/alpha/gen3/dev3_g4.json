@@ -1,0 +1,148 @@
+{
+ "agent": "ckpt:alpha_g4.pt",
+ "runs": 3,
+ "mean_rhae": 1.532,
+ "levels": 2,
+ "evaluator": "arc3-ref-eval/1",
+ "model_hash": "3ea867ee3e87c7af",
+ "wallclock_s_total": 158.5,
+ "results": [
+  {
+   "game": "lf52",
+   "seed": 0,
+   "baselines": [
+    32,
+    81,
+    60,
+    71,
+    205,
+    148,
+    244,
+    109,
+    164,
+    225
+   ],
+   "per_level_actions": {
+    "1": 18
+   },
+   "level_scores": {
+    "1": 1.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0,
+    "10": 0.0
+   },
+   "rhae_pct": 1.8182,
+   "levels_completed": 1,
+   "steps_used": 58,
+   "failure_reasons": {
+    "parse_fail": 2
+   },
+   "rmt": false,
+   "zero_mem_at": null,
+   "latency_s_total": 49.296,
+   "latency_ms_per_decision": 821.6,
+   "agent": "ckpt:alpha_g4.pt",
+   "params": 1378816,
+   "model_hash": "3ea867ee3e87c7af",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "455cf7bb3bc5cf24",
+   "rulebook": null
+  },
+  {
+   "game": "s5i5",
+   "seed": 0,
+   "baselines": [
+    20,
+    89,
+    106,
+    54,
+    162,
+    38,
+    86,
+    83
+   ],
+   "per_level_actions": {
+    "1": 13
+   },
+   "level_scores": {
+    "1": 1.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "rhae_pct": 2.7778,
+   "levels_completed": 1,
+   "steps_used": 181,
+   "failure_reasons": {
+    "parse_fail": 31
+   },
+   "rmt": false,
+   "zero_mem_at": null,
+   "latency_s_total": 35.937,
+   "latency_ms_per_decision": 598.9,
+   "agent": "ckpt:alpha_g4.pt",
+   "params": 1378816,
+   "model_hash": "3ea867ee3e87c7af",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "455cf7bb3bc5cf24",
+   "rulebook": null
+  },
+  {
+   "game": "tu93",
+   "seed": 0,
+   "baselines": [
+    19,
+    16,
+    34,
+    42,
+    123,
+    80,
+    14,
+    23,
+    111
+   ],
+   "per_level_actions": {},
+   "level_scores": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0,
+    "9": 0.0
+   },
+   "rhae_pct": 0.0,
+   "levels_completed": 0,
+   "steps_used": 43,
+   "failure_reasons": {
+    "parse_fail": 47
+   },
+   "rmt": false,
+   "zero_mem_at": null,
+   "latency_s_total": 73.288,
+   "latency_ms_per_decision": 1221.5,
+   "agent": "ckpt:alpha_g4.pt",
+   "params": 1378816,
+   "model_hash": "3ea867ee3e87c7af",
+   "evaluator": "arc3-ref-eval/1",
+   "format": "cellforge-arc3-ckpt/1",
+   "game_manifest": "455cf7bb3bc5cf24",
+   "rulebook": null
+  }
+ ],
+ "rulebook": null
+}

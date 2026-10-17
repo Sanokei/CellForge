@@ -1,0 +1,15 @@
+{
+ "recipe": "beta-g2 v2 memory-forcing RMT (isolated probe, lm_head untouched)",
+ "steps": 354,
+ "epochs": 2,
+ "lr": 0.0001,
+ "force_w": 0.5,
+ "warm_start": "router_v3+dnd1.pt",
+ "seg": 56,
+ "seed": 7,
+ "params": 1380864,
+ "corpus": "fc 105 segs + w2 64x16 + gram 28x12",
+ "final_train_text": 0.4231743599567036,
+ "final_train_force": 2.1889856589042536,
+ "final_val_text": 0.1645665569721084
+}
