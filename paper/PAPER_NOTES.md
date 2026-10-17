@@ -45,6 +45,16 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 - **Judging:** all three transfer 0.00 (21 official measurements at zero), dev 0.766 each. 3-way tie → stakes returned, no payouts, no breeding. Bankrolls: γ2111 / α1427 (−50 fee) / β1112 (warning persists — tie = no tick; gen-4 act.Probing fee reconciled).
 - Honest verdict: the cell layer now has exploration (Probing), hypotheses (learn), fast weights (plastic) — none solve transfer levels. Next levers: better sensors, TTMM experts, Go-Explore traces.
 
+## Gen-6: predictive surprise loop (2026-10-17, Sano-approved via AdaJEPA arXiv:2606.32026)
+
+- Full loop built with zero gradients: gamma's `perceive.predict` (JEPA-style latent predictor, authored/frozen kNN over 354 transition triples, 8×8 thumbnail latent, transition tuples from rollout traces — never answer traces; low-level pixel dynamics, not game rules) → surprise intake → Hebbian fast-weight gate (PlasticBlock4) modulated by real surprise; alpha's field-journal context + `plan.forecast` MPC-lite advisor; beta's act.learn for English revision.
+- **Gamma closed the loop on transfer-12** (surprise loop wired in checkpoint cfg): calibrated sensor (523×/36×/5.8× LOO separation; correctly silent on stereotyped dynamics), gate bug found+fixed (dense per-position write → self-similar readout ~20× residual → parse-fail cascade; fixed with single anchored write + cap). Transfer run: exploratory 0.65, surprise 0.26, **0 levels**. Exploration without grounding is motion, not progress.
+- **Alpha's critical negative:** loop intake breaks BOTH dev solves (lf52 1.82→0.0, s5i5 2.78→0.0) across 4 prompt variants — the 1.38M router's STATE→THINK→CALL template is too brittle for ANY prompt modification. "Intake-only = dev-safe" does NOT hold. Kills the whole prompt-intervention class on current weights; viable path is harness-side predictor use (TTMM expert switching) or training with intake from the start.
+- **Beta's <unk>-soup diagnosis:** discovery intake is 44% <unk> — HYP/TEST/CONFIRMED/VIOLATED all out of vocabulary; verdict polarity invisible to the model. Explains gen-5's "perturbs but doesn't convert." Cheapest high-EV fix on the board: vocab-safe cell return formats.
+- Beta's Go-Explore pipeline works (29/29 replay fidelity, 20 kept trajectories) but KL-anchored distillation of a zero-init block doesn't move behavior (output distribution identical). Merge bug fixed by coordinator (missing _HYPO_* constants → fired probes raised NameError on shared runner).
+- **Judging:** all three transfer 0.00 (24 official measurements at zero), dev 0.766/0.7024/0.7660. 3-way tie → stakes returned, no payouts/breeding. Bankrolls: γ2311 / α1627 / β1312 (beta warning persists). Sano +200 effort awards to all three.
+- Full report: arena/gen2/GEN6_REPORT.md.
+
 ## Methods / anti-cheat (structural, not trust-based)
 
 - Weights-only submissions: pure tensors, hashed, versioned. No custom per-submission Python (bench-hacking impossible by construction). Python allowed only for authoring generic cells; new cells are shared library infrastructure, generic-only, no per-game logic.
@@ -57,7 +67,7 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 
 - Our lane is the community leaderboard (harness research), not the official no-harness board. The paper must say so plainly.
 - Efficiency story, not a size category: there is NO "tiny prize" category this year. The story is score-per-parameter and $/task, reported honestly.
-- Transfer is 0.00% as of 2026-10-16. The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
+- Transfer is 0.00% as of 2026-10-17 (24 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
 - Blackboard anecdote (Hearsay-II → Global Workspace → bidding cells): `/srv/arc3-claude/v6run/model/notes/blackboard_anecdote.md` — include in rewrite.
 
 ## Deadlines
