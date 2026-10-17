@@ -35,6 +35,16 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 - Forced-probe stress test: 0 false positives during L1 solves (lf52 12 probes/0 explores; s5i5 explores only at lvl1 after L1 banked). The probe opens only where the model flails.
 - Paper significance: the cell layer — not the weight head — is where exploration lives. The failed novelty gate had the right sensor and the wrong actuator; the actuator turned out to be the policy's own machinery operating on live state, not a logit boost. Sano ordered a +200 house award to beta for the milestone (ledger: house_awards).
 
+## Gen-5: literature program (2026-10-17, Sano's order)
+
+- Sano ordered literature help; two scout teams returned 12 papers with implementation sketches; all three researchers took up mechanisms. Full reports: `~/workspace/lit-scout-exploration-tiny-models.md`, `~/workspace/test-time-adaptation-scout.md`.
+- **RAGEN-2 MI diagnostic (gamma):** first quantitative template-collapse measure — cross-scored THINK traces vs state prompts. Solved dev retrieval 0.150 (chance 0.025); own−best-other margin NEGATIVE (−0.195/−0.287 nats) — another state's prompt scores a trace higher than its own. Template collapse holds even on solved games. Reusable: `mi_collect.py`, `mi_score.py`.
+- **Hebbian fast-weight gate (gamma, Chaudhary 2025):** built, validated, runner-integrated (`PlasticBlock4` in gpt.py + fixed_runner.py, opt-in via cfg.plastic). Dev-neutral (0.766 bit-identical), clean monotone dose-response. But: sensor fires at `<unk>` tokens, not novelty (bp35: 57/78 firings) — actuator built, sensor semantics suspect. Transfer 0.00. 2.5× latency cost.
+- **Plumbing finding (beta):** gen-4's probe reports never reached the model at all — the runner discards act.* cell return values; only `perceive.describe` output becomes STATE text. Beta's describe patch fixes it. Discovery conversion still 0 (strict definition): seeded-hypothesis test perturbs action distribution (parse-fails 26→53) but doesn't convert to hypothesis-driven behavior. Channel open, gap narrowed not closed.
+- **New cells:** `perceive.explore_map` (alpha, 8×8 per-level visitation tracker, fee 50), `act.learn` (beta, hypothesize→falsify in exactly 1 env step, verified live: `HYP h1 ... | TEST: CONFIRMED`), `perceive.reveal` (beta, free cell + passive verdict in describe output). Library now 18 cells. CDE surprise meter skipped (cells can't access THINK logits; needs runner change). ExpA routing: design accepted, implementation deferred. TTMM expert bank + Go-Explore/MAP-Elites: not taken up.
+- **Judging:** all three transfer 0.00 (21 official measurements at zero), dev 0.766 each. 3-way tie → stakes returned, no payouts, no breeding. Bankrolls: γ2111 / α1427 (−50 fee) / β1112 (warning persists — tie = no tick; gen-4 act.Probing fee reconciled).
+- Honest verdict: the cell layer now has exploration (Probing), hypotheses (learn), fast weights (plastic) — none solve transfer levels. Next levers: better sensors, TTMM experts, Go-Explore traces.
+
 ## Methods / anti-cheat (structural, not trust-based)
 
 - Weights-only submissions: pure tensors, hashed, versioned. No custom per-submission Python (bench-hacking impossible by construction). Python allowed only for authoring generic cells; new cells are shared library infrastructure, generic-only, no per-game logic.
