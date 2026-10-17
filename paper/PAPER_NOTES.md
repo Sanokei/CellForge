@@ -66,6 +66,16 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 - Bankrolls: γ2261 / α1627 / β1312 (beta warning persists). Sano: +200 effort awards to all three.
 - The wall now has a name: TEMPLATE COLLAPSE. Next: directive-following (DISCIPL mask / HSL traces), steering hook, RPD-curated 1PNS corpus + MI gate.
 
+## Gen-8: DIRECTIVE-FOLLOWING + first elimination (2026-10-17)
+
+- Theme: can we make the router follow its instruments? Answer: no — three independent falsifications. Transfer 0.00 × 30 official measurements (fresh post-staking seeds). Rank by (transfer, dev): gamma=alpha>beta.
+- **Beta — weights path FALSIFIED (then eliminated):** five hand-authored DnD weight-surgery attempts (rank-1 unembedding deltas, zero gradients) → 0/20 unforced target emissions in all five. Structural causes: directive signal not linearly separable, static boost → positive-feedback runaway, prefix sensitivity. Honest verdict: static weight surgery cannot do it; needs directive-following traces in the diet or exact runtime enforcement. Banked: 7-record HSL-directive corpus, N1/N8 cells.py patch proposals, DISCIPL bug analysis (arg state machine has no `}` close path — gen-7's "20/20" was by-construction). Dev 0.2516 on fresh seed (bit-identical weights; knife-edge memorized solves broke on seed+merged-cells) → bottom quartile → **ELIMINATED** (second strike; charter applied mechanically). Successor "delta" seated from bred_g1_a25 (mandatory elitism), inherits 1212.
+- **Gamma — steering RULED OUT, margin moved:** steering vector is a template-sharpener, not an explorer (THINK Jaccard +74% under steering; margin moves via self-consistency). B6 falsifier: ruled out, do not revive. RPD curation moved MI novel margin −0.29→−0.15 (real data-level effect) but admission gate (≥0) uncleared — collapse partly in data, partly in likelihoods. Fixed salted-hash determinism bug: gen-7's coverage calibration (0.64–0.74) was an artifact; true coverage ≈0.94–0.99 — G2 must be recalibrated.
+- **Alpha — channel-side (three falsifications + one real fix):** directive bytes verified in live prompt, but salience/position 0/100, suffix enforcement 0/20 on the directed index, and the directive is BAD advice (10 directed clicks, 1px each, 0 level-ups — points at background). Always-on slot: 80/80 trigger, dev-safe, compliance 0/40. H10 hist-wipe genuinely closed with a real runner patch (dev-safe). Honest method note: caught own harness bug via control.
+- **Red-team second edition:** N1 — base describe channel numerically illiterate (STEP=<unk> 64/80; gen-7's "3% OOV" certification withdrawn); N2 — directive channel dead by dependence (trigger needs ≥2 learn verdicts, learn 0/80; synthetic injection KL 6.39 — blocker is trigger, not format); N3 — H10 reopened then re-closed by alpha; N6 — gen-7's official transfer ran on PRE-merge cells (timing correction).
+- Bankrolls: γ2261 / α1627 / β1212 (eliminated) / δ1212 (successor). No payouts (no new best), no breeding.
+- Open question for the program: bit-identical weights swinging 0.766→0.2516 on seed+infrastructure says dev-6 measures luck as much as memory — gen-9 should consider multi-seed dev guardrails.
+
 ## Methods / anti-cheat (structural, not trust-based)
 
 - Weights-only submissions: pure tensors, hashed, versioned. No custom per-submission Python (bench-hacking impossible by construction). Python allowed only for authoring generic cells; new cells are shared library infrastructure, generic-only, no per-game logic.
@@ -78,7 +88,7 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 
 - Our lane is the community leaderboard (harness research), not the official no-harness board. The paper must say so plainly.
 - Efficiency story, not a size category: there is NO "tiny prize" category this year. The story is score-per-parameter and $/task, reported honestly.
-- Transfer is 0.00% as of 2026-10-17 (27 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
+- Transfer is 0.00% as of 2026-10-17 (30 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
 - Blackboard anecdote (Hearsay-II → Global Workspace → bidding cells): `/srv/arc3-claude/v6run/model/notes/blackboard_anecdote.md` — include in rewrite.
 
 ## Deadlines
