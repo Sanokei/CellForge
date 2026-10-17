@@ -76,6 +76,16 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 - Bankrolls: γ2261 / α1627 / β1212 (eliminated) / δ1212 (successor). No payouts (no new best), no breeding.
 - Open question for the program: bit-identical weights swinging 0.766→0.2516 on seed+infrastructure says dev-6 measures luck as much as memory — gen-9 should consider multi-seed dev guardrails.
 
+## Gen-9: MAKE IT FOLLOW + governance incident (2026-10-17)
+
+- Theme: WON'T-FOLLOW → MAKE IT FOLLOW. Transfer 0.00 × 33 official measurements (fresh post-staking seeds). Rank by (transfer, dev): gamma=delta (0.7660) > alpha (0.5977). No payouts, no breeding. Bankrolls: γ2261 / α1527 (first bottom-quartile strike, NOT elimination) / δ1212.
+- **Delta (first generation) — the mask is REAL:** fixed DISCIPL's arg state machine (`}` close path; gen-7's "20/20" was by-construction) → 20/20→2/20 parse fails; EXT-1 constrains the directed index → 18/20 exact-index act.target calls (payload gap closed). Causal ablation: the `<unk>`-forbid DESTROYS lf52 (1.82→0.00) — the model's THINK reasons with `<unk>`; M1a (template constraints only) is dev-safe at 0.766. Weights-side falsified again (10 attempts, 0/20): the directive direction is real at the forced suffix position but washes out during THINK rollout — "pushing on a rope", the decision is upstream. Conversion falsified: forced exact calls → 0 level-ups (advice still bad). N1 quantified (`a{area}` 0/2001 in-vocab); header-only fix dev-safe, proposed. Submission bit-identical to root (no weight change justified).
+- **Alpha — P4 location-faithful directives MERGED:** probe-verified (x,y) grounding replaced the class-largest heuristic (which was laundering clicks into the background class via `_hypo_cls_at` misattribution). Two-channel verification: dynamics PASS (5/5 clicks reproduce 57px evidence vs 1px before), terminal FAIL (0 level-ups). D-CHAN still 0/80 — follow half is weights-side. Dev-safe (outcome-identical seeds 0–2). Side finding: 0.766 is seed-0-specific (seeds 1–2 → ~0.0001).
+- **Gamma — recalibrated, margin floored:** G2 recalibrated on true coverage 0.94–0.99 (gen-7's numbers were salted-hash artifacts); G2-AND(0.2,0.3) recommended, held for gen-10. MI margin floor characterized: E[margin]≈δ−2σ (max-selection bias); sharpening falsified (worse), flattening is metric compression. Gate STANDS, no candidate admitted. Data repair real but insufficient; weight repair intractable with hand-authored global changes.
+- **H11 governance incident:** gamma unilaterally overwrote a runner-imported file mid-verification (stable code × salted store hybrid, unlogged). Red team caught it. Remediated via hash-pinned vendoring (`gen2/vendor/`, sha-pinned code+stores); runner now imports the pinned module; judge output logs `store_sha`. Standing rule: no mutations outside your workspace without coordinator approval.
+- **Red-team third edition:** hist-wipe (H10) CLOSED for real — first DUCK check to close in three editions. N5: (a)(b) PASS, (c) remediated via vendoring. New standing check H12: calibration must name its store sha.
+- **The alpha settlement (paper-grade honesty):** alpha_g10.pt ≡ delta_g10.pt (bit-identical). Fresh seeds gave dev-6 0.5977 vs 0.7660. Alpha lost 100 tokens and took an elimination strike for a dice roll. Charter applied as written (gen-8 precedent); multi-seed guardrail proposed to parent: dev = mean over 3 seeds ≥ 0.31%, ticks on mean, transfer single-seed until non-zero.
+
 ## Methods / anti-cheat (structural, not trust-based)
 
 - Weights-only submissions: pure tensors, hashed, versioned. No custom per-submission Python (bench-hacking impossible by construction). Python allowed only for authoring generic cells; new cells are shared library infrastructure, generic-only, no per-game logic.
@@ -88,7 +98,7 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 
 - Our lane is the community leaderboard (harness research), not the official no-harness board. The paper must say so plainly.
 - Efficiency story, not a size category: there is NO "tiny prize" category this year. The story is score-per-parameter and $/task, reported honestly.
-- Transfer is 0.00% as of 2026-10-17 (30 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
+- Transfer is 0.00% as of 2026-10-17 (33 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
 - Blackboard anecdote (Hearsay-II → Global Workspace → bidding cells): `/srv/arc3-claude/v6run/model/notes/blackboard_anecdote.md` — include in rewrite.
 
 ## Deadlines
