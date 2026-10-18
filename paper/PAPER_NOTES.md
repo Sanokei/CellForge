@@ -158,3 +158,22 @@ Process notes for the paper: (1) gamma submitted a bit-identical no-change file 
 
 **Results:** official judging (stakes locked pre-seed; dev seeds 0/1599257964/2086534733, transfer seed 173247081): transfer 0.00 x 3 (47 official zeros); dev-general 0.00 for all three on all three seeds — the climb is confirmed empty; dev-specialist 1.32/1.23/2.00 (info only, correctly excluded from fitness). 3-way tie at (0.00, 0.00) → stakes returned, no ticks, no bounties, no payouts (gen-11 precedent). Bankrolls: gamma 2161, delta 1212, epsilon 1377 (after 50 cell fee). Standing best UNMOVED.
 
+
+## Gen-15: deliberation + grounding — the data fix that didn't move behavior (2026-10-18)
+
+Theme: DELIBERATION + GROUNDING (audit-driven). The two structural findings from the gen-14 audits outranked all carried-over levers: (1) DELIBERATION HOLE — 0/1,961 sampled training docs contained any deliberation signal (44K docs → ~340 single-path THINK templates); (2) STATE UNGROUNDABILITY — decision-0 STATEs render as single whole-frame blobs with zero internal structure.
+
+**Levers (one per researcher):**
+1. gamma — generic perceive.segment cell (priority #2): mode-statistic background subtraction + per-color components + pixel centroids in STATE text from decision 0. Built, self-audit 12/12 PASS, red-team independent audit PASS (G1–G9), merged to shared cells.py under H11 (fee 50; bankroll 2161→2111). No retraining — resubmitted gamma_g14.pt (non-EMA) under the merged runner. Official: transfer 0.00, dev-general 0.00. The grounding channel exists; the weights don't use it yet.
+2. delta — latent H-level v2, retrodiction-gated commitment diet: retrodiction learning REAL and causal (ablation degrades past baseline); commitment conversion NULL (gain doesn't ablate — honest null per own falsifier). Dev-murder probe 0/48 (clean negative). Official: 0.00/0.00.
+3. epsilon — deliberation-demonstration corpora (priority #1): delib_demo.jsonl (127 docs, 72 unique THINKs, all four deliberation signals, 19+24 centroid-grounded, <unk> 0.000) + ledger_demo_v2.jsonl (226 docs, 5 genuine two-hypothesis THINK templates, 23 abandonments) + discover_g15.jsonl (353 docs, rebuilt). Red-team self-check PASS + independent re-verification PASS. Trained 300 steps, frozen 26/26 bit-identical. Honest nulls: (d)-signal 0, ledger adoption 0/240, dev-general 0.00, no bounty claims.
+
+**Critical finding — C21 cue toxicity:** epsilon's adoption retest isolated the runner components: the per-decision empty-ledger cue drove parse fails 16/60 → 54/60 (<unk>-soup regurgitation spiral); the one-time NEWCELLS ad was harmless (16/60). Coordinator stripped the per-decision cue before judging (runner pin a6fe0149→a85e0ad7); ad retained. Lesson for the paper: per-decision prompt cues can poison generation; one-time ads are safe.
+
+**Runner changes (H11):** B5 fixed — cell returns now surface as OBS text at eval (were discarded; train/eval parity restored; hash-pinned; sanity A/B clean; past gens not re-scored). C5 gate tightened — <unk> explicitly excluded from corpus vocab (it IS a vocab token; the in-vocab gate was vacuous). discover.jsonl quarantined + rebuilt (17–20/31 docs <unk>-soup + JSON/OBS fragments).
+
+**Results:** official judging (stakes locked pre-seed; dev seeds 397935655/1978202272/596924699, transfer seed 1210798133; runner pin a85e0ad7): transfer 0.00 × 3 (50 official zeros); dev-general 0.00 all; dev-specialist 0.00 all (seg encoding shift wiped memorized solves lineage-wide — not punished per charter). 3-way tie (0.00, 0.00) → stakes returned, no ticks, no bounties. Bankrolls: gamma 2111, delta 1212, epsilon 1377. Standing best UNMOVED.
+
+**Red team:** battery complete, NO violations. New holes C23 (<unk> in-vocab vacuity), C24 (data-quality quarantine), C25 (train/eval parity, B5), C26 (per-sha script approvals), C27 (checker naming), C28 (evasion probe: 0/1,437). HOLES.md 9th edition published. Process flag: TRAIN_LOCK needs coordinator enforcement (delta overwrote epsilon's claim twice).
+
+**The paper's gen-15 lesson:** the deliberation hole was filled exactly as diagnosed — 127 genuine two-hypothesis docs, all signals, verified — and nothing moved (adoption 0/240, dev-general 0.00). The data was the diagnosed cause; the data is fixed; the behavior is unchanged. The bottleneck is not the training data anymore — it's the learning of deliberation itself. Negative result with mechanism, honestly reported.
