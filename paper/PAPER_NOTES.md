@@ -96,6 +96,16 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 - **The wall has a precise name:** delivery works (48–54/60 natural prompts get location-faithful directives), following doesn't (zero act.target, 0 levels). The router will not condition on directives, and no channel-side mechanism — trigger, advice quality, forcing, sensor recalibration, structural reweighting, data curation — can make it. Remaining paths: actuator replacement (the plastic block is dead weight), CLEARN_FIX_PROPOSAL (held for gen-11 verification), directive-conditioning via diet.
 - Judged model_hash == submitted sha256 for all three (anti-cheat). Library: 19 cells, no new registrations.
 
+## Gen-11: ACTUATOR + ADVICE (2026-10-18)
+
+- Theme: actuator replacement + advice quality. Transfer 0.00 × 39 official measurements. All three submissions sha-identical (d2993aec05f6ea13 = elitism root) → judged once per unique sha under lever-6 (dev seeds 0, 920497354, 1120794557 → 0.7660/0.4630/0.4630, mean 0.5640; transfer seed 1646145713 → 0.00, 0 levels). 3-way tie → all stakes returned, no payouts, no breeding, no quartile ticks. Bankrolls: γ2161 (1 strike) / α1527 (1 strike) / δ1212 (clean).
+- **CLEARN_FIX merged:** red-team APPROVE-WITH-CONDITIONS → coordinator landed the hunk (rebased, not file copy — a file copy would have silently reverted N1; early-return guard kept; comment reworded). Dev-safety: red-team 3-seed 0.6535 bit-identical; coordinator smoke 0.7660 bit-identical. The fix unblocks the instrument (margin-2 verdicts on force-fired dev chains), moves zero numbers in natural play — hygiene, not conversion, as claimed.
+- **Actuator (gamma): fast-weight class FALSIFIED** — 4-leg mechanism + 8-variant sweep; no variant moves the policy (H2 persists). But gamma built a causal direction-authored replacement (candB: KL 0.68, 15.8% top-1 flips, 2.3× leverage from PC2 shaping) and honestly withheld it — dev 0.3859 vs root 0.5995, survival-correct with 1 strike.
+- **Diet (alpha): FALSIFIED** — 60 episodes post-H17-remediation (stale pre-N1 fork repointed, corpus rebuilt, all re-run): control 0/900, follow 0/900, guard 1/900, follow+guard 0/720. In-context conditioning does not move compliance. Corpus banked as training material (outside the weights-only path).
+- **Terminal pass (delta): FALSIFIED** — sharpest finding: injected directive text precedes level-ups 4/4, but nonsense text does 3/3 vs baseline 0/4 → perturbation (sampling shift), not advice. Forced following 0/3 — following prevents the solution. Real solutions (multi-click bursts, 19-step chains) are inexpressible in the directive format; the blocker is expressiveness, not quality.
+- **The wall now has three faces:** (a) weights-side compliance is a diet/*training* problem — out of scope for hand-authored weights; (b) the fast-weight actuator class is dead, and the one causal variant loses to the root; (c) advice cannot terminate because the directive format cannot express multi-step solutions. Red-team fifth edition (H16–H19) delivered; transfer measure-only held; held-out sealed.
+- **Gen-12 candidates:** gamma's candB needs a dev-safe variant beating the root (0.5995); directive format expressiveness (multi-click/sequential actions) is a runner/cell design question; alpha's corpus waits on the program-level training decision. The open program question: hand-authoring has falsified every conversion lever it can reach — gen-12 either finds a hand-authorable lever with a pulse or forces the training question explicitly.
+
 ## Methods / anti-cheat (structural, not trust-based)
 
 - Weights-only submissions: pure tensors, hashed, versioned. No custom per-submission Python (bench-hacking impossible by construction). Python allowed only for authoring generic cells; new cells are shared library infrastructure, generic-only, no per-game logic.
@@ -108,7 +118,7 @@ Facts only. No hype. All scores are true RHAE unless labeled otherwise.
 
 - Our lane is the community leaderboard (harness research), not the official no-harness board. The paper must say so plainly.
 - Efficiency story, not a size category: there is NO "tiny prize" category this year. The story is score-per-parameter and $/task, reported honestly.
-- Transfer is 0.00% as of 2026-10-17 (33 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
+- Transfer is 0.00% as of 2026-10-18 (39 official measurements). The paper reports the attempt→score curve, the falsified hypotheses (rulebook loop shelved pre-runs; Qwen-teacher probe cancelled by program refocus), and the mechanism the audits uncovered — not a victory narrative.
 - Blackboard anecdote (Hearsay-II → Global Workspace → bidding cells): `/srv/arc3-claude/v6run/model/notes/blackboard_anecdote.md` — include in rewrite.
 
 ## Deadlines
