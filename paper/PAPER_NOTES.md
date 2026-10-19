@@ -193,3 +193,69 @@ Theme: Sano-directed dual track — (1) R1-Zero-style RL trial for deliberation 
 **Red team:** battery complete, NO violations; quarantine 8/8; corpus verdicts 6/6; script T4 per-sha; evasion probe 0/1,567; abandonment re-baselined 0/75. R4 reward-design audit now standing (precondition of any RL step). New holes: C27-EXT (declared-base PATH+sha16), C29 (pre-verdict training precedent — gamma ran SFT before T4 verdict; crashed, no artifact, flag), C30 (stoi-coverage vocab gate). Process flags: gamma gate-order violation (C29), delta TRAIN_LOCK overwrite (restored, self-reported).
 
 **Results:** official judging (stakes locked pre-seed; dev seeds 1926515501/2123928861/1687299479, transfer seed 1331471695; runner pin a85e0ad7): transfer 0.00 × 3 (53 official zeros); dev-general 0.00 all; dev-specialist 0.00 all; anti-degeneracy PASS (vcr 0.66–0.87). 3-way tie (0.00, 0.00) → stakes returned, no ticks, no bounties. Bankrolls: gamma 2111, delta 1212, epsilon 1377. Standing best UNMOVED.
+
+
+## Gen-17: reward-design for deliberation — the Eureka loop + RLP (2026-10-19)
+
+Theme: child of gen-16's binding finding (no reward exists that is simultaneously
+dense, policy-discriminative, and unhackable). Sano-directed mid-generation:
+NVIDIA RLP brief → epsilon; DrEureka/Eureka brief → gamma ("stop hand-designing;
+LLM proposes reward code, cheap probes evaluate, reflection iterates"); a
+hand-authored cheap-bet leg (169-neuron routing) — CLOSED as findings note.
+
+**Levers (one per researcher):**
+1. gamma — Eureka iteration (LLM-proposed rewards). Reward A probe filed as
+   gamma_g17.pt: 10 GRPO steps, train-seed r_A climbed, KL monotonic, hackwatches
+   clean — but fresh-seed paired comparison shows no general gain (mean delta
+   −0.024): another train-seed climber. Eureka iteration 1: K=3 candidates from
+   the LLM; E2 KILLED by the offline RAPP gate (concentration 0.521 —
+   step-farming; the gate working as designed); E1 curriculum PASS but its
+   deliberation bonus never fires (n_hyp_calls=0) — the LLM reinvented the
+   incumbent; E3 RLP-specificity R4 PASS-WC. E1/E3 probes: E1 trajectory
+   bit-identical to reward A (E1≡A confirmed); E3 dense/positive/flat
+   (+2.42→+2.37), hackwatches clean, emission intact — safe null, teaches
+   nothing. Iteration 1 produced no reward better than hand-designed A: the
+   Eureka loop is the right machine, but the proposer reinvented the incumbent.
+2. delta — deliberating teacher, FALSIFIED (3rd independent reproduction):
+   teacher-LoRA + control both aborted at step 50 on emission damage (vcr 0.000
+   < floor 0.500). SFT-on-deliberation-diet destroys the emission channel before
+   it can teach anything. No cold-start-via-demonstration path preserves emission
+   at 1.4M. NULL submission.
+3. epsilon — RLP thought-reward (faithful NVIDIA RLP implementation):
+   raw-mean gate FAIL — a context-shape term dominates (adding thought tokens
+   shifts CALL likelihoods game-dependently for any policy); the brief's
+   "discriminative by construction" claim missed this. BUT the thought-level
+   anchor test PASSED strong: actual-thought vs resampled-thought +3.67±0.47
+   nats, frac>0=0.897, all 4 games — the reward IS content-discriminative at
+   GRPO's operative (group-relative) level; the raw-mean gate tested the wrong
+   level. No R4 filed (gate as specified failed; C29 held), no GRPO run. NULL
+   submission. Direction C (reward-sparsity circumvention) closed by measurement:
+   all three angles falsified (hindsight→info-gain collapse; curiosity→random
+   optimum; revisit→random≥base; explore-then-converge→open-loop farm).
+
+**The paper's gen-17 lesson:** the audit must be pitched at the reward's
+operative level. A dense, content-discriminative thought reward exists (RLP's
+predictive-utility signal, +3.67 nats at the thought level; E3's probe confirms
+it's safe from the training side), but the program's own gate almost killed it
+by testing at the episode level where a context-shape term dominates. The
+"dense + policy-discriminative + unhackable" reward may already be in hand —
+mismeasured, not missing. If the program runs RLP, the gate must be at the
+thought level. Also: the Eureka loop's first iteration showed its honest
+failure mode — the LLM reinvented the incumbent plus one hack; the loop is only
+as good as its gate and its proposer.
+
+**Red team:** phase-1 battery PASS; R4 on reward A / E1 / E3 (PASS-WC), E2
+KILLED; T4 per-sha incl. eureka_probe_v2.py (PASS-WITH-CONDITIONS; authorizes
+ONLY E1+E3 probes); C29 held throughout (epsilon's model compliance after a
+gate FAIL; delta's aborted run wrote no artifact). New holes: DRY-EXECUTION-GAP
+(T4 must dry-execute training drivers — diffs can't catch runtime-name errors;
+recipe-write path still uncovered), RLP-CONTEXT-SHAPE (gate at the thought
+level), E2-STEP-FARM (step-count-independence pre-registration),
+EUREKA-REFLECTION (killed candidates are training data for the proposer).
+HOLES.md 11th edition.
+
+**Results:** official judging (stakes locked pre-seed; dev seeds
+1373863907/1551339503/974135447, transfer seed 1779660346; runner pin a85e0ad7):
+transfer TBD (official zero count TBD); dev-general TBD; NULL submissions
+inherit gen-16 numbers. Bankrolls: gamma 2111, delta 1212, epsilon 1377
+(stakes 0/0/0). Standing best UNMOVED.
