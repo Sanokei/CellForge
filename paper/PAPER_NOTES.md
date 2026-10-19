@@ -259,3 +259,69 @@ HOLES.md 11th edition.
 transfer TBD (official zero count TBD); dev-general TBD; NULL submissions
 inherit gen-16 numbers. Bankrolls: gamma 2111, delta 1212, epsilon 1377
 (stakes 0/0/0). Standing best UNMOVED.
+
+## Gen-18 (2026-10-19): the reward problem is closed; the emission wall is the binding constraint
+
+**Theme:** RLP-at-thought-level + Eureka iteration 2 (child of gen-17: RLP
+mismeasured-not-missing; Eureka's failure mode was reinvent-the-incumbent).
+
+**Epsilon — Direction A: the unrun experiment RAN, safe null.** RLP
+thought-reward (r(c) = log pθ(CALL|prompt,thought) − log p_ema(CALL|prompt,
+no-think)) + 10-step GRPO, group-relative advantages, frozen body 26/26
+bit-identical. Pre-registered thought-level gate PASSED (+2.964±0.353 nats,
+frac>0 0.875, all 4 dev-general games; reproduces gen-17's signal on a
+different policy). R4 + T4 PASS-WITH-CONDITIONS (probe). The run was
+mechanically healthy — dense reward, KL 0→0.00485 monotonic, pg_term
+positive 10/10, zero hack-watch trips, validity intact — but teaches
+nothing measurable: anchor-edge flat 3.9–4.4 (no growth), n_hyp_calls = 0
+all 10 steps, dev-general 0.0000→0.0000. Three independent verifications
+that the reward ranks thought CONTENT (anchor, live W-SHAPE, shuffle
+control corr +0.074). **Rules out "the reward was the blocker."**
+
+**Gamma — Direction B: Eureka iteration 2.** Reflection prompt aimed at the
+emission wall (not reward shape). K=2 candidates, both emission-aimed —
+the proposer partially beat reinvent-the-incumbent. **Process finding:**
+the offline farm check that killed both candidates also kills the
+incumbent reward A 4/4 — the check never measured step-farming (scored
+r_half against a full-trace ig_random baseline). Red-team adjudication
+(independent replication) ruled (a): VACATE the farm-kill as measurement
+artifact; adopted standing fix: pad-with-repetition kill spec; new rule:
+pre-register gate checks against the incumbent first. R4 PASS on F2a/F2b;
+T4 PASS on the probe driver. F2a probe: 10/10 clean, flat, n_hyp_calls
+0.0→0.0 — **the wall is a reachability problem, not (only) a shaping
+problem** (the gradient nudged reachable novelty; hyp-call emission was
+never sampled). F2b unprobed: driver C1 transcription bug (15-vs-16-char
+sha) — carried to gen-19 under C26.
+
+**Delta — Direction C: epiphenomenal, closed.** 40-neuron stuck-group
+indices recovered verbatim from gamma's gen-3 artifact and persisted as a
+machine artifact (the recovery pattern gen-17 asked for). One-line T4 FAIL
+(torch.equal on float32 — the DRY-EXECUTION-GAP catch in the wild);
+allclose fix; C26 re-verdict PASS. Delta eval vs base: dose-response
+fails (largest ΔS → bit-identical behavior; largest stuck drop → S moved
+the wrong way). The group is a correlate of routine execution, not
+causally-active circuitry. Worth-a-bigger-bet: no.
+
+**The paper's gen-18 lesson:** gen-16→gen-18 spent three generations
+proving the reward exists; both strongest reward-side attacks hit the
+identical wall (n_hyp_calls = 0 before, during, after training). The
+falsifier that remains is reachability: the policy never samples the
+behavior the rewards rank. Next target is emission reachability — why no
+hypothesis-tool call is ever emitted, and what makes it sampleable.
+Also: the farm-check miscalibration is a paper-grade methods anecdote —
+a pre-registered gate that kills the incumbent control is miscalibrated
+by definition; the program caught it because the researcher refused to
+vacate their own kill and filed for adjudication instead.
+
+**Red team:** phase-1 battery PASS (quarantine 8/8; C25 runner parity
+a85e0ad7 PASS); R4 epsilon RLP PASS-WC, gamma F2a/F2b PASS; T4 epsilon
+GRPO driver PASS-WC, delta build FAIL→re-verify PASS, gamma probe driver
+PASS. C29 honored — third consecutive generation with zero pre-verdict
+training. New holes: FP-EXACT-EQUAL, FARM-CHECK-RECALIBRATION,
+RLP-SAFE-NULL, F2B-C1-TRANSCRIPTION. HOLES.md 12th edition.
+
+**Results:** all NULL submissions (probe artifacts only) → inherit gen-17
+numbers; 3-way tie (0.00, 0.00); stakes 0/0/0 (no declarations); no ticks,
+no payouts, no bounties. Transfer 0.00 ×3 → 57 official zeros. Bankrolls:
+gamma 2111, delta 1212, epsilon 1377 (unchanged). Standing best UNMOVED
+(bred_g1_a25).
