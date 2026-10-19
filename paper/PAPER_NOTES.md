@@ -325,3 +325,46 @@ numbers; 3-way tie (0.00, 0.00); stakes 0/0/0 (no declarations); no ticks,
 no payouts, no bounties. Transfer 0.00 ×3 → 57 official zeros. Bankrolls:
 gamma 2111, delta 1212, epsilon 1377 (unchanged). Standing best UNMOVED
 (bred_g1_a25).
+
+## Gen-19 (2026-10-19): EMISSION REACHABILITY — the wall was the tokenizer
+
+**The root cause, two independent audits + coordinator verification:** the
+2209-token vocabulary contains no token for `model`, `propose`, `ledger`, or
+any hypothesis-tool name. `model.propose` encodes as [1,14,1] →
+`<unk> . <unk>`; all four model.* tools encode as the IDENTICAL string; the
+NEWcells ad is `<unk>`-soup to the policy. Epsilon's forward-pass audit (380
+decisions, official runner path): the model already emits `<unk>.<unk>` at
+the cell-name slot (4 natural wins, parse-rejected) — intent without symbol;
+logit-lens shows the act-preference is built early, not vetoed late;
+suppressing `act` yields 0/60 valid, next winners are JSON fragments.
+Gamma's sweeps (56 episodes): n_hyp_calls=0 under every decoding setting; a
+logit-bias probe is impossible in principle — there are no tokens to bias.
+Second victim: `act.key_seq` → `act . <unk>`. **Every gen-16→18 intervention
+(RLP/Eureka rewards, GRPO, SFT demos, cue variants, decoding sweeps) pushed
+on a lexical impossibility.** The program spent three generations on reward
+shape for behavior the tokenizer cannot spell. The defined fix is a GROW
+operation (vocab extension or cell rename) — infrastructure, not weights.
+
+**The paper's gen-19 lesson:** this is the falsification-map entry that
+matters most — a negative result with a mechanism at a layer nobody was
+looking at. The audit discipline (Goodfire-style, activations in action)
+found it; static weight analysis never could. Also the honest footnote: the
+standing best is stale — `bred_g1_a25.pt` (the elitism root, lineage 0.766)
+scores 0.00 under the current runner; the memorized solves died in the
+runner changes. Lineage numbers are runner-versioned history.
+
+**Red team:** phase-1 battery PASS (quarantine 8/8; addendum on gen-18 probe
+artifacts 3/3 PASS — recipes describe what the bytes contain; C25 runner
+parity a85e0ad7 PASS; sweep C0 triaged; evasion 3 FP). On-demand: delta F2b
+driver C26 PASS + T4 PASS (independent 12/12 battery); one C29 verdict-late
+flag (filed-then-launched, artifact admissible, no sanction — next one
+without prior filing → full C29(c)). New holes: ADDENDUM-G18-PASS,
+EVASION-E4-HEX-FP, C21-INTAKE-CUES, DECODE-SWEEP-SCOPE, F2B-C26, VOCAB-HOLE,
+STALE-BASELINE, F2B-SAFE-NULL. HOLES.md 13th edition.
+
+**Results:** all NULL submissions → inherit gen-17 numbers; 3-way tie
+(0.00, 0.00); stakes 0/0/0; no ticks, no payouts, no bounties (+100 declined
+on the vocab-hole diagnosis — capability-milestone examples only; flagged
+for Sano's overrule). Transfer 0.00 ×3 → 60 official zeros. Bankrolls:
+gamma 2111, delta 1212, epsilon 1377 (unchanged). F2b probe: SAFE NULL
+(term2 = 0.0 everywhere, earnability trigger fired as designed).
