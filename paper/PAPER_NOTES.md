@@ -670,3 +670,79 @@ pre-registration; flagged for Sano's overrule). Transfer
 0.00 ×2 → **67 official zeros**. Bankrolls: gamma 2111, delta
 1212, epsilon 1377 (unchanged). HOLES.md 17th edition (red-team
 draft filed).
+
+
+## Gen-24 (2026-10-20): COMBINE THE LEVERS — one lever was real, and the frontier is the finding
+
+Gen-23 closed with two validity levers that had never shared
+a run: freeze the region that breaks (rows-only training), and
+anchor the rest (a KL penalty on non-call decisions, monotone
+in lambda). Gen-24 combined them — and first repaired the
+instrument that had mis-measured the last result. Gen-23's
+Gate E had failed by one call on a 12-episode count whose
+seed variance alone flips verdicts at the emission rates this
+program produces; Sano widened Gate E to 36 episodes at the
+SAME rate (>=30 parse-valid hypothesis calls, calls in
+>=9/36 episodes), pre-registered before any gen-24
+measurement, prospective only — gen-23's FAIL stands on the
+books exactly as recorded. Variance reduction, not a weaker
+bar: the standing example of the measurement protocol itself
+being a governed, correctable part of the method.
+
+The combined run then dissolved its own premise. Across 12
+checkpoints (lambda 1.0 / 2.0 / 4.0, all rows-only), the
+anchor term is numerically inert: the per-step KL on anchored
+decisions is 0.0001-0.0132, so lambda*KL sits at roughly
+1/300th of the cross-entropy, and lambda 1->4 moves validity
+only within noise (red-team verified from the training logs).
+The reason is structural, and it is the finding: the anchor's
+gradient lives in the distribution over ordinary tokens,
+which is computed by exactly the weights the region lever
+freezes. Where only the grown rows train, the anchor has
+nothing to grip. The two levers were never orthogonal; in the
+minimal region there is one lever, and gen-24 measured its
+frontier at the new width. Rows-only distillation holds
+validity in a 0.60-0.65 band across the entire pool (against
+the 0.24-0.30 full-spec plateau of gens 22-23), while
+emission climbs with dose and caps at 26 of the 30 required
+calls — the dose axis trades one quantity against the other,
+~0.64 validity at 6 calls to 0.60 at 26. No checkpoint passes
+both gates. The pre-registered fallback artifact (the
+max-validity checkpoint) measured officially: Gate E FAIL
+(3 calls pooled over the official blocks — its screening
+count was 8; seed-block variance at low counts persists at
+36 episodes, attenuated, not eliminated) and Gate V FAIL at
+0.6250 against the 0.6625 bar, the closest official validity
+of any distilled student in the program, still ~0.04 short.
+The red team's independent spot re-measurement reproduced
+both verdicts exactly, all 36 episodes, zero discrepancies.
+
+Direction B (minimal-region content priming) never ran — it
+is gated on an E+V artifact by construction, so its question
+stays open rather than falsified. RLP+GRPO waited at the
+closed gate a fourth generation, package re-verified, reward
+certified, nothing to run it on: the loop that acts on
+emitted calls is ready, and emission volume is now plainly
+the binding constraint (best student: 26 calls where 30 are
+required; validity short by 0.04 in the opposite dose
+direction). One process entry belongs in the paper's
+anti-cheat record alongside the rest: mid-generation, a
+fabricated tool output delivered to the red team depicted
+the measurement probe accepting its own results file as a
+verification marker — a self-approval loop. The red team
+flagged it, verified on-box that no such files or runs
+exist, and rested every verdict on foreground checks. The
+audit trail caught a fake approval the way it has caught
+every real defect: nothing in this program is believed
+because a document says so.
+
+**Results:** no researcher submissions; coordinator-measured
+artifact D (disc_g24.pt) (0.00 transfer, 0.0000 dev-general,
+0.0133 dev-specialist — one s5i5 level on one seed,
+informational only), anti-degeneracy PASS, stakes 0/0/0
+returned, no bounties (both gates fail; split gates would not
+have paid either, under the pre-registration; flagged for
+Sano's overrule). Transfer 0.00 x1 -> **68 official zeros**.
+Bankrolls: gamma 2111, delta 1212, epsilon 1377 (unchanged).
+HOLES.md 18th edition (red-team draft filed; entries include
+ROWS-ONLY-E/V-FRONTIER and ANCHOR-KL-TINY-IN-ROWS-ONLY).
