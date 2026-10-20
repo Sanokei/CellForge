@@ -440,3 +440,73 @@ zeros. Bankrolls: gamma 2111, delta 1212, epsilon 1377 (unchanged).
 HOLES.md 14th edition (VOCAB-HOLE and STALE-BASELINE resolved;
 AMENDMENT-PARITY, GATE1-BLOB-CONJUNCT, SEED-FRESHNESS,
 EMISSION-WALL-DECOMPOSITION new).
+
+## Gen-21 (2026-10-20): STaR-DISTILL THE ASSEMBLY — emission enters the weights, and floods
+
+**The distillation worked, and the gate still failed.** Gen-20 left
+the assembly in a probe-side wrapper; gen-21 distilled it into the
+weights. The teacher (registry-trie constrained decoding on the
+primed GROW checkpoint, 60 dev episodes) harvested 54 parse-valid
+hypothesis calls — and every one was a **name-only shell**: 38 with
+literally empty args, 16 with garbage, zero with groundable
+hypothesis text. The pre-registered grounding filter returned an
+empty corpus, and the corpus stayed empty until a coordinator
+adjudication canonicalized the shells' args to `{}` — a declared
+transformation, audited per-document, because the shells' arg values
+were measured to carry no information (predictive-utility Δ
+negative on 46/46). What was distilled, honestly scoped, is
+*assembly*, not content.
+
+41 documents later, the student's unconstrained behavior is
+unrecognizable against twenty generations of zeros: **158
+parse-valid hypothesis calls across 12 of 12 dev-general episodes**
+(evidence ×81, propose ×74, abandon ×3 — a tool the teacher never
+emitted, even under constraint; the student generalized). And the
+paired failure, in the same table: pooled valid action-call rate
+**collapsed 0.66 → 0.33**. The student learned that hypothesis calls
+are what one emits, without the base rate. The emission wall's last
+layer fell, and the failure mode behind it is a flood, not a wall.
+Gate A — pre-registered as emission *and* validity — failed on the
+validity leg, and the milestone bounty tied to it did not pay. A
+gate whose conjuncts split is two results, not one.
+
+**The args decomposed, too.** A second teacher probe constrained
+the args slot itself (registry keys + JSON skeleton): keys assemble
+(18/23 non-empty args), values stay empty (`{}` or `<unk>`
+fragments) at every layer decoding can reach. Name → key → value:
+the deliberation-content hole now has coordinates, and it sits in
+the values, reachable only by training.
+
+**The reward is certified on an emitting substrate.** The
+length-controlled RLP anchor — residualized against thought length,
+the W-SHAPE confound that gen-20 measured at +0.553 and this
+generation designed around *first* — passed at full pre-registered
+power on the distilled student: **+4.74 nats, frac>0 0.965,
+positive on all four dev-general games**, the strongest anchor the
+program has recorded, with the raw length correlation (+0.60)
+annihilated by the control (−0.000000). Its as-filed run starved at
+n=61 (the anchor's sample needs the parse validity the student
+lacks — the same collapse, seen from the other side) and a
+measurement-only top-up under identical criteria carried it to
+n=114. GRPO never ran: Gate A's failure barred it, twice over, and
+the trainer's own hard gates would have blocked it regardless. The
+verified package — reward, beta procedure, watchers — waits for the
+first student that emits *and* stays valid.
+
+**Process:** five T4 rounds, four C26 re-verifications (a loss-span
+resolver that silently supervised a history call; a training window
+that silently dropped 41/41 target calls; an anchor crash), three
+coordinator adjudications, zero C29 violations. An interim summary
+misstated Gate A's numbers (125/0.354 against the filed 158/0.3278)
+and the judging driver mislabeled a rate (−1.857, a coordinator bug,
+erratum filed) — both caught by the red team's insistence that only
+filed artifacts are cited.
+
+**Results:** no researcher submissions; coordinator-measured
+artifact S (star_g21.pt) (0.00 transfer, 0.0000 dev-general),
+anti-degeneracy PASS, stakes 0/0/0 returned, no bounties (+100 not
+awarded — Gate A failed as pre-registered; flagged for Sano's
+overrule). Transfer 0.00 ×1 → **63 official zeros**. Bankrolls:
+gamma 2111, delta 1212, epsilon 1377 (unchanged). HOLES.md 15th
+edition (EMISSION-FLOOD, ARGS-VALUE-WALL, F4-SHELLS, W-SHAPE-CONTROL,
+B0-SAMPLE-STARVATION, CORPUS-WINDOW-192, GATEA-SPLIT).
