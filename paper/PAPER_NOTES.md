@@ -588,3 +588,85 @@ pre-registration; flagged for Sano's overrule). Transfer 0.00 ×2 →
 LOADER-INTERFACE-NULLMASK, GROUNDING-TEMPLATE-OVERLAP,
 JUDGE-GATEMARKER-ARGFORM, MIXTURE-VALIDITY-FLAT,
 GATEA-SPLIT-REPRODUCED, F2-PASS-SHALLOW-GROUNDING).
+
+## Gen-23 (2026-10-20): VALIDITY AS AN OBJECTIVE — the dose is not the lever; the region is
+
+Gen-22 closed with validity named as the sole remaining wall:
+pooled valid action-call rate flat at 0.23–0.29 across every
+corpus mixture, against the undistilled model's 0.6625. Gen-23
+pre-registered validity itself as the object of study — first a
+dose-response over LR and steps on the fixed gen-22 diet, then
+validity inside the loss (a KL anchor on non-call decisions) and
+validity by restriction (a minimal trained region) — with Gates E
+(emission) and V (validity) still separate, and generation success
+still defined as one artifact passing both.
+
+**There is no dose knee.** On the fixed V3 diet, validity
+collapses within 40 steps at every learning rate tested (0.0139
+at lr 1e-4, 0.0694 at 5e-5, 0.3639 at 2e-5 — the last already
+below the 0.6125 context line and failing the emission floor),
+then partially and non-monotonically recovers with dose; the
+grid maximum, 0.3639, is itself the smallest-dose point — a
+collapse from 0.6625, not a preservation of it. No
+checkpoint in the grid reaches validity ≥ 0.6125 with the
+emission floor met. Validity loss under distillation is not
+dose-separable in this grid: turning the dose down does not buy
+validity back, it only delays the same collapse. The mixture
+axis was falsified in gen-22; the dose axis is falsified here.
+
+**Validity as an objective works, directionally.** Anchoring
+the trained model to the frozen primed base with a KL penalty
+on anchor (non-call) decisions moves validity monotonically in
+the anchor weight at the pre-registered fallback dose (165
+steps, lr 1e-4): unanchored 0.2931, λ=0.1 → 0.3292, λ=1.0 →
+0.4958, with emission intact at both weights (n_hyp 13 and 17).
+The anchor is the first training-side intervention in three
+generations that moves validity in the intended direction at
+all — and it still does not reach the bar.
+
+**The strongest single lever is the region, not the recipe.**
+Training only the new-token rows (wte and lm_head rows
+2209..2226; 4,608 parameters, blocks.3 and ln_f frozen) screens
+at valid 0.5931 with emission 18 — the best validity of any
+floor-meeting checkpoint the program has produced — and its
+official measurement is the closest approach yet: valid 0.5764
+against the 0.6625 bar, with g50t individually above it
+(0.6889). The same run localizes the damage: blocks.3 training
+is the main validity breaker. But the minimal region pays for
+validity with emission: officially it emits 9 parse-valid
+hypothesis calls in 4/12 episodes — one short of Gate E's 10.
+The artifact that finally nearly holds validity cannot quite
+speak; the artifact that speaks cannot hold validity.
+
+**Priming re-broke validity, and the tightened grounding gate
+retired last generation's content claim.** Content priming of
+the rows-only student restored emission outright (Gate E PASS:
+27 calls, 11/12 episodes) and destroyed validity again (0.2208)
+— the gen-22 pattern, repeated on a new substrate. Under the
+tightened F2 v2 grounding criterion (verbatim in STATE at the
+decision, episode-frequency < 0.5, hyp-key values excluded),
+content credit is zero: 0 passes. The decomposition is exact —
+of 27 F2 v1 passes, 22 grounded only via hyp-key tokens
+(excluded by construction) and 5 via ubiquitous tokens
+(frequency ≥ 0.5). Applied retrospectively, gen-22's 16 v1
+passes are also 0 under v2. The program's honest content
+position is therefore weaker than gen-22 reported and better
+measured: values arrive, but no value yet grounds in a rare,
+state-specific token.
+
+**The GRPO loop waited at a closed gate a third generation —
+correctly.** Split gates on both artifacts (disc: E FAIL / V
+FAIL; primed: E PASS / V FAIL) mean no E+V student exists, so
+epsilon's re-verified RLP+GRPO package did not run, no beta was
+fit, and no +100 GRPO bounty pays. The gen-24 lead is the
+combination neither arm tried alone: rows-only region plus
+KL anchor — the two levers that each moved validity, composed.
+
+**Results:** no researcher submissions; coordinator-measured
+artifacts D (disc_g23.pt) and P (primed_g23.pt), both (0.00
+transfer, 0.0000 dev-general), anti-degeneracy PASS, stakes
+0/0/0 returned, no bounties (split gates do not pay under the
+pre-registration; flagged for Sano's overrule). Transfer
+0.00 ×2 → **67 official zeros**. Bankrolls: gamma 2111, delta
+1212, epsilon 1377 (unchanged). HOLES.md 17th edition (red-team
+draft filed).
