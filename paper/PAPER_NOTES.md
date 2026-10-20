@@ -368,3 +368,75 @@ on the vocab-hole diagnosis — capability-milestone examples only; flagged
 for Sano's overrule). Transfer 0.00 ×3 → 60 official zeros. Bankrolls:
 gamma 2111, delta 1212, epsilon 1377 (unchanged). F2b probe: SAFE NULL
 (term2 = 0.0 everywhere, earnability trigger fired as designed).
+
+## Gen-20 (2026-10-20): VOCAB EXTENSION GROW — the wall decomposes, and its last layer falls
+
+**The fix (Sano's charter-amendment call, over the rename alternative):**
+the vocabulary grows 2209 → 2227. The red team's box-side OOV audit fixed
+the inventory — 12 of 23 cell names and 6 of 16 arg keys were OOV (`perceive`
+itself unspellable, so all seven perceive.* cells, not four; the implemented
+but undocumented `falsifier` arg key included; `which` deliberately left
+OOV). Eighteen tokens appended, old IDs untouched. The runner amendment
+(FIXED_CFG 2209→2227, validate_cfg accepts {2209, 2227}, deterministic
+load-time padding of legacy checkpoints) re-pins the runner:
+**0cbd9003 supersedes a85e0ad7**. New embedding/LM-head rows trained only —
+the frozen body bit-identical, red-team verified — first on the dev corpora
+(grow_g20.pt), then by demonstration priming on 480 dev-only demos with
+matched negative contexts (grow_g20_primed.pt). The paper's methods note:
+random init was chosen over mean-pool/ROMEVA-style init because the new
+names' constituents are `<unk>` and `.` — pooling would have re-encoded
+the hole.
+
+**The parity catch (methods-worthy on its own):** the first T4 verdict
+FAILED the amendment on empirical parity — scores identical (0.00/0.00),
+trajectories diverged on all six dev games. Two layers: the legacy
+wrapper's logit mask never applied on the runner's actual generation path
+(it masked `__call__`; the runner generates through `GPT.generate`), and,
+deeper, masking cannot work even when routed correctly, because
+`torch.multinomial`'s RNG stream depends on the distribution's width —
+a zero-probability tail still changes the draws. The correct construction
+is slicing logits to the base width. After the fix, parity is exact at
+every recorded field, confirmed again at 3-seed depth across 30 runs when
+the elitism root was re-baselined under both pins (0.00 everywhere on
+both; lineage.json now stamps the old 0.766 as what it always was —
+lf52+s5i5 memorized-set content). Standing rule earned: parity is a
+property of the runner's generation path, verified empirically, never
+of a component mechanism check.
+
+**The decomposition result:** with the lexicon fixed, the wall split
+into measurable layers. Spellability: 38/38, clean. The RLP
+thought-reward, re-anchored on the grown policy, posted the program's
+strongest measurement yet (+4.51 ± 0.53 nats, positive on all four
+dev-general games) — on a policy that still emitted zero hypothesis
+calls unconstrained. Priming tripled the raw new-token fragments
+(37 → 120) and produced not one assembled call. Then the fallback probe
+— decoding constrained by a trie over the registry at the cell-name slot
+only, probe-class, no runner change — produced **13 parse-valid
+hypothesis calls across 7 of 12 episodes** (evidence ×9, propose ×4),
+the first deliberation emissions in the program's history. The sampler
+had been choosing the `model` branch on its own; unconstrained decoding
+emitted `<unk>` mid-name at the very steps where the trie produced
+`evidence`. Intent was in the weights the whole time; assembly was the
+missing layer. And the honest boundary, unchanged: RHAE is 0.0 under
+every configuration. Gen-20 fixed emission three ways and moved
+competence zero ways. What the program has now that it lacked: a reward
+verified at its strongest, a policy that can be made to deliberate on
+demand, and a distillation target — STaR the constrained calls into the
+weights, then run the RL loop on a substrate that finally emits.
+
+**Process:** four T4 rounds, two C26 re-verifications, zero C29
+violations. The red team caught, in one generation: a parity mechanism
+that was false twice over, a gate script stricter than its own
+pre-registered protocol (free-text args are unspellable by construction —
+the conjunct, not the model, failed), and a "fresh seeds" claim that
+gen-17 had already spent. Each catch was cheap because it was early.
+
+**Results:** no researcher submissions; coordinator-measured artifacts
+A/B both (0.00 transfer, 0.0000 dev-general), anti-degeneracy PASS,
+stakes 0/0/0 returned, no bounties (+100 declined on the assembly
+result — the capability lives in a probe wrapper, not yet in the
+weights; flagged for Sano's overrule). Transfer 0.00 ×2 → 62 official
+zeros. Bankrolls: gamma 2111, delta 1212, epsilon 1377 (unchanged).
+HOLES.md 14th edition (VOCAB-HOLE and STALE-BASELINE resolved;
+AMENDMENT-PARITY, GATE1-BLOB-CONJUNCT, SEED-FRESHNESS,
+EMISSION-WALL-DECOMPOSITION new).
