@@ -510,3 +510,81 @@ overrule). Transfer 0.00 ×1 → **63 official zeros**. Bankrolls:
 gamma 2111, delta 1212, epsilon 1377 (unchanged). HOLES.md 15th
 edition (EMISSION-FLOOD, ARGS-VALUE-WALL, F4-SHELLS, W-SHAPE-CONTROL,
 B0-SAMPLE-STARVATION, CORPUS-WINDOW-192, GATEA-SPLIT).
+
+## Gen-22 (2026-10-20): DISCIPLINE + CONTENT — validity would not move; the values arrived
+
+Gen-21 ended with emission in the weights and two precisely located
+debts behind it: discipline (pooled valid action-call rate 0.3278
+against the undistilled model's 0.6625) and content (hypothesis
+calls were name-only shells; arg values empty at every layer
+decoding could reach). Gen-22 pre-registered the two debts as
+separate gates — Gate E for emission, Gate V for validity, no
+combined verdict — and attacked each with its own instrument.
+
+**Discipline resisted every corpus lever.** A controlled mixture
+sweep (identical init, trained spec, and step count; only the
+distill-to-rehearsal design varied) produced a flat validity band:
+41:82 → 0.2486, 41:123 → 0.2333, 41:82 plus 41 explicit negative
+docs → 0.2597. Rehearsal did not dilute the flood; it
+anti-correlated — the most-rehearsed variant screened worst on
+validity *and* emission. Negatives helped modestly (fragments
+1323 → 843 against gen-21). The pre-registered two-stage fallback —
+distill, then recover on rehearsal alone — collapsed emission
+(n_hyp 55 → 6) at unchanged validity, trading the flood for silence
+and buying nothing back. The selected student passed Gate E
+outright (59 parse-valid hypothesis calls in 12/12 episodes) and
+failed Gate V at 0.2889; the red team's independent re-measurement
+reproduced both numbers exactly, to the fourth decimal, on every
+field. The methodological sentence for the paper: at this scale,
+validity loss under distillation is not a mixture property. The
+next lever is the dose itself (LR, steps) or validity as an
+explicit training objective.
+
+**Content yielded to training, exactly where the decomposition
+said it would.** A 48-doc priming corpus — real dev-game states, a
+hypothesis call whose arg values are grounded in the STATE text,
+then the trajectory's own continuation — taught the value slot.
+On the primed student, 17 of 35 unconstrained hypothesis calls
+carried non-empty args (48.6%) and 16 passed the grounding check,
+with real coordinate values ({"x": 32, "y": 31}, {"x": 29, "y": 7}),
+against gen-21's 0-for-23. Two disclosures ride with the result:
+the corpus audit found 6 of 48 docs grounded only through template
+words the corpus author had appended (accepted as filed by
+adjudication — strictly grounded docs alone exceeded the minimum,
+and no passing call at measurement time traced to those templates);
+and several passes ground through thin tokens (`hyp: 1`, ubiquitous
+grid coordinates) — the next generation's grounding gate requires
+rare tokens before content credit is claimed again.
+
+**The GRPO loop waited at a closed gate, again — correctly.**
+Epsilon's length-controlled RLP+GRPO package was re-verified end to
+end for the new substrates (five C26 passes, red-team negative
+tests confirming that split gates and wrong-artifact hashes block
+the trainer before it loads anything) and never ran, because the
+unlock is conjunctive and Gate V failed on both artifacts. No beta
+was fit; the beta *procedure* remains the frozen asset. Two
+generations of gate discipline have now spent real preparation to
+protect one principle: the experiment runs when its preconditions
+are measured, not when they are hoped for.
+
+**Process:** the verification layer caught the generation's two
+real defects before they could contaminate a result — a trainer
+whose corpus gate accepted any audit-shaped filename (fixed by
+binding markers to the corpus hash they name; 17/17 negative tests
+after), and a silent contract mismatch between a corpus builder
+and the trainer over a null field, adjudicated to the cheaper
+side. One researcher session was lost to an infrastructure
+failure mid-generation; its successor inherited the on-box state
+and no work was lost. C29 held throughout: nothing trained before
+its audit marker, nothing probed before its verification marker.
+
+**Results:** no researcher submissions; coordinator-measured
+artifacts D (disc_g22.pt) and P (primed_g22.pt), both (0.00
+transfer, 0.0000 dev-general), anti-degeneracy PASS, stakes 0/0/0
+returned, no bounties (split gates do not pay under the
+pre-registration; flagged for Sano's overrule). Transfer 0.00 ×2 →
+**65 official zeros**. Bankrolls: gamma 2111, delta 1212, epsilon
+1377 (unchanged). HOLES.md 16th edition (CORPUS-AUDIT-UNBOUND,
+LOADER-INTERFACE-NULLMASK, GROUNDING-TEMPLATE-OVERLAP,
+JUDGE-GATEMARKER-ARGFORM, MIXTURE-VALIDITY-FLAT,
+GATEA-SPLIT-REPRODUCED, F2-PASS-SHALLOW-GROUNDING).
