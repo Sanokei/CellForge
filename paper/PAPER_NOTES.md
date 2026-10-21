@@ -746,3 +746,83 @@ Sano's overrule). Transfer 0.00 x1 -> **68 official zeros**.
 Bankrolls: gamma 2111, delta 1212, epsilon 1377 (unchanged).
 HOLES.md 18th edition (red-team draft filed; entries include
 ROWS-ONLY-E/V-FRONTIER and ANCHOR-KL-TINY-IN-ROWS-ONLY).
+
+## Gen-25: the emission wall breaks, and validity moves in behind it
+
+Gen-25 changed the objective, not the region — and the ceiling
+came off. Call-span loss weighting on the rows-only region
+(w = 10, distill-doc call spans weighted, KL term disabled after
+gen-24 proved the anchor inert there) took the best official
+emission from 26 calls per 36 episodes to **74**: disc_g25 passed
+Gate E at 36-episode width for the first time in the program
+(74 calls, 24/36 episodes, red-team spot-reproduced exactly).
+The inverted selection — max emission subject to screened
+validity ≥ 0.60 — did exactly its job, picking the w=10 step-165
+checkpoint at the dose boundary: in both runs emission rose
+monotonically with steps and weight while validity fell
+monotonically, crossing 0.60 between step 165 and step 330. And
+that is where the generation turned: official validity regressed
+0.6051 → 0.5889 against screening, and Gate V failed by ~0.07.
+The program has, for the first time, an artifact that
+over-emits and under-validates rather than the reverse. The
+frontier is now one-sided, and the gen-26 question is the
+validity side of it: what holds call discipline above 0.6625
+while the model emits at floor-beating volume.
+
+The parallel arm answered gen-23's open question and closed a
+direction. Rows-only content priming did NOT reproduce
+full-spec priming's validity collapse (official V 0.6125, not
+0.22) — the regional-validity mechanism is confirmed from the
+priming side — but it bought nothing: emission 4 calls against
+the parent's 3, and the F2 probe emitted zero hypothesis calls
+in 12 episodes, so F2 v1 and v2 are both 0 and the rarity
+criterion still stands at zero. Priming restricted to the
+minimal region preserves validity and adds no emission and no
+content; it is tested, not open, and it is closed.
+
+RLP+GRPO waited at the gate a fifth generation, package
+re-verified, reward certified, nothing to run it on — but the
+shape of the wait changed. The unlock is no longer an emission
+problem: the next candidate must hold validity above the bar
+while emitting, which the gen-25 dose axis says is hard. The
+loop that acts on emitted calls is ready for a substrate that
+does not yet exist.
+
+Gen-25 also ran the first computation under Sano's
+proud-lineage rule: successors scored against their own
+parents on gate distance. Delta made its parent proudest by a
+wide margin (+0.8889: disc_g25's gate distance 0.1111 against
+grow_g20_primed's 1.0000); gamma barely moved its parent
+(+0.0144); epsilon, gated, holds standing with no tick. The
+gen-26 elitism parent is disc_g25, and the bar for making the
+lineage prouder is now a validity bar. Scope held throughout:
+gates, bounties, payouts and anti-cheat untouched by the new
+selection law.
+
+Process entries for the anti-cheat record: a coordinator
+adjudication re-registered official block 1 (94001–94003 had
+been registered in gen-22 but never drawn) as 94601–94603
+before any official measurement; a defective probe seed table
+(only block-leading seeds remapped, gen-24 tails surviving)
+was caught by gamma pre-T4 and failed superseded, never
+launched; a selection-script revision ran under the
+coordinator's instruction while its marker was pending — the
+amended branch was never entered, the output identical under
+the T4-passed version, the marker closed post-hoc, the flag
+standing; a 74-minute red-team silence gap delayed judging
+(resolved by a fresh session, no validity impact); and a
+second consecutive generation's fabricated tool output
+depicting red-team approvals that did not exist was caught
+on-box, with delta not acting on it. The audit trail keeps
+catching fakes the way it catches real defects.
+
+**Results:** artifacts D (disc_g25.pt, delta) and P
+(primed_g25.pt, gamma) — both 0.00 transfer, 0.0000
+dev-general, 0.0000 dev-specialist, anti-degeneracy PASS,
+stakes 0/0/0 returned, no bounties (D splits E PASS / V FAIL;
+P fails both; split gates pay nothing). Transfer 0.00 x2 ->
+**70 official zeros**. Bankrolls: gamma 2111, delta 1212,
+epsilon 1377 (unchanged). HOLES.md 19th edition (entries
+include EMISSION-OBJECTIVE-FIRST-E-PASS-AT-36,
+VALIDITY-EMISSION-DOSE-AXIS, and
+ROWS-ONLY-PRIMING-VALIDITY-HOLDS-BUT-NO-CONTENT).
