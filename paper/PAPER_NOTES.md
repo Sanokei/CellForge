@@ -846,3 +846,112 @@ Selection picked gamma s165 (D_proj 0.5346, confirmed by red-team verdict), and 
 Direction C gated a seventh generation: GRPO carries, with a new flag for the next attempt — a future blocks.2-carrying E+V artifact needs a governed GRPO adapt plus T4 before it can run. Proud-lineage recorded its first negative: gamma −0.4507, so the gen-28 parent stays disc_g26 at D = 0.1111 — the successor made the lineage less proud, and the parent stands. C29 HELD clean. No bounties. The wall saga now reads: rows-only exhausted (gen-26) → widened region falsified as a validity lever (gen-27) → the queued gen-28 candidate (spatio-temporal attention + semantic grounding + diagnostic feedback, LPIPS/WAFT probes) awaits Sano's direction call. Gen-28 is NOT launched yet.
 
 **Results:** selection pick gamma s165 — 0.00 transfer, 0.0000 dev-general, 0.0000 dev-specialist, split gates (E PASS / V FAIL) paying nothing. Transfer 0.00 → **72 official zeros**. Bankrolls: gamma 2111, delta 1212, epsilon 1377 (unchanged). HOLES.md 21st edition published.
+# Paper notes addendum — gen-26 through the gen-28 proposal round (2026-10-21 to 2026-10-23)
+
+Prepared 2026-10-23 evening EDT, from closed results only. This is running
+paper notes, NOT a rewrite of paper draft v0 and NOT the 1,500-word
+restructure — that restructure is still held for Sano's word. Nothing here
+launches, amends, re-pins, trains, or touches transfer. No push to main.
+
+## The falsification map, extended
+
+### Gen-26 — rows-only exhausted; validity-directed penalty falsified
+- Champion lineage: disc_g26 (delta, a_w3_s20, from disc_g25).
+- Gates: Gate E PASS 74/24; Gate V FAIL 0.5889 vs 0.6625 bar — pooled
+  numbers exactly replicate parent disc_g25, ruling out a copy artifact.
+- Validity falls with steps on every arm; emission is not the problem
+  (all 20 checkpoints clear the 30 floor, up to 204).
+- Validity-directed UL objective FALSIFIED: beta = 0.5 gives
+  0.592 -> 0.576 -> 0.535. Punishment without teaching degrades validity.
+- Content, second independent zero: F2 v3 — disc_g25: 20 calls, 0 nonempty;
+  disc_g26: 23 calls, 0 nonempty (18x {}, rest empty-key shells).
+- GRPO gated a sixth generation. Proud-lineage: delta +0.0000 (tie).
+
+### Gen-27 — Branch A (widen beyond rows-only) falsified; first negative proud-lineage
+- Sano's decision 2026-10-21: Branch A only. Branch B (decoding-side lever)
+  was not launched — underspecified, no lever named.
+- Governance: runner pin 0cbd9003 STANDS (Amendment 2 — widening changes
+  trainer-side gradient selection only, runner bytes unchanged since Oct 20).
+  Widened ceiling 201,728 trainable params; 27 tensors frozen bit-identical
+  to disc_g26. Selection margin corrected to m >= 0.0236 (screening
+  >= 0.6861 to project an official 0.6625 pass).
+- Gates: Gate E PASS 232/36 (emission exploded); Gate V FAIL 0.2903
+  (collapsed from 0.5889). Transfer 0.00.
+- Content, third independent zero: F2, 76 calls / 0 nonempty.
+- Proud-lineage NEGATIVE for the first time: -0.4507 — parent STAYS
+  disc_g26. GRPO gated a seventh generation.
+- Gen-28 NOT launched at close; direction left to Sano.
+
+### Gen-28 pre-probe round (2026-10-22, dev-only, pin stands, no launch)
+- LPIPS INCONCLUSIVE, not dead: scripted teacher solved 0 levels in 120
+  decisions on every dev-general game/seed, so neither ordering was
+  computable. Per binding red-team ruling, not evidence either way. Retry
+  needs a fresh pre-registered reference design.
+- WAFT DIES: 0/15 warp-win episodes (needed >50%). Warping made frame
+  change WORSE by 42.99 cells on average (65.59 vs 22.60); concentration
+  also worse (0.7766 vs 0.8243). All three pre-registered LIVES criteria
+  failed.
+- Temporal concentration NO: invalid rate on motion/persistence steps
+  0.6538 (51/78) vs 0.6620 others (425/642), gap -0.0081. Invalid calls do
+  NOT concentrate on temporally-dependent steps.
+- Consequence: layer (1) spatio-temporal attention as framed failed BOTH
+  kill-tests — cut from any runner-change proposal unless re-justified on
+  grounds other than validity or motion, with its own kill-test.
+
+### Gen-28 narrowed proposal round (2026-10-23, fast, ~90 min, dev-only)
+- Scope exactly as approved: layers (2) + (3) kill-tests only; layer (1)
+  stays cut; LPIPS retry only under a fresh reference design.
+- Layer (2) semantic grounding, presentation-only — INDETERMINATE:
+  GROUNDED 17 hyp / 3 nonempty (0.1765) vs CONTROL 18 / 2 (0.1111),
+  lift 0.0654. Short of LIVES bars (>=5 nonempty, >=0.15 rate, >=0.10 lift),
+  clear of DIES floor (<=1). Middle zone: neither kept alive nor killed.
+  Caveat: grounded scenes omitted unknown-color objects 1,982 times
+  (incomplete presentation). Trained intake stays UNTESTED.
+- Layer (3) diagnostic feedback, in-context — UL-DEATH: BARE validity
+  0.6139 vs DIAG 0.5250, gain -0.0889, past the -0.02 death bar.
+  Diagnostic prompting degraded validity exactly as gen-26's UL did, with
+  a different signal. Content regressed 0.9367 -> 0.8730. The TRAINING
+  comparison (the decisive version) requires training runs and stays
+  UNTESTED.
+- LPIPS retry v2 — INDETERMINATE, stays UNTESTED: 26 counted pairs vs
+  bar 100; 26 ordered, rate 1.0, descriptive only; 100% g50t, 22/26 from
+  one episode; FAR-B and recolor legs never fired. Apparatus finding:
+  harvested grammar yields too few clean triples (540/720 excluded on
+  unknown color) — future LPIPS work needs a different harvest.
+- Governance: C29 held throughout (two T4 FAILs caught real defects,
+  fixed + re-verified); seeds 90801-90803 / 90811-90813 adjudicated CLEAN;
+  pin 0cbd9003 stands; no transfer contact, no training, no launch,
+  no job left running.
+- Coordinator recommendation: do NOT launch gen-28 on layers 2 + 3 as
+  tested. The narrowed candidate as framed has no live leg.
+
+## Standing numbers for the honest-results section
+- Transfer: 0.00 across 72 official measurements (gen-27 close).
+- Champion for packaging: disc_g26. Bankrolls unchanged at gen-27 close:
+  gamma 2111 / delta 1212 / epsilon 1377. No bounties from either
+  gen-28 round.
+- Content wall, unchanged across three artifacts: 20 / 23 / 76 calls,
+  0 nonempty args.
+- Thesis line this supports: train -> audit -> grow -> train, with the
+  falsification map itself as a result — rows-only, blocks.2 widening,
+  validity-directed punishment, in-context diagnostic feedback, WAFT
+  warping, and presentation-only grounding each tested and closed on
+  stated bars, not on vibes.
+
+## What this addendum does NOT decide
+- The gen-28 decision (HOLD from disc_g26 vs layer-3 training comparison
+  vs new layer-2 trained-intake design) is still Sano's, via the widget
+  delivered 2026-10-23 20:44 UTC. Options 2 and 3 are new work under new
+  governance, each would eat days of the Oct 25-Nov 1 package window,
+  and no timeline for either is claimed in the proposal report.
+- Paper restructure, cover image, and public notebook remain open items
+  for the Nov 1 draft / Nov 2 submissions / Nov 8 paper-track close.
+  Entry admin is fully done (all three tracks joined, phone verified
+  2026-10-17) and is not re-raised here.
+
+## Sources used for this addendum
+- Gen-26/27 closes and governance: ~/MEMORY.md
+- Pre-probe report: ~/workspace/gen28_preprobe/PROBE_G28_PREP.md
+- Proposal-round report: ~/workspace/gen28_proposal/PROPOSAL_G28_REPORT.md
+  (also /srv/cellforge-arena/gen2/proposal_g28/PROPOSAL_G28_REPORT.md)
+- HOLD checklist (post-proposal): ~/workspace/package_disc_g26_checklist_postproposal.md
